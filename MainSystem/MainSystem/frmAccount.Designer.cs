@@ -31,6 +31,15 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grpStudentDetails = new System.Windows.Forms.GroupBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtMiddleName = new System.Windows.Forms.TextBox();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblMiddleName = new System.Windows.Forms.Label();
+            this.txtSection = new System.Windows.Forms.TextBox();
+            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.txtLevel = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.txtGender = new System.Windows.Forms.TextBox();
             this.lblSection = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblDepartment = new System.Windows.Forms.Label();
@@ -47,33 +56,30 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.grpPaymentHistory = new System.Windows.Forms.GroupBox();
             this.dataPaymentHistory = new System.Windows.Forms.DataGridView();
-            this.txtGender = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtLevel = new System.Windows.Forms.TextBox();
-            this.txtDepartment = new System.Windows.Forms.TextBox();
-            this.txtSection = new System.Windows.Forms.TextBox();
-            this.lblMiddleName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.txtMiddleName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabStudentTransaction = new System.Windows.Forms.TabPage();
+            this.tabBankTransaction = new System.Windows.Forms.TabPage();
+            this.tabDisbursement = new System.Windows.Forms.TabPage();
             this.grpStudentDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpBalanceDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
             this.grpPaymentHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.tabStudentTransaction.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 28);
+            this.txtSearch.Location = new System.Drawing.Point(9, 28);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 1;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(249, 28);
+            this.btnSearch.Location = new System.Drawing.Point(246, 27);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 20);
             this.btnSearch.TabIndex = 3;
@@ -100,12 +106,81 @@
             this.grpStudentDetails.Controls.Add(this.lblFirstName);
             this.grpStudentDetails.Controls.Add(this.txtID);
             this.grpStudentDetails.Controls.Add(this.lblID);
-            this.grpStudentDetails.Location = new System.Drawing.Point(12, 207);
+            this.grpStudentDetails.Location = new System.Drawing.Point(9, 206);
             this.grpStudentDetails.Name = "grpStudentDetails";
             this.grpStudentDetails.Size = new System.Drawing.Size(573, 224);
             this.grpStudentDetails.TabIndex = 4;
             this.grpStudentDetails.TabStop = false;
             this.grpStudentDetails.Text = "Student Details";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(115, 133);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(180, 20);
+            this.txtLastName.TabIndex = 22;
+            // 
+            // txtMiddleName
+            // 
+            this.txtMiddleName.Location = new System.Drawing.Point(115, 97);
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
+            this.txtMiddleName.TabIndex = 21;
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(16, 137);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(73, 16);
+            this.lblLastName.TabIndex = 20;
+            this.lblLastName.Text = "Last Name";
+            // 
+            // lblMiddleName
+            // 
+            this.lblMiddleName.AutoSize = true;
+            this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiddleName.Location = new System.Drawing.Point(16, 101);
+            this.lblMiddleName.Name = "lblMiddleName";
+            this.lblMiddleName.Size = new System.Drawing.Size(89, 16);
+            this.lblMiddleName.TabIndex = 19;
+            this.lblMiddleName.Text = "Middle Name";
+            // 
+            // txtSection
+            // 
+            this.txtSection.Location = new System.Drawing.Point(385, 26);
+            this.txtSection.Name = "txtSection";
+            this.txtSection.Size = new System.Drawing.Size(180, 20);
+            this.txtSection.TabIndex = 18;
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.Location = new System.Drawing.Point(385, 99);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Size = new System.Drawing.Size(180, 20);
+            this.txtDepartment.TabIndex = 17;
+            // 
+            // txtLevel
+            // 
+            this.txtLevel.Location = new System.Drawing.Point(385, 62);
+            this.txtLevel.Name = "txtLevel";
+            this.txtLevel.Size = new System.Drawing.Size(180, 20);
+            this.txtLevel.TabIndex = 16;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(385, 136);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(180, 20);
+            this.txtStatus.TabIndex = 15;
+            // 
+            // txtGender
+            // 
+            this.txtGender.Location = new System.Drawing.Point(115, 171);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(180, 20);
+            this.txtGender.TabIndex = 14;
             // 
             // lblSection
             // 
@@ -195,7 +270,7 @@
             // dataSearch
             // 
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearch.Location = new System.Drawing.Point(12, 54);
+            this.dataSearch.Location = new System.Drawing.Point(9, 53);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.Size = new System.Drawing.Size(573, 147);
             this.dataSearch.TabIndex = 5;
@@ -203,7 +278,7 @@
             // grpBalanceDetails
             // 
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
-            this.grpBalanceDetails.Location = new System.Drawing.Point(591, 28);
+            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 28);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
             this.grpBalanceDetails.Size = new System.Drawing.Size(526, 179);
             this.grpBalanceDetails.TabIndex = 6;
@@ -221,17 +296,18 @@
             // btnAddTransaction
             // 
             this.btnAddTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTransaction.Location = new System.Drawing.Point(12, 437);
+            this.btnAddTransaction.Location = new System.Drawing.Point(9, 436);
             this.btnAddTransaction.Name = "btnAddTransaction";
             this.btnAddTransaction.Size = new System.Drawing.Size(125, 28);
             this.btnAddTransaction.TabIndex = 7;
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = true;
+            this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(143, 437);
+            this.btnEdit.Location = new System.Drawing.Point(140, 436);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(125, 28);
             this.btnEdit.TabIndex = 8;
@@ -241,7 +317,7 @@
             // grpPaymentHistory
             // 
             this.grpPaymentHistory.Controls.Add(this.dataPaymentHistory);
-            this.grpPaymentHistory.Location = new System.Drawing.Point(591, 207);
+            this.grpPaymentHistory.Location = new System.Drawing.Point(588, 206);
             this.grpPaymentHistory.Name = "grpPaymentHistory";
             this.grpPaymentHistory.Size = new System.Drawing.Size(526, 224);
             this.grpPaymentHistory.TabIndex = 9;
@@ -256,88 +332,61 @@
             this.dataPaymentHistory.Size = new System.Drawing.Size(513, 193);
             this.dataPaymentHistory.TabIndex = 1;
             // 
-            // txtGender
+            // tabControl
             // 
-            this.txtGender.Location = new System.Drawing.Point(115, 171);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(180, 20);
-            this.txtGender.TabIndex = 14;
+            this.tabControl.Controls.Add(this.tabStudentTransaction);
+            this.tabControl.Controls.Add(this.tabBankTransaction);
+            this.tabControl.Controls.Add(this.tabDisbursement);
+            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1159, 498);
+            this.tabControl.TabIndex = 10;
             // 
-            // txtStatus
+            // tabStudentTransaction
             // 
-            this.txtStatus.Location = new System.Drawing.Point(385, 136);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(180, 20);
-            this.txtStatus.TabIndex = 15;
+            this.tabStudentTransaction.Controls.Add(this.txtSearch);
+            this.tabStudentTransaction.Controls.Add(this.btnEdit);
+            this.tabStudentTransaction.Controls.Add(this.grpPaymentHistory);
+            this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
+            this.tabStudentTransaction.Controls.Add(this.btnSearch);
+            this.tabStudentTransaction.Controls.Add(this.dataSearch);
+            this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
+            this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
+            this.tabStudentTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabStudentTransaction.Name = "tabStudentTransaction";
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(1151, 472);
+            this.tabStudentTransaction.TabIndex = 0;
+            this.tabStudentTransaction.Text = "Student Transaction";
+            this.tabStudentTransaction.UseVisualStyleBackColor = true;
             // 
-            // txtLevel
+            // tabBankTransaction
             // 
-            this.txtLevel.Location = new System.Drawing.Point(385, 62);
-            this.txtLevel.Name = "txtLevel";
-            this.txtLevel.Size = new System.Drawing.Size(180, 20);
-            this.txtLevel.TabIndex = 16;
+            this.tabBankTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabBankTransaction.Name = "tabBankTransaction";
+            this.tabBankTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBankTransaction.Size = new System.Drawing.Size(1151, 472);
+            this.tabBankTransaction.TabIndex = 1;
+            this.tabBankTransaction.Text = "Bank Transaction";
+            this.tabBankTransaction.UseVisualStyleBackColor = true;
             // 
-            // txtDepartment
+            // tabDisbursement
             // 
-            this.txtDepartment.Location = new System.Drawing.Point(385, 99);
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(180, 20);
-            this.txtDepartment.TabIndex = 17;
-            // 
-            // txtSection
-            // 
-            this.txtSection.Location = new System.Drawing.Point(385, 26);
-            this.txtSection.Name = "txtSection";
-            this.txtSection.Size = new System.Drawing.Size(180, 20);
-            this.txtSection.TabIndex = 18;
-            // 
-            // lblMiddleName
-            // 
-            this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(16, 101);
-            this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(89, 16);
-            this.lblMiddleName.TabIndex = 19;
-            this.lblMiddleName.Text = "Middle Name";
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(16, 137);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(73, 16);
-            this.lblLastName.TabIndex = 20;
-            this.lblLastName.Text = "Last Name";
-            // 
-            // txtMiddleName
-            // 
-            this.txtMiddleName.Location = new System.Drawing.Point(115, 97);
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
-            this.txtMiddleName.TabIndex = 21;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(115, 133);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(180, 20);
-            this.txtLastName.TabIndex = 22;
+            this.tabDisbursement.Location = new System.Drawing.Point(4, 22);
+            this.tabDisbursement.Name = "tabDisbursement";
+            this.tabDisbursement.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDisbursement.Size = new System.Drawing.Size(1151, 472);
+            this.tabDisbursement.TabIndex = 2;
+            this.tabDisbursement.Text = "Disbursement";
+            this.tabDisbursement.UseVisualStyleBackColor = true;
             // 
             // frmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 479);
-            this.Controls.Add(this.grpPaymentHistory);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAddTransaction);
-            this.Controls.Add(this.grpBalanceDetails);
-            this.Controls.Add(this.dataSearch);
-            this.Controls.Add(this.grpStudentDetails);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearch);
+            this.ClientSize = new System.Drawing.Size(1186, 521);
+            this.Controls.Add(this.tabControl);
             this.Name = "frmAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounting Management";
@@ -348,8 +397,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
             this.grpPaymentHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.tabStudentTransaction.ResumeLayout(false);
+            this.tabStudentTransaction.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -382,5 +433,9 @@
         private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblMiddleName;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabStudentTransaction;
+        private System.Windows.Forms.TabPage tabBankTransaction;
+        private System.Windows.Forms.TabPage tabDisbursement;
     }
 }
