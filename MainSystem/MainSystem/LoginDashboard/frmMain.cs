@@ -12,9 +12,12 @@ namespace MainSystem
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        public FormLogin reference { get; set; }
+        public frmMain(string uname)
         {
             InitializeComponent();
+            lblusername.Text = uname;
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -24,12 +27,28 @@ namespace MainSystem
 
         private void btnEnrollmentForm_Click(object sender, EventArgs e)
         {
+            frmEnroll = new EnrollmentConsole();
+            frmEnroll.Show();
+            frmEnroll.reference = this;
+            this.Hide();
 
         }
+        public EnrollmentConsole frmEnroll;
 
         private void btnEmployeeForm_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLGOUT_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            reference.Show();
         }
     }
 }
