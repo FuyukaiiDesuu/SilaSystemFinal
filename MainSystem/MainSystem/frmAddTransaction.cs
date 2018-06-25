@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MainSystem
 {
-    public partial class FormInventory : Form
+    public partial class frmAddTransaction : Form
     {
-        public FormInventory()
+        public frmAddTransaction()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
