@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace MainSystem
 {
-    public partial class frmAccount : Form
+    public partial class frmOrderList : Form
     {
-        public frmAccount()
+        public frmOrderList()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void lblDate2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnAddTransaction_Click(object sender, EventArgs e)
+        private void lbldateReq_Click(object sender, EventArgs e)
         {
-            frmAddTransaction addTransaction = new frmAddTransaction();
-            addTransaction.ShowDialog();
+
         }
     }
 }
