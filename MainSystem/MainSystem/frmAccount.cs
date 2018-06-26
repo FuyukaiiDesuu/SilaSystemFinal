@@ -21,5 +21,11 @@ namespace MainSystem
         {
 
         }
+
+        private void btnAddTransaction_Click(object sender, EventArgs e)
+        {
+            frmAddTransaction addTransaction = new frmAddTransaction();
+            addTransaction.ShowDialog();
+        }
     }
 }

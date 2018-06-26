@@ -82,6 +82,15 @@
     <Compile Include="LoginDashboard\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTransaction.Designer.cs">
+      <DependentUpon>frmAddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Enrollment\AddForm.resx">
@@ -98,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTransaction.resx">
+      <DependentUpon>frmAddTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
