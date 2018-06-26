@@ -50,5 +50,22 @@ namespace MainSystem
             this.Close();
             reference.Show();
         }
+        public FormInventory frminv;
+        private void btnInventoryForm_Click(object sender, EventArgs e)
+        {
+            frminv = new FormInventory();
+            frminv.Show();
+            frminv.reference = this;
+            this.Hide();
+            
+        }
+        public frmAccount frmacc;
+        private void btnAccountForm_Click(object sender, EventArgs e)
+        {
+            frmacc = new frmAccount();
+            frmacc.Show();
+            frmacc.reference = this;
+            this.Hide();
+        }
     }
 }

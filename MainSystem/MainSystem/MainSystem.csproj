@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,16 +64,16 @@
     <Compile Include="LoginDashboard\FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInventory.cs">
+    <Compile Include="Inventory\FormInventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInventory.designer.cs">
+    <Compile Include="Inventory\FormInventory.designer.cs">
       <DependentUpon>FormInventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAccount.cs">
+    <Compile Include="Accounting\frmAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAccount.Designer.cs">
+    <Compile Include="Accounting\frmAccount.Designer.cs">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginDashboard\frmMain.cs">
@@ -82,10 +82,10 @@
     <Compile Include="LoginDashboard\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddTransaction.cs">
+    <Compile Include="Accounting\frmAddTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddTransaction.Designer.cs">
+    <Compile Include="Accounting\frmAddTransaction.Designer.cs">
       <DependentUpon>frmAddTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -93,16 +93,16 @@
     <EmbeddedResource Include="Enrollment\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="frmOrderList.cs">
+    <Compile Include="Inventory\frmOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOrderList.Designer.cs">
+    <Compile Include="Inventory\frmOrderList.Designer.cs">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stockinout.cs">
+    <Compile Include="Inventory\Stockinout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stockinout.Designer.cs">
+    <Compile Include="Inventory\Stockinout.Designer.cs">
       <DependentUpon>Stockinout.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
@@ -111,19 +111,19 @@
     <EmbeddedResource Include="LoginDashboard\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInventory.resx">
+    <EmbeddedResource Include="Inventory\FormInventory.resx">
       <DependentUpon>FormInventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAccount.resx">
+    <EmbeddedResource Include="Accounting\frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddTransaction.resx">
+    <EmbeddedResource Include="Accounting\frmAddTransaction.resx">
       <DependentUpon>frmAddTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOrderList.resx">
+    <EmbeddedResource Include="Inventory\frmOrderList.resx">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -136,7 +136,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Stockinout.resx">
+    <EmbeddedResource Include="Inventory\Stockinout.resx">
       <DependentUpon>Stockinout.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

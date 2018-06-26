@@ -12,6 +12,7 @@ namespace MainSystem
 {
     public partial class frmAccount : Form
     {
+        public frmMain reference { get; set; }
         public frmAccount()
         {
             InitializeComponent();
@@ -26,6 +27,12 @@ namespace MainSystem
         {
             frmAddTransaction addTransaction = new frmAddTransaction();
             addTransaction.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reference.Show();
+            this.Hide();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace MainSystem
 {
     public partial class FormInventory : Form
     {
+        public frmMain reference { get; set; }
         public FormInventory()
         {
             InitializeComponent();
@@ -20,6 +21,17 @@ namespace MainSystem
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FormInventory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            reference.Show();
+            this.Hide();
         }
     }
 }
