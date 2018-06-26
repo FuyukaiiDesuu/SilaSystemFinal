@@ -99,11 +99,11 @@
     <Compile Include="frmOrderList.Designer.cs">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockIN-OUT.cs">
+    <Compile Include="Stockinout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockIN-OUT.Designer.cs">
-      <DependentUpon>StockIN-OUT.cs</DependentUpon>
+    <Compile Include="Stockinout.Designer.cs">
+      <DependentUpon>Stockinout.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
@@ -136,8 +136,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StockIN-OUT.resx">
-      <DependentUpon>StockIN-OUT.cs</DependentUpon>
+    <EmbeddedResource Include="Stockinout.resx">
+      <DependentUpon>Stockinout.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
