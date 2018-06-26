@@ -31,7 +31,6 @@
             this.btnNewEntry = new System.Windows.Forms.Button();
             this.btnin = new System.Windows.Forms.Button();
             this.btnout = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.lblSinoutRecord = new System.Windows.Forms.Label();
             this.bntView = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -68,16 +67,6 @@
             this.btnout.TabIndex = 3;
             this.btnout.Text = "OUT";
             this.btnout.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(596, 390);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 28);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // lblSinoutRecord
             // 
@@ -124,7 +113,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bntView);
             this.Controls.Add(this.lblSinoutRecord);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnout);
             this.Controls.Add(this.btnin);
             this.Controls.Add(this.btnNewEntry);
@@ -141,7 +129,6 @@
         private System.Windows.Forms.Button btnNewEntry;
         private System.Windows.Forms.Button btnin;
         private System.Windows.Forms.Button btnout;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblSinoutRecord;
         private System.Windows.Forms.Button bntView;
         private System.Windows.Forms.DataGridView dataGridView1;
