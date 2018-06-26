@@ -93,6 +93,18 @@
     <EmbeddedResource Include="Enrollment\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="frmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stockin-out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stockin-out.Designer.cs">
+      <DependentUpon>Stockin-out.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +123,9 @@
     <EmbeddedResource Include="LoginDashboard\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -121,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Stockin-out.resx">
+      <DependentUpon>Stockin-out.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
