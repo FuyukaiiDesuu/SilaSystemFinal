@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.grpNewPayment = new System.Windows.Forms.GroupBox();
-            this.lblPayment = new System.Windows.Forms.Label();
-            this.lblStudentName = new System.Windows.Forms.Label();
-            this.lblPaymentType = new System.Windows.Forms.Label();
-            this.lblChequeNo = new System.Windows.Forms.Label();
-            this.lblPaymentDate = new System.Windows.Forms.Label();
+            this.txtPaymentNo = new System.Windows.Forms.TextBox();
+            this.txtStudentName = new System.Windows.Forms.TextBox();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.txtChequeNo = new System.Windows.Forms.TextBox();
+            this.cmbPaymentType = new System.Windows.Forms.ComboBox();
+            this.cmbPaymentTo = new System.Windows.Forms.ComboBox();
+            this.datePaymentDate = new System.Windows.Forms.DateTimePicker();
             this.lblPaymentTo = new System.Windows.Forms.Label();
+            this.lblPaymentDate = new System.Windows.Forms.Label();
+            this.lblChequeNo = new System.Windows.Forms.Label();
+            this.lblPaymentType = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.lblPayment = new System.Windows.Forms.Label();
             this.grpPaymentHistory = new System.Windows.Forms.GroupBox();
             this.dataPaymentHistory = new System.Windows.Forms.DataGridView();
-            this.datePaymentDate = new System.Windows.Forms.DateTimePicker();
-            this.cmbPaymentTo = new System.Windows.Forms.ComboBox();
-            this.cmbPaymentType = new System.Windows.Forms.ComboBox();
-            this.txtChequeNo = new System.Windows.Forms.TextBox();
-            this.lblStudentID = new System.Windows.Forms.Label();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
-            this.txtPaymentNo = new System.Windows.Forms.TextBox();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -76,45 +76,91 @@
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = " New Payment";
             // 
-            // lblPayment
+            // txtPaymentNo
             // 
-            this.lblPayment.AutoSize = true;
-            this.lblPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayment.Location = new System.Drawing.Point(6, 34);
-            this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Size = new System.Drawing.Size(85, 16);
-            this.lblPayment.TabIndex = 0;
-            this.lblPayment.Text = "Payment No.";
+            this.txtPaymentNo.Location = new System.Drawing.Point(121, 33);
+            this.txtPaymentNo.Name = "txtPaymentNo";
+            this.txtPaymentNo.Size = new System.Drawing.Size(200, 20);
+            this.txtPaymentNo.TabIndex = 13;
             // 
-            // lblStudentName
+            // txtStudentName
             // 
-            this.lblStudentName.AutoSize = true;
-            this.lblStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentName.Location = new System.Drawing.Point(6, 74);
-            this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(93, 16);
-            this.lblStudentName.TabIndex = 1;
-            this.lblStudentName.Text = "Student Name";
+            this.txtStudentName.Location = new System.Drawing.Point(121, 73);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.ReadOnly = true;
+            this.txtStudentName.Size = new System.Drawing.Size(200, 20);
+            this.txtStudentName.TabIndex = 12;
             // 
-            // lblPaymentType
+            // txtStudentID
             // 
-            this.lblPaymentType.AutoSize = true;
-            this.lblPaymentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentType.Location = new System.Drawing.Point(6, 157);
-            this.lblPaymentType.Name = "lblPaymentType";
-            this.lblPaymentType.Size = new System.Drawing.Size(96, 16);
-            this.lblPaymentType.TabIndex = 2;
-            this.lblPaymentType.Text = "Payment Type";
+            this.txtStudentID.Location = new System.Drawing.Point(121, 116);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.ReadOnly = true;
+            this.txtStudentID.Size = new System.Drawing.Size(200, 20);
+            this.txtStudentID.TabIndex = 11;
             // 
-            // lblChequeNo
+            // lblStudentID
             // 
-            this.lblChequeNo.AutoSize = true;
-            this.lblChequeNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChequeNo.Location = new System.Drawing.Point(6, 198);
-            this.lblChequeNo.Name = "lblChequeNo";
-            this.lblChequeNo.Size = new System.Drawing.Size(79, 16);
-            this.lblChequeNo.TabIndex = 3;
-            this.lblChequeNo.Text = "Cheque No.";
+            this.lblStudentID.AutoSize = true;
+            this.lblStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentID.Location = new System.Drawing.Point(6, 117);
+            this.lblStudentID.Name = "lblStudentID";
+            this.lblStudentID.Size = new System.Drawing.Size(69, 16);
+            this.lblStudentID.TabIndex = 10;
+            this.lblStudentID.Text = "Student ID";
+            // 
+            // txtChequeNo
+            // 
+            this.txtChequeNo.Location = new System.Drawing.Point(121, 197);
+            this.txtChequeNo.Name = "txtChequeNo";
+            this.txtChequeNo.Size = new System.Drawing.Size(200, 20);
+            this.txtChequeNo.TabIndex = 9;
+            // 
+            // cmbPaymentType
+            // 
+            this.cmbPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPaymentType.FormattingEnabled = true;
+            this.cmbPaymentType.Items.AddRange(new object[] {
+            "",
+            "BANK",
+            "CASH"});
+            this.cmbPaymentType.Location = new System.Drawing.Point(121, 156);
+            this.cmbPaymentType.Name = "cmbPaymentType";
+            this.cmbPaymentType.Size = new System.Drawing.Size(200, 21);
+            this.cmbPaymentType.TabIndex = 8;
+            // 
+            // cmbPaymentTo
+            // 
+            this.cmbPaymentTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPaymentTo.FormattingEnabled = true;
+            this.cmbPaymentTo.Items.AddRange(new object[] {
+            "",
+            "REGISTRATION",
+            "TUITION",
+            "BOOKS",
+            "OTHERS"});
+            this.cmbPaymentTo.Location = new System.Drawing.Point(121, 237);
+            this.cmbPaymentTo.Name = "cmbPaymentTo";
+            this.cmbPaymentTo.Size = new System.Drawing.Size(200, 21);
+            this.cmbPaymentTo.TabIndex = 7;
+            // 
+            // datePaymentDate
+            // 
+            this.datePaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePaymentDate.Location = new System.Drawing.Point(121, 273);
+            this.datePaymentDate.Name = "datePaymentDate";
+            this.datePaymentDate.Size = new System.Drawing.Size(200, 20);
+            this.datePaymentDate.TabIndex = 6;
+            // 
+            // lblPaymentTo
+            // 
+            this.lblPaymentTo.AutoSize = true;
+            this.lblPaymentTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentTo.Location = new System.Drawing.Point(6, 238);
+            this.lblPaymentTo.Name = "lblPaymentTo";
+            this.lblPaymentTo.Size = new System.Drawing.Size(81, 16);
+            this.lblPaymentTo.TabIndex = 5;
+            this.lblPaymentTo.Text = "Payment To";
             // 
             // lblPaymentDate
             // 
@@ -126,15 +172,45 @@
             this.lblPaymentDate.TabIndex = 4;
             this.lblPaymentDate.Text = "Payment Date";
             // 
-            // lblPaymentTo
+            // lblChequeNo
             // 
-            this.lblPaymentTo.AutoSize = true;
-            this.lblPaymentTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentTo.Location = new System.Drawing.Point(6, 238);
-            this.lblPaymentTo.Name = "lblPaymentTo";
-            this.lblPaymentTo.Size = new System.Drawing.Size(81, 16);
-            this.lblPaymentTo.TabIndex = 5;
-            this.lblPaymentTo.Text = "Payment To";
+            this.lblChequeNo.AutoSize = true;
+            this.lblChequeNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChequeNo.Location = new System.Drawing.Point(6, 198);
+            this.lblChequeNo.Name = "lblChequeNo";
+            this.lblChequeNo.Size = new System.Drawing.Size(79, 16);
+            this.lblChequeNo.TabIndex = 3;
+            this.lblChequeNo.Text = "Cheque No.";
+            // 
+            // lblPaymentType
+            // 
+            this.lblPaymentType.AutoSize = true;
+            this.lblPaymentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentType.Location = new System.Drawing.Point(6, 157);
+            this.lblPaymentType.Name = "lblPaymentType";
+            this.lblPaymentType.Size = new System.Drawing.Size(96, 16);
+            this.lblPaymentType.TabIndex = 2;
+            this.lblPaymentType.Text = "Payment Type";
+            // 
+            // lblStudentName
+            // 
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentName.Location = new System.Drawing.Point(6, 74);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(93, 16);
+            this.lblStudentName.TabIndex = 1;
+            this.lblStudentName.Text = "Student Name";
+            // 
+            // lblPayment
+            // 
+            this.lblPayment.AutoSize = true;
+            this.lblPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayment.Location = new System.Drawing.Point(6, 34);
+            this.lblPayment.Name = "lblPayment";
+            this.lblPayment.Size = new System.Drawing.Size(85, 16);
+            this.lblPayment.TabIndex = 0;
+            this.lblPayment.Text = "Payment No.";
             // 
             // grpPaymentHistory
             // 
@@ -153,80 +229,6 @@
             this.dataPaymentHistory.Name = "dataPaymentHistory";
             this.dataPaymentHistory.Size = new System.Drawing.Size(410, 307);
             this.dataPaymentHistory.TabIndex = 0;
-            // 
-            // datePaymentDate
-            // 
-            this.datePaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePaymentDate.Location = new System.Drawing.Point(121, 273);
-            this.datePaymentDate.Name = "datePaymentDate";
-            this.datePaymentDate.Size = new System.Drawing.Size(200, 20);
-            this.datePaymentDate.TabIndex = 6;
-            // 
-            // cmbPaymentTo
-            // 
-            this.cmbPaymentTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPaymentTo.FormattingEnabled = true;
-            this.cmbPaymentTo.Items.AddRange(new object[] {
-            "",
-            "REGISTRATION",
-            "TUITION",
-            "BOOKS",
-            "OTHERS"});
-            this.cmbPaymentTo.Location = new System.Drawing.Point(121, 237);
-            this.cmbPaymentTo.Name = "cmbPaymentTo";
-            this.cmbPaymentTo.Size = new System.Drawing.Size(200, 21);
-            this.cmbPaymentTo.TabIndex = 7;
-            // 
-            // cmbPaymentType
-            // 
-            this.cmbPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPaymentType.FormattingEnabled = true;
-            this.cmbPaymentType.Items.AddRange(new object[] {
-            "",
-            "BANK",
-            "CASH"});
-            this.cmbPaymentType.Location = new System.Drawing.Point(121, 156);
-            this.cmbPaymentType.Name = "cmbPaymentType";
-            this.cmbPaymentType.Size = new System.Drawing.Size(200, 21);
-            this.cmbPaymentType.TabIndex = 8;
-            // 
-            // txtChequeNo
-            // 
-            this.txtChequeNo.Location = new System.Drawing.Point(121, 197);
-            this.txtChequeNo.Name = "txtChequeNo";
-            this.txtChequeNo.Size = new System.Drawing.Size(200, 20);
-            this.txtChequeNo.TabIndex = 9;
-            // 
-            // lblStudentID
-            // 
-            this.lblStudentID.AutoSize = true;
-            this.lblStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentID.Location = new System.Drawing.Point(6, 117);
-            this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(69, 16);
-            this.lblStudentID.TabIndex = 10;
-            this.lblStudentID.Text = "Student ID";
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.Location = new System.Drawing.Point(121, 116);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(200, 20);
-            this.txtStudentID.TabIndex = 11;
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.Location = new System.Drawing.Point(121, 73);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(200, 20);
-            this.txtStudentName.TabIndex = 12;
-            // 
-            // txtPaymentNo
-            // 
-            this.txtPaymentNo.Location = new System.Drawing.Point(121, 33);
-            this.txtPaymentNo.Name = "txtPaymentNo";
-            this.txtPaymentNo.Size = new System.Drawing.Size(200, 20);
-            this.txtPaymentNo.TabIndex = 13;
             // 
             // btnPay
             // 
@@ -289,17 +291,17 @@
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label lblPayment;
         private System.Windows.Forms.GroupBox grpPaymentHistory;
-        private System.Windows.Forms.TextBox txtPaymentNo;
-        private System.Windows.Forms.TextBox txtStudentName;
-        private System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.TextBox txtChequeNo;
-        private System.Windows.Forms.ComboBox cmbPaymentType;
-        private System.Windows.Forms.ComboBox cmbPaymentTo;
-        private System.Windows.Forms.DateTimePicker datePaymentDate;
         private System.Windows.Forms.DataGridView dataPaymentHistory;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnPrint;
+        public System.Windows.Forms.TextBox txtPaymentNo;
+        public System.Windows.Forms.TextBox txtStudentName;
+        public System.Windows.Forms.TextBox txtStudentID;
+        public System.Windows.Forms.TextBox txtChequeNo;
+        public System.Windows.Forms.ComboBox cmbPaymentType;
+        public System.Windows.Forms.ComboBox cmbPaymentTo;
+        public System.Windows.Forms.DateTimePicker datePaymentDate;
     }
 }
