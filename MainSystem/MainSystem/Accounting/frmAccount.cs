@@ -34,5 +34,11 @@ namespace MainSystem
             reference.Show();
             this.Hide();
         }
+
+        private void frmAccount_Load(object sender, EventArgs e)
+        {
+            btnAddTransaction.Enabled = !string.IsNullOrWhiteSpace(txtFirstName.Text + txtDepartment.Text + txtGender.Text + txtID.Text + txtLastName.Text +
+                txtSection.Text + txtStatus.Text + txtLevel.Text + txtMiddleName.Text);
+        }
     }
 }
