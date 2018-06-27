@@ -12,6 +12,8 @@ namespace MainSystem
 {
     public partial class frmOrderList : Form
     {
+        public FormInventory reference { get; set; }
+
         public frmOrderList()
         {
             InitializeComponent();
@@ -25,6 +27,12 @@ namespace MainSystem
         private void lbldateReq_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            reference.Show();
+            this.Hide();
         }
     }
 }

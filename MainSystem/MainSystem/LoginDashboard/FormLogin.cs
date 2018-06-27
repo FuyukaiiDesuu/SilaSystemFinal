@@ -17,7 +17,7 @@ namespace MainSystem
         public FormLogin()
         {
             InitializeComponent();
-            dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
+            dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=1234;");
             dbconnect.Open();
         }
         public frmMain frmmain;

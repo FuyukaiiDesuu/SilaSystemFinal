@@ -33,5 +33,23 @@ namespace MainSystem
             reference.Show();
             this.Hide();
         }
+
+        public frmOrderList frmol;
+        private void btnOrderList_Click(object sender, EventArgs e)
+        {
+            frmol = new frmOrderList();
+            frmol.Show();
+            frmol.reference = this;
+            this.Hide();
+        }
+
+        public Stockin_out frmsinout;
+        private void btnStockInOut_Click(object sender, EventArgs e)
+        {
+            frmsinout = new Stockin_out();
+            frmsinout.Show();
+            frmsinout.reference = this;
+            this.Hide();
+        }
     }
 }

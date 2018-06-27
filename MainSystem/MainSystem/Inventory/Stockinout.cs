@@ -12,9 +12,16 @@ namespace MainSystem
 {
     public partial class Stockin_out : Form
     {
+        public FormInventory reference { get; set; }
         public Stockin_out()
         {
             InitializeComponent();
+        }
+
+        private void btnback2_Click(object sender, EventArgs e)
+        {
+            reference.Show();
+            this.Hide();
         }
     }
 }
