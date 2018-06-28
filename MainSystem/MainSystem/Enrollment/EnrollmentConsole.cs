@@ -13,12 +13,16 @@ namespace MainSystem
 {
     public partial class EnrollmentConsole : Form
     {
+        
         public frmMain reference { get; set; }
         public MySqlConnection dbconnect;
         public EnrollmentConsole()
         {
             InitializeComponent();
             loadData();
+            btnCreate.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnView.Enabled = false;
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -30,7 +34,6 @@ namespace MainSystem
         {
 
         }
-
         private void loadData()
         {
             dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
@@ -42,12 +45,19 @@ namespace MainSystem
                 DataSet data = new DataSet();
                 ad.Fill(data);
                 dataGridView1.DataSource = data.Tables[0];
-                dataGridView1.Columns["idSP"].Visible = false;
+                dataGridView1.Columns["idSP"].Visible = true;
                 dataGridView1.Columns["PlaceOfBirth"].Visible = false;
-                dataGridView1.Columns["DateOfBirth"].Visible = true;
+                dataGridView1.Columns["DateOfBirth"].Visible = false;
                 dataGridView1.Columns["Sex"].Visible = false;
                 dataGridView1.Columns["Religion"].Visible = false;
-                dataGridView1.Columns["Nickname"].Visible = false;
+                dataGridView1.Columns["Nickname"].Visible = true;
+
+                dataGridView1.Columns["idSP"].HeaderText = "Student ID No.";
+                dataGridView1.Columns["FirstName"].HeaderText = "First Name";
+                dataGridView1.Columns["LastName"].HeaderText = "Last Name";
+                dataGridView1.Columns["MiddleName"].HeaderText = "Middle Name";
+
+
 
 
             }
@@ -84,8 +94,52 @@ namespace MainSystem
             txtsex.Text = dataGridView1.Rows[e.RowIndex].Cells["Sex"].Value.ToString();
             txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
             txtnn.Text = dataGridView1.Rows[e.RowIndex].Cells["Nickname"].Value.ToString();
+                btnEnable();
 
 
+        }
+        private void btnDisable()
+        {
+            btnCreate.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnView.Enabled = false;
+        }
+        private void btnEnable()
+        {
+            btnCreate.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnView.Enabled = true;
+        }
+        private void textboxClear()
+        {
+            txtfn.Clear();
+            txtln.Clear();
+            txtmi.Clear();
+            txtbd.Clear();
+            txtbp.Clear();
+            txtsex.Clear();
+            txtrel.Clear();
+            txtnn.Clear();
+        }
+
+        private void txtfn_TextChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+        
+
+        private void EnrollmentConsole_MouseClick(object sender, MouseEventArgs e)
+        {
+            dataGridView1.ClearSelection();
+                textboxClear();
+                    btnDisable();
+           
+        }
+      
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

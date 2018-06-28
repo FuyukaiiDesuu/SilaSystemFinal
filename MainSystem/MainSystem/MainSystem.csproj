@@ -50,11 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbConnector.cs" />
-    <Compile Include="Enrollment\AddForm.cs">
+    <Compile Include="Enrollment\addstudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Enrollment\AddForm.Designer.cs">
-      <DependentUpon>AddForm.cs</DependentUpon>
+    <Compile Include="Enrollment\addstudent.Designer.cs">
+      <DependentUpon>addstudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Enrollment\EnrollmentConsole.cs">
       <SubType>Form</SubType>
@@ -94,9 +94,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Enrollment\AddForm.resx">
-      <DependentUpon>AddForm.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="Inventory\frmOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
