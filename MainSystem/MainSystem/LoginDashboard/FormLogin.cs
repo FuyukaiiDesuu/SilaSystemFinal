@@ -13,12 +13,15 @@ namespace MainSystem
 {
     public partial class FormLogin : Form
     {
+        //public MySqlConnection dbconnect;
         public MySqlConnection dbconnect;
         public FormLogin()
         {
             InitializeComponent();
-            dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
-            dbconnect.Open();
+            //dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
+            var dbconnector = new dbConnector();
+            dbconnect = dbconnector.connector();
+            //dbconnect.Open();
         }
         public frmMain frmmain;
         private void label1_Click(object sender, EventArgs e)
