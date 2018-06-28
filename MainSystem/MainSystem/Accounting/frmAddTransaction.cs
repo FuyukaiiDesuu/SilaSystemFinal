@@ -16,5 +16,10 @@ namespace MainSystem
         {
             InitializeComponent();
         }
+
+        private void grpNewPayment_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
