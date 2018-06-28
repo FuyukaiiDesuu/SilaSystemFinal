@@ -16,5 +16,10 @@ namespace MainSystem
         {
             InitializeComponent();
         }
+
+        private void frmAddTransaction_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

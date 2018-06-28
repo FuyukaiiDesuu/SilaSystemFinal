@@ -33,22 +33,26 @@
             // 
             // grpNewPayment
             // 
-            this.grpNewPayment.Location = new System.Drawing.Point(13, 30);
+            this.grpNewPayment.Location = new System.Drawing.Point(17, 37);
+            this.grpNewPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpNewPayment.Name = "grpNewPayment";
-            this.grpNewPayment.Size = new System.Drawing.Size(775, 303);
+            this.grpNewPayment.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpNewPayment.Size = new System.Drawing.Size(1033, 373);
             this.grpNewPayment.TabIndex = 0;
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = "New Payment";
             // 
             // frmAddTransaction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.grpNewPayment);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAddTransaction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Transaction";
+            this.Load += new System.EventHandler(this.frmAddTransaction_Load);
             this.ResumeLayout(false);
 
         }

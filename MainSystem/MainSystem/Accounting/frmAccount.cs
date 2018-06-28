@@ -34,5 +34,10 @@ namespace MainSystem
             reference.Show();
             this.Hide();
         }
+
+        private void frmAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -74,7 +74,7 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(12, 34);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(307, 22);
             this.txtSearch.TabIndex = 1;
@@ -82,7 +82,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(328, 33);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 25);
             this.btnSearch.TabIndex = 3;
@@ -110,9 +110,9 @@
             this.grpStudentDetails.Controls.Add(this.txtID);
             this.grpStudentDetails.Controls.Add(this.lblID);
             this.grpStudentDetails.Location = new System.Drawing.Point(12, 254);
-            this.grpStudentDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpStudentDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpStudentDetails.Name = "grpStudentDetails";
-            this.grpStudentDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpStudentDetails.Padding = new System.Windows.Forms.Padding(4);
             this.grpStudentDetails.Size = new System.Drawing.Size(764, 276);
             this.grpStudentDetails.TabIndex = 4;
             this.grpStudentDetails.TabStop = false;
@@ -121,7 +121,7 @@
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(153, 164);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(239, 22);
             this.txtLastName.TabIndex = 22;
@@ -129,7 +129,7 @@
             // txtMiddleName
             // 
             this.txtMiddleName.Location = new System.Drawing.Point(153, 119);
-            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(239, 22);
             this.txtMiddleName.TabIndex = 21;
@@ -159,7 +159,7 @@
             // txtSection
             // 
             this.txtSection.Location = new System.Drawing.Point(513, 32);
-            this.txtSection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSection.Margin = new System.Windows.Forms.Padding(4);
             this.txtSection.Name = "txtSection";
             this.txtSection.Size = new System.Drawing.Size(239, 22);
             this.txtSection.TabIndex = 18;
@@ -167,7 +167,7 @@
             // txtDepartment
             // 
             this.txtDepartment.Location = new System.Drawing.Point(513, 122);
-            this.txtDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.Size = new System.Drawing.Size(239, 22);
             this.txtDepartment.TabIndex = 17;
@@ -175,7 +175,7 @@
             // txtLevel
             // 
             this.txtLevel.Location = new System.Drawing.Point(513, 76);
-            this.txtLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLevel.Margin = new System.Windows.Forms.Padding(4);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(239, 22);
             this.txtLevel.TabIndex = 16;
@@ -183,7 +183,7 @@
             // txtStatus
             // 
             this.txtStatus.Location = new System.Drawing.Point(513, 167);
-            this.txtStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(239, 22);
             this.txtStatus.TabIndex = 15;
@@ -191,7 +191,7 @@
             // txtGender
             // 
             this.txtGender.Location = new System.Drawing.Point(153, 210);
-            this.txtGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGender.Margin = new System.Windows.Forms.Padding(4);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(239, 22);
             this.txtGender.TabIndex = 14;
@@ -254,7 +254,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(153, 76);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(239, 22);
             this.txtFirstName.TabIndex = 3;
@@ -273,7 +273,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(153, 32);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(239, 22);
             this.txtID.TabIndex = 1;
@@ -294,7 +294,7 @@
             // 
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSearch.Location = new System.Drawing.Point(12, 65);
-            this.dataSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataSearch.Margin = new System.Windows.Forms.Padding(4);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.Size = new System.Drawing.Size(764, 181);
             this.dataSearch.TabIndex = 5;
@@ -303,9 +303,9 @@
             // 
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
             this.grpBalanceDetails.Location = new System.Drawing.Point(784, 34);
-            this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4);
             this.grpBalanceDetails.Size = new System.Drawing.Size(701, 220);
             this.grpBalanceDetails.TabIndex = 6;
             this.grpBalanceDetails.TabStop = false;
@@ -315,7 +315,7 @@
             // 
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataBalanceDetails.Location = new System.Drawing.Point(9, 32);
-            this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.Size = new System.Drawing.Size(684, 181);
             this.dataBalanceDetails.TabIndex = 0;
@@ -324,7 +324,7 @@
             // 
             this.btnAddTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.Location = new System.Drawing.Point(12, 537);
-            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTransaction.Name = "btnAddTransaction";
             this.btnAddTransaction.Size = new System.Drawing.Size(167, 34);
             this.btnAddTransaction.TabIndex = 7;
@@ -336,7 +336,7 @@
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(187, 537);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(167, 34);
             this.btnEdit.TabIndex = 8;
@@ -347,9 +347,9 @@
             // 
             this.grpPaymentHistory.Controls.Add(this.dataPaymentHistory);
             this.grpPaymentHistory.Location = new System.Drawing.Point(784, 254);
-            this.grpPaymentHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpPaymentHistory.Margin = new System.Windows.Forms.Padding(4);
             this.grpPaymentHistory.Name = "grpPaymentHistory";
-            this.grpPaymentHistory.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpPaymentHistory.Padding = new System.Windows.Forms.Padding(4);
             this.grpPaymentHistory.Size = new System.Drawing.Size(701, 276);
             this.grpPaymentHistory.TabIndex = 9;
             this.grpPaymentHistory.TabStop = false;
@@ -359,7 +359,7 @@
             // 
             this.dataPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPaymentHistory.Location = new System.Drawing.Point(9, 23);
-            this.dataPaymentHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataPaymentHistory.Margin = new System.Windows.Forms.Padding(4);
             this.dataPaymentHistory.Name = "dataPaymentHistory";
             this.dataPaymentHistory.Size = new System.Drawing.Size(684, 238);
             this.dataPaymentHistory.TabIndex = 1;
@@ -370,7 +370,7 @@
             this.tabControl.Controls.Add(this.tabBankTransaction);
             this.tabControl.Controls.Add(this.tabDisbursement);
             this.tabControl.Location = new System.Drawing.Point(23, 59);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1545, 613);
@@ -387,9 +387,9 @@
             this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
             this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
-            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4);
             this.tabStudentTransaction.Size = new System.Drawing.Size(1537, 584);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student Transaction";
@@ -398,9 +398,9 @@
             // tabBankTransaction
             // 
             this.tabBankTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tabBankTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabBankTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.tabBankTransaction.Name = "tabBankTransaction";
-            this.tabBankTransaction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabBankTransaction.Padding = new System.Windows.Forms.Padding(4);
             this.tabBankTransaction.Size = new System.Drawing.Size(1537, 584);
             this.tabBankTransaction.TabIndex = 1;
             this.tabBankTransaction.Text = "Bank Transaction";
@@ -409,9 +409,9 @@
             // tabDisbursement
             // 
             this.tabDisbursement.Location = new System.Drawing.Point(4, 25);
-            this.tabDisbursement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDisbursement.Margin = new System.Windows.Forms.Padding(4);
             this.tabDisbursement.Name = "tabDisbursement";
-            this.tabDisbursement.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDisbursement.Padding = new System.Windows.Forms.Padding(4);
             this.tabDisbursement.Size = new System.Drawing.Size(1537, 584);
             this.tabDisbursement.TabIndex = 2;
             this.tabDisbursement.Text = "Disbursement";
@@ -435,10 +435,11 @@
             this.ClientSize = new System.Drawing.Size(1583, 687);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounting Management";
+            this.Load += new System.EventHandler(this.frmAccount_Load);
             this.grpStudentDetails.ResumeLayout(false);
             this.grpStudentDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();

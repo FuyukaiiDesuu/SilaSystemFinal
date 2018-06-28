@@ -19,8 +19,7 @@ namespace MainSystem
         {
             InitializeComponent();
             //dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
-            var dbconnector = new dbConnector();
-            dbconnect = dbconnector.connector();
+            
             //dbconnect.Open();
         }
         public frmMain frmmain;
@@ -42,15 +41,16 @@ namespace MainSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            var dbconnector = new dbConnector();
+            using (dbconnect = dbconnector.connector())
             {
-                
+                dbconnect.Open();
                 MySqlCommand query = new MySqlCommand("SELECT * FROM users WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'", dbconnect);
                 MySqlDataAdapter listener = new MySqlDataAdapter(query);
                 DataTable holder = new DataTable();
                 listener.Fill(holder);
 
-                if(holder.Rows.Count > 0)
+                if (holder.Rows.Count > 0)
                 {
                     uname = holder.Rows[0]["LastName"].ToString() + ", " + holder.Rows[0]["FirstName"].ToString();
                     MessageBox.Show("Succesful Login!");
@@ -64,11 +64,7 @@ namespace MainSystem
                     MessageBox.Show("Wrong Credentials!");
                 }
             }
-            catch(Exception ee)
-            {
-                MessageBox.Show("ERROR: " + ee);
-                dbconnect.Close();
-            }
+           
         }
         Char chr;
         private void button1_KeyPress(object sender, KeyPressEventArgs e)

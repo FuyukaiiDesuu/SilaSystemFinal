@@ -29,7 +29,6 @@ namespace MainSystem
         {
 
         }
-
         private void EnrollmentConsole_Load(object sender, EventArgs e)
         {
 
@@ -100,13 +99,13 @@ namespace MainSystem
         }
         private void btnDisable()
         {
-            btnCreate.Enabled = false;
+            //btnCreate.Enabled = false;
             btnUpdate.Enabled = false;
             btnView.Enabled = false;
         }
         private void btnEnable()
         {
-            btnCreate.Enabled = true;
+            //btnCreate.Enabled = true;
             btnUpdate.Enabled = true;
             btnView.Enabled = true;
         }
@@ -136,9 +135,13 @@ namespace MainSystem
                     btnDisable();
            
         }
-      
+        public addStudent addstudentform;
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            addstudentform = new addStudent();
+            addstudentform.Show();
+            addstudentform.reference = this;
+            this.Hide();
             
         }
     }

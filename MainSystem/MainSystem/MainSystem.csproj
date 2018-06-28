@@ -49,13 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dbConnector.cs" />
-    <Compile Include="Enrollment\addstudent.cs">
+    <Compile Include="Enrollment\addStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Enrollment\addstudent.Designer.cs">
-      <DependentUpon>addstudent.cs</DependentUpon>
+    <Compile Include="Enrollment\addStudent.Designer.cs">
+      <DependentUpon>addStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="dbConnector.cs" />
     <Compile Include="Enrollment\EnrollmentConsole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +106,9 @@
     <Compile Include="Inventory\Stockinout.Designer.cs">
       <DependentUpon>Stockinout.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Enrollment\addStudent.resx">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </EmbeddedResource>
