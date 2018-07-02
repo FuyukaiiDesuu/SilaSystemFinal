@@ -18,23 +18,25 @@ namespace MainSystem
         {
             InitializeComponent();
         }
-        private MySqlConnection connection;
+        public MySqlConnection connection;
         private void addStudent_Load(object sender, EventArgs e)
         {
             var dbconnect = new dbConnector();
             using (connection = dbconnect.connector())
             {
-                connection.Open();
-                using (var command = new MySqlCommand("INSERT INTO studentprofile VALUES(null, @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)"))
+                connection.Open(); 
+                using (var command = new MySqlCommand("INSERT INTO studentprofile VALUES(null, @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", connection))
                 {
                     command.Parameters.AddWithValue("@FirstName", txtfn.Text);
                     command.Parameters.AddWithValue("@LastName", txtln.Text);
                     command.Parameters.AddWithValue("@MiddleName", txtmn.Text);
-                    command.Parameters.AddWithValue("@DatoOfBirth", txtbd.Text);
+                    command.Parameters.AddWithValue("@DateOfBirth", txtbd.Text);
                     command.Parameters.AddWithValue("@PlaceOfBirth", txtbp.Text);
                     command.Parameters.AddWithValue("@Sex", txtsex.Text);
                     command.Parameters.AddWithValue("@Religion", txtrel.Text);
                     command.Parameters.AddWithValue("@Nickname", txtnn.Text);
+
+                    command.ExecuteNonQuery();
 
                 }
             }

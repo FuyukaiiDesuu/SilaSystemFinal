@@ -20,7 +20,7 @@ namespace MainSystem
         {
             InitializeComponent();
             loadData();
-            btnCreate.Enabled = false;
+            //btnCreate.Enabled = false;
             btnUpdate.Enabled = false;
             btnView.Enabled = false;
         }

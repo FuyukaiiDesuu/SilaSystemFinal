@@ -66,7 +66,7 @@ namespace MainSystem
             }
            
         }
-        Char chr;
+        //Char chr;
         private void button1_KeyPress(object sender, KeyPressEventArgs e)
         {
            
