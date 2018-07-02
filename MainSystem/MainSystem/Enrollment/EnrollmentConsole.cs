@@ -15,7 +15,7 @@ namespace MainSystem
     {
         
         public frmMain reference { get; set; }
-        public MySqlConnection dbconnect;
+        public MySqlConnection dbconnection;
         public EnrollmentConsole()
         {
             InitializeComponent();
@@ -35,35 +35,39 @@ namespace MainSystem
         }
         private void loadData()
         {
-            dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
-            dbconnect.Open();
+            var dbconnect = new dbConnector();
             string query = "SELECT * from studentprofile";
-            try
+            using (dbconnection = dbconnect.connector())
             {
-                MySqlDataAdapter ad = new MySqlDataAdapter(query, dbconnect);
+                MySqlDataAdapter ad = new MySqlDataAdapter(query, dbconnection);
                 DataSet data = new DataSet();
                 ad.Fill(data);
                 dataGridView1.DataSource = data.Tables[0];
-                dataGridView1.Columns["idSP"].Visible = true;
-                dataGridView1.Columns["PlaceOfBirth"].Visible = false;
+            
+                dataGridView1.Columns["idstudentprofile"].Visible = true;
+                dataGridView1.Columns["FirstName"].Visible = true;
+                dataGridView1.Columns["LastName"].Visible = true;
+                dataGridView1.Columns["MiddleName"].Visible = true;
                 dataGridView1.Columns["DateOfBirth"].Visible = false;
+                dataGridView1.Columns["PlaceOfBirth"].Visible = false;
                 dataGridView1.Columns["Sex"].Visible = false;
                 dataGridView1.Columns["Religion"].Visible = false;
                 dataGridView1.Columns["Nickname"].Visible = true;
-
-                dataGridView1.Columns["idSP"].HeaderText = "Student ID No.";
+              
+                dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView1.Columns["LastName"].HeaderText = "Last Name";
                 dataGridView1.Columns["MiddleName"].HeaderText = "Middle Name";
 
 
+            }
 
 
-            }
-            catch(Exception ee)
-            {
-                MessageBox.Show("ERROR" + ee);
-            }
+
+
+
+
+
 
         }
 

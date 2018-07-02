@@ -25,7 +25,7 @@ namespace MainSystem
             using (connection = dbconnect.connector())
             {
                 connection.Open(); 
-                using (var command = new MySqlCommand("INSERT INTO studentprofile VALUES(null, @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", connection))
+                using (var command = new MySqlCommand("INSERT INTO studentprofile VALUES(DEFAULT, @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", connection))
                 {
                     command.Parameters.AddWithValue("@FirstName", txtfn.Text);
                     command.Parameters.AddWithValue("@LastName", txtln.Text);
