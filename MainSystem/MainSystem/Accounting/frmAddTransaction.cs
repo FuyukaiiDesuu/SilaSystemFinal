@@ -21,5 +21,30 @@ namespace MainSystem
         {
 
         }
+
+        private void frmAddTransaction_Load(object sender, EventArgs e)
+        {
+            //For Disabling Cheque Textbox if text in Payment to is empty or doesnt match with the word CHEQUE
+            disableTextbox();
+        }
+
+
+        private void cmbPaymentType_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Cheque Textbox if text in Payment to doesnt match with the word CHEQUE
+            if (cmbPaymentType.Text == "CHEQUE")
+            {
+                txtChequeNo.Enabled = true;
+            }
+            else
+            {
+                txtChequeNo.Enabled = false;
+            }
+        }
+
+        private void disableTextbox()
+        {
+            txtChequeNo.Enabled = !string.IsNullOrWhiteSpace(cmbPaymentType.Text);
+        }
     }
 }

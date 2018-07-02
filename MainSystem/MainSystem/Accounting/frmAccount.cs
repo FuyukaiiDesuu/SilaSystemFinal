@@ -75,6 +75,9 @@ namespace MainSystem
 
             //For Searching Student
             searchStudent();
+
+            //For Disabling auto-select in datagrid view 
+            dataSearch.Rows[0].Selected = false;
         }
 
         private void disableAddTransactionButton()
