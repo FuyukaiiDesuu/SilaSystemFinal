@@ -37,8 +37,12 @@ namespace MainSystem
 
         private void btnEmployeeForm_Click(object sender, EventArgs e)
         {
-            
+            frmemp = new frmEmployee();
+            frmemp.Show();
+            frmemp.reference = this;
+            this.Hide();
         }
+        public frmEmployee frmemp;
 
         private void label2_Click(object sender, EventArgs e)
         {

@@ -10,33 +10,32 @@ using System.Windows.Forms;
 
 namespace MainSystem
 {
-    public partial class EnrollmentConsole : Form
+    public partial class frmEmployee : Form
     {
         public frmMain reference { get; set; }
-        public EnrollmentConsole()
+        public frmEmployee()
         {
             InitializeComponent();
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void frmEmployee_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void EnrollmentConsole_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Hide();
+            this.Close();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            frmaddemp = new frmAddEmployee();
+            frmaddemp.ShowDialog();
+            
 
         }
+        public frmAddEmployee frmaddemp;
     }
 }

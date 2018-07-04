@@ -26,12 +26,15 @@ namespace MainSystem
         public void readData()
         {
             //For Reading the Data
-            MySqlConnection conn = connect.connector();
-            string query = "SELECT * FROM students";
-            dt = new DataTable();
-            adapter = new MySqlDataAdapter(query,conn);
-            adapter.Fill(dt);
-            dataSearch.DataSource = dt;
+            using(MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM students";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataSearch.DataSource = dt;
+            }
+               
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace MainSystem
         private void button1_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void frmAccount_Load(object sender, EventArgs e)
@@ -112,25 +115,29 @@ namespace MainSystem
         private void searchStudent()
         {
             //For Searching Student
-            MySqlConnection conn = connect.connector();
-            conn.Open();
-            string query = "SELECT * FROM students";
-            adapter = new MySqlDataAdapter(query, conn);
-            dt = new DataTable();
-            adapter.Fill(dt);
-            dataSearch.DataSource = dt;
+            using (MySqlConnection conn = connect.connector())
+            {
+                conn.Open();
+                string query = "SELECT * FROM students";
+                adapter = new MySqlDataAdapter(query, conn);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                dataSearch.DataSource = dt;
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             //When typing first name data grid automatically search that student
-            MySqlConnection conn = connect.connector();
-            conn.Open();
-            string query = ("SELECT * FROM students WHERE student_firstname LIKE '" + txtSearch.Text + "%'");
-            adapter = new MySqlDataAdapter(query, conn);
-            dt = new DataTable();
-            adapter.Fill(dt);
-            dataSearch.DataSource = dt;
+            using (MySqlConnection conn = connect.connector())
+            {
+                conn.Open();
+                string query = ("SELECT * FROM students WHERE student_firstname LIKE '" + txtSearch.Text + "%'");
+                adapter = new MySqlDataAdapter(query, conn);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                dataSearch.DataSource = dt;
+            }
         }
 
         private void dataSearch_MouseClick(object sender, MouseEventArgs e)
