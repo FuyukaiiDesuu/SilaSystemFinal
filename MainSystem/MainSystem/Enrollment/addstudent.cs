@@ -18,19 +18,30 @@ namespace MainSystem
         {
             InitializeComponent();
         }
-        public MySqlConnection connection;
+        //private dbConnector dbconnect = new dbConnector();
+        public MySqlConnection dbconnection;
         private void addStudent_Load(object sender, EventArgs e)
         {
+
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            reference.Show();
+            this.Close();
+        }
+
+        private void createfunction()
+        {
             var dbconnect = new dbConnector();
-            using (connection = dbconnect.connector())
+            using (dbconnection = dbconnect.connector())
             {
-                connection.Open(); 
-                using (var command = new MySqlCommand("INSERT INTO studentprofile VALUES(DEFAULT, @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", connection))
+                //connection.Open();
+                using (var command = new MySqlCommand("INSERT INTO studentprofile VALUES(DEFAULT, @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", dbconnection))
                 {
                     command.Parameters.AddWithValue("@FirstName", txtfn.Text);
                     command.Parameters.AddWithValue("@LastName", txtln.Text);
                     command.Parameters.AddWithValue("@MiddleName", txtmn.Text);
-                    command.Parameters.AddWithValue("@DateOfBirth", txtbd.Text);
+                    command.Parameters.AddWithValue("@DateOfBirth", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@PlaceOfBirth", txtbp.Text);
                     command.Parameters.AddWithValue("@Sex", txtsex.Text);
                     command.Parameters.AddWithValue("@Religion", txtrel.Text);
@@ -40,19 +51,17 @@ namespace MainSystem
 
                 }
             }
-            
-        }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            reference.Show();
-            this.Hide();
-        }
-
+        
+         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            connection.Close();
+            createfunction();
+            MessageBox.Show("Record Created Successfully!");
+            //connection.Close();
+            reference.Show();
+            reference.loadData();
+            this.Close();
         }
     }
 }

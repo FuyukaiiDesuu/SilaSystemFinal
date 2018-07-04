@@ -15,7 +15,9 @@ namespace MainSystem
     {
         
         public frmMain reference { get; set; }
-        public MySqlConnection dbconnection;
+        //private dbConnector dbconnect = new dbConnector();
+        private MySqlConnection dbconnection;
+        
         public EnrollmentConsole()
         {
             InitializeComponent();
@@ -33,12 +35,13 @@ namespace MainSystem
         {
 
         }
-        private void loadData()
+        public void loadData()
         {
             var dbconnect = new dbConnector();
             string query = "SELECT * from studentprofile";
             using (dbconnection = dbconnect.connector())
             {
+                dbconnection.Open();
                 MySqlDataAdapter ad = new MySqlDataAdapter(query, dbconnection);
                 DataSet data = new DataSet();
                 ad.Fill(data);
@@ -62,19 +65,15 @@ namespace MainSystem
 
             }
 
-
-
-
-
-
-
+            
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Hide();
+            dbconnection.Close();
+            this.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

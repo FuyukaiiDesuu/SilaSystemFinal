@@ -48,6 +48,7 @@ namespace MainSystem
         private void btnLGOUT_Click(object sender, EventArgs e)
         {
             this.Close();
+            reference.clearTxtBoxes();
             reference.Show();
         }
         public FormInventory frminv;

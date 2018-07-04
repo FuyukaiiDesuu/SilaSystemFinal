@@ -14,7 +14,7 @@ namespace MainSystem
     public partial class FormLogin : Form
     {
         //public MySqlConnection dbconnect;
-        public MySqlConnection dbconnect;
+        private MySqlConnection dbconnect;
         public FormLogin()
         {
             InitializeComponent();
@@ -28,6 +28,10 @@ namespace MainSystem
 
         }
 
+        public void clearTxtBoxes()
+        {
+            txtPassword.Clear();
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
