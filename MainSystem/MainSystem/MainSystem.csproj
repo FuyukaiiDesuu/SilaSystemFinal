@@ -58,6 +58,12 @@
     <Compile Include="Enrollment\EnrollmentConsole.Designer.cs">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\frmItemCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\frmItemCreate.Designer.cs">
+      <DependentUpon>frmItemCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginDashboard\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\frmItemCreate.resx">
+      <DependentUpon>frmItemCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +148,7 @@
     <EmbeddedResource Include="Inventory\Stockinout.resx">
       <DependentUpon>Stockinout.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

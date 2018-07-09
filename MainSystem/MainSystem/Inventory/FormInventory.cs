@@ -31,7 +31,7 @@ namespace MainSystem
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Hide();
+            this.Close();
         }
 
         public frmOrderList frmol;
@@ -49,6 +49,15 @@ namespace MainSystem
             frmsinout = new Stockin_out();
             frmsinout.Show();
             frmsinout.reference = this;
+            this.Hide();
+        }
+
+        public frmItemCreate frmic;
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmic = new frmItemCreate();
+            frmic.Show();
+            frmic.reference = this;
             this.Hide();
         }
     }
