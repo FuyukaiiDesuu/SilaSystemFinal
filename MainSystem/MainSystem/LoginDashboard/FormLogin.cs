@@ -30,6 +30,7 @@ namespace MainSystem
 
         public void clearTxtBoxes()
         {
+            txtUsername.Clear();
             txtPassword.Clear();
         }
         private void label2_Click(object sender, EventArgs e)
@@ -49,19 +50,28 @@ namespace MainSystem
             using (dbconnect = dbconnector.connector())
             {
                 dbconnect.Open();
-                MySqlCommand query = new MySqlCommand("SELECT * FROM users WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'", dbconnect);
+                MySqlCommand query = new MySqlCommand("SELECT * from usertable inner join employee on " +
+                    "usertable.idemp = employee.empID " +
+                    "where usertable.username = '"+ txtUsername.Text +"' " +
+                    "and usertable.password = '"+ txtPassword.Text +"';", dbconnect);
                 MySqlDataAdapter listener = new MySqlDataAdapter(query);
                 DataTable holder = new DataTable();
                 listener.Fill(holder);
+               
+                //MessageBox.Show(perm.Substring(0,1));
 
                 if (holder.Rows.Count > 0)
                 {
-                    uname = holder.Rows[0]["LastName"].ToString() + ", " + holder.Rows[0]["FirstName"].ToString();
-                    MessageBox.Show("Succesful Login!");
-                    frmmain = new frmMain(uname);
-                    frmmain.Show();
-                    frmmain.reference = this;
-                    this.Hide();
+                    string perm = holder.Rows[0]["restrictions"].ToString();
+                    string[] split = perm.Split(' ');
+                   
+                        uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                        MessageBox.Show("Succesful Login!");
+                        frmmain = new frmMain(uname, split);
+                        frmmain.Show();
+                        frmmain.reference = this;
+                        this.Hide();
+                  
                 }
                 else
                 {

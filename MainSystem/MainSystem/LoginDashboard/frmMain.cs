@@ -13,11 +13,38 @@ namespace MainSystem
     public partial class frmMain : Form
     {
         public FormLogin reference { get; set; }
-        public frmMain(string uname)
+        public frmMain(string uname, string[] arr)
         {
             InitializeComponent();
             lblusername.Text = uname;
+            disablebuttons();
+            restrictor(arr);
+           
+        }
+        
+        public void disablebuttons()
+        {
+            btnAccountForm.Enabled = false;
+            btnEmployeeForm.Enabled = false;
+            btnInventoryForm.Enabled = false;
+            btnRegistrationForm.Enabled = false;
+            btnUserForm.Enabled = false;
+        }
+        public void enablebuttons()
+        {
+            btnAccountForm.Enabled = true;
+            btnEmployeeForm.Enabled = true;
+            btnInventoryForm.Enabled = true;
+            btnRegistrationForm.Enabled = true;
+            btnUserForm.Enabled = true;
+        }
 
+        public void restrictor(string[] array)
+        {
+           if(array[0] == "1")
+            {
+
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
