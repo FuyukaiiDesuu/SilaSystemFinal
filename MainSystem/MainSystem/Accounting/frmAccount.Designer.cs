@@ -34,16 +34,16 @@
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblMiddleName = new System.Windows.Forms.Label();
-            this.txtSection = new System.Windows.Forms.TextBox();
-            this.txtDepartment = new System.Windows.Forms.TextBox();
-            this.txtLevel = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
-            this.lblSection = new System.Windows.Forms.Label();
-            this.lblLevel = new System.Windows.Forms.Label();
-            this.lblDepartment = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
+            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
+            this.txtReligion = new System.Windows.Forms.TextBox();
+            this.txtPlaceOfBirth = new System.Windows.Forms.TextBox();
+            this.txtNickName = new System.Windows.Forms.TextBox();
+            this.txtSex = new System.Windows.Forms.TextBox();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblPlaceOfBirth = new System.Windows.Forms.Label();
+            this.lblReligion = new System.Windows.Forms.Label();
+            this.lblNickname = new System.Windows.Forms.Label();
+            this.lblSex = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtStudentID = new System.Windows.Forms.TextBox();
@@ -84,16 +84,16 @@
             this.grpStudentDetails.Controls.Add(this.txtMiddleName);
             this.grpStudentDetails.Controls.Add(this.lblLastName);
             this.grpStudentDetails.Controls.Add(this.lblMiddleName);
-            this.grpStudentDetails.Controls.Add(this.txtSection);
-            this.grpStudentDetails.Controls.Add(this.txtDepartment);
-            this.grpStudentDetails.Controls.Add(this.txtLevel);
-            this.grpStudentDetails.Controls.Add(this.txtStatus);
-            this.grpStudentDetails.Controls.Add(this.txtGender);
-            this.grpStudentDetails.Controls.Add(this.lblSection);
-            this.grpStudentDetails.Controls.Add(this.lblLevel);
-            this.grpStudentDetails.Controls.Add(this.lblDepartment);
-            this.grpStudentDetails.Controls.Add(this.lblStatus);
-            this.grpStudentDetails.Controls.Add(this.lblGender);
+            this.grpStudentDetails.Controls.Add(this.txtDateOfBirth);
+            this.grpStudentDetails.Controls.Add(this.txtReligion);
+            this.grpStudentDetails.Controls.Add(this.txtPlaceOfBirth);
+            this.grpStudentDetails.Controls.Add(this.txtNickName);
+            this.grpStudentDetails.Controls.Add(this.txtSex);
+            this.grpStudentDetails.Controls.Add(this.lblDateOfBirth);
+            this.grpStudentDetails.Controls.Add(this.lblPlaceOfBirth);
+            this.grpStudentDetails.Controls.Add(this.lblReligion);
+            this.grpStudentDetails.Controls.Add(this.lblNickname);
+            this.grpStudentDetails.Controls.Add(this.lblSex);
             this.grpStudentDetails.Controls.Add(this.txtFirstName);
             this.grpStudentDetails.Controls.Add(this.lblFirstName);
             this.grpStudentDetails.Controls.Add(this.txtStudentID);
@@ -143,100 +143,100 @@
             this.lblMiddleName.TabIndex = 19;
             this.lblMiddleName.Text = "Middle Name";
             // 
-            // txtSection
+            // txtDateOfBirth
             // 
-            this.txtSection.Location = new System.Drawing.Point(385, 26);
-            this.txtSection.Name = "txtSection";
-            this.txtSection.ReadOnly = true;
-            this.txtSection.Size = new System.Drawing.Size(180, 20);
-            this.txtSection.TabIndex = 18;
-            this.txtSection.TextChanged += new System.EventHandler(this.txtSection_TextChanged);
+            this.txtDateOfBirth.Location = new System.Drawing.Point(385, 26);
+            this.txtDateOfBirth.Name = "txtDateOfBirth";
+            this.txtDateOfBirth.ReadOnly = true;
+            this.txtDateOfBirth.Size = new System.Drawing.Size(180, 20);
+            this.txtDateOfBirth.TabIndex = 18;
+            this.txtDateOfBirth.TextChanged += new System.EventHandler(this.txtSection_TextChanged);
             // 
-            // txtDepartment
+            // txtReligion
             // 
-            this.txtDepartment.Location = new System.Drawing.Point(385, 99);
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.ReadOnly = true;
-            this.txtDepartment.Size = new System.Drawing.Size(180, 20);
-            this.txtDepartment.TabIndex = 17;
-            this.txtDepartment.TextChanged += new System.EventHandler(this.txtDepartment_TextChanged);
+            this.txtReligion.Location = new System.Drawing.Point(385, 99);
+            this.txtReligion.Name = "txtReligion";
+            this.txtReligion.ReadOnly = true;
+            this.txtReligion.Size = new System.Drawing.Size(180, 20);
+            this.txtReligion.TabIndex = 17;
+            this.txtReligion.TextChanged += new System.EventHandler(this.txtDepartment_TextChanged);
             // 
-            // txtLevel
+            // txtPlaceOfBirth
             // 
-            this.txtLevel.Location = new System.Drawing.Point(385, 62);
-            this.txtLevel.Name = "txtLevel";
-            this.txtLevel.ReadOnly = true;
-            this.txtLevel.Size = new System.Drawing.Size(180, 20);
-            this.txtLevel.TabIndex = 16;
-            this.txtLevel.TextChanged += new System.EventHandler(this.txtLevel_TextChanged);
+            this.txtPlaceOfBirth.Location = new System.Drawing.Point(385, 62);
+            this.txtPlaceOfBirth.Name = "txtPlaceOfBirth";
+            this.txtPlaceOfBirth.ReadOnly = true;
+            this.txtPlaceOfBirth.Size = new System.Drawing.Size(180, 20);
+            this.txtPlaceOfBirth.TabIndex = 16;
+            this.txtPlaceOfBirth.TextChanged += new System.EventHandler(this.txtLevel_TextChanged);
             // 
-            // txtStatus
+            // txtNickName
             // 
-            this.txtStatus.Location = new System.Drawing.Point(385, 136);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(180, 20);
-            this.txtStatus.TabIndex = 15;
-            this.txtStatus.TextChanged += new System.EventHandler(this.txtStatus_TextChanged);
+            this.txtNickName.Location = new System.Drawing.Point(385, 136);
+            this.txtNickName.Name = "txtNickName";
+            this.txtNickName.ReadOnly = true;
+            this.txtNickName.Size = new System.Drawing.Size(180, 20);
+            this.txtNickName.TabIndex = 15;
+            this.txtNickName.TextChanged += new System.EventHandler(this.txtStatus_TextChanged);
             // 
-            // txtGender
+            // txtSex
             // 
-            this.txtGender.Location = new System.Drawing.Point(115, 171);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.ReadOnly = true;
-            this.txtGender.Size = new System.Drawing.Size(180, 20);
-            this.txtGender.TabIndex = 14;
-            this.txtGender.TextChanged += new System.EventHandler(this.txtGender_TextChanged);
+            this.txtSex.Location = new System.Drawing.Point(115, 171);
+            this.txtSex.Name = "txtSex";
+            this.txtSex.ReadOnly = true;
+            this.txtSex.Size = new System.Drawing.Size(180, 20);
+            this.txtSex.TabIndex = 14;
+            this.txtSex.TextChanged += new System.EventHandler(this.txtGender_TextChanged);
             // 
-            // lblSection
+            // lblDateOfBirth
             // 
-            this.lblSection.AutoSize = true;
-            this.lblSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSection.Location = new System.Drawing.Point(301, 30);
-            this.lblSection.Name = "lblSection";
-            this.lblSection.Size = new System.Drawing.Size(53, 16);
-            this.lblSection.TabIndex = 13;
-            this.lblSection.Text = "Section";
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Location = new System.Drawing.Point(301, 30);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(80, 16);
+            this.lblDateOfBirth.TabIndex = 13;
+            this.lblDateOfBirth.Text = "Date of Birth";
             // 
-            // lblLevel
+            // lblPlaceOfBirth
             // 
-            this.lblLevel.AutoSize = true;
-            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevel.Location = new System.Drawing.Point(301, 66);
-            this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(41, 16);
-            this.lblLevel.TabIndex = 11;
-            this.lblLevel.Text = "Level";
+            this.lblPlaceOfBirth.AutoSize = true;
+            this.lblPlaceOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaceOfBirth.Location = new System.Drawing.Point(301, 66);
+            this.lblPlaceOfBirth.Name = "lblPlaceOfBirth";
+            this.lblPlaceOfBirth.Size = new System.Drawing.Size(86, 16);
+            this.lblPlaceOfBirth.TabIndex = 11;
+            this.lblPlaceOfBirth.Text = "Place of Birth";
             // 
-            // lblDepartment
+            // lblReligion
             // 
-            this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartment.Location = new System.Drawing.Point(301, 100);
-            this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(78, 16);
-            this.lblDepartment.TabIndex = 9;
-            this.lblDepartment.Text = "Department";
+            this.lblReligion.AutoSize = true;
+            this.lblReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReligion.Location = new System.Drawing.Point(301, 100);
+            this.lblReligion.Name = "lblReligion";
+            this.lblReligion.Size = new System.Drawing.Size(58, 16);
+            this.lblReligion.TabIndex = 9;
+            this.lblReligion.Text = "Religion";
             // 
-            // lblStatus
+            // lblNickname
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(301, 137);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(45, 16);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "Status";
+            this.lblNickname.AutoSize = true;
+            this.lblNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNickname.Location = new System.Drawing.Point(301, 137);
+            this.lblNickname.Name = "lblNickname";
+            this.lblNickname.Size = new System.Drawing.Size(69, 16);
+            this.lblNickname.TabIndex = 6;
+            this.lblNickname.Text = "Nickname";
             // 
-            // lblGender
+            // lblSex
             // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(16, 175);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(53, 16);
-            this.lblGender.TabIndex = 5;
-            this.lblGender.Text = "Gender";
+            this.lblSex.AutoSize = true;
+            this.lblSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSex.Location = new System.Drawing.Point(16, 175);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(31, 16);
+            this.lblSex.TabIndex = 5;
+            this.lblSex.Text = "Sex";
             // 
             // txtFirstName
             // 
@@ -376,7 +376,7 @@
             this.tabBankTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabBankTransaction.Name = "tabBankTransaction";
             this.tabBankTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBankTransaction.Size = new System.Drawing.Size(1151, 472);
+            this.tabBankTransaction.Size = new System.Drawing.Size(1126, 472);
             this.tabBankTransaction.TabIndex = 1;
             this.tabBankTransaction.Text = "Bank Transaction";
             this.tabBankTransaction.UseVisualStyleBackColor = true;
@@ -386,7 +386,7 @@
             this.tabDisbursement.Location = new System.Drawing.Point(4, 22);
             this.tabDisbursement.Name = "tabDisbursement";
             this.tabDisbursement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDisbursement.Size = new System.Drawing.Size(1151, 472);
+            this.tabDisbursement.Size = new System.Drawing.Size(1126, 472);
             this.tabDisbursement.TabIndex = 2;
             this.tabDisbursement.Text = "Disbursement";
             this.tabDisbursement.UseVisualStyleBackColor = true;
@@ -432,11 +432,11 @@
         private System.Windows.Forms.Label lblStudentID;
         private System.Windows.Forms.DataGridView dataSearch;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label lblSection;
-        private System.Windows.Forms.Label lblLevel;
-        private System.Windows.Forms.Label lblDepartment;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblPlaceOfBirth;
+        private System.Windows.Forms.Label lblReligion;
+        private System.Windows.Forms.Label lblNickname;
+        private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.GroupBox grpBalanceDetails;
         private System.Windows.Forms.DataGridView dataBalanceDetails;
         private System.Windows.Forms.Button btnAddTransaction;
@@ -452,11 +452,11 @@
         private System.Windows.Forms.Button btnDashboard;
         public System.Windows.Forms.TextBox txtStudentID;
         public System.Windows.Forms.TextBox txtFirstName;
-        public System.Windows.Forms.TextBox txtSection;
-        public System.Windows.Forms.TextBox txtDepartment;
-        public System.Windows.Forms.TextBox txtLevel;
-        public System.Windows.Forms.TextBox txtStatus;
-        public System.Windows.Forms.TextBox txtGender;
+        public System.Windows.Forms.TextBox txtDateOfBirth;
+        public System.Windows.Forms.TextBox txtReligion;
+        public System.Windows.Forms.TextBox txtPlaceOfBirth;
+        public System.Windows.Forms.TextBox txtNickName;
+        public System.Windows.Forms.TextBox txtSex;
         public System.Windows.Forms.TextBox txtLastName;
         public System.Windows.Forms.TextBox txtMiddleName;
     }

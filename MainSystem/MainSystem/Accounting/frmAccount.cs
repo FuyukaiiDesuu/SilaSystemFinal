@@ -28,7 +28,7 @@ namespace MainSystem
             //For Reading the Data
             using(MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM students";
+                string query = "SELECT * FROM studentprofile";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -49,17 +49,18 @@ namespace MainSystem
             //For passing the value of StudentID and StudentName from frmAccount to frmAddTransaction
             for (int i = 0; i < dataSearch.SelectedRows.Count; i++)
             {
-                addtransaction.txtStudentID.Text = dataSearch.SelectedRows[i].Cells[1].Value.ToString();
-                addtransaction.txtStudentName.Text = dataSearch.SelectedRows[i].Cells[2].Value.ToString()
+                addtransaction.txtStudentID.Text = dataSearch.SelectedRows[i].Cells[0].Value.ToString();
+                addtransaction.txtStudentName.Text = dataSearch.SelectedRows[i].Cells[1].Value.ToString()
                                                    + " "
                                                    + dataSearch.SelectedRows[i].Cells[3].Value.ToString()
                                                    + " "
-                                                   + dataSearch.SelectedRows[i].Cells[4].Value.ToString();
+                                                   + dataSearch.SelectedRows[i].Cells[2].Value.ToString();
                 
             }
             addtransaction.Show();
             addtransaction.reference = this;
             this.Hide();
+            
         }
         
 
@@ -80,9 +81,6 @@ namespace MainSystem
             //For Renaming the Data Table Columns.
             renameDataTableColumns();
 
-            //For Searching Student
-            searchStudent();
-
             //For Disabling auto-select in datagrid view 
             dataSearch.Rows[0].Selected = false;
         }
@@ -94,41 +92,29 @@ namespace MainSystem
                                         !string.IsNullOrWhiteSpace(txtFirstName.Text) &&
                                         !string.IsNullOrWhiteSpace(txtMiddleName.Text) &&
                                         !string.IsNullOrWhiteSpace(txtLastName.Text) &&
-                                        !string.IsNullOrWhiteSpace(txtGender.Text) &&
-                                        !string.IsNullOrWhiteSpace(txtSection.Text) &&
-                                        !string.IsNullOrWhiteSpace(txtLevel.Text) &&
-                                        !string.IsNullOrWhiteSpace(txtDepartment.Text) &&
-                                        !string.IsNullOrWhiteSpace(txtStatus.Text);
+                                        !string.IsNullOrWhiteSpace(txtSex.Text) &&
+                                        !string.IsNullOrWhiteSpace(txtDateOfBirth.Text) &&
+                                        !string.IsNullOrWhiteSpace(txtPlaceOfBirth.Text) &&
+                                        !string.IsNullOrWhiteSpace(txtReligion.Text) &&
+                                        !string.IsNullOrWhiteSpace(txtNickName.Text);
         }
 
         private void renameDataTableColumns()
         {
             //for DataGridView Search
-            dataSearch.Columns["id"].HeaderText = "ID";
-            dataSearch.Columns["student_id_no"].HeaderText = "Student ID No.";
-            dataSearch.Columns["student_firstname"].HeaderText = "First Name";
-            dataSearch.Columns["student_middlename"].HeaderText = "Middle Name";
-            dataSearch.Columns["student_lastname"].HeaderText = "Last Name";
-            dataSearch.Columns["student_gender"].HeaderText = "Gender";
-            dataSearch.Columns["student_section"].HeaderText = "Section";
-            dataSearch.Columns["student_level"].HeaderText = "Level";
-            dataSearch.Columns["student_department"].HeaderText = "Department";
-            dataSearch.Columns["student_status"].HeaderText = "Status";
+            dataSearch.Columns["idstudentprofile"].HeaderText = "ID";
+            dataSearch.Columns["FirstName"].HeaderText = "First Name";
+            dataSearch.Columns["LastName"].HeaderText = "Last Name";
+            dataSearch.Columns["MiddleName"].HeaderText = "Middle Name";
+            dataSearch.Columns["DateOfBirth"].HeaderText = "Date Of Birth";
+            dataSearch.Columns["PlaceOfBirth"].HeaderText = "Place Of Birth";
+            dataSearch.Columns["Sex"].HeaderText = "Sex";
+            dataSearch.Columns["Religion"].HeaderText = "Religion";
+            dataSearch.Columns["NickName"].HeaderText = "Nickname";
+            
         }
 
-        private void searchStudent()
-        {
-            //For Searching Student
-            using (MySqlConnection conn = connect.connector())
-            {
-                conn.Open();
-                string query = "SELECT * FROM students";
-                adapter = new MySqlDataAdapter(query, conn);
-                dt = new DataTable();
-                adapter.Fill(dt);
-                dataSearch.DataSource = dt;
-            }
-        }
+        
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -136,7 +122,7 @@ namespace MainSystem
             using (MySqlConnection conn = connect.connector())
             {
                 conn.Open();
-                string query = ("SELECT * FROM students WHERE student_firstname LIKE '" + txtSearch.Text + "%'");
+                string query = ("SELECT * FROM studentprofile WHERE FirstName LIKE '" + txtSearch.Text + "%'");
                 adapter = new MySqlDataAdapter(query, conn);
                 dt = new DataTable();
                 adapter.Fill(dt);
@@ -149,15 +135,15 @@ namespace MainSystem
             //For when clicking cells textbox are autofilled
             if (dataSearch.Rows.Count > 0)
             {
-                txtStudentID.Text = dataSearch.SelectedRows[0].Cells[1].Value.ToString();
-                txtFirstName.Text = dataSearch.SelectedRows[0].Cells[2].Value.ToString();
+                txtStudentID.Text = dataSearch.SelectedRows[0].Cells[0].Value.ToString();
+                txtFirstName.Text = dataSearch.SelectedRows[0].Cells[1].Value.ToString();
+                txtLastName.Text = dataSearch.SelectedRows[0].Cells[2].Value.ToString();
                 txtMiddleName.Text = dataSearch.SelectedRows[0].Cells[3].Value.ToString();
-                txtLastName.Text = dataSearch.SelectedRows[0].Cells[4].Value.ToString();
-                txtGender.Text = dataSearch.SelectedRows[0].Cells[5].Value.ToString();
-                txtSection.Text = dataSearch.SelectedRows[0].Cells[6].Value.ToString();
-                txtLevel.Text = dataSearch.SelectedRows[0].Cells[7].Value.ToString();
-                txtDepartment.Text = dataSearch.SelectedRows[0].Cells[8].Value.ToString();
-                txtStatus.Text = dataSearch.SelectedRows[0].Cells[9].Value.ToString();
+                txtDateOfBirth.Text = dataSearch.SelectedRows[0].Cells[4].Value.ToString();
+                txtPlaceOfBirth.Text = dataSearch.SelectedRows[0].Cells[5].Value.ToString();
+                txtSex.Text = dataSearch.SelectedRows[0].Cells[6].Value.ToString();
+                txtReligion.Text = dataSearch.SelectedRows[0].Cells[7].Value.ToString();
+                txtNickName.Text = dataSearch.SelectedRows[0].Cells[8].Value.ToString();
             }
         }
 
