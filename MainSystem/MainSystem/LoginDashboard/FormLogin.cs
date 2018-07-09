@@ -42,14 +42,14 @@ namespace MainSystem
             try
             {
                 
-                MySqlCommand query = new MySqlCommand("SELECT * FROM users WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'", dbconnect);
+                MySqlCommand query = new MySqlCommand("SELECT * FROM usertable WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'", dbconnect);
                 MySqlDataAdapter listener = new MySqlDataAdapter(query);
                 DataTable holder = new DataTable();
                 listener.Fill(holder);
 
                 if(holder.Rows.Count > 0)
                 {
-                    uname = holder.Rows[0]["LastName"].ToString() + ", " + holder.Rows[0]["FirstName"].ToString();
+                    //uname = holder.Rows[0]["LastName"].ToString() + ", " + holder.Rows[0]["FirstName"].ToString();
                     MessageBox.Show("Succesful Login!");
                     frmmain = new frmMain(uname);
                     frmmain.Show();

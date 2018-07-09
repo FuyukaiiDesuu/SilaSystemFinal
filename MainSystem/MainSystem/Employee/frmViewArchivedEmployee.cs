@@ -10,21 +10,20 @@ using System.Windows.Forms;
 
 namespace MainSystem
 {
-    public partial class frmAddEmployee : Form
+    public partial class frmViewArchivedEmployee : Form
     {
         public frmEmployee reference { get; set; }
-
-        public frmAddEmployee()
+        public frmViewArchivedEmployee()
         {
             InitializeComponent();
         }
 
-        private void frmAddEmployee_Load(object sender, EventArgs e)
+        private void frmViewArchivedEmployee_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
             this.Close();

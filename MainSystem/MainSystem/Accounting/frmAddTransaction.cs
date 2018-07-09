@@ -12,6 +12,9 @@ namespace MainSystem
 {
     public partial class frmAddTransaction : Form
     {
+        public frmAccount reference { get; set; }
+        
+
         public frmAddTransaction()
         {
             InitializeComponent();
@@ -46,5 +49,17 @@ namespace MainSystem
         {
             txtChequeNo.Enabled = !string.IsNullOrWhiteSpace(cmbPaymentType.Text);
         }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reference.Show();
+            this.Close();
+        }
+        
     }
 }

@@ -42,22 +42,26 @@ namespace MainSystem
             
         }
 
+        public frmAddTransaction addtransaction;
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
-            frmAddTransaction addTransaction = new frmAddTransaction();
+            addtransaction = new frmAddTransaction();
             //For passing the value of StudentID and StudentName from frmAccount to frmAddTransaction
             for (int i = 0; i < dataSearch.SelectedRows.Count; i++)
             {
-                addTransaction.txtStudentID.Text = dataSearch.SelectedRows[i].Cells[1].Value.ToString();
-                addTransaction.txtStudentName.Text = dataSearch.SelectedRows[i].Cells[2].Value.ToString()
+                addtransaction.txtStudentID.Text = dataSearch.SelectedRows[i].Cells[1].Value.ToString();
+                addtransaction.txtStudentName.Text = dataSearch.SelectedRows[i].Cells[2].Value.ToString()
                                                    + " "
                                                    + dataSearch.SelectedRows[i].Cells[3].Value.ToString()
                                                    + " "
                                                    + dataSearch.SelectedRows[i].Cells[4].Value.ToString();
                 
             }
-            addTransaction.ShowDialog();
+            addtransaction.Show();
+            addtransaction.reference = this;
+            this.Hide();
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {

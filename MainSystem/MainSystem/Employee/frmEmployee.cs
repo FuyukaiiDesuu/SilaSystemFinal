@@ -13,6 +13,7 @@ namespace MainSystem
     public partial class frmEmployee : Form
     {
         public frmMain reference { get; set; }
+
         public frmEmployee()
         {
             InitializeComponent();
@@ -32,10 +33,20 @@ namespace MainSystem
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmaddemp = new frmAddEmployee();
-            frmaddemp.ShowDialog();
-            
-
+            frmaddemp.Show();
+            frmaddemp.reference = this;
+            this.Hide();
         }
         public frmAddEmployee frmaddemp;
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            frmviewemp = new frmViewArchivedEmployee();
+            frmviewemp.Show();
+            frmviewemp.reference = this;
+            this.Hide();
+        }
+        public frmViewArchivedEmployee frmviewemp;
+        
     }
 }

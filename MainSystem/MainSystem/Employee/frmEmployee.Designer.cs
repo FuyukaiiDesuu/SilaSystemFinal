@@ -49,14 +49,14 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblBirthDate = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblNationality = new System.Windows.Forms.Label();
+            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.lblCountryofBirth = new System.Windows.Forms.Label();
             this.txtGender = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
-            this.lblCountryofBirth = new System.Windows.Forms.Label();
-            this.txtCountry = new System.Windows.Forms.TextBox();
-            this.lblNationality = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpEmployeeDetails.SuspendLayout();
@@ -258,6 +258,7 @@
             this.btnView.TabIndex = 10;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // grpPersonalDetails
             // 
@@ -276,23 +277,41 @@
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
             // 
-            // textBox1
+            // textBox2
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 5;
+            this.textBox2.Location = new System.Drawing.Point(112, 136);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(180, 20);
+            this.textBox2.TabIndex = 11;
             // 
-            // lblBirthDate
+            // lblNationality
             // 
-            this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthDate.Location = new System.Drawing.Point(22, 30);
-            this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(66, 16);
-            this.lblBirthDate.TabIndex = 4;
-            this.lblBirthDate.Text = "Birth Date";
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationality.Location = new System.Drawing.Point(22, 137);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(71, 16);
+            this.lblNationality.TabIndex = 10;
+            this.lblNationality.Text = "Nationality";
+            // 
+            // txtCountry
+            // 
+            this.txtCountry.Location = new System.Drawing.Point(112, 97);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.ReadOnly = true;
+            this.txtCountry.Size = new System.Drawing.Size(180, 20);
+            this.txtCountry.TabIndex = 9;
+            // 
+            // lblCountryofBirth
+            // 
+            this.lblCountryofBirth.AutoSize = true;
+            this.lblCountryofBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountryofBirth.Location = new System.Drawing.Point(22, 101);
+            this.lblCountryofBirth.Name = "lblCountryofBirth";
+            this.lblCountryofBirth.Size = new System.Drawing.Size(53, 16);
+            this.lblCountryofBirth.TabIndex = 8;
+            this.lblCountryofBirth.Text = "Country";
             // 
             // txtGender
             // 
@@ -312,41 +331,23 @@
             this.lblGender.TabIndex = 6;
             this.lblGender.Text = "Gender";
             // 
-            // lblCountryofBirth
+            // textBox1
             // 
-            this.lblCountryofBirth.AutoSize = true;
-            this.lblCountryofBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountryofBirth.Location = new System.Drawing.Point(22, 101);
-            this.lblCountryofBirth.Name = "lblCountryofBirth";
-            this.lblCountryofBirth.Size = new System.Drawing.Size(53, 16);
-            this.lblCountryofBirth.TabIndex = 8;
-            this.lblCountryofBirth.Text = "Country";
+            this.textBox1.Location = new System.Drawing.Point(112, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(180, 20);
+            this.textBox1.TabIndex = 5;
             // 
-            // txtCountry
+            // lblBirthDate
             // 
-            this.txtCountry.Location = new System.Drawing.Point(112, 97);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.ReadOnly = true;
-            this.txtCountry.Size = new System.Drawing.Size(180, 20);
-            this.txtCountry.TabIndex = 9;
-            // 
-            // lblNationality
-            // 
-            this.lblNationality.AutoSize = true;
-            this.lblNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNationality.Location = new System.Drawing.Point(22, 137);
-            this.lblNationality.Name = "lblNationality";
-            this.lblNationality.Size = new System.Drawing.Size(71, 16);
-            this.lblNationality.TabIndex = 10;
-            this.lblNationality.Text = "Nationality";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(112, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 11;
+            this.lblBirthDate.AutoSize = true;
+            this.lblBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthDate.Location = new System.Drawing.Point(22, 30);
+            this.lblBirthDate.Name = "lblBirthDate";
+            this.lblBirthDate.Size = new System.Drawing.Size(66, 16);
+            this.lblBirthDate.TabIndex = 4;
+            this.lblBirthDate.Text = "Birth Date";
             // 
             // btnDashboard
             // 
