@@ -60,5 +60,10 @@ namespace MainSystem
             frmic.reference = this;
             this.Hide();
         }
+
+        private void lblsodate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

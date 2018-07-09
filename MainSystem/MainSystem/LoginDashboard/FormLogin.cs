@@ -49,9 +49,9 @@ namespace MainSystem
 
                 if(holder.Rows.Count > 0)
                 {
-                    uname = holder.Rows[0]["LastName"].ToString() + ", " + holder.Rows[0]["FirstName"].ToString();
+                    //uname = holder.Rows[0]["LastName"].ToString() + ", " + holder.Rows[0]["FirstName"].ToString();
                     MessageBox.Show("Succesful Login!");
-                    frmmain = new frmMain(uname);
+                    frmmain = new frmMain("admin");
                     frmmain.Show();
                     frmmain.reference = this;
                     this.Hide();
