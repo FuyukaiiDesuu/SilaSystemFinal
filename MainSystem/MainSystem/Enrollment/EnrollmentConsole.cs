@@ -17,7 +17,7 @@ namespace MainSystem
         public frmMain reference { get; set; }
         //private dbConnector dbconnect = new dbConnector();
         private MySqlConnection dbconnection;
-        //public string stid;
+        public string stid;
         
         public EnrollmentConsole()
         {
@@ -35,7 +35,7 @@ namespace MainSystem
         }
         private void EnrollmentConsole_Load(object sender, EventArgs e)
         {
-            fetchID();
+            //fetchID();
         }
         public void loadData()
         {
@@ -73,7 +73,7 @@ namespace MainSystem
         private void fetchID()
         {
             var count = dataGridView1.Rows.Count - 2;
-            string stid = dataGridView1.Rows[count].Cells[0].Value.ToString();
+            stid = dataGridView1.Rows[count].Cells[0].Value.ToString();
             label11.Text = stid;
         }
 
@@ -149,7 +149,8 @@ namespace MainSystem
         public addStudent addstudentform;
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            addstudentform = new addStudent();
+            int count = dataGridView1.Rows.Count;
+            addstudentform = new addStudent(count.ToString());
             addstudentform.Show();
             addstudentform.reference = this;
             this.Hide();

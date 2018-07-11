@@ -14,9 +14,11 @@ namespace MainSystem
     public partial class addStudent : Form
     {
         public EnrollmentConsole reference { get; set; }
-        public addStudent()
+        public string studid;
+        public addStudent(string id)
         {
             InitializeComponent();
+            studid = id;
         }
        
         //private dbConnector dbconnect = new dbConnector();
@@ -24,11 +26,11 @@ namespace MainSystem
         private void addStudent_Load(object sender, EventArgs e)
         {
             createdefault();
+            txtstno.Text = studid;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             reference.Show();
-            reference.
             this.Close();
         }
         private void createdefault()
