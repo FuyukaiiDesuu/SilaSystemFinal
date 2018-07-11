@@ -13,12 +13,13 @@ namespace MainSystem
     public partial class frmMain : Form
     {
         public FormLogin reference { get; set; }
-        public frmMain(string uname, string[] arr)
+        public frmMain(string uname, string perm)
         {
             InitializeComponent();
             lblusername.Text = uname;
             disablebuttons();
-            restrictor(arr);
+            //MessageBox.Show(string.Join("\n", arr));
+            restrictor(perm);
            
         }
         
@@ -38,15 +39,41 @@ namespace MainSystem
             btnRegistrationForm.Enabled = true;
             btnUserForm.Enabled = true;
         }
-
-        public void restrictor(string[] array)
+        
+        public void restrictor(string perm)
         {
-           if(array[0] == "1")
+           
+            var accp = perm.Substring(0, 1);
+            var enrp = perm.Substring(1, 1);
+            var empp = perm.Substring(2, 1);
+            var invp = perm.Substring(3, 1);
+            var usrp = perm.Substring(4, 1);
+            if(accp == "1")
             {
-
+                btnAccountForm.Enabled = true;
+            }
+            if(enrp == "1")
+            {
+                btnRegistrationForm.Enabled = true;
+            }
+            if(empp == "1")
+            {
+                btnEmployeeForm.Enabled = true;
+            }
+            if(invp == "1")
+            {
+                btnInventoryForm.Enabled = true;
+            }
+            if(usrp == "1")
+            {
+                btnInventoryForm.Enabled = true;
+            }
+            if(perm == "11111")
+            {
+                enablebuttons();
             }
         }
-
+        
         private void frmMain_Load(object sender, EventArgs e)
         {
 

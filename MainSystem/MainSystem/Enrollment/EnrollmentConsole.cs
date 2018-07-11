@@ -17,6 +17,7 @@ namespace MainSystem
         public frmMain reference { get; set; }
         //private dbConnector dbconnect = new dbConnector();
         private MySqlConnection dbconnection;
+        //public string stid;
         
         public EnrollmentConsole()
         {
@@ -25,6 +26,7 @@ namespace MainSystem
             //btnCreate.Enabled = false;
             btnUpdate.Enabled = false;
             btnView.Enabled = false;
+            
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace MainSystem
         }
         private void EnrollmentConsole_Load(object sender, EventArgs e)
         {
-
+            fetchID();
         }
         public void loadData()
         {
@@ -61,12 +63,18 @@ namespace MainSystem
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView1.Columns["LastName"].HeaderText = "Last Name";
                 dataGridView1.Columns["MiddleName"].HeaderText = "Middle Name";
-
+               
 
             }
-
+            dbconnection.Close();
             
 
+        }
+        private void fetchID()
+        {
+            var count = dataGridView1.Rows.Count - 2;
+            string stid = dataGridView1.Rows[count].Cells[0].Value.ToString();
+            label11.Text = stid;
         }
 
         private void button1_Click(object sender, EventArgs e)

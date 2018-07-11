@@ -18,16 +18,31 @@ namespace MainSystem
         {
             InitializeComponent();
         }
+       
         //private dbConnector dbconnect = new dbConnector();
         public MySqlConnection dbconnection;
         private void addStudent_Load(object sender, EventArgs e)
         {
-
+            createdefault();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             reference.Show();
+            reference.
             this.Close();
+        }
+        private void createdefault()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                string query = "INSERT INTO studentprofile VALUES();";
+                using (var command = new MySqlCommand(query, dbconnection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         private void createfunction()
@@ -36,7 +51,7 @@ namespace MainSystem
             using (dbconnection = dbconnect.connector())
             {
                 //connection.Open();
-                using (var command = new MySqlCommand("INSERT INTO studentprofile VALUES(DEFAULT, @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", dbconnection))
+                using (var command = new MySqlCommand("UPDATE studentprofile set  @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", dbconnection))
                 {
                     command.Parameters.AddWithValue("@FirstName", txtfn.Text);
                     command.Parameters.AddWithValue("@LastName", txtln.Text);
@@ -61,6 +76,7 @@ namespace MainSystem
             //connection.Close();
             reference.Show();
             reference.loadData();
+            dbconnection.Close();
             this.Close();
         }
     }

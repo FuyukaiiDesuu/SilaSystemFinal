@@ -63,11 +63,11 @@ namespace MainSystem
                 if (holder.Rows.Count > 0)
                 {
                     string perm = holder.Rows[0]["restrictions"].ToString();
-                    string[] split = perm.Split(' ');
+                    //string[] split = perm.Split(' ');
                    
                         uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
                         MessageBox.Show("Succesful Login!");
-                        frmmain = new frmMain(uname, split);
+                        frmmain = new frmMain(uname, perm);
                         frmmain.Show();
                         frmmain.reference = this;
                         this.Hide();
