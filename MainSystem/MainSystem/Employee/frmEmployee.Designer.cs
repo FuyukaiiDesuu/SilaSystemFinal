@@ -45,6 +45,10 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
+            this.txtMaritalStatus = new System.Windows.Forms.TextBox();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.txtBirthPlace = new System.Windows.Forms.TextBox();
+            this.lblBirthPlace = new System.Windows.Forms.Label();
             this.txtReligion = new System.Windows.Forms.TextBox();
             this.lblReligion = new System.Windows.Forms.Label();
             this.txtContactNo = new System.Windows.Forms.TextBox();
@@ -54,11 +58,6 @@
             this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.txtBirthPlace = new System.Windows.Forms.TextBox();
-            this.lblBirthPlace = new System.Windows.Forms.Label();
-            this.txtMaritalStatus = new System.Windows.Forms.TextBox();
-            this.lblMaritalStatus = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
@@ -250,6 +249,44 @@
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
             // 
+            // txtMaritalStatus
+            // 
+            this.txtMaritalStatus.Location = new System.Drawing.Point(112, 220);
+            this.txtMaritalStatus.Name = "txtMaritalStatus";
+            this.txtMaritalStatus.ReadOnly = true;
+            this.txtMaritalStatus.Size = new System.Drawing.Size(180, 20);
+            this.txtMaritalStatus.TabIndex = 15;
+            this.txtMaritalStatus.TabStop = false;
+            // 
+            // lblMaritalStatus
+            // 
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaritalStatus.Location = new System.Drawing.Point(22, 220);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(88, 16);
+            this.lblMaritalStatus.TabIndex = 14;
+            this.lblMaritalStatus.Text = "Marital Status";
+            // 
+            // txtBirthPlace
+            // 
+            this.txtBirthPlace.Location = new System.Drawing.Point(112, 65);
+            this.txtBirthPlace.Name = "txtBirthPlace";
+            this.txtBirthPlace.ReadOnly = true;
+            this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
+            this.txtBirthPlace.TabIndex = 13;
+            this.txtBirthPlace.TabStop = false;
+            // 
+            // lblBirthPlace
+            // 
+            this.lblBirthPlace.AutoSize = true;
+            this.lblBirthPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthPlace.Location = new System.Drawing.Point(22, 69);
+            this.lblBirthPlace.Name = "lblBirthPlace";
+            this.lblBirthPlace.Size = new System.Drawing.Size(72, 16);
+            this.lblBirthPlace.TabIndex = 12;
+            this.lblBirthPlace.Text = "Birth Place";
+            // 
             // txtReligion
             // 
             this.txtReligion.Location = new System.Drawing.Point(112, 180);
@@ -336,63 +373,11 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // txtBirthPlace
-            // 
-            this.txtBirthPlace.Location = new System.Drawing.Point(112, 65);
-            this.txtBirthPlace.Name = "txtBirthPlace";
-            this.txtBirthPlace.ReadOnly = true;
-            this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
-            this.txtBirthPlace.TabIndex = 13;
-            this.txtBirthPlace.TabStop = false;
-            // 
-            // lblBirthPlace
-            // 
-            this.lblBirthPlace.AutoSize = true;
-            this.lblBirthPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthPlace.Location = new System.Drawing.Point(22, 69);
-            this.lblBirthPlace.Name = "lblBirthPlace";
-            this.lblBirthPlace.Size = new System.Drawing.Size(72, 16);
-            this.lblBirthPlace.TabIndex = 12;
-            this.lblBirthPlace.Text = "Birth Place";
-            // 
-            // txtMaritalStatus
-            // 
-            this.txtMaritalStatus.Location = new System.Drawing.Point(112, 220);
-            this.txtMaritalStatus.Name = "txtMaritalStatus";
-            this.txtMaritalStatus.ReadOnly = true;
-            this.txtMaritalStatus.Size = new System.Drawing.Size(180, 20);
-            this.txtMaritalStatus.TabIndex = 15;
-            this.txtMaritalStatus.TabStop = false;
-            // 
-            // lblMaritalStatus
-            // 
-            this.lblMaritalStatus.AutoSize = true;
-            this.lblMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaritalStatus.Location = new System.Drawing.Point(22, 220);
-            this.lblMaritalStatus.Name = "lblMaritalStatus";
-            this.lblMaritalStatus.Size = new System.Drawing.Size(88, 16);
-            this.lblMaritalStatus.TabIndex = 14;
-            this.lblMaritalStatus.Text = "Marital Status";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackgroundImage = global::MainSystem.Properties.Resources.reload_1_;
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(249, 62);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(27, 20);
-            this.btnRefresh.TabIndex = 13;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 571);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.grpPersonalDetails);
             this.Controls.Add(this.btnView);
@@ -447,6 +432,5 @@
         private System.Windows.Forms.Label lblBirthPlace;
         public System.Windows.Forms.TextBox txtMaritalStatus;
         private System.Windows.Forms.Label lblMaritalStatus;
-        private System.Windows.Forms.Button btnRefresh;
     }
 }

@@ -61,6 +61,7 @@ namespace MainSystem
                 conn.Close();
                 this.Close();
                 reference.Show();
+                reference.readData();
             }
             else
             {
@@ -78,6 +79,7 @@ namespace MainSystem
                     MessageBox.Show("Successfully Updated");
                     this.Close();
                     reference.Show();
+                    reference.readData();
                 }
                 catch (Exception)
                 {

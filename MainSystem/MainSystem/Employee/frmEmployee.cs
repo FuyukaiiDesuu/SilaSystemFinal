@@ -60,18 +60,13 @@ namespace MainSystem
             //For Reading the Data
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM employee WHERE status = 0";
+                string query = "SELECT * FROM employee WHERE status = 1";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
                 dataSearch.DataSource = dt;
-
+                dataSearch.Columns["status"].Visible = false;
             }
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            readData();
         }
 
         private void renameDataTableColumns()
@@ -124,7 +119,7 @@ namespace MainSystem
             using (MySqlConnection conn = connect.connector())
             {
                 conn.Open();
-                string query = ("SELECT * FROM employee WHERE first_name LIKE '" + txtSearch.Text + "%'");
+                string query = ("SELECT * FROM employee WHERE first_name LIKE '" + txtSearch.Text + "%' AND status = 1");
                 adapter = new MySqlDataAdapter(query, conn);
                 dt = new DataTable();
                 adapter.Fill(dt);
