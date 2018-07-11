@@ -26,6 +26,12 @@ namespace MainSystem
         {
             readData();
             renameDataTableColumns();
+            disableEditButton();
+
+            //"Status" Row in DataSearch is disabled
+            dataSearch.Rows[0].Selected = false;
+
+            //For Disabling auto-select in datagrid view 
             dataSearch.Rows[0].Selected = false;
         }
 
@@ -92,6 +98,7 @@ namespace MainSystem
 
         private void editData()
         {
+            //Passing Value from DataSearch to Textboxes
             frmaddemp = new frmAddEmployee();
             for (int i = 0; i < dataSearch.SelectedRows.Count; i++)
             {
@@ -144,6 +151,88 @@ namespace MainSystem
                 txtMaritalStatus.Text = dataSearch.SelectedRows[0].Cells[9].Value.ToString();
                 txtStatus.Text = dataSearch.SelectedRows[0].Cells[10].Value.ToString();
             }
+        }
+
+        private void disableEditButton()
+        {
+            //For Disabling Edit Button when all textboxes are empty.
+            btnEdit.Enabled = !string.IsNullOrWhiteSpace(txtEmployeeID.Text) &&
+                              !string.IsNullOrWhiteSpace(txtFirstName.Text) &&
+                              !string.IsNullOrWhiteSpace(txtLastName.Text) &&
+                              !string.IsNullOrWhiteSpace(txtMiddleName.Text) &&
+                              !string.IsNullOrWhiteSpace(txtBirthDate.Text) &&
+                              !string.IsNullOrWhiteSpace(txtBirthPlace.Text) &&
+                              !string.IsNullOrWhiteSpace(txtContactNo.Text) &&
+                              !string.IsNullOrWhiteSpace(txtSex.Text) &&
+                              !string.IsNullOrWhiteSpace(txtReligion.Text) &&
+                              !string.IsNullOrWhiteSpace(txtMaritalStatus.Text) &&
+                              !string.IsNullOrWhiteSpace(txtStatus.Text);
+        }
+
+        private void txtEmployeeID_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtMiddleName_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtStatus_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtBirthDate_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtBirthPlace_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtSex_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtReligion_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
+        }
+
+        private void txtMaritalStatus_TextChanged(object sender, EventArgs e)
+        {
+            //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
+            disableEditButton();
         }
     }
 }

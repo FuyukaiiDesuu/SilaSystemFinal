@@ -25,7 +25,10 @@ namespace MainSystem
         private void frmViewArchivedEmployee_Load(object sender, EventArgs e)
         {
             readData();
+            disableButton();
             renameDataTableColumns();
+            //For Disabling auto-select in datagrid view 
+            dataSearch.Rows[0].Selected = false;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -70,11 +73,73 @@ namespace MainSystem
             using (MySqlConnection conn = connect.connector())
             {
                 conn.Open();
-                string query = ("SELECT * FROM employee WHERE first_name LIKE '" + txtSearch.Text + "%'");
+                string query = ("SELECT * FROM employee WHERE first_name LIKE '" + txtSearch.Text + "%' AND status = 0");
                 adapter = new MySqlDataAdapter(query, conn);
                 dt = new DataTable();
                 adapter.Fill(dt);
                 dataSearch.DataSource = dt;
+            }
+        }
+
+        private void dataSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            //For when clicking cells textbox are autofilled
+            if (dataSearch.Rows.Count > 0)
+            {
+                txtEmployeeID.Text = dataSearch.SelectedRows[0].Cells[0].Value.ToString();
+                txtFirstName.Text = dataSearch.SelectedRows[0].Cells[1].Value.ToString();
+                txtLastName.Text = dataSearch.SelectedRows[0].Cells[2].Value.ToString();
+                txtMiddleName.Text = dataSearch.SelectedRows[0].Cells[3].Value.ToString();
+                txtBirthDate.Text = dataSearch.SelectedRows[0].Cells[4].Value.ToString();
+                txtBirthPlace.Text = dataSearch.SelectedRows[0].Cells[5].Value.ToString();
+                txtContactNo.Text = dataSearch.SelectedRows[0].Cells[6].Value.ToString();
+                txtSex.Text = dataSearch.SelectedRows[0].Cells[7].Value.ToString();
+                txtReligion.Text = dataSearch.SelectedRows[0].Cells[8].Value.ToString();
+                txtMaritalStatus.Text = dataSearch.SelectedRows[0].Cells[9].Value.ToString();
+                cmbStatus.Text = dataSearch.SelectedRows[0].Cells[10].Value.ToString();
+            }
+        }
+
+        private void btnEnable_Click(object sender, EventArgs e)
+        {
+            //Editing Data
+            MySqlConnection conn = connect.connector();
+            String query = "UPDATE employee SET status='" + cmbStatus.Text +
+                "' WHERE empID='" + txtEmployeeID.Text + "'";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                conn.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Successfully Enabled");
+                this.Close();
+                reference.Show();
+                reference.readData();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid");
+            }
+            this.Close();
+            reference.Show();
+        }
+
+        private void disableButton()
+        {
+            //Disabling Button when txtStatus is empty
+            btnEnable.Enabled = !string.IsNullOrWhiteSpace(cmbStatus.Text);
+        }
+
+        private void cmbStatus_TextChanged(object sender, EventArgs e)
+        {
+            //Disabling Enable Button when TxtStatus is not 0
+            if (cmbStatus.Text == "1")
+            {
+                btnEnable.Enabled = true;
+            }
+            else
+            {
+                btnEnable.Enabled = false;
             }
         }
     }

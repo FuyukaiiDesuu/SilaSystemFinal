@@ -108,6 +108,7 @@
             this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
             this.txtMiddleName.TabIndex = 22;
             this.txtMiddleName.TabStop = false;
+            this.txtMiddleName.TextChanged += new System.EventHandler(this.txtMiddleName_TextChanged);
             // 
             // txtFirstName
             // 
@@ -117,6 +118,7 @@
             this.txtFirstName.Size = new System.Drawing.Size(180, 20);
             this.txtFirstName.TabIndex = 21;
             this.txtFirstName.TabStop = false;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // lblMiddleName
             // 
@@ -146,6 +148,7 @@
             this.txtStatus.Size = new System.Drawing.Size(180, 20);
             this.txtStatus.TabIndex = 16;
             this.txtStatus.TabStop = false;
+            this.txtStatus.TextChanged += new System.EventHandler(this.txtStatus_TextChanged);
             // 
             // txtLastName
             // 
@@ -155,6 +158,7 @@
             this.txtLastName.Size = new System.Drawing.Size(180, 20);
             this.txtLastName.TabIndex = 14;
             this.txtLastName.TabStop = false;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // lblStatus
             // 
@@ -184,6 +188,7 @@
             this.txtEmployeeID.Size = new System.Drawing.Size(180, 20);
             this.txtEmployeeID.TabIndex = 0;
             this.txtEmployeeID.TabStop = false;
+            this.txtEmployeeID.TextChanged += new System.EventHandler(this.txtEmployeeID_TextChanged);
             // 
             // lblEmployeeID
             // 
@@ -257,6 +262,7 @@
             this.txtMaritalStatus.Size = new System.Drawing.Size(180, 20);
             this.txtMaritalStatus.TabIndex = 15;
             this.txtMaritalStatus.TabStop = false;
+            this.txtMaritalStatus.TextChanged += new System.EventHandler(this.txtMaritalStatus_TextChanged);
             // 
             // lblMaritalStatus
             // 
@@ -276,6 +282,7 @@
             this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
             this.txtBirthPlace.TabIndex = 13;
             this.txtBirthPlace.TabStop = false;
+            this.txtBirthPlace.TextChanged += new System.EventHandler(this.txtBirthPlace_TextChanged);
             // 
             // lblBirthPlace
             // 
@@ -295,6 +302,7 @@
             this.txtReligion.Size = new System.Drawing.Size(180, 20);
             this.txtReligion.TabIndex = 11;
             this.txtReligion.TabStop = false;
+            this.txtReligion.TextChanged += new System.EventHandler(this.txtReligion_TextChanged);
             // 
             // lblReligion
             // 
@@ -314,6 +322,7 @@
             this.txtContactNo.Size = new System.Drawing.Size(180, 20);
             this.txtContactNo.TabIndex = 9;
             this.txtContactNo.TabStop = false;
+            this.txtContactNo.TextChanged += new System.EventHandler(this.txtContactNo_TextChanged);
             // 
             // lblContactNo
             // 
@@ -333,6 +342,7 @@
             this.txtSex.Size = new System.Drawing.Size(180, 20);
             this.txtSex.TabIndex = 7;
             this.txtSex.TabStop = false;
+            this.txtSex.TextChanged += new System.EventHandler(this.txtSex_TextChanged);
             // 
             // lblSex
             // 
@@ -352,6 +362,7 @@
             this.txtBirthDate.Size = new System.Drawing.Size(180, 20);
             this.txtBirthDate.TabIndex = 5;
             this.txtBirthDate.TabStop = false;
+            this.txtBirthDate.TextChanged += new System.EventHandler(this.txtBirthDate_TextChanged);
             // 
             // lblBirthDate
             // 

@@ -49,12 +49,13 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
+            this.btnEnable = new System.Windows.Forms.Button();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpPersonalDetails.SuspendLayout();
             this.grpEmployeeDetails.SuspendLayout();
@@ -68,6 +69,7 @@
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataSearch.Size = new System.Drawing.Size(640, 165);
             this.dataSearch.TabIndex = 8;
+            this.dataSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataSearch_MouseClick);
             // 
             // txtSearch
             // 
@@ -224,11 +226,11 @@
             // 
             // grpEmployeeDetails
             // 
+            this.grpEmployeeDetails.Controls.Add(this.cmbStatus);
             this.grpEmployeeDetails.Controls.Add(this.txtMiddleName);
             this.grpEmployeeDetails.Controls.Add(this.txtFirstName);
             this.grpEmployeeDetails.Controls.Add(this.lblMiddleName);
             this.grpEmployeeDetails.Controls.Add(this.lblFirstName);
-            this.grpEmployeeDetails.Controls.Add(this.txtStatus);
             this.grpEmployeeDetails.Controls.Add(this.txtLastName);
             this.grpEmployeeDetails.Controls.Add(this.lblStatus);
             this.grpEmployeeDetails.Controls.Add(this.lblLastName);
@@ -279,15 +281,6 @@
             this.lblFirstName.TabIndex = 19;
             this.lblFirstName.Text = "First Name";
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(115, 180);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(180, 20);
-            this.txtStatus.TabIndex = 16;
-            this.txtStatus.TabStop = false;
-            // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(115, 139);
@@ -336,11 +329,37 @@
             this.lblEmployeeID.TabIndex = 0;
             this.lblEmployeeID.Text = "ID";
             // 
+            // btnEnable
+            // 
+            this.btnEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnable.Location = new System.Drawing.Point(12, 540);
+            this.btnEnable.Name = "btnEnable";
+            this.btnEnable.Size = new System.Drawing.Size(89, 28);
+            this.btnEnable.TabIndex = 16;
+            this.btnEnable.Text = "Enable";
+            this.btnEnable.UseVisualStyleBackColor = true;
+            this.btnEnable.Click += new System.EventHandler(this.btnEnable_Click);
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "",
+            "0",
+            "1"});
+            this.cmbStatus.Location = new System.Drawing.Point(115, 180);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(180, 21);
+            this.cmbStatus.TabIndex = 23;
+            this.cmbStatus.TextChanged += new System.EventHandler(this.cmbStatus_TextChanged);
+            // 
             // frmViewArchivedEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 543);
+            this.ClientSize = new System.Drawing.Size(661, 578);
+            this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.grpPersonalDetails);
             this.Controls.Add(this.grpEmployeeDetails);
             this.Controls.Add(this.btnDashboard);
@@ -383,11 +402,12 @@
         public System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblMiddleName;
         private System.Windows.Forms.Label lblFirstName;
-        public System.Windows.Forms.TextBox txtStatus;
         public System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblLastName;
         public System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label lblEmployeeID;
+        private System.Windows.Forms.Button btnEnable;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }
