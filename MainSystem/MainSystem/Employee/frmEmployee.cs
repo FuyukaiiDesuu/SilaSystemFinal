@@ -60,11 +60,12 @@ namespace MainSystem
             //For Reading the Data
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM employee";
+                string query = "SELECT * FROM employee WHERE status = 0";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
                 dataSearch.DataSource = dt;
+
             }
         }
 
