@@ -23,7 +23,7 @@ namespace MainSystem
 
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
-
+            defaultValue();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -39,6 +39,56 @@ namespace MainSystem
 
         public void insertData()
         {
+            if(txtEmployeeID.Text == "")
+            {
+                MySqlConnection conn = connect.connector();
+                String query = "UPDATE employee SET first_name='" + txtFirstName.Text + "',last_name='" + txtLastName.Text + "',middle_name='" + txtMiddleName.Text +
+                    "',birth_date='" + dateBirthDate.Text + "',birth_place='" + txtBirthPlace.Text + "',contactNo='" + txtContactNo.Text + "',sex='" + cmbSex.Text +
+                    "',religion='" + txtReligion.Text + "',marital_status='" + txtMaritalStatus.Text + "',status='" + cmbStatus.Text +
+                    "' WHERE empID='" + reference.dataSearch.Rows.Count + "'";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Inserted");
+                    this.Close();
+                    reference.Show();
+                    reference.readData();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid");
+                }
+                this.Close();
+                reference.Show();
+            }
+            else
+            {
+                MySqlConnection conn = connect.connector();
+                String query = "UPDATE employee SET first_name='" + txtFirstName.Text + "',last_name='" + txtLastName.Text + "',middle_name='" + txtMiddleName.Text +
+                    "',birth_date='" + dateBirthDate.Text + "',birth_place='" + txtBirthPlace.Text + "',contactNo='" + txtContactNo.Text + "',sex='" + cmbSex.Text +
+                    "',religion='" + txtReligion.Text + "',marital_status='" + txtMaritalStatus.Text + "',status='" + cmbStatus.Text +
+                    "' WHERE empID='" + reference.dataSearch.Rows.Count.ToString() + "'";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Updated");
+                    this.Close();
+                    reference.Show();
+                    reference.readData();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid");
+                }
+                this.Close();
+                reference.Show();
+            }
+            
+            /*
             //Inserting Data
             if (txtEmployeeID.Text == "")
             {
@@ -88,7 +138,20 @@ namespace MainSystem
                 this.Close();
                 reference.Show();
             }
+            */
+        }
 
+        private void defaultValue()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                conn.Open();
+                string query = "INSERT INTO employee VALUES();";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

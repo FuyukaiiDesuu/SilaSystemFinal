@@ -403,7 +403,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataSearch;
         private System.Windows.Forms.GroupBox grpEmployeeDetails;
         public System.Windows.Forms.TextBox txtMiddleName;
         public System.Windows.Forms.TextBox txtFirstName;
@@ -432,5 +431,6 @@
         private System.Windows.Forms.Label lblBirthPlace;
         public System.Windows.Forms.TextBox txtMaritalStatus;
         private System.Windows.Forms.Label lblMaritalStatus;
+        public System.Windows.Forms.DataGridView dataSearch;
     }
 }
