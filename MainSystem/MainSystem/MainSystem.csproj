@@ -59,11 +59,11 @@
     <Compile Include="Enrollment\EnrollmentConsole.Designer.cs">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory\frmItemCreate.cs">
+    <Compile Include="Inventory\frmitemmangement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventory\frmItemCreate.Designer.cs">
-      <DependentUpon>frmItemCreate.cs</DependentUpon>
+    <Compile Include="Inventory\frmitemmangement.Designer.cs">
+      <DependentUpon>frmitemmangement.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginDashboard\FormLogin.cs">
       <SubType>Form</SubType>
@@ -115,8 +115,8 @@
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory\frmItemCreate.resx">
-      <DependentUpon>frmItemCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Inventory\frmitemmangement.resx">
+      <DependentUpon>frmitemmangement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

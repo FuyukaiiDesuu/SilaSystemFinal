@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace MainSystem
@@ -18,7 +19,9 @@ namespace MainSystem
         {
             InitializeComponent();
         }
-
+        /*dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;*/
         private void lblDate2_Click(object sender, EventArgs e)
         {
 
@@ -33,6 +36,27 @@ namespace MainSystem
         {
             reference.Show();
             this.Hide();
+        }
+       /* public void readData()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM oder_list";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }*/
+
+        private void btnAdd2_Click(object sender, EventArgs e)
+        {
+            //readData();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

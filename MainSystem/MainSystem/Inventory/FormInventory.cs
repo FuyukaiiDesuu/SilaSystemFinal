@@ -52,10 +52,10 @@ namespace MainSystem
             this.Hide();
         }
 
-        public frmItemCreate frmic;
+        public frmitemmanagement frmic;
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmic = new frmItemCreate();
+            frmic = new frmitemmanagement();
             frmic.Show();
             frmic.reference = this;
             this.Hide();

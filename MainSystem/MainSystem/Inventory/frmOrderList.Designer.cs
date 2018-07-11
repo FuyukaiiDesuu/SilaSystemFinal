@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gboxitemdetails2 = new System.Windows.Forms.GroupBox();
+            this.btnback = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd2 = new System.Windows.Forms.Button();
             this.txtquantity2 = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.lblDate2 = new System.Windows.Forms.Label();
             this.lblItemName2 = new System.Windows.Forms.Label();
             this.lblOrderList = new System.Windows.Forms.Label();
-            this.btnback = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gboxitemdetails2.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +51,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(362, 80);
+            this.dataGridView1.Location = new System.Drawing.Point(290, 48);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 330);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 177);
             this.dataGridView1.TabIndex = 0;
             // 
             // gboxitemdetails2
@@ -71,12 +71,22 @@
             this.gboxitemdetails2.Controls.Add(this.lbldateReq);
             this.gboxitemdetails2.Controls.Add(this.lblDate2);
             this.gboxitemdetails2.Controls.Add(this.lblItemName2);
-            this.gboxitemdetails2.Location = new System.Drawing.Point(12, 80);
+            this.gboxitemdetails2.Location = new System.Drawing.Point(12, 12);
             this.gboxitemdetails2.Name = "gboxitemdetails2";
-            this.gboxitemdetails2.Size = new System.Drawing.Size(334, 341);
+            this.gboxitemdetails2.Size = new System.Drawing.Size(272, 213);
             this.gboxitemdetails2.TabIndex = 1;
             this.gboxitemdetails2.TabStop = false;
             this.gboxitemdetails2.Text = "Item Details";
+            // 
+            // btnback
+            // 
+            this.btnback.Location = new System.Drawing.Point(181, 178);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(75, 23);
+            this.btnback.TabIndex = 12;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = true;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // btnRemove
             // 
@@ -86,6 +96,7 @@
             this.btnRemove.TabIndex = 11;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd2
             // 
@@ -95,17 +106,18 @@
             this.btnAdd2.TabIndex = 10;
             this.btnAdd2.Text = "Add";
             this.btnAdd2.UseVisualStyleBackColor = true;
+            this.btnAdd2.Click += new System.EventHandler(this.btnAdd2_Click);
             // 
             // txtquantity2
             // 
-            this.txtquantity2.Location = new System.Drawing.Point(61, 137);
+            this.txtquantity2.Location = new System.Drawing.Point(91, 137);
             this.txtquantity2.Name = "txtquantity2";
             this.txtquantity2.Size = new System.Drawing.Size(100, 20);
             this.txtquantity2.TabIndex = 9;
             // 
             // txtvendor
             // 
-            this.txtvendor.Location = new System.Drawing.Point(56, 111);
+            this.txtvendor.Location = new System.Drawing.Point(91, 112);
             this.txtvendor.Name = "txtvendor";
             this.txtvendor.Size = new System.Drawing.Size(100, 20);
             this.txtvendor.TabIndex = 8;
@@ -119,14 +131,14 @@
             // 
             // txtdate2
             // 
-            this.txtdate2.Location = new System.Drawing.Point(45, 60);
+            this.txtdate2.Location = new System.Drawing.Point(91, 59);
             this.txtdate2.Name = "txtdate2";
             this.txtdate2.Size = new System.Drawing.Size(100, 20);
             this.txtdate2.TabIndex = 6;
             // 
             // txtitemname2
             // 
-            this.txtitemname2.Location = new System.Drawing.Point(73, 31);
+            this.txtitemname2.Location = new System.Drawing.Point(91, 31);
             this.txtitemname2.Name = "txtitemname2";
             this.txtitemname2.Size = new System.Drawing.Size(100, 20);
             this.txtitemname2.TabIndex = 5;
@@ -182,27 +194,17 @@
             // 
             this.lblOrderList.AutoSize = true;
             this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderList.Location = new System.Drawing.Point(370, 53);
+            this.lblOrderList.Location = new System.Drawing.Point(290, 21);
             this.lblOrderList.Name = "lblOrderList";
             this.lblOrderList.Size = new System.Drawing.Size(101, 24);
             this.lblOrderList.TabIndex = 2;
             this.lblOrderList.Text = "Order List";
             // 
-            // btnback
-            // 
-            this.btnback.Location = new System.Drawing.Point(181, 178);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(75, 23);
-            this.btnback.TabIndex = 12;
-            this.btnback.Text = "Back";
-            this.btnback.UseVisualStyleBackColor = true;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
             // frmOrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 450);
+            this.ClientSize = new System.Drawing.Size(1049, 241);
             this.Controls.Add(this.lblOrderList);
             this.Controls.Add(this.gboxitemdetails2);
             this.Controls.Add(this.dataGridView1);
