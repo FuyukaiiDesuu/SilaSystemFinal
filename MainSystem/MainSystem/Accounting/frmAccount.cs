@@ -200,5 +200,23 @@ namespace MainSystem
             //For Disabling Transaction Button when all textboxes are empty except the Search Texbox.
             disableAddTransactionButton();
         }
+
+        private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Disable editing value in datagrid view
+            dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
+
+        private void dataBalanceDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Disable editing value in datagrid view
+            dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
+
+        private void dataPaymentHistory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Disable editing value in datagrid view
+            dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
     }
 }

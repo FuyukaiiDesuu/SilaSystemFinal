@@ -234,5 +234,11 @@ namespace MainSystem
             //For Disabling Edit Button when all textboxes are empty except the Search Texbox.
             disableEditButton();
         }
+
+        private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Disable editing value in datagrid view
+            dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
     }
 }

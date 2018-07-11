@@ -142,5 +142,11 @@ namespace MainSystem
                 btnEnable.Enabled = false;
             }
         }
+
+        private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Disable editing value in datagrid view
+            dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
     }
 }

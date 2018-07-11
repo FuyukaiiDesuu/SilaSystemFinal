@@ -284,6 +284,7 @@
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataSearch.Size = new System.Drawing.Size(573, 147);
             this.dataSearch.TabIndex = 5;
+            this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             this.dataSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataSearch_MouseClick);
             // 
             // grpBalanceDetails
@@ -303,6 +304,7 @@
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.Size = new System.Drawing.Size(513, 148);
             this.dataBalanceDetails.TabIndex = 0;
+            this.dataBalanceDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellClick);
             // 
             // btnAddTransaction
             // 
@@ -342,6 +344,7 @@
             this.dataPaymentHistory.Name = "dataPaymentHistory";
             this.dataPaymentHistory.Size = new System.Drawing.Size(513, 193);
             this.dataPaymentHistory.TabIndex = 1;
+            this.dataPaymentHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPaymentHistory_CellClick);
             // 
             // tabControl
             // 

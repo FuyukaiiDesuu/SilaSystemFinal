@@ -79,6 +79,7 @@
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataSearch.Size = new System.Drawing.Size(640, 165);
             this.dataSearch.TabIndex = 6;
+            this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             this.dataSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataSearch_MouseClick);
             // 
             // grpEmployeeDetails
