@@ -23,18 +23,21 @@ namespace MainSystem
 
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
-            
+            //enableButton();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
             this.Close();
+            reference.dataSearch.Rows[0].Selected = false;
+            reference.clearText();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             insertData();
+            reference.clearText();
         }
 
         public void insertData()
@@ -70,6 +73,7 @@ namespace MainSystem
                 this.Close();
                 reference.Show();
                 reference.readData();
+                reference.dataSearch.Rows[0].Selected = false;
             }
             else
             {
@@ -102,6 +106,7 @@ namespace MainSystem
                 }
                 this.Close();
                 reference.Show();
+                reference.dataSearch.Rows[0].Selected = false;
             }
             //FOR WHEN USING DEFAULTVALUE
             /*using (MySqlConnection conn = connect.connector())
@@ -150,6 +155,27 @@ namespace MainSystem
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        private void enableButton()
+        {
+            btnSave.Enabled =
+                   !string.IsNullOrWhiteSpace(txtFirstName.Text) &&
+                   !string.IsNullOrWhiteSpace(txtLastName.Text) &&
+                   !string.IsNullOrWhiteSpace(txtMiddleName.Text) &&
+                   !string.IsNullOrWhiteSpace(dateBirthDate.Text) &&
+                   !string.IsNullOrWhiteSpace(txtBirthPlace.Text) &&
+                   !string.IsNullOrWhiteSpace(txtContactNo.Text) &&
+                   !string.IsNullOrWhiteSpace(cmbSex.Text) &&
+                   !string.IsNullOrWhiteSpace(txtReligion.Text) &&
+                   !string.IsNullOrWhiteSpace(txtMaritalStatus.Text) &&
+                   !string.IsNullOrWhiteSpace(cmbStatus.Text);
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            //enableButton();
         }
     }
 }

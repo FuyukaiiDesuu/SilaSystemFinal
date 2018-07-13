@@ -122,6 +122,7 @@ namespace MainSystem
             }
             this.Close();
             reference.Show();
+            reference.dataSearch.Rows[0].Selected = false;
         }
 
         private void disableButton()

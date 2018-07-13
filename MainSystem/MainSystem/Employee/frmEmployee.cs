@@ -58,6 +58,7 @@ namespace MainSystem
             frmviewemp.reference = this;
             this.Hide();
             readData();
+            dataSearch.Rows[0].Selected = false;
         }
         public frmViewArchivedEmployee frmviewemp;
         
@@ -118,6 +119,7 @@ namespace MainSystem
             frmaddemp.reference = this;
             this.Hide();
             readData();
+            dataSearch.Rows[0].Selected = false;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -239,6 +241,21 @@ namespace MainSystem
         {
             //Disable editing value in datagrid view
             dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
+
+        public void clearText()
+        {
+            txtEmployeeID.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtMiddleName.Text = "";
+            txtBirthDate.Text = "";
+            txtBirthPlace.Text = "";
+            txtContactNo.Text = "";
+            txtSex.Text = "";
+            txtReligion.Text = "";
+            txtMaritalStatus.Text = "";
+            txtStatus.Text = "";
         }
     }
 }

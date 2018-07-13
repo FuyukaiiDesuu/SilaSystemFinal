@@ -40,6 +40,10 @@
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
+            this.txtContactNo = new System.Windows.Forms.TextBox();
+            this.lblContactNo = new System.Windows.Forms.Label();
+            this.txtBirthPlace = new System.Windows.Forms.TextBox();
+            this.lblBirthPlace = new System.Windows.Forms.Label();
             this.cmbSex = new System.Windows.Forms.ComboBox();
             this.dateBirthDate = new System.Windows.Forms.DateTimePicker();
             this.txtMaritalStatus = new System.Windows.Forms.TextBox();
@@ -50,10 +54,6 @@
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtBirthPlace = new System.Windows.Forms.TextBox();
-            this.lblBirthPlace = new System.Windows.Forms.Label();
-            this.txtContactNo = new System.Windows.Forms.TextBox();
-            this.lblContactNo = new System.Windows.Forms.Label();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +103,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(180, 20);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // lblMiddleName
             // 
@@ -190,6 +191,40 @@
             this.grpPersonalDetails.TabIndex = 12;
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
+            // 
+            // txtContactNo
+            // 
+            this.txtContactNo.Location = new System.Drawing.Point(112, 97);
+            this.txtContactNo.Name = "txtContactNo";
+            this.txtContactNo.Size = new System.Drawing.Size(180, 20);
+            this.txtContactNo.TabIndex = 7;
+            // 
+            // lblContactNo
+            // 
+            this.lblContactNo.AutoSize = true;
+            this.lblContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNo.Location = new System.Drawing.Point(22, 101);
+            this.lblContactNo.Name = "lblContactNo";
+            this.lblContactNo.Size = new System.Drawing.Size(74, 16);
+            this.lblContactNo.TabIndex = 27;
+            this.lblContactNo.Text = "Contact No";
+            // 
+            // txtBirthPlace
+            // 
+            this.txtBirthPlace.Location = new System.Drawing.Point(112, 62);
+            this.txtBirthPlace.Name = "txtBirthPlace";
+            this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
+            this.txtBirthPlace.TabIndex = 6;
+            // 
+            // lblBirthPlace
+            // 
+            this.lblBirthPlace.AutoSize = true;
+            this.lblBirthPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthPlace.Location = new System.Drawing.Point(22, 66);
+            this.lblBirthPlace.Name = "lblBirthPlace";
+            this.lblBirthPlace.Size = new System.Drawing.Size(72, 16);
+            this.lblBirthPlace.TabIndex = 25;
+            this.lblBirthPlace.Text = "Birth Place";
             // 
             // cmbSex
             // 
@@ -288,40 +323,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // txtBirthPlace
-            // 
-            this.txtBirthPlace.Location = new System.Drawing.Point(112, 62);
-            this.txtBirthPlace.Name = "txtBirthPlace";
-            this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
-            this.txtBirthPlace.TabIndex = 6;
-            // 
-            // lblBirthPlace
-            // 
-            this.lblBirthPlace.AutoSize = true;
-            this.lblBirthPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthPlace.Location = new System.Drawing.Point(22, 66);
-            this.lblBirthPlace.Name = "lblBirthPlace";
-            this.lblBirthPlace.Size = new System.Drawing.Size(72, 16);
-            this.lblBirthPlace.TabIndex = 25;
-            this.lblBirthPlace.Text = "Birth Place";
-            // 
-            // txtContactNo
-            // 
-            this.txtContactNo.Location = new System.Drawing.Point(112, 97);
-            this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(180, 20);
-            this.txtContactNo.TabIndex = 7;
-            // 
-            // lblContactNo
-            // 
-            this.lblContactNo.AutoSize = true;
-            this.lblContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.Location = new System.Drawing.Point(22, 101);
-            this.lblContactNo.Name = "lblContactNo";
-            this.lblContactNo.Size = new System.Drawing.Size(74, 16);
-            this.lblContactNo.TabIndex = 27;
-            this.lblContactNo.Text = "Contact No";
             // 
             // frmAddEmployee
             // 
