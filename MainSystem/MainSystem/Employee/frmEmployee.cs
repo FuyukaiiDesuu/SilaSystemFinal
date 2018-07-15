@@ -100,27 +100,28 @@ namespace MainSystem
         private void editData()
         {
             //Passing Value from DataSearch to Textboxes
-            frmaddemp = new frmAddEmployee();
+            frmeditemp = new frmEditEmployee();
             for (int i = 0; i < dataSearch.SelectedRows.Count; i++)
             {
-                frmaddemp.txtEmployeeID.Text = dataSearch.SelectedRows[i].Cells[0].Value.ToString();
-                frmaddemp.txtFirstName.Text = dataSearch.SelectedRows[i].Cells[1].Value.ToString();
-                frmaddemp.txtLastName.Text = dataSearch.SelectedRows[i].Cells[2].Value.ToString();
-                frmaddemp.txtMiddleName.Text = dataSearch.SelectedRows[i].Cells[3].Value.ToString();
-                frmaddemp.dateBirthDate.Text = dataSearch.SelectedRows[i].Cells[4].Value.ToString();
-                frmaddemp.txtBirthPlace.Text = dataSearch.SelectedRows[i].Cells[5].Value.ToString();
-                frmaddemp.txtContactNo.Text = dataSearch.SelectedRows[i].Cells[6].Value.ToString();
-                frmaddemp.cmbSex.Text = dataSearch.SelectedRows[i].Cells[7].Value.ToString();
-                frmaddemp.txtReligion.Text = dataSearch.SelectedRows[i].Cells[8].Value.ToString();
-                frmaddemp.txtMaritalStatus.Text = dataSearch.SelectedRows[i].Cells[9].Value.ToString();
-                frmaddemp.cmbStatus.Text = dataSearch.SelectedRows[i].Cells[10].Value.ToString();
+                frmeditemp.txtEmployeeID.Text = dataSearch.SelectedRows[i].Cells[0].Value.ToString();
+                frmeditemp.txtFirstName.Text = dataSearch.SelectedRows[i].Cells[1].Value.ToString();
+                frmeditemp.txtLastName.Text = dataSearch.SelectedRows[i].Cells[2].Value.ToString();
+                frmeditemp.txtMiddleName.Text = dataSearch.SelectedRows[i].Cells[3].Value.ToString();
+                frmeditemp.dateBirthDate.Text = dataSearch.SelectedRows[i].Cells[4].Value.ToString();
+                frmeditemp.txtBirthPlace.Text = dataSearch.SelectedRows[i].Cells[5].Value.ToString();
+                frmeditemp.txtContactNo.Text = dataSearch.SelectedRows[i].Cells[6].Value.ToString();
+                frmeditemp.cmbSex.Text = dataSearch.SelectedRows[i].Cells[7].Value.ToString();
+                frmeditemp.txtReligion.Text = dataSearch.SelectedRows[i].Cells[8].Value.ToString();
+                frmeditemp.txtMaritalStatus.Text = dataSearch.SelectedRows[i].Cells[9].Value.ToString();
+                frmeditemp.cmbStatus.Text = dataSearch.SelectedRows[i].Cells[10].Value.ToString();
             }
-            frmaddemp.Show();
-            frmaddemp.reference = this;
+            frmeditemp.Show();
+            frmeditemp.reference = this;
             this.Hide();
             readData();
             dataSearch.Rows[0].Selected = false;
         }
+        public frmEditEmployee frmeditemp;
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -257,5 +258,6 @@ namespace MainSystem
             txtMaritalStatus.Text = "";
             txtStatus.Text = "";
         }
+
     }
 }

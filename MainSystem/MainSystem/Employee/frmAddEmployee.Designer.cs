@@ -89,6 +89,7 @@
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(180, 21);
             this.cmbStatus.TabIndex = 4;
+            this.cmbStatus.TextChanged += new System.EventHandler(this.cmbStatus_TextChanged);
             // 
             // txtMiddleName
             // 
@@ -96,6 +97,7 @@
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
             this.txtMiddleName.TabIndex = 2;
+            this.txtMiddleName.TextChanged += new System.EventHandler(this.txtMiddleName_TextChanged);
             // 
             // txtFirstName
             // 
@@ -131,6 +133,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(180, 20);
             this.txtLastName.TabIndex = 3;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // lblStatus
             // 
@@ -198,6 +201,7 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(180, 20);
             this.txtContactNo.TabIndex = 7;
+            this.txtContactNo.TextChanged += new System.EventHandler(this.txtContactNo_TextChanged);
             // 
             // lblContactNo
             // 
@@ -215,6 +219,7 @@
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
             this.txtBirthPlace.TabIndex = 6;
+            this.txtBirthPlace.TextChanged += new System.EventHandler(this.txtBirthPlace_TextChanged);
             // 
             // lblBirthPlace
             // 
@@ -238,6 +243,7 @@
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(180, 21);
             this.cmbSex.TabIndex = 8;
+            this.cmbSex.TextChanged += new System.EventHandler(this.cmbSex_TextChanged);
             // 
             // dateBirthDate
             // 
@@ -254,6 +260,7 @@
             this.txtMaritalStatus.Name = "txtMaritalStatus";
             this.txtMaritalStatus.Size = new System.Drawing.Size(180, 20);
             this.txtMaritalStatus.TabIndex = 10;
+            this.txtMaritalStatus.TextChanged += new System.EventHandler(this.txtMaritalStatus_TextChanged);
             // 
             // lblMaritalStatus
             // 
@@ -271,6 +278,7 @@
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.Size = new System.Drawing.Size(180, 20);
             this.txtReligion.TabIndex = 9;
+            this.txtReligion.TextChanged += new System.EventHandler(this.txtReligion_TextChanged);
             // 
             // lblReligion
             // 

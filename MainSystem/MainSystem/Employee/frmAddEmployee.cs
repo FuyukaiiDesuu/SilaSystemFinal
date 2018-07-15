@@ -23,7 +23,8 @@ namespace MainSystem
 
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
-            //enableButton();
+            fetchID();
+            enableButton();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace MainSystem
         public void insertData()
         {
             //Inserting Data
-            if (txtEmployeeID.Text == "")
+            if(txtEmployeeID.Text == txtEmployeeID.Text)
             {
                 MySqlConnection conn = connect.connector();
                 String query = "INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status) " +
@@ -73,39 +74,6 @@ namespace MainSystem
                 this.Close();
                 reference.Show();
                 reference.readData();
-                reference.dataSearch.Rows[0].Selected = false;
-            }
-            else
-            {
-                //Editing Data
-                MySqlConnection conn = connect.connector();
-                String query = "UPDATE employee SET first_name='" + txtFirstName.Text + 
-                    "',last_name='" + txtLastName.Text + 
-                    "',middle_name='" + txtMiddleName.Text + 
-                    "',birth_date='" + dateBirthDate.Text + 
-                    "',birth_place='" + txtBirthPlace.Text + 
-                    "',contactNo='" + txtContactNo.Text + 
-                    "',sex='" + cmbSex.Text +
-                    "',religion='" + txtReligion.Text + 
-                    "',marital_status='" + txtMaritalStatus.Text + 
-                    "',status='" + cmbStatus.Text + 
-                    "' WHERE empID='" + txtEmployeeID.Text + "'";
-                MySqlCommand command = new MySqlCommand(query, conn);
-                try
-                {
-                    conn.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Updated");
-                    this.Close();
-                    reference.Show();
-                    reference.readData();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Invalid");
-                }
-                this.Close();
-                reference.Show();
                 reference.dataSearch.Rows[0].Selected = false;
             }
             //FOR WHEN USING DEFAULTVALUE
@@ -143,7 +111,7 @@ namespace MainSystem
             */
         }
 
-        private void defaultValue()
+        /*private void defaultValue()
         {
             //Adding EmpID Value to Database even other values are null
             using (MySqlConnection conn = connect.connector())
@@ -155,6 +123,18 @@ namespace MainSystem
                     cmd.ExecuteNonQuery();
                 }
             }
+        }*/
+
+        private void fetchID()
+        {
+            MySqlConnection conn = connect.connector();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) + 1 FROM employee ", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataSet data = new DataSet();
+            adapter.Fill(data);
+            txtEmployeeID.Text = data.Tables[0].Rows[0][0].ToString();
+            conn.Close();
         }
 
         private void enableButton()
@@ -175,7 +155,56 @@ namespace MainSystem
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
             //For enabling 
-            //enableButton();
+            enableButton();
         }
+
+        private void txtMiddleName_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void cmbStatus_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void txtBirthPlace_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void cmbSex_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void txtReligion_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void txtMaritalStatus_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
     }
 }

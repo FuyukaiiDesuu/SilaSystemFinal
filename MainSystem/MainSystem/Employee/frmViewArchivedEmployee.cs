@@ -102,27 +102,8 @@ namespace MainSystem
 
         private void btnEnable_Click(object sender, EventArgs e)
         {
-            //Editing Data
-            MySqlConnection conn = connect.connector();
-            String query = "UPDATE employee SET status='" + cmbStatus.Text +
-                "' WHERE empID='" + txtEmployeeID.Text + "'";
-            MySqlCommand command = new MySqlCommand(query, conn);
-            try
-            {
-                conn.Open();
-                command.ExecuteNonQuery();
-                MessageBox.Show("Successfully Enabled");
-                this.Close();
-                reference.Show();
-                reference.readData();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Invalid");
-            }
-            this.Close();
-            reference.Show();
-            reference.dataSearch.Rows[0].Selected = false;
+            EnableInactive();
+            reference.clearText();
         }
 
         private void disableButton()
@@ -148,6 +129,31 @@ namespace MainSystem
         {
             //Disable editing value in datagrid view
             dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
+
+        private void EnableInactive()
+        {
+            //Editing Data
+            MySqlConnection conn = connect.connector();
+            String query = "UPDATE employee SET status='" + cmbStatus.Text +
+                "' WHERE empID='" + txtEmployeeID.Text + "'";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                conn.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Successfully Enabled");
+                this.Close();
+                reference.Show();
+                reference.readData();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Invalid");
+            }
+            this.Close();
+            reference.Show();
+            reference.dataSearch.Rows[0].Selected = false;
         }
     }
 }
