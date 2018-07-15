@@ -48,6 +48,8 @@
             this.btnPay = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.grpNewPayment.SuspendLayout();
             this.grpPaymentHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).BeginInit();
@@ -55,6 +57,8 @@
             // 
             // grpNewPayment
             // 
+            this.grpNewPayment.Controls.Add(this.txtAmount);
+            this.grpNewPayment.Controls.Add(this.lblAmount);
             this.grpNewPayment.Controls.Add(this.txtPaymentNo);
             this.grpNewPayment.Controls.Add(this.txtStudentName);
             this.grpNewPayment.Controls.Add(this.txtStudentID);
@@ -71,7 +75,7 @@
             this.grpNewPayment.Controls.Add(this.lblPayment);
             this.grpNewPayment.Location = new System.Drawing.Point(13, 30);
             this.grpNewPayment.Name = "grpNewPayment";
-            this.grpNewPayment.Size = new System.Drawing.Size(346, 333);
+            this.grpNewPayment.Size = new System.Drawing.Size(346, 350);
             this.grpNewPayment.TabIndex = 0;
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = " New Payment";
@@ -235,7 +239,7 @@
             // btnPay
             // 
             this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(13, 369);
+            this.btnPay.Location = new System.Drawing.Point(13, 386);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(91, 31);
             this.btnPay.TabIndex = 2;
@@ -246,7 +250,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(110, 369);
+            this.btnCancel.Location = new System.Drawing.Point(110, 386);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(91, 31);
             this.btnCancel.TabIndex = 3;
@@ -257,18 +261,35 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(207, 369);
+            this.btnPrint.Location = new System.Drawing.Point(207, 386);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(91, 31);
             this.btnPrint.TabIndex = 4;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // lblAmount
+            // 
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(6, 317);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(53, 16);
+            this.lblAmount.TabIndex = 14;
+            this.lblAmount.Text = "Amount";
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(121, 313);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(200, 20);
+            this.txtAmount.TabIndex = 15;
+            // 
             // frmAddTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 417);
+            this.ClientSize = new System.Drawing.Size(800, 431);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPay);
@@ -308,5 +329,7 @@
         public System.Windows.Forms.ComboBox cmbPaymentType;
         public System.Windows.Forms.ComboBox cmbPaymentTo;
         public System.Windows.Forms.DateTimePicker datePaymentDate;
+        public System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.Label lblAmount;
     }
 }
