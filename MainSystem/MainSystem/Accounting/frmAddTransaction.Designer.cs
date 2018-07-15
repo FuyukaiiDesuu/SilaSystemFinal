@@ -223,7 +223,7 @@
             this.grpPaymentHistory.Controls.Add(this.dataPaymentHistory);
             this.grpPaymentHistory.Location = new System.Drawing.Point(365, 30);
             this.grpPaymentHistory.Name = "grpPaymentHistory";
-            this.grpPaymentHistory.Size = new System.Drawing.Size(423, 333);
+            this.grpPaymentHistory.Size = new System.Drawing.Size(423, 350);
             this.grpPaymentHistory.TabIndex = 1;
             this.grpPaymentHistory.TabStop = false;
             this.grpPaymentHistory.Text = "Payment History";
@@ -233,7 +233,7 @@
             this.dataPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPaymentHistory.Location = new System.Drawing.Point(7, 20);
             this.dataPaymentHistory.Name = "dataPaymentHistory";
-            this.dataPaymentHistory.Size = new System.Drawing.Size(410, 307);
+            this.dataPaymentHistory.Size = new System.Drawing.Size(410, 313);
             this.dataPaymentHistory.TabIndex = 0;
             // 
             // btnPay
