@@ -31,6 +31,7 @@ namespace MainSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
+            deleteData();
             this.Close();
             reference.dataSearch.Rows[0].Selected = false;
             reference.clearText();
@@ -132,6 +133,7 @@ namespace MainSystem
 
         private void fetchID()
         {
+            //Fetching the last autoincremented ID from database
             MySqlConnection conn = connect.connector();
             conn.Open();
             using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) + 1 FROM employee ", conn))
@@ -143,6 +145,29 @@ namespace MainSystem
             }
             conn.Close();
         }
+
+        private void deleteData()
+        {
+
+            //Deleting the defaultValue when user wants to cancel of adding employee
+            
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "DELETE FROM employee WHERE empID='" + txtEmployeeID.Text - 1 + "'";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn.Close();
+            }
+        }
+            
 
         private void enableButton()
         {
