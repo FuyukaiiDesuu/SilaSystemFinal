@@ -13,6 +13,7 @@ namespace MainSystem
 {
     public partial class addStudent : Form
     {
+        
         public EnrollmentConsole reference { get; set; }
         public string studid;
         public addStudent(string id)
@@ -52,22 +53,22 @@ namespace MainSystem
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
-                //connection.Open();
-                using (var command = new MySqlCommand("UPDATE studentprofile set  @FirstName, @LastName, @MiddleName, @DateOfBirth, @PlaceOfBirth, @Sex, @Religion, @Nickname)", dbconnection))
+                dbconnection.Open();
+                using (var command = new MySqlCommand("UPDATE studentprofile set FirstName = @fn, LastName = @ln, MiddleName = @mn, DateOfBirth = @dof, PlaceOfBirth = @pof, Sex = @sex, Religion = @rel, Nickname = @nickname WHERE idstudentprofile = @ayd;", dbconnection))
                 {
-                    command.Parameters.AddWithValue("@FirstName", txtfn.Text);
-                    command.Parameters.AddWithValue("@LastName", txtln.Text);
-                    command.Parameters.AddWithValue("@MiddleName", txtmn.Text);
-                    command.Parameters.AddWithValue("@DateOfBirth", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-                    command.Parameters.AddWithValue("@PlaceOfBirth", txtbp.Text);
-                    command.Parameters.AddWithValue("@Sex", txtsex.Text);
-                    command.Parameters.AddWithValue("@Religion", txtrel.Text);
-                    command.Parameters.AddWithValue("@Nickname", txtnn.Text);
-
+                    command.Parameters.AddWithValue("@ayd", studid);
+                    command.Parameters.AddWithValue("@fn", txtfn.Text);
+                    command.Parameters.AddWithValue("@ln", txtln.Text);
+                    command.Parameters.AddWithValue("@mn", txtmn.Text);
+                    command.Parameters.AddWithValue("@dof", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@pof", txtbp.Text);
+                    command.Parameters.AddWithValue("@sex", txtsex.Text);
+                    command.Parameters.AddWithValue("@rel", txtrel.Text);
+                    command.Parameters.AddWithValue("@nickname", txtnn.Text);
                     command.ExecuteNonQuery();
-
                 }
             }
+            
 
         
          }

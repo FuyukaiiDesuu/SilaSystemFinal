@@ -53,8 +53,8 @@ namespace MainSystem
                 dataGridView1.Columns["FirstName"].Visible = true;
                 dataGridView1.Columns["LastName"].Visible = true;
                 dataGridView1.Columns["MiddleName"].Visible = true;
-                dataGridView1.Columns["DateOfBirth"].Visible = false;
-                dataGridView1.Columns["PlaceOfBirth"].Visible = false;
+                dataGridView1.Columns["DateOfBirth"].Visible = true;
+                dataGridView1.Columns["PlaceOfBirth"].Visible = true;
                 dataGridView1.Columns["Sex"].Visible = false;
                 dataGridView1.Columns["Religion"].Visible = false;
                 dataGridView1.Columns["Nickname"].Visible = true;
@@ -93,9 +93,10 @@ namespace MainSystem
         {
             
         }
-
+        public string studid2;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            studid2 = dataGridView1.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
             txtfn.Text = dataGridView1.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
             txtln.Text = dataGridView1.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
             txtmi.Text = dataGridView1.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
@@ -131,6 +132,20 @@ namespace MainSystem
             txtrel.Clear();
             txtnn.Clear();
         }
+        
+        public IDictionary<string, string> injector()
+        {
+            IDictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("fn", txtfn.Text);
+            dict.Add("ln", txtln.Text);
+            dict.Add("mn", txtmi.Text);
+            dict.Add("bd", txtbd.Text);
+            dict.Add("bp", txtbp.Text);
+            dict.Add("sex", txtsex.Text);
+            dict.Add("rel", txtrel.Text);
+            dict.Add("nn", txtnn.Text);
+            return dict;
+        }
 
         private void txtfn_TextChanged(object sender, EventArgs e)
         {
@@ -155,6 +170,14 @@ namespace MainSystem
             addstudentform.reference = this;
             this.Hide();
             
+        }
+        public editStudent esform;
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            esform = new editStudent(studid2, injector());
+            esform.Show();
+            esform.reference = this;
+            this.Hide();
         }
     }
 }
