@@ -100,7 +100,8 @@ namespace MainSystem
             txtfn.Text = dataGridView1.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
             txtln.Text = dataGridView1.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
             txtmi.Text = dataGridView1.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
-            txtbd.Text = dataGridView1.Rows[e.RowIndex].Cells["DateOfBirth"].Value.ToString();
+            dataGridView1.Rows[e.RowIndex].Cells["DateOfBirth"]
+            //txtbd.Text = dt.ToString();
             txtbp.Text = dataGridView1.Rows[e.RowIndex].Cells["PlaceOfBirth"].Value.ToString();
             txtsex.Text = dataGridView1.Rows[e.RowIndex].Cells["Sex"].Value.ToString();
             txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
