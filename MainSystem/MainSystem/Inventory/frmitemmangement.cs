@@ -93,21 +93,37 @@ namespace MainSystem
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = connect.connector();
-            string query = "update itemdetails set item_code" + txtitemcode.Text + "itemname" + txtitemname.Text + "description" + txtdesc.Text + "status" + txtstatus.Text + "'";
-            MySqlCommand command = new MySqlCommand(query, conn);
-            try
+            editData();
+        }
+        private void editData()
+        {
+            itemedit = new editItemmanagement();
+            for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
             {
-                conn.Open();
-                command.ExecuteNonQuery();
-                reference.Show();
-                readData();
+                itemedit.txtitemid.Text = dataGridView1.SelectedRows[i].Cells[0].Value.ToString();
+                itemedit.txtitemcode.Text = dataGridView1.SelectedRows[i].Cells[1].Value.ToString();
+                itemedit.txtdesc.Text = dataGridView1.SelectedRows[i].Cells[3].Value.ToString();
+                itemedit.txtstatus.Text = dataGridView1.SelectedRows[i].Cells[4].Value.ToString();
+                itemedit.txtitemname.Text = dataGridView1.SelectedRows[i].Cells[5].Value.ToString();
             }
-            catch(Exception)
-            {
+            itemedit.Show();
+            itemedit.reference = this;
+            this.Hide();
+            readData();
+            dataGridView1.Rows[0].Selected = false;
+        }
+        public editItemmanagement itemedit;
 
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                txtitemid.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                txtitemcode.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                txtdesc.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+                txtstatus.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                txtitemname.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
             }
-            
         }
     }
 }

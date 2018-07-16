@@ -46,7 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dbConnector.cs" />
+    <Compile Include="Inventory\dbConnector.cs" />
+    <Compile Include="Inventory\editItemmanagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\editItemmanagement.Designer.cs">
+      <DependentUpon>editItemmanagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\editItemmanagement.resx">
+      <DependentUpon>editItemmanagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\frmitemmangement.resx">
       <DependentUpon>frmitemmangement.cs</DependentUpon>
