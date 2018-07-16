@@ -24,6 +24,7 @@ namespace MainSystem
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
             fetchID();
+            defaultValue();
             enableButton();
         }
 
@@ -44,7 +45,7 @@ namespace MainSystem
         public void insertData()
         {
             //Inserting Data
-            if(txtEmployeeID.Text == txtEmployeeID.Text)
+            /*if(txtEmployeeID.Text == txtEmployeeID.Text)
             {
                 MySqlConnection conn = connect.connector();
                 String query = "INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status) " +
@@ -76,8 +77,9 @@ namespace MainSystem
                 reference.readData();
                 reference.dataSearch.Rows[0].Selected = false;
             }
+            */
             //FOR WHEN USING DEFAULTVALUE
-            /*using (MySqlConnection conn = connect.connector())
+            using (MySqlConnection conn = connect.connector())
             {
                 //Inserting Data
                 String query = "UPDATE employee SET first_name='" + txtFirstName.Text + 
@@ -90,7 +92,7 @@ namespace MainSystem
                     "',religion='" + txtReligion.Text + 
                     "',marital_status='" + txtMaritalStatus.Text + 
                     "',status='" + cmbStatus.Text +
-                    "' WHERE empID='" + reference.dataSearch.Rows.Count + "'";
+                    "' WHERE empID='" + txtEmployeeID.Text + "'";
                 MySqlCommand command = new MySqlCommand(query, conn);
                 try
                 {
@@ -105,13 +107,16 @@ namespace MainSystem
                 {
                     MessageBox.Show("Invalid");
                 }
+                conn.Close();
                 this.Close();
                 reference.Show();
+                reference.readData();
+                reference.dataSearch.Rows[0].Selected = false;
             }
-            */
+            
         }
 
-        /*private void defaultValue()
+        private void defaultValue()
         {
             //Adding EmpID Value to Database even other values are null
             using (MySqlConnection conn = connect.connector())
@@ -123,7 +128,7 @@ namespace MainSystem
                     cmd.ExecuteNonQuery();
                 }
             }
-        }*/
+        }
 
         private void fetchID()
         {
