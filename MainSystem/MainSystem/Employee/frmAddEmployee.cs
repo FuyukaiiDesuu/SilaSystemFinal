@@ -134,11 +134,13 @@ namespace MainSystem
         {
             MySqlConnection conn = connect.connector();
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) + 1 FROM employee ", conn);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataSet data = new DataSet();
-            adapter.Fill(data);
-            txtEmployeeID.Text = data.Tables[0].Rows[0][0].ToString();
+            using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) + 1 FROM employee ", conn))
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataSet data = new DataSet();
+                adapter.Fill(data);
+                txtEmployeeID.Text = data.Tables[0].Rows[0][0].ToString();
+            }
             conn.Close();
         }
 
