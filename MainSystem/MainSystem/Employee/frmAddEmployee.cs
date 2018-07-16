@@ -24,14 +24,14 @@ namespace MainSystem
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
             fetchID();
-            defaultValue();
+            //defaultValue();
             enableButton();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
-            deleteData();
+            //deleteData();
             this.Close();
             reference.dataSearch.Rows[0].Selected = false;
             reference.clearText();
@@ -46,7 +46,7 @@ namespace MainSystem
         public void insertData()
         {
             //Inserting Data
-            /*if(txtEmployeeID.Text == txtEmployeeID.Text)
+            if(txtEmployeeID.Text == txtEmployeeID.Text)
             {
                 MySqlConnection conn = connect.connector();
                 String query = "INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status) " +
@@ -78,7 +78,7 @@ namespace MainSystem
                 reference.readData();
                 reference.dataSearch.Rows[0].Selected = false;
             }
-            */
+            /*
             //FOR WHEN USING DEFAULTVALUE
             using (MySqlConnection conn = connect.connector())
             {
@@ -114,8 +114,9 @@ namespace MainSystem
                 reference.readData();
                 reference.dataSearch.Rows[0].Selected = false;
             }
-            
+            */
         }
+        
 
         private void defaultValue()
         {
@@ -146,14 +147,14 @@ namespace MainSystem
             conn.Close();
         }
 
-        private void deleteData()
+        /*private void deleteData()
         {
 
             //Deleting the defaultValue when user wants to cancel of adding employee
-            
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "DELETE FROM employee WHERE empID='" + txtEmployeeID.Text - 1 + "'";
+                int rows = reference.dataSearch.Rows.Count - 1;
+                string query = "ALTER TABLE employee AUTO_INCREMENT='" + rows + "'";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 try
                 {
@@ -166,7 +167,7 @@ namespace MainSystem
                 }
                 conn.Close();
             }
-        }
+        }*/
             
 
         private void enableButton()
