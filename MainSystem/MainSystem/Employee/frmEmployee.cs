@@ -258,6 +258,5 @@ namespace MainSystem
             txtMaritalStatus.Text = "";
             txtStatus.Text = "";
         }
-
     }
 }
