@@ -32,7 +32,6 @@
             this.txtstatus = new System.Windows.Forms.TextBox();
             this.lblstatus = new System.Windows.Forms.Label();
             this.txtsodate = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.lblsodate = new System.Windows.Forms.Label();
             this.txtinvcode = new System.Windows.Forms.TextBox();
             this.lblinvcode = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItemCode = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.gboxitemdetails.SuspendLayout();
@@ -99,16 +99,6 @@
             this.txtsodate.Name = "txtsodate";
             this.txtsodate.Size = new System.Drawing.Size(251, 20);
             this.txtsodate.TabIndex = 26;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 17);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(109, 23);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Item Management";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblsodate
             // 
@@ -222,12 +212,22 @@
             this.lblItemCode.TabIndex = 0;
             this.lblItemCode.Text = "Item Code:";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(12, 17);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(109, 23);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Item Management";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // dgvInventory
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(392, 49);
             this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(746, 242);
+            this.dgvInventory.Size = new System.Drawing.Size(746, 239);
             this.dgvInventory.TabIndex = 1;
             this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -245,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 304);
+            this.ClientSize = new System.Drawing.Size(1151, 296);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.btnAdd);

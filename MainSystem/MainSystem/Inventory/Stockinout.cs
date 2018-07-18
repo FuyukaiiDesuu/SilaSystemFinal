@@ -23,5 +23,10 @@ namespace MainSystem
             reference.Show();
             this.Hide();
         }
+
+        private void Stockin_out_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

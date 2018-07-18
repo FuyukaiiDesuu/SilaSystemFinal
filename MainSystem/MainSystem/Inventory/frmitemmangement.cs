@@ -41,7 +41,7 @@ namespace MainSystem
                         command.Parameters.AddWithValue("@item_code", txtitemcode.Text);
                         command.Parameters.AddWithValue("@date_of_creation", System.DateTime.Now.ToString("yyyyMMdd")); 
                         command.Parameters.AddWithValue("@description", txtdesc.Text);
-                        command.Parameters.AddWithValue("@itemstatus", txtstatus.Text);
+                        command.Parameters.AddWithValue("@itemstatus", cmbstatus.Text);
                         command.Parameters.AddWithValue("@itemname", txtitemname.Text);
                         command.ExecuteNonQuery();
                     }
@@ -56,15 +56,20 @@ namespace MainSystem
             readData();
         }
 
+        public itemview iview;
         private void button2_Click(object sender, EventArgs e)
         {
+            iview = new itemview();
+            iview.Show();
+            iview.reference = this;
+            this.Hide();
 
         }
         public void readData()
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM itemdetails";
+                string query = "SELECT * FROM itemdetails WHERE itemstatus = 1";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -103,7 +108,7 @@ namespace MainSystem
                 itemedit.txtitemid.Text = dataGridView1.SelectedRows[i].Cells[0].Value.ToString();
                 itemedit.txtitemcode.Text = dataGridView1.SelectedRows[i].Cells[1].Value.ToString();
                 itemedit.txtdesc.Text = dataGridView1.SelectedRows[i].Cells[3].Value.ToString();
-                itemedit.txtstatus.Text = dataGridView1.SelectedRows[i].Cells[4].Value.ToString();
+                itemedit.cmbstatus.Text = dataGridView1.SelectedRows[i].Cells[4].Value.ToString();
                 itemedit.txtitemname.Text = dataGridView1.SelectedRows[i].Cells[5].Value.ToString();
             }
             itemedit.Show();
@@ -121,7 +126,7 @@ namespace MainSystem
                 txtitemid.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
                 txtitemcode.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 txtdesc.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-                txtstatus.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                cmbstatus.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
                 txtitemname.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
             }
         }

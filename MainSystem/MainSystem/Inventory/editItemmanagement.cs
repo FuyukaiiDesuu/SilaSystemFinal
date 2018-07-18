@@ -31,7 +31,7 @@ namespace MainSystem
             MySqlConnection conn = connect.connector();
             String query = "UPDATE itemdetails SET item_code ='" + txtitemcode.Text +
                 "', description ='" + txtdesc.Text +
-                "', itemstatus ='" + txtstatus.Text +
+                "', itemstatus ='" + cmbstatus.Text +
                 "', itemname ='" + txtitemname.Text + 
                 "' WHERE itemID ='" + txtitemid.Text + "'";
             MySqlCommand command = new MySqlCommand(query, conn);
@@ -39,7 +39,7 @@ namespace MainSystem
             {
                 conn.Open();
                 command.ExecuteNonQuery();
-                MessageBox.Show("Successfully Update");
+                MessageBox.Show("Successfully Updated");
                 this.Close();
                 reference.Show();
                 reference.readData();
@@ -55,6 +55,11 @@ namespace MainSystem
         private void btnconfirm_Click(object sender, EventArgs e)
         {
             editData();
+        }
+
+        private void editItemmanagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

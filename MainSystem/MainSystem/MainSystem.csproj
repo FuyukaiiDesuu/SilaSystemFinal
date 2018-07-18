@@ -71,6 +71,12 @@
     <Compile Include="Inventory\frmitemmangement.Designer.cs">
       <DependentUpon>frmitemmangement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\itemview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\itemview.Designer.cs">
+      <DependentUpon>itemview.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginDashboard\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\frmitemmangement.resx">
       <DependentUpon>frmitemmangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\itemview.resx">
+      <DependentUpon>itemview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

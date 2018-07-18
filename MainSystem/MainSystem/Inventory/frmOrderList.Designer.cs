@@ -210,6 +210,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmOrderList";
             this.Text = "frmOrderList";
+            this.Load += new System.EventHandler(this.frmOrderList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gboxitemdetails2.ResumeLayout(false);
             this.gboxitemdetails2.PerformLayout();

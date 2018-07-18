@@ -58,5 +58,10 @@ namespace MainSystem
         {
 
         }
+
+        private void frmOrderList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
