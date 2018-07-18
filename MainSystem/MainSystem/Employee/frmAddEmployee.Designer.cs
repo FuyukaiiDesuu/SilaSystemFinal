@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
@@ -54,13 +53,14 @@
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpEmployeeDetails
             // 
-            this.grpEmployeeDetails.Controls.Add(this.cmbStatus);
+            this.grpEmployeeDetails.Controls.Add(this.txtStatus);
             this.grpEmployeeDetails.Controls.Add(this.txtMiddleName);
             this.grpEmployeeDetails.Controls.Add(this.txtFirstName);
             this.grpEmployeeDetails.Controls.Add(this.lblMiddleName);
@@ -76,20 +76,6 @@
             this.grpEmployeeDetails.TabIndex = 8;
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "",
-            "1",
-            "0"});
-            this.cmbStatus.Location = new System.Drawing.Point(115, 174);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(180, 21);
-            this.cmbStatus.TabIndex = 4;
-            this.cmbStatus.TextChanged += new System.EventHandler(this.cmbStatus_TextChanged);
             // 
             // txtMiddleName
             // 
@@ -332,6 +318,16 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(115, 171);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(180, 20);
+            this.txtStatus.TabIndex = 0;
+            this.txtStatus.TabStop = false;
+            this.txtStatus.Text = "1";
+            // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,8 +374,8 @@
         private System.Windows.Forms.Label lblBirthPlace;
         public System.Windows.Forms.TextBox txtContactNo;
         private System.Windows.Forms.Label lblContactNo;
-        public System.Windows.Forms.ComboBox cmbStatus;
         public System.Windows.Forms.ComboBox cmbSex;
         public System.Windows.Forms.DateTimePicker dateBirthDate;
+        public System.Windows.Forms.TextBox txtStatus;
     }
 }

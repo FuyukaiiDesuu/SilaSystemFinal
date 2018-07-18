@@ -59,7 +59,7 @@ namespace MainSystem
                     "','" + cmbSex.Text +
                     "','" + txtReligion.Text + 
                     "','" + txtMaritalStatus.Text + 
-                    "','" + cmbStatus.Text + 
+                    "','" + txtStatus.Text + 
                     "')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 try
@@ -182,7 +182,7 @@ namespace MainSystem
                    !string.IsNullOrWhiteSpace(cmbSex.Text) &&
                    !string.IsNullOrWhiteSpace(txtReligion.Text) &&
                    !string.IsNullOrWhiteSpace(txtMaritalStatus.Text) &&
-                   !string.IsNullOrWhiteSpace(cmbStatus.Text);
+                   !string.IsNullOrWhiteSpace(txtStatus.Text);
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
