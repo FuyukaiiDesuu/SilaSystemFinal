@@ -66,7 +66,7 @@
             // 
             this.txtstno.Location = new System.Drawing.Point(73, 4);
             this.txtstno.Name = "txtstno";
-            this.txtstno.Size = new System.Drawing.Size(38, 20);
+            this.txtstno.Size = new System.Drawing.Size(86, 20);
             this.txtstno.TabIndex = 0;
             this.txtstno.TabStop = false;
             // 
@@ -86,6 +86,7 @@
             this.btnExit.TabIndex = 68;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
@@ -96,6 +97,7 @@
             this.btnSave.TabIndex = 67;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button1
             // 
