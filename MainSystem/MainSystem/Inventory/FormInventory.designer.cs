@@ -48,6 +48,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.gboxitemdetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
@@ -241,11 +242,22 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(495, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Item Inventory";
+            // 
             // FormInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 296);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.btnAdd);
@@ -257,6 +269,7 @@
             this.gboxitemdetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,5 +295,6 @@
         private System.Windows.Forms.TextBox txtstatus;
         private System.Windows.Forms.Label lblstatus;
         private System.Windows.Forms.TextBox txtsodate;
+        private System.Windows.Forms.Label label1;
     }
 }

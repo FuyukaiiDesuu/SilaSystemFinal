@@ -30,6 +30,7 @@
         {
             this.btnback3 = new System.Windows.Forms.Button();
             this.gbItemDetails2 = new System.Windows.Forms.GroupBox();
+            this.cmbstatus = new System.Windows.Forms.ComboBox();
             this.lblstatus = new System.Windows.Forms.Label();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtitemname = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
             this.btnview = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtsearch = new System.Windows.Forms.TextBox();
-            this.cmbstatus = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbItemDetails2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +78,19 @@
             this.gbItemDetails2.TabIndex = 1;
             this.gbItemDetails2.TabStop = false;
             this.gbItemDetails2.Text = "Item Details";
+            // 
+            // cmbstatus
+            // 
+            this.cmbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbstatus.FormattingEnabled = true;
+            this.cmbstatus.Items.AddRange(new object[] {
+            "",
+            "0",
+            "1"});
+            this.cmbstatus.Location = new System.Drawing.Point(90, 149);
+            this.cmbstatus.Name = "cmbstatus";
+            this.cmbstatus.Size = new System.Drawing.Size(204, 21);
+            this.cmbstatus.TabIndex = 13;
             // 
             // lblstatus
             // 
@@ -192,6 +206,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(684, 202);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // txtsearch
@@ -202,24 +217,22 @@
             this.txtsearch.TabIndex = 1;
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
-            // cmbstatus
+            // label1
             // 
-            this.cmbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbstatus.FormattingEnabled = true;
-            this.cmbstatus.Items.AddRange(new object[] {
-            "",
-            "0",
-            "1"});
-            this.cmbstatus.Location = new System.Drawing.Point(90, 149);
-            this.cmbstatus.Name = "cmbstatus";
-            this.cmbstatus.Size = new System.Drawing.Size(204, 21);
-            this.cmbstatus.TabIndex = 13;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(204, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 24);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Item Management";
             // 
             // frmitemmanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 530);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnview);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.btnedit);
@@ -257,5 +270,6 @@
         private System.Windows.Forms.TextBox txtsearch;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ComboBox cmbstatus;
+        private System.Windows.Forms.Label label1;
     }
 }

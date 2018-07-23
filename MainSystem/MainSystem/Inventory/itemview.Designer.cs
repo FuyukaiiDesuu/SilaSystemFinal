@@ -31,6 +31,7 @@
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbItemDetails2 = new System.Windows.Forms.GroupBox();
+            this.cmbstatus = new System.Windows.Forms.ComboBox();
             this.lblstatus = new System.Windows.Forms.Label();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtitemname = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.lblitemid = new System.Windows.Forms.Label();
             this.btnback3 = new System.Windows.Forms.Button();
             this.btnconfirm = new System.Windows.Forms.Button();
-            this.cmbstatus = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbItemDetails2.SuspendLayout();
@@ -54,6 +54,7 @@
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(186, 20);
             this.txtsearch.TabIndex = 18;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // dataGridView1
             // 
@@ -84,6 +85,20 @@
             this.gbItemDetails2.TabIndex = 19;
             this.gbItemDetails2.TabStop = false;
             this.gbItemDetails2.Text = "Item Details";
+            // 
+            // cmbstatus
+            // 
+            this.cmbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbstatus.FormattingEnabled = true;
+            this.cmbstatus.Items.AddRange(new object[] {
+            "",
+            "0",
+            "1"});
+            this.cmbstatus.Location = new System.Drawing.Point(90, 149);
+            this.cmbstatus.Name = "cmbstatus";
+            this.cmbstatus.Size = new System.Drawing.Size(204, 21);
+            this.cmbstatus.TabIndex = 13;
+            this.cmbstatus.TextChanged += new System.EventHandler(this.cmbstatus_TextChanged);
             // 
             // lblstatus
             // 
@@ -180,20 +195,6 @@
             this.btnconfirm.Text = "Confirm";
             this.btnconfirm.UseVisualStyleBackColor = true;
             this.btnconfirm.Click += new System.EventHandler(this.btnconfirm_Click);
-            // 
-            // cmbstatus
-            // 
-            this.cmbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbstatus.FormattingEnabled = true;
-            this.cmbstatus.Items.AddRange(new object[] {
-            "",
-            "0",
-            "1"});
-            this.cmbstatus.Location = new System.Drawing.Point(90, 149);
-            this.cmbstatus.Name = "cmbstatus";
-            this.cmbstatus.Size = new System.Drawing.Size(204, 21);
-            this.cmbstatus.TabIndex = 13;
-            this.cmbstatus.TextChanged += new System.EventHandler(this.cmbstatus_TextChanged);
             // 
             // label1
             // 

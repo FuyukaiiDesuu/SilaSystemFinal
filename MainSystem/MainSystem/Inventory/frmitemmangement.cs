@@ -130,5 +130,10 @@ namespace MainSystem
                 txtitemname.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

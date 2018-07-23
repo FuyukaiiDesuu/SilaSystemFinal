@@ -105,5 +105,18 @@ namespace MainSystem
                 txtitemname.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
             }
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                conn.Open();
+                string query = ("SELECT * FROM itemdetails where itemname like '" + txtsearch.Text + "%'");
+                adapter = new MySqlDataAdapter(query, conn);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
     }
 }
