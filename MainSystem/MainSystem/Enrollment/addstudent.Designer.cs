@@ -55,6 +55,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btncanc = new System.Windows.Forms.Button();
+            this.ph = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -311,11 +312,21 @@
             this.btncanc.UseVisualStyleBackColor = true;
             this.btncanc.Click += new System.EventHandler(this.btncanc_Click);
             // 
+            // ph
+            // 
+            this.ph.AutoSize = true;
+            this.ph.Location = new System.Drawing.Point(231, 292);
+            this.ph.Name = "ph";
+            this.ph.Size = new System.Drawing.Size(65, 13);
+            this.ph.TabIndex = 53;
+            this.ph.Text = "Department:";
+            // 
             // addStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 325);
+            this.Controls.Add(this.ph);
             this.Controls.Add(this.btncanc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox2);
@@ -382,5 +393,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btncanc;
+        private System.Windows.Forms.Label ph;
     }
 }

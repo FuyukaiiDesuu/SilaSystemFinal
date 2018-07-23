@@ -67,7 +67,7 @@ namespace MainSystem
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            //reference.Show();
+            reference.Show();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -22,10 +22,11 @@ namespace MainSystem
         public EnrollmentConsole()
         {
             InitializeComponent();
-            loadData();
+            
             //btnCreate.Enabled = false;
             btnUpdate.Enabled = false;
             btnView.Enabled = false;
+            //label11.Text = counterr().ToString();
             
         }
 
@@ -35,7 +36,7 @@ namespace MainSystem
         }
         private void EnrollmentConsole_Load(object sender, EventArgs e)
         {
-            //fetchID();
+            loadData();
         }
         public void loadData()
         {
@@ -250,10 +251,24 @@ namespace MainSystem
            
         }
         public addStudent addstudentform;
+        private int counterr()
+        {
+            var dbconnect = new dbConnector();
+            string query = "SELECT COUNT(idstudentprofile) FROM studentprofile;";
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                var cmd = new MySqlCommand(query, dbconnection);
+                return (int)Convert.ToInt32(cmd.ExecuteScalar());
+               
+            }
+
+            
+        }
         private void btnCreate_Click(object sender, EventArgs e)
         {
             int count = dataGridView1.Rows.Count;
-            addstudentform = new addStudent(count.ToString());
+            addstudentform = new addStudent(counterr());
             addstudentform.Show();
             addstudentform.reference = this;
             this.Hide();
@@ -266,6 +281,15 @@ namespace MainSystem
             esform.Show();
             esform.reference = this;
             //this.Hide();
+        }
+        public viewForm vf;
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            vf = new viewForm();
+            vf.Show();
+            vf.reference = this;
+            this.Hide();
+
         }
     }
 }

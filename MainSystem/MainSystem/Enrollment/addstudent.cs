@@ -16,10 +16,10 @@ namespace MainSystem
 
         public EnrollmentConsole reference { get; set; }
         public string studid;
-        public addStudent(string id)
+        public addStudent(int id)
         {
             InitializeComponent();
-            studid = id;
+            studid = (id + 1).ToString();
         }
 
         //private dbConnector dbconnect = new dbConnector();
@@ -28,6 +28,7 @@ namespace MainSystem
         {
             createdefault();
             txtstno.Text = studid;
+            ph.Text = sygetter();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -77,9 +78,88 @@ namespace MainSystem
 
                     command.ExecuteNonQuery();
                 }
+                using (var command = new MySqlCommand("UPDATE studdetails set department = @dpt, level = @lvl, school_year = @sy where idstddet = @aydd;", dbconnection))
+                {
+                    IDictionary<string, string> dic = comboboxpicker();
+                    command.Parameters.AddWithValue("@dpt", dic["dept"]);
+                    command.Parameters.AddWithValue("@lvl", dic["level"]);
+                    command.Parameters.AddWithValue("@sy", sygetter().ToString());
+                    command.Parameters.AddWithValue("@aydd", studid);
+                    command.ExecuteNonQuery();
+                }
             }
 
 
+
+
+        }
+        
+        private string sygetter()
+        {
+            return DateTime.Now.Year.ToString();
+            
+        }
+        private IDictionary<string, string> comboboxpicker()
+        {
+            IDictionary<string, string> d1 = new Dictionary<string, string>();
+            switch(comboBox2.Text)
+            {
+                case "Toddler":
+                    d1.Add("level", "11");
+                    break;
+                case "Nursery":
+                    d1.Add("level", "12");
+                    break;
+                case "Kinder":
+                    d1.Add("level", "13");
+                    break;
+                case "Preparatory":
+                    d1.Add("level", "14");
+                    break;
+                case "Grade 1":
+                    d1.Add("level", "21");
+                    break;
+                case "Grade 2":
+                    d1.Add("level", "22");
+                    break;
+                case "Grade 3":
+                    d1.Add("level", "23");
+                    break;
+                case "Grade 4":
+                    d1.Add("level", "24");
+                    break;
+                case "Grade 5":
+                    d1.Add("level", "25");
+                    break;
+                case "Grade 6":
+                    d1.Add("level", "26");
+                    break;
+                case "Grade 7":
+                    d1.Add("level", "31");
+                    break;
+                case "Grade 8":
+                    d1.Add("level", "32");
+                    break;
+                case "Grade 9":
+                    d1.Add("level", "33");
+                    break;
+                case "Grade 10":
+                    d1.Add("level", "34");
+                    break;
+            }
+            switch(comboBox1.Text)
+            {
+                case "Pre-school":
+                    d1.Add("dept", "1");
+                    break;
+                case "Grade-school":
+                    d1.Add("dept", "2");
+                    break;
+                case "High-school":
+                    d1.Add("dept", "3");
+                    break;
+            }
+            return d1;
 
         }
         private void btnSave_Click(object sender, EventArgs e)
@@ -104,20 +184,23 @@ namespace MainSystem
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                using (var command = new MySqlCommand("DELETE from studentprofile WHERE idstudentprofile = @ayd", dbconnection))
+                using (var command = new MySqlCommand("DELETE from studentprofile WHERE idstudentprofile = @ayd;", dbconnection))
                 {
                     command.Parameters.AddWithValue("@ayd", studid);
                     command.ExecuteNonQuery();
                 }
-                using (var command2 = new MySqlCommand("DELETE from studdetails WHERE idstddet = @ayd", dbconnection))
+                using (var command2 = new MySqlCommand("DELETE from studdetails WHERE idstddet = @ayd;", dbconnection))
                 {
                     command2.Parameters.AddWithValue("@ayd", studid);
                     command2.ExecuteNonQuery();
                 }
                 
             }
+            
+            altertable();
             this.Close();
-            dbconnection.Clone();
+            reference.Show();
+            dbconnection.Close();
             
         }
         private void altertable()
@@ -125,21 +208,21 @@ namespace MainSystem
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
-                int a = int.Parse(studid);
+                //int a = int.Parse(studid);
                 dbconnection.Open();
-                using (var command = new MySqlCommand("alter table studentprofile auto_increment = @count", dbconnection))
+                using (var command = new MySqlCommand("alter table studentprofile auto_increment ="+studid+";", dbconnection))
                 {
-                    command.Parameters.AddWithValue("@count", a);
+                    //command.Parameters.AddWithValue("@count", studid);
                     command.ExecuteNonQuery();
                 }
-                using (var command2 = new MySqlCommand("alter table studdetails auto_increment = @count", dbconnection))
+                using (var command2 = new MySqlCommand("alter table studdetails auto_increment = "+studid+";", dbconnection))
                 {
-                    command2.Parameters.AddWithValue("@count", a);
+                    //command2.Parameters.AddWithValue("@count", studid);
                     command2.ExecuteNonQuery();
                 }
 
             }
-            this.Close();
+           
         }
     }
 }
