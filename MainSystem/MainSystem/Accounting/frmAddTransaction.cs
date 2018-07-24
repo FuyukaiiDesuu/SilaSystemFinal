@@ -42,7 +42,7 @@ namespace MainSystem
         private void cmbPaymentType_TextChanged(object sender, EventArgs e)
         {
             //For Disabling Cheque Textbox if text in Payment to doesnt match with the word CHEQUE
-            if (cmbPaymentType.Text == "CHEQUE")
+            if (cmbPaymentType.Text == "2")
             {
                 txtChequeNo.Enabled = true;
             }
@@ -131,21 +131,23 @@ namespace MainSystem
         {
             MySqlConnection conn = connect.connector();
             conn.Open();
-            MySqlCommand cmd1 = new MySqlCommand("INSERT INTO studenttransaction(account_id,transaction_datetime, additional_details,transaction_type, employee_id, payment_id) VALUES(@account_id, @transaction_datetime, @additional_details, @transaction_type, @employee_id, @payment_id)", conn);
-            cmd1.Parameters.AddWithValue("@payment_id", txtPaymentNo.Text);
-            cmd1.Parameters.AddWithValue("@account_id", txtStudentID.Text);
-            cmd1.Parameters.AddWithValue("@transaction_datetime", datePaymentDate.Text);
-            cmd1.Parameters.AddWithValue("@additional_details", txtAdditionalDetails.Text);
-            cmd1.Parameters.AddWithValue("@transaction_type", cmbPaymentTo.Text);
-            cmd1.Parameters.AddWithValue("@employee_id", txtEmployeeID.Text);
-            cmd1.ExecuteNonQuery();
-            cmd1.Parameters.Clear();
 
             MySqlCommand cmd2 = new MySqlCommand("INSERT INTO payment_details(amount, payment_type) VALUES (@amount, @payment_type)", conn);
             cmd2.Parameters.AddWithValue("@amount", txtAmount.Text);
             cmd2.Parameters.AddWithValue("@payment_type", cmbPaymentType.Text);
             cmd2.ExecuteNonQuery();
             cmd2.Parameters.Clear();
+
+            MySqlCommand cmd1 = new MySqlCommand("INSERT INTO studenttransaction(transactionid, account_id,transaction_datetime, additional_details,transaction_type, employee_id, payment_id) VALUES(@transactionid, @account_id, @transaction_datetime, @additional_details, @transaction_type, @employee_id, @payment_id)", conn);
+            cmd1.Parameters.AddWithValue("@transactionid", txtPaymentNo.Text);
+            cmd1.Parameters.AddWithValue("@account_id", txtStudentID.Text);
+            cmd1.Parameters.AddWithValue("@transaction_datetime", datePaymentDate.Text);
+            cmd1.Parameters.AddWithValue("@additional_details", txtAdditionalDetails.Text);
+            cmd1.Parameters.AddWithValue("@transaction_type", cmbPaymentTo.Text);
+            cmd1.Parameters.AddWithValue("@employee_id", txtEmployeeID.Text);
+            cmd1.Parameters.AddWithValue("@payment_id", txtPaymentNo.Text);
+            cmd1.ExecuteNonQuery();
+            cmd1.Parameters.Clear();
 
             MessageBox.Show("Successfully Inserted");
         }

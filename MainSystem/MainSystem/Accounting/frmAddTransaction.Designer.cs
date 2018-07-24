@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.grpNewPayment = new System.Windows.Forms.GroupBox();
+            this.txtEmployeeID = new System.Windows.Forms.TextBox();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
+            this.txtAdditionalDetails = new System.Windows.Forms.TextBox();
+            this.lblAddtionalDetails = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtPaymentNo = new System.Windows.Forms.TextBox();
@@ -53,10 +57,6 @@
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
             this.dataEmployeeDetails = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblAddtionalDetails = new System.Windows.Forms.Label();
-            this.txtAdditionalDetails = new System.Windows.Forms.TextBox();
-            this.lblEmployeeID = new System.Windows.Forms.Label();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.grpNewPayment.SuspendLayout();
             this.grpPaymentHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).BeginInit();
@@ -93,6 +93,42 @@
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = " New Payment";
             this.grpNewPayment.Enter += new System.EventHandler(this.grpNewPayment_Enter);
+            // 
+            // txtEmployeeID
+            // 
+            this.txtEmployeeID.Location = new System.Drawing.Point(121, 159);
+            this.txtEmployeeID.Name = "txtEmployeeID";
+            this.txtEmployeeID.ReadOnly = true;
+            this.txtEmployeeID.Size = new System.Drawing.Size(200, 20);
+            this.txtEmployeeID.TabIndex = 18;
+            // 
+            // lblEmployeeID
+            // 
+            this.lblEmployeeID.AutoSize = true;
+            this.lblEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeID.Location = new System.Drawing.Point(6, 159);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(86, 16);
+            this.lblEmployeeID.TabIndex = 17;
+            this.lblEmployeeID.Text = "Employee ID";
+            // 
+            // txtAdditionalDetails
+            // 
+            this.txtAdditionalDetails.Location = new System.Drawing.Point(121, 359);
+            this.txtAdditionalDetails.Multiline = true;
+            this.txtAdditionalDetails.Name = "txtAdditionalDetails";
+            this.txtAdditionalDetails.Size = new System.Drawing.Size(200, 196);
+            this.txtAdditionalDetails.TabIndex = 16;
+            // 
+            // lblAddtionalDetails
+            // 
+            this.lblAddtionalDetails.AutoSize = true;
+            this.lblAddtionalDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddtionalDetails.Location = new System.Drawing.Point(6, 359);
+            this.lblAddtionalDetails.Name = "lblAddtionalDetails";
+            this.lblAddtionalDetails.Size = new System.Drawing.Size(113, 16);
+            this.lblAddtionalDetails.TabIndex = 15;
+            this.lblAddtionalDetails.Text = "Additional Details";
             // 
             // txtAmount
             // 
@@ -159,8 +195,8 @@
             this.cmbPaymentType.ItemHeight = 13;
             this.cmbPaymentType.Items.AddRange(new object[] {
             "",
-            "CHEQUE",
-            "CASH"});
+            "1",
+            "2"});
             this.cmbPaymentType.Location = new System.Drawing.Point(121, 199);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(200, 21);
@@ -173,10 +209,9 @@
             this.cmbPaymentTo.FormattingEnabled = true;
             this.cmbPaymentTo.Items.AddRange(new object[] {
             "",
-            "REGISTRATION",
-            "TUITION",
-            "BOOKS",
-            "OTHERS"});
+            "1",
+            "2",
+            "3"});
             this.cmbPaymentTo.Location = new System.Drawing.Point(121, 282);
             this.cmbPaymentTo.Name = "cmbPaymentTo";
             this.cmbPaymentTo.Size = new System.Drawing.Size(200, 21);
@@ -329,42 +364,6 @@
             this.txtSearch.Size = new System.Drawing.Size(151, 20);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // lblAddtionalDetails
-            // 
-            this.lblAddtionalDetails.AutoSize = true;
-            this.lblAddtionalDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddtionalDetails.Location = new System.Drawing.Point(6, 359);
-            this.lblAddtionalDetails.Name = "lblAddtionalDetails";
-            this.lblAddtionalDetails.Size = new System.Drawing.Size(113, 16);
-            this.lblAddtionalDetails.TabIndex = 15;
-            this.lblAddtionalDetails.Text = "Additional Details";
-            // 
-            // txtAdditionalDetails
-            // 
-            this.txtAdditionalDetails.Location = new System.Drawing.Point(121, 359);
-            this.txtAdditionalDetails.Multiline = true;
-            this.txtAdditionalDetails.Name = "txtAdditionalDetails";
-            this.txtAdditionalDetails.Size = new System.Drawing.Size(200, 196);
-            this.txtAdditionalDetails.TabIndex = 16;
-            // 
-            // lblEmployeeID
-            // 
-            this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeID.Location = new System.Drawing.Point(6, 159);
-            this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(86, 16);
-            this.lblEmployeeID.TabIndex = 17;
-            this.lblEmployeeID.Text = "Employee ID";
-            // 
-            // txtEmployeeID
-            // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(121, 159);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.ReadOnly = true;
-            this.txtEmployeeID.Size = new System.Drawing.Size(200, 20);
-            this.txtEmployeeID.TabIndex = 18;
             // 
             // frmAddTransaction
             // 
