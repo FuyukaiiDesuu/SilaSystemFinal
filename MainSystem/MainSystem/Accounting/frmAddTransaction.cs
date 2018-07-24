@@ -36,6 +36,7 @@ namespace MainSystem
             readempData();
             renameDataTableColumns();
             fetchID();
+            fetchPaymentID();
         }
 
 
@@ -129,7 +130,7 @@ namespace MainSystem
 
         private void insertData()
         {
-            MySqlConnection conn = connect.connector();
+            /*MySqlConnection conn = connect.connector();
             conn.Open();
 
             MySqlCommand cmd2 = new MySqlCommand("INSERT INTO payment_details(amount, payment_type) VALUES (@amount, @payment_type)", conn);
@@ -150,8 +151,43 @@ namespace MainSystem
             cmd1.Parameters.Clear();
 
             MessageBox.Show("Successfully Inserted");
+            */
+            if (txtTransactionNo.Text == txtTransactionNo.Text)
+            {
+                MySqlConnection conn = connect.connector();
+                String query3 = "INSERT INTO payment_details(paydetailsID) VALUES ('" + txtPaymentID.Text + "')"; 
+                String query = "INSERT INTO studenttransaction(account_id, transaction_datetime, additional_details, transaction_type, employee_id) " +
+                    "VALUES ('" + txtStudentID.Text +
+                    "','" + datePaymentDate.Text +
+                    "','" + txtAdditionalDetails.Text +
+                    "','" + cmbPaymentType.Text +
+                    "','" + txtEmployeeID.Text +
+                    "')";
+                String query2 = "INSERT INTO payment_details(amount, payment_type) " +
+                    "VALUES ('" + txtAmount.Text +
+                    "','" + cmbPaymentType.Text +
+                    "')";
+                MySqlCommand cmd = new MySqlCommand(query3, conn);
+                MySqlCommand cmd2 = new MySqlCommand(query2, conn);
+                MySqlCommand cmd3 = new MySqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    cmd2.ExecuteNonQuery();
+                    cmd3.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Inserted");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn.Close();
+                this.Close();
+                reference.Show();
+                reference.readData();
+            }
         }
-
         private void fetchID()
         {
             //Fetching the last autoincremented ID from database
@@ -162,7 +198,22 @@ namespace MainSystem
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet data = new DataSet();
                 adapter.Fill(data);
-                txtPaymentNo.Text = data.Tables[0].Rows[0][0].ToString();
+                txtTransactionNo.Text = data.Tables[0].Rows[0][0].ToString();
+            }
+            conn.Close();
+        }
+
+        private void fetchPaymentID()
+        {
+            //Fetching the last autoincremented ID from database
+            MySqlConnection conn = connect.connector();
+            conn.Open();
+            using (MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) + 1 FROM payment_details ", conn))
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataSet data = new DataSet();
+                adapter.Fill(data);
+                txtPaymentID.Text = data.Tables[0].Rows[0][0].ToString();
             }
             conn.Close();
         }

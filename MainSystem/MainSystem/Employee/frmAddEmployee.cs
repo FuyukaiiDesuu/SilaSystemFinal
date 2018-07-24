@@ -118,7 +118,7 @@ namespace MainSystem
         }
         
 
-        private void defaultValue()
+        /*private void defaultValue()
         {
             //Adding EmpID Value to Database even other values are null
             using (MySqlConnection conn = connect.connector())
@@ -131,6 +131,7 @@ namespace MainSystem
                 }
             }
         }
+        */
 
         private void fetchID()
         {
@@ -239,5 +240,9 @@ namespace MainSystem
             enableButton();
         }
 
+        private void txtEmployeeID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,16 @@
             this.grpEmployeeDetails.TabIndex = 8;
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(115, 171);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(180, 20);
+            this.txtStatus.TabIndex = 0;
+            this.txtStatus.TabStop = false;
+            this.txtStatus.Text = "1";
             // 
             // txtMiddleName
             // 
@@ -149,6 +159,7 @@
             this.txtEmployeeID.Size = new System.Drawing.Size(180, 20);
             this.txtEmployeeID.TabIndex = 0;
             this.txtEmployeeID.TabStop = false;
+            this.txtEmployeeID.TextChanged += new System.EventHandler(this.txtEmployeeID_TextChanged);
             // 
             // lblEmployeeID
             // 
@@ -317,16 +328,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(115, 171);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.ReadOnly = true;
-            this.txtStatus.Size = new System.Drawing.Size(180, 20);
-            this.txtStatus.TabIndex = 0;
-            this.txtStatus.TabStop = false;
-            this.txtStatus.Text = "1";
             // 
             // frmAddEmployee
             // 
