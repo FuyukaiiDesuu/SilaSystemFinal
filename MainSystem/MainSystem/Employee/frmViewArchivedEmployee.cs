@@ -35,6 +35,7 @@ namespace MainSystem
         {
             reference.Show();
             this.Close();
+            reference.clearText();
         }
 
         public void readData()

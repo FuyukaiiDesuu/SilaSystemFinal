@@ -45,6 +45,7 @@
             this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.btnEnable = new System.Windows.Forms.Button();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpPersonalDetails.SuspendLayout();
             this.grpEmployeeDetails.SuspendLayout();
@@ -86,7 +86,7 @@
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(100, 37);
             this.btnDashboard.TabIndex = 13;
-            this.btnDashboard.Text = "DASHBOARD";
+            this.btnDashboard.Text = "BACK";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
@@ -244,6 +244,20 @@
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "",
+            "0",
+            "1"});
+            this.cmbStatus.Location = new System.Drawing.Point(115, 180);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(180, 21);
+            this.cmbStatus.TabIndex = 23;
+            this.cmbStatus.TextChanged += new System.EventHandler(this.cmbStatus_TextChanged);
+            // 
             // txtMiddleName
             // 
             this.txtMiddleName.Location = new System.Drawing.Point(115, 101);
@@ -340,20 +354,6 @@
             this.btnEnable.Text = "Enable";
             this.btnEnable.UseVisualStyleBackColor = true;
             this.btnEnable.Click += new System.EventHandler(this.btnEnable_Click);
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "",
-            "0",
-            "1"});
-            this.cmbStatus.Location = new System.Drawing.Point(115, 180);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(180, 21);
-            this.cmbStatus.TabIndex = 23;
-            this.cmbStatus.TextChanged += new System.EventHandler(this.cmbStatus_TextChanged);
             // 
             // frmViewArchivedEmployee
             // 
