@@ -155,13 +155,14 @@ namespace MainSystem
             if (txtTransactionNo.Text == txtTransactionNo.Text)
             {
                 MySqlConnection conn = connect.connector();
-                String query3 = "INSERT INTO payment_details(paydetailsID) VALUES ('" + txtPaymentID.Text + "')"; 
-                String query = "INSERT INTO studenttransaction(account_id, transaction_datetime, additional_details, transaction_type, employee_id) " +
+                String query3 = "INSERT INTO payment_details() VALUES ()"; 
+                String query = "INSERT INTO studenttransaction(account_id, transaction_datetime, additional_details, transaction_type, employee_id, payment_id) " +
                     "VALUES ('" + txtStudentID.Text +
                     "','" + datePaymentDate.Text +
                     "','" + txtAdditionalDetails.Text +
                     "','" + cmbPaymentType.Text +
                     "','" + txtEmployeeID.Text +
+                    "','" + txtPaymentID.Text +
                     "')";
                 String query2 = "INSERT INTO payment_details(amount, payment_type) " +
                     "VALUES ('" + txtAmount.Text +
