@@ -285,6 +285,7 @@
             this.dataSearch.Size = new System.Drawing.Size(573, 147);
             this.dataSearch.TabIndex = 5;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
+            this.dataSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellContentClick);
             this.dataSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataSearch_MouseClick);
             // 
             // grpBalanceDetails
@@ -292,7 +293,7 @@
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
             this.grpBalanceDetails.Location = new System.Drawing.Point(588, 28);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Size = new System.Drawing.Size(526, 179);
+            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 179);
             this.grpBalanceDetails.TabIndex = 6;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance Details";
@@ -302,7 +303,7 @@
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataBalanceDetails.Location = new System.Drawing.Point(7, 25);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
-            this.dataBalanceDetails.Size = new System.Drawing.Size(513, 148);
+            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 148);
             this.dataBalanceDetails.TabIndex = 0;
             this.dataBalanceDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellClick);
             // 
@@ -326,13 +327,14 @@
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // grpPaymentHistory
             // 
             this.grpPaymentHistory.Controls.Add(this.dataPaymentHistory);
-            this.grpPaymentHistory.Location = new System.Drawing.Point(588, 206);
+            this.grpPaymentHistory.Location = new System.Drawing.Point(588, 207);
             this.grpPaymentHistory.Name = "grpPaymentHistory";
-            this.grpPaymentHistory.Size = new System.Drawing.Size(526, 224);
+            this.grpPaymentHistory.Size = new System.Drawing.Size(322, 223);
             this.grpPaymentHistory.TabIndex = 9;
             this.grpPaymentHistory.TabStop = false;
             this.grpPaymentHistory.Text = "Payment History";
@@ -340,9 +342,9 @@
             // dataPaymentHistory
             // 
             this.dataPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPaymentHistory.Location = new System.Drawing.Point(7, 19);
+            this.dataPaymentHistory.Location = new System.Drawing.Point(7, 25);
             this.dataPaymentHistory.Name = "dataPaymentHistory";
-            this.dataPaymentHistory.Size = new System.Drawing.Size(513, 193);
+            this.dataPaymentHistory.Size = new System.Drawing.Size(305, 192);
             this.dataPaymentHistory.TabIndex = 1;
             this.dataPaymentHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPaymentHistory_CellClick);
             // 
@@ -354,14 +356,14 @@
             this.tabControl.Location = new System.Drawing.Point(17, 48);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1134, 498);
+            this.tabControl.Size = new System.Drawing.Size(931, 498);
             this.tabControl.TabIndex = 10;
             // 
             // tabStudentTransaction
             // 
             this.tabStudentTransaction.Controls.Add(this.txtSearch);
-            this.tabStudentTransaction.Controls.Add(this.btnEdit);
             this.tabStudentTransaction.Controls.Add(this.grpPaymentHistory);
+            this.tabStudentTransaction.Controls.Add(this.btnEdit);
             this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
             this.tabStudentTransaction.Controls.Add(this.dataSearch);
             this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
@@ -369,7 +371,7 @@
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
             this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStudentTransaction.Size = new System.Drawing.Size(1126, 472);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(923, 472);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
@@ -396,7 +398,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(1051, 12);
+            this.btnDashboard.Location = new System.Drawing.Point(844, 12);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(100, 37);
             this.btnDashboard.TabIndex = 11;
@@ -408,7 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 558);
+            this.ClientSize = new System.Drawing.Size(961, 558);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.tabControl);
             this.Name = "frmAccount";

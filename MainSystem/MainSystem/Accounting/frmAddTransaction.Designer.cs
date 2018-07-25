@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpNewPayment = new System.Windows.Forms.GroupBox();
+            this.txtPaymentID = new System.Windows.Forms.TextBox();
+            this.lblPaymentID = new System.Windows.Forms.Label();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.txtAdditionalDetails = new System.Windows.Forms.TextBox();
@@ -57,8 +59,6 @@
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
             this.dataEmployeeDetails = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.txtPaymentID = new System.Windows.Forms.TextBox();
-            this.lblPaymentID = new System.Windows.Forms.Label();
             this.grpNewPayment.SuspendLayout();
             this.grpPaymentHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).BeginInit();
@@ -97,6 +97,24 @@
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = " New Payment";
             this.grpNewPayment.Enter += new System.EventHandler(this.grpNewPayment_Enter);
+            // 
+            // txtPaymentID
+            // 
+            this.txtPaymentID.Location = new System.Drawing.Point(121, 76);
+            this.txtPaymentID.Name = "txtPaymentID";
+            this.txtPaymentID.ReadOnly = true;
+            this.txtPaymentID.Size = new System.Drawing.Size(200, 20);
+            this.txtPaymentID.TabIndex = 20;
+            // 
+            // lblPaymentID
+            // 
+            this.lblPaymentID.AutoSize = true;
+            this.lblPaymentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentID.Location = new System.Drawing.Point(6, 77);
+            this.lblPaymentID.Name = "lblPaymentID";
+            this.lblPaymentID.Size = new System.Drawing.Size(77, 16);
+            this.lblPaymentID.TabIndex = 19;
+            this.lblPaymentID.Text = "Payment ID";
             // 
             // txtEmployeeID
             // 
@@ -140,6 +158,8 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(200, 20);
             this.txtAmount.TabIndex = 5;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
             // 
@@ -368,24 +388,6 @@
             this.txtSearch.Size = new System.Drawing.Size(151, 20);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // txtPaymentID
-            // 
-            this.txtPaymentID.Location = new System.Drawing.Point(121, 76);
-            this.txtPaymentID.Name = "txtPaymentID";
-            this.txtPaymentID.ReadOnly = true;
-            this.txtPaymentID.Size = new System.Drawing.Size(200, 20);
-            this.txtPaymentID.TabIndex = 20;
-            // 
-            // lblPaymentID
-            // 
-            this.lblPaymentID.AutoSize = true;
-            this.lblPaymentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentID.Location = new System.Drawing.Point(6, 77);
-            this.lblPaymentID.Name = "lblPaymentID";
-            this.lblPaymentID.Size = new System.Drawing.Size(77, 16);
-            this.lblPaymentID.TabIndex = 19;
-            this.lblPaymentID.Text = "Payment ID";
             // 
             // frmAddTransaction
             // 

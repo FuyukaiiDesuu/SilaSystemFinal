@@ -37,6 +37,33 @@ namespace MainSystem
                
         }
 
+        public void readBank()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT idstudentprofile,studentid,idsa,account_id,fee_id,feeID FROM studentprofile, account_details, studentaccount, fee_values  WHERE studentaccount.studentid = studentprofile.idstudentprofile AND account_details.account_id = studentaccount.idsa AND account_details.fee_id = fee_values.feeID ";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataBalanceDetails.DataSource = dt;
+            }
+        }
+
+        /*public void readPaymentHistory()
+        {
+            //For Reading the Data
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM studentprofile";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataSearch.DataSource = dt;
+            }
+
+        }
+        */
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
@@ -72,6 +99,7 @@ namespace MainSystem
 
         private void frmAccount_Load(object sender, EventArgs e)
         {
+            readBank();
             //For Reading the Data.
             readData();
 
@@ -83,6 +111,7 @@ namespace MainSystem
 
             //For Disabling auto-select in datagrid view 
             dataSearch.Rows[0].Selected = false;
+
         }
 
         private void disableAddTransactionButton()
@@ -205,6 +234,7 @@ namespace MainSystem
         {
             //Disable editing value in datagrid view
             dataSearch.Rows[e.RowIndex].ReadOnly = true;
+
         }
 
         private void dataBalanceDetails_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -217,6 +247,20 @@ namespace MainSystem
         {
             //Disable editing value in datagrid view
             dataSearch.Rows[e.RowIndex].ReadOnly = true;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            editaccount = new frmEditAccount();
+            editaccount.Show();
+            editaccount.reference = this;
+            this.Hide();
+        }
+        public frmEditAccount editaccount;
+
+        private void dataSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
