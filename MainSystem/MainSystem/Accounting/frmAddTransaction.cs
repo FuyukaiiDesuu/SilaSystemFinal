@@ -130,63 +130,40 @@ namespace MainSystem
 
         private void insertData()
         {
-            /*MySqlConnection conn = connect.connector();
-            conn.Open();
-
-            MySqlCommand cmd2 = new MySqlCommand("INSERT INTO payment_details(amount, payment_type) VALUES (@amount, @payment_type)", conn);
-            cmd2.Parameters.AddWithValue("@amount", txtAmount.Text);
-            cmd2.Parameters.AddWithValue("@payment_type", cmbPaymentType.Text);
-            cmd2.ExecuteNonQuery();
-            cmd2.Parameters.Clear();
-
-            MySqlCommand cmd1 = new MySqlCommand("INSERT INTO studenttransaction(transactionid, account_id,transaction_datetime, additional_details,transaction_type, employee_id, payment_id) VALUES(@transactionid, @account_id, @transaction_datetime, @additional_details, @transaction_type, @employee_id, @payment_id)", conn);
-            cmd1.Parameters.AddWithValue("@transactionid", txtPaymentNo.Text);
-            cmd1.Parameters.AddWithValue("@account_id", txtStudentID.Text);
-            cmd1.Parameters.AddWithValue("@transaction_datetime", datePaymentDate.Text);
-            cmd1.Parameters.AddWithValue("@additional_details", txtAdditionalDetails.Text);
-            cmd1.Parameters.AddWithValue("@transaction_type", cmbPaymentTo.Text);
-            cmd1.Parameters.AddWithValue("@employee_id", txtEmployeeID.Text);
-            cmd1.Parameters.AddWithValue("@payment_id", txtPaymentNo.Text);
-            cmd1.ExecuteNonQuery();
-            cmd1.Parameters.Clear();
-
-            MessageBox.Show("Successfully Inserted");
-            */
             if (txtTransactionNo.Text == txtTransactionNo.Text)
             {
-                MySqlConnection conn = connect.connector();
-                String query3 = "INSERT INTO payment_details() VALUES ()"; 
-                String query = "INSERT INTO studenttransaction(account_id, transaction_datetime, additional_details, transaction_type, employee_id, payment_id) " +
-                    "VALUES ('" + txtStudentID.Text +
-                    "','" + datePaymentDate.Text +
-                    "','" + txtAdditionalDetails.Text +
-                    "','" + cmbPaymentType.Text +
-                    "','" + txtEmployeeID.Text +
-                    "','" + txtPaymentID.Text +
-                    "')";
-                String query2 = "INSERT INTO payment_details(amount, payment_type) " +
-                    "VALUES ('" + txtAmount.Text +
-                    "','" + cmbPaymentType.Text +
-                    "')";
-                MySqlCommand cmd = new MySqlCommand(query3, conn);
-                MySqlCommand cmd2 = new MySqlCommand(query2, conn);
-                MySqlCommand cmd3 = new MySqlCommand(query, conn);
-                try
+                using (MySqlConnection conn = connect.connector())
                 {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    cmd2.ExecuteNonQuery();
-                    cmd3.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Inserted");
+                    String query = "INSERT INTO payment_details() VALUES ()";
+                    String query2 = "UPDATE payment_details SET amount='" + txtAmount.Text + "',payment_type='" + cmbPaymentType.Text + "' WHERE paydetailsID='" + txtPaymentID.Text + "'";
+                    String query3 = "INSERT INTO studenttransaction(account_id, transaction_datetime, additional_details, transaction_type, employee_id, payment_id) " +
+                        "VALUES ('" + txtStudentID.Text +
+                        "','" + datePaymentDate.Text +
+                        "','" + txtAdditionalDetails.Text +
+                        "','" + cmbPaymentType.Text +
+                        "','" + txtEmployeeID.Text +
+                        "','" + txtPaymentID.Text +
+                        "')";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlCommand cmd2 = new MySqlCommand(query2, conn);
+                    MySqlCommand cmd3 = new MySqlCommand(query3, conn);
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        cmd2.ExecuteNonQuery();
+                        cmd3.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Inserted");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    conn.Close();
+                    this.Close();
+                    reference.Show();
+                    reference.readData();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                conn.Close();
-                this.Close();
-                reference.Show();
-                reference.readData();
             }
         }
         private void fetchID()
