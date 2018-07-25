@@ -30,15 +30,16 @@
         {
             this.btnback = new System.Windows.Forms.Button();
             this.gboxentry = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtquantity = new System.Windows.Forms.TextBox();
+            this.txtdesc = new System.Windows.Forms.TextBox();
+            this.txtdate = new System.Windows.Forms.TextBox();
+            this.txtitemname = new System.Windows.Forms.TextBox();
             this.lblquantity = new System.Windows.Forms.Label();
             this.lblmiscdesc = new System.Windows.Forms.Label();
             this.lbldate = new System.Windows.Forms.Label();
             this.lblitemname = new System.Windows.Forms.Label();
             this.btnconfirm = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.gboxentry.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,10 +55,10 @@
             // 
             // gboxentry
             // 
-            this.gboxentry.Controls.Add(this.textBox5);
-            this.gboxentry.Controls.Add(this.textBox4);
-            this.gboxentry.Controls.Add(this.textBox3);
-            this.gboxentry.Controls.Add(this.textBox1);
+            this.gboxentry.Controls.Add(this.txtquantity);
+            this.gboxentry.Controls.Add(this.txtdesc);
+            this.gboxentry.Controls.Add(this.txtdate);
+            this.gboxentry.Controls.Add(this.txtitemname);
             this.gboxentry.Controls.Add(this.lblquantity);
             this.gboxentry.Controls.Add(this.lblmiscdesc);
             this.gboxentry.Controls.Add(this.lbldate);
@@ -71,34 +72,34 @@
             this.gboxentry.TabStop = false;
             this.gboxentry.Text = "New Entry";
             // 
-            // textBox5
+            // txtquantity
             // 
-            this.textBox5.Location = new System.Drawing.Point(79, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(119, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtquantity.Location = new System.Drawing.Point(79, 212);
+            this.txtquantity.Name = "txtquantity";
+            this.txtquantity.Size = new System.Drawing.Size(119, 20);
+            this.txtquantity.TabIndex = 11;
             // 
-            // textBox4
+            // txtdesc
             // 
-            this.textBox4.Location = new System.Drawing.Point(27, 146);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(171, 55);
-            this.textBox4.TabIndex = 10;
+            this.txtdesc.Location = new System.Drawing.Point(27, 146);
+            this.txtdesc.Multiline = true;
+            this.txtdesc.Name = "txtdesc";
+            this.txtdesc.Size = new System.Drawing.Size(171, 55);
+            this.txtdesc.TabIndex = 10;
             // 
-            // textBox3
+            // txtdate
             // 
-            this.textBox3.Location = new System.Drawing.Point(94, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(104, 20);
-            this.textBox3.TabIndex = 9;
+            this.txtdate.Location = new System.Drawing.Point(94, 94);
+            this.txtdate.Name = "txtdate";
+            this.txtdate.Size = new System.Drawing.Size(104, 20);
+            this.txtdate.TabIndex = 9;
             // 
-            // textBox1
+            // txtitemname
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(104, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtitemname.Location = new System.Drawing.Point(94, 65);
+            this.txtitemname.Name = "txtitemname";
+            this.txtitemname.Size = new System.Drawing.Size(104, 20);
+            this.txtitemname.TabIndex = 7;
             // 
             // lblquantity
             // 
@@ -144,12 +145,24 @@
             this.btnconfirm.TabIndex = 1;
             this.btnconfirm.Text = "Confirm";
             this.btnconfirm.UseVisualStyleBackColor = true;
+            this.btnconfirm.Click += new System.EventHandler(this.btnconfirm_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "New Entry";
             // 
             // frmNewEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 328);
+            this.ClientSize = new System.Drawing.Size(255, 328);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gboxentry);
             this.Name = "frmNewEntry";
             this.Text = "frmNewEntry";
@@ -157,6 +170,7 @@
             this.gboxentry.ResumeLayout(false);
             this.gboxentry.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -164,14 +178,15 @@
 
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.GroupBox gboxentry;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblquantity;
         private System.Windows.Forms.Label lblmiscdesc;
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Label lblitemname;
         private System.Windows.Forms.Button btnconfirm;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtquantity;
+        public System.Windows.Forms.TextBox txtdesc;
+        public System.Windows.Forms.TextBox txtdate;
+        public System.Windows.Forms.TextBox txtitemname;
     }
 }

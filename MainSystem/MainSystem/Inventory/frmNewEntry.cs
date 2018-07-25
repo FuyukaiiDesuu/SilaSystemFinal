@@ -13,9 +13,12 @@ namespace MainSystem
     public partial class frmNewEntry : Form
     {
         public Stockin_out reference { get; set; }
-        public frmNewEntry()
+        public frmNewEntry(IDictionary<string, string> dic)
         {
             InitializeComponent();
+            txtitemname.Text = dic["name"];
+            txtdesc.Text = dic["desc"];
+    
         }
 
         private void frmNewEntry_Load(object sender, EventArgs e)
@@ -27,6 +30,11 @@ namespace MainSystem
         {
             reference.Show();
             this.Hide();
+        }
+
+        private void btnconfirm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

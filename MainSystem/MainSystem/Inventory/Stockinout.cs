@@ -32,12 +32,11 @@ namespace MainSystem
         {
             readData();
         }
-        public frmNewEntry newentry;
         private void btnNewEntry_Click(object sender, EventArgs e)
         {
-            newentry = new frmNewEntry();
-            newentry.Show();
-            newentry.reference = this;
+            newent = new frmNewEntry(forreturn);
+            newent.Show();
+            newent.reference = this;
             this.Hide();
         }
 
@@ -56,6 +55,19 @@ namespace MainSystem
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns["itemID"].Visible = false;
             }
+        }
+        public frmNewEntry newent;
+        IDictionary<string, string> forreturn;
+        private void items(string id, string name, string desc)
+        {
+            forreturn = new Dictionary<string, string>();
+            forreturn.Add("name", name);
+            forreturn.Add("desc", desc);
+            
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            items(dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["itemname"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString());
         }
     }
 }
