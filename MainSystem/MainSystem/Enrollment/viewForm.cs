@@ -21,7 +21,7 @@ namespace MainSystem
 
         private void viewForm_Load(object sender, EventArgs e)
         {
-
+            loaddata();
         }
         public MySqlConnection dbconnection;
         private void loaddata()
