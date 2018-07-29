@@ -46,6 +46,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounting\DbConnect.cs" />
+    <Compile Include="Accounting\DbQueries.cs" />
+    <Compile Include="Accounting\frmAddFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\frmAddFee.Designer.cs">
+      <DependentUpon>frmAddFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\newfrmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\newfrmAccount.Designer.cs">
+      <DependentUpon>newfrmAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\newfrmAddTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\newfrmAddTransaction.Designer.cs">
+      <DependentUpon>newfrmAddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\newfrmEditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\newfrmEditAccount.Designer.cs">
+      <DependentUpon>newfrmEditAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbConnector.cs" />
     <Compile Include="Enrollment\AddForm.cs">
       <SubType>Form</SubType>
@@ -121,8 +147,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Accounting\frmAddFee.resx">
+      <DependentUpon>frmAddFee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accounting\frmEditAccount.resx">
       <DependentUpon>frmEditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\newfrmAccount.resx">
+      <DependentUpon>newfrmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\newfrmAddTransaction.resx">
+      <DependentUpon>newfrmAddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\newfrmEditAccount.resx">
+      <DependentUpon>newfrmEditAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>

@@ -63,9 +63,15 @@
             // 
             // dataSearch
             // 
+            this.dataSearch.AllowUserToAddRows = false;
+            this.dataSearch.AllowUserToDeleteRows = false;
+            this.dataSearch.AllowUserToResizeColumns = false;
+            this.dataSearch.AllowUserToResizeRows = false;
+            this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSearch.Location = new System.Drawing.Point(12, 102);
             this.dataSearch.Name = "dataSearch";
+            this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataSearch.Size = new System.Drawing.Size(640, 165);
             this.dataSearch.TabIndex = 8;
@@ -113,6 +119,7 @@
             // 
             // txtMaritalStatus
             // 
+            this.txtMaritalStatus.BackColor = System.Drawing.Color.White;
             this.txtMaritalStatus.Location = new System.Drawing.Point(112, 220);
             this.txtMaritalStatus.Name = "txtMaritalStatus";
             this.txtMaritalStatus.ReadOnly = true;
@@ -132,6 +139,7 @@
             // 
             // txtBirthPlace
             // 
+            this.txtBirthPlace.BackColor = System.Drawing.Color.White;
             this.txtBirthPlace.Location = new System.Drawing.Point(112, 65);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.ReadOnly = true;
@@ -151,6 +159,7 @@
             // 
             // txtReligion
             // 
+            this.txtReligion.BackColor = System.Drawing.Color.White;
             this.txtReligion.Location = new System.Drawing.Point(112, 180);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.ReadOnly = true;
@@ -170,6 +179,7 @@
             // 
             // txtContactNo
             // 
+            this.txtContactNo.BackColor = System.Drawing.Color.White;
             this.txtContactNo.Location = new System.Drawing.Point(112, 101);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.ReadOnly = true;
@@ -189,6 +199,7 @@
             // 
             // txtSex
             // 
+            this.txtSex.BackColor = System.Drawing.Color.White;
             this.txtSex.Location = new System.Drawing.Point(112, 139);
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
@@ -208,6 +219,7 @@
             // 
             // txtBirthDate
             // 
+            this.txtBirthDate.BackColor = System.Drawing.Color.White;
             this.txtBirthDate.Location = new System.Drawing.Point(112, 26);
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.ReadOnly = true;
@@ -246,6 +258,7 @@
             // 
             // cmbStatus
             // 
+            this.cmbStatus.BackColor = System.Drawing.Color.White;
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
@@ -260,6 +273,7 @@
             // 
             // txtMiddleName
             // 
+            this.txtMiddleName.BackColor = System.Drawing.Color.White;
             this.txtMiddleName.Location = new System.Drawing.Point(115, 101);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.ReadOnly = true;
@@ -269,6 +283,7 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.Location = new System.Drawing.Point(115, 65);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
@@ -298,6 +313,7 @@
             // 
             // txtLastName
             // 
+            this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.Location = new System.Drawing.Point(115, 139);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
@@ -327,6 +343,7 @@
             // 
             // txtEmployeeID
             // 
+            this.txtEmployeeID.BackColor = System.Drawing.Color.White;
             this.txtEmployeeID.Location = new System.Drawing.Point(115, 26);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.ReadOnly = true;
@@ -359,6 +376,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(661, 578);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.grpPersonalDetails);
@@ -366,6 +384,8 @@
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.dataSearch);
             this.Controls.Add(this.txtSearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmViewArchivedEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Archived Employee";

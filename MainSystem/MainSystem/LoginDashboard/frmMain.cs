@@ -63,10 +63,10 @@ namespace MainSystem
             this.Hide();
             
         }
-        public frmAccount frmacc;
+        public Accounting.newfrmAccount frmacc;
         private void btnAccountForm_Click(object sender, EventArgs e)
         {
-            frmacc = new frmAccount();
+            frmacc = new Accounting.newfrmAccount();
             frmacc.Show();
             frmacc.reference = this;
             this.Hide();

@@ -253,7 +253,6 @@ namespace MainSystem
         {
             editaccount = new frmEditAccount();
             editaccount.Show();
-            editaccount.reference = this;
             this.Hide();
         }
         public frmEditAccount editaccount;

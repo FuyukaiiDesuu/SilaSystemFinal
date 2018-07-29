@@ -28,7 +28,6 @@ namespace MainSystem
             disableButton();
             renameDataTableColumns();
             //For Disabling auto-select in datagrid view 
-            dataSearch.Rows[0].Selected = false;
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

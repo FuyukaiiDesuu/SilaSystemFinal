@@ -103,6 +103,7 @@
             // 
             // txtContactNo
             // 
+            this.txtContactNo.BackColor = System.Drawing.Color.White;
             this.txtContactNo.Location = new System.Drawing.Point(112, 97);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(180, 20);
@@ -120,6 +121,7 @@
             // 
             // txtBirthPlace
             // 
+            this.txtBirthPlace.BackColor = System.Drawing.Color.White;
             this.txtBirthPlace.Location = new System.Drawing.Point(112, 62);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
@@ -137,6 +139,7 @@
             // 
             // cmbSex
             // 
+            this.cmbSex.BackColor = System.Drawing.Color.White;
             this.cmbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSex.FormattingEnabled = true;
             this.cmbSex.Items.AddRange(new object[] {
@@ -159,6 +162,7 @@
             // 
             // txtMaritalStatus
             // 
+            this.txtMaritalStatus.BackColor = System.Drawing.Color.White;
             this.txtMaritalStatus.Location = new System.Drawing.Point(112, 215);
             this.txtMaritalStatus.Name = "txtMaritalStatus";
             this.txtMaritalStatus.Size = new System.Drawing.Size(180, 20);
@@ -176,6 +180,7 @@
             // 
             // txtReligion
             // 
+            this.txtReligion.BackColor = System.Drawing.Color.White;
             this.txtReligion.Location = new System.Drawing.Point(112, 175);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.Size = new System.Drawing.Size(180, 20);
@@ -232,6 +237,7 @@
             // 
             // cmbStatus
             // 
+            this.cmbStatus.BackColor = System.Drawing.Color.White;
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
@@ -245,6 +251,7 @@
             // 
             // txtMiddleName
             // 
+            this.txtMiddleName.BackColor = System.Drawing.Color.White;
             this.txtMiddleName.Location = new System.Drawing.Point(115, 97);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
@@ -252,6 +259,7 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.Location = new System.Drawing.Point(115, 62);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(180, 20);
@@ -279,6 +287,7 @@
             // 
             // txtLastName
             // 
+            this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.Location = new System.Drawing.Point(115, 136);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(180, 20);
@@ -306,6 +315,7 @@
             // 
             // txtEmployeeID
             // 
+            this.txtEmployeeID.BackColor = System.Drawing.Color.White;
             this.txtEmployeeID.Location = new System.Drawing.Point(115, 26);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.ReadOnly = true;
@@ -327,11 +337,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(665, 318);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpPersonalDetails);
             this.Controls.Add(this.grpEmployeeDetails);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmEditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Employee";

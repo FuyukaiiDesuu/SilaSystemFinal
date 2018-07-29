@@ -1,6 +1,6 @@
-﻿namespace MainSystem
+﻿namespace MainSystem.Accounting
 {
-    partial class frmAccount
+    partial class newfrmAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabStudentTransaction = new System.Windows.Forms.TabPage();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.grpPaymentHistory = new System.Windows.Forms.GroupBox();
+            this.dataPaymentHistory = new System.Windows.Forms.DataGridView();
+            this.btnAddFee = new System.Windows.Forms.Button();
+            this.btnAddTransaction = new System.Windows.Forms.Button();
+            this.dataSearch = new System.Windows.Forms.DataGridView();
             this.grpStudentDetails = new System.Windows.Forms.GroupBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
@@ -48,27 +55,52 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.lblStudentID = new System.Windows.Forms.Label();
-            this.dataSearch = new System.Windows.Forms.DataGridView();
             this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
             this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
-            this.btnAddTransaction = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.grpPaymentHistory = new System.Windows.Forms.GroupBox();
-            this.dataPaymentHistory = new System.Windows.Forms.DataGridView();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabStudentTransaction = new System.Windows.Forms.TabPage();
             this.tabBankTransaction = new System.Windows.Forms.TabPage();
             this.tabDisbursement = new System.Windows.Forms.TabPage();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.grpStudentDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
-            this.grpBalanceDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
-            this.grpPaymentHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).BeginInit();
+            this.lblLoggedinas = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.btnEditAccount = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
+            this.grpPaymentHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
+            this.grpStudentDetails.SuspendLayout();
+            this.grpBalanceDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabStudentTransaction);
+            this.tabControl.Controls.Add(this.tabBankTransaction);
+            this.tabControl.Controls.Add(this.tabDisbursement);
+            this.tabControl.Location = new System.Drawing.Point(4, 40);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(931, 498);
+            this.tabControl.TabIndex = 13;
+            // 
+            // tabStudentTransaction
+            // 
+            this.tabStudentTransaction.Controls.Add(this.btnEditAccount);
+            this.tabStudentTransaction.Controls.Add(this.txtSearch);
+            this.tabStudentTransaction.Controls.Add(this.grpPaymentHistory);
+            this.tabStudentTransaction.Controls.Add(this.btnAddFee);
+            this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
+            this.tabStudentTransaction.Controls.Add(this.dataSearch);
+            this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
+            this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
+            this.tabStudentTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabStudentTransaction.Name = "tabStudentTransaction";
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(923, 472);
+            this.tabStudentTransaction.TabIndex = 0;
+            this.tabStudentTransaction.Text = "Student Transaction";
+            this.tabStudentTransaction.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -76,7 +108,70 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 1;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // grpPaymentHistory
+            // 
+            this.grpPaymentHistory.Controls.Add(this.dataPaymentHistory);
+            this.grpPaymentHistory.Location = new System.Drawing.Point(588, 207);
+            this.grpPaymentHistory.Name = "grpPaymentHistory";
+            this.grpPaymentHistory.Size = new System.Drawing.Size(322, 223);
+            this.grpPaymentHistory.TabIndex = 9;
+            this.grpPaymentHistory.TabStop = false;
+            this.grpPaymentHistory.Text = "Payment History";
+            // 
+            // dataPaymentHistory
+            // 
+            this.dataPaymentHistory.AllowUserToAddRows = false;
+            this.dataPaymentHistory.AllowUserToDeleteRows = false;
+            this.dataPaymentHistory.AllowUserToResizeColumns = false;
+            this.dataPaymentHistory.AllowUserToResizeRows = false;
+            this.dataPaymentHistory.BackgroundColor = System.Drawing.Color.White;
+            this.dataPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPaymentHistory.Location = new System.Drawing.Point(7, 25);
+            this.dataPaymentHistory.Name = "dataPaymentHistory";
+            this.dataPaymentHistory.RowHeadersVisible = false;
+            this.dataPaymentHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataPaymentHistory.Size = new System.Drawing.Size(305, 192);
+            this.dataPaymentHistory.TabIndex = 1;
+            // 
+            // btnAddFee
+            // 
+            this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFee.Location = new System.Drawing.Point(271, 436);
+            this.btnAddFee.Name = "btnAddFee";
+            this.btnAddFee.Size = new System.Drawing.Size(125, 28);
+            this.btnAddFee.TabIndex = 4;
+            this.btnAddFee.Text = "Add Fee";
+            this.btnAddFee.UseVisualStyleBackColor = true;
+            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
+            // 
+            // btnAddTransaction
+            // 
+            this.btnAddTransaction.Enabled = false;
+            this.btnAddTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTransaction.Location = new System.Drawing.Point(9, 436);
+            this.btnAddTransaction.Name = "btnAddTransaction";
+            this.btnAddTransaction.Size = new System.Drawing.Size(125, 28);
+            this.btnAddTransaction.TabIndex = 3;
+            this.btnAddTransaction.Text = "Add Transaction";
+            this.btnAddTransaction.UseVisualStyleBackColor = true;
+            this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
+            // 
+            // dataSearch
+            // 
+            this.dataSearch.AllowUserToAddRows = false;
+            this.dataSearch.AllowUserToDeleteRows = false;
+            this.dataSearch.AllowUserToResizeColumns = false;
+            this.dataSearch.AllowUserToResizeRows = false;
+            this.dataSearch.BackgroundColor = System.Drawing.Color.White;
+            this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSearch.Location = new System.Drawing.Point(9, 53);
+            this.dataSearch.Name = "dataSearch";
+            this.dataSearch.RowHeadersVisible = false;
+            this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataSearch.Size = new System.Drawing.Size(573, 147);
+            this.dataSearch.TabIndex = 5;
+            this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             // 
             // grpStudentDetails
             // 
@@ -114,7 +209,6 @@
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(180, 20);
             this.txtLastName.TabIndex = 22;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // txtMiddleName
             // 
@@ -125,7 +219,6 @@
             this.txtMiddleName.ReadOnly = true;
             this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
             this.txtMiddleName.TabIndex = 21;
-            this.txtMiddleName.TextChanged += new System.EventHandler(this.txtMiddleName_TextChanged);
             // 
             // lblLastName
             // 
@@ -156,7 +249,6 @@
             this.txtDateOfBirth.ReadOnly = true;
             this.txtDateOfBirth.Size = new System.Drawing.Size(180, 20);
             this.txtDateOfBirth.TabIndex = 18;
-            this.txtDateOfBirth.TextChanged += new System.EventHandler(this.txtSection_TextChanged);
             // 
             // txtReligion
             // 
@@ -167,7 +259,6 @@
             this.txtReligion.ReadOnly = true;
             this.txtReligion.Size = new System.Drawing.Size(180, 20);
             this.txtReligion.TabIndex = 17;
-            this.txtReligion.TextChanged += new System.EventHandler(this.txtDepartment_TextChanged);
             // 
             // txtPlaceOfBirth
             // 
@@ -178,7 +269,6 @@
             this.txtPlaceOfBirth.ReadOnly = true;
             this.txtPlaceOfBirth.Size = new System.Drawing.Size(180, 20);
             this.txtPlaceOfBirth.TabIndex = 16;
-            this.txtPlaceOfBirth.TextChanged += new System.EventHandler(this.txtLevel_TextChanged);
             // 
             // txtNickName
             // 
@@ -189,7 +279,6 @@
             this.txtNickName.ReadOnly = true;
             this.txtNickName.Size = new System.Drawing.Size(180, 20);
             this.txtNickName.TabIndex = 15;
-            this.txtNickName.TextChanged += new System.EventHandler(this.txtStatus_TextChanged);
             // 
             // txtSex
             // 
@@ -200,7 +289,6 @@
             this.txtSex.ReadOnly = true;
             this.txtSex.Size = new System.Drawing.Size(180, 20);
             this.txtSex.TabIndex = 14;
-            this.txtSex.TextChanged += new System.EventHandler(this.txtGender_TextChanged);
             // 
             // lblDateOfBirth
             // 
@@ -261,7 +349,6 @@
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(180, 20);
             this.txtFirstName.TabIndex = 3;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // lblFirstName
             // 
@@ -282,7 +369,6 @@
             this.txtStudentID.ReadOnly = true;
             this.txtStudentID.Size = new System.Drawing.Size(180, 20);
             this.txtStudentID.TabIndex = 3;
-            this.txtStudentID.TextChanged += new System.EventHandler(this.txtStudentID_TextChanged);
             // 
             // lblStudentID
             // 
@@ -293,24 +379,6 @@
             this.lblStudentID.Size = new System.Drawing.Size(21, 16);
             this.lblStudentID.TabIndex = 0;
             this.lblStudentID.Text = "ID";
-            // 
-            // dataSearch
-            // 
-            this.dataSearch.AllowUserToAddRows = false;
-            this.dataSearch.AllowUserToDeleteRows = false;
-            this.dataSearch.AllowUserToResizeColumns = false;
-            this.dataSearch.AllowUserToResizeRows = false;
-            this.dataSearch.BackgroundColor = System.Drawing.Color.White;
-            this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearch.Location = new System.Drawing.Point(9, 53);
-            this.dataSearch.Name = "dataSearch";
-            this.dataSearch.RowHeadersVisible = false;
-            this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSearch.Size = new System.Drawing.Size(573, 147);
-            this.dataSearch.TabIndex = 5;
-            this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
-            this.dataSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellContentClick);
-            this.dataSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataSearch_MouseClick);
             // 
             // grpBalanceDetails
             // 
@@ -333,84 +401,10 @@
             this.dataBalanceDetails.Location = new System.Drawing.Point(7, 25);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.RowHeadersVisible = false;
+            this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataBalanceDetails.Size = new System.Drawing.Size(305, 148);
             this.dataBalanceDetails.TabIndex = 0;
             this.dataBalanceDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellClick);
-            // 
-            // btnAddTransaction
-            // 
-            this.btnAddTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTransaction.Location = new System.Drawing.Point(9, 436);
-            this.btnAddTransaction.Name = "btnAddTransaction";
-            this.btnAddTransaction.Size = new System.Drawing.Size(125, 28);
-            this.btnAddTransaction.TabIndex = 3;
-            this.btnAddTransaction.Text = "Add Transaction";
-            this.btnAddTransaction.UseVisualStyleBackColor = true;
-            this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(140, 436);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(125, 28);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // grpPaymentHistory
-            // 
-            this.grpPaymentHistory.Controls.Add(this.dataPaymentHistory);
-            this.grpPaymentHistory.Location = new System.Drawing.Point(588, 207);
-            this.grpPaymentHistory.Name = "grpPaymentHistory";
-            this.grpPaymentHistory.Size = new System.Drawing.Size(322, 223);
-            this.grpPaymentHistory.TabIndex = 9;
-            this.grpPaymentHistory.TabStop = false;
-            this.grpPaymentHistory.Text = "Payment History";
-            // 
-            // dataPaymentHistory
-            // 
-            this.dataPaymentHistory.AllowUserToAddRows = false;
-            this.dataPaymentHistory.AllowUserToDeleteRows = false;
-            this.dataPaymentHistory.AllowUserToResizeColumns = false;
-            this.dataPaymentHistory.AllowUserToResizeRows = false;
-            this.dataPaymentHistory.BackgroundColor = System.Drawing.Color.White;
-            this.dataPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPaymentHistory.Location = new System.Drawing.Point(7, 25);
-            this.dataPaymentHistory.Name = "dataPaymentHistory";
-            this.dataPaymentHistory.RowHeadersVisible = false;
-            this.dataPaymentHistory.Size = new System.Drawing.Size(305, 192);
-            this.dataPaymentHistory.TabIndex = 0;
-            this.dataPaymentHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPaymentHistory_CellClick);
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabStudentTransaction);
-            this.tabControl.Controls.Add(this.tabBankTransaction);
-            this.tabControl.Controls.Add(this.tabDisbursement);
-            this.tabControl.Location = new System.Drawing.Point(17, 48);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(931, 498);
-            this.tabControl.TabIndex = 10;
-            // 
-            // tabStudentTransaction
-            // 
-            this.tabStudentTransaction.Controls.Add(this.txtSearch);
-            this.tabStudentTransaction.Controls.Add(this.grpPaymentHistory);
-            this.tabStudentTransaction.Controls.Add(this.btnEdit);
-            this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
-            this.tabStudentTransaction.Controls.Add(this.dataSearch);
-            this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
-            this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
-            this.tabStudentTransaction.Location = new System.Drawing.Point(4, 22);
-            this.tabStudentTransaction.Name = "tabStudentTransaction";
-            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStudentTransaction.Size = new System.Drawing.Size(923, 472);
-            this.tabStudentTransaction.TabIndex = 0;
-            this.tabStudentTransaction.Text = "Student Transaction";
-            this.tabStudentTransaction.UseVisualStyleBackColor = true;
             // 
             // tabBankTransaction
             // 
@@ -434,71 +428,110 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(844, 12);
+            this.btnDashboard.Location = new System.Drawing.Point(831, 19);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(100, 37);
-            this.btnDashboard.TabIndex = 11;
+            this.btnDashboard.TabIndex = 14;
             this.btnDashboard.Text = "DASHBOARD";
             this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.button1_Click);
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // frmAccount
+            // lblLoggedinas
+            // 
+            this.lblLoggedinas.AutoSize = true;
+            this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedinas.Location = new System.Drawing.Point(527, 17);
+            this.lblLoggedinas.Name = "lblLoggedinas";
+            this.lblLoggedinas.Size = new System.Drawing.Size(108, 20);
+            this.lblLoggedinas.TabIndex = 15;
+            this.lblLoggedinas.Text = "Logged in as: ";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblUser.Location = new System.Drawing.Point(641, 17);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(55, 20);
+            this.lblUser.TabIndex = 16;
+            this.lblUser.Text = "USER";
+            // 
+            // btnEditAccount
+            // 
+            this.btnEditAccount.Enabled = false;
+            this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditAccount.Location = new System.Drawing.Point(140, 436);
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.Size = new System.Drawing.Size(125, 28);
+            this.btnEditAccount.TabIndex = 10;
+            this.btnEditAccount.Text = "Edit Account";
+            this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
+            // 
+            // newfrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 558);
+            this.ClientSize = new System.Drawing.Size(947, 553);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.tabControl);
-            this.Name = "frmAccount";
+            this.Name = "newfrmAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounting Management";
-            this.Load += new System.EventHandler(this.frmAccount_Load);
-            this.grpStudentDetails.ResumeLayout(false);
-            this.grpStudentDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
-            this.grpBalanceDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
-            this.grpPaymentHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).EndInit();
+            this.Load += new System.EventHandler(this.newfrmAccount_Load);
             this.tabControl.ResumeLayout(false);
             this.tabStudentTransaction.ResumeLayout(false);
             this.tabStudentTransaction.PerformLayout();
+            this.grpPaymentHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
+            this.grpStudentDetails.ResumeLayout(false);
+            this.grpStudentDetails.PerformLayout();
+            this.grpBalanceDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.GroupBox grpStudentDetails;
-        private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.DataGridView dataSearch;
-        private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.Label lblPlaceOfBirth;
-        private System.Windows.Forms.Label lblReligion;
-        private System.Windows.Forms.Label lblNickname;
-        private System.Windows.Forms.Label lblSex;
-        private System.Windows.Forms.GroupBox grpBalanceDetails;
-        private System.Windows.Forms.DataGridView dataBalanceDetails;
-        private System.Windows.Forms.Button btnAddTransaction;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.GroupBox grpPaymentHistory;
-        private System.Windows.Forms.DataGridView dataPaymentHistory;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblMiddleName;
+
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabStudentTransaction;
-        private System.Windows.Forms.TabPage tabBankTransaction;
-        private System.Windows.Forms.TabPage tabDisbursement;
-        private System.Windows.Forms.Button btnDashboard;
-        public System.Windows.Forms.TextBox txtStudentID;
-        public System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.GroupBox grpPaymentHistory;
+        private System.Windows.Forms.DataGridView dataPaymentHistory;
+        private System.Windows.Forms.Button btnAddFee;
+        private System.Windows.Forms.Button btnAddTransaction;
+        private System.Windows.Forms.DataGridView dataSearch;
+        private System.Windows.Forms.GroupBox grpStudentDetails;
+        public System.Windows.Forms.TextBox txtLastName;
+        public System.Windows.Forms.TextBox txtMiddleName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblMiddleName;
         public System.Windows.Forms.TextBox txtDateOfBirth;
         public System.Windows.Forms.TextBox txtReligion;
         public System.Windows.Forms.TextBox txtPlaceOfBirth;
         public System.Windows.Forms.TextBox txtNickName;
         public System.Windows.Forms.TextBox txtSex;
-        public System.Windows.Forms.TextBox txtLastName;
-        public System.Windows.Forms.TextBox txtMiddleName;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblPlaceOfBirth;
+        private System.Windows.Forms.Label lblReligion;
+        private System.Windows.Forms.Label lblNickname;
+        private System.Windows.Forms.Label lblSex;
+        public System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label lblFirstName;
+        public System.Windows.Forms.TextBox txtStudentID;
+        private System.Windows.Forms.Label lblStudentID;
+        private System.Windows.Forms.GroupBox grpBalanceDetails;
+        private System.Windows.Forms.DataGridView dataBalanceDetails;
+        private System.Windows.Forms.TabPage tabBankTransaction;
+        private System.Windows.Forms.TabPage tabDisbursement;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Label lblLoggedinas;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Button btnEditAccount;
     }
 }
