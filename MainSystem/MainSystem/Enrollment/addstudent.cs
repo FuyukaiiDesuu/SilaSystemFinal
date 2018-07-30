@@ -32,6 +32,7 @@ namespace MainSystem
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
+            btncanc.PerformClick();
             reference.Show();
             this.Close();
         }

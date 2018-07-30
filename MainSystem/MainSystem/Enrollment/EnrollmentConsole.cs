@@ -25,7 +25,7 @@ namespace MainSystem
             
             //btnCreate.Enabled = false;
             btnUpdate.Enabled = false;
-            btnView.Enabled = false;
+            btnView.Enabled = true;
             //label11.Text = counterr().ToString();
             
         }
@@ -37,11 +37,12 @@ namespace MainSystem
         private void EnrollmentConsole_Load(object sender, EventArgs e)
         {
             loadData();
+            dataGridView1.ClearSelection();
         }
         public void loadData()
         {
             var dbconnect = new dbConnector();
-            string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet;";
+            string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet WHERE studentprofile.Status = 1;";
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
@@ -64,6 +65,7 @@ namespace MainSystem
                 dataGridView1.Columns["department"].Visible = false;
                 dataGridView1.Columns["level"].Visible = false;
                 dataGridView1.Columns["school_year"].Visible = false;
+                dataGridView1.Columns["idstddet"].Visible = false;
 
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
