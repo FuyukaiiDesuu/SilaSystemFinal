@@ -55,12 +55,12 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.grpDiscount = new System.Windows.Forms.GroupBox();
-            this.txtDiscountType = new System.Windows.Forms.TextBox();
-            this.lblDiscountType = new System.Windows.Forms.Label();
-            this.txtDiscountPercentage = new System.Windows.Forms.TextBox();
-            this.lblPercentage = new System.Windows.Forms.Label();
             this.txtDiscountDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDiscountPercentage = new System.Windows.Forms.TextBox();
+            this.lblPercentage = new System.Windows.Forms.Label();
+            this.txtDiscountType = new System.Windows.Forms.TextBox();
+            this.lblDiscountType = new System.Windows.Forms.Label();
             this.grpStudentAccount.SuspendLayout();
             this.grpStudentDetails.SuspendLayout();
             this.grpDiscount.SuspendLayout();
@@ -336,24 +336,24 @@
             this.grpDiscount.TabStop = false;
             this.grpDiscount.Text = "Discount ";
             // 
-            // txtDiscountType
+            // txtDiscountDescription
             // 
-            this.txtDiscountType.BackColor = System.Drawing.Color.White;
-            this.txtDiscountType.Location = new System.Drawing.Point(132, 21);
-            this.txtDiscountType.Name = "txtDiscountType";
-            this.txtDiscountType.ReadOnly = true;
-            this.txtDiscountType.Size = new System.Drawing.Size(153, 20);
-            this.txtDiscountType.TabIndex = 9;
+            this.txtDiscountDescription.BackColor = System.Drawing.Color.White;
+            this.txtDiscountDescription.Location = new System.Drawing.Point(132, 61);
+            this.txtDiscountDescription.Name = "txtDiscountDescription";
+            this.txtDiscountDescription.ReadOnly = true;
+            this.txtDiscountDescription.Size = new System.Drawing.Size(153, 20);
+            this.txtDiscountDescription.TabIndex = 13;
             // 
-            // lblDiscountType
+            // lblDescription
             // 
-            this.lblDiscountType.AutoSize = true;
-            this.lblDiscountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscountType.Location = new System.Drawing.Point(6, 25);
-            this.lblDiscountType.Name = "lblDiscountType";
-            this.lblDiscountType.Size = new System.Drawing.Size(95, 16);
-            this.lblDiscountType.TabIndex = 8;
-            this.lblDiscountType.Text = "Discount Type";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(6, 61);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(76, 16);
+            this.lblDescription.TabIndex = 12;
+            this.lblDescription.Text = "Description";
             // 
             // txtDiscountPercentage
             // 
@@ -374,24 +374,24 @@
             this.lblPercentage.TabIndex = 10;
             this.lblPercentage.Text = "Percentage";
             // 
-            // txtDiscountDescription
+            // txtDiscountType
             // 
-            this.txtDiscountDescription.BackColor = System.Drawing.Color.White;
-            this.txtDiscountDescription.Location = new System.Drawing.Point(132, 61);
-            this.txtDiscountDescription.Name = "txtDiscountDescription";
-            this.txtDiscountDescription.ReadOnly = true;
-            this.txtDiscountDescription.Size = new System.Drawing.Size(153, 20);
-            this.txtDiscountDescription.TabIndex = 13;
+            this.txtDiscountType.BackColor = System.Drawing.Color.White;
+            this.txtDiscountType.Location = new System.Drawing.Point(132, 21);
+            this.txtDiscountType.Name = "txtDiscountType";
+            this.txtDiscountType.ReadOnly = true;
+            this.txtDiscountType.Size = new System.Drawing.Size(153, 20);
+            this.txtDiscountType.TabIndex = 9;
             // 
-            // lblDescription
+            // lblDiscountType
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(6, 61);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(76, 16);
-            this.lblDescription.TabIndex = 12;
-            this.lblDescription.Text = "Description";
+            this.lblDiscountType.AutoSize = true;
+            this.lblDiscountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscountType.Location = new System.Drawing.Point(6, 25);
+            this.lblDiscountType.Name = "lblDiscountType";
+            this.lblDiscountType.Size = new System.Drawing.Size(95, 16);
+            this.lblDiscountType.TabIndex = 8;
+            this.lblDiscountType.Text = "Discount Type";
             // 
             // newfrmEditAccount
             // 
@@ -412,7 +412,7 @@
             this.MaximizeBox = false;
             this.Name = "newfrmEditAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit Account";
+            this.Text = "Statement of Account";
             this.Load += new System.EventHandler(this.newfrmEditAccount_Load);
             this.grpStudentAccount.ResumeLayout(false);
             this.grpStudentAccount.PerformLayout();

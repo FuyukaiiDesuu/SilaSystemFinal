@@ -64,7 +64,7 @@ namespace MainSystem.Accounting
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblPaymentDate2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            lblPaymentDate2.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             lblPaymentDate3.Text = DateTime.Now.ToString("tt");
             timer1.Start();
         }

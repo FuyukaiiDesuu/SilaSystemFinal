@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
+            this.btnEditAccount = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.grpPaymentHistory = new System.Windows.Forms.GroupBox();
             this.dataPaymentHistory = new System.Windows.Forms.DataGridView();
@@ -62,7 +63,6 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.btnEditAccount = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.grpPaymentHistory.SuspendLayout();
@@ -102,6 +102,18 @@
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
             // 
+            // btnEditAccount
+            // 
+            this.btnEditAccount.Enabled = false;
+            this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditAccount.Location = new System.Drawing.Point(140, 436);
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.Size = new System.Drawing.Size(164, 28);
+            this.btnEditAccount.TabIndex = 10;
+            this.btnEditAccount.Text = "Statement of Account";
+            this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(9, 28);
@@ -137,7 +149,7 @@
             // btnAddFee
             // 
             this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFee.Location = new System.Drawing.Point(271, 436);
+            this.btnAddFee.Location = new System.Drawing.Point(310, 436);
             this.btnAddFee.Name = "btnAddFee";
             this.btnAddFee.Size = new System.Drawing.Size(125, 28);
             this.btnAddFee.TabIndex = 4;
@@ -455,18 +467,6 @@
             this.lblUser.Size = new System.Drawing.Size(55, 20);
             this.lblUser.TabIndex = 16;
             this.lblUser.Text = "USER";
-            // 
-            // btnEditAccount
-            // 
-            this.btnEditAccount.Enabled = false;
-            this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccount.Location = new System.Drawing.Point(140, 436);
-            this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(125, 28);
-            this.btnEditAccount.TabIndex = 10;
-            this.btnEditAccount.Text = "Edit Account";
-            this.btnEditAccount.UseVisualStyleBackColor = true;
-            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // newfrmAccount
             // 
