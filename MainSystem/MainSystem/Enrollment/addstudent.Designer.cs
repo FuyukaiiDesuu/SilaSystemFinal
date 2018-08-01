@@ -30,9 +30,7 @@
         {
             this.txtnn = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtrel = new System.Windows.Forms.TextBox();
             this.txtbp = new System.Windows.Forms.TextBox();
-            this.txtsex = new System.Windows.Forms.TextBox();
             this.txtmn = new System.Windows.Forms.TextBox();
             this.txtln = new System.Windows.Forms.TextBox();
             this.txtfn = new System.Windows.Forms.TextBox();
@@ -55,7 +53,9 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btncanc = new System.Windows.Forms.Button();
-            this.ph = new System.Windows.Forms.Label();
+            this.txtrel = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,26 +75,12 @@
             this.label10.TabIndex = 39;
             this.label10.Text = "Nickname:";
             // 
-            // txtrel
-            // 
-            this.txtrel.Location = new System.Drawing.Point(81, 189);
-            this.txtrel.Name = "txtrel";
-            this.txtrel.Size = new System.Drawing.Size(129, 20);
-            this.txtrel.TabIndex = 7;
-            // 
             // txtbp
             // 
             this.txtbp.Location = new System.Drawing.Point(80, 137);
             this.txtbp.Name = "txtbp";
             this.txtbp.Size = new System.Drawing.Size(129, 20);
             this.txtbp.TabIndex = 5;
-            // 
-            // txtsex
-            // 
-            this.txtsex.Location = new System.Drawing.Point(80, 163);
-            this.txtsex.Name = "txtsex";
-            this.txtsex.Size = new System.Drawing.Size(129, 20);
-            this.txtsex.TabIndex = 6;
             // 
             // txtmn
             // 
@@ -186,13 +172,13 @@
             this.pictureBox1.Location = new System.Drawing.Point(264, 5);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(149, 135);
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(264, 173);
+            this.button1.Location = new System.Drawing.Point(263, 144);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 36);
@@ -254,7 +240,7 @@
             "Pre-school",
             "Grade-school",
             "High-school"});
-            this.comboBox1.Location = new System.Drawing.Point(305, 228);
+            this.comboBox1.Location = new System.Drawing.Point(305, 187);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 21);
             this.comboBox1.TabIndex = 48;
@@ -262,7 +248,7 @@
             // Department
             // 
             this.Department.AutoSize = true;
-            this.Department.Location = new System.Drawing.Point(231, 231);
+            this.Department.Location = new System.Drawing.Point(231, 190);
             this.Department.Name = "Department";
             this.Department.Size = new System.Drawing.Size(65, 13);
             this.Department.TabIndex = 49;
@@ -287,7 +273,7 @@
             "Grade 8",
             "Grade 9",
             "Grade 10"});
-            this.comboBox2.Location = new System.Drawing.Point(305, 255);
+            this.comboBox2.Location = new System.Drawing.Point(305, 214);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(129, 21);
             this.comboBox2.TabIndex = 50;
@@ -295,7 +281,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(260, 258);
+            this.label9.Location = new System.Drawing.Point(260, 217);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 13);
             this.label9.TabIndex = 51;
@@ -312,21 +298,42 @@
             this.btncanc.UseVisualStyleBackColor = true;
             this.btncanc.Click += new System.EventHandler(this.btncanc_Click);
             // 
-            // ph
+            // txtrel
             // 
-            this.ph.AutoSize = true;
-            this.ph.Location = new System.Drawing.Point(231, 292);
-            this.ph.Name = "ph";
-            this.ph.Size = new System.Drawing.Size(65, 13);
-            this.ph.TabIndex = 53;
-            this.ph.Text = "Department:";
+            this.txtrel.Location = new System.Drawing.Point(81, 189);
+            this.txtrel.Name = "txtrel";
+            this.txtrel.Size = new System.Drawing.Size(129, 20);
+            this.txtrel.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(208, 240);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(226, 76);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Others"});
+            this.comboBox3.Location = new System.Drawing.Point(80, 163);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(130, 21);
+            this.comboBox3.TabIndex = 54;
             // 
             // addStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 325);
-            this.Controls.Add(this.ph);
+            this.ClientSize = new System.Drawing.Size(438, 325);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btncanc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox2);
@@ -343,7 +350,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtrel);
             this.Controls.Add(this.txtbp);
-            this.Controls.Add(this.txtsex);
             this.Controls.Add(this.txtmn);
             this.Controls.Add(this.txtln);
             this.Controls.Add(this.txtfn);
@@ -368,9 +374,7 @@
 
         private System.Windows.Forms.TextBox txtnn;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtrel;
         private System.Windows.Forms.TextBox txtbp;
-        private System.Windows.Forms.TextBox txtsex;
         private System.Windows.Forms.TextBox txtmn;
         private System.Windows.Forms.TextBox txtln;
         private System.Windows.Forms.TextBox txtfn;
@@ -393,6 +397,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btncanc;
-        private System.Windows.Forms.Label ph;
+        private System.Windows.Forms.TextBox txtrel;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

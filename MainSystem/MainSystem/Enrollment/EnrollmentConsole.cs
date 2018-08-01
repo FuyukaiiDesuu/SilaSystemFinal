@@ -82,7 +82,7 @@ namespace MainSystem
         {
             var count = dataGridView1.Rows.Count - 2;
             stid = dataGridView1.Rows[count].Cells[0].Value.ToString();
-            label11.Text = stid;
+            //label11.Text = stid;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -177,25 +177,33 @@ namespace MainSystem
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            studid2 = dataGridView1.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
-            txtfn.Text = dataGridView1.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
-            txtln.Text = dataGridView1.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
-            txtmi.Text = dataGridView1.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
-            DateTime dt = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells["DateOfBirth"].Value.ToString());
-            txtbd.Text = dt.ToString("yyyy-MM-dd");
-            //txtbd.Text = dataGridView1.Rows[e.RowIndex].Cells["DateOfBirth"].Value.ToString();
-            //txtbd.Text = dt.ToString();
-            txtbp.Text = dataGridView1.Rows[e.RowIndex].Cells["PlaceOfBirth"].Value.ToString();
-            txtsex.Text = dataGridView1.Rows[e.RowIndex].Cells["Sex"].Value.ToString();
-            txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
-            txtnn.Text = dataGridView1.Rows[e.RowIndex].Cells["Nickname"].Value.ToString();
-            IDictionary<string, string> dic = studdetails(dataGridView1.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["level"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
-            txtdep.Text = dic["dept"];
-            txtlev.Text = dic["level"];
-            txtsy.Text = dataGridView1.Rows[e.RowIndex].Cells["school_year"].Value.ToString();
-            txtstatus.Text = dic["status"];
-            btnEnable();
+            try
+            {
+                studid2 = dataGridView1.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
+                txtfn.Text = dataGridView1.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
+                txtln.Text = dataGridView1.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
+                txtmi.Text = dataGridView1.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
+                DateTime dt = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells["DateOfBirth"].Value.ToString());
+                txtbd.Text = dt.ToString("yyyy-MM-dd");
+                //txtbd.Text = dataGridView1.Rows[e.RowIndex].Cells["DateOfBirth"].Value.ToString();
+                //txtbd.Text = dt.ToString();
+                txtbp.Text = dataGridView1.Rows[e.RowIndex].Cells["PlaceOfBirth"].Value.ToString();
+                txtsex.Text = dataGridView1.Rows[e.RowIndex].Cells["Sex"].Value.ToString();
+                txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
+                txtnn.Text = dataGridView1.Rows[e.RowIndex].Cells["Nickname"].Value.ToString();
+                IDictionary<string, string> dic = studdetails(dataGridView1.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["level"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
+                txtdep.Text = dic["dept"];
+                txtlev.Text = dic["level"];
+                txtsy.Text = dataGridView1.Rows[e.RowIndex].Cells["school_year"].Value.ToString();
+                txtstatus.Text = dic["status"];
+                btnEnable();
+            }
+            catch(Exception ee)
+            {
+                var temp = ee;
+                textboxClear();
+            }
+           
 
 
         }
@@ -221,6 +229,10 @@ namespace MainSystem
             txtsex.Clear();
             txtrel.Clear();
             txtnn.Clear();
+            txtdep.Clear();
+            txtlev.Clear();
+            txtstatus.Clear();
+            txtsy.Clear();
         }
         
         public IDictionary<string, string> injector()
@@ -235,6 +247,8 @@ namespace MainSystem
             dict.Add("sex", txtsex.Text);
             dict.Add("rel", txtrel.Text);
             dict.Add("nn", txtnn.Text);
+            dict.Add("dept", txtdep.Text);
+            dict.Add("lvl", txtlev.Text);
             return dict;
         }
 

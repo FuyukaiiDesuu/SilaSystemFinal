@@ -36,13 +36,27 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@mn", txtmn.Text);
                     command.Parameters.AddWithValue("@dof", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@pof", txtbp.Text);
-                    command.Parameters.AddWithValue("@sex", txtsex.Text);
+                    command.Parameters.AddWithValue("@sex", comboBox1.Text);
                     command.Parameters.AddWithValue("@rel", txtrel.Text);
                     command.Parameters.AddWithValue("@nickname", txtnn.Text);
                     command.ExecuteNonQuery();
                 }
+                using (var command = new MySqlCommand("UPDATE studdetails SET department = @dept, level = @lvl, school_year = @sy WHERE idstddet = @ayd", dbconnection))
+                {
+                    command.Parameters.AddWithValue("@ayd", idstud);
+                    command.Parameters.AddWithValue("@dept", comboBox3.Text);
+                    command.Parameters.AddWithValue("@lvl", comboBox2.Text);
+                    command.Parameters.AddWithValue("@sy", sygetter());
+                    command.ExecuteNonQuery();
+                }
             }
 
+        }
+        public string sygetter()
+        {
+            DateTime dt = DateTime.Now;
+            int a = Convert.ToInt32(dt.ToString("yyyy"));
+            return dt.ToString("yyyy") + "-" + (a + 1).ToString();
         }
         public void txtboxfill(IDictionary<string, string> dic)
         {
@@ -53,9 +67,12 @@ namespace MainSystem
             txtln.Text = dic["ln"];
             txtmn.Text = dic["mn"];
             txtbp.Text = dic["bp"];
-            txtsex.Text = dic["sex"];
+            comboBox1.Text = dic["sex"];
             txtrel.Text = dic["rel"];
             txtnn.Text = dic["nn"];
+            comboBox3.Text = dic["dept"];
+            comboBox2.Text = dic["lvl"];
+
             
         }
 

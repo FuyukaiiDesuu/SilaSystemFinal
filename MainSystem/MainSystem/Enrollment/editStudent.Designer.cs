@@ -39,7 +39,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtrel = new System.Windows.Forms.TextBox();
             this.txtbp = new System.Windows.Forms.TextBox();
-            this.txtsex = new System.Windows.Forms.TextBox();
             this.txtmn = new System.Windows.Forms.TextBox();
             this.txtln = new System.Windows.Forms.TextBox();
             this.txtfn = new System.Windows.Forms.TextBox();
@@ -50,6 +49,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Department = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +105,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(216, 175);
+            this.button1.Location = new System.Drawing.Point(242, 172);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 36);
@@ -112,10 +116,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox1.Location = new System.Drawing.Point(216, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(242, 8);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(149, 160);
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
             // 
@@ -148,13 +152,6 @@
             this.txtbp.Name = "txtbp";
             this.txtbp.Size = new System.Drawing.Size(129, 20);
             this.txtbp.TabIndex = 5;
-            // 
-            // txtsex
-            // 
-            this.txtsex.Location = new System.Drawing.Point(73, 160);
-            this.txtsex.Name = "txtsex";
-            this.txtsex.Size = new System.Drawing.Size(129, 20);
-            this.txtsex.TabIndex = 6;
             // 
             // txtmn
             // 
@@ -240,11 +237,82 @@
             this.label1.TabIndex = 57;
             this.label1.Text = "First Name:";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Others"});
+            this.comboBox1.Location = new System.Drawing.Point(73, 159);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(129, 21);
+            this.comboBox1.TabIndex = 70;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(239, 246);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.TabIndex = 74;
+            this.label9.Text = "Level:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Nursery",
+            "Kinder",
+            "Preparatory",
+            "Grade 1",
+            "Grade 2",
+            "Grade 3",
+            "Grade 4",
+            "Grade 5",
+            "Grade 6",
+            "Grade 7",
+            "Grade 8",
+            "Grade 9",
+            "Grade 10"});
+            this.comboBox2.Location = new System.Drawing.Point(284, 243);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(129, 21);
+            this.comboBox2.TabIndex = 73;
+            // 
+            // Department
+            // 
+            this.Department.AutoSize = true;
+            this.Department.Location = new System.Drawing.Point(210, 219);
+            this.Department.Name = "Department";
+            this.Department.Size = new System.Drawing.Size(65, 13);
+            this.Department.TabIndex = 72;
+            this.Department.Text = "Department:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Pre-school",
+            "Grade-school",
+            "High-school"});
+            this.comboBox3.Location = new System.Drawing.Point(284, 216);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(129, 21);
+            this.comboBox3.TabIndex = 71;
+            // 
             // editStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 280);
+            this.ClientSize = new System.Drawing.Size(422, 280);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.Department);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtstno);
             this.Controls.Add(this.dateTimePicker1);
@@ -256,7 +324,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtrel);
             this.Controls.Add(this.txtbp);
-            this.Controls.Add(this.txtsex);
             this.Controls.Add(this.txtmn);
             this.Controls.Add(this.txtln);
             this.Controls.Add(this.txtfn);
@@ -289,7 +356,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtrel;
         private System.Windows.Forms.TextBox txtbp;
-        private System.Windows.Forms.TextBox txtsex;
         private System.Windows.Forms.TextBox txtmn;
         private System.Windows.Forms.TextBox txtln;
         private System.Windows.Forms.TextBox txtfn;
@@ -300,5 +366,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label Department;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

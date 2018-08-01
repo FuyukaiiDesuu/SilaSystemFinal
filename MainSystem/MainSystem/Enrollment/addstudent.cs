@@ -28,7 +28,7 @@ namespace MainSystem
         {
             createdefault();
             txtstno.Text = studid;
-            ph.Text = sygetter();
+            //ph.Text = sygetter();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -71,7 +71,7 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@mn", txtmn.Text);
                     command.Parameters.AddWithValue("@dof", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@pof", txtbp.Text);
-                    command.Parameters.AddWithValue("@sex", txtsex.Text);
+                    command.Parameters.AddWithValue("@sex", comboBox3.Text);
                     command.Parameters.AddWithValue("@rel", txtrel.Text);
                     command.Parameters.AddWithValue("@nickname", txtnn.Text);
                     command.Parameters.AddWithValue("@stat", 1);
