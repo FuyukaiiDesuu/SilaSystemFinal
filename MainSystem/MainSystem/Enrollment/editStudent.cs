@@ -47,6 +47,7 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@dept", comboBox3.Text);
                     command.Parameters.AddWithValue("@lvl", comboBox2.Text);
                     command.Parameters.AddWithValue("@sy", sygetter());
+                    //need to update query to insert department integer value
                     command.ExecuteNonQuery();
                 }
             }
