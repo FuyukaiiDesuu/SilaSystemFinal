@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnback = new System.Windows.Forms.Button();
             this.gboxentry = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtquantity = new System.Windows.Forms.TextBox();
             this.txtdesc = new System.Windows.Forms.TextBox();
-            this.txtdate = new System.Windows.Forms.TextBox();
             this.txtitemname = new System.Windows.Forms.TextBox();
             this.lblquantity = new System.Windows.Forms.Label();
             this.lblmiscdesc = new System.Windows.Forms.Label();
@@ -40,6 +41,9 @@
             this.lblitemname = new System.Windows.Forms.Label();
             this.btnconfirm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtinvID = new System.Windows.Forms.TextBox();
+            this.lblinvID = new System.Windows.Forms.Label();
             this.gboxentry.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +59,11 @@
             // 
             // gboxentry
             // 
+            this.gboxentry.Controls.Add(this.lblinvID);
+            this.gboxentry.Controls.Add(this.txtinvID);
+            this.gboxentry.Controls.Add(this.label2);
             this.gboxentry.Controls.Add(this.txtquantity);
             this.gboxentry.Controls.Add(this.txtdesc);
-            this.gboxentry.Controls.Add(this.txtdate);
             this.gboxentry.Controls.Add(this.txtitemname);
             this.gboxentry.Controls.Add(this.lblquantity);
             this.gboxentry.Controls.Add(this.lblmiscdesc);
@@ -67,16 +73,25 @@
             this.gboxentry.Controls.Add(this.btnback);
             this.gboxentry.Location = new System.Drawing.Point(13, 40);
             this.gboxentry.Name = "gboxentry";
-            this.gboxentry.Size = new System.Drawing.Size(221, 279);
+            this.gboxentry.Size = new System.Drawing.Size(307, 279);
             this.gboxentry.TabIndex = 1;
             this.gboxentry.TabStop = false;
             this.gboxentry.Text = "New Entry";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(95, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "label2";
             // 
             // txtquantity
             // 
             this.txtquantity.Location = new System.Drawing.Point(79, 212);
             this.txtquantity.Name = "txtquantity";
-            this.txtquantity.Size = new System.Drawing.Size(119, 20);
+            this.txtquantity.Size = new System.Drawing.Size(215, 20);
             this.txtquantity.TabIndex = 11;
             // 
             // txtdesc
@@ -84,21 +99,14 @@
             this.txtdesc.Location = new System.Drawing.Point(27, 146);
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
-            this.txtdesc.Size = new System.Drawing.Size(171, 55);
+            this.txtdesc.Size = new System.Drawing.Size(267, 55);
             this.txtdesc.TabIndex = 10;
-            // 
-            // txtdate
-            // 
-            this.txtdate.Location = new System.Drawing.Point(94, 94);
-            this.txtdate.Name = "txtdate";
-            this.txtdate.Size = new System.Drawing.Size(104, 20);
-            this.txtdate.TabIndex = 9;
             // 
             // txtitemname
             // 
             this.txtitemname.Location = new System.Drawing.Point(94, 65);
             this.txtitemname.Name = "txtitemname";
-            this.txtitemname.Size = new System.Drawing.Size(104, 20);
+            this.txtitemname.Size = new System.Drawing.Size(200, 20);
             this.txtitemname.TabIndex = 7;
             // 
             // lblquantity
@@ -157,11 +165,31 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "New Entry";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // txtinvID
+            // 
+            this.txtinvID.Location = new System.Drawing.Point(94, 39);
+            this.txtinvID.Name = "txtinvID";
+            this.txtinvID.Size = new System.Drawing.Size(200, 20);
+            this.txtinvID.TabIndex = 13;
+            // 
+            // lblinvID
+            // 
+            this.lblinvID.AutoSize = true;
+            this.lblinvID.Location = new System.Drawing.Point(24, 42);
+            this.lblinvID.Name = "lblinvID";
+            this.lblinvID.Size = new System.Drawing.Size(68, 13);
+            this.lblinvID.TabIndex = 14;
+            this.lblinvID.Text = "Inventory ID:";
+            // 
             // frmNewEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 328);
+            this.ClientSize = new System.Drawing.Size(334, 328);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gboxentry);
             this.Name = "frmNewEntry";
@@ -186,7 +214,10 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtquantity;
         public System.Windows.Forms.TextBox txtdesc;
-        public System.Windows.Forms.TextBox txtdate;
         public System.Windows.Forms.TextBox txtitemname;
+        public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblinvID;
+        private System.Windows.Forms.TextBox txtinvID;
     }
 }

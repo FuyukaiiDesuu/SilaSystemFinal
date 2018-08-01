@@ -108,6 +108,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(644, 177);
             this.dataGridView2.TabIndex = 9;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Stockin_out
             // 
@@ -138,6 +139,6 @@
         private System.Windows.Forms.Label lblSinoutRecord;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnback2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        public System.Windows.Forms.DataGridView dataGridView2;
     }
 }

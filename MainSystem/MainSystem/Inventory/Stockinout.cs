@@ -31,6 +31,7 @@ namespace MainSystem
         private void Stockin_out_Load(object sender, EventArgs e)
         {
             readData();
+            
         }
         private void btnNewEntry_Click(object sender, EventArgs e)
         {
@@ -61,6 +62,7 @@ namespace MainSystem
         private void items(string id, string name, string desc)
         {
             forreturn = new Dictionary<string, string>();
+            forreturn.Add("ayd", id);
             forreturn.Add("name", name);
             forreturn.Add("desc", desc);
             
@@ -69,5 +71,11 @@ namespace MainSystem
         {
             items(dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["itemname"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString());
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+      
     }
 }
