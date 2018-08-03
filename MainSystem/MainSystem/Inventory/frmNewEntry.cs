@@ -17,8 +17,9 @@ namespace MainSystem
         public Stockin_out reference { get; set; }
         public MySqlConnection dbconnection;
         public String ayaya;
-        //MySqlDataAdapter adapter;
-        //DataTable dt;
+        dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;
         public frmNewEntry(IDictionary<string, string> dic)
         {
 
@@ -75,6 +76,10 @@ namespace MainSystem
                     command.ExecuteNonQuery();
                 }
             }
+            MessageBox.Show("Successfully Added");
+            this.Close();
+            reference.Show();
+            reference.readData2();
         }
         private String getcount()
         {
@@ -90,13 +95,12 @@ namespace MainSystem
             }
             return iiii.ToString();
         }
-
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             label2.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             timer1.Start();
         }
+        
     }
 }
 

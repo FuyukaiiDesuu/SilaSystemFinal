@@ -36,19 +36,17 @@
             this.txtinvcode = new System.Windows.Forms.TextBox();
             this.lblinvcode = new System.Windows.Forms.Label();
             this.btnStockInOut = new System.Windows.Forms.Button();
-            this.btnOrderList = new System.Windows.Forms.Button();
             this.txtsidate = new System.Windows.Forms.TextBox();
             this.lblsidate = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtItemCode = new System.Windows.Forms.TextBox();
-            this.btnView = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItemCode = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnOrderList = new System.Windows.Forms.Button();
             this.gboxitemdetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
@@ -67,13 +65,11 @@
             this.gboxitemdetails.Controls.Add(this.lblsidate);
             this.gboxitemdetails.Controls.Add(this.txtQuantity);
             this.gboxitemdetails.Controls.Add(this.txtItemCode);
-            this.gboxitemdetails.Controls.Add(this.btnView);
-            this.gboxitemdetails.Controls.Add(this.btnUpdate);
             this.gboxitemdetails.Controls.Add(this.lblQuantity);
             this.gboxitemdetails.Controls.Add(this.lblItemCode);
             this.gboxitemdetails.Location = new System.Drawing.Point(12, 46);
             this.gboxitemdetails.Name = "gboxitemdetails";
-            this.gboxitemdetails.Size = new System.Drawing.Size(374, 242);
+            this.gboxitemdetails.Size = new System.Drawing.Size(359, 242);
             this.gboxitemdetails.TabIndex = 0;
             this.gboxitemdetails.TabStop = false;
             this.gboxitemdetails.Text = "Inventory Details";
@@ -129,23 +125,13 @@
             // 
             // btnStockInOut
             // 
-            this.btnStockInOut.Location = new System.Drawing.Point(278, 208);
+            this.btnStockInOut.Location = new System.Drawing.Point(115, 208);
             this.btnStockInOut.Name = "btnStockInOut";
             this.btnStockInOut.Size = new System.Drawing.Size(87, 23);
             this.btnStockInOut.TabIndex = 22;
             this.btnStockInOut.Text = "Stock- in/Out";
             this.btnStockInOut.UseVisualStyleBackColor = true;
             this.btnStockInOut.Click += new System.EventHandler(this.btnStockInOut_Click);
-            // 
-            // btnOrderList
-            // 
-            this.btnOrderList.Location = new System.Drawing.Point(10, 208);
-            this.btnOrderList.Name = "btnOrderList";
-            this.btnOrderList.Size = new System.Drawing.Size(99, 23);
-            this.btnOrderList.TabIndex = 21;
-            this.btnOrderList.Text = "Create Order List";
-            this.btnOrderList.UseVisualStyleBackColor = true;
-            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
             // txtsidate
             // 
@@ -176,24 +162,6 @@
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(251, 20);
             this.txtItemCode.TabIndex = 13;
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(197, 208);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(75, 23);
-            this.btnView.TabIndex = 9;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(116, 208);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // lblQuantity
             // 
@@ -226,9 +194,9 @@
             // dgvInventory
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Location = new System.Drawing.Point(392, 49);
+            this.dgvInventory.Location = new System.Drawing.Point(377, 49);
             this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(746, 239);
+            this.dgvInventory.Size = new System.Drawing.Size(761, 239);
             this.dgvInventory.TabIndex = 1;
             this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -251,6 +219,16 @@
             this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 22;
             this.label1.Text = "Item Inventory";
+            // 
+            // btnOrderList
+            // 
+            this.btnOrderList.Location = new System.Drawing.Point(10, 208);
+            this.btnOrderList.Name = "btnOrderList";
+            this.btnOrderList.Size = new System.Drawing.Size(99, 23);
+            this.btnOrderList.TabIndex = 21;
+            this.btnOrderList.Text = "Create Order List";
+            this.btnOrderList.UseVisualStyleBackColor = true;
+            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
             // FormInventory
             // 
@@ -280,13 +258,10 @@
         private System.Windows.Forms.Label lblItemCode;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtItemCode;
-        private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.Label lblsidate;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button btnOrderList;
         private System.Windows.Forms.Button btnStockInOut;
         private System.Windows.Forms.TextBox txtinvcode;
         private System.Windows.Forms.Label lblinvcode;
@@ -296,5 +271,6 @@
         private System.Windows.Forms.Label lblstatus;
         private System.Windows.Forms.TextBox txtsodate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnOrderList;
     }
 }

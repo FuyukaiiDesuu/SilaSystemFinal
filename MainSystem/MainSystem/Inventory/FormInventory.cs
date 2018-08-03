@@ -65,5 +65,10 @@ namespace MainSystem
         {
 
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

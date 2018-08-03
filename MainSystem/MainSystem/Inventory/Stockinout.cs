@@ -31,7 +31,7 @@ namespace MainSystem
         private void Stockin_out_Load(object sender, EventArgs e)
         {
             readData();
-            
+            readData2();
         }
         private void btnNewEntry_Click(object sender, EventArgs e)
         {
@@ -76,6 +76,17 @@ namespace MainSystem
         {
 
         }
-      
+        public void readData2()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM stkin";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataGridView2.DataSource = dt;
+                //dataGridView2.Columns["itemID"].Visible = false;
+            }
+        }
     }
 }
