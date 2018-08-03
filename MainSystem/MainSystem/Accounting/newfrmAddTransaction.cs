@@ -17,6 +17,7 @@ namespace MainSystem.Accounting
         public string name { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         bool cmbChecker = false;
+        int countPayment;
 
         public newfrmAddTransaction()
         {
@@ -30,6 +31,9 @@ namespace MainSystem.Accounting
             timer1.Enabled = true;
             lblChequeNo.Visible = false;
             txtChequeNo.Visible = false;
+            DataTable cntPayment = dbquery.countPayment();
+            countPayment = cntPayment.Rows.Count + 1;
+            txtTransactionNo.Text = countPayment.ToString().PadLeft(6, '0');
         }
 
         private void btnPay_Click(object sender, EventArgs e)

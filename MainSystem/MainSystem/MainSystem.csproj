@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +53,12 @@
     </Compile>
     <Compile Include="Accounting\frmAddFee.Designer.cs">
       <DependentUpon>frmAddFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\frmViewPaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\frmViewPaymentHistory.Designer.cs">
+      <DependentUpon>frmViewPaymentHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Accounting\newfrmAccount.cs">
       <SubType>Form</SubType>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\frmEditAccount.resx">
       <DependentUpon>frmEditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\frmViewPaymentHistory.resx">
+      <DependentUpon>frmViewPaymentHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\newfrmAccount.resx">
       <DependentUpon>newfrmAccount.cs</DependentUpon>

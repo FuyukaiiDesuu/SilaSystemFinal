@@ -48,10 +48,40 @@ namespace MainSystem.Accounting
             return itmContainer;
         }
 
+        public DataTable feevalues()
+        {
+            string query = @"Select * 
+                             from feevalues";
+            DataTable itmContainer = con.Select(query);
+            return itmContainer;
+        }
+
+        public DataTable countPayment()
+        {
+            string query = "SELECT pid FROM payment";
+            DataTable itmContainer = con.Select(query);
+            return itmContainer;
+        }
+
         public void updatePayments(string trans_no, string payment_type, string cheque_no, string amount_paid, string date_paid, string eid, string adid)
         {
             string query = @"insert into payment(transaction_no, payment_type, cheque_no, amount_paid, date_paid, eid, adid)
                             values ('" + trans_no + "','" + payment_type + "','" + cheque_no + "', '" + amount_paid + "','" + date_paid + "','" + eid + "','" + adid + "')";
+            con.executeQuery(query);
+        }
+
+        public void updateFee(string fee_type, string fee_description, string current_amount, string date_created, string school_year_start, string school_year_end)
+        {
+            string query = @"insert into feevalues(fee_type, fee_description, current_amount, date_created, school_year_start, school_year_end)
+                            values ('" + fee_type + "', '" + fee_description + "', '" + current_amount + "', '" + date_created + "', '" + school_year_start + "', '" + school_year_end + "')";
+            con.executeQuery(query);
+        }
+
+        public void updateNewFee(string id, string fee_type, string fee_description, string current_amount, string date_modified, string school_year_start, string school_year_end)
+        {
+            string query = @"update feevalues set fee_type = '" + fee_type + "', fee_description = '" + fee_description + "', current_amount = '" + current_amount + "', date_modified = '" + date_modified + @"'
+                            , school_year_start = '" + school_year_start + "', school_year_end = '" + school_year_end + @"'
+                            where feevalues.fid = '" + id + "'";
             con.executeQuery(query);
         }
     }

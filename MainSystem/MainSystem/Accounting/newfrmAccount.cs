@@ -18,6 +18,15 @@ namespace MainSystem.Accounting
         public frmAddTransaction addtransac;
         public string uname;
         string fullname;
+
+        string fee_type;
+        string current_amount;
+        string school_year_start;
+        string school_year_end;
+        string fid;
+        string fee_description;
+        string date_modified;
+        string date_created;
         public newfrmAccount()
         {
             InitializeComponent();
@@ -26,7 +35,7 @@ namespace MainSystem.Accounting
 
         private void newfrmAccount_Load(object sender, EventArgs e)
         {
-
+            loadFeeDetails();
         }
 
         public void loadStudentProfileTable()
@@ -65,16 +74,35 @@ namespace MainSystem.Accounting
             dataBalanceDetails.Columns["adid"].Visible = false;
 
             dataBalanceDetails.ReadOnly = true;
-            dataBalanceDetails.Refresh();
+            this.dataBalanceDetails.Refresh();
         }
         public void loadPaymentDetails(string adid)
         {
             DataTable paymentDisplay = dbquery.paymentHistory(adid);
-            this.dataPaymentHistory.DataSource = paymentDisplay;
+            this.dataFeeValue.DataSource = paymentDisplay;
 
-            dataPaymentHistory.Columns["amount_paid"].HeaderText = "Amount Paid";
-            dataPaymentHistory.Columns["current_balance"].HeaderText = "Current Balance";
-            dataPaymentHistory.Columns["date_paid"].HeaderText = "Date Paid";
+            dataFeeValue.Columns["amount_paid"].HeaderText = "Amount Paid";
+            dataFeeValue.Columns["current_balance"].HeaderText = "Current Balance";
+            dataFeeValue.Columns["date_paid"].HeaderText = "Date Paid";
+        }
+
+        public void loadFeeDetails()
+        {
+            DataTable feeDisplay = dbquery.feevalues();
+            this.dataFeeValue.DataSource = feeDisplay;
+
+            dataFeeValue.Columns["fee_type"].HeaderText = "Fee Type";
+            dataFeeValue.Columns["current_amount"].HeaderText = "Current Amount";
+            dataFeeValue.Columns["school_year_start"].HeaderText = "School Year Start";
+            dataFeeValue.Columns["school_year_end"].HeaderText = "School Year End";
+
+            dataFeeValue.Columns["fid"].Visible = false;
+            dataFeeValue.Columns["fee_description"].Visible = false;
+            dataFeeValue.Columns["date_modified"].Visible = false;
+            dataFeeValue.Columns["date_created"].Visible = false;
+
+            dataFeeValue.ReadOnly = true;
+            this.dataFeeValue.Refresh();
         }
 
         private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -93,8 +121,7 @@ namespace MainSystem.Accounting
                 fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
 
                 loadBalanceDetails(txtStudentID.Text);
-                dataPaymentHistory.DataSource = null;
-                dataPaymentHistory.Refresh();
+                dataFeeValue.Refresh();
                 btnAddTransaction.Enabled = true;
                 btnEditAccount.Enabled = true;
             }
@@ -122,7 +149,7 @@ namespace MainSystem.Accounting
         {
             if (e.RowIndex >= 0)
             {
-                loadPaymentDetails(dataBalanceDetails.SelectedRows[0].Cells["adid"].Value.ToString());
+                //loadPaymentDetails(dataBalanceDetails.SelectedRows[0].Cells["adid"].Value.ToString());
             }
             else
             { return; }
@@ -131,7 +158,7 @@ namespace MainSystem.Accounting
         public Accounting.frmAddFee addfee;
         private void btnAddFee_Click(object sender, EventArgs e)
         {
-            addfee = new Accounting.frmAddFee();
+            addfee = new Accounting.frmAddFee(true);
             addfee.Show();
             addfee.reference = this;
             this.Hide();
@@ -143,6 +170,50 @@ namespace MainSystem.Accounting
             editaccount = new Accounting.newfrmEditAccount();
             editaccount.Show();
             editaccount.reference = this;
+            this.Hide();
+        }
+
+        private void dataFeeValue_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                btnUpdateFee.Enabled = true;
+
+                fid = dataFeeValue.Rows[e.RowIndex].Cells["fid"].Value.ToString();
+                fee_type = dataFeeValue.Rows[e.RowIndex].Cells["fee_type"].Value.ToString();
+                current_amount = dataFeeValue.Rows[e.RowIndex].Cells["current_amount"].Value.ToString();
+                fee_description = dataFeeValue.Rows[e.RowIndex].Cells["fee_description"].Value.ToString();
+                school_year_start = dataFeeValue.Rows[e.RowIndex].Cells["school_year_start"].Value.ToString();
+                school_year_end = dataFeeValue.Rows[e.RowIndex].Cells["school_year_end"].Value.ToString();
+            }
+            else
+            { return; }
+        }
+
+        public Accounting.frmViewPaymentHistory viewpaymenthistory;
+        private void btnViewPaymentHistory_Click(object sender, EventArgs e)
+        {
+            viewpaymenthistory = new Accounting.frmViewPaymentHistory();
+            viewpaymenthistory.Show();
+            viewpaymenthistory.reference = this;
+            this.Hide();
+        }
+
+        private void btnUpdateFee_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("fid");
+            dt.Columns.Add("fee_type");
+            dt.Columns.Add("current_amount");
+            dt.Columns.Add("school_year_start");
+            dt.Columns.Add("school_year_end");
+            dt.Columns.Add("fee_description");
+            dt.Rows.Add(fid, fee_type, current_amount, school_year_start, school_year_end, fee_description);
+
+            addfee = new Accounting.frmAddFee(false);
+            addfee.dtadd = dt;
+            addfee.Show();
+            addfee.reference = this;
             this.Hide();
         }
     }
