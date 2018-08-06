@@ -63,10 +63,10 @@ namespace MainSystem.Accounting
             return itmContainer;
         }
 
-        public void updatePayments(string trans_no, string payment_type, string cheque_no, string amount_paid, string date_paid, string eid, string adid) //string additional_details)
+        public void updatePayments(string trans_no, string payment_type, string cheque_no, string amount_paid, string date_paid, string eid, string adid, string additional_details, string payment_to)
         {
-            string query = @"insert into payment(transaction_no, payment_type, cheque_no, amount_paid, date_paid, eid, adid)
-                            values ('" + trans_no + "','" + payment_type + "','" + cheque_no + "', '" + amount_paid + "','" + date_paid + "','" + eid + "','" + adid +  /*additional_details +*/ "')";
+            string query = @"insert into payment(transaction_no, payment_type, cheque_no, amount_paid, date_paid, eid, adid, additional_details, payment_to)
+                            values ('" + trans_no + "','" + payment_type + "','" + cheque_no + "', '" + amount_paid + "','" + date_paid + "','" + eid + "','" + adid + "','" + additional_details + "','" + payment_to + "')";
             con.executeQuery(query);
         }
 

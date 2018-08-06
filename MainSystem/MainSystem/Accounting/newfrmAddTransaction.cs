@@ -40,7 +40,7 @@ namespace MainSystem.Accounting
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            dbquery.updatePayments(txtTransactionNo.Text, cmbPaymentType.Text, txtChequeNo.Text, txtAmount.Text, lblPaymentDate2.Text, "1", "2");
+            dbquery.updatePayments(txtTransactionNo.Text, cmbPaymentType.Text, txtChequeNo.Text, txtAmount.Text, lblPaymentDate2.Text, "1", "2", txtAdditionalDetails.Text, cmbPaymentTo.Text);
             MessageBox.Show("Succesfully Paid");
             reference.Show();
             this.Close();

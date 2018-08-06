@@ -13,6 +13,7 @@ namespace MainSystem.Accounting
     public partial class newfrmEditAccount : Form
     {
         public Accounting.newfrmAccount reference { get; set; }
+        public DataTable editacc = null;
         public newfrmEditAccount()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace MainSystem.Accounting
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            txtStudentAccountID.Text = editacc.Rows[0]["adid"].ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -27,6 +27,15 @@ namespace MainSystem.Accounting
         string fee_description;
         string date_modified;
         string date_created;
+
+        string adid;
+        string date_due;
+        string total_amount;
+        string current_balance;
+        string paid_amount;
+        string payment_status;
+        string spid;
+        string did;
         public newfrmAccount()
         {
             InitializeComponent();
@@ -167,6 +176,18 @@ namespace MainSystem.Accounting
         public Accounting.newfrmEditAccount editaccount;
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("adid");
+            dt.Columns.Add("date_due");
+            dt.Columns.Add("total_amount");
+            dt.Columns.Add("current_balance");
+            dt.Columns.Add("paid_amount");
+            dt.Columns.Add("payment_status");
+            dt.Columns.Add("spid");
+            dt.Columns.Add("did");
+            dt.Columns.Add("fid");
+            dt.Rows.Add(adid, date_due, total_amount, current_balance, paid_amount, payment_status, spid, did, fid);
+
             editaccount = new Accounting.newfrmEditAccount();
             editaccount.Show();
             editaccount.reference = this;
