@@ -57,8 +57,8 @@ namespace MainSystem
                     "','" + txtBirthPlace.Text + 
                     "','" + txtContactNo.Text + 
                     "','" + cmbSex.Text +
-                    "','" + txtReligion.Text + 
-                    "','" + txtMaritalStatus.Text + 
+                    "','" + cmbReligion.Text + 
+                    "','" + cmbMaritalStatus.Text + 
                     "','" + txtStatus.Text + 
                     "')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -181,8 +181,8 @@ namespace MainSystem
                    !string.IsNullOrWhiteSpace(txtBirthPlace.Text) &&
                    !string.IsNullOrWhiteSpace(txtContactNo.Text) &&
                    !string.IsNullOrWhiteSpace(cmbSex.Text) &&
-                   !string.IsNullOrWhiteSpace(txtReligion.Text) &&
-                   !string.IsNullOrWhiteSpace(txtMaritalStatus.Text) &&
+                   !string.IsNullOrWhiteSpace(cmbReligion.Text) &&
+                   !string.IsNullOrWhiteSpace(cmbMaritalStatus.Text) &&
                    !string.IsNullOrWhiteSpace(txtStatus.Text);
         }
 
@@ -228,21 +228,21 @@ namespace MainSystem
             enableButton();
         }
 
-        private void txtReligion_TextChanged(object sender, EventArgs e)
-        {
-            //For enabling 
-            enableButton();
-        }
-
-        private void txtMaritalStatus_TextChanged(object sender, EventArgs e)
-        {
-            //For enabling 
-            enableButton();
-        }
-
         private void txtEmployeeID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbReligion_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
+        }
+
+        private void cmbMaritalStatus_TextChanged(object sender, EventArgs e)
+        {
+            //For enabling 
+            enableButton();
         }
     }
 }

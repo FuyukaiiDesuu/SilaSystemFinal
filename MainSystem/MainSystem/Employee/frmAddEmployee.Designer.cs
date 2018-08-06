@@ -46,14 +46,14 @@
             this.lblBirthPlace = new System.Windows.Forms.Label();
             this.cmbSex = new System.Windows.Forms.ComboBox();
             this.dateBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.txtMaritalStatus = new System.Windows.Forms.TextBox();
             this.lblMaritalStatus = new System.Windows.Forms.Label();
-            this.txtReligion = new System.Windows.Forms.TextBox();
             this.lblReligion = new System.Windows.Forms.Label();
             this.lblSex = new System.Windows.Forms.Label();
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cmbReligion = new System.Windows.Forms.ComboBox();
+            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.SuspendLayout();
@@ -178,15 +178,15 @@
             // 
             // grpPersonalDetails
             // 
+            this.grpPersonalDetails.Controls.Add(this.cmbMaritalStatus);
+            this.grpPersonalDetails.Controls.Add(this.cmbReligion);
             this.grpPersonalDetails.Controls.Add(this.txtContactNo);
             this.grpPersonalDetails.Controls.Add(this.lblContactNo);
             this.grpPersonalDetails.Controls.Add(this.txtBirthPlace);
             this.grpPersonalDetails.Controls.Add(this.lblBirthPlace);
             this.grpPersonalDetails.Controls.Add(this.cmbSex);
             this.grpPersonalDetails.Controls.Add(this.dateBirthDate);
-            this.grpPersonalDetails.Controls.Add(this.txtMaritalStatus);
             this.grpPersonalDetails.Controls.Add(this.lblMaritalStatus);
-            this.grpPersonalDetails.Controls.Add(this.txtReligion);
             this.grpPersonalDetails.Controls.Add(this.lblReligion);
             this.grpPersonalDetails.Controls.Add(this.lblSex);
             this.grpPersonalDetails.Controls.Add(this.lblBirthDate);
@@ -259,15 +259,6 @@
             this.dateBirthDate.Size = new System.Drawing.Size(180, 20);
             this.dateBirthDate.TabIndex = 5;
             // 
-            // txtMaritalStatus
-            // 
-            this.txtMaritalStatus.BackColor = System.Drawing.Color.White;
-            this.txtMaritalStatus.Location = new System.Drawing.Point(112, 215);
-            this.txtMaritalStatus.Name = "txtMaritalStatus";
-            this.txtMaritalStatus.Size = new System.Drawing.Size(180, 20);
-            this.txtMaritalStatus.TabIndex = 10;
-            this.txtMaritalStatus.TextChanged += new System.EventHandler(this.txtMaritalStatus_TextChanged);
-            // 
             // lblMaritalStatus
             // 
             this.lblMaritalStatus.AutoSize = true;
@@ -277,15 +268,6 @@
             this.lblMaritalStatus.Size = new System.Drawing.Size(88, 16);
             this.lblMaritalStatus.TabIndex = 10;
             this.lblMaritalStatus.Text = "Marital Status";
-            // 
-            // txtReligion
-            // 
-            this.txtReligion.BackColor = System.Drawing.Color.White;
-            this.txtReligion.Location = new System.Drawing.Point(112, 175);
-            this.txtReligion.Name = "txtReligion";
-            this.txtReligion.Size = new System.Drawing.Size(180, 20);
-            this.txtReligion.TabIndex = 9;
-            this.txtReligion.TextChanged += new System.EventHandler(this.txtReligion_TextChanged);
             // 
             // lblReligion
             // 
@@ -339,6 +321,39 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cmbReligion
+            // 
+            this.cmbReligion.BackColor = System.Drawing.Color.White;
+            this.cmbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReligion.FormattingEnabled = true;
+            this.cmbReligion.Items.AddRange(new object[] {
+            "",
+            "Roman Catholic",
+            "Islam",
+            "Iglesia Ni Cristo",
+            "Jehovah\'s Witness"});
+            this.cmbReligion.Location = new System.Drawing.Point(112, 175);
+            this.cmbReligion.Name = "cmbReligion";
+            this.cmbReligion.Size = new System.Drawing.Size(180, 21);
+            this.cmbReligion.TabIndex = 28;
+            this.cmbReligion.TextChanged += new System.EventHandler(this.cmbReligion_TextChanged);
+            // 
+            // cmbMaritalStatus
+            // 
+            this.cmbMaritalStatus.BackColor = System.Drawing.Color.White;
+            this.cmbMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaritalStatus.FormattingEnabled = true;
+            this.cmbMaritalStatus.Items.AddRange(new object[] {
+            "",
+            "Single",
+            "Married",
+            "Divorced"});
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(112, 216);
+            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(180, 21);
+            this.cmbMaritalStatus.TabIndex = 29;
+            this.cmbMaritalStatus.TextChanged += new System.EventHandler(this.cmbMaritalStatus_TextChanged);
+            // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,9 +391,7 @@
         public System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.GroupBox grpPersonalDetails;
-        public System.Windows.Forms.TextBox txtMaritalStatus;
         private System.Windows.Forms.Label lblMaritalStatus;
-        public System.Windows.Forms.TextBox txtReligion;
         private System.Windows.Forms.Label lblReligion;
         private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.Label lblBirthDate;
@@ -391,5 +404,7 @@
         public System.Windows.Forms.ComboBox cmbSex;
         public System.Windows.Forms.DateTimePicker dateBirthDate;
         public System.Windows.Forms.TextBox txtStatus;
+        public System.Windows.Forms.ComboBox cmbMaritalStatus;
+        public System.Windows.Forms.ComboBox cmbReligion;
     }
 }

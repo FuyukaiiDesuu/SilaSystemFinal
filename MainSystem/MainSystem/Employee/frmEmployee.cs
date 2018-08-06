@@ -79,7 +79,7 @@ namespace MainSystem
         private void renameDataTableColumns()
         {
             //for DataGridView Search
-            dataSearch.Columns["empID"].HeaderText = "ID";
+            dataSearch.Columns["empID"].Visible = false;
             dataSearch.Columns["first_name"].HeaderText = "First Name";
             dataSearch.Columns["last_name"].HeaderText = "Last Name";
             dataSearch.Columns["middle_name"].HeaderText = "Middle Name";

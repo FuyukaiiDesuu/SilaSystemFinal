@@ -238,6 +238,7 @@
             this.cmbPaymentTo.Name = "cmbPaymentTo";
             this.cmbPaymentTo.Size = new System.Drawing.Size(200, 21);
             this.cmbPaymentTo.TabIndex = 3;
+            this.cmbPaymentTo.TextChanged += new System.EventHandler(this.cmbPaymentTo_TextChanged);
             // 
             // lblPaymentTo
             // 

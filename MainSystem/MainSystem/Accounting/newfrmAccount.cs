@@ -92,12 +92,12 @@ namespace MainSystem.Accounting
             this.dataFeeValue.DataSource = feeDisplay;
 
             dataFeeValue.Columns["fee_type"].HeaderText = "Fee Type";
+            dataFeeValue.Columns["fee_description"].HeaderText = "Fee Description";
             dataFeeValue.Columns["current_amount"].HeaderText = "Current Amount";
             dataFeeValue.Columns["school_year_start"].HeaderText = "School Year Start";
             dataFeeValue.Columns["school_year_end"].HeaderText = "School Year End";
 
             dataFeeValue.Columns["fid"].Visible = false;
-            dataFeeValue.Columns["fee_description"].Visible = false;
             dataFeeValue.Columns["date_modified"].Visible = false;
             dataFeeValue.Columns["date_created"].Visible = false;
 
