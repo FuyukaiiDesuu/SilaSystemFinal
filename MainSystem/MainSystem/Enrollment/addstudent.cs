@@ -27,14 +27,14 @@ namespace MainSystem
         private void addStudent_Load(object sender, EventArgs e)
         {
             createdefault();
+            gboxEnabler();
             txtstno.Text = studid;
+            txtrel.Enabled = false;
             //ph.Text = sygetter();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            btncanc.PerformClick();
-            reference.Show();
-            this.Close();
+            
         }
         private void createdefault()
         {
@@ -72,7 +72,14 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@dof", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@pof", txtbp.Text);
                     command.Parameters.AddWithValue("@sex", comboBox3.Text);
-                    command.Parameters.AddWithValue("@rel", txtrel.Text);
+                    if(comboBox4.Text == "Others")
+                    {
+                        command.Parameters.AddWithValue("@rel", txtrel.Text);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@rel", comboBox4.Text);
+                    }
                     command.Parameters.AddWithValue("@nickname", txtnn.Text);
                     command.Parameters.AddWithValue("@stat", 1);
                     command.Parameters.AddWithValue("@ayd2", studid);
@@ -84,7 +91,8 @@ namespace MainSystem
                     IDictionary<string, string> dic = comboboxpicker();
                     command.Parameters.AddWithValue("@dpt", dic["dept"]);
                     command.Parameters.AddWithValue("@lvl", dic["level"]);
-                    command.Parameters.AddWithValue("@sy", sygetter().ToString());
+                    Int32 temp = Convert.ToInt32(sygetter().ToString()) + 1;
+                    command.Parameters.AddWithValue("@sy", sygetter().ToString() + "-" + temp.ToString());
                     command.Parameters.AddWithValue("@aydd", studid);
                     command.ExecuteNonQuery();
                 }
@@ -163,14 +171,27 @@ namespace MainSystem
             return d1;
 
         }
+        private void gboxEnabler()
+        {
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = true;
+            groupBox3.Enabled = true;
+        }
+        private void gboxDisabler()
+        {
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
+            groupBox3.Enabled = false;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             createfunction();
             MessageBox.Show("Record Created Successfully!");
             //connection.Close();
-            reference.Show();
+            btnSave.Enabled = false;
+            //gboxDisabler();
             reference.loadData();
-            dbconnection.Close();
+            reference.Show();
             this.Close();
         }
 
@@ -201,6 +222,7 @@ namespace MainSystem
             altertable();
             this.Close();
             reference.Show();
+            reference.loadData();
             dbconnection.Close();
             
         }
@@ -224,6 +246,52 @@ namespace MainSystem
 
             }
            
+        }
+
+        private void comboBox4_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(comboBox4.Text == "Others")
+            {
+                txtrel.Enabled = true;
+            }
+            else
+            {
+                txtrel.Enabled = false;
+            }
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            comboBox2.Items.Clear();
+            switch (comboBox1.Text)
+            {
+               case "Pre-school":
+                    comboBox2.Items.Add("Nursery");
+                    comboBox2.Items.Add("Kinder");
+                    comboBox2.Items.Add("Preparatory");
+                    break;
+                case "Grade-school":
+                    comboBox2.Items.Add("Grade 1");
+                    comboBox2.Items.Add("Grade 2");
+                    comboBox2.Items.Add("Grade 3");
+                    comboBox2.Items.Add("Grade 4");
+                    comboBox2.Items.Add("Grade 5");
+                    comboBox2.Items.Add("Grade 6");
+                    break;
+                case "High-school":
+                    comboBox2.Items.Add("Grade 7");
+                    comboBox2.Items.Add("Grade 8");
+                    comboBox2.Items.Add("Grade 9");
+                    comboBox2.Items.Add("Grade 10");
+                    break;
+            }
+ 
+                    
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

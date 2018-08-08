@@ -83,7 +83,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(131, 236);
+            this.btnExit.Location = new System.Drawing.Point(131, 363);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(70, 36);
@@ -94,7 +94,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(10, 236);
+            this.btnSave.Location = new System.Drawing.Point(10, 363);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(118, 36);
@@ -307,7 +307,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 280);
+            this.ClientSize = new System.Drawing.Size(422, 410);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.Department);
