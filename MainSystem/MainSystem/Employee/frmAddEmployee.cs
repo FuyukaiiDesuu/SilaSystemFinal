@@ -14,6 +14,7 @@ namespace MainSystem
     public partial class frmAddEmployee : Form
     {
         public frmEmployee reference { get; set; }
+        public MySqlConnection dbconnection;
 
         public frmAddEmployee()
         {
@@ -48,35 +49,68 @@ namespace MainSystem
             //Inserting Data
             if(txtEmployeeID.Text == txtEmployeeID.Text)
             {
-                MySqlConnection conn = connect.connector();
-                String query = "INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status) " +
-                    "VALUES('" + txtFirstName.Text + 
-                    "','" + txtLastName.Text + 
-                    "','" + txtMiddleName.Text + 
-                    "','" + dateBirthDate.Text + 
-                    "','" + txtBirthPlace.Text + 
-                    "','" + txtContactNo.Text + 
-                    "','" + cmbSex.Text +
-                    "','" + cmbReligion.Text + 
-                    "','" + cmbMaritalStatus.Text + 
-                    "','" + txtStatus.Text + 
-                    "')";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                try
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
                 {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
+                    dbconnection.Open();
+                    String query = "INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status) VALUES (@fn, @ln, @mn, @bd, @bp, @cn, @sex, @religion, @ms, @status);";
+                    using (var cmd = new MySqlCommand(query, dbconnection))
+                    {
+                        cmd.Parameters.AddWithValue("@fn", txtFirstName.Text);
+                        cmd.Parameters.AddWithValue("@ln", txtLastName.Text);
+                        cmd.Parameters.AddWithValue("@mn", txtMiddleName.Text);
+                        cmd.Parameters.AddWithValue("@bd", dateBirthDate.Text);
+                        cmd.Parameters.AddWithValue("@bp", txtBirthPlace.Text);
+                        cmd.Parameters.AddWithValue("@cn", txtContactNo.Text);
+                        cmd.Parameters.AddWithValue("@sex", cmbSex.Text);
+                        if(cmbReligion.Text == "Others")
+                        {
+                            cmd.Parameters.AddWithValue("@religion", txtSpecify.Text);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@religion", cmbReligion.Text);
+                        }
+                        cmd.Parameters.AddWithValue("@ms", cmbMaritalStatus.Text);
+                        cmd.Parameters.AddWithValue("@status", txtStatus.Text);
+                        cmd.ExecuteNonQuery();
+                    }
                     MessageBox.Show("Successfully Inserted");
+                    this.Close();
+                    reference.Show();
+                    reference.readData();
+                    reference.dataSearch.Rows[0].Selected = false;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                conn.Close();
-                this.Close();
-                reference.Show();
-                reference.readData();
-                reference.dataSearch.Rows[0].Selected = false;
+                
+                //MySqlConnection conn = connect.connector();
+                //String query = "INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status) " +
+                //    "VALUES('" + txtFirstName.Text + 
+                //    "','" + txtLastName.Text + 
+                //    "','" + txtMiddleName.Text + 
+                //    "','" + dateBirthDate.Text + 
+                //    "','" + txtBirthPlace.Text + 
+                //    "','" + txtContactNo.Text + 
+                //    "','" + cmbSex.Text +
+                //    "','" + cmbReligion.Text + 
+                //    "','" + cmbMaritalStatus.Text + 
+                //    "','" + txtStatus.Text + 
+                //    "')";
+                //MySqlCommand cmd = new MySqlCommand(query, conn);
+                //try
+                //{
+                //    conn.Open();
+                //    cmd.ExecuteNonQuery();
+                //    MessageBox.Show("Successfully Inserted");
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
+                //conn.Close();
+                //this.Close();
+                //reference.Show();
+                //reference.readData();
+                //reference.dataSearch.Rows[0].Selected = false;
             }
             /*
             //FOR WHEN USING DEFAULTVALUE
@@ -237,6 +271,14 @@ namespace MainSystem
         {
             //For enabling 
             enableButton();
+            if(cmbReligion.Text == "Others")
+            {
+                txtSpecify.Enabled = true;
+            }
+            else
+            {
+                txtSpecify.Enabled = false;
+            }
         }
 
         private void cmbMaritalStatus_TextChanged(object sender, EventArgs e)
