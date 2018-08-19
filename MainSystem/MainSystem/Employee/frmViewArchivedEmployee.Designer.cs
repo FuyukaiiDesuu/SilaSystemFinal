@@ -56,6 +56,8 @@
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.btnEnable = new System.Windows.Forms.Button();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblLoggedinas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpPersonalDetails.SuspendLayout();
             this.grpEmployeeDetails.SuspendLayout();
@@ -69,7 +71,7 @@
             this.dataSearch.AllowUserToResizeRows = false;
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearch.Location = new System.Drawing.Point(12, 102);
+            this.dataSearch.Location = new System.Drawing.Point(12, 73);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -80,7 +82,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 76);
+            this.txtSearch.Location = new System.Drawing.Point(12, 47);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 7;
@@ -88,7 +90,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(552, 12);
+            this.btnDashboard.Location = new System.Drawing.Point(552, 30);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(100, 37);
             this.btnDashboard.TabIndex = 13;
@@ -110,7 +112,7 @@
             this.grpPersonalDetails.Controls.Add(this.lblSex);
             this.grpPersonalDetails.Controls.Add(this.txtBirthDate);
             this.grpPersonalDetails.Controls.Add(this.lblBirthDate);
-            this.grpPersonalDetails.Location = new System.Drawing.Point(335, 273);
+            this.grpPersonalDetails.Location = new System.Drawing.Point(335, 244);
             this.grpPersonalDetails.Name = "grpPersonalDetails";
             this.grpPersonalDetails.Size = new System.Drawing.Size(317, 261);
             this.grpPersonalDetails.TabIndex = 15;
@@ -249,7 +251,7 @@
             this.grpEmployeeDetails.Controls.Add(this.lblLastName);
             this.grpEmployeeDetails.Controls.Add(this.txtEmployeeID);
             this.grpEmployeeDetails.Controls.Add(this.lblEmployeeID);
-            this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 273);
+            this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 244);
             this.grpEmployeeDetails.Name = "grpEmployeeDetails";
             this.grpEmployeeDetails.Size = new System.Drawing.Size(317, 261);
             this.grpEmployeeDetails.TabIndex = 14;
@@ -364,7 +366,7 @@
             // btnEnable
             // 
             this.btnEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnable.Location = new System.Drawing.Point(12, 540);
+            this.btnEnable.Location = new System.Drawing.Point(12, 511);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(89, 28);
             this.btnEnable.TabIndex = 16;
@@ -372,12 +374,34 @@
             this.btnEnable.UseVisualStyleBackColor = true;
             this.btnEnable.Click += new System.EventHandler(this.btnEnable_Click);
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblUser.Location = new System.Drawing.Point(105, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(46, 17);
+            this.lblUser.TabIndex = 20;
+            this.lblUser.Text = "USER";
+            // 
+            // lblLoggedinas
+            // 
+            this.lblLoggedinas.AutoSize = true;
+            this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblLoggedinas.Location = new System.Drawing.Point(9, 9);
+            this.lblLoggedinas.Name = "lblLoggedinas";
+            this.lblLoggedinas.Size = new System.Drawing.Size(98, 17);
+            this.lblLoggedinas.TabIndex = 19;
+            this.lblLoggedinas.Text = "Logged in as: ";
+            // 
             // frmViewArchivedEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(661, 578);
+            this.ClientSize = new System.Drawing.Size(665, 545);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.grpPersonalDetails);
             this.Controls.Add(this.grpEmployeeDetails);
@@ -430,5 +454,7 @@
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.Button btnEnable;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblLoggedinas;
     }
 }

@@ -81,92 +81,8 @@ namespace MainSystem
                     reference.readData();
                     reference.dataSearch.Rows[0].Selected = false;
                 }
-                
-                //MySqlConnection conn = connect.connector();
-                //String query = "INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status) " +
-                //    "VALUES('" + txtFirstName.Text + 
-                //    "','" + txtLastName.Text + 
-                //    "','" + txtMiddleName.Text + 
-                //    "','" + dateBirthDate.Text + 
-                //    "','" + txtBirthPlace.Text + 
-                //    "','" + txtContactNo.Text + 
-                //    "','" + cmbSex.Text +
-                //    "','" + cmbReligion.Text + 
-                //    "','" + cmbMaritalStatus.Text + 
-                //    "','" + txtStatus.Text + 
-                //    "')";
-                //MySqlCommand cmd = new MySqlCommand(query, conn);
-                //try
-                //{
-                //    conn.Open();
-                //    cmd.ExecuteNonQuery();
-                //    MessageBox.Show("Successfully Inserted");
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message);
-                //}
-                //conn.Close();
-                //this.Close();
-                //reference.Show();
-                //reference.readData();
-                //reference.dataSearch.Rows[0].Selected = false;
-            }
-            /*
-            //FOR WHEN USING DEFAULTVALUE
-            using (MySqlConnection conn = connect.connector())
-            {
-                //Inserting Data
-                String query = "UPDATE employee SET first_name='" + txtFirstName.Text + 
-                    "',last_name='" + txtLastName.Text + 
-                    "',middle_name='" + txtMiddleName.Text +
-                    "',birth_date='" + dateBirthDate.Text + 
-                    "',birth_place='" + txtBirthPlace.Text + 
-                    "',contactNo='" + txtContactNo.Text + 
-                    "',sex='" + cmbSex.Text +
-                    "',religion='" + txtReligion.Text + 
-                    "',marital_status='" + txtMaritalStatus.Text + 
-                    "',status='" + cmbStatus.Text +
-                    "' WHERE empID='" + txtEmployeeID.Text + "'";
-                MySqlCommand command = new MySqlCommand(query, conn);
-                try
-                {
-                    conn.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Inserted");
-                    this.Close();
-                    reference.Show();
-                    reference.readData();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Invalid");
-                }
-                conn.Close();
-                this.Close();
-                reference.Show();
-                reference.readData();
-                reference.dataSearch.Rows[0].Selected = false;
-            }
-            */
-        }
-        
-
-        /*private void defaultValue()
-        {
-            //Adding EmpID Value to Database even other values are null
-            using (MySqlConnection conn = connect.connector())
-            {
-                conn.Open();
-                string query = "INSERT INTO employee VALUES();";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
             }
         }
-        */
-
         private void fetchID()
         {
             //Fetching the last autoincremented ID from database
@@ -181,30 +97,6 @@ namespace MainSystem
             }
             conn.Close();
         }
-
-        /*private void deleteData()
-        {
-
-            //Deleting the defaultValue when user wants to cancel of adding employee
-            using (MySqlConnection conn = connect.connector())
-            {
-                int rows = reference.dataSearch.Rows.Count - 1;
-                string query = "ALTER TABLE employee AUTO_INCREMENT='" + rows + "'";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                conn.Close();
-            }
-        }*/
-            
-
         private void enableButton()
         {
             btnSave.Enabled =

@@ -25,21 +25,12 @@ namespace MainSystem.Accounting
         string school_year_end;
         string fid;
         string fee_description;
-        string date_modified;
-        string date_created;
-
-        string adid;
-        string date_due;
-        string total_amount;
-        string current_balance;
-        string paid_amount;
-        string payment_status;
-        string spid;
-        string did;
-        public newfrmAccount()
+        
+        public newfrmAccount(string uname)
         {
             InitializeComponent();
             loadStudentProfileTable();
+            lblUser.Text = uname;
         }
 
         private void newfrmAccount_Load(object sender, EventArgs e)
@@ -148,7 +139,10 @@ namespace MainSystem.Accounting
         public Accounting.newfrmAddTransaction transac;
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
+            DataTable holder = dbquery.User(uname);
+            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             transac = new Accounting.newfrmAddTransaction();
+            transac.uname = uname;
             transac.id = txtStudentID.Text.ToString();
             transac.balanceDisplay = (dataBalanceDetails.DataSource as DataTable);
             transac.GradeLevelDisplay = (dataBalanceDetails.DataSource as DataTable);
@@ -166,7 +160,10 @@ namespace MainSystem.Accounting
         public Accounting.frmAddFee addfee;
         private void btnAddFee_Click(object sender, EventArgs e)
         {
+            DataTable holder = dbquery.User(uname);
+            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             addfee = new Accounting.frmAddFee(true);
+            addfee.uname = uname;
             addfee.Show();
             addfee.reference = this;
             this.Hide();
@@ -175,7 +172,10 @@ namespace MainSystem.Accounting
         public Accounting.newfrmEditAccount editaccount;
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
+            DataTable holder = dbquery.User(uname);
+            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             editaccount = new Accounting.newfrmEditAccount();
+            editaccount.uname = uname;
             editaccount.id = txtStudentID.Text.ToString();
             editaccount.name = fullname.ToString();
             editaccount.Show();
@@ -203,7 +203,10 @@ namespace MainSystem.Accounting
         public Accounting.frmViewPaymentHistory viewpaymenthistory;
         private void btnViewPaymentHistory_Click(object sender, EventArgs e)
         {
+            DataTable holder = dbquery.User(uname);
+            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             viewpaymenthistory = new Accounting.frmViewPaymentHistory();
+            viewpaymenthistory.uname = uname;
             viewpaymenthistory.Show();
             viewpaymenthistory.reference = this;
             this.Hide();
@@ -212,6 +215,8 @@ namespace MainSystem.Accounting
         private void btnUpdateFee_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
+            DataTable holder = dbquery.User(uname);
+            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             dt.Columns.Add("fid");
             dt.Columns.Add("fee_type");
             dt.Columns.Add("current_amount");
@@ -221,10 +226,18 @@ namespace MainSystem.Accounting
             dt.Rows.Add(fid, fee_type, current_amount, school_year_start, school_year_end, fee_description);
 
             addfee = new Accounting.frmAddFee(false);
+            addfee.uname = uname;
             addfee.dtadd = dt;
             addfee.Show();
             addfee.reference = this;
             this.Hide();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string firstname = txtSearch.Text;
+            DataTable holder = dbquery.SearchStudent(firstname);
+            dataSearch.DataSource = holder;
         }
     }
 }

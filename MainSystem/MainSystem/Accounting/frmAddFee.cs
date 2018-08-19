@@ -18,6 +18,7 @@ namespace MainSystem.Accounting
         DbQueries dbquery = new DbQueries();
         DataTable accountDetailsValues = null;
         bool checker;
+        public string uname { get; set; }
         public frmAddFee(bool feeCheck)
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace MainSystem.Accounting
         private void frmAddFee_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            lblUser.Text = uname;
 
             if (checker == false)
             {
@@ -109,11 +111,12 @@ namespace MainSystem.Accounting
                 dbquery.updateFee(cmbGradeLevel.Text, txtFeeDescription.Text, txtAmount.Text, lblDate.Text, dateYearStart.Value.ToString("yyyy-MM-dd"), dateYearEnd.Value.ToString("yyyy-MM-dd"), s_key);
                 DataTable fee_amount = dbquery.totalFeeAmount(cmbGradeLevel.Text);
                 accountDetailsValues = dbquery.accountDetails(s_key);
+                
 
                 for (int i = 0; i < accountDetailsValues.Rows.Count; i++)
                 {
 
-                    if (accountDetailsValues.Rows[i]["current_balance"].ToString() != accountDetailsValues.Rows[i]["total_amount"].ToString())
+                    if (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) <= Convert.ToInt32(accountDetailsValues.Rows[i]["total_amount"].ToString()))
                     {
                         if (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) <= 0)
                         {
@@ -144,7 +147,7 @@ namespace MainSystem.Accounting
 
                 for (int i = 0; i < accountDetailsValues.Rows.Count; i++)
                 {
-                    if (accountDetailsValues.Rows[i]["current_balance"].ToString() != accountDetailsValues.Rows[i]["total_amount"].ToString())
+                    if (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) <= Convert.ToInt32(accountDetailsValues.Rows[i]["total_amount"].ToString()))
                     {
                         balance = (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) + Convert.ToInt32(txtAmount.Text)).ToString();
                     }

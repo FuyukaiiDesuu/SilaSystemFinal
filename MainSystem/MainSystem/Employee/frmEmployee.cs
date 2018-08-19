@@ -14,10 +14,13 @@ namespace MainSystem
     public partial class frmEmployee : Form
     {
         public frmMain reference { get; set; }
+        private MySqlConnection dbconnect;
+        string uname;
 
-        public frmEmployee()
+        public frmEmployee(string uname)
         {
             InitializeComponent();
+            lblUser.Text = uname;
         }
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
@@ -33,6 +36,8 @@ namespace MainSystem
 
             //For Disabling auto-select in datagrid view 
             dataSearch.Rows[0].Selected = false;
+
+            
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -53,12 +58,28 @@ namespace MainSystem
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            frmviewemp = new frmViewArchivedEmployee();
-            frmviewemp.Show();
-            frmviewemp.reference = this;
-            this.Hide();
-            readData();
-            dataSearch.Rows[0].Selected = false;
+            var dbconnector = new dbConnector();
+            using (dbconnect = dbconnector.connector())
+            {
+                dbconnect.Open();
+                MySqlCommand query = new MySqlCommand("SELECT * from usertable inner join employee on " +
+                    "usertable.idemp = employee.empID ", dbconnect);
+                MySqlDataAdapter listener = new MySqlDataAdapter(query);
+                DataTable holder = new DataTable();
+                listener.Fill(holder);
+                if (holder.Rows.Count > 0)
+                {
+
+                    uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                    frmviewemp = new frmViewArchivedEmployee(uname);
+                    frmviewemp.Show();
+                    frmviewemp.reference = this;
+                    this.Hide();
+                    readData();
+                    dataSearch.Rows[0].Selected = false;
+                }
+            }
+            
         }
         public frmViewArchivedEmployee frmviewemp;
         

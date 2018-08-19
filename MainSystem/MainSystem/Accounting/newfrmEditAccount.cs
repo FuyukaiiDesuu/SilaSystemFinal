@@ -17,6 +17,7 @@ namespace MainSystem.Accounting
         public DataTable editacc = null;
         public string id { get; set; }
         public string name { get; set; }
+        public string uname { get; set; }
         public newfrmEditAccount()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace MainSystem.Accounting
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            lblUser.Text = uname;
             txtStudentID.Text = id;
             txtStudentName.Text = name;
             DataTable adid = dbquery.getAdid(id);
@@ -54,7 +56,7 @@ namespace MainSystem.Accounting
         {
             if (lblPaymentStatus2.Text == "PAID")
             {
-                lblPaymentStatus2.Location = new Point(470, 114);
+                lblPaymentStatus2.Location = new Point(397, 114);
                 lblPaymentStatus2.ForeColor = Color.Green;
             }
             else

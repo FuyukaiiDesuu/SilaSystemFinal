@@ -15,9 +15,10 @@ namespace MainSystem
     {
 
         public frmEmployee reference { get; set; }
-        public frmViewArchivedEmployee()
+        public frmViewArchivedEmployee(string uname)
         {
             InitializeComponent();
+            lblUser.Text = uname;
         }
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;

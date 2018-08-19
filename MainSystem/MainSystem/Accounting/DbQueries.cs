@@ -140,5 +140,29 @@ namespace MainSystem.Accounting
                             values ('" + student_id + "','" + payment_id + "','" + date_created + "', '" + grade_level + "','" + current_balance + "','" + amount_paid + "','" + payment_status + "')";
             con.executeQuery(query);
         }
+
+        public DataTable User(string uname)
+        {
+            string query = "SELECT * FROM usertable INNER JOIN employee on usertable.idemp = employee.empID";
+            DataTable itmContainer = con.Select(query);
+            return itmContainer;
+        }
+
+        public DataTable SearchStudent(string firstname)
+        {
+            string query = @"SELECT *, concat(sp.LastName, ', ' , sp.FirstName, ' ', sp.MiddleName) as 'fullname'
+                            FROM studentprofile as sp
+                            where LastName
+                            like '" + firstname + "%'";
+            DataTable itmContainer = con.Select(query);
+            return itmContainer;
+        }
+
+        public DataTable SearchPayment(string student_id)
+        {
+            string query = "SELECT * FROM student_payment_logs WHERE student_id LIKE '" + student_id + "%'";
+            DataTable itmContainer = con.Select(query);
+            return itmContainer;
+        }
     }
 }

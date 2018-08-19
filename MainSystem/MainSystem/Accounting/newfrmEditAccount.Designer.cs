@@ -70,7 +70,7 @@
             // 
             this.lblDate2.AutoSize = true;
             this.lblDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDate2.Location = new System.Drawing.Point(148, 9);
+            this.lblDate2.Location = new System.Drawing.Point(585, 9);
             this.lblDate2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate2.Name = "lblDate2";
             this.lblDate2.Size = new System.Drawing.Size(46, 17);
@@ -81,7 +81,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDate.Location = new System.Drawing.Point(11, 9);
+            this.lblDate.Location = new System.Drawing.Point(448, 9);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(46, 17);
@@ -294,7 +294,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblUser.Location = new System.Drawing.Point(439, 9);
+            this.lblUser.Location = new System.Drawing.Point(100, 9);
             this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(38, 17);
@@ -305,7 +305,7 @@
             // 
             this.lblLoggedinas.AutoSize = true;
             this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblLoggedinas.Location = new System.Drawing.Point(341, 9);
+            this.lblLoggedinas.Location = new System.Drawing.Point(9, 9);
             this.lblLoggedinas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggedinas.Name = "lblLoggedinas";
             this.lblLoggedinas.Size = new System.Drawing.Size(94, 17);
@@ -388,7 +388,7 @@
             // 
             this.lblPaymentStatus2.AutoSize = true;
             this.lblPaymentStatus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentStatus2.Location = new System.Drawing.Point(439, 114);
+            this.lblPaymentStatus2.Location = new System.Drawing.Point(397, 114);
             this.lblPaymentStatus2.Name = "lblPaymentStatus2";
             this.lblPaymentStatus2.Size = new System.Drawing.Size(114, 16);
             this.lblPaymentStatus2.TabIndex = 18;

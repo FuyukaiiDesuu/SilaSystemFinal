@@ -135,7 +135,7 @@
             this.txtAdditionalDetails.Multiline = true;
             this.txtAdditionalDetails.Name = "txtAdditionalDetails";
             this.txtAdditionalDetails.Size = new System.Drawing.Size(200, 196);
-            this.txtAdditionalDetails.TabIndex = 16;
+            this.txtAdditionalDetails.TabIndex = 4;
             // 
             // lblAddtionalDetails
             // 
@@ -220,7 +220,7 @@
             this.cmbPaymentType.Location = new System.Drawing.Point(121, 200);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(200, 21);
-            this.cmbPaymentType.TabIndex = 8;
+            this.cmbPaymentType.TabIndex = 1;
             this.cmbPaymentType.TextChanged += new System.EventHandler(this.cmbPaymentType_TextChanged);
             // 
             // cmbPaymentTo
@@ -306,7 +306,7 @@
             this.btnPrint.Location = new System.Drawing.Point(206, 699);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(91, 31);
-            this.btnPrint.TabIndex = 14;
+            this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
@@ -316,7 +316,7 @@
             this.btnCancel.Location = new System.Drawing.Point(109, 699);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(91, 31);
-            this.btnCancel.TabIndex = 13;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -327,7 +327,7 @@
             this.btnPay.Location = new System.Drawing.Point(12, 699);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(91, 31);
-            this.btnPay.TabIndex = 12;
+            this.btnPay.TabIndex = 6;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -350,7 +350,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblUser.Location = new System.Drawing.Point(112, 23);
+            this.lblUser.Location = new System.Drawing.Point(106, 23);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(38, 17);
             this.lblUser.TabIndex = 16;

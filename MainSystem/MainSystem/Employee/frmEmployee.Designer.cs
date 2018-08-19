@@ -58,6 +58,8 @@
             this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblLoggedinas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
@@ -65,7 +67,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 62);
+            this.txtSearch.Location = new System.Drawing.Point(12, 45);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 2;
@@ -79,7 +81,7 @@
             this.dataSearch.AllowUserToResizeRows = false;
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearch.Location = new System.Drawing.Point(12, 88);
+            this.dataSearch.Location = new System.Drawing.Point(12, 71);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -100,7 +102,7 @@
             this.grpEmployeeDetails.Controls.Add(this.lblLastName);
             this.grpEmployeeDetails.Controls.Add(this.txtEmployeeID);
             this.grpEmployeeDetails.Controls.Add(this.lblEmployeeID);
-            this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 259);
+            this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 242);
             this.grpEmployeeDetails.Name = "grpEmployeeDetails";
             this.grpEmployeeDetails.Size = new System.Drawing.Size(317, 261);
             this.grpEmployeeDetails.TabIndex = 7;
@@ -215,7 +217,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(12, 526);
+            this.btnAdd.Location = new System.Drawing.Point(12, 509);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 28);
             this.btnAdd.TabIndex = 8;
@@ -226,7 +228,7 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(107, 526);
+            this.btnEdit.Location = new System.Drawing.Point(107, 509);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(89, 28);
             this.btnEdit.TabIndex = 9;
@@ -237,7 +239,7 @@
             // btnView
             // 
             this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(202, 526);
+            this.btnView.Location = new System.Drawing.Point(202, 509);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(89, 28);
             this.btnView.TabIndex = 10;
@@ -259,7 +261,7 @@
             this.grpPersonalDetails.Controls.Add(this.lblSex);
             this.grpPersonalDetails.Controls.Add(this.txtBirthDate);
             this.grpPersonalDetails.Controls.Add(this.lblBirthDate);
-            this.grpPersonalDetails.Location = new System.Drawing.Point(335, 259);
+            this.grpPersonalDetails.Location = new System.Drawing.Point(335, 242);
             this.grpPersonalDetails.Name = "grpPersonalDetails";
             this.grpPersonalDetails.Size = new System.Drawing.Size(317, 261);
             this.grpPersonalDetails.TabIndex = 11;
@@ -394,7 +396,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(552, 12);
+            this.btnDashboard.Location = new System.Drawing.Point(553, 28);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(100, 37);
             this.btnDashboard.TabIndex = 12;
@@ -402,12 +404,34 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblUser.Location = new System.Drawing.Point(104, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(46, 17);
+            this.lblUser.TabIndex = 18;
+            this.lblUser.Text = "USER";
+            // 
+            // lblLoggedinas
+            // 
+            this.lblLoggedinas.AutoSize = true;
+            this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblLoggedinas.Location = new System.Drawing.Point(8, 9);
+            this.lblLoggedinas.Name = "lblLoggedinas";
+            this.lblLoggedinas.Size = new System.Drawing.Size(98, 17);
+            this.lblLoggedinas.TabIndex = 17;
+            this.lblLoggedinas.Text = "Logged in as: ";
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(665, 571);
+            this.ClientSize = new System.Drawing.Size(665, 545);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.grpPersonalDetails);
             this.Controls.Add(this.btnView);
@@ -464,5 +488,7 @@
         public System.Windows.Forms.TextBox txtMaritalStatus;
         private System.Windows.Forms.Label lblMaritalStatus;
         public System.Windows.Forms.DataGridView dataSearch;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblLoggedinas;
     }
 }

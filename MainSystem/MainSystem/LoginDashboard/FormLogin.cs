@@ -13,7 +13,7 @@ namespace MainSystem
 {
     public partial class FormLogin : Form
     {
-        public MySqlConnection dbconnect;
+        private MySqlConnection dbconnect;
         public FormLogin()
         {
             InitializeComponent();
@@ -39,32 +39,37 @@ namespace MainSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            var dbconnector = new dbConnector();
+            using (dbconnect = dbconnector.connector())
             {
-                
-                MySqlCommand query = new MySqlCommand("SELECT * FROM usertable WHERE username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'", dbconnect);
+                dbconnect.Open();
+                MySqlCommand query = new MySqlCommand("SELECT * from usertable inner join employee on " +
+                    "usertable.idemp = employee.empID " +
+                    "where usertable.username = '" + txtUsername.Text + "' " +
+                    "and usertable.password = '" + txtPassword.Text + "';", dbconnect);
                 MySqlDataAdapter listener = new MySqlDataAdapter(query);
                 DataTable holder = new DataTable();
                 listener.Fill(holder);
 
-                if(holder.Rows.Count > 0)
+                //MessageBox.Show(perm.Substring(0,1));
+
+                if (holder.Rows.Count > 0)
                 {
-                    //uname = holder.Rows[0]["LastName"].ToString() + ", " + holder.Rows[0]["FirstName"].ToString();
+                    string perm = holder.Rows[0]["restrictions"].ToString();
+                    //string[] split = perm.Split(' ');
+
+                    uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
                     MessageBox.Show("Succesful Login!");
-                    frmmain = new frmMain(uname);
+                    frmmain = new frmMain(uname, perm);
                     frmmain.Show();
                     frmmain.reference = this;
                     this.Hide();
+
                 }
                 else
                 {
                     MessageBox.Show("Wrong Credentials!");
                 }
-            }
-            catch(Exception ee)
-            {
-                MessageBox.Show("ERROR: " + ee);
-                dbconnect.Close();
             }
         }
         Char chr;

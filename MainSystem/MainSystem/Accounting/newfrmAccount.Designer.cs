@@ -30,6 +30,12 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
+            this.grpFeeValue = new System.Windows.Forms.GroupBox();
+            this.btnUpdateFee = new System.Windows.Forms.Button();
+            this.dataFeeValue = new System.Windows.Forms.DataGridView();
+            this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
+            this.btnViewPaymentHistory = new System.Windows.Forms.Button();
+            this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAddFee = new System.Windows.Forms.Button();
@@ -54,33 +60,23 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.lblStudentID = new System.Windows.Forms.Label();
-            this.tabBankTransaction = new System.Windows.Forms.TabPage();
-            this.tabDisbursement = new System.Windows.Forms.TabPage();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
-            this.btnViewPaymentHistory = new System.Windows.Forms.Button();
-            this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
-            this.grpFeeValue = new System.Windows.Forms.GroupBox();
-            this.btnUpdateFee = new System.Windows.Forms.Button();
-            this.dataFeeValue = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
-            this.grpStudentDetails.SuspendLayout();
-            this.grpBalanceDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
             this.grpFeeValue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
+            this.grpBalanceDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
+            this.grpStudentDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabStudentTransaction);
-            this.tabControl.Controls.Add(this.tabBankTransaction);
-            this.tabControl.Controls.Add(this.tabDisbursement);
-            this.tabControl.Location = new System.Drawing.Point(4, 40);
+            this.tabControl.Location = new System.Drawing.Point(12, 29);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(931, 498);
@@ -104,6 +100,86 @@
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
             // 
+            // grpFeeValue
+            // 
+            this.grpFeeValue.Controls.Add(this.btnUpdateFee);
+            this.grpFeeValue.Controls.Add(this.dataFeeValue);
+            this.grpFeeValue.Location = new System.Drawing.Point(588, 206);
+            this.grpFeeValue.Name = "grpFeeValue";
+            this.grpFeeValue.Size = new System.Drawing.Size(322, 224);
+            this.grpFeeValue.TabIndex = 12;
+            this.grpFeeValue.TabStop = false;
+            this.grpFeeValue.Text = "Fee";
+            // 
+            // btnUpdateFee
+            // 
+            this.btnUpdateFee.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateFee.Enabled = false;
+            this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnUpdateFee.Location = new System.Drawing.Point(7, 176);
+            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateFee.Name = "btnUpdateFee";
+            this.btnUpdateFee.Size = new System.Drawing.Size(305, 41);
+            this.btnUpdateFee.TabIndex = 6;
+            this.btnUpdateFee.Text = "Update Fee";
+            this.btnUpdateFee.UseVisualStyleBackColor = false;
+            this.btnUpdateFee.Click += new System.EventHandler(this.btnUpdateFee_Click);
+            // 
+            // dataFeeValue
+            // 
+            this.dataFeeValue.AllowUserToAddRows = false;
+            this.dataFeeValue.AllowUserToDeleteRows = false;
+            this.dataFeeValue.AllowUserToResizeColumns = false;
+            this.dataFeeValue.AllowUserToResizeRows = false;
+            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
+            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataFeeValue.Location = new System.Drawing.Point(7, 25);
+            this.dataFeeValue.Name = "dataFeeValue";
+            this.dataFeeValue.RowHeadersVisible = false;
+            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataFeeValue.Size = new System.Drawing.Size(305, 145);
+            this.dataFeeValue.TabIndex = 1;
+            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
+            // 
+            // grpBalanceDetails
+            // 
+            this.grpBalanceDetails.Controls.Add(this.btnViewPaymentHistory);
+            this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
+            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 28);
+            this.grpBalanceDetails.Name = "grpBalanceDetails";
+            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 172);
+            this.grpBalanceDetails.TabIndex = 11;
+            this.grpBalanceDetails.TabStop = false;
+            this.grpBalanceDetails.Text = "Balance Details";
+            // 
+            // btnViewPaymentHistory
+            // 
+            this.btnViewPaymentHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnViewPaymentHistory.Location = new System.Drawing.Point(7, 125);
+            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
+            this.btnViewPaymentHistory.Size = new System.Drawing.Size(305, 41);
+            this.btnViewPaymentHistory.TabIndex = 5;
+            this.btnViewPaymentHistory.Text = "View Payment History";
+            this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
+            this.btnViewPaymentHistory.Click += new System.EventHandler(this.btnViewPaymentHistory_Click);
+            // 
+            // dataBalanceDetails
+            // 
+            this.dataBalanceDetails.AllowUserToAddRows = false;
+            this.dataBalanceDetails.AllowUserToDeleteRows = false;
+            this.dataBalanceDetails.AllowUserToResizeColumns = false;
+            this.dataBalanceDetails.AllowUserToResizeRows = false;
+            this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
+            this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataBalanceDetails.Location = new System.Drawing.Point(7, 25);
+            this.dataBalanceDetails.Name = "dataBalanceDetails";
+            this.dataBalanceDetails.RowHeadersVisible = false;
+            this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 94);
+            this.dataBalanceDetails.TabIndex = 0;
+            // 
             // btnEditAccount
             // 
             this.btnEditAccount.Enabled = false;
@@ -111,7 +187,7 @@
             this.btnEditAccount.Location = new System.Drawing.Point(140, 436);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(164, 28);
-            this.btnEditAccount.TabIndex = 10;
+            this.btnEditAccount.TabIndex = 3;
             this.btnEditAccount.Text = "Statement of Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
@@ -122,6 +198,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnAddFee
             // 
@@ -141,7 +218,7 @@
             this.btnAddTransaction.Location = new System.Drawing.Point(9, 436);
             this.btnAddTransaction.Name = "btnAddTransaction";
             this.btnAddTransaction.Size = new System.Drawing.Size(125, 28);
-            this.btnAddTransaction.TabIndex = 3;
+            this.btnAddTransaction.TabIndex = 2;
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = true;
             this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
@@ -192,7 +269,6 @@
             // txtLastName
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
-            this.txtLastName.Enabled = false;
             this.txtLastName.Location = new System.Drawing.Point(115, 133);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
@@ -202,7 +278,6 @@
             // txtMiddleName
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
-            this.txtMiddleName.Enabled = false;
             this.txtMiddleName.Location = new System.Drawing.Point(115, 97);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.ReadOnly = true;
@@ -232,7 +307,6 @@
             // txtDateOfBirth
             // 
             this.txtDateOfBirth.BackColor = System.Drawing.Color.White;
-            this.txtDateOfBirth.Enabled = false;
             this.txtDateOfBirth.Location = new System.Drawing.Point(385, 26);
             this.txtDateOfBirth.Name = "txtDateOfBirth";
             this.txtDateOfBirth.ReadOnly = true;
@@ -242,7 +316,6 @@
             // txtReligion
             // 
             this.txtReligion.BackColor = System.Drawing.Color.White;
-            this.txtReligion.Enabled = false;
             this.txtReligion.Location = new System.Drawing.Point(385, 99);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.ReadOnly = true;
@@ -252,7 +325,6 @@
             // txtPlaceOfBirth
             // 
             this.txtPlaceOfBirth.BackColor = System.Drawing.Color.White;
-            this.txtPlaceOfBirth.Enabled = false;
             this.txtPlaceOfBirth.Location = new System.Drawing.Point(385, 62);
             this.txtPlaceOfBirth.Name = "txtPlaceOfBirth";
             this.txtPlaceOfBirth.ReadOnly = true;
@@ -262,7 +334,6 @@
             // txtNickName
             // 
             this.txtNickName.BackColor = System.Drawing.Color.White;
-            this.txtNickName.Enabled = false;
             this.txtNickName.Location = new System.Drawing.Point(385, 136);
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.ReadOnly = true;
@@ -272,7 +343,6 @@
             // txtSex
             // 
             this.txtSex.BackColor = System.Drawing.Color.White;
-            this.txtSex.Enabled = false;
             this.txtSex.Location = new System.Drawing.Point(115, 171);
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
@@ -332,7 +402,6 @@
             // txtFirstName
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
-            this.txtFirstName.Enabled = false;
             this.txtFirstName.Location = new System.Drawing.Point(115, 62);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
@@ -352,7 +421,6 @@
             // txtStudentID
             // 
             this.txtStudentID.BackColor = System.Drawing.Color.White;
-            this.txtStudentID.Enabled = false;
             this.txtStudentID.Location = new System.Drawing.Point(115, 26);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.ReadOnly = true;
@@ -369,32 +437,12 @@
             this.lblStudentID.TabIndex = 0;
             this.lblStudentID.Text = "ID";
             // 
-            // tabBankTransaction
-            // 
-            this.tabBankTransaction.Location = new System.Drawing.Point(4, 22);
-            this.tabBankTransaction.Name = "tabBankTransaction";
-            this.tabBankTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBankTransaction.Size = new System.Drawing.Size(923, 472);
-            this.tabBankTransaction.TabIndex = 1;
-            this.tabBankTransaction.Text = "Bank Transaction";
-            this.tabBankTransaction.UseVisualStyleBackColor = true;
-            // 
-            // tabDisbursement
-            // 
-            this.tabDisbursement.Location = new System.Drawing.Point(4, 22);
-            this.tabDisbursement.Name = "tabDisbursement";
-            this.tabDisbursement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDisbursement.Size = new System.Drawing.Size(923, 472);
-            this.tabDisbursement.TabIndex = 2;
-            this.tabDisbursement.Text = "Disbursement";
-            this.tabDisbursement.UseVisualStyleBackColor = true;
-            // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(831, 19);
+            this.btnDashboard.Location = new System.Drawing.Point(843, 8);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(100, 37);
-            this.btnDashboard.TabIndex = 14;
+            this.btnDashboard.TabIndex = 7;
             this.btnDashboard.Text = "DASHBOARD";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -402,108 +450,29 @@
             // lblLoggedinas
             // 
             this.lblLoggedinas.AutoSize = true;
-            this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedinas.Location = new System.Drawing.Point(527, 17);
+            this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblLoggedinas.Location = new System.Drawing.Point(9, 9);
             this.lblLoggedinas.Name = "lblLoggedinas";
-            this.lblLoggedinas.Size = new System.Drawing.Size(108, 20);
-            this.lblLoggedinas.TabIndex = 15;
+            this.lblLoggedinas.Size = new System.Drawing.Size(98, 17);
+            this.lblLoggedinas.TabIndex = 0;
             this.lblLoggedinas.Text = "Logged in as: ";
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblUser.Location = new System.Drawing.Point(641, 17);
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblUser.Location = new System.Drawing.Point(104, 9);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(55, 20);
-            this.lblUser.TabIndex = 16;
+            this.lblUser.Size = new System.Drawing.Size(46, 17);
+            this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
-            // 
-            // grpBalanceDetails
-            // 
-            this.grpBalanceDetails.Controls.Add(this.btnViewPaymentHistory);
-            this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
-            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 28);
-            this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 172);
-            this.grpBalanceDetails.TabIndex = 11;
-            this.grpBalanceDetails.TabStop = false;
-            this.grpBalanceDetails.Text = "Balance Details";
-            // 
-            // btnViewPaymentHistory
-            // 
-            this.btnViewPaymentHistory.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnViewPaymentHistory.Location = new System.Drawing.Point(7, 125);
-            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
-            this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
-            this.btnViewPaymentHistory.Size = new System.Drawing.Size(305, 41);
-            this.btnViewPaymentHistory.TabIndex = 1;
-            this.btnViewPaymentHistory.Text = "View Payment History";
-            this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
-            this.btnViewPaymentHistory.Click += new System.EventHandler(this.btnViewPaymentHistory_Click);
-            // 
-            // dataBalanceDetails
-            // 
-            this.dataBalanceDetails.AllowUserToAddRows = false;
-            this.dataBalanceDetails.AllowUserToDeleteRows = false;
-            this.dataBalanceDetails.AllowUserToResizeColumns = false;
-            this.dataBalanceDetails.AllowUserToResizeRows = false;
-            this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
-            this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBalanceDetails.Location = new System.Drawing.Point(7, 25);
-            this.dataBalanceDetails.Name = "dataBalanceDetails";
-            this.dataBalanceDetails.RowHeadersVisible = false;
-            this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 94);
-            this.dataBalanceDetails.TabIndex = 0;
-            // 
-            // grpFeeValue
-            // 
-            this.grpFeeValue.Controls.Add(this.btnUpdateFee);
-            this.grpFeeValue.Controls.Add(this.dataFeeValue);
-            this.grpFeeValue.Location = new System.Drawing.Point(588, 206);
-            this.grpFeeValue.Name = "grpFeeValue";
-            this.grpFeeValue.Size = new System.Drawing.Size(322, 224);
-            this.grpFeeValue.TabIndex = 12;
-            this.grpFeeValue.TabStop = false;
-            this.grpFeeValue.Text = "Fee";
-            // 
-            // btnUpdateFee
-            // 
-            this.btnUpdateFee.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateFee.Enabled = false;
-            this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnUpdateFee.Location = new System.Drawing.Point(7, 176);
-            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateFee.Name = "btnUpdateFee";
-            this.btnUpdateFee.Size = new System.Drawing.Size(305, 41);
-            this.btnUpdateFee.TabIndex = 2;
-            this.btnUpdateFee.Text = "Update Fee";
-            this.btnUpdateFee.UseVisualStyleBackColor = false;
-            this.btnUpdateFee.Click += new System.EventHandler(this.btnUpdateFee_Click);
-            // 
-            // dataFeeValue
-            // 
-            this.dataFeeValue.AllowUserToAddRows = false;
-            this.dataFeeValue.AllowUserToDeleteRows = false;
-            this.dataFeeValue.AllowUserToResizeColumns = false;
-            this.dataFeeValue.AllowUserToResizeRows = false;
-            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
-            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataFeeValue.Location = new System.Drawing.Point(7, 25);
-            this.dataFeeValue.Name = "dataFeeValue";
-            this.dataFeeValue.RowHeadersVisible = false;
-            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(305, 145);
-            this.dataFeeValue.TabIndex = 1;
-            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
             // 
             // newfrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 553);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(955, 553);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.btnDashboard);
@@ -515,13 +484,13 @@
             this.tabControl.ResumeLayout(false);
             this.tabStudentTransaction.ResumeLayout(false);
             this.tabStudentTransaction.PerformLayout();
+            this.grpFeeValue.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
+            this.grpBalanceDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
             this.grpStudentDetails.ResumeLayout(false);
             this.grpStudentDetails.PerformLayout();
-            this.grpBalanceDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
-            this.grpFeeValue.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,8 +523,6 @@
         private System.Windows.Forms.Label lblFirstName;
         public System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.TabPage tabBankTransaction;
-        private System.Windows.Forms.TabPage tabDisbursement;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label lblLoggedinas;
         private System.Windows.Forms.Label lblUser;

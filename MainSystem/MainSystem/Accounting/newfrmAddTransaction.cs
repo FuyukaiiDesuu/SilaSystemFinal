@@ -18,6 +18,7 @@ namespace MainSystem.Accounting
         public DataTable GradeLevelDisplay { get; set; }
         public string id { get; set; }
         public string name { get; set; }
+        public string uname { get; set; }
 
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         bool cmbChecker = false;
@@ -40,6 +41,7 @@ namespace MainSystem.Accounting
             txtAdditionalDetails.Enabled = false;
             DataTable adid = dbquery.getAdid(id);
             txtAccountID.Text = adid.Rows[0][0].ToString();
+            lblUser.Text = uname;
         }
 
         private void btnPay_Click(object sender, EventArgs e)

@@ -14,6 +14,7 @@ namespace MainSystem.Accounting
     {
         public Accounting.newfrmAccount reference { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
+        public string uname { get; set; }
         public frmViewPaymentHistory()
         {
             InitializeComponent();
@@ -21,7 +22,9 @@ namespace MainSystem.Accounting
 
         private void frmViewPaymentHistory_Load(object sender, EventArgs e)
         {
+            timer1.Enabled = true;
             loadStudentPaymentLog();
+            lblUser.Text = uname;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -45,6 +48,20 @@ namespace MainSystem.Accounting
 
             dataPaymentHistory.ReadOnly = true;
             this.dataPaymentHistory.Refresh();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            lblDate2.Text = DateTime.Now.ToString("tt");
+            timer1.Start();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string student_id = txtSearch.Text;
+            DataTable holder = dbquery.SearchPayment(student_id);
+            dataPaymentHistory.DataSource = holder;
         }
     }
 }
