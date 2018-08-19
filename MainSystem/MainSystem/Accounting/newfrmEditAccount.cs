@@ -22,7 +22,6 @@ namespace MainSystem.Accounting
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            //txtStudentAccountID.Text = editacc.Rows[0]["adid"].ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -40,6 +40,8 @@
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
+            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.cmbReligion = new System.Windows.Forms.ComboBox();
             this.txtContactNo = new System.Windows.Forms.TextBox();
             this.lblContactNo = new System.Windows.Forms.Label();
             this.txtBirthPlace = new System.Windows.Forms.TextBox();
@@ -52,8 +54,8 @@
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cmbReligion = new System.Windows.Forms.ComboBox();
-            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.lblSpecify = new System.Windows.Forms.Label();
+            this.txtSpecify = new System.Windows.Forms.TextBox();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +74,7 @@
             this.grpEmployeeDetails.Controls.Add(this.lblEmployeeID);
             this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 12);
             this.grpEmployeeDetails.Name = "grpEmployeeDetails";
-            this.grpEmployeeDetails.Size = new System.Drawing.Size(317, 259);
+            this.grpEmployeeDetails.Size = new System.Drawing.Size(317, 302);
             this.grpEmployeeDetails.TabIndex = 8;
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
@@ -178,6 +180,8 @@
             // 
             // grpPersonalDetails
             // 
+            this.grpPersonalDetails.Controls.Add(this.txtSpecify);
+            this.grpPersonalDetails.Controls.Add(this.lblSpecify);
             this.grpPersonalDetails.Controls.Add(this.cmbMaritalStatus);
             this.grpPersonalDetails.Controls.Add(this.cmbReligion);
             this.grpPersonalDetails.Controls.Add(this.txtContactNo);
@@ -192,10 +196,44 @@
             this.grpPersonalDetails.Controls.Add(this.lblBirthDate);
             this.grpPersonalDetails.Location = new System.Drawing.Point(335, 12);
             this.grpPersonalDetails.Name = "grpPersonalDetails";
-            this.grpPersonalDetails.Size = new System.Drawing.Size(317, 259);
+            this.grpPersonalDetails.Size = new System.Drawing.Size(317, 302);
             this.grpPersonalDetails.TabIndex = 12;
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
+            // 
+            // cmbMaritalStatus
+            // 
+            this.cmbMaritalStatus.BackColor = System.Drawing.Color.White;
+            this.cmbMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaritalStatus.FormattingEnabled = true;
+            this.cmbMaritalStatus.Items.AddRange(new object[] {
+            "",
+            "Single",
+            "Married",
+            "Divorced"});
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(112, 252);
+            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(180, 21);
+            this.cmbMaritalStatus.TabIndex = 29;
+            this.cmbMaritalStatus.TextChanged += new System.EventHandler(this.cmbMaritalStatus_TextChanged);
+            // 
+            // cmbReligion
+            // 
+            this.cmbReligion.BackColor = System.Drawing.Color.White;
+            this.cmbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReligion.FormattingEnabled = true;
+            this.cmbReligion.Items.AddRange(new object[] {
+            "",
+            "Roman Catholic",
+            "Islam",
+            "Iglesia Ni Cristo",
+            "Jehovah\'s Witness",
+            "Others"});
+            this.cmbReligion.Location = new System.Drawing.Point(112, 175);
+            this.cmbReligion.Name = "cmbReligion";
+            this.cmbReligion.Size = new System.Drawing.Size(180, 21);
+            this.cmbReligion.TabIndex = 28;
+            this.cmbReligion.TextChanged += new System.EventHandler(this.cmbReligion_TextChanged);
             // 
             // txtContactNo
             // 
@@ -210,7 +248,7 @@
             // 
             this.lblContactNo.AutoSize = true;
             this.lblContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.Location = new System.Drawing.Point(22, 101);
+            this.lblContactNo.Location = new System.Drawing.Point(8, 101);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(74, 16);
             this.lblContactNo.TabIndex = 27;
@@ -229,7 +267,7 @@
             // 
             this.lblBirthPlace.AutoSize = true;
             this.lblBirthPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthPlace.Location = new System.Drawing.Point(22, 66);
+            this.lblBirthPlace.Location = new System.Drawing.Point(8, 66);
             this.lblBirthPlace.Name = "lblBirthPlace";
             this.lblBirthPlace.Size = new System.Drawing.Size(72, 16);
             this.lblBirthPlace.TabIndex = 25;
@@ -263,7 +301,7 @@
             // 
             this.lblMaritalStatus.AutoSize = true;
             this.lblMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaritalStatus.Location = new System.Drawing.Point(22, 216);
+            this.lblMaritalStatus.Location = new System.Drawing.Point(8, 257);
             this.lblMaritalStatus.Name = "lblMaritalStatus";
             this.lblMaritalStatus.Size = new System.Drawing.Size(88, 16);
             this.lblMaritalStatus.TabIndex = 10;
@@ -273,7 +311,7 @@
             // 
             this.lblReligion.AutoSize = true;
             this.lblReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReligion.Location = new System.Drawing.Point(22, 175);
+            this.lblReligion.Location = new System.Drawing.Point(8, 175);
             this.lblReligion.Name = "lblReligion";
             this.lblReligion.Size = new System.Drawing.Size(58, 16);
             this.lblReligion.TabIndex = 8;
@@ -283,7 +321,7 @@
             // 
             this.lblSex.AutoSize = true;
             this.lblSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSex.Location = new System.Drawing.Point(22, 137);
+            this.lblSex.Location = new System.Drawing.Point(8, 137);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(31, 16);
             this.lblSex.TabIndex = 6;
@@ -293,7 +331,7 @@
             // 
             this.lblBirthDate.AutoSize = true;
             this.lblBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthDate.Location = new System.Drawing.Point(22, 30);
+            this.lblBirthDate.Location = new System.Drawing.Point(8, 30);
             this.lblBirthDate.Name = "lblBirthDate";
             this.lblBirthDate.Size = new System.Drawing.Size(66, 16);
             this.lblBirthDate.TabIndex = 4;
@@ -302,7 +340,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(12, 277);
+            this.btnSave.Location = new System.Drawing.Point(12, 320);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(89, 28);
             this.btnSave.TabIndex = 13;
@@ -313,7 +351,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(107, 277);
+            this.btnCancel.Location = new System.Drawing.Point(107, 320);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 28);
             this.btnCancel.TabIndex = 14;
@@ -321,45 +359,31 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // cmbReligion
+            // lblSpecify
             // 
-            this.cmbReligion.BackColor = System.Drawing.Color.White;
-            this.cmbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbReligion.FormattingEnabled = true;
-            this.cmbReligion.Items.AddRange(new object[] {
-            "",
-            "Roman Catholic",
-            "Islam",
-            "Iglesia Ni Cristo",
-            "Jehovah\'s Witness"});
-            this.cmbReligion.Location = new System.Drawing.Point(112, 175);
-            this.cmbReligion.Name = "cmbReligion";
-            this.cmbReligion.Size = new System.Drawing.Size(180, 21);
-            this.cmbReligion.TabIndex = 28;
-            this.cmbReligion.TextChanged += new System.EventHandler(this.cmbReligion_TextChanged);
+            this.lblSpecify.AutoSize = true;
+            this.lblSpecify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpecify.Location = new System.Drawing.Point(8, 218);
+            this.lblSpecify.Name = "lblSpecify";
+            this.lblSpecify.Size = new System.Drawing.Size(99, 16);
+            this.lblSpecify.TabIndex = 30;
+            this.lblSpecify.Text = "Please Specify";
             // 
-            // cmbMaritalStatus
+            // txtSpecify
             // 
-            this.cmbMaritalStatus.BackColor = System.Drawing.Color.White;
-            this.cmbMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMaritalStatus.FormattingEnabled = true;
-            this.cmbMaritalStatus.Items.AddRange(new object[] {
-            "",
-            "Single",
-            "Married",
-            "Divorced"});
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(112, 216);
-            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(180, 21);
-            this.cmbMaritalStatus.TabIndex = 29;
-            this.cmbMaritalStatus.TextChanged += new System.EventHandler(this.cmbMaritalStatus_TextChanged);
+            this.txtSpecify.BackColor = System.Drawing.Color.White;
+            this.txtSpecify.Enabled = false;
+            this.txtSpecify.Location = new System.Drawing.Point(112, 214);
+            this.txtSpecify.Name = "txtSpecify";
+            this.txtSpecify.Size = new System.Drawing.Size(180, 20);
+            this.txtSpecify.TabIndex = 31;
             // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(665, 318);
+            this.ClientSize = new System.Drawing.Size(665, 362);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpPersonalDetails);
@@ -406,5 +430,7 @@
         public System.Windows.Forms.TextBox txtStatus;
         public System.Windows.Forms.ComboBox cmbMaritalStatus;
         public System.Windows.Forms.ComboBox cmbReligion;
+        public System.Windows.Forms.TextBox txtSpecify;
+        private System.Windows.Forms.Label lblSpecify;
     }
 }
