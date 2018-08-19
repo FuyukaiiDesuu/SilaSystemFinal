@@ -13,7 +13,10 @@ namespace MainSystem.Accounting
     public partial class newfrmEditAccount : Form
     {
         public Accounting.newfrmAccount reference { get; set; }
+        Accounting.DbQueries dbquery = new Accounting.DbQueries();
         public DataTable editacc = null;
+        public string id { get; set; }
+        public string name { get; set; }
         public newfrmEditAccount()
         {
             InitializeComponent();
@@ -22,6 +25,16 @@ namespace MainSystem.Accounting
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            txtStudentID.Text = id;
+            txtStudentName.Text = name;
+            DataTable adid = dbquery.getAdid(id);
+            txtStudentAccountID.Text = adid.Rows[0][0].ToString();
+            dateDateDue.Text = adid.Rows[0][1].ToString();
+            txtTotalAmount.Text = adid.Rows[0][2].ToString();
+            txtCurrentBalance.Text = adid.Rows[0][3].ToString();
+            txtPaidAmount.Text = adid.Rows[0][4].ToString();
+            lblPaymentStatus2.Text = adid.Rows[0][5].ToString();
+            TextColor();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -35,6 +48,19 @@ namespace MainSystem.Accounting
             lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             lblDate2.Text = DateTime.Now.ToString("tt");
             timer1.Start();
+        }
+
+        private void TextColor()
+        {
+            if (lblPaymentStatus2.Text == "PAID")
+            {
+                lblPaymentStatus2.Location = new Point(470, 114);
+                lblPaymentStatus2.ForeColor = Color.Green;
+            }
+            else
+            {
+                lblPaymentStatus2.ForeColor = Color.Red;
+            }
         }
     }
 }

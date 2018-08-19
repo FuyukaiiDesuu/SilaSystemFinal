@@ -81,6 +81,7 @@ namespace MainSystem.Accounting
             dataBalanceDetails.Columns["paid_amount"].HeaderText = "Amount Paid";
             dataBalanceDetails.Columns["payment_status"].HeaderText = "Payment Status";
             dataBalanceDetails.Columns["adid"].Visible = false;
+            dataBalanceDetails.Columns["fid"].Visible = false;
 
             dataBalanceDetails.ReadOnly = true;
             this.dataBalanceDetails.Refresh();
@@ -109,6 +110,7 @@ namespace MainSystem.Accounting
             dataFeeValue.Columns["fid"].Visible = false;
             dataFeeValue.Columns["date_modified"].Visible = false;
             dataFeeValue.Columns["date_created"].Visible = false;
+            dataFeeValue.Columns["f_key"].Visible = false;
 
             dataFeeValue.ReadOnly = true;
             this.dataFeeValue.Refresh();
@@ -148,6 +150,8 @@ namespace MainSystem.Accounting
         {
             transac = new Accounting.newfrmAddTransaction();
             transac.id = txtStudentID.Text.ToString();
+            transac.balanceDisplay = (dataBalanceDetails.DataSource as DataTable);
+            transac.GradeLevelDisplay = (dataBalanceDetails.DataSource as DataTable);
             transac.name = fullname.ToString();
             transac.Show();
             transac.reference = this;
@@ -156,12 +160,7 @@ namespace MainSystem.Accounting
 
         private void dataBalanceDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                //loadPaymentDetails(dataBalanceDetails.SelectedRows[0].Cells["adid"].Value.ToString());
-            }
-            else
-            { return; }
+
         }
 
         public Accounting.frmAddFee addfee;
@@ -177,6 +176,8 @@ namespace MainSystem.Accounting
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
             editaccount = new Accounting.newfrmEditAccount();
+            editaccount.id = txtStudentID.Text.ToString();
+            editaccount.name = fullname.ToString();
             editaccount.Show();
             editaccount.reference = this;
             this.Hide();

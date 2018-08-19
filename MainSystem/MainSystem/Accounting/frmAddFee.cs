@@ -16,6 +16,7 @@ namespace MainSystem.Accounting
 
         public DataTable dtadd = null;
         DbQueries dbquery = new DbQueries();
+        DataTable accountDetailsValues = null;
         bool checker;
         public frmAddFee(bool feeCheck)
         {
@@ -26,7 +27,6 @@ namespace MainSystem.Accounting
         private void frmAddFee_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            dateYearStart.MinDate = DateTime.Now;
 
             if (checker == false)
             {
@@ -54,9 +54,82 @@ namespace MainSystem.Accounting
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string s_key;
+            if (cmbGradeLevel.Text == "Nursery")
+            {
+                s_key = "1";
+            }
+            else if (cmbGradeLevel.Text == "Kindergarten")
+            {
+                s_key = "2";
+            }
+            else if (cmbGradeLevel.Text == "Grade 1")
+            {
+                s_key = "3";
+            }
+            else if (cmbGradeLevel.Text == "Grade 2")
+            {
+                s_key = "4";
+            }
+            else if (cmbGradeLevel.Text == "Grade 3")
+            {
+                s_key = "5";
+            }
+            else if (cmbGradeLevel.Text == "Grade 4")
+            {
+                s_key = "6";
+            }
+            else if (cmbGradeLevel.Text == "Grade 5")
+            {
+                s_key = "7";
+            }
+            else if (cmbGradeLevel.Text == "Grade 6")
+            {
+                s_key = "8";
+            }
+            else if (cmbGradeLevel.Text == "Grade 7")
+            {
+                s_key = "9";
+            }
+            else if (cmbGradeLevel.Text == "Grade 8")
+            {
+                s_key = "10";
+            }
+            else if (cmbGradeLevel.Text == "Grade 9")
+            {
+                s_key = "11";
+            }
+            else
+            {
+                s_key = "12";
+            }
+            string balance = "";
             if (checker == true)
             {
-                dbquery.updateFee(cmbGradeLevel.Text, txtFeeDescription.Text, txtAmount.Text, lblDate.Text, dateYearStart.Value.ToShortDateString(), dateYearEnd.Value.ToShortDateString());
+                dbquery.updateFee(cmbGradeLevel.Text, txtFeeDescription.Text, txtAmount.Text, lblDate.Text, dateYearStart.Value.ToString("yyyy-MM-dd"), dateYearEnd.Value.ToString("yyyy-MM-dd"), s_key);
+                DataTable fee_amount = dbquery.totalFeeAmount(cmbGradeLevel.Text);
+                accountDetailsValues = dbquery.accountDetails(s_key);
+
+                for (int i = 0; i < accountDetailsValues.Rows.Count; i++)
+                {
+
+                    if (accountDetailsValues.Rows[i]["current_balance"].ToString() != accountDetailsValues.Rows[i]["total_amount"].ToString())
+                    {
+                        if (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) <= 0)
+                        {
+                            balance = (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) + Convert.ToInt32(txtAmount.Text)).ToString();
+                        }
+                        else
+                        {
+                            balance = (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) - Convert.ToInt32(txtAmount.Text)).ToString();
+                        }
+                    }
+                    else
+                    {
+                        balance = fee_amount.Rows[0][0].ToString();
+                    }
+                    dbquery.updateAccountDetailsFee(fee_amount.Rows[0][0].ToString(), balance, s_key);
+                }
                 MessageBox.Show("Successfully Added");
                 reference.Show();
                 reference.loadFeeDetails();
@@ -64,7 +137,23 @@ namespace MainSystem.Accounting
             }
             else
             {
-                dbquery.updateNewFee(dtadd.Rows[0]["fid"].ToString(), cmbGradeLevel.Text, txtFeeDescription.Text, txtAmount.Text, lblDate.Text, dateYearStart.Value.ToShortDateString(), dateYearEnd.Value.ToShortDateString());
+
+                dbquery.updateNewFee(dtadd.Rows[0]["fid"].ToString(), cmbGradeLevel.Text, txtFeeDescription.Text, txtAmount.Text, lblDate.Text, dateYearStart.Value.ToString("yyyy-MM-dd"), dateYearEnd.Value.ToString("yyyy-MM-dd"));
+                DataTable fee_amount = dbquery.totalFeeAmount(cmbGradeLevel.Text);
+                accountDetailsValues = dbquery.accountDetails(s_key);
+
+                for (int i = 0; i < accountDetailsValues.Rows.Count; i++)
+                {
+                    if (accountDetailsValues.Rows[i]["current_balance"].ToString() != accountDetailsValues.Rows[i]["total_amount"].ToString())
+                    {
+                        balance = (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) + Convert.ToInt32(txtAmount.Text)).ToString();
+                    }
+                    else
+                    {
+                        balance = fee_amount.Rows[0][0].ToString();
+                    }
+                    dbquery.updateAccountDetailsFee(fee_amount.Rows[0][0].ToString(), balance, s_key);
+                }
                 MessageBox.Show("Successfully Updated");
                 reference.Show();
                 reference.loadFeeDetails();

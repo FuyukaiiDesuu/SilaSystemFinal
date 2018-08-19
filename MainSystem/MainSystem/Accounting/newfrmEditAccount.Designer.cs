@@ -32,7 +32,6 @@
             this.lblDate2 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.grpStudentAccount = new System.Windows.Forms.GroupBox();
-            this.txtPaymentStatus = new System.Windows.Forms.TextBox();
             this.lblPaymentStatus = new System.Windows.Forms.Label();
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.lblPaidAmount = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.lblPercentage = new System.Windows.Forms.Label();
             this.txtDiscountType = new System.Windows.Forms.TextBox();
             this.lblDiscountType = new System.Windows.Forms.Label();
+            this.lblPaymentStatus2 = new System.Windows.Forms.Label();
             this.grpStudentAccount.SuspendLayout();
             this.grpStudentDetails.SuspendLayout();
             this.grpDiscount.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             // grpStudentAccount
             // 
-            this.grpStudentAccount.Controls.Add(this.txtPaymentStatus);
+            this.grpStudentAccount.Controls.Add(this.lblPaymentStatus2);
             this.grpStudentAccount.Controls.Add(this.lblPaymentStatus);
             this.grpStudentAccount.Controls.Add(this.txtPaidAmount);
             this.grpStudentAccount.Controls.Add(this.lblPaidAmount);
@@ -108,15 +108,6 @@
             this.grpStudentAccount.TabIndex = 26;
             this.grpStudentAccount.TabStop = false;
             this.grpStudentAccount.Text = "Student Account";
-            // 
-            // txtPaymentStatus
-            // 
-            this.txtPaymentStatus.BackColor = System.Drawing.Color.White;
-            this.txtPaymentStatus.Location = new System.Drawing.Point(400, 114);
-            this.txtPaymentStatus.Name = "txtPaymentStatus";
-            this.txtPaymentStatus.ReadOnly = true;
-            this.txtPaymentStatus.Size = new System.Drawing.Size(179, 20);
-            this.txtPaymentStatus.TabIndex = 17;
             // 
             // lblPaymentStatus
             // 
@@ -393,6 +384,16 @@
             this.lblDiscountType.TabIndex = 8;
             this.lblDiscountType.Text = "Discount Type";
             // 
+            // lblPaymentStatus2
+            // 
+            this.lblPaymentStatus2.AutoSize = true;
+            this.lblPaymentStatus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentStatus2.Location = new System.Drawing.Point(439, 114);
+            this.lblPaymentStatus2.Name = "lblPaymentStatus2";
+            this.lblPaymentStatus2.Size = new System.Drawing.Size(114, 16);
+            this.lblPaymentStatus2.TabIndex = 18;
+            this.lblPaymentStatus2.Text = "PARTIALLY PAID";
+            // 
             // newfrmEditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,7 +431,6 @@
         private System.Windows.Forms.Label lblDate2;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.GroupBox grpStudentAccount;
-        public System.Windows.Forms.TextBox txtPaymentStatus;
         private System.Windows.Forms.Label lblPaymentStatus;
         public System.Windows.Forms.TextBox txtPaidAmount;
         private System.Windows.Forms.Label lblPaidAmount;
@@ -459,5 +459,6 @@
         private System.Windows.Forms.Label lblPercentage;
         public System.Windows.Forms.TextBox txtDiscountType;
         private System.Windows.Forms.Label lblDiscountType;
+        private System.Windows.Forms.Label lblPaymentStatus2;
     }
 }
