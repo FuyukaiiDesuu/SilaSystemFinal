@@ -44,8 +44,17 @@ namespace MainSystem.Accounting
             dataPaymentHistory.Columns["current_balance"].HeaderText = "Current Balance";
             dataPaymentHistory.Columns["amount_paid"].HeaderText = "Amount Paid";
             dataPaymentHistory.Columns["payment_status"].HeaderText = "Payment Status";
+            dataPaymentHistory.Columns["student_name"].HeaderText = "Student Name";
             dataPaymentHistory.Columns["id"].Visible = false;
+            dataPaymentHistory.Columns["student_name"].DisplayIndex = 2;
 
+            this.dataPaymentHistory.Columns["student_name"].Width = 200;
+            this.dataPaymentHistory.Columns["student_id"].Width = 50;
+            this.dataPaymentHistory.Columns["date_created"].Width = 120;
+            this.dataPaymentHistory.Columns["grade_level"].Width = 70;
+            this.dataPaymentHistory.Columns["payment_id"].Width = 70;
+            this.dataPaymentHistory.Columns["amount_paid"].Width = 60;
+            this.dataPaymentHistory.Columns["current_balance"].Width = 70;
             dataPaymentHistory.ReadOnly = true;
             this.dataPaymentHistory.Refresh();
         }

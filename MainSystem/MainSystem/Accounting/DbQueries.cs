@@ -134,10 +134,10 @@ namespace MainSystem.Accounting
             return itmContainer;
         }
 
-        public void updatePaymentLog(string student_id, string payment_id, string date_created, string grade_level, string current_balance, string amount_paid, string payment_status)
+        public void updatePaymentLog(string student_id, string payment_id, string date_created, string grade_level, string current_balance, string amount_paid, string payment_status, string student_name)
         {
-            string query = @"insert into student_payment_logs(student_id, payment_id, date_created, grade_level, current_balance, amount_paid, payment_status)
-                            values ('" + student_id + "','" + payment_id + "','" + date_created + "', '" + grade_level + "','" + current_balance + "','" + amount_paid + "','" + payment_status + "')";
+            string query = @"insert into student_payment_logs(student_id, payment_id, date_created, grade_level, current_balance, amount_paid, payment_status, student_name)
+                            values ('" + student_id + "','" + payment_id + "','" + date_created + "', '" + grade_level + "','" + current_balance + "','" + amount_paid + "','" + payment_status + "','" + student_name + "')";
             con.executeQuery(query);
         }
 
