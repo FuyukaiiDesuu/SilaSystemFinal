@@ -117,12 +117,6 @@
     <Compile Include="Enrollment\EnrollmentConsole.Designer.cs">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accounting\frmEditAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Accounting\frmEditAccount.Designer.cs">
-      <DependentUpon>frmEditAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginDashboard\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,31 +129,16 @@
     <Compile Include="Inventory\FormInventory.designer.cs">
       <DependentUpon>FormInventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accounting\frmAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Accounting\frmAccount.Designer.cs">
-      <DependentUpon>frmAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginDashboard\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginDashboard\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accounting\frmAddTransaction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Accounting\frmAddTransaction.Designer.cs">
-      <DependentUpon>frmAddTransaction.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Accounting\frmAddFee.resx">
       <DependentUpon>frmAddFee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Accounting\frmEditAccount.resx">
-      <DependentUpon>frmEditAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\frmViewPaymentHistory.resx">
       <DependentUpon>frmViewPaymentHistory.cs</DependentUpon>
@@ -208,12 +187,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\FormInventory.resx">
       <DependentUpon>FormInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Accounting\frmAccount.resx">
-      <DependentUpon>frmAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Accounting\frmAddTransaction.resx">
-      <DependentUpon>frmAddTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

@@ -15,7 +15,6 @@ namespace MainSystem.Accounting
     {
         public frmMain reference { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
-        public frmAddTransaction addtransac;
         public string uname;
         string fullname;
 
