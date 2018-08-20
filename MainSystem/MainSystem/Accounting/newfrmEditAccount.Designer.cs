@@ -32,6 +32,7 @@
             this.lblDate2 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.grpStudentAccount = new System.Windows.Forms.GroupBox();
+            this.lblPaymentStatus2 = new System.Windows.Forms.Label();
             this.lblPaymentStatus = new System.Windows.Forms.Label();
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.lblPaidAmount = new System.Windows.Forms.Label();
@@ -40,16 +41,15 @@
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.lblDateDue = new System.Windows.Forms.Label();
-            this.dateDateDue = new System.Windows.Forms.DateTimePicker();
             this.txtStudentAccountID = new System.Windows.Forms.TextBox();
             this.lblStudentAccountID = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.grpStudentDetails = new System.Windows.Forms.GroupBox();
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.lblStudentID = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblUser = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.lblPercentage = new System.Windows.Forms.Label();
             this.txtDiscountType = new System.Windows.Forms.TextBox();
             this.lblDiscountType = new System.Windows.Forms.Label();
-            this.lblPaymentStatus2 = new System.Windows.Forms.Label();
+            this.txtDateDue = new System.Windows.Forms.TextBox();
             this.grpStudentAccount.SuspendLayout();
             this.grpStudentDetails.SuspendLayout();
             this.grpDiscount.SuspendLayout();
@@ -90,6 +90,7 @@
             // 
             // grpStudentAccount
             // 
+            this.grpStudentAccount.Controls.Add(this.txtDateDue);
             this.grpStudentAccount.Controls.Add(this.lblPaymentStatus2);
             this.grpStudentAccount.Controls.Add(this.lblPaymentStatus);
             this.grpStudentAccount.Controls.Add(this.txtPaidAmount);
@@ -99,7 +100,6 @@
             this.grpStudentAccount.Controls.Add(this.txtTotalAmount);
             this.grpStudentAccount.Controls.Add(this.lblTotalAmount);
             this.grpStudentAccount.Controls.Add(this.lblDateDue);
-            this.grpStudentAccount.Controls.Add(this.dateDateDue);
             this.grpStudentAccount.Controls.Add(this.txtStudentAccountID);
             this.grpStudentAccount.Controls.Add(this.lblStudentAccountID);
             this.grpStudentAccount.Location = new System.Drawing.Point(12, 107);
@@ -108,6 +108,16 @@
             this.grpStudentAccount.TabIndex = 26;
             this.grpStudentAccount.TabStop = false;
             this.grpStudentAccount.Text = "Student Account";
+            // 
+            // lblPaymentStatus2
+            // 
+            this.lblPaymentStatus2.AutoSize = true;
+            this.lblPaymentStatus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentStatus2.Location = new System.Drawing.Point(397, 114);
+            this.lblPaymentStatus2.Name = "lblPaymentStatus2";
+            this.lblPaymentStatus2.Size = new System.Drawing.Size(114, 16);
+            this.lblPaymentStatus2.TabIndex = 18;
+            this.lblPaymentStatus2.Text = "PARTIALLY PAID";
             // 
             // lblPaymentStatus
             // 
@@ -180,20 +190,11 @@
             // 
             this.lblDateDue.AutoSize = true;
             this.lblDateDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDue.Location = new System.Drawing.Point(291, 34);
+            this.lblDateDue.Location = new System.Drawing.Point(291, 30);
             this.lblDateDue.Name = "lblDateDue";
             this.lblDateDue.Size = new System.Drawing.Size(65, 16);
             this.lblDateDue.TabIndex = 9;
             this.lblDateDue.Text = "Date Due";
-            // 
-            // dateDateDue
-            // 
-            this.dateDateDue.CustomFormat = "yyyy/MM/dd";
-            this.dateDateDue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateDateDue.Location = new System.Drawing.Point(400, 34);
-            this.dateDateDue.Name = "dateDateDue";
-            this.dateDateDue.Size = new System.Drawing.Size(179, 20);
-            this.dateDateDue.TabIndex = 8;
             // 
             // txtStudentAccountID
             // 
@@ -214,15 +215,15 @@
             this.lblStudentAccountID.TabIndex = 6;
             this.lblStudentAccountID.Text = "Student Account ID";
             // 
-            // btnSave
+            // btnPrint
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(12, 368);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 31);
-            this.btnSave.TabIndex = 25;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(12, 368);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(91, 31);
+            this.btnPrint.TabIndex = 25;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // grpStudentDetails
             // 
@@ -275,16 +276,16 @@
             this.lblStudentID.TabIndex = 4;
             this.lblStudentID.Text = "ID";
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(109, 368);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 31);
-            this.btnCancel.TabIndex = 23;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(109, 368);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(91, 31);
+            this.btnClose.TabIndex = 23;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // timer1
             // 
@@ -384,15 +385,14 @@
             this.lblDiscountType.TabIndex = 8;
             this.lblDiscountType.Text = "Discount Type";
             // 
-            // lblPaymentStatus2
+            // txtDateDue
             // 
-            this.lblPaymentStatus2.AutoSize = true;
-            this.lblPaymentStatus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentStatus2.Location = new System.Drawing.Point(397, 114);
-            this.lblPaymentStatus2.Name = "lblPaymentStatus2";
-            this.lblPaymentStatus2.Size = new System.Drawing.Size(114, 16);
-            this.lblPaymentStatus2.TabIndex = 18;
-            this.lblPaymentStatus2.Text = "PARTIALLY PAID";
+            this.txtDateDue.BackColor = System.Drawing.Color.White;
+            this.txtDateDue.Location = new System.Drawing.Point(400, 29);
+            this.txtDateDue.Name = "txtDateDue";
+            this.txtDateDue.ReadOnly = true;
+            this.txtDateDue.Size = new System.Drawing.Size(179, 20);
+            this.txtDateDue.TabIndex = 19;
             // 
             // newfrmEditAccount
             // 
@@ -406,9 +406,9 @@
             this.Controls.Add(this.lblDate2);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.grpStudentAccount);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.grpStudentDetails);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "newfrmEditAccount";
@@ -439,16 +439,15 @@
         public System.Windows.Forms.TextBox txtTotalAmount;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label lblDateDue;
-        private System.Windows.Forms.DateTimePicker dateDateDue;
         public System.Windows.Forms.TextBox txtStudentAccountID;
         private System.Windows.Forms.Label lblStudentAccountID;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.GroupBox grpStudentDetails;
         public System.Windows.Forms.TextBox txtStudentName;
         private System.Windows.Forms.Label lblStudentName;
         public System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblLoggedinas;
@@ -460,5 +459,6 @@
         public System.Windows.Forms.TextBox txtDiscountType;
         private System.Windows.Forms.Label lblDiscountType;
         private System.Windows.Forms.Label lblPaymentStatus2;
+        public System.Windows.Forms.TextBox txtDateDue;
     }
 }

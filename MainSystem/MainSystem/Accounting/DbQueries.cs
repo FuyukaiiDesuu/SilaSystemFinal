@@ -148,12 +148,12 @@ namespace MainSystem.Accounting
             return itmContainer;
         }
 
-        public DataTable SearchStudent(string firstname)
+        public DataTable SearchStudent(string lastname)
         {
             string query = @"SELECT *, concat(sp.LastName, ', ' , sp.FirstName, ' ', sp.MiddleName) as 'fullname'
                             FROM studentprofile as sp
-                            where LastName
-                            like '" + firstname + "%'";
+                            where LastName 
+                            like '" + lastname + "%'";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }
@@ -164,5 +164,6 @@ namespace MainSystem.Accounting
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }
+
     }
 }

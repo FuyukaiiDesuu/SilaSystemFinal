@@ -36,6 +36,8 @@ namespace MainSystem.Accounting
         private void newfrmAccount_Load(object sender, EventArgs e)
         {
             loadFeeDetails();
+            dataSearch.Rows[0].Selected = false;
+            dataFeeValue.Rows[0].Selected = false;
         }
 
         public void loadStudentProfileTable()
@@ -235,8 +237,8 @@ namespace MainSystem.Accounting
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string firstname = txtSearch.Text;
-            DataTable holder = dbquery.SearchStudent(firstname);
+            string lastname = txtSearch.Text;
+            DataTable holder = dbquery.SearchStudent(lastname);
             dataSearch.DataSource = holder;
         }
     }

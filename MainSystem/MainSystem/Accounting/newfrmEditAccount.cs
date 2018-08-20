@@ -31,7 +31,7 @@ namespace MainSystem.Accounting
             txtStudentName.Text = name;
             DataTable adid = dbquery.getAdid(id);
             txtStudentAccountID.Text = adid.Rows[0][0].ToString();
-            dateDateDue.Text = adid.Rows[0][1].ToString();
+            txtDateDue.Text = adid.Rows[0][1].ToString();
             txtTotalAmount.Text = adid.Rows[0][2].ToString();
             txtCurrentBalance.Text = adid.Rows[0][3].ToString();
             txtPaidAmount.Text = adid.Rows[0][4].ToString();

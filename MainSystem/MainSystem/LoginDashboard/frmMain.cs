@@ -108,7 +108,7 @@ namespace MainSystem
                 {
 
                     uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-                    frmemp = new frmEmployee(uname);
+                    frmemp = new Employee.newfrmEmployee(uname);
                     frmemp.Show();
                     frmemp.reference = this;
                     this.Hide();
@@ -116,7 +116,7 @@ namespace MainSystem
             }
             
         }
-        public frmEmployee frmemp;
+        public Employee.newfrmEmployee frmemp;
 
         private void label2_Click(object sender, EventArgs e)
         {

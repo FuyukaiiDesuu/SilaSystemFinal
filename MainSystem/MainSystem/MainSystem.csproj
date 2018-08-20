@@ -79,6 +79,32 @@
       <DependentUpon>newfrmEditAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="dbConnector.cs" />
+    <Compile Include="Employee\DbConnect.cs" />
+    <Compile Include="Employee\DbQueries.cs" />
+    <Compile Include="Employee\newfrmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\newfrmAddEmployee.Designer.cs">
+      <DependentUpon>newfrmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\newfrmEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\newfrmEditEmployee.Designer.cs">
+      <DependentUpon>newfrmEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\newfrmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\newfrmEmployee.Designer.cs">
+      <DependentUpon>newfrmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\newViewArchivedEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\newViewArchivedEmployee.Designer.cs">
+      <DependentUpon>newViewArchivedEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +208,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\frmViewArchivedEmployee.resx">
       <DependentUpon>frmViewArchivedEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\newfrmAddEmployee.resx">
+      <DependentUpon>newfrmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\newfrmEditEmployee.resx">
+      <DependentUpon>newfrmEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\newfrmEmployee.resx">
+      <DependentUpon>newfrmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\newViewArchivedEmployee.resx">
+      <DependentUpon>newViewArchivedEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>

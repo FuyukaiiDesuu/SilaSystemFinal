@@ -17,6 +17,7 @@ namespace MainSystem.Accounting
         public DataTable dtadd = null;
         DbQueries dbquery = new DbQueries();
         DataTable accountDetailsValues = null;
+       
         bool checker;
         public string uname { get; set; }
         public frmAddFee(bool feeCheck)
@@ -124,7 +125,7 @@ namespace MainSystem.Accounting
                         }
                         else
                         {
-                            balance = (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) - Convert.ToInt32(txtAmount.Text)).ToString();
+                            balance = (Convert.ToInt32(accountDetailsValues.Rows[i]["current_balance"].ToString()) + Convert.ToInt32(txtAmount.Text)).ToString();
                         }
                     }
                     else
@@ -144,6 +145,7 @@ namespace MainSystem.Accounting
                 dbquery.updateNewFee(dtadd.Rows[0]["fid"].ToString(), cmbGradeLevel.Text, txtFeeDescription.Text, txtAmount.Text, lblDate.Text, dateYearStart.Value.ToString("yyyy-MM-dd"), dateYearEnd.Value.ToString("yyyy-MM-dd"));
                 DataTable fee_amount = dbquery.totalFeeAmount(cmbGradeLevel.Text);
                 accountDetailsValues = dbquery.accountDetails(s_key);
+                
 
                 for (int i = 0; i < accountDetailsValues.Rows.Count; i++)
                 {
