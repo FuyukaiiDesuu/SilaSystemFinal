@@ -117,30 +117,6 @@
     <Compile Include="Enrollment\EnrollmentConsole.Designer.cs">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee\frmEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\frmEmployee.Designer.cs">
-      <DependentUpon>frmEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\frmAddEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\frmAddEmployee.Designer.cs">
-      <DependentUpon>frmAddEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\frmViewArchivedEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\frmViewArchivedEmployee.Designer.cs">
-      <DependentUpon>frmViewArchivedEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\frmEditEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Employee\frmEditEmployee.Designer.cs">
-      <DependentUpon>frmEditEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="Accounting\frmEditAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,18 +172,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\newfrmEditAccount.resx">
       <DependentUpon>newfrmEditAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\frmAddEmployee.resx">
-      <DependentUpon>frmAddEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\frmEditEmployee.resx">
-      <DependentUpon>frmEditEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\frmEmployee.resx">
-      <DependentUpon>frmEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Employee\frmViewArchivedEmployee.resx">
-      <DependentUpon>frmViewArchivedEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\newfrmAddEmployee.resx">
       <DependentUpon>newfrmAddEmployee.cs</DependentUpon>
