@@ -68,9 +68,10 @@ namespace MainSystem.Accounting
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string student_id = txtSearch.Text;
-            DataTable holder = dbquery.SearchPayment(student_id);
+            string student_name = txtSearch.Text;
+            DataTable holder = dbquery.SearchPayment(student_name);
             dataPaymentHistory.DataSource = holder;
+
         }
     }
 }

@@ -105,8 +105,8 @@ namespace MainSystem.Employee
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string lastname = txtSearch.Text;
-            DataTable holder = dbquery.searcArchivedhEmployee(lastname);
+            string last_name = txtSearch.Text;
+            DataTable holder = dbquery.searcArchivedhEmployee(last_name);
             dataSearch.DataSource = holder;
         }
     }

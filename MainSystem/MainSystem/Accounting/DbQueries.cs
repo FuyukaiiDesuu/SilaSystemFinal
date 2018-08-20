@@ -158,9 +158,9 @@ namespace MainSystem.Accounting
             return itmContainer;
         }
 
-        public DataTable SearchPayment(string student_id)
+        public DataTable SearchPayment(string student_name)
         {
-            string query = "SELECT * FROM student_payment_logs WHERE student_id LIKE '" + student_id + "%'";
+            string query = "SELECT * FROM student_payment_logs WHERE student_name LIKE '" + student_name + "%'";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }
