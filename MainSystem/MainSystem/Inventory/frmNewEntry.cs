@@ -22,36 +22,80 @@ namespace MainSystem
         DataTable dt;
         public frmNewEntry(IDictionary<string, string> dic)
         {
-
             InitializeComponent();
             txtitemname.Text = dic["name"];
             txtdesc.Text = dic["desc"];
             ayaya = dic["ayd"];
-
         }
 
         private void frmNewEntry_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
             create_default();
-            txtinvID.Text = getcount();
+            
         }
 
-        private void create_default()
+        private Boolean flag()
         {
+            Int32 i;
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                string query = "insert into inventory(item_id) values(@ayd);";
+                string query = "SELECT COUNT(*) FROM inventory WHERE item_id = @itm";
                 using (var com = new MySqlCommand(query, dbconnection))
                 {
-                    com.Parameters.AddWithValue("@ayd", ayaya);
-                    com.ExecuteNonQuery();
+                    com.Parameters.AddWithValue("@itm", ayaya);
+                    i = Convert.ToInt32(com.ExecuteScalar());
                 }
-
-                 
             }
+            if(i == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+        private string getInventoryID()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM stkin WHERE item_id = '" + ayaya + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                return dt.Rows[0]["invID"].ToString();  
+            }
+        }
+
+        private void create_default()
+        {
+            if(!flag())
+            {
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
+                {
+                    dbconnection.Open();
+                    string query = "insert into inventory(item_id) values(@ayd);";
+                    using (var com = new MySqlCommand(query, dbconnection))
+                    {
+                        com.Parameters.AddWithValue("@ayd", ayaya);
+                        com.ExecuteNonQuery();
+                    }
+                    
+                }
+                txtinvID.Text = getcount();
+            }
+            else
+            {
+                MessageBox.Show("DUPLICATE RECORDS WARNING!");
+                txtinvID.Text = ;
+            }
+            
         }
        
         private void button1_Click(object sender, EventArgs e)
@@ -63,23 +107,47 @@ namespace MainSystem
         public String iiii;
         private void btnconfirm_Click(object sender, EventArgs e)
         {
-            var dbconnect = new dbConnector();
-            using (dbconnection = dbconnect.connector())
+            if (!flag())
             {
-                using (var command = new MySqlCommand("INSERT INTO stkin(inventory_id, date, misc_desc, quantity) VALUES(@inventory_id, @date, @misc_desc, @quantity);", dbconnection))
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
                 {
-                    dbconnection.Open();
-                    command.Parameters.AddWithValue("@inventory_id", getcount());
-                    command.Parameters.AddWithValue("@date", label2.Text);
-                    command.Parameters.AddWithValue("@misc_desc", txtdesc.Text);
-                    command.Parameters.AddWithValue("@quantity", txtquantity.Text);
-                    command.ExecuteNonQuery();
+                    using (var command = new MySqlCommand("INSERT INTO stkin(inventory_id, date, misc_desc, quantity) VALUES(@inventory_id, @date, @misc_desc, @quantity);", dbconnection))
+                    {
+                        dbconnection.Open();
+                        command.Parameters.AddWithValue("@inventory_id", getcount());
+                        command.Parameters.AddWithValue("@date", label2.Text);
+                        command.Parameters.AddWithValue("@misc_desc", txtdesc.Text);
+                        command.Parameters.AddWithValue("@quantity", txtquantity.Text);
+                        command.ExecuteNonQuery();
+                    }
                 }
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                reference.Show();
+                reference.readData2();
             }
-            MessageBox.Show("Successfully Added");
-            this.Close();
-            reference.Show();
-            reference.readData2();
+            else
+            {
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
+                {
+                    using (var command = new MySqlCommand("INSERT INTO stkin(inventory_id, date, misc_desc, quantity) VALUES(@inventory_id, @date, @misc_desc, @quantity);", dbconnection))
+                    {
+                        dbconnection.Open();
+                        command.Parameters.AddWithValue("@inventory_id", );
+                        command.Parameters.AddWithValue("@date", label2.Text);
+                        command.Parameters.AddWithValue("@misc_desc", txtdesc.Text);
+                        command.Parameters.AddWithValue("@quantity", txtquantity.Text);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                reference.Show();
+                reference.readData2();
+            }
+           
         }
         private String getcount()
         {
@@ -100,7 +168,11 @@ namespace MainSystem
             label2.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             timer1.Start();
         }
-        
+
+        private void gboxentry_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

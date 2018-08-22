@@ -88,5 +88,15 @@ namespace MainSystem
                 //dataGridView2.Columns["itemID"].Visible = false;
             }
         }
+
+        private void btnout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

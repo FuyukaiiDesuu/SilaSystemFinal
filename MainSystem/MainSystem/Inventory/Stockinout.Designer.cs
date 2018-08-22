@@ -57,6 +57,7 @@
             this.btnin.TabIndex = 2;
             this.btnin.Text = "IN";
             this.btnin.UseVisualStyleBackColor = true;
+            this.btnin.Click += new System.EventHandler(this.btnin_Click);
             // 
             // btnout
             // 
@@ -66,6 +67,7 @@
             this.btnout.TabIndex = 3;
             this.btnout.Text = "OUT";
             this.btnout.UseVisualStyleBackColor = true;
+            this.btnout.Click += new System.EventHandler(this.btnout_Click);
             // 
             // lblSinoutRecord
             // 

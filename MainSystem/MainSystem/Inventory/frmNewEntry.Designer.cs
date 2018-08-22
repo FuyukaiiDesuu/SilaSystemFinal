@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.btnback = new System.Windows.Forms.Button();
             this.gboxentry = new System.Windows.Forms.GroupBox();
+            this.lblinvID = new System.Windows.Forms.Label();
+            this.txtinvID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtquantity = new System.Windows.Forms.TextBox();
             this.txtdesc = new System.Windows.Forms.TextBox();
@@ -42,8 +44,6 @@
             this.btnconfirm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtinvID = new System.Windows.Forms.TextBox();
-            this.lblinvID = new System.Windows.Forms.Label();
             this.gboxentry.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,23 @@
             this.gboxentry.TabIndex = 1;
             this.gboxentry.TabStop = false;
             this.gboxentry.Text = "New Entry";
+            this.gboxentry.Enter += new System.EventHandler(this.gboxentry_Enter);
+            // 
+            // lblinvID
+            // 
+            this.lblinvID.AutoSize = true;
+            this.lblinvID.Location = new System.Drawing.Point(24, 42);
+            this.lblinvID.Name = "lblinvID";
+            this.lblinvID.Size = new System.Drawing.Size(68, 13);
+            this.lblinvID.TabIndex = 14;
+            this.lblinvID.Text = "Inventory ID:";
+            // 
+            // txtinvID
+            // 
+            this.txtinvID.Location = new System.Drawing.Point(94, 39);
+            this.txtinvID.Name = "txtinvID";
+            this.txtinvID.Size = new System.Drawing.Size(200, 20);
+            this.txtinvID.TabIndex = 13;
             // 
             // label2
             // 
@@ -168,22 +185,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // txtinvID
-            // 
-            this.txtinvID.Location = new System.Drawing.Point(94, 39);
-            this.txtinvID.Name = "txtinvID";
-            this.txtinvID.Size = new System.Drawing.Size(200, 20);
-            this.txtinvID.TabIndex = 13;
-            // 
-            // lblinvID
-            // 
-            this.lblinvID.AutoSize = true;
-            this.lblinvID.Location = new System.Drawing.Point(24, 42);
-            this.lblinvID.Name = "lblinvID";
-            this.lblinvID.Size = new System.Drawing.Size(68, 13);
-            this.lblinvID.TabIndex = 14;
-            this.lblinvID.Text = "Inventory ID:";
             // 
             // frmNewEntry
             // 
