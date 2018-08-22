@@ -19,6 +19,7 @@ namespace MainSystem.Accounting
         public string id { get; set; }
         public string name { get; set; }
         public string uname { get; set; }
+        public string uid { get; set; }
 
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         bool cmbChecker = false;
@@ -32,6 +33,7 @@ namespace MainSystem.Accounting
         private void newfrmAddTransaction_Load(object sender, EventArgs e)
         {
             txtStudentID.Text = id;
+            lblUserID.Text = uid;
             txtStudentName.Text = name;
             timer1.Enabled = true;
             txtChequeNo.Enabled = false;
@@ -42,11 +44,12 @@ namespace MainSystem.Accounting
             DataTable adid = dbquery.getAdid(id);
             txtAccountID.Text = adid.Rows[0][0].ToString();
             lblUser.Text = uname;
+            lblUserID.Visible = false;
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            dbquery.updatePayments(txtTransactionNo.Text, cmbPaymentType.Text, txtChequeNo.Text, txtAmount.Text, lblPaymentDate2.Text, "1", txtAccountID.Text, txtAdditionalDetails.Text, cmbPaymentTo.Text, balanceDisplay.Rows[0]["fid"].ToString());
+            dbquery.updatePayments(txtTransactionNo.Text, cmbPaymentType.Text, txtChequeNo.Text, txtAmount.Text, lblPaymentDate2.Text, lblUserID.Text, txtAccountID.Text, txtAdditionalDetails.Text, cmbPaymentTo.Text, balanceDisplay.Rows[0]["fid"].ToString());
 
             string amount;
             if (balanceDisplay.Rows[0]["paid_amount"].ToString() == null || balanceDisplay.Rows[0]["paid_amount"].ToString() == "")

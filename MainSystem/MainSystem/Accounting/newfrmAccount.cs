@@ -17,6 +17,7 @@ namespace MainSystem.Accounting
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         public string uname;
         string fullname;
+        public string uid;
 
         string fee_type;
         string current_amount;
@@ -141,9 +142,12 @@ namespace MainSystem.Accounting
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
             DataTable holder = dbquery.User(uname);
+            DataTable holder2 = dbquery.UserID(uid);
+            uid = holder2.Rows[0]["empID"].ToString();
             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             transac = new Accounting.newfrmAddTransaction();
             transac.uname = uname;
+            transac.uid = uid;
             transac.id = txtStudentID.Text.ToString();
             transac.balanceDisplay = (dataBalanceDetails.DataSource as DataTable);
             transac.GradeLevelDisplay = (dataBalanceDetails.DataSource as DataTable);

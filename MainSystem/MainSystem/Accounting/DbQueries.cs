@@ -148,6 +148,13 @@ namespace MainSystem.Accounting
             return itmContainer;
         }
 
+        public DataTable UserID(string uid)
+        {
+            string query = "SELECT * FROM usertable INNER JOIN employee on usertable.idemp = employee.empID";
+            DataTable itmContainer = con.Select(query);
+            return itmContainer;
+        }
+
         public DataTable SearchStudent(string lastname)
         {
             string query = @"SELECT *, concat(sp.LastName, ', ' , sp.FirstName, ' ', sp.MiddleName) as 'fullname'

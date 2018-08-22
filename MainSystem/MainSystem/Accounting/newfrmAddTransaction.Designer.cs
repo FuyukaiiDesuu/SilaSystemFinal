@@ -57,6 +57,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
+            this.lblUserID = new System.Windows.Forms.Label();
             this.grpNewPayment.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -356,12 +357,23 @@
             this.lblUser.TabIndex = 16;
             this.lblUser.Text = "User";
             // 
+            // lblUserID
+            // 
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblUserID.Location = new System.Drawing.Point(307, 23);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(51, 17);
+            this.lblUserID.TabIndex = 17;
+            this.lblUserID.Text = "UserID";
+            // 
             // newfrmAddTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(369, 743);
+            this.Controls.Add(this.lblUserID);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.btnPrint);
@@ -411,5 +423,6 @@
         private System.Windows.Forms.Label lblLoggedinas;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblPaymentDate3;
+        private System.Windows.Forms.Label lblUserID;
     }
 }
