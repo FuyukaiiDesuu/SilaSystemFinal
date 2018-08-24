@@ -26,7 +26,7 @@ namespace MainSystem.Employee
 
         private void newViewArchivedEmployee_Load(object sender, EventArgs e)
         {
-
+            dataSearch.ClearSelection();
         }
 
         public void loadArchivedEmployee()

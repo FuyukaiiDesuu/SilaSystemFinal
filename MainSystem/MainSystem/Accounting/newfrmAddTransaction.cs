@@ -101,12 +101,16 @@ namespace MainSystem.Accounting
             MessageBox.Show("Succesfully Paid");
             reference.Show();
             reference.loadBalanceDetails(id);
+            reference.dataSearch.ClearSelection();
+            reference.dataBalanceDetails.ClearSelection();
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
+            reference.dataBalanceDetails.ClearSelection();
+            reference.dataSearch.ClearSelection();
             this.Close();
         }
 

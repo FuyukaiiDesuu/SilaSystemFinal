@@ -48,6 +48,7 @@ namespace MainSystem.Employee
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
+            reference.dataSearch.ClearSelection();
             this.Close();
         }
 
@@ -64,7 +65,7 @@ namespace MainSystem.Employee
             MessageBox.Show("Succesfully Updated");
             reference.Show();
             reference.loadEmployeeDetails();
-            reference.dataSearch.Rows[0].Selected = false;
+            reference.dataSearch.ClearSelection();
             reference.clearText();
             this.Close();
         }

@@ -42,12 +42,14 @@ namespace MainSystem.Employee
             MessageBox.Show("Succesfully Added");
             reference.Show();
             reference.loadEmployeeDetails();
+            reference.dataSearch.ClearSelection();
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
+            reference.dataSearch.ClearSelection();
             this.Close();
         }
 

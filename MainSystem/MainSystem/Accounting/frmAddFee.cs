@@ -45,6 +45,8 @@ namespace MainSystem.Accounting
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
+            reference.dataSearch.ClearSelection();
+            reference.dataBalanceDetails.ClearSelection();
             this.Close();
         }
 
@@ -137,6 +139,8 @@ namespace MainSystem.Accounting
                 MessageBox.Show("Successfully Added");
                 reference.Show();
                 reference.loadFeeDetails();
+                reference.dataBalanceDetails.ClearSelection();
+                reference.dataSearch.ClearSelection();
                 this.Close();
             }
             else

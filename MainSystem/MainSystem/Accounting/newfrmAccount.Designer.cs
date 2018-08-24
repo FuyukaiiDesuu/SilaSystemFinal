@@ -503,7 +503,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnAddFee;
         private System.Windows.Forms.Button btnAddTransaction;
-        private System.Windows.Forms.DataGridView dataSearch;
         private System.Windows.Forms.GroupBox grpStudentDetails;
         public System.Windows.Forms.TextBox txtLastName;
         public System.Windows.Forms.TextBox txtMiddleName;
@@ -532,6 +531,7 @@
         public System.Windows.Forms.DataGridView dataFeeValue;
         private System.Windows.Forms.GroupBox grpBalanceDetails;
         private System.Windows.Forms.Button btnViewPaymentHistory;
-        private System.Windows.Forms.DataGridView dataBalanceDetails;
+        public System.Windows.Forms.DataGridView dataSearch;
+        public System.Windows.Forms.DataGridView dataBalanceDetails;
     }
 }

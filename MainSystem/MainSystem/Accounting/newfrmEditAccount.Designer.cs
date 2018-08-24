@@ -32,6 +32,7 @@
             this.lblDate2 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.grpStudentAccount = new System.Windows.Forms.GroupBox();
+            this.txtDateDue = new System.Windows.Forms.TextBox();
             this.lblPaymentStatus2 = new System.Windows.Forms.Label();
             this.lblPaymentStatus = new System.Windows.Forms.Label();
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
@@ -53,17 +54,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblUser = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
-            this.grpDiscount = new System.Windows.Forms.GroupBox();
-            this.txtDiscountDescription = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtDiscountPercentage = new System.Windows.Forms.TextBox();
-            this.lblPercentage = new System.Windows.Forms.Label();
-            this.txtDiscountType = new System.Windows.Forms.TextBox();
-            this.lblDiscountType = new System.Windows.Forms.Label();
-            this.txtDateDue = new System.Windows.Forms.TextBox();
             this.grpStudentAccount.SuspendLayout();
             this.grpStudentDetails.SuspendLayout();
-            this.grpDiscount.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDate2
@@ -108,6 +100,15 @@
             this.grpStudentAccount.TabIndex = 26;
             this.grpStudentAccount.TabStop = false;
             this.grpStudentAccount.Text = "Student Account";
+            // 
+            // txtDateDue
+            // 
+            this.txtDateDue.BackColor = System.Drawing.Color.White;
+            this.txtDateDue.Location = new System.Drawing.Point(400, 29);
+            this.txtDateDue.Name = "txtDateDue";
+            this.txtDateDue.ReadOnly = true;
+            this.txtDateDue.Size = new System.Drawing.Size(179, 20);
+            this.txtDateDue.TabIndex = 19;
             // 
             // lblPaymentStatus2
             // 
@@ -218,7 +219,7 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(12, 368);
+            this.btnPrint.Location = new System.Drawing.Point(12, 262);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(91, 31);
             this.btnPrint.TabIndex = 25;
@@ -279,7 +280,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(109, 368);
+            this.btnClose.Location = new System.Drawing.Point(109, 262);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 31);
             this.btnClose.TabIndex = 23;
@@ -313,94 +314,12 @@
             this.lblLoggedinas.TabIndex = 29;
             this.lblLoggedinas.Text = "Logged in as:";
             // 
-            // grpDiscount
-            // 
-            this.grpDiscount.Controls.Add(this.txtDiscountDescription);
-            this.grpDiscount.Controls.Add(this.lblDescription);
-            this.grpDiscount.Controls.Add(this.txtDiscountPercentage);
-            this.grpDiscount.Controls.Add(this.lblPercentage);
-            this.grpDiscount.Controls.Add(this.txtDiscountType);
-            this.grpDiscount.Controls.Add(this.lblDiscountType);
-            this.grpDiscount.Location = new System.Drawing.Point(12, 262);
-            this.grpDiscount.Name = "grpDiscount";
-            this.grpDiscount.Size = new System.Drawing.Size(597, 100);
-            this.grpDiscount.TabIndex = 31;
-            this.grpDiscount.TabStop = false;
-            this.grpDiscount.Text = "Discount ";
-            // 
-            // txtDiscountDescription
-            // 
-            this.txtDiscountDescription.BackColor = System.Drawing.Color.White;
-            this.txtDiscountDescription.Location = new System.Drawing.Point(132, 61);
-            this.txtDiscountDescription.Name = "txtDiscountDescription";
-            this.txtDiscountDescription.ReadOnly = true;
-            this.txtDiscountDescription.Size = new System.Drawing.Size(153, 20);
-            this.txtDiscountDescription.TabIndex = 13;
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(6, 61);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(76, 16);
-            this.lblDescription.TabIndex = 12;
-            this.lblDescription.Text = "Description";
-            // 
-            // txtDiscountPercentage
-            // 
-            this.txtDiscountPercentage.BackColor = System.Drawing.Color.White;
-            this.txtDiscountPercentage.Location = new System.Drawing.Point(400, 21);
-            this.txtDiscountPercentage.Name = "txtDiscountPercentage";
-            this.txtDiscountPercentage.ReadOnly = true;
-            this.txtDiscountPercentage.Size = new System.Drawing.Size(179, 20);
-            this.txtDiscountPercentage.TabIndex = 11;
-            // 
-            // lblPercentage
-            // 
-            this.lblPercentage.AutoSize = true;
-            this.lblPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercentage.Location = new System.Drawing.Point(291, 22);
-            this.lblPercentage.Name = "lblPercentage";
-            this.lblPercentage.Size = new System.Drawing.Size(78, 16);
-            this.lblPercentage.TabIndex = 10;
-            this.lblPercentage.Text = "Percentage";
-            // 
-            // txtDiscountType
-            // 
-            this.txtDiscountType.BackColor = System.Drawing.Color.White;
-            this.txtDiscountType.Location = new System.Drawing.Point(132, 21);
-            this.txtDiscountType.Name = "txtDiscountType";
-            this.txtDiscountType.ReadOnly = true;
-            this.txtDiscountType.Size = new System.Drawing.Size(153, 20);
-            this.txtDiscountType.TabIndex = 9;
-            // 
-            // lblDiscountType
-            // 
-            this.lblDiscountType.AutoSize = true;
-            this.lblDiscountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscountType.Location = new System.Drawing.Point(6, 25);
-            this.lblDiscountType.Name = "lblDiscountType";
-            this.lblDiscountType.Size = new System.Drawing.Size(95, 16);
-            this.lblDiscountType.TabIndex = 8;
-            this.lblDiscountType.Text = "Discount Type";
-            // 
-            // txtDateDue
-            // 
-            this.txtDateDue.BackColor = System.Drawing.Color.White;
-            this.txtDateDue.Location = new System.Drawing.Point(400, 29);
-            this.txtDateDue.Name = "txtDateDue";
-            this.txtDateDue.ReadOnly = true;
-            this.txtDateDue.Size = new System.Drawing.Size(179, 20);
-            this.txtDateDue.TabIndex = 19;
-            // 
             // newfrmEditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(626, 407);
-            this.Controls.Add(this.grpDiscount);
+            this.ClientSize = new System.Drawing.Size(626, 304);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.lblDate2);
@@ -419,8 +338,6 @@
             this.grpStudentAccount.PerformLayout();
             this.grpStudentDetails.ResumeLayout(false);
             this.grpStudentDetails.PerformLayout();
-            this.grpDiscount.ResumeLayout(false);
-            this.grpDiscount.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,13 +368,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblLoggedinas;
-        private System.Windows.Forms.GroupBox grpDiscount;
-        public System.Windows.Forms.TextBox txtDiscountDescription;
-        private System.Windows.Forms.Label lblDescription;
-        public System.Windows.Forms.TextBox txtDiscountPercentage;
-        private System.Windows.Forms.Label lblPercentage;
-        public System.Windows.Forms.TextBox txtDiscountType;
-        private System.Windows.Forms.Label lblDiscountType;
         private System.Windows.Forms.Label lblPaymentStatus2;
         public System.Windows.Forms.TextBox txtDateDue;
     }

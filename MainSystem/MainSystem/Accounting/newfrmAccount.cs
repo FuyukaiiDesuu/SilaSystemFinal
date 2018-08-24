@@ -36,8 +36,8 @@ namespace MainSystem.Accounting
         private void newfrmAccount_Load(object sender, EventArgs e)
         {
             loadFeeDetails();
-            dataSearch.Rows[0].Selected = false;
-            dataFeeValue.Rows[0].Selected = false;
+            dataSearch.ClearSelection();
+            dataFeeValue.ClearSelection();
         }
 
         public void loadStudentProfileTable()

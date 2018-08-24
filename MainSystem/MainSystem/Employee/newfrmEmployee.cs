@@ -25,7 +25,7 @@ namespace MainSystem.Employee
 
         private void newfrmEmployee_Load(object sender, EventArgs e)
         {
-            dataSearch.Rows[0].Selected = false;
+            dataSearch.ClearSelection();
         }
 
         public void loadEmployeeDetails()
