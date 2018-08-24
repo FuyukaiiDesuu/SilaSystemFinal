@@ -110,6 +110,8 @@ namespace MainSystem
         private void btnconfirm_Click(object sender, EventArgs e)
         {
             //CREATE FLAG HERE!
+            if (!flag())
+            {
                 var dbconnect = new dbConnector();
                 using (dbconnection = dbconnect.connector())
                 {
@@ -128,7 +130,28 @@ namespace MainSystem
                 this.Close();
                 reference.Show();
                 reference.readData2();
-           
+            }
+            else
+            {
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
+                {
+                    using (var command = new MySqlCommand("INSERT INTO stkin(inventory_id, date, misc_desc, quantity, status) VALUES(@inventory_id, @date, @misc_desc, @quantity, @status);", dbconnection))
+                    {
+                        dbconnection.Open();
+                        command.Parameters.AddWithValue("@inventory_id", getInventoryID());
+                        command.Parameters.AddWithValue("@date", label2.Text);
+                        command.Parameters.AddWithValue("@misc_desc", txtdesc.Text);
+                        command.Parameters.AddWithValue("@quantity", txtquantity.Text);
+                        command.Parameters.AddWithValue("@status", 0);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Successfully Added");
+                this.Close();
+                reference.Show();
+                reference.readData2();
+            }
         }
         private String getcount()
         {
