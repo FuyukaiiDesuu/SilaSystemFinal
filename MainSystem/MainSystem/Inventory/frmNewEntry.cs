@@ -64,7 +64,7 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM stkin WHERE item_id = '" + ayaya + "';";
+                string query = "SELECT * FROM inventory WHERE item_id = '" + ayaya + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -80,10 +80,12 @@ namespace MainSystem
                 using (dbconnection = dbconnect.connector())
                 {
                     dbconnection.Open();
-                    string query = "insert into inventory(item_id) values(@ayd);";
+                    string query = "insert into inventory(item_id, quantity, status) values(@ayd, @quant, @status);";
                     using (var com = new MySqlCommand(query, dbconnection))
                     {
                         com.Parameters.AddWithValue("@ayd", ayaya);
+                        com.Parameters.AddWithValue("@quant", 0);
+                        com.Parameters.AddWithValue("@status", 1);
                         com.ExecuteNonQuery();
                     }
                     
@@ -92,8 +94,8 @@ namespace MainSystem
             }
             else
             {
-                MessageBox.Show("DUPLICATE RECORDS WARNING!");
-                txtinvID.Text = ;
+                MessageBox.Show("WARNING ITEM ALREADY IN INVENTORY!");
+                txtinvID.Text = getInventoryID();
             }
             
         }
@@ -107,18 +109,18 @@ namespace MainSystem
         public String iiii;
         private void btnconfirm_Click(object sender, EventArgs e)
         {
-            if (!flag())
-            {
+            //CREATE FLAG HERE!
                 var dbconnect = new dbConnector();
                 using (dbconnection = dbconnect.connector())
                 {
-                    using (var command = new MySqlCommand("INSERT INTO stkin(inventory_id, date, misc_desc, quantity) VALUES(@inventory_id, @date, @misc_desc, @quantity);", dbconnection))
+                    using (var command = new MySqlCommand("INSERT INTO stkin(inventory_id, date, misc_desc, quantity, status) VALUES(@inventory_id, @date, @misc_desc, @quantity, @status);", dbconnection))
                     {
                         dbconnection.Open();
                         command.Parameters.AddWithValue("@inventory_id", getcount());
                         command.Parameters.AddWithValue("@date", label2.Text);
                         command.Parameters.AddWithValue("@misc_desc", txtdesc.Text);
                         command.Parameters.AddWithValue("@quantity", txtquantity.Text);
+                        command.Parameters.AddWithValue("@status", 0);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -126,27 +128,6 @@ namespace MainSystem
                 this.Close();
                 reference.Show();
                 reference.readData2();
-            }
-            else
-            {
-                var dbconnect = new dbConnector();
-                using (dbconnection = dbconnect.connector())
-                {
-                    using (var command = new MySqlCommand("INSERT INTO stkin(inventory_id, date, misc_desc, quantity) VALUES(@inventory_id, @date, @misc_desc, @quantity);", dbconnection))
-                    {
-                        dbconnection.Open();
-                        command.Parameters.AddWithValue("@inventory_id", );
-                        command.Parameters.AddWithValue("@date", label2.Text);
-                        command.Parameters.AddWithValue("@misc_desc", txtdesc.Text);
-                        command.Parameters.AddWithValue("@quantity", txtquantity.Text);
-                        command.ExecuteNonQuery();
-                    }
-                }
-                MessageBox.Show("Successfully Added");
-                this.Close();
-                reference.Show();
-                reference.readData2();
-            }
            
         }
         private String getcount()

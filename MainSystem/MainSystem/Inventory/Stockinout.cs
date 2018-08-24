@@ -18,12 +18,14 @@ namespace MainSystem
         {
             InitializeComponent();
         }
+        public MySqlConnection dbconnection;
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
         DataTable dt;
 
         private void btnback2_Click(object sender, EventArgs e)
         {
+            reference.readData();
             reference.Show();
             this.Hide();
         }
@@ -32,6 +34,8 @@ namespace MainSystem
         {
             readData();
             readData2();
+            dataGridView1.ClearSelection();
+            dataGridView2.ClearSelection();
         }
         private void btnNewEntry_Click(object sender, EventArgs e)
         {
@@ -80,7 +84,7 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM stkin";
+                string query = "SELECT * FROM stkin WHERE status = 0";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -93,9 +97,57 @@ namespace MainSystem
         {
 
         }
-
+        
+        private string quantityADD()
+        {
+            Int32 a = 0;
+            Int32 b = 0;
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM inventory WHERE invID = '"+ invID +"';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                MessageBox.Show(dt.Rows[0]["quantity"].ToString());
+                a = Convert.ToInt32(dt.Rows[0]["quantity"].ToString());
+                b = Convert.ToInt32(quantity);
+            }
+            return (a + b).ToString();
+        }
         private void btnin_Click(object sender, EventArgs e)
         {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                using (var com = new MySqlCommand("UPDATE stkin SET status = 1 WHERE stkinID = @ayyd", dbconnection))
+                {
+                    com.Parameters.AddWithValue("@ayyd", stkID);
+                    com.ExecuteNonQuery();
+                }
+                using (var com2 = new MySqlCommand("UPDATE inventory SET stock_in_date = @dtnow, quantity = @quant WHERE invID = @invid", dbconnection))
+                {
+                    com2.Parameters.AddWithValue("@quant", quantityADD());
+                    string datttu = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    com2.Parameters.AddWithValue("@dtnow", datttu);
+                    com2.Parameters.AddWithValue("@invid", invID);
+                    com2.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("ITEM STOCKED-IN!");
+            readData2();
+            dataGridView2.ClearSelection();
+        }
+
+        public string stkID;
+        public string invID;
+        public string quantity;
+        
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            stkID = dataGridView2.Rows[e.RowIndex].Cells["stkinID"].Value.ToString();
+            invID = dataGridView2.Rows[e.RowIndex].Cells["inventory_id"].Value.ToString();
+            quantity = dataGridView2.Rows[e.RowIndex].Cells["quantity"].Value.ToString();
 
         }
     }
