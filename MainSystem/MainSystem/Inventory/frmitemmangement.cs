@@ -28,27 +28,22 @@ namespace MainSystem
             reference.Show();
             this.Hide();
         }
-
+        public createItem crt;
         private void btnCreate_Click(object sender, EventArgs e)
         {
-                var dbconnect = new dbConnector();
-                using (dbconnection = dbconnect.connector())
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+            dbconnection.Open();
+                using (var command = new MySqlCommand("INSERT INTO itemdetails VALUES()", dbconnection))
                 {
-                dbconnection.Open();
-                    using (var command = new MySqlCommand("INSERT INTO itemdetails VALUES(DEFAULT, @item_code, @date_of_creation, @description, @itemstatus, @itemname)", dbconnection))
-                    {
-                        
-                        command.Parameters.AddWithValue("@item_code", txtitemcode.Text);
-                        command.Parameters.AddWithValue("@date_of_creation", System.DateTime.Now.ToString("yyyyMMdd")); 
-                        command.Parameters.AddWithValue("@description", txtdesc.Text);
-                        command.Parameters.AddWithValue("@itemstatus", cmbstatus.Text);
-                        command.Parameters.AddWithValue("@itemname", txtitemname.Text);
-                        command.ExecuteNonQuery();
-                    }
-
+                    command.ExecuteNonQuery();
                 }
-            readData();
-            
+            }
+            crt = new createItem();
+            crt.Show();
+            crt.reference = this;
+            this.Hide();
         }
 
         private void frmItemCreate_Load(object sender, EventArgs e)

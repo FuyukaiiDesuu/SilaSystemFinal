@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="createItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createItem.Designer.cs">
+      <DependentUpon>createItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory\frmNewEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Inventory\StockOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\StockOut.Designer.cs">
+      <DependentUpon>StockOut.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="createItem.resx">
+      <DependentUpon>createItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,11 +139,11 @@
     <Compile Include="Inventory\frmOrderList.Designer.cs">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory\Stockinout.cs">
+    <Compile Include="Inventory\StockIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventory\Stockinout.Designer.cs">
-      <DependentUpon>Stockinout.cs</DependentUpon>
+    <Compile Include="Inventory\StockIn.Designer.cs">
+      <DependentUpon>StockIn.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
@@ -144,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\itemview.resx">
       <DependentUpon>itemview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\StockOut.resx">
+      <DependentUpon>StockOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -173,8 +191,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Inventory\Stockinout.resx">
-      <DependentUpon>Stockinout.cs</DependentUpon>
+    <EmbeddedResource Include="Inventory\StockIn.resx">
+      <DependentUpon>StockIn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

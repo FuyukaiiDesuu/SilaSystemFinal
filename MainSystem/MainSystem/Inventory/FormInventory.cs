@@ -85,5 +85,13 @@ namespace MainSystem
         {
 
         }
+        public StockOut stout;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            stout = new StockOut();
+            stout.Show();
+            stout.reference = this;
+            this.Hide();
+        }
     }
 }

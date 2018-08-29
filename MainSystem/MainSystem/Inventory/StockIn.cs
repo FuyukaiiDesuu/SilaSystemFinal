@@ -92,12 +92,32 @@ namespace MainSystem
                 //dataGridView2.Columns["itemID"].Visible = false;
             }
         }
-
+        /*
         private void btnout_Click(object sender, EventArgs e)
         {
-
-        }
-        
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                using (var com = new MySqlCommand("UPDATE stkin SET status = 1 WHERE stkinID = @ayyd", dbconnection))
+                {
+                    com.Parameters.AddWithValue("@ayyd", stkID);
+                    com.ExecuteNonQuery();
+                }
+                using (var com2 = new MySqlCommand("UPDATE inventory SET stock_out_date = @dtnow, quantity = @quant WHERE invID = @invid", dbconnection))
+                {
+                    com2.Parameters.AddWithValue("@quant", quantitySUB());
+                    string datttu = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    com2.Parameters.AddWithValue("@dtnow", datttu);
+                    com2.Parameters.AddWithValue("@invid", invID);
+                    com2.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("ITEM STOCKED-OUT!");
+            readData2();
+            dataGridView2.ClearSelection();
+        }*/
+       
         private string quantityADD()
         {
             Int32 a = 0;
@@ -148,6 +168,16 @@ namespace MainSystem
             stkID = dataGridView2.Rows[e.RowIndex].Cells["stkinID"].Value.ToString();
             invID = dataGridView2.Rows[e.RowIndex].Cells["inventory_id"].Value.ToString();
             quantity = dataGridView2.Rows[e.RowIndex].Cells["quantity"].Value.ToString();
+
+        }
+
+        private void search1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSinoutRecord_Click(object sender, EventArgs e)
+        {
 
         }
     }
