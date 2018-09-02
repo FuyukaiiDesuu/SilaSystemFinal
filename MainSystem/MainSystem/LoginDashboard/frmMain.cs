@@ -15,17 +15,16 @@ namespace MainSystem
     {
         private MySqlConnection dbconnect;
         public FormLogin reference { get; set; }
-        string uname;
         public frmMain(string uname, string perm)
         {
             InitializeComponent();
             lblusername.Text = uname;
+            disablebuttons();
+            //MessageBox.Show(string.Join("\n", arr));
             restrictor(perm);
-            dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
-            dbconnect.Open();
-
+           
         }
-
+        
         public void disablebuttons()
         {
             btnAccountForm.Enabled = false;
@@ -34,7 +33,6 @@ namespace MainSystem
             btnRegistrationForm.Enabled = false;
             btnUserForm.Enabled = false;
         }
-
         public void enablebuttons()
         {
             btnAccountForm.Enabled = true;
@@ -43,41 +41,41 @@ namespace MainSystem
             btnRegistrationForm.Enabled = true;
             btnUserForm.Enabled = true;
         }
-
+        
         public void restrictor(string perm)
         {
-
+           
             var accp = perm.Substring(0, 1);
             var enrp = perm.Substring(1, 1);
             var empp = perm.Substring(2, 1);
             var invp = perm.Substring(3, 1);
             var usrp = perm.Substring(4, 1);
-            if (accp == "1")
+            if(accp == "1")
             {
                 btnAccountForm.Enabled = true;
             }
-            if (enrp == "1")
+            if(enrp == "1")
             {
                 btnRegistrationForm.Enabled = true;
             }
-            if (empp == "1")
+            if(empp == "1")
             {
                 btnEmployeeForm.Enabled = true;
             }
-            if (invp == "1")
+            if(invp == "1")
             {
                 btnInventoryForm.Enabled = true;
             }
-            if (usrp == "1")
+            if(usrp == "1")
             {
                 btnInventoryForm.Enabled = true;
             }
-            if (perm == "11111")
+            if(perm == "11111")
             {
                 enablebuttons();
             }
         }
-
+        
         private void frmMain_Load(object sender, EventArgs e)
         {
 
@@ -126,6 +124,7 @@ namespace MainSystem
         private void btnLGOUT_Click(object sender, EventArgs e)
         {
             this.Close();
+            reference.clearTxtBoxes();
             reference.Show();
         }
         public FormInventory frminv;

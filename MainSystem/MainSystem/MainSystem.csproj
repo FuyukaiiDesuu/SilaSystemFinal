@@ -32,7 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -108,9 +111,16 @@
     <Compile Include="Enrollment\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Enrollment\AddForm.Designer.cs">
-      <DependentUpon>AddForm.cs</DependentUpon>
+    <Compile Include="Enrollment\editStudent.Designer.cs">
+      <DependentUpon>editStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enrollment\addStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enrollment\addStudent.Designer.cs">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbConnector.cs" />
     <Compile Include="Enrollment\EnrollmentConsole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,8 +189,23 @@
     <Compile Include="Inventory\Stockinout.Designer.cs">
       <DependentUpon>Stockinout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enrollment\viewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enrollment\viewForm.Designer.cs">
+      <DependentUpon>viewForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Enrollment\addStudent.resx">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enrollment\editStudent.resx">
+      <DependentUpon>editStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\EnrollmentConsole.resx">
       <DependentUpon>EnrollmentConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enrollment\viewForm.resx">
+      <DependentUpon>viewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -207,6 +232,7 @@
     <EmbeddedResource Include="Inventory\Stockinout.resx">
       <DependentUpon>Stockinout.cs</DependentUpon>
     </EmbeddedResource>
+    <Fakes Include="Fakes\MySql.Data.fakes" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
