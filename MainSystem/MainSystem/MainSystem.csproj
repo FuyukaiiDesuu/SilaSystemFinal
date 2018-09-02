@@ -214,6 +214,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Inventory\frmOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
