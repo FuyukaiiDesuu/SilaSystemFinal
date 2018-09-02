@@ -52,7 +52,6 @@
     <Compile Include="Inventory\frmNewEntry.Designer.cs">
       <DependentUpon>frmNewEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventory\dbConnector.cs" />
     <Compile Include="Inventory\editItemmanagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,7 +129,6 @@
     <Compile Include="Enrollment\addStudent.Designer.cs">
       <DependentUpon>addStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="dbConnector.cs" />
     <Compile Include="Enrollment\EnrollmentConsole.cs">
       <SubType>Form</SubType>
     </Compile>

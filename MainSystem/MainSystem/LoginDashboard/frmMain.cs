@@ -90,7 +90,7 @@ namespace MainSystem
 
         }
         public EnrollmentConsole frmEnroll;
-
+        public string uname;
         private void btnEmployeeForm_Click(object sender, EventArgs e)
         {
             var dbconnector = new dbConnector();

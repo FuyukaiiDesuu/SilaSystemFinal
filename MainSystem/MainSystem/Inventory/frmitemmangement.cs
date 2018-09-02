@@ -28,22 +28,10 @@ namespace MainSystem
             reference.Show();
             this.Hide();
         }
-        public createItem crt;
+        
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var dbconnect = new dbConnector();
-            using (dbconnection = dbconnect.connector())
-            {
-            dbconnection.Open();
-                using (var command = new MySqlCommand("INSERT INTO itemdetails VALUES()", dbconnection))
-                {
-                    command.ExecuteNonQuery();
-                }
-            }
-            crt = new createItem();
-            crt.Show();
-            crt.reference = this;
-            this.Hide();
+           
         }
 
         private void frmItemCreate_Load(object sender, EventArgs e)
