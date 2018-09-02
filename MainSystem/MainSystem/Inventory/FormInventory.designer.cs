@@ -29,272 +29,238 @@
         private void InitializeComponent()
         {
             this.gboxitemdetails = new System.Windows.Forms.GroupBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
-            this.lblDate = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtstatus = new System.Windows.Forms.TextBox();
+            this.lblstatus = new System.Windows.Forms.Label();
+            this.txtsodate = new System.Windows.Forms.TextBox();
+            this.lblsodate = new System.Windows.Forms.Label();
+            this.txtinvcode = new System.Windows.Forms.TextBox();
+            this.lblinvcode = new System.Windows.Forms.Label();
+            this.btnStockInOut = new System.Windows.Forms.Button();
+            this.btnOrderList = new System.Windows.Forms.Button();
+            this.txtsidate = new System.Windows.Forms.TextBox();
+            this.lblsidate = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtDesc = new System.Windows.Forms.TextBox();
-            this.txtItemName = new System.Windows.Forms.TextBox();
             this.txtItemCode = new System.Windows.Forms.TextBox();
-            this.btnView = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.lblQuantity = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.lblItemName = new System.Windows.Forms.Label();
             this.lblItemCode = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.search = new System.Windows.Forms.TextBox();
             this.gboxitemdetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxitemdetails
             // 
-            this.gboxitemdetails.Controls.Add(this.txtDate);
-            this.gboxitemdetails.Controls.Add(this.lblDate);
+            this.gboxitemdetails.Controls.Add(this.button1);
+            this.gboxitemdetails.Controls.Add(this.txtstatus);
+            this.gboxitemdetails.Controls.Add(this.lblstatus);
+            this.gboxitemdetails.Controls.Add(this.txtsodate);
+            this.gboxitemdetails.Controls.Add(this.lblsodate);
+            this.gboxitemdetails.Controls.Add(this.txtinvcode);
+            this.gboxitemdetails.Controls.Add(this.lblinvcode);
+            this.gboxitemdetails.Controls.Add(this.btnStockInOut);
+            this.gboxitemdetails.Controls.Add(this.btnOrderList);
+            this.gboxitemdetails.Controls.Add(this.txtsidate);
+            this.gboxitemdetails.Controls.Add(this.lblsidate);
             this.gboxitemdetails.Controls.Add(this.txtQuantity);
-            this.gboxitemdetails.Controls.Add(this.txtPrice);
-            this.gboxitemdetails.Controls.Add(this.txtDesc);
-            this.gboxitemdetails.Controls.Add(this.txtItemName);
             this.gboxitemdetails.Controls.Add(this.txtItemCode);
-            this.gboxitemdetails.Controls.Add(this.btnView);
-            this.gboxitemdetails.Controls.Add(this.btnUpdate);
-            this.gboxitemdetails.Controls.Add(this.btnAdd);
             this.gboxitemdetails.Controls.Add(this.lblQuantity);
-            this.gboxitemdetails.Controls.Add(this.lblPrice);
-            this.gboxitemdetails.Controls.Add(this.lblDesc);
-            this.gboxitemdetails.Controls.Add(this.lblItemName);
             this.gboxitemdetails.Controls.Add(this.lblItemCode);
-            this.gboxitemdetails.Location = new System.Drawing.Point(16, 57);
-            this.gboxitemdetails.Margin = new System.Windows.Forms.Padding(4);
+            this.gboxitemdetails.Location = new System.Drawing.Point(12, 46);
             this.gboxitemdetails.Name = "gboxitemdetails";
-            this.gboxitemdetails.Padding = new System.Windows.Forms.Padding(4);
-            this.gboxitemdetails.Size = new System.Drawing.Size(463, 375);
+            this.gboxitemdetails.Size = new System.Drawing.Size(359, 242);
             this.gboxitemdetails.TabIndex = 0;
             this.gboxitemdetails.TabStop = false;
-            this.gboxitemdetails.Text = "Item Details";
+            this.gboxitemdetails.Text = "Inventory Details";
             // 
-            // txtDate
+            // button1
             // 
-            this.txtDate.Location = new System.Drawing.Point(107, 138);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(333, 22);
-            this.txtDate.TabIndex = 20;
+            this.button1.Location = new System.Drawing.Point(206, 208);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 23);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Stock-Out";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblDate
+            // txtstatus
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(25, 141);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(42, 17);
-            this.lblDate.TabIndex = 19;
-            this.lblDate.Text = "Date:";
+            this.txtstatus.Location = new System.Drawing.Point(98, 174);
+            this.txtstatus.Name = "txtstatus";
+            this.txtstatus.Size = new System.Drawing.Size(251, 20);
+            this.txtstatus.TabIndex = 28;
+            // 
+            // lblstatus
+            // 
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.Location = new System.Drawing.Point(52, 174);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(40, 13);
+            this.lblstatus.TabIndex = 27;
+            this.lblstatus.Text = "Status:";
+            // 
+            // txtsodate
+            // 
+            this.txtsodate.Location = new System.Drawing.Point(98, 124);
+            this.txtsodate.Name = "txtsodate";
+            this.txtsodate.Size = new System.Drawing.Size(251, 20);
+            this.txtsodate.TabIndex = 26;
+            // 
+            // lblsodate
+            // 
+            this.lblsodate.AutoSize = true;
+            this.lblsodate.Location = new System.Drawing.Point(10, 127);
+            this.lblsodate.Name = "lblsodate";
+            this.lblsodate.Size = new System.Drawing.Size(82, 13);
+            this.lblsodate.TabIndex = 25;
+            this.lblsodate.Text = "Stock-out Date:";
+            this.lblsodate.Click += new System.EventHandler(this.lblsodate_Click);
+            // 
+            // txtinvcode
+            // 
+            this.txtinvcode.Location = new System.Drawing.Point(100, 33);
+            this.txtinvcode.Name = "txtinvcode";
+            this.txtinvcode.Size = new System.Drawing.Size(249, 20);
+            this.txtinvcode.TabIndex = 24;
+            // 
+            // lblinvcode
+            // 
+            this.lblinvcode.AutoSize = true;
+            this.lblinvcode.Location = new System.Drawing.Point(13, 36);
+            this.lblinvcode.Name = "lblinvcode";
+            this.lblinvcode.Size = new System.Drawing.Size(68, 13);
+            this.lblinvcode.TabIndex = 23;
+            this.lblinvcode.Text = "Inventory ID:";
+            // 
+            // btnStockInOut
+            // 
+            this.btnStockInOut.Location = new System.Drawing.Point(113, 208);
+            this.btnStockInOut.Name = "btnStockInOut";
+            this.btnStockInOut.Size = new System.Drawing.Size(87, 23);
+            this.btnStockInOut.TabIndex = 22;
+            this.btnStockInOut.Text = "Stock-In";
+            this.btnStockInOut.UseVisualStyleBackColor = true;
+            this.btnStockInOut.Click += new System.EventHandler(this.btnStockInOut_Click);
+            // 
+            // btnOrderList
+            // 
+            this.btnOrderList.Location = new System.Drawing.Point(10, 208);
+            this.btnOrderList.Name = "btnOrderList";
+            this.btnOrderList.Size = new System.Drawing.Size(99, 23);
+            this.btnOrderList.TabIndex = 21;
+            this.btnOrderList.Text = "Create Order List";
+            this.btnOrderList.UseVisualStyleBackColor = true;
+            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
+            // 
+            // txtsidate
+            // 
+            this.txtsidate.Location = new System.Drawing.Point(98, 92);
+            this.txtsidate.Name = "txtsidate";
+            this.txtsidate.Size = new System.Drawing.Size(251, 20);
+            this.txtsidate.TabIndex = 20;
+            // 
+            // lblsidate
+            // 
+            this.lblsidate.AutoSize = true;
+            this.lblsidate.Location = new System.Drawing.Point(20, 95);
+            this.lblsidate.Name = "lblsidate";
+            this.lblsidate.Size = new System.Drawing.Size(75, 13);
+            this.lblsidate.TabIndex = 19;
+            this.lblsidate.Text = "Stock-in Date:";
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(107, 287);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtQuantity.Location = new System.Drawing.Point(98, 148);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(333, 22);
+            this.txtQuantity.Size = new System.Drawing.Size(251, 20);
             this.txtQuantity.TabIndex = 18;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(107, 245);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(333, 22);
-            this.txtPrice.TabIndex = 17;
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Location = new System.Drawing.Point(107, 181);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(333, 42);
-            this.txtDesc.TabIndex = 16;
-            // 
-            // txtItemName
-            // 
-            this.txtItemName.Location = new System.Drawing.Point(107, 93);
-            this.txtItemName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(333, 22);
-            this.txtItemName.TabIndex = 14;
             // 
             // txtItemCode
             // 
-            this.txtItemCode.Location = new System.Drawing.Point(107, 50);
-            this.txtItemCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtItemCode.Location = new System.Drawing.Point(98, 59);
             this.txtItemCode.Name = "txtItemCode";
-            this.txtItemCode.Size = new System.Drawing.Size(333, 22);
+            this.txtItemCode.Size = new System.Drawing.Size(251, 20);
             this.txtItemCode.TabIndex = 13;
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(340, 317);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(100, 28);
-            this.btnView.TabIndex = 9;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(232, 317);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 28);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(124, 317);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(23, 287);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantity.Location = new System.Drawing.Point(43, 151);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(65, 17);
+            this.lblQuantity.Size = new System.Drawing.Size(49, 13);
             this.lblQuantity.TabIndex = 5;
             this.lblQuantity.Text = "Quantity:";
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(23, 245);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(44, 17);
-            this.lblPrice.TabIndex = 4;
-            this.lblPrice.Text = "Price:";
-            // 
-            // lblDesc
-            // 
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(23, 193);
-            this.lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(83, 17);
-            this.lblDesc.TabIndex = 3;
-            this.lblDesc.Text = "Description:";
-            // 
-            // lblItemName
-            // 
-            this.lblItemName.AutoSize = true;
-            this.lblItemName.Location = new System.Drawing.Point(25, 93);
-            this.lblItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(79, 17);
-            this.lblItemName.TabIndex = 1;
-            this.lblItemName.Text = "Item Name:";
             // 
             // lblItemCode
             // 
             this.lblItemCode.AutoSize = true;
-            this.lblItemCode.Location = new System.Drawing.Point(29, 50);
-            this.lblItemCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItemCode.Location = new System.Drawing.Point(37, 66);
             this.lblItemCode.Name = "lblItemCode";
-            this.lblItemCode.Size = new System.Drawing.Size(75, 17);
+            this.lblItemCode.Size = new System.Drawing.Size(44, 13);
             this.lblItemCode.TabIndex = 0;
-            this.lblItemCode.Text = "Item Code:";
+            this.lblItemCode.Text = "Item ID:";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(12, 17);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(109, 23);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Item Management";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvInventory
             // 
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.dgvInventory.Location = new System.Drawing.Point(487, 57);
-            this.dgvInventory.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvInventory.Location = new System.Drawing.Point(377, 49);
             this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(851, 375);
+            this.dgvInventory.Size = new System.Drawing.Size(761, 239);
             this.dgvInventory.TabIndex = 1;
             this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item Code";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Item Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Date";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Description";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Price";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Quantity";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Total (Price/Quantity)";
-            this.Column7.Name = "Column7";
-            // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(1220, 13);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDashboard.Location = new System.Drawing.Point(1050, 14);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(118, 36);
+            this.btnDashboard.Size = new System.Drawing.Size(88, 29);
             this.btnDashboard.TabIndex = 21;
             this.btnDashboard.Text = "DASHBOARD";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(495, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Item Inventory";
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(127, 19);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(244, 20);
+            this.search.TabIndex = 23;
+            // 
             // FormInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1369, 443);
+            this.ClientSize = new System.Drawing.Size(1151, 296);
+            this.Controls.Add(this.search);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.dgvInventory);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gboxitemdetails);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInventory";
             this.Text = "Inventory";
             this.Load += new System.EventHandler(this.FormInventory_Load);
@@ -302,6 +268,7 @@
             this.gboxitemdetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -309,28 +276,24 @@
 
         private System.Windows.Forms.GroupBox gboxitemdetails;
         private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblDesc;
-        private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Label lblItemCode;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.TextBox txtItemName;
         private System.Windows.Forms.TextBox txtItemCode;
-        private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvInventory;
-        private System.Windows.Forms.TextBox txtDate;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Label lblsidate;
         private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnStockInOut;
+        private System.Windows.Forms.TextBox txtinvcode;
+        private System.Windows.Forms.Label lblinvcode;
+        private System.Windows.Forms.Label lblsodate;
+        private System.Windows.Forms.TextBox txtsidate;
+        private System.Windows.Forms.TextBox txtstatus;
+        private System.Windows.Forms.Label lblstatus;
+        private System.Windows.Forms.TextBox txtsodate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnOrderList;
+        private System.Windows.Forms.TextBox search;
+        private System.Windows.Forms.Button button1;
     }
 }
