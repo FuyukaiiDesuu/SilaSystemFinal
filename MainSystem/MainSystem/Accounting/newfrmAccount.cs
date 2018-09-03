@@ -55,6 +55,8 @@ namespace MainSystem.Accounting
             dataSearch.Columns["Sex"].HeaderText = "Sex";
             dataSearch.Columns["Religion"].Visible = false;
             dataSearch.Columns["NickName"].HeaderText = "Nickname";
+            dataSearch.Columns["Status"].Visible = false;
+            dataSearch.Columns["idstuddet"].Visible = false;
 
             dataSearch.Columns["fullname"].DisplayIndex = 4;
 

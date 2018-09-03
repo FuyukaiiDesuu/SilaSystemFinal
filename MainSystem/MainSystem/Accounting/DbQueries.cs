@@ -17,6 +17,7 @@ namespace MainSystem.Accounting
         {
             string query = @"SELECT *, concat(sp.LastName, ', ' , sp.FirstName, ' ', sp.MiddleName) as 'fullname'
                             FROM studentprofile as sp
+                            where sp.Status = 1
                             order by sp.idstudentprofile";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
