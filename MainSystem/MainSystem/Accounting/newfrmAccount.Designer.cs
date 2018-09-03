@@ -56,13 +56,14 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.lblStudentID = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataFeeValue = new System.Windows.Forms.DataGridView();
+            this.btnAddFee = new System.Windows.Forms.Button();
+            this.btnUpdateFee = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnUpdateFee = new System.Windows.Forms.Button();
-            this.btnAddFee = new System.Windows.Forms.Button();
-            this.dataFeeValue = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.grpBalanceDetails.SuspendLayout();
@@ -71,6 +72,7 @@
             this.grpStudentDetails.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -80,32 +82,32 @@
             this.tabControl.Location = new System.Drawing.Point(12, 29);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(931, 498);
+            this.tabControl.Size = new System.Drawing.Size(931, 512);
             this.tabControl.TabIndex = 13;
             // 
             // tabStudentTransaction
             // 
+            this.tabStudentTransaction.Controls.Add(this.groupBox1);
+            this.tabStudentTransaction.Controls.Add(this.btnViewPaymentHistory);
             this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
             this.tabStudentTransaction.Controls.Add(this.btnEditAccount);
-            this.tabStudentTransaction.Controls.Add(this.txtSearch);
             this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
-            this.tabStudentTransaction.Controls.Add(this.dataSearch);
             this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
             this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStudentTransaction.Size = new System.Drawing.Size(923, 472);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(923, 486);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
+            this.tabStudentTransaction.Click += new System.EventHandler(this.tabStudentTransaction_Click);
             // 
             // grpBalanceDetails
             // 
-            this.grpBalanceDetails.Controls.Add(this.btnViewPaymentHistory);
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
-            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 28);
+            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 6);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 402);
+            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 424);
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance Details";
@@ -114,10 +116,10 @@
             // 
             this.btnViewPaymentHistory.BackColor = System.Drawing.Color.Transparent;
             this.btnViewPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnViewPaymentHistory.Location = new System.Drawing.Point(7, 356);
+            this.btnViewPaymentHistory.Location = new System.Drawing.Point(309, 436);
             this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
-            this.btnViewPaymentHistory.Size = new System.Drawing.Size(305, 41);
+            this.btnViewPaymentHistory.Size = new System.Drawing.Size(160, 45);
             this.btnViewPaymentHistory.TabIndex = 5;
             this.btnViewPaymentHistory.Text = "View Payment History";
             this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
@@ -131,11 +133,11 @@
             this.dataBalanceDetails.AllowUserToResizeRows = false;
             this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBalanceDetails.Location = new System.Drawing.Point(7, 25);
+            this.dataBalanceDetails.Location = new System.Drawing.Point(7, 19);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.RowHeadersVisible = false;
             this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 326);
+            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 399);
             this.dataBalanceDetails.TabIndex = 0;
             // 
             // btnEditAccount
@@ -144,7 +146,7 @@
             this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.Location = new System.Drawing.Point(140, 436);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(164, 28);
+            this.btnEditAccount.Size = new System.Drawing.Size(164, 45);
             this.btnEditAccount.TabIndex = 3;
             this.btnEditAccount.Text = "Statement of Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
@@ -152,7 +154,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(9, 28);
+            this.txtSearch.Location = new System.Drawing.Point(8, 19);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 1;
@@ -164,7 +166,7 @@
             this.btnAddTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.Location = new System.Drawing.Point(9, 436);
             this.btnAddTransaction.Name = "btnAddTransaction";
-            this.btnAddTransaction.Size = new System.Drawing.Size(125, 28);
+            this.btnAddTransaction.Size = new System.Drawing.Size(125, 45);
             this.btnAddTransaction.TabIndex = 2;
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = true;
@@ -178,11 +180,11 @@
             this.dataSearch.AllowUserToResizeRows = false;
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearch.Location = new System.Drawing.Point(9, 53);
+            this.dataSearch.Location = new System.Drawing.Point(8, 42);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSearch.Size = new System.Drawing.Size(573, 147);
+            this.dataSearch.Size = new System.Drawing.Size(557, 147);
             this.dataSearch.TabIndex = 5;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             // 
@@ -384,6 +386,60 @@
             this.lblStudentID.TabIndex = 0;
             this.lblStudentID.Text = "ID";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataFeeValue);
+            this.tabPage1.Controls.Add(this.btnAddFee);
+            this.tabPage1.Controls.Add(this.btnUpdateFee);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(923, 472);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Fee Management";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataFeeValue
+            // 
+            this.dataFeeValue.AllowUserToAddRows = false;
+            this.dataFeeValue.AllowUserToDeleteRows = false;
+            this.dataFeeValue.AllowUserToResizeColumns = false;
+            this.dataFeeValue.AllowUserToResizeRows = false;
+            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
+            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataFeeValue.Location = new System.Drawing.Point(6, 6);
+            this.dataFeeValue.Name = "dataFeeValue";
+            this.dataFeeValue.RowHeadersVisible = false;
+            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataFeeValue.Size = new System.Drawing.Size(911, 426);
+            this.dataFeeValue.TabIndex = 7;
+            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
+            // 
+            // btnAddFee
+            // 
+            this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFee.Location = new System.Drawing.Point(6, 438);
+            this.btnAddFee.Name = "btnAddFee";
+            this.btnAddFee.Size = new System.Drawing.Size(125, 28);
+            this.btnAddFee.TabIndex = 5;
+            this.btnAddFee.Text = "Add Fee";
+            this.btnAddFee.UseVisualStyleBackColor = true;
+            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
+            // 
+            // btnUpdateFee
+            // 
+            this.btnUpdateFee.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateFee.Enabled = false;
+            this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnUpdateFee.Location = new System.Drawing.Point(136, 438);
+            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateFee.Name = "btnUpdateFee";
+            this.btnUpdateFee.Size = new System.Drawing.Size(125, 28);
+            this.btnUpdateFee.TabIndex = 6;
+            this.btnUpdateFee.Text = "Update Fee";
+            this.btnUpdateFee.UseVisualStyleBackColor = false;
+            this.btnUpdateFee.Click += new System.EventHandler(this.btnUpdateFee_Click);
+            // 
             // btnDashboard
             // 
             this.btnDashboard.Location = new System.Drawing.Point(843, 8);
@@ -414,59 +470,16 @@
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
             // 
-            // tabPage1
+            // groupBox1
             // 
-            this.tabPage1.Controls.Add(this.dataFeeValue);
-            this.tabPage1.Controls.Add(this.btnAddFee);
-            this.tabPage1.Controls.Add(this.btnUpdateFee);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(923, 472);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "Fee Management";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateFee
-            // 
-            this.btnUpdateFee.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateFee.Enabled = false;
-            this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnUpdateFee.Location = new System.Drawing.Point(136, 438);
-            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateFee.Name = "btnUpdateFee";
-            this.btnUpdateFee.Size = new System.Drawing.Size(125, 28);
-            this.btnUpdateFee.TabIndex = 6;
-            this.btnUpdateFee.Text = "Update Fee";
-            this.btnUpdateFee.UseVisualStyleBackColor = false;
-            this.btnUpdateFee.Click += new System.EventHandler(this.btnUpdateFee_Click);
-            // 
-            // btnAddFee
-            // 
-            this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFee.Location = new System.Drawing.Point(6, 438);
-            this.btnAddFee.Name = "btnAddFee";
-            this.btnAddFee.Size = new System.Drawing.Size(125, 28);
-            this.btnAddFee.TabIndex = 5;
-            this.btnAddFee.Text = "Add Fee";
-            this.btnAddFee.UseVisualStyleBackColor = true;
-            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
-            // 
-            // dataFeeValue
-            // 
-            this.dataFeeValue.AllowUserToAddRows = false;
-            this.dataFeeValue.AllowUserToDeleteRows = false;
-            this.dataFeeValue.AllowUserToResizeColumns = false;
-            this.dataFeeValue.AllowUserToResizeRows = false;
-            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
-            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataFeeValue.Location = new System.Drawing.Point(6, 6);
-            this.dataFeeValue.Name = "dataFeeValue";
-            this.dataFeeValue.RowHeadersVisible = false;
-            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(911, 426);
-            this.dataFeeValue.TabIndex = 7;
-            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
+            this.groupBox1.Controls.Add(this.dataSearch);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(573, 196);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Account List";
             // 
             // newfrmAccount
             // 
@@ -484,7 +497,6 @@
             this.Load += new System.EventHandler(this.newfrmAccount_Load);
             this.tabControl.ResumeLayout(false);
             this.tabStudentTransaction.ResumeLayout(false);
-            this.tabStudentTransaction.PerformLayout();
             this.grpBalanceDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
@@ -492,6 +504,8 @@
             this.grpStudentDetails.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,5 +548,6 @@
         private System.Windows.Forms.Button btnUpdateFee;
         public System.Windows.Forms.DataGridView dataFeeValue;
         private System.Windows.Forms.Button btnAddFee;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

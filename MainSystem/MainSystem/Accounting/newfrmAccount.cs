@@ -18,6 +18,11 @@ namespace MainSystem.Accounting
         public string uname;
         string fullname;
         public string uid;
+        public MySqlConnection dbconnection;
+        dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;
+
 
         string fee_type;
         string current_amount;
@@ -67,6 +72,7 @@ namespace MainSystem.Accounting
 
         public void loadBalanceDetails(string student_id)
         {
+            /*
             DataTable balanceDisplay = dbquery.balanceDetails(student_id);
             this.dataBalanceDetails.DataSource = balanceDisplay;
 
@@ -78,7 +84,19 @@ namespace MainSystem.Accounting
             dataBalanceDetails.Columns["adid"].Visible = false;
             dataBalanceDetails.Columns["fid"].Visible = false;
 
-            dataBalanceDetails.ReadOnly = true;
+            dataBalanceDetails.ReadOnly = true;*/
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT paid_amount, payment_status, spid, did, fid, FirstName, LastName, MiddleName, Status " +
+                    "FROM accountdetails " +
+                    "INNER JOIN studentprofile " +
+                    "ON accountdetails.spid = studentprofile.idstudentprofile";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataBalanceDetails.DataSource = dt;
+            }
+            dataBalanceDetails.ClearSelection();
             this.dataBalanceDetails.Refresh();
         }
         public void loadPaymentDetails(string adid)
@@ -247,6 +265,11 @@ namespace MainSystem.Accounting
             string lastname = txtSearch.Text;
             DataTable holder = dbquery.SearchStudent(lastname);
             dataSearch.DataSource = holder;
+        }
+
+        private void tabStudentTransaction_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

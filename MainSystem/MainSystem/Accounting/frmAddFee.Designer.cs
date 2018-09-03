@@ -30,13 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpAddFee = new System.Windows.Forms.GroupBox();
-            this.dateYearEnd = new System.Windows.Forms.DateTimePicker();
-            this.dateYearStart = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.txtFeeDescription = new System.Windows.Forms.TextBox();
             this.lblFeeDescription = new System.Windows.Forms.Label();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
             this.lblGradeLevel = new System.Windows.Forms.Label();
@@ -47,72 +42,33 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblDate2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.grpAddFee.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAddFee
             // 
-            this.grpAddFee.Controls.Add(this.dateYearEnd);
-            this.grpAddFee.Controls.Add(this.dateYearStart);
-            this.grpAddFee.Controls.Add(this.label2);
-            this.grpAddFee.Controls.Add(this.label1);
+            this.grpAddFee.Controls.Add(this.label3);
+            this.grpAddFee.Controls.Add(this.textBox1);
+            this.grpAddFee.Controls.Add(this.comboBox1);
             this.grpAddFee.Controls.Add(this.txtAmount);
             this.grpAddFee.Controls.Add(this.lblAmount);
-            this.grpAddFee.Controls.Add(this.txtFeeDescription);
             this.grpAddFee.Controls.Add(this.lblFeeDescription);
             this.grpAddFee.Controls.Add(this.cmbGradeLevel);
             this.grpAddFee.Controls.Add(this.lblGradeLevel);
             this.grpAddFee.Location = new System.Drawing.Point(12, 55);
             this.grpAddFee.Name = "grpAddFee";
-            this.grpAddFee.Size = new System.Drawing.Size(566, 263);
+            this.grpAddFee.Size = new System.Drawing.Size(566, 254);
             this.grpAddFee.TabIndex = 0;
             this.grpAddFee.TabStop = false;
             this.grpAddFee.Text = "Add Fee";
-            // 
-            // dateYearEnd
-            // 
-            this.dateYearEnd.CustomFormat = "yyyy/MM/dd";
-            this.dateYearEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateYearEnd.Location = new System.Drawing.Point(448, 94);
-            this.dateYearEnd.Margin = new System.Windows.Forms.Padding(2);
-            this.dateYearEnd.Name = "dateYearEnd";
-            this.dateYearEnd.Size = new System.Drawing.Size(109, 20);
-            this.dateYearEnd.TabIndex = 5;
-            // 
-            // dateYearStart
-            // 
-            this.dateYearStart.CustomFormat = "yyyy/MM/dd";
-            this.dateYearStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateYearStart.Location = new System.Drawing.Point(448, 41);
-            this.dateYearStart.Margin = new System.Windows.Forms.Padding(2);
-            this.dateYearStart.Name = "dateYearStart";
-            this.dateYearStart.Size = new System.Drawing.Size(109, 20);
-            this.dateYearStart.TabIndex = 4;
-            this.dateYearStart.ValueChanged += new System.EventHandler(this.dateYearStart_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(335, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 16);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "School Year End";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(335, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "School Year Start";
+            this.grpAddFee.Enter += new System.EventHandler(this.grpAddFee_Enter);
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(115, 222);
+            this.txtAmount.Location = new System.Drawing.Point(116, 178);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(200, 20);
             this.txtAmount.TabIndex = 3;
@@ -121,29 +77,21 @@
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(6, 223);
+            this.lblAmount.Location = new System.Drawing.Point(54, 182);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(53, 16);
+            this.lblAmount.Size = new System.Drawing.Size(56, 16);
             this.lblAmount.TabIndex = 14;
-            this.lblAmount.Text = "Amount";
-            // 
-            // txtFeeDescription
-            // 
-            this.txtFeeDescription.Location = new System.Drawing.Point(115, 94);
-            this.txtFeeDescription.Multiline = true;
-            this.txtFeeDescription.Name = "txtFeeDescription";
-            this.txtFeeDescription.Size = new System.Drawing.Size(200, 97);
-            this.txtFeeDescription.TabIndex = 2;
+            this.lblAmount.Text = "Amount:";
             // 
             // lblFeeDescription
             // 
             this.lblFeeDescription.AutoSize = true;
             this.lblFeeDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeeDescription.Location = new System.Drawing.Point(6, 94);
+            this.lblFeeDescription.Location = new System.Drawing.Point(6, 78);
             this.lblFeeDescription.Name = "lblFeeDescription";
-            this.lblFeeDescription.Size = new System.Drawing.Size(103, 16);
+            this.lblFeeDescription.Size = new System.Drawing.Size(106, 16);
             this.lblFeeDescription.TabIndex = 10;
-            this.lblFeeDescription.Text = "Fee Description";
+            this.lblFeeDescription.Text = "Fee Description:";
             // 
             // cmbGradeLevel
             // 
@@ -248,6 +196,32 @@
             this.lblDate2.TabIndex = 16;
             this.lblDate2.Text = "Date";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(116, 77);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(199, 21);
+            this.comboBox1.TabIndex = 18;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(154, 114);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(161, 55);
+            this.textBox1.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 16);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Others Please Specify:";
+            // 
             // frmAddFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,7 +254,6 @@
         private System.Windows.Forms.Label lblGradeLevel;
         public System.Windows.Forms.ComboBox cmbGradeLevel;
         private System.Windows.Forms.Label lblFeeDescription;
-        public System.Windows.Forms.TextBox txtFeeDescription;
         public System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label lblDate;
@@ -290,9 +263,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblDate2;
-        private System.Windows.Forms.DateTimePicker dateYearEnd;
-        private System.Windows.Forms.DateTimePicker dateYearStart;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

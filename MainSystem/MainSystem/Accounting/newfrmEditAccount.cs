@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MainSystem.Accounting
 {
     public partial class newfrmEditAccount : Form
     {
+        public MySqlConnection dbconnection;
+        dbConnector connect = new dbConnector();
         public Accounting.newfrmAccount reference { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         public DataTable editacc = null;
@@ -29,6 +32,10 @@ namespace MainSystem.Accounting
             lblUser.Text = uname;
             txtStudentID.Text = id;
             txtStudentName.Text = name;
+
+
+
+            /*
             DataTable adid = dbquery.getAdid(id);
             txtStudentAccountID.Text = adid.Rows[0][0].ToString();
             txtDateDue.Text = adid.Rows[0][1].ToString();
@@ -36,7 +43,7 @@ namespace MainSystem.Accounting
             txtCurrentBalance.Text = adid.Rows[0][3].ToString();
             txtPaidAmount.Text = adid.Rows[0][4].ToString();
             lblPaymentStatus2.Text = adid.Rows[0][5].ToString();
-            TextColor();
+            TextColor();*/
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

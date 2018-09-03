@@ -35,9 +35,9 @@ namespace MainSystem.Accounting
             {
                 cmbGradeLevel.Text = dtadd.Rows[0]["fee_type"].ToString();
                 txtAmount.Text = dtadd.Rows[0]["current_amount"].ToString();
-                txtFeeDescription.Text = dtadd.Rows[0]["fee_description"].ToString();
-                dateYearStart.Value = Convert.ToDateTime(dtadd.Rows[0]["school_year_start"]);
-                dateYearEnd.Value = Convert.ToDateTime(dtadd.Rows[0]["school_year_end"]);
+                //txtFeeDescription.Text = dtadd.Rows[0]["fee_description"].ToString();
+                //dateYearStart.Value = Convert.ToDateTime(dtadd.Rows[0]["school_year_start"]);
+                //dateYearEnd.Value = Convert.ToDateTime(dtadd.Rows[0]["school_year_end"]);
                 btnAdd.Text = "Update";
             }
         }
@@ -116,6 +116,9 @@ namespace MainSystem.Accounting
             {
                 s_key = "14";
             }
+
+
+            /*
             string balance = "";
             if (checker == true)
             {
@@ -175,13 +178,18 @@ namespace MainSystem.Accounting
                 reference.Show();
                 reference.loadFeeDetails();
                 this.Close();
-            }
+            }*/
         }
 
         private void dateYearStart_ValueChanged(object sender, EventArgs e)
         {
             dateYearEnd.Enabled = true;
             dateYearEnd.MinDate = dateYearStart.Value;
+        }
+
+        private void grpAddFee_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
