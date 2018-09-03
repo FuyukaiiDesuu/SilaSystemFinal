@@ -52,7 +52,7 @@ namespace MainSystem.Accounting
         public DataTable feevalues()
         {
             string query = @"Select * 
-                             from feevalues";
+                             from feevalues WHERE status = 1 ORDER BY f_key ASC;";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }

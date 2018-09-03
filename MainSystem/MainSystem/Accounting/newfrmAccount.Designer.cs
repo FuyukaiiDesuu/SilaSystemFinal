@@ -30,13 +30,14 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
-            this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataSearch = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
+            this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
             this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
             this.btnEditAccount = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAddTransaction = new System.Windows.Forms.Button();
-            this.dataSearch = new System.Windows.Forms.DataGridView();
             this.grpStudentDetails = new System.Windows.Forms.GroupBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
@@ -63,16 +64,15 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpBalanceDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpStudentDetails.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -102,15 +102,40 @@
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
             this.tabStudentTransaction.Click += new System.EventHandler(this.tabStudentTransaction_Click);
             // 
-            // grpBalanceDetails
+            // groupBox1
             // 
-            this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
-            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 6);
-            this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 424);
-            this.grpBalanceDetails.TabIndex = 11;
-            this.grpBalanceDetails.TabStop = false;
-            this.grpBalanceDetails.Text = "Balance Details";
+            this.groupBox1.Controls.Add(this.dataSearch);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(573, 196);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Account List";
+            // 
+            // dataSearch
+            // 
+            this.dataSearch.AllowUserToAddRows = false;
+            this.dataSearch.AllowUserToDeleteRows = false;
+            this.dataSearch.AllowUserToResizeColumns = false;
+            this.dataSearch.AllowUserToResizeRows = false;
+            this.dataSearch.BackgroundColor = System.Drawing.Color.White;
+            this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSearch.Location = new System.Drawing.Point(8, 42);
+            this.dataSearch.Name = "dataSearch";
+            this.dataSearch.RowHeadersVisible = false;
+            this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataSearch.Size = new System.Drawing.Size(557, 147);
+            this.dataSearch.TabIndex = 5;
+            this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(8, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(231, 20);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnViewPaymentHistory
             // 
@@ -124,6 +149,16 @@
             this.btnViewPaymentHistory.Text = "View Payment History";
             this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
             this.btnViewPaymentHistory.Click += new System.EventHandler(this.btnViewPaymentHistory_Click);
+            // 
+            // grpBalanceDetails
+            // 
+            this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
+            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 6);
+            this.grpBalanceDetails.Name = "grpBalanceDetails";
+            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 424);
+            this.grpBalanceDetails.TabIndex = 11;
+            this.grpBalanceDetails.TabStop = false;
+            this.grpBalanceDetails.Text = "Balance Details";
             // 
             // dataBalanceDetails
             // 
@@ -152,14 +187,6 @@
             this.btnEditAccount.UseVisualStyleBackColor = true;
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(8, 19);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(231, 20);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // btnAddTransaction
             // 
             this.btnAddTransaction.Enabled = false;
@@ -171,22 +198,6 @@
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = true;
             this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
-            // 
-            // dataSearch
-            // 
-            this.dataSearch.AllowUserToAddRows = false;
-            this.dataSearch.AllowUserToDeleteRows = false;
-            this.dataSearch.AllowUserToResizeColumns = false;
-            this.dataSearch.AllowUserToResizeRows = false;
-            this.dataSearch.BackgroundColor = System.Drawing.Color.White;
-            this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearch.Location = new System.Drawing.Point(8, 42);
-            this.dataSearch.Name = "dataSearch";
-            this.dataSearch.RowHeadersVisible = false;
-            this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSearch.Size = new System.Drawing.Size(557, 147);
-            this.dataSearch.TabIndex = 5;
-            this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             // 
             // grpStudentDetails
             // 
@@ -394,7 +405,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(923, 472);
+            this.tabPage1.Size = new System.Drawing.Size(923, 486);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Fee Management";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -414,6 +425,7 @@
             this.dataFeeValue.Size = new System.Drawing.Size(911, 426);
             this.dataFeeValue.TabIndex = 7;
             this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
+            this.dataFeeValue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellContentClick);
             // 
             // btnAddFee
             // 
@@ -470,17 +482,6 @@
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataSearch);
-            this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(573, 196);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Account List";
-            // 
             // newfrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,15 +498,15 @@
             this.Load += new System.EventHandler(this.newfrmAccount_Load);
             this.tabControl.ResumeLayout(false);
             this.tabStudentTransaction.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
             this.grpBalanceDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
             this.grpStudentDetails.ResumeLayout(false);
             this.grpStudentDetails.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -13,6 +13,7 @@ namespace MainSystem
 {
     public partial class editStudent : Form
     {
+        
         public EnrollmentConsole reference { get; set; }
         public string idstud;
         public editStudent(string idstudent, IDictionary<string, string> dic)

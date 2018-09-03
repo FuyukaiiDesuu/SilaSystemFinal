@@ -23,13 +23,13 @@ namespace MainSystem.Accounting
         MySqlDataAdapter adapter;
         DataTable dt;
 
-
+        /*
         string fee_type;
         string current_amount;
         string school_year_start;
         string school_year_end;
         string fid;
-        string fee_description;
+        string fee_description;*/
         
         public newfrmAccount(string uname)
         {
@@ -117,9 +117,10 @@ namespace MainSystem.Accounting
             dataFeeValue.Columns["fee_type"].HeaderText = "Fee Type";
             dataFeeValue.Columns["fee_description"].HeaderText = "Fee Description";
             dataFeeValue.Columns["current_amount"].HeaderText = "Current Amount";
-            dataFeeValue.Columns["school_year_start"].HeaderText = "School Year Start";
-            dataFeeValue.Columns["school_year_end"].HeaderText = "School Year End";
+            //dataFeeValue.Columns["school_year_start"].HeaderText = "School Year Start";
+            // dataFeeValue.Columns["school_year_end"].HeaderText = "School Year End";
 
+            dataFeeValue.Columns["Status"].Visible = false;
             dataFeeValue.Columns["fid"].Visible = false;
             dataFeeValue.Columns["date_modified"].Visible = false;
             dataFeeValue.Columns["date_created"].Visible = false;
@@ -209,19 +210,21 @@ namespace MainSystem.Accounting
             editaccount.reference = this;
             this.Hide();
         }
-
+        public IDictionary<string, string> dic;
         private void dataFeeValue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
+                dic = new Dictionary<string, string>();
+                dic.Add("fid", dataFeeValue.Rows[e.RowIndex].Cells["fid"].Value.ToString());
+                dic.Add("dc", dataFeeValue.Rows[e.RowIndex].Cells["date_created"].Value.ToString());
+                dic.Add("ftype", dataFeeValue.Rows[e.RowIndex].Cells["fee_type"].Value.ToString());
+                dic.Add("amount", dataFeeValue.Rows[e.RowIndex].Cells["current_amount"].Value.ToString());
+                dic.Add("fdesc", dataFeeValue.Rows[e.RowIndex].Cells["fee_description"].Value.ToString());
+                dic.Add("mdesc", dataFeeValue.Rows[e.RowIndex].Cells["misc_desc"].Value.ToString());
+                dic.Add("sy", dataFeeValue.Rows[e.RowIndex].Cells["syear"].Value.ToString());
                 btnUpdateFee.Enabled = true;
-
-                fid = dataFeeValue.Rows[e.RowIndex].Cells["fid"].Value.ToString();
-                fee_type = dataFeeValue.Rows[e.RowIndex].Cells["fee_type"].Value.ToString();
-                current_amount = dataFeeValue.Rows[e.RowIndex].Cells["current_amount"].Value.ToString();
-                fee_description = dataFeeValue.Rows[e.RowIndex].Cells["fee_description"].Value.ToString();
-                school_year_start = dataFeeValue.Rows[e.RowIndex].Cells["school_year_start"].Value.ToString();
-                school_year_end = dataFeeValue.Rows[e.RowIndex].Cells["school_year_end"].Value.ToString();
+               
             }
             else
             { return; }
@@ -241,18 +244,7 @@ namespace MainSystem.Accounting
 
         private void btnUpdateFee_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            DataTable holder = dbquery.User(uname);
-            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-            dt.Columns.Add("fid");
-            dt.Columns.Add("fee_type");
-            dt.Columns.Add("current_amount");
-            dt.Columns.Add("school_year_start");
-            dt.Columns.Add("school_year_end");
-            dt.Columns.Add("fee_description");
-            dt.Rows.Add(fid, fee_type, current_amount, school_year_start, school_year_end, fee_description);
-
-            addfee = new Accounting.frmAddFee(false);
+            addfee = new Accounting.frmAddFee(false, dic);
             addfee.uname = uname;
             addfee.dtadd = dt;
             addfee.Show();
@@ -268,6 +260,11 @@ namespace MainSystem.Accounting
         }
 
         private void tabStudentTransaction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataFeeValue_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
