@@ -94,5 +94,59 @@ namespace MainSystem
         {
            
         }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if(txtUsername.Text == "Username")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = Color.FromArgb(246, 207, 86);
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Password")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.FromArgb(246, 207, 86);
+            }
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Username";
+                txtUsername.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "Password";
+                txtPassword.ForeColor = Color.Silver;
+            }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

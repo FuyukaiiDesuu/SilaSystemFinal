@@ -95,5 +95,23 @@ namespace MainSystem
             reference.loadData();
             this.Close();
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
