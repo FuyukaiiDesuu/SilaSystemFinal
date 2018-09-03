@@ -153,8 +153,10 @@
             this.cmbGradeLevel.ItemHeight = 13;
             this.cmbGradeLevel.Items.AddRange(new object[] {
             "",
+            "Toddler",
             "Nursery",
             "Kindergarten",
+            "Preparatory",
             "Grade 1",
             "Grade 2",
             "Grade 3",

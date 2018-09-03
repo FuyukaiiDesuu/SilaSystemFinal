@@ -30,15 +30,11 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
-            this.grpFeeValue = new System.Windows.Forms.GroupBox();
-            this.btnUpdateFee = new System.Windows.Forms.Button();
-            this.dataFeeValue = new System.Windows.Forms.DataGridView();
             this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
             this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnAddFee = new System.Windows.Forms.Button();
             this.btnAddTransaction = new System.Windows.Forms.Button();
             this.dataSearch = new System.Windows.Forms.DataGridView();
             this.grpStudentDetails = new System.Windows.Forms.GroupBox();
@@ -63,19 +59,24 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnUpdateFee = new System.Windows.Forms.Button();
+            this.btnAddFee = new System.Windows.Forms.Button();
+            this.dataFeeValue = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
-            this.grpFeeValue.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
             this.grpBalanceDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
             this.grpStudentDetails.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabStudentTransaction);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Location = new System.Drawing.Point(12, 29);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -84,11 +85,9 @@
             // 
             // tabStudentTransaction
             // 
-            this.tabStudentTransaction.Controls.Add(this.grpFeeValue);
             this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
             this.tabStudentTransaction.Controls.Add(this.btnEditAccount);
             this.tabStudentTransaction.Controls.Add(this.txtSearch);
-            this.tabStudentTransaction.Controls.Add(this.btnAddFee);
             this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
             this.tabStudentTransaction.Controls.Add(this.dataSearch);
             this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
@@ -100,54 +99,13 @@
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
             // 
-            // grpFeeValue
-            // 
-            this.grpFeeValue.Controls.Add(this.btnUpdateFee);
-            this.grpFeeValue.Controls.Add(this.dataFeeValue);
-            this.grpFeeValue.Location = new System.Drawing.Point(588, 206);
-            this.grpFeeValue.Name = "grpFeeValue";
-            this.grpFeeValue.Size = new System.Drawing.Size(322, 224);
-            this.grpFeeValue.TabIndex = 12;
-            this.grpFeeValue.TabStop = false;
-            this.grpFeeValue.Text = "Fee";
-            // 
-            // btnUpdateFee
-            // 
-            this.btnUpdateFee.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateFee.Enabled = false;
-            this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnUpdateFee.Location = new System.Drawing.Point(7, 176);
-            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateFee.Name = "btnUpdateFee";
-            this.btnUpdateFee.Size = new System.Drawing.Size(305, 41);
-            this.btnUpdateFee.TabIndex = 6;
-            this.btnUpdateFee.Text = "Update Fee";
-            this.btnUpdateFee.UseVisualStyleBackColor = false;
-            this.btnUpdateFee.Click += new System.EventHandler(this.btnUpdateFee_Click);
-            // 
-            // dataFeeValue
-            // 
-            this.dataFeeValue.AllowUserToAddRows = false;
-            this.dataFeeValue.AllowUserToDeleteRows = false;
-            this.dataFeeValue.AllowUserToResizeColumns = false;
-            this.dataFeeValue.AllowUserToResizeRows = false;
-            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
-            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataFeeValue.Location = new System.Drawing.Point(7, 25);
-            this.dataFeeValue.Name = "dataFeeValue";
-            this.dataFeeValue.RowHeadersVisible = false;
-            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(305, 145);
-            this.dataFeeValue.TabIndex = 1;
-            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
-            // 
             // grpBalanceDetails
             // 
             this.grpBalanceDetails.Controls.Add(this.btnViewPaymentHistory);
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
             this.grpBalanceDetails.Location = new System.Drawing.Point(588, 28);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 172);
+            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 402);
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance Details";
@@ -156,7 +114,7 @@
             // 
             this.btnViewPaymentHistory.BackColor = System.Drawing.Color.Transparent;
             this.btnViewPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnViewPaymentHistory.Location = new System.Drawing.Point(7, 125);
+            this.btnViewPaymentHistory.Location = new System.Drawing.Point(7, 356);
             this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
             this.btnViewPaymentHistory.Size = new System.Drawing.Size(305, 41);
@@ -177,7 +135,7 @@
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.RowHeadersVisible = false;
             this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 94);
+            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 326);
             this.dataBalanceDetails.TabIndex = 0;
             // 
             // btnEditAccount
@@ -199,17 +157,6 @@
             this.txtSearch.Size = new System.Drawing.Size(231, 20);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // btnAddFee
-            // 
-            this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFee.Location = new System.Drawing.Point(310, 436);
-            this.btnAddFee.Name = "btnAddFee";
-            this.btnAddFee.Size = new System.Drawing.Size(125, 28);
-            this.btnAddFee.TabIndex = 4;
-            this.btnAddFee.Text = "Add Fee";
-            this.btnAddFee.UseVisualStyleBackColor = true;
-            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
             // 
             // btnAddTransaction
             // 
@@ -467,6 +414,60 @@
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataFeeValue);
+            this.tabPage1.Controls.Add(this.btnAddFee);
+            this.tabPage1.Controls.Add(this.btnUpdateFee);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(923, 472);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Fee Management";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateFee
+            // 
+            this.btnUpdateFee.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateFee.Enabled = false;
+            this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnUpdateFee.Location = new System.Drawing.Point(136, 438);
+            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateFee.Name = "btnUpdateFee";
+            this.btnUpdateFee.Size = new System.Drawing.Size(125, 28);
+            this.btnUpdateFee.TabIndex = 6;
+            this.btnUpdateFee.Text = "Update Fee";
+            this.btnUpdateFee.UseVisualStyleBackColor = false;
+            this.btnUpdateFee.Click += new System.EventHandler(this.btnUpdateFee_Click);
+            // 
+            // btnAddFee
+            // 
+            this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFee.Location = new System.Drawing.Point(6, 438);
+            this.btnAddFee.Name = "btnAddFee";
+            this.btnAddFee.Size = new System.Drawing.Size(125, 28);
+            this.btnAddFee.TabIndex = 5;
+            this.btnAddFee.Text = "Add Fee";
+            this.btnAddFee.UseVisualStyleBackColor = true;
+            this.btnAddFee.Click += new System.EventHandler(this.btnAddFee_Click);
+            // 
+            // dataFeeValue
+            // 
+            this.dataFeeValue.AllowUserToAddRows = false;
+            this.dataFeeValue.AllowUserToDeleteRows = false;
+            this.dataFeeValue.AllowUserToResizeColumns = false;
+            this.dataFeeValue.AllowUserToResizeRows = false;
+            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
+            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataFeeValue.Location = new System.Drawing.Point(6, 6);
+            this.dataFeeValue.Name = "dataFeeValue";
+            this.dataFeeValue.RowHeadersVisible = false;
+            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataFeeValue.Size = new System.Drawing.Size(911, 426);
+            this.dataFeeValue.TabIndex = 7;
+            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
+            // 
             // newfrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,13 +485,13 @@
             this.tabControl.ResumeLayout(false);
             this.tabStudentTransaction.ResumeLayout(false);
             this.tabStudentTransaction.PerformLayout();
-            this.grpFeeValue.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
             this.grpBalanceDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
             this.grpStudentDetails.ResumeLayout(false);
             this.grpStudentDetails.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,7 +502,6 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabStudentTransaction;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnAddFee;
         private System.Windows.Forms.Button btnAddTransaction;
         private System.Windows.Forms.GroupBox grpStudentDetails;
         public System.Windows.Forms.TextBox txtLastName;
@@ -526,12 +526,13 @@
         private System.Windows.Forms.Label lblLoggedinas;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button btnEditAccount;
-        private System.Windows.Forms.GroupBox grpFeeValue;
-        private System.Windows.Forms.Button btnUpdateFee;
-        public System.Windows.Forms.DataGridView dataFeeValue;
         private System.Windows.Forms.GroupBox grpBalanceDetails;
         private System.Windows.Forms.Button btnViewPaymentHistory;
         public System.Windows.Forms.DataGridView dataSearch;
         public System.Windows.Forms.DataGridView dataBalanceDetails;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnUpdateFee;
+        public System.Windows.Forms.DataGridView dataFeeValue;
+        private System.Windows.Forms.Button btnAddFee;
     }
 }

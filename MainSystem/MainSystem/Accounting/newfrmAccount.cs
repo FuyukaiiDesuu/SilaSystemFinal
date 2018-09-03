@@ -107,6 +107,8 @@ namespace MainSystem.Accounting
             dataFeeValue.Columns["date_created"].Visible = false;
             dataFeeValue.Columns["f_key"].Visible = false;
 
+            this.dataFeeValue.Columns["fee_type"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
             dataFeeValue.ReadOnly = true;
             this.dataFeeValue.Refresh();
         }

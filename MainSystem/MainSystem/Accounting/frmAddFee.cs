@@ -60,53 +60,61 @@ namespace MainSystem.Accounting
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string s_key;
-            if (cmbGradeLevel.Text == "Nursery")
+            if (cmbGradeLevel.Text == "Toddler")
             {
                 s_key = "1";
             }
-            else if (cmbGradeLevel.Text == "Kindergarten")
+            else if (cmbGradeLevel.Text == "Nursery")
             {
                 s_key = "2";
             }
-            else if (cmbGradeLevel.Text == "Grade 1")
+            else if (cmbGradeLevel.Text == "Kindergarten")
             {
                 s_key = "3";
             }
-            else if (cmbGradeLevel.Text == "Grade 2")
+            else if (cmbGradeLevel.Text == "Preparatory")
             {
                 s_key = "4";
             }
-            else if (cmbGradeLevel.Text == "Grade 3")
+            else if (cmbGradeLevel.Text == "Grade 1")
             {
                 s_key = "5";
             }
-            else if (cmbGradeLevel.Text == "Grade 4")
+            else if (cmbGradeLevel.Text == "Grade 2")
             {
                 s_key = "6";
             }
-            else if (cmbGradeLevel.Text == "Grade 5")
+            else if (cmbGradeLevel.Text == "Grade 3")
             {
                 s_key = "7";
             }
-            else if (cmbGradeLevel.Text == "Grade 6")
+            else if (cmbGradeLevel.Text == "Grade 4")
             {
                 s_key = "8";
             }
-            else if (cmbGradeLevel.Text == "Grade 7")
+            else if (cmbGradeLevel.Text == "Grade 5")
             {
                 s_key = "9";
             }
-            else if (cmbGradeLevel.Text == "Grade 8")
+            else if (cmbGradeLevel.Text == "Grade 6")
             {
                 s_key = "10";
             }
-            else if (cmbGradeLevel.Text == "Grade 9")
+            else if (cmbGradeLevel.Text == "Grade 7")
             {
                 s_key = "11";
             }
-            else
+            else if (cmbGradeLevel.Text == "Grade 8")
             {
                 s_key = "12";
+            }
+            else if (cmbGradeLevel.Text == "Grade 9")
+            {
+                s_key = "13";
+            }
+            else
+            {
+                s_key = "14";
             }
             string balance = "";
             if (checker == true)
