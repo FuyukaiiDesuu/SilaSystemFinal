@@ -279,6 +279,7 @@
             this.grpStudentDetails.TabIndex = 24;
             this.grpStudentDetails.TabStop = false;
             this.grpStudentDetails.Text = "Student Details";
+            this.grpStudentDetails.Enter += new System.EventHandler(this.grpStudentDetails_Enter);
             // 
             // txtStudentName
             // 

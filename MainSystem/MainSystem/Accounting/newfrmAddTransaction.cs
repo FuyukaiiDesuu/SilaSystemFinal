@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MainSystem.Accounting
 {
     public partial class newfrmAddTransaction : Form
     {
         public Accounting.newfrmAccount reference { get; set; }
-
-        public DataTable balanceDisplay { get; set; }
-        public DataTable GradeLevelDisplay { get; set; }
+        public MySqlConnection dbconnection;
+        dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;
+        //public DataTable balanceDisplay { get; set; }
+        //public DataTable GradeLevelDisplay { get; set; }
+        /*
         public string id { get; set; }
         public string name { get; set; }
         public string uname { get; set; }
-        public string uid { get; set; }
+        public string uid { get; set; }*/
 
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         bool cmbChecker = false;
@@ -32,6 +37,7 @@ namespace MainSystem.Accounting
 
         private void newfrmAddTransaction_Load(object sender, EventArgs e)
         {
+            /*
             txtStudentID.Text = id;
             lblUserID.Text = uid;
             txtStudentName.Text = name;
@@ -44,68 +50,82 @@ namespace MainSystem.Accounting
             DataTable adid = dbquery.getAdid(id);
             txtAccountID.Text = adid.Rows[0][0].ToString();
             lblUser.Text = uname;
-            lblUserID.Visible = false;
+            lblUserID.Visible = false;*/
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            dbquery.updatePayments(txtTransactionNo.Text, cmbPaymentType.Text, txtChequeNo.Text, txtAmount.Text, lblPaymentDate2.Text, lblUserID.Text, txtAccountID.Text, txtAdditionalDetails.Text, cmbPaymentTo.Text, balanceDisplay.Rows[0]["fid"].ToString());
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                string query2 = "INSERT INTO payment" +
+                    "()" +
+                    "VALUES(@ftype, @fdesc, @mdesc, @cmount, @dcrt, @fkey, @status, @sy);";
+                using (var command2 = new MySqlCommand(query2, dbconnection))
+                {
 
-            string amount;
-            if (balanceDisplay.Rows[0]["paid_amount"].ToString() == null || balanceDisplay.Rows[0]["paid_amount"].ToString() == "")
-            {
-                amount = txtAmount.Text;
-            }
-            else
-            {
-                if (Convert.ToInt32(balanceDisplay.Rows[0]["paid_amount"].ToString()) == 0)
+                    command2.ExecuteNonQuery();
+                }
+
+                /*
+                dbquery.updatePayments(txtTransactionNo.Text, cmbPaymentType.Text, txtChequeNo.Text, txtAmount.Text, lblPaymentDate2.Text, lblUserID.Text, txtAccountID.Text, txtAdditionalDetails.Text, cmbPaymentTo.Text, balanceDisplay.Rows[0]["fid"].ToString());
+
+                string amount;
+                if (balanceDisplay.Rows[0]["paid_amount"].ToString() == null || balanceDisplay.Rows[0]["paid_amount"].ToString() == "")
                 {
                     amount = txtAmount.Text;
                 }
                 else
                 {
-                    amount = (Convert.ToInt32(balanceDisplay.Rows[0]["paid_amount"].ToString()) + Convert.ToInt32(txtAmount.Text)).ToString();
+                    if (Convert.ToInt32(balanceDisplay.Rows[0]["paid_amount"].ToString()) == 0)
+                    {
+                        amount = txtAmount.Text;
+                    }
+                    else
+                    {
+                        amount = (Convert.ToInt32(balanceDisplay.Rows[0]["paid_amount"].ToString()) + Convert.ToInt32(txtAmount.Text)).ToString();
+                    }
                 }
-            }
 
-            if (cmbPaymentTo.Text == "Others")
-            {
-                if (Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) == 0 || Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) < 0)
+                if (cmbPaymentTo.Text == "Others")
                 {
-                    dbquery.updateAccountDetails(txtAccountID.Text, balanceDisplay.Rows[0]["current_balance"].ToString(), amount, "PAID");
-                    dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), balanceDisplay.Rows[0]["current_balance"].ToString(), txtAmount.Text, "PAID", txtStudentName.Text);
+                    if (Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) == 0 || Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) < 0)
+                    {
+                        dbquery.updateAccountDetails(txtAccountID.Text, balanceDisplay.Rows[0]["current_balance"].ToString(), amount, "PAID");
+                        dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), balanceDisplay.Rows[0]["current_balance"].ToString(), txtAmount.Text, "PAID", txtStudentName.Text);
+                    }
+                    else
+                    {
+                        dbquery.updateAccountDetails(txtAccountID.Text, balanceDisplay.Rows[0]["current_balance"].ToString(), amount, "PARTIALLY PAID");
+                        dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), balanceDisplay.Rows[0]["current_balance"].ToString(), txtAmount.Text, "PARTIALLY PAID", txtStudentName.Text);
+                    }
+
                 }
                 else
                 {
-                    dbquery.updateAccountDetails(txtAccountID.Text, balanceDisplay.Rows[0]["current_balance"].ToString(), amount, "PARTIALLY PAID");
-                    dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), balanceDisplay.Rows[0]["current_balance"].ToString(), txtAmount.Text, "PARTIALLY PAID", txtStudentName.Text);
+                    string currentbal = (Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) - Convert.ToInt32(txtAmount.Text)).ToString();
+                    if (Convert.ToInt32(currentbal) == 0 || Convert.ToInt32(currentbal) < 0)
+                    {
+                        dbquery.updateAccountDetails(txtAccountID.Text, currentbal, amount, "PAID");
+                        dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), currentbal, txtAmount.Text, "PAID", txtStudentName.Text);
+                    }
+                    else
+                    {
+                        dbquery.updateAccountDetails(txtAccountID.Text, currentbal, amount, "PARTIALLY PAID");
+                        dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), currentbal, txtAmount.Text, "PARTIALLY PAID", txtStudentName.Text);
+                    }
                 }
+                */
 
+                MessageBox.Show("Succesfully Paid");
+                reference.Show();
+                //reference.loadBalanceDetails(id);
+                reference.dataSearch.ClearSelection();
+                reference.dataBalanceDetails.ClearSelection();
+                this.Close();
             }
-            else
-            {
-                string currentbal = (Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) - Convert.ToInt32(txtAmount.Text)).ToString();
-                if (Convert.ToInt32(currentbal) == 0 || Convert.ToInt32(currentbal) < 0)
-                {
-                    dbquery.updateAccountDetails(txtAccountID.Text, currentbal, amount, "PAID");
-                    dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), currentbal, txtAmount.Text, "PAID", txtStudentName.Text);
-                }
-                else
-                {
-                    dbquery.updateAccountDetails(txtAccountID.Text, currentbal, amount, "PARTIALLY PAID");
-                    dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), currentbal, txtAmount.Text, "PARTIALLY PAID", txtStudentName.Text);
-                }
-            }
-
-
-            MessageBox.Show("Succesfully Paid");
-            reference.Show();
-            reference.loadBalanceDetails(id);
-            reference.dataSearch.ClearSelection();
-            reference.dataBalanceDetails.ClearSelection();
-            this.Close();
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
@@ -131,7 +151,7 @@ namespace MainSystem.Accounting
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblPaymentDate2.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            lblPaymentDate3.Text = DateTime.Now.ToString("tt");
+            //lblPaymentDate3.Text = DateTime.Now.ToString("tt");
             timer1.Start();
         }
 

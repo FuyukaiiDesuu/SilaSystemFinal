@@ -184,6 +184,7 @@
             this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataBalanceDetails.Size = new System.Drawing.Size(407, 491);
             this.dataBalanceDetails.TabIndex = 0;
+            this.dataBalanceDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellContentClick);
             // 
             // btnEditAccount
             // 

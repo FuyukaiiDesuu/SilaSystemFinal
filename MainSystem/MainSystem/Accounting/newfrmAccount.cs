@@ -170,6 +170,7 @@ namespace MainSystem.Accounting
         public Accounting.newfrmAddTransaction transac;
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
+            /*
             DataTable holder = dbquery.User(uname);
             DataTable holder2 = dbquery.UserID(uid);
             uid = holder2.Rows[0]["empID"].ToString();
@@ -180,7 +181,8 @@ namespace MainSystem.Accounting
             transac.id = txtStudentID.Text.ToString();
             transac.balanceDisplay = (dataBalanceDetails.DataSource as DataTable);
             transac.GradeLevelDisplay = (dataBalanceDetails.DataSource as DataTable);
-            transac.name = fullname.ToString();
+            transac.name = fullname.ToString();*/
+
             transac.Show();
             transac.reference = this;
             this.Hide();
@@ -278,6 +280,11 @@ namespace MainSystem.Accounting
         }
 
         private void dataSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataBalanceDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
