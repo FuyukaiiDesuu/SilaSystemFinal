@@ -62,6 +62,14 @@ namespace MainSystem.Accounting
             dataSearch.Columns["NickName"].HeaderText = "Nickname";
             dataSearch.Columns["Status"].Visible = false;
             dataSearch.Columns["idstuddet"].Visible = false;
+            dataSearch.Columns["adid"].Visible = false;
+            dataSearch.Columns["paid_amount"].Visible = false;
+            dataSearch.Columns["payment_status"].Visible = false;
+            dataSearch.Columns["spid"].Visible = false;
+            dataSearch.Columns["did"].Visible = false;
+            dataSearch.Columns["fid"].Visible = false;
+
+
 
             dataSearch.Columns["fullname"].DisplayIndex = 4;
 
@@ -131,21 +139,19 @@ namespace MainSystem.Accounting
             dataFeeValue.ReadOnly = true;
             this.dataFeeValue.Refresh();
         }
-
+        public IDictionary<string, string> dic2;
         private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                txtStudentID.Text = dataSearch.SelectedRows[0].Cells["idstudentprofile"].Value.ToString();
-                txtFirstName.Text = dataSearch.SelectedRows[0].Cells["FirstName"].Value.ToString();
-                txtLastName.Text = dataSearch.SelectedRows[0].Cells["LastName"].Value.ToString();
-                txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["MiddleName"].Value.ToString();
-                txtDateOfBirth.Text = dataSearch.SelectedRows[0].Cells["DateOfBirth"].Value.ToString();
-                txtPlaceOfBirth.Text = dataSearch.SelectedRows[0].Cells["PlaceOfBirth"].Value.ToString();
-                txtSex.Text = dataSearch.SelectedRows[0].Cells["Sex"].Value.ToString();
-                txtReligion.Text = dataSearch.SelectedRows[0].Cells["Religion"].Value.ToString();
-                txtNickName.Text = dataSearch.SelectedRows[0].Cells["NickName"].Value.ToString();
-                fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
+
+                dic2 = new Dictionary<string, string>();
+                dic2.Add("adid", dataSearch.Rows[e.RowIndex].Cells["adid"].Value.ToString());
+                dic2.Add("pamnt", dataSearch.Rows[e.RowIndex].Cells["paid_amount"].Value.ToString());
+                dic2.Add("pstat", dataSearch.Rows[e.RowIndex].Cells["payment_status"].Value.ToString());
+                dic2.Add("spid", dataSearch.Rows[e.RowIndex].Cells["spid"].Value.ToString());
+                dic2.Add("fid", dataSearch.Rows[e.RowIndex].Cells["fid"].Value.ToString());
+                dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
 
                 loadBalanceDetails(txtStudentID.Text);
                 dataFeeValue.Refresh();
@@ -200,12 +206,14 @@ namespace MainSystem.Accounting
         public Accounting.newfrmEditAccount editaccount;
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
+            /*
             DataTable holder = dbquery.User(uname);
             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             editaccount = new Accounting.newfrmEditAccount();
             editaccount.uname = uname;
             editaccount.id = txtStudentID.Text.ToString();
-            editaccount.name = fullname.ToString();
+            editaccount.name = fullname.ToString();*/
+            editaccount = new Accounting.newfrmEditAccount(dic2);
             editaccount.Show();
             editaccount.reference = this;
             this.Hide();
@@ -265,6 +273,11 @@ namespace MainSystem.Accounting
         }
 
         private void dataFeeValue_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

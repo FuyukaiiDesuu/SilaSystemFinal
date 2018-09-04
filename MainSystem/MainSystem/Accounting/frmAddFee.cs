@@ -175,6 +175,7 @@ namespace MainSystem.Accounting
                         if(comboBox1.Text != "Others")
                         {
                             command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
+                            command2.Parameters.AddWithValue("@mdesc", null);
                         }
                         else
                         {

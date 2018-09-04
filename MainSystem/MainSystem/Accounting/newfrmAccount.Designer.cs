@@ -79,10 +79,11 @@
             // 
             this.tabControl.Controls.Add(this.tabStudentTransaction);
             this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Location = new System.Drawing.Point(12, 29);
+            this.tabControl.Location = new System.Drawing.Point(16, 36);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(931, 512);
+            this.tabControl.Size = new System.Drawing.Size(1241, 630);
             this.tabControl.TabIndex = 13;
             // 
             // tabStudentTransaction
@@ -93,10 +94,11 @@
             this.tabStudentTransaction.Controls.Add(this.btnEditAccount);
             this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
             this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
-            this.tabStudentTransaction.Location = new System.Drawing.Point(4, 22);
+            this.tabStudentTransaction.Location = new System.Drawing.Point(4, 25);
+            this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
-            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStudentTransaction.Size = new System.Drawing.Size(923, 486);
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(1233, 601);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
@@ -106,9 +108,11 @@
             // 
             this.groupBox1.Controls.Add(this.dataSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(8, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(573, 196);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(764, 241);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account List";
@@ -121,19 +125,22 @@
             this.dataSearch.AllowUserToResizeRows = false;
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSearch.Location = new System.Drawing.Point(8, 42);
+            this.dataSearch.Location = new System.Drawing.Point(11, 52);
+            this.dataSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSearch.Size = new System.Drawing.Size(557, 147);
+            this.dataSearch.Size = new System.Drawing.Size(743, 181);
             this.dataSearch.TabIndex = 5;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
+            this.dataSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellContentClick);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(8, 19);
+            this.txtSearch.Location = new System.Drawing.Point(11, 23);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(231, 20);
+            this.txtSearch.Size = new System.Drawing.Size(307, 22);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -141,10 +148,10 @@
             // 
             this.btnViewPaymentHistory.BackColor = System.Drawing.Color.Transparent;
             this.btnViewPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnViewPaymentHistory.Location = new System.Drawing.Point(309, 436);
-            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewPaymentHistory.Location = new System.Drawing.Point(412, 537);
+            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
-            this.btnViewPaymentHistory.Size = new System.Drawing.Size(160, 45);
+            this.btnViewPaymentHistory.Size = new System.Drawing.Size(213, 55);
             this.btnViewPaymentHistory.TabIndex = 5;
             this.btnViewPaymentHistory.Text = "View Payment History";
             this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
@@ -153,9 +160,11 @@
             // grpBalanceDetails
             // 
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
-            this.grpBalanceDetails.Location = new System.Drawing.Point(588, 6);
+            this.grpBalanceDetails.Location = new System.Drawing.Point(784, 7);
+            this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Size = new System.Drawing.Size(322, 424);
+            this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBalanceDetails.Size = new System.Drawing.Size(429, 522);
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance Details";
@@ -168,20 +177,22 @@
             this.dataBalanceDetails.AllowUserToResizeRows = false;
             this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBalanceDetails.Location = new System.Drawing.Point(7, 19);
+            this.dataBalanceDetails.Location = new System.Drawing.Point(9, 23);
+            this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.RowHeadersVisible = false;
             this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBalanceDetails.Size = new System.Drawing.Size(305, 399);
+            this.dataBalanceDetails.Size = new System.Drawing.Size(407, 491);
             this.dataBalanceDetails.TabIndex = 0;
             // 
             // btnEditAccount
             // 
             this.btnEditAccount.Enabled = false;
             this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccount.Location = new System.Drawing.Point(140, 436);
+            this.btnEditAccount.Location = new System.Drawing.Point(187, 537);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(164, 45);
+            this.btnEditAccount.Size = new System.Drawing.Size(219, 55);
             this.btnEditAccount.TabIndex = 3;
             this.btnEditAccount.Text = "Statement of Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
@@ -191,9 +202,10 @@
             // 
             this.btnAddTransaction.Enabled = false;
             this.btnAddTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTransaction.Location = new System.Drawing.Point(9, 436);
+            this.btnAddTransaction.Location = new System.Drawing.Point(12, 537);
+            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddTransaction.Name = "btnAddTransaction";
-            this.btnAddTransaction.Size = new System.Drawing.Size(125, 45);
+            this.btnAddTransaction.Size = new System.Drawing.Size(167, 55);
             this.btnAddTransaction.TabIndex = 2;
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = true;
@@ -219,9 +231,11 @@
             this.grpStudentDetails.Controls.Add(this.lblFirstName);
             this.grpStudentDetails.Controls.Add(this.txtStudentID);
             this.grpStudentDetails.Controls.Add(this.lblStudentID);
-            this.grpStudentDetails.Location = new System.Drawing.Point(9, 206);
+            this.grpStudentDetails.Location = new System.Drawing.Point(12, 254);
+            this.grpStudentDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpStudentDetails.Name = "grpStudentDetails";
-            this.grpStudentDetails.Size = new System.Drawing.Size(573, 224);
+            this.grpStudentDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpStudentDetails.Size = new System.Drawing.Size(764, 276);
             this.grpStudentDetails.TabIndex = 4;
             this.grpStudentDetails.TabStop = false;
             this.grpStudentDetails.Text = "Student Details";
@@ -229,28 +243,31 @@
             // txtLastName
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
-            this.txtLastName.Location = new System.Drawing.Point(115, 133);
+            this.txtLastName.Location = new System.Drawing.Point(153, 164);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(180, 20);
+            this.txtLastName.Size = new System.Drawing.Size(239, 22);
             this.txtLastName.TabIndex = 22;
             // 
             // txtMiddleName
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
-            this.txtMiddleName.Location = new System.Drawing.Point(115, 97);
+            this.txtMiddleName.Location = new System.Drawing.Point(153, 119);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.ReadOnly = true;
-            this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
+            this.txtMiddleName.Size = new System.Drawing.Size(239, 22);
             this.txtMiddleName.TabIndex = 21;
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(16, 137);
+            this.lblLastName.Location = new System.Drawing.Point(21, 169);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(73, 16);
+            this.lblLastName.Size = new System.Drawing.Size(91, 20);
             this.lblLastName.TabIndex = 20;
             this.lblLastName.Text = "Last Name";
             // 
@@ -258,64 +275,71 @@
             // 
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(16, 101);
+            this.lblMiddleName.Location = new System.Drawing.Point(21, 124);
+            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(89, 16);
+            this.lblMiddleName.Size = new System.Drawing.Size(107, 20);
             this.lblMiddleName.TabIndex = 19;
             this.lblMiddleName.Text = "Middle Name";
             // 
             // txtDateOfBirth
             // 
             this.txtDateOfBirth.BackColor = System.Drawing.Color.White;
-            this.txtDateOfBirth.Location = new System.Drawing.Point(385, 26);
+            this.txtDateOfBirth.Location = new System.Drawing.Point(513, 32);
+            this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDateOfBirth.Name = "txtDateOfBirth";
             this.txtDateOfBirth.ReadOnly = true;
-            this.txtDateOfBirth.Size = new System.Drawing.Size(180, 20);
+            this.txtDateOfBirth.Size = new System.Drawing.Size(239, 22);
             this.txtDateOfBirth.TabIndex = 18;
             // 
             // txtReligion
             // 
             this.txtReligion.BackColor = System.Drawing.Color.White;
-            this.txtReligion.Location = new System.Drawing.Point(385, 99);
+            this.txtReligion.Location = new System.Drawing.Point(513, 122);
+            this.txtReligion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.ReadOnly = true;
-            this.txtReligion.Size = new System.Drawing.Size(180, 20);
+            this.txtReligion.Size = new System.Drawing.Size(239, 22);
             this.txtReligion.TabIndex = 17;
             // 
             // txtPlaceOfBirth
             // 
             this.txtPlaceOfBirth.BackColor = System.Drawing.Color.White;
-            this.txtPlaceOfBirth.Location = new System.Drawing.Point(385, 62);
+            this.txtPlaceOfBirth.Location = new System.Drawing.Point(513, 76);
+            this.txtPlaceOfBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPlaceOfBirth.Name = "txtPlaceOfBirth";
             this.txtPlaceOfBirth.ReadOnly = true;
-            this.txtPlaceOfBirth.Size = new System.Drawing.Size(180, 20);
+            this.txtPlaceOfBirth.Size = new System.Drawing.Size(239, 22);
             this.txtPlaceOfBirth.TabIndex = 16;
             // 
             // txtNickName
             // 
             this.txtNickName.BackColor = System.Drawing.Color.White;
-            this.txtNickName.Location = new System.Drawing.Point(385, 136);
+            this.txtNickName.Location = new System.Drawing.Point(513, 167);
+            this.txtNickName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.ReadOnly = true;
-            this.txtNickName.Size = new System.Drawing.Size(180, 20);
+            this.txtNickName.Size = new System.Drawing.Size(239, 22);
             this.txtNickName.TabIndex = 15;
             // 
             // txtSex
             // 
             this.txtSex.BackColor = System.Drawing.Color.White;
-            this.txtSex.Location = new System.Drawing.Point(115, 171);
+            this.txtSex.Location = new System.Drawing.Point(153, 210);
+            this.txtSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
-            this.txtSex.Size = new System.Drawing.Size(180, 20);
+            this.txtSex.Size = new System.Drawing.Size(239, 22);
             this.txtSex.TabIndex = 14;
             // 
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.Location = new System.Drawing.Point(301, 30);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(401, 37);
+            this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(80, 16);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(105, 20);
             this.lblDateOfBirth.TabIndex = 13;
             this.lblDateOfBirth.Text = "Date of Birth";
             // 
@@ -323,9 +347,10 @@
             // 
             this.lblPlaceOfBirth.AutoSize = true;
             this.lblPlaceOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaceOfBirth.Location = new System.Drawing.Point(301, 66);
+            this.lblPlaceOfBirth.Location = new System.Drawing.Point(401, 81);
+            this.lblPlaceOfBirth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlaceOfBirth.Name = "lblPlaceOfBirth";
-            this.lblPlaceOfBirth.Size = new System.Drawing.Size(86, 16);
+            this.lblPlaceOfBirth.Size = new System.Drawing.Size(111, 20);
             this.lblPlaceOfBirth.TabIndex = 11;
             this.lblPlaceOfBirth.Text = "Place of Birth";
             // 
@@ -333,9 +358,10 @@
             // 
             this.lblReligion.AutoSize = true;
             this.lblReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReligion.Location = new System.Drawing.Point(301, 100);
+            this.lblReligion.Location = new System.Drawing.Point(401, 123);
+            this.lblReligion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReligion.Name = "lblReligion";
-            this.lblReligion.Size = new System.Drawing.Size(58, 16);
+            this.lblReligion.Size = new System.Drawing.Size(69, 20);
             this.lblReligion.TabIndex = 9;
             this.lblReligion.Text = "Religion";
             // 
@@ -343,9 +369,10 @@
             // 
             this.lblNickname.AutoSize = true;
             this.lblNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNickname.Location = new System.Drawing.Point(301, 137);
+            this.lblNickname.Location = new System.Drawing.Point(401, 169);
+            this.lblNickname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNickname.Name = "lblNickname";
-            this.lblNickname.Size = new System.Drawing.Size(69, 16);
+            this.lblNickname.Size = new System.Drawing.Size(83, 20);
             this.lblNickname.TabIndex = 6;
             this.lblNickname.Text = "Nickname";
             // 
@@ -353,47 +380,52 @@
             // 
             this.lblSex.AutoSize = true;
             this.lblSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSex.Location = new System.Drawing.Point(16, 175);
+            this.lblSex.Location = new System.Drawing.Point(21, 215);
+            this.lblSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(31, 16);
+            this.lblSex.Size = new System.Drawing.Size(37, 20);
             this.lblSex.TabIndex = 5;
             this.lblSex.Text = "Sex";
             // 
             // txtFirstName
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
-            this.txtFirstName.Location = new System.Drawing.Point(115, 62);
+            this.txtFirstName.Location = new System.Drawing.Point(153, 76);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
-            this.txtFirstName.Size = new System.Drawing.Size(180, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(239, 22);
             this.txtFirstName.TabIndex = 3;
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(16, 66);
+            this.lblFirstName.Location = new System.Drawing.Point(21, 81);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(73, 16);
+            this.lblFirstName.Size = new System.Drawing.Size(92, 20);
             this.lblFirstName.TabIndex = 2;
             this.lblFirstName.Text = "First Name";
             // 
             // txtStudentID
             // 
             this.txtStudentID.BackColor = System.Drawing.Color.White;
-            this.txtStudentID.Location = new System.Drawing.Point(115, 26);
+            this.txtStudentID.Location = new System.Drawing.Point(153, 32);
+            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.ReadOnly = true;
-            this.txtStudentID.Size = new System.Drawing.Size(180, 20);
+            this.txtStudentID.Size = new System.Drawing.Size(239, 22);
             this.txtStudentID.TabIndex = 3;
             // 
             // lblStudentID
             // 
             this.lblStudentID.AutoSize = true;
             this.lblStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentID.Location = new System.Drawing.Point(16, 30);
+            this.lblStudentID.Location = new System.Drawing.Point(21, 37);
+            this.lblStudentID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(21, 16);
+            this.lblStudentID.Size = new System.Drawing.Size(26, 20);
             this.lblStudentID.TabIndex = 0;
             this.lblStudentID.Text = "ID";
             // 
@@ -402,10 +434,11 @@
             this.tabPage1.Controls.Add(this.dataFeeValue);
             this.tabPage1.Controls.Add(this.btnAddFee);
             this.tabPage1.Controls.Add(this.btnUpdateFee);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(923, 486);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1233, 601);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Fee Management";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -418,11 +451,12 @@
             this.dataFeeValue.AllowUserToResizeRows = false;
             this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
             this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataFeeValue.Location = new System.Drawing.Point(6, 6);
+            this.dataFeeValue.Location = new System.Drawing.Point(8, 7);
+            this.dataFeeValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataFeeValue.Name = "dataFeeValue";
             this.dataFeeValue.RowHeadersVisible = false;
             this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(911, 426);
+            this.dataFeeValue.Size = new System.Drawing.Size(1215, 524);
             this.dataFeeValue.TabIndex = 7;
             this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
             this.dataFeeValue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellContentClick);
@@ -430,9 +464,10 @@
             // btnAddFee
             // 
             this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFee.Location = new System.Drawing.Point(6, 438);
+            this.btnAddFee.Location = new System.Drawing.Point(8, 539);
+            this.btnAddFee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddFee.Name = "btnAddFee";
-            this.btnAddFee.Size = new System.Drawing.Size(125, 28);
+            this.btnAddFee.Size = new System.Drawing.Size(167, 34);
             this.btnAddFee.TabIndex = 5;
             this.btnAddFee.Text = "Add Fee";
             this.btnAddFee.UseVisualStyleBackColor = true;
@@ -443,10 +478,10 @@
             this.btnUpdateFee.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdateFee.Enabled = false;
             this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnUpdateFee.Location = new System.Drawing.Point(136, 438);
-            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateFee.Location = new System.Drawing.Point(181, 539);
+            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateFee.Name = "btnUpdateFee";
-            this.btnUpdateFee.Size = new System.Drawing.Size(125, 28);
+            this.btnUpdateFee.Size = new System.Drawing.Size(167, 34);
             this.btnUpdateFee.TabIndex = 6;
             this.btnUpdateFee.Text = "Update Fee";
             this.btnUpdateFee.UseVisualStyleBackColor = false;
@@ -454,9 +489,10 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(843, 8);
+            this.btnDashboard.Location = new System.Drawing.Point(1124, 10);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(100, 37);
+            this.btnDashboard.Size = new System.Drawing.Size(133, 46);
             this.btnDashboard.TabIndex = 7;
             this.btnDashboard.Text = "DASHBOARD";
             this.btnDashboard.UseVisualStyleBackColor = true;
@@ -466,9 +502,10 @@
             // 
             this.lblLoggedinas.AutoSize = true;
             this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblLoggedinas.Location = new System.Drawing.Point(9, 9);
+            this.lblLoggedinas.Location = new System.Drawing.Point(12, 11);
+            this.lblLoggedinas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoggedinas.Name = "lblLoggedinas";
-            this.lblLoggedinas.Size = new System.Drawing.Size(98, 17);
+            this.lblLoggedinas.Size = new System.Drawing.Size(115, 20);
             this.lblLoggedinas.TabIndex = 0;
             this.lblLoggedinas.Text = "Logged in as: ";
             // 
@@ -476,22 +513,24 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblUser.Location = new System.Drawing.Point(104, 9);
+            this.lblUser.Location = new System.Drawing.Point(139, 11);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(46, 17);
+            this.lblUser.Size = new System.Drawing.Size(55, 20);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
             // 
             // newfrmAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(955, 553);
+            this.ClientSize = new System.Drawing.Size(1273, 681);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.tabControl);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "newfrmAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounting Management";
