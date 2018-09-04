@@ -68,7 +68,7 @@ namespace MainSystem
             }
             if(usrp == "1")
             {
-                btnInventoryForm.Enabled = true;
+                btnUserForm.Enabled = true;
             }
             if(perm == "11111")
             {
@@ -176,6 +176,30 @@ namespace MainSystem
         private void label2_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        public User.frmUser user;
+        private void btnUserForm_Click(object sender, EventArgs e)
+        {
+            var dbconnector = new dbConnector();
+            using (dbconnect = dbconnector.connector())
+            {
+                dbconnect.Open();
+                MySqlCommand query = new MySqlCommand("SELECT * from usertable inner join employee on " +
+                    "usertable.idemp = employee.empID ", dbconnect);
+                MySqlDataAdapter listener = new MySqlDataAdapter(query);
+                DataTable holder = new DataTable();
+                listener.Fill(holder);
+                if (holder.Rows.Count > 0)
+                {
+
+                    uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                    user = new User.frmUser(uname);
+                    user.Show();
+                    user.reference = this;
+                    this.Hide();
+                }
+            }
         }
     }
 }

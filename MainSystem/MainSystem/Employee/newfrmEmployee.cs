@@ -94,9 +94,6 @@ namespace MainSystem.Employee
         public Employee.newfrmEditEmployee editemp;
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("empID");
             editemp = new Employee.newfrmEditEmployee();
             editemp.id = txtEmployeeID.Text;
             editemp.firstname = txtFirstName.Text;

@@ -206,6 +206,7 @@
             this.btnUserForm.Size = new System.Drawing.Size(167, 141);
             this.btnUserForm.TabIndex = 5;
             this.btnUserForm.UseVisualStyleBackColor = true;
+            this.btnUserForm.Click += new System.EventHandler(this.btnUserForm_Click);
             // 
             // btnInventoryForm
             // 
