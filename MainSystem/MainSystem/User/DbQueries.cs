@@ -63,7 +63,7 @@ namespace MainSystem.User
             con.executeQuery(query);
         }
 
-        public void updatUser(string userID, string username, string password, string idemp, string restrictions, string status)
+        public void updatUser(string username, string password, string idemp, string restrictions, string status, string userID)
         {
             string query = "UPDATE usertable SET username='" + username +
                 "',password='" + password +

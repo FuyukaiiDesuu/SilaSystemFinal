@@ -65,251 +65,251 @@ namespace MainSystem.User
             //CHECKBOX ACCOUNTING
             if (checkAccounting.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10000", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10000", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11000", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11000", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10100", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10010", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10010", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10001", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10001", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkRegistration.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11100", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkEmployee.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10110", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkInventory.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10011", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10011", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkInventory.Checked && checkUser.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11011", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11011", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkInventory.Checked && checkUser.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10111", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkEmployee.Checked && checkUser.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkInventory.Checked && checkInventory.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1", txtID.Text);
             }
             //CHECKBOX REGISTRATION
             else if (checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01000", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01000", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkAccounting.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11000", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11000", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01100", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01010", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01010", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01001", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01001", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkAccounting.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11100", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkEmployee.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01110", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkInventory.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01101", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkAccounting.Checked && checkEmployee.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkUser.Checked && checkEmployee.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkAccounting.Checked && checkUser.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11011", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11011", "1", txtID.Text);
             }
             else if (checkRegistration.Checked && checkAccounting.Checked && checkEmployee.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1", txtID.Text);
             }
             //CHECKBOX EMPLOYEE
             else if (checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00100", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkAccounting.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10100", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01100", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00110", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00101", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkAccounting.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11100", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11100", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkInventory.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01110", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkUser.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01101", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkAccounting.Checked && checkRegistration.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkUser.Checked && checkRegistration.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkUser.Checked && checkAccounting.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10111", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkUser.Checked && checkRegistration.Checked && checkAccounting.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1", txtID.Text);
             }
             else if (checkEmployee.Checked && checkAccounting.Checked && checkRegistration.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1", txtID.Text);
             }
             //CHECKBOX INVENTORY
             else if (checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00010", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00010", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkAccounting.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10010", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10010", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01010", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01010", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00110", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00011", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00011", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkAccounting.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11010", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11010", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkEmployee.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01110", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkEmployee.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00111", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkAccounting.Checked && checkRegistration.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkUser.Checked && checkRegistration.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1", txtID.Text);
             }
             else if (checkInventory.Checked && checkAccounting.Checked && checkRegistration.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11110", "1", txtID.Text);
             }
             //CHECKBOX USER
             else if (checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00001", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00001", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkAccounting.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10001", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10001", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01001", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01001", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00101", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkInventory.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00011", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00011", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkInventory.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "00111", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkRegistration.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01101", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkRegistration.Checked && checkAccounting.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11001", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11001", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkRegistration.Checked && checkAccounting.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11101", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkRegistration.Checked && checkInventory.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "01111", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkAccounting.Checked && checkInventory.Checked && checkEmployee.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "10111", "1", txtID.Text);
             }
             else if (checkUser.Checked && checkAccounting.Checked && checkInventory.Checked && checkRegistration.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11011", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11011", "1", txtID.Text);
             }
             else if (checkAccounting.Checked && checkEmployee.Checked && checkRegistration.Checked && checkInventory.Checked && checkUser.Checked)
             {
-                dbquery.updatUser(txtID.Text, txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11111", "1");
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, txtEmployeeID.Text, "11111", "1", txtID.Text);
             }
             MessageBox.Show("Succesfully Updated");
             reference.Show();
