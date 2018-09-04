@@ -16,8 +16,8 @@ namespace MainSystem.Accounting
         public frmMain reference { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         public string uname;
-        string fullname;
-        public string uid;
+        //string fullname;
+        public string eid;
         public MySqlConnection dbconnection;
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
@@ -31,11 +31,13 @@ namespace MainSystem.Accounting
         string fid;
         string fee_description;*/
         
-        public newfrmAccount(string uname)
+        public newfrmAccount(string unam, string empid)
         {
             InitializeComponent();
             loadStudentProfileTable();
-            lblUser.Text = uname;
+            eid = empid;
+            lblUser.Text = unam;
+            uname = unam;
         }
 
         private void newfrmAccount_Load(object sender, EventArgs e)
@@ -78,7 +80,7 @@ namespace MainSystem.Accounting
             this.dataSearch.Refresh();
         }
 
-        public void loadBalanceDetails(string student_id)
+        public void loadBalanceDetails(string adid)
         {
             /*
             DataTable balanceDisplay = dbquery.balanceDetails(student_id);
@@ -95,6 +97,14 @@ namespace MainSystem.Accounting
             dataBalanceDetails.ReadOnly = true;*/
             using (MySqlConnection conn = connect.connector())
             {
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" + adid+"' AND syear = '2018 - 2019';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataBalanceDetails.DataSource = dt;
+            }
+            using (MySqlConnection conn = connect.connector())
+            {
                 string query = "SELECT paid_amount, payment_status, spid, did, fid, FirstName, LastName, MiddleName, Status " +
                     "FROM accountdetails " +
                     "INNER JOIN studentprofile " +
@@ -102,7 +112,6 @@ namespace MainSystem.Accounting
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
-                dataBalanceDetails.DataSource = dt;
             }
             dataBalanceDetails.ClearSelection();
             this.dataBalanceDetails.Refresh();
@@ -152,8 +161,9 @@ namespace MainSystem.Accounting
                 dic2.Add("spid", dataSearch.Rows[e.RowIndex].Cells["spid"].Value.ToString());
                 dic2.Add("fid", dataSearch.Rows[e.RowIndex].Cells["fid"].Value.ToString());
                 dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
+                dic2.Add("fullname", dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString());
 
-                loadBalanceDetails(txtStudentID.Text);
+                loadBalanceDetails(dataSearch.Rows[e.RowIndex].Cells["adid"].Value.ToString());
                 dataFeeValue.Refresh();
                 btnAddTransaction.Enabled = true;
                 btnEditAccount.Enabled = true;
@@ -182,7 +192,7 @@ namespace MainSystem.Accounting
             transac.balanceDisplay = (dataBalanceDetails.DataSource as DataTable);
             transac.GradeLevelDisplay = (dataBalanceDetails.DataSource as DataTable);
             transac.name = fullname.ToString();*/
-
+            transac = new newfrmAddTransaction(dic2, eid, uname);
             transac.Show();
             transac.reference = this;
             this.Hide();

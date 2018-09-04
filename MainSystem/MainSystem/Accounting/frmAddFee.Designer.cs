@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpAddFee = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -45,14 +46,13 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblDate2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.grpAddFee.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAddFee
             // 
-            this.grpAddFee.Controls.Add(this.textBox2);
+            this.grpAddFee.Controls.Add(this.comboBox2);
             this.grpAddFee.Controls.Add(this.label1);
             this.grpAddFee.Controls.Add(this.label3);
             this.grpAddFee.Controls.Add(this.textBox1);
@@ -69,6 +69,16 @@
             this.grpAddFee.TabStop = false;
             this.grpAddFee.Text = "Add Fee";
             this.grpAddFee.Enter += new System.EventHandler(this.grpAddFee_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "School Year:";
             // 
             // label3
             // 
@@ -233,22 +243,19 @@
             this.lblDate2.TabIndex = 16;
             this.lblDate2.Text = "Date";
             // 
-            // label1
+            // comboBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "School Year:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(117, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(91, 20);
-            this.textBox2.TabIndex = 22;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "2018 - 2019",
+            "2019 - 2020",
+            "2020 - 2021",
+            "2021 - 2022",
+            "2022 - 2023"});
+            this.comboBox2.Location = new System.Drawing.Point(118, 37);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 22;
             // 
             // frmAddFee
             // 
@@ -294,7 +301,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

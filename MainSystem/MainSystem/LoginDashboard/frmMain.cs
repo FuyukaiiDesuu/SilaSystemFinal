@@ -151,8 +151,8 @@ namespace MainSystem
                 if (holder.Rows.Count > 0)
                 {
 
-                    uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-                    frmacc = new Accounting.newfrmAccount(uname);
+                    uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString() +" "+ holder.Rows[0]["middle_name"].ToString();
+                    frmacc = new Accounting.newfrmAccount(uname, holder.Rows[0]["empID"].ToString());
                     frmacc.Show();
                     frmacc.reference = this;
                     this.Hide();
