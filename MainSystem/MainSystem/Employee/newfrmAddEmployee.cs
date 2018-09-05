@@ -23,20 +23,19 @@ namespace MainSystem.Employee
 
         private void newfrmAddEmployee_Load(object sender, EventArgs e)
         {
-            DataTable countEmployeeID = dbquery.countEmployeeID();
-            countPayment = countEmployeeID.Rows.Count + 1;
-            txtEmployeeID.Text = countPayment.ToString();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if(cmbReligion.Text == "Others")
             {
-                dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, txtSpecify.Text, cmbMaritalStatus.Text, txtStatus.Text);
+                dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, txtSpecify.Text, cmbMaritalStatus.Text, "1");
             }
             else
             {
-                dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, cmbReligion.Text, cmbMaritalStatus.Text, txtStatus.Text);
+                dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, cmbReligion.Text, cmbMaritalStatus.Text, "1");
             }
             
             MessageBox.Show("Succesfully Added");

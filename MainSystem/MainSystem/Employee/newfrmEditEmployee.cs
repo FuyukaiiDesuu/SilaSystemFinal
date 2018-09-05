@@ -32,7 +32,6 @@ namespace MainSystem.Employee
 
         private void newfrmEditEmployee_Load(object sender, EventArgs e)
         {
-            txtEmployeeID.Text = id;
             txtFirstName.Text = firstname; 
             txtLastName.Text = lastname; 
             txtMiddleName.Text = middlename; 
@@ -41,8 +40,9 @@ namespace MainSystem.Employee
             txtContactNo.Text = contactno; 
             cmbSex.Text = sex; 
             cmbReligion.Text = religion; 
-            cmbMaritalStatus.Text = maritalstatus; 
-            cmbStatus.Text = status; 
+            cmbMaritalStatus.Text = maritalstatus;
+            cmbStatus.Text = status;
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -54,14 +54,25 @@ namespace MainSystem.Employee
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(cmbReligion.Text == "Others")
+            string status, religion;
+            if(cmbStatus.Text == "Active")
             {
-                dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, txtSpecify.Text, cmbMaritalStatus.Text, cmbStatus.Text, txtEmployeeID.Text);
+                status = "1";
             }
             else
             {
-                dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, cmbReligion.Text, cmbMaritalStatus.Text, cmbStatus.Text, txtEmployeeID.Text);
+                status = "0";
             }
+
+            if(cmbReligion.Text == "Others")
+            {
+                religion = txtSpecify.Text;
+            }
+            else
+            {
+                religion = cmbReligion.Text;
+            }
+            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, religion, cmbMaritalStatus.Text, status, id);
             MessageBox.Show("Succesfully Updated");
             reference.Show();
             reference.loadEmployeeDetails();

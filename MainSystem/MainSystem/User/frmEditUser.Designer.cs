@@ -45,6 +45,8 @@
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grpEmployeeDetails.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnCancel.Location = new System.Drawing.Point(124, 442);
+            this.btnCancel.Location = new System.Drawing.Point(733, 442);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 28);
             this.btnCancel.TabIndex = 60;
@@ -79,7 +79,7 @@
             // checkRegistration
             // 
             this.checkRegistration.AutoSize = true;
-            this.checkRegistration.Location = new System.Drawing.Point(190, 297);
+            this.checkRegistration.Location = new System.Drawing.Point(270, 195);
             this.checkRegistration.Name = "checkRegistration";
             this.checkRegistration.Size = new System.Drawing.Size(122, 25);
             this.checkRegistration.TabIndex = 12;
@@ -99,7 +99,7 @@
             // checkUser
             // 
             this.checkUser.AutoSize = true;
-            this.checkUser.Location = new System.Drawing.Point(142, 246);
+            this.checkUser.Location = new System.Drawing.Point(219, 302);
             this.checkUser.Name = "checkUser";
             this.checkUser.Size = new System.Drawing.Size(61, 25);
             this.checkUser.TabIndex = 10;
@@ -109,7 +109,7 @@
             // checkEmployee
             // 
             this.checkEmployee.AutoSize = true;
-            this.checkEmployee.Location = new System.Drawing.Point(271, 195);
+            this.checkEmployee.Location = new System.Drawing.Point(142, 246);
             this.checkEmployee.Name = "checkEmployee";
             this.checkEmployee.Size = new System.Drawing.Size(105, 25);
             this.checkEmployee.TabIndex = 9;
@@ -240,6 +240,23 @@
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(149, 67);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(215, 27);
+            this.txtID.TabIndex = 7;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(20, 73);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(27, 21);
+            this.lblID.TabIndex = 6;
+            this.lblID.Text = "ID";
+            // 
             // lblLoggedinas
             // 
             this.lblLoggedinas.AutoSize = true;
@@ -318,7 +335,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnSave.Location = new System.Drawing.Point(12, 442);
+            this.btnSave.Location = new System.Drawing.Point(621, 442);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 28);
             this.btnSave.TabIndex = 59;
@@ -347,23 +364,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(149, 67);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(215, 27);
-            this.txtID.TabIndex = 7;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(20, 73);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(27, 21);
-            this.lblID.TabIndex = 6;
-            this.lblID.Text = "ID";
             // 
             // frmEditUser
             // 

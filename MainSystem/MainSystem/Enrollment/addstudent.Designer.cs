@@ -124,7 +124,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 225);
+            this.label7.Location = new System.Drawing.Point(22, 258);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 21);
             this.label7.TabIndex = 31;
@@ -133,11 +133,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(53, 184);
+            this.label6.Location = new System.Drawing.Point(22, 225);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 21);
+            this.label6.Size = new System.Drawing.Size(40, 21);
             this.label6.TabIndex = 30;
-            this.label6.Text = "Sex";
+            this.label6.Text = "Sex:";
             // 
             // label5
             // 
@@ -212,7 +212,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnSave.Location = new System.Drawing.Point(11, 438);
+            this.btnSave.Location = new System.Drawing.Point(459, 438);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(118, 36);
@@ -299,7 +299,7 @@
             this.btncanc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncanc.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btncanc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btncanc.Location = new System.Drawing.Point(133, 438);
+            this.btncanc.Location = new System.Drawing.Point(581, 438);
             this.btncanc.Margin = new System.Windows.Forms.Padding(2);
             this.btncanc.Name = "btncanc";
             this.btncanc.Size = new System.Drawing.Size(118, 36);
@@ -351,7 +351,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 258);
+            this.label11.Location = new System.Drawing.Point(22, 306);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 21);
             this.label11.TabIndex = 56;

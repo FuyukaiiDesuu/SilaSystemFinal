@@ -166,7 +166,9 @@ namespace MainSystem.User
             edituser = new User.frmEditUser(uname);
             edituser.id = txtEmployeeID.Text = dataSearch2.SelectedRows[0].Cells["empID"].Value.ToString();
             edituser.fullname = txtFullName.Text = dataSearch2.SelectedRows[0].Cells["fullname"].Value.ToString();
+            edituser.restriction = dataSearch2.SelectedRows[0].Cells["restrictions"].Value.ToString();
             edituser.username = txtUsername.Text;
+            edituser.userID = txtUserID.Text;
             edituser.password = txtPassword.Text;
             edituser.Show();
             edituser.reference = this;

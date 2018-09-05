@@ -30,36 +30,36 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblEmployeeID = new System.Windows.Forms.Label();
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblPermissions = new System.Windows.Forms.Label();
-            this.checkAccounting = new System.Windows.Forms.CheckBox();
-            this.checkEmployee = new System.Windows.Forms.CheckBox();
-            this.checkUser = new System.Windows.Forms.CheckBox();
-            this.checkInventory = new System.Windows.Forms.CheckBox();
-            this.checkRegistration = new System.Windows.Forms.CheckBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtEmployeeID = new System.Windows.Forms.TextBox();
+            this.lblFullName = new System.Windows.Forms.Label();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkRegistration = new System.Windows.Forms.CheckBox();
+            this.checkInventory = new System.Windows.Forms.CheckBox();
+            this.checkUser = new System.Windows.Forms.CheckBox();
+            this.checkEmployee = new System.Windows.Forms.CheckBox();
+            this.checkAccounting = new System.Windows.Forms.CheckBox();
+            this.lblPermissions = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.grpEmployeeDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,6 +85,16 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "_";
             this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // label15
             // 
@@ -163,6 +173,55 @@
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
             // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(149, 67);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(215, 27);
+            this.txtID.TabIndex = 5;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(20, 73);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(27, 21);
+            this.lblID.TabIndex = 4;
+            this.lblID.Text = "ID";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(149, 207);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(215, 27);
+            this.txtFullName.TabIndex = 3;
+            // 
+            // txtEmployeeID
+            // 
+            this.txtEmployeeID.Location = new System.Drawing.Point(149, 138);
+            this.txtEmployeeID.Name = "txtEmployeeID";
+            this.txtEmployeeID.Size = new System.Drawing.Size(215, 27);
+            this.txtEmployeeID.TabIndex = 2;
+            // 
+            // lblFullName
+            // 
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.Location = new System.Drawing.Point(20, 213);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(86, 21);
+            this.lblFullName.TabIndex = 1;
+            this.lblFullName.Text = "Full Name";
+            // 
+            // lblEmployeeID
+            // 
+            this.lblEmployeeID.AutoSize = true;
+            this.lblEmployeeID.Location = new System.Drawing.Point(20, 144);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(107, 21);
+            this.lblEmployeeID.TabIndex = 0;
+            this.lblEmployeeID.Text = "Employee ID";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.checkRegistration);
@@ -184,53 +243,64 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Management";
             // 
-            // lblEmployeeID
+            // checkRegistration
             // 
-            this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(20, 144);
-            this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(107, 21);
-            this.lblEmployeeID.TabIndex = 0;
-            this.lblEmployeeID.Text = "Employee ID";
+            this.checkRegistration.AutoSize = true;
+            this.checkRegistration.Location = new System.Drawing.Point(271, 195);
+            this.checkRegistration.Name = "checkRegistration";
+            this.checkRegistration.Size = new System.Drawing.Size(122, 25);
+            this.checkRegistration.TabIndex = 12;
+            this.checkRegistration.Text = "Registration";
+            this.checkRegistration.UseVisualStyleBackColor = true;
             // 
-            // lblFullName
+            // checkInventory
             // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Location = new System.Drawing.Point(20, 213);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(86, 21);
-            this.lblFullName.TabIndex = 1;
-            this.lblFullName.Text = "Full Name";
+            this.checkInventory.AutoSize = true;
+            this.checkInventory.Location = new System.Drawing.Point(271, 246);
+            this.checkInventory.Name = "checkInventory";
+            this.checkInventory.Size = new System.Drawing.Size(104, 25);
+            this.checkInventory.TabIndex = 11;
+            this.checkInventory.Text = "Inventory";
+            this.checkInventory.UseVisualStyleBackColor = true;
             // 
-            // txtEmployeeID
+            // checkUser
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(149, 138);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(215, 27);
-            this.txtEmployeeID.TabIndex = 2;
+            this.checkUser.AutoSize = true;
+            this.checkUser.Location = new System.Drawing.Point(219, 302);
+            this.checkUser.Name = "checkUser";
+            this.checkUser.Size = new System.Drawing.Size(61, 25);
+            this.checkUser.TabIndex = 10;
+            this.checkUser.Text = "User";
+            this.checkUser.UseVisualStyleBackColor = true;
             // 
-            // txtFullName
+            // checkEmployee
             // 
-            this.txtFullName.Location = new System.Drawing.Point(149, 207);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(215, 27);
-            this.txtFullName.TabIndex = 3;
+            this.checkEmployee.AutoSize = true;
+            this.checkEmployee.Location = new System.Drawing.Point(142, 246);
+            this.checkEmployee.Name = "checkEmployee";
+            this.checkEmployee.Size = new System.Drawing.Size(105, 25);
+            this.checkEmployee.TabIndex = 9;
+            this.checkEmployee.Text = "Employee";
+            this.checkEmployee.UseVisualStyleBackColor = true;
             // 
-            // txtUsername
+            // checkAccounting
             // 
-            this.txtUsername.Location = new System.Drawing.Point(142, 67);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(224, 27);
-            this.txtUsername.TabIndex = 4;
+            this.checkAccounting.AutoSize = true;
+            this.checkAccounting.Location = new System.Drawing.Point(142, 195);
+            this.checkAccounting.Name = "checkAccounting";
+            this.checkAccounting.Size = new System.Drawing.Size(123, 25);
+            this.checkAccounting.TabIndex = 8;
+            this.checkAccounting.Text = "Accounting";
+            this.checkAccounting.UseVisualStyleBackColor = true;
             // 
-            // lblUsername
+            // lblPermissions
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(20, 73);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(88, 21);
-            this.lblUsername.TabIndex = 3;
-            this.lblUsername.Text = "Username";
+            this.lblPermissions.AutoSize = true;
+            this.lblPermissions.Location = new System.Drawing.Point(20, 213);
+            this.lblPermissions.Name = "lblPermissions";
+            this.lblPermissions.Size = new System.Drawing.Size(93, 21);
+            this.lblPermissions.TabIndex = 7;
+            this.lblPermissions.Text = "Permissions";
             // 
             // txtPassword
             // 
@@ -248,64 +318,21 @@
             this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password";
             // 
-            // lblPermissions
+            // txtUsername
             // 
-            this.lblPermissions.AutoSize = true;
-            this.lblPermissions.Location = new System.Drawing.Point(20, 213);
-            this.lblPermissions.Name = "lblPermissions";
-            this.lblPermissions.Size = new System.Drawing.Size(93, 21);
-            this.lblPermissions.TabIndex = 7;
-            this.lblPermissions.Text = "Permissions";
+            this.txtUsername.Location = new System.Drawing.Point(142, 67);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(224, 27);
+            this.txtUsername.TabIndex = 4;
             // 
-            // checkAccounting
+            // lblUsername
             // 
-            this.checkAccounting.AutoSize = true;
-            this.checkAccounting.Location = new System.Drawing.Point(142, 195);
-            this.checkAccounting.Name = "checkAccounting";
-            this.checkAccounting.Size = new System.Drawing.Size(123, 25);
-            this.checkAccounting.TabIndex = 8;
-            this.checkAccounting.Text = "Accounting";
-            this.checkAccounting.UseVisualStyleBackColor = true;
-            // 
-            // checkEmployee
-            // 
-            this.checkEmployee.AutoSize = true;
-            this.checkEmployee.Location = new System.Drawing.Point(271, 195);
-            this.checkEmployee.Name = "checkEmployee";
-            this.checkEmployee.Size = new System.Drawing.Size(105, 25);
-            this.checkEmployee.TabIndex = 9;
-            this.checkEmployee.Text = "Employee";
-            this.checkEmployee.UseVisualStyleBackColor = true;
-            // 
-            // checkUser
-            // 
-            this.checkUser.AutoSize = true;
-            this.checkUser.Location = new System.Drawing.Point(142, 246);
-            this.checkUser.Name = "checkUser";
-            this.checkUser.Size = new System.Drawing.Size(61, 25);
-            this.checkUser.TabIndex = 10;
-            this.checkUser.Text = "User";
-            this.checkUser.UseVisualStyleBackColor = true;
-            // 
-            // checkInventory
-            // 
-            this.checkInventory.AutoSize = true;
-            this.checkInventory.Location = new System.Drawing.Point(271, 246);
-            this.checkInventory.Name = "checkInventory";
-            this.checkInventory.Size = new System.Drawing.Size(104, 25);
-            this.checkInventory.TabIndex = 11;
-            this.checkInventory.Text = "Inventory";
-            this.checkInventory.UseVisualStyleBackColor = true;
-            // 
-            // checkRegistration
-            // 
-            this.checkRegistration.AutoSize = true;
-            this.checkRegistration.Location = new System.Drawing.Point(190, 297);
-            this.checkRegistration.Name = "checkRegistration";
-            this.checkRegistration.Size = new System.Drawing.Size(122, 25);
-            this.checkRegistration.TabIndex = 12;
-            this.checkRegistration.Text = "Registration";
-            this.checkRegistration.UseVisualStyleBackColor = true;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(20, 73);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(88, 21);
+            this.lblUsername.TabIndex = 3;
+            this.lblUsername.Text = "Username";
             // 
             // btnSave
             // 
@@ -313,7 +340,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnSave.Location = new System.Drawing.Point(12, 442);
+            this.btnSave.Location = new System.Drawing.Point(621, 442);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 28);
             this.btnSave.TabIndex = 51;
@@ -327,40 +354,13 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnCancel.Location = new System.Drawing.Point(124, 442);
+            this.btnCancel.Location = new System.Drawing.Point(733, 442);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 28);
             this.btnCancel.TabIndex = 52;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(149, 67);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(215, 27);
-            this.txtID.TabIndex = 5;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(20, 73);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(27, 21);
-            this.lblID.TabIndex = 4;
-            this.lblID.Text = "ID";
             // 
             // frmAddUser
             // 
@@ -384,11 +384,11 @@
             this.Load += new System.EventHandler(this.frmAddUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.grpEmployeeDetails.ResumeLayout(false);
             this.grpEmployeeDetails.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

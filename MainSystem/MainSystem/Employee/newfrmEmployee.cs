@@ -16,6 +16,7 @@ namespace MainSystem.Employee
         Employee.DbQueries dbquery = new Employee.DbQueries();
         string fullname;
         public string uname;
+        public string empID;
         public newfrmEmployee(string uname)
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace MainSystem.Employee
         {
             if (e.RowIndex >= 0)
             {
-                txtEmployeeID.Text = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
+                empID = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
                 txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
                 txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
                 txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
@@ -68,6 +69,14 @@ namespace MainSystem.Employee
                 txtReligion.Text = dataSearch.SelectedRows[0].Cells["religion"].Value.ToString();
                 txtMaritalStatus.Text = dataSearch.SelectedRows[0].Cells["marital_status"].Value.ToString();
                 txtStatus.Text = dataSearch.SelectedRows[0].Cells["status"].Value.ToString();
+                if(dataSearch.SelectedRows[0].Cells["status"].Value.ToString() == "1")
+                {
+                    txtStatus.Text = "Active";
+                }
+                else if (dataSearch.SelectedRows[0].Cells["status"].Value.ToString() == "0")
+                {
+                    txtStatus.Text = "Inactive";
+                }
                 fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
 
                 btnEdit.Enabled = true;
@@ -95,7 +104,7 @@ namespace MainSystem.Employee
         private void btnEdit_Click(object sender, EventArgs e)
         {
             editemp = new Employee.newfrmEditEmployee();
-            editemp.id = txtEmployeeID.Text;
+            editemp.id = empID;
             editemp.firstname = txtFirstName.Text;
             editemp.lastname = txtLastName.Text;
             editemp.middlename = txtMiddleName.Text;
@@ -114,7 +123,6 @@ namespace MainSystem.Employee
 
         public void clearText()
         {
-            txtEmployeeID.Text = "";
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtMiddleName.Text = "";
@@ -142,6 +150,7 @@ namespace MainSystem.Employee
             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             viewemp = new Employee.newViewArchivedEmployee(uname);
             viewemp.uname = uname;
+            viewemp.id = empID;
             viewemp.Show();
             viewemp.reference = this;
             this.Hide();

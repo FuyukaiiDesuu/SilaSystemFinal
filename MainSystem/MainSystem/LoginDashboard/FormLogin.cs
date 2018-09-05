@@ -63,15 +63,21 @@ namespace MainSystem
                 if (holder.Rows.Count > 0)
                 {
                     string perm = holder.Rows[0]["restrictions"].ToString();
-                    //string[] split = perm.Split(' ');
-                   
+                    //string[] split = perm.Split(' ')
+                    if(statusFlag())
+                    {
                         uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
                         MessageBox.Show("Succesful Login!");
                         frmmain = new frmMain(uname, perm);
                         frmmain.Show();
                         frmmain.reference = this;
                         this.Hide();
-                  
+                    }
+                    else
+                    {
+                        MessageBox.Show("This Account is no longer active");
+                    }
+
                 }
                 else
                 {
@@ -79,6 +85,34 @@ namespace MainSystem
                 }
             }
            
+        }
+
+        public Boolean statusFlag()
+        {
+            var dbconnector = new dbConnector();
+            using (dbconnect = dbconnector.connector())
+            {
+                dbconnect.Open();
+                MySqlCommand query = new MySqlCommand("SELECT * from usertable inner join employee on " +
+                    "usertable.idemp = employee.empID " +
+                    "where usertable.username = '" + txtUsername.Text + "' " +
+                    "and usertable.password = '" + txtPassword.Text + "' and usertable.status = 1;", dbconnect);
+                MySqlDataAdapter listener = new MySqlDataAdapter(query);
+                DataTable holder = new DataTable();
+                listener.Fill(holder);
+
+                //MessageBox.Show(perm.Substring(0,1));
+
+                if (holder.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
         }
         //Char chr;
         private void button1_KeyPress(object sender, KeyPressEventArgs e)

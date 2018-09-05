@@ -97,9 +97,9 @@
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnCreate.Location = new System.Drawing.Point(12, 516);
+            this.btnCreate.Location = new System.Drawing.Point(239, 516);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(136, 55);
+            this.btnCreate.Size = new System.Drawing.Size(118, 36);
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "CREATE";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -111,9 +111,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnUpdate.Location = new System.Drawing.Point(154, 516);
+            this.btnUpdate.Location = new System.Drawing.Point(363, 516);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(136, 55);
+            this.btnUpdate.Size = new System.Drawing.Size(118, 36);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;

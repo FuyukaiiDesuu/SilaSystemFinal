@@ -15,6 +15,7 @@ namespace MainSystem.Employee
         public newfrmEmployee reference { get; set; }
         Employee.DbQueries dbquery = new Employee.DbQueries();
         public string uname;
+        public string id;
         string fullname;
 
         public newViewArchivedEmployee(string uname)
@@ -60,11 +61,20 @@ namespace MainSystem.Employee
 
         private void btnEnable_Click(object sender, EventArgs e)
         {
-            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, cmbStatus.Text, txtEmployeeID.Text);
+            string status;
+            if (cmbStatus.Text == "Active")
+            {
+                status = "1";
+            }
+            else
+            {
+                status = "0";
+            }
+            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, id);
             MessageBox.Show("Succesfully Updated");
             reference.Show();
             reference.loadEmployeeDetails();
-            reference.dataSearch.Rows[0].Selected = false;
+            reference.dataSearch.ClearSelection();
             reference.clearText();
             this.Close();
         }
@@ -73,7 +83,7 @@ namespace MainSystem.Employee
         {
             if (e.RowIndex >= 0)
             {
-                txtEmployeeID.Text = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
+                id = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
                 txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
                 txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
                 txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
@@ -83,7 +93,14 @@ namespace MainSystem.Employee
                 txtSex.Text = dataSearch.SelectedRows[0].Cells["sex"].Value.ToString();
                 txtReligion.Text = dataSearch.SelectedRows[0].Cells["religion"].Value.ToString();
                 txtMaritalStatus.Text = dataSearch.SelectedRows[0].Cells["marital_status"].Value.ToString();
-                cmbStatus.Text = dataSearch.SelectedRows[0].Cells["status"].Value.ToString();
+                if (dataSearch.SelectedRows[0].Cells["status"].Value.ToString() == "1")
+                {
+                    cmbStatus.Text = "Active";
+                }
+                else if (dataSearch.SelectedRows[0].Cells["status"].Value.ToString() == "0")
+                {
+                    cmbStatus.Text = "Inactive";
+                }
                 fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
 
             }
@@ -93,7 +110,7 @@ namespace MainSystem.Employee
 
         private void cmbStatus_TextChanged(object sender, EventArgs e)
         {
-            if(cmbStatus.Text == "1")
+            if(cmbStatus.Text == "Active")
             {
                 btnEnable.Enabled = true;
             }

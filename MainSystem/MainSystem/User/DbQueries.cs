@@ -63,14 +63,9 @@ namespace MainSystem.User
             con.executeQuery(query);
         }
 
-        public void updatUser(string username, string password, string idemp, string restrictions, string status, string userID)
+        public void updatUser(string username, string password, string restrictions, string status, string userID)
         {
-            string query = "UPDATE usertable SET username='" + username +
-                "',password='" + password +
-                "',idemp='" + idemp +
-                "',restrictions='" + restrictions +
-                "',status='" + status +
-                "' WHERE userID='" + userID + "'";
+            string query = "update usertable set username='" + username + "',password='" + password + "',restrictions='" + restrictions + "',status='" + status + "'where usertable.userID='" + userID + "'";
             con.executeQuery(query);
         }
     }

@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
@@ -63,22 +64,21 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataSearch = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataSearch2 = new System.Windows.Forms.DataGridView();
             this.grpUserDetails = new System.Windows.Forms.GroupBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.lblFullName = new System.Windows.Forms.Label();
+            this.txtUserID = new System.Windows.Forms.TextBox();
+            this.lblUserID = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.txtUserID = new System.Windows.Forms.TextBox();
-            this.lblUserID = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.lblFullName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.grpPersonalDetails.SuspendLayout();
             this.grpEmployeeDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch2)).BeginInit();
             this.grpUserDetails.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +106,16 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "_";
             this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // label15
             // 
@@ -439,7 +449,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnEdit.Location = new System.Drawing.Point(12, 658);
+            this.btnEdit.Location = new System.Drawing.Point(440, 658);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(89, 28);
             this.btnEdit.TabIndex = 40;
@@ -483,7 +493,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnAdd.Location = new System.Drawing.Point(12, 360);
+            this.btnAdd.Location = new System.Drawing.Point(323, 360);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(206, 28);
             this.btnAdd.TabIndex = 39;
@@ -506,16 +516,6 @@
             this.dataSearch.Size = new System.Drawing.Size(517, 252);
             this.dataSearch.TabIndex = 37;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // dataSearch2
             // 
@@ -552,6 +552,50 @@
             this.grpUserDetails.TabIndex = 49;
             this.grpUserDetails.TabStop = false;
             this.grpUserDetails.Text = "User Details";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.BackColor = System.Drawing.Color.White;
+            this.txtFullName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(143, 78);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.ReadOnly = true;
+            this.txtFullName.Size = new System.Drawing.Size(219, 27);
+            this.txtFullName.TabIndex = 25;
+            this.txtFullName.TabStop = false;
+            // 
+            // lblFullName
+            // 
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblFullName.Location = new System.Drawing.Point(22, 84);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(86, 21);
+            this.lblFullName.TabIndex = 26;
+            this.lblFullName.Text = "Full Name";
+            // 
+            // txtUserID
+            // 
+            this.txtUserID.BackColor = System.Drawing.Color.White;
+            this.txtUserID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.Location = new System.Drawing.Point(143, 45);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.ReadOnly = true;
+            this.txtUserID.Size = new System.Drawing.Size(219, 27);
+            this.txtUserID.TabIndex = 23;
+            this.txtUserID.TabStop = false;
+            // 
+            // lblUserID
+            // 
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblUserID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblUserID.Location = new System.Drawing.Point(22, 51);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(27, 21);
+            this.lblUserID.TabIndex = 24;
+            this.lblUserID.Text = "ID";
             // 
             // txtPassword
             // 
@@ -598,50 +642,6 @@
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "Username";
             // 
-            // txtUserID
-            // 
-            this.txtUserID.BackColor = System.Drawing.Color.White;
-            this.txtUserID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(143, 45);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.ReadOnly = true;
-            this.txtUserID.Size = new System.Drawing.Size(219, 27);
-            this.txtUserID.TabIndex = 23;
-            this.txtUserID.TabStop = false;
-            // 
-            // lblUserID
-            // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblUserID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblUserID.Location = new System.Drawing.Point(22, 51);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(27, 21);
-            this.lblUserID.TabIndex = 24;
-            this.lblUserID.Text = "ID";
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.BackColor = System.Drawing.Color.White;
-            this.txtFullName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(143, 78);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.ReadOnly = true;
-            this.txtFullName.Size = new System.Drawing.Size(219, 27);
-            this.txtFullName.TabIndex = 25;
-            this.txtFullName.TabStop = false;
-            // 
-            // lblFullName
-            // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblFullName.Location = new System.Drawing.Point(22, 84);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(86, 21);
-            this.lblFullName.TabIndex = 26;
-            this.lblFullName.Text = "Full Name";
-            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,12 +667,12 @@
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.grpPersonalDetails.ResumeLayout(false);
             this.grpPersonalDetails.PerformLayout();
             this.grpEmployeeDetails.ResumeLayout(false);
             this.grpEmployeeDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch2)).EndInit();
             this.grpUserDetails.ResumeLayout(false);
             this.grpUserDetails.PerformLayout();
