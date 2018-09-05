@@ -92,6 +92,12 @@ namespace MainSystem.Accounting
             return date + a.ToString("0000");
         }
 
+        private Boolean checker()
+        {
+
+            return false;
+        }
+
         private void btnPay_Click(object sender, EventArgs e)
         {
             var dbconnect = new dbConnector();
@@ -130,7 +136,7 @@ namespace MainSystem.Accounting
                 using (dbconnection = dbconnect.connector())
                 {
                     dbconnection.Open();
-                    string queryy = "UPDATE accountdetails SET paid_amount = @paidamount WHERE adid = @ayd";
+                    string queryy = "UPDATE accountdetails SET paid_amount = @paidamount WHERE adid = @ayd;";
                     using (var command2 = new MySqlCommand(queryy, dbconnection))
                     {
                         command2.Parameters.AddWithValue("@ayd", dic["adid"]);
