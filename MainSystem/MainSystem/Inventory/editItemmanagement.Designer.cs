@@ -41,13 +41,13 @@
             this.lbledit = new System.Windows.Forms.Label();
             this.btnconfirm = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
-            this.cmbstatus = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gbItemDetails2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbItemDetails2
             // 
-            this.gbItemDetails2.Controls.Add(this.cmbstatus);
+            this.gbItemDetails2.Controls.Add(this.textBox1);
             this.gbItemDetails2.Controls.Add(this.lblstatus);
             this.gbItemDetails2.Controls.Add(this.txtdesc);
             this.gbItemDetails2.Controls.Add(this.txtitemname);
@@ -170,18 +170,13 @@
             this.btnback.UseVisualStyleBackColor = true;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // cmbstatus
+            // textBox1
             // 
-            this.cmbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbstatus.FormattingEnabled = true;
-            this.cmbstatus.Items.AddRange(new object[] {
-            "",
-            "0",
-            "1"});
-            this.cmbstatus.Location = new System.Drawing.Point(90, 170);
-            this.cmbstatus.Name = "cmbstatus";
-            this.cmbstatus.Size = new System.Drawing.Size(204, 21);
-            this.cmbstatus.TabIndex = 13;
+            this.textBox1.Location = new System.Drawing.Point(90, 169);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(204, 20);
+            this.textBox1.TabIndex = 13;
             // 
             // editItemmanagement
             // 
@@ -217,6 +212,6 @@
         public System.Windows.Forms.TextBox txtitemname;
         public System.Windows.Forms.TextBox txtitemcode;
         public System.Windows.Forms.TextBox txtitemid;
-        public System.Windows.Forms.ComboBox cmbstatus;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }

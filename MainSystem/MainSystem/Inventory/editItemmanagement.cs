@@ -15,10 +15,12 @@ namespace MainSystem
     public partial class editItemmanagement : Form
     {
         public frmitemmanagement reference { get; set; }
-        
-        public editItemmanagement()
+        IDictionary<string, string> dic;
+        public editItemmanagement(IDictionary<string, string> d)
         {
             InitializeComponent();
+            dic = d;
+            filltextbox();
         }
         dbConnector connect = new dbConnector();
         private void btnback_Click(object sender, EventArgs e)
@@ -26,12 +28,27 @@ namespace MainSystem
             reference.Show();
             this.Close();
         }
+        private void filltextbox()
+        {
+            txtitemcode.Text = dic["itemcode"];
+            txtdesc.Text = dic["description"];
+            if(dic["itemstatus"] == "1")
+            {
+                textBox1.Text = "Active";
+            }
+            else if(dic["itemstatus"] == "0")
+            {
+                textBox1.Text = "Inactive";
+            }
+            txtitemname.Text = dic["itemname"];
+
+        }
         private void editData()
         {
             MySqlConnection conn = connect.connector();
             String query = "UPDATE itemdetails SET item_code ='" + txtitemcode.Text +
                 "', description ='" + txtdesc.Text +
-                "', itemstatus ='" + cmbstatus.Text +
+                "', itemstatus ='" + dic["itemstatus"] +
                 "', itemname ='" + txtitemname.Text + 
                 "' WHERE itemID ='" + txtitemid.Text + "'";
             MySqlCommand command = new MySqlCommand(query, conn);
@@ -43,14 +60,13 @@ namespace MainSystem
                 this.Close();
                 reference.Show();
                 reference.readData();
+                reference.dataGridView1.ClearSelection();
             }
             catch (Exception)
             {
                 MessageBox.Show("Invalid");
             }
-            this.Close();
-            reference.Show();
-            reference.dataGridView1.Rows[0].Selected = false;
+            
         }
         private void btnconfirm_Click(object sender, EventArgs e)
         {
