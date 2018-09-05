@@ -14,14 +14,13 @@ namespace MainSystem.User
     {
         public User.frmUser reference { get; set; }
         User.DbQueries dbquery = new User.DbQueries();
-        public string id { get; set; }
+        public string empID { get; set; }
         public string fullname { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public string restriction { get; set; }
         
         public string userID { get; set; }
-        int countUserID;
         public frmEditUser(string uname)
         {
             InitializeComponent();
@@ -30,8 +29,7 @@ namespace MainSystem.User
 
         private void frmEditUser_Load(object sender, EventArgs e)
         {
-            txtID.Text = userID;
-            txtEmployeeID.Text = id;
+            txtEmployeeID.Text = empID;
             txtFullName.Text = fullname;
             txtUsername.Text = username;
             txtPassword.Text = password;
@@ -93,11 +91,11 @@ namespace MainSystem.User
                 dict["user"] = "1";
             }
             string temp = dict["acc"] + dict["reg"] + dict["emp"] + dict["inv"] + dict["user"];
-            dbquery.updatUser(txtUsername.Text, txtPassword.Text, temp, "1", txtID.Text);
+            dbquery.updatUser(txtUsername.Text, txtPassword.Text, temp, "1", userID);
             MessageBox.Show("Succesfully Updated");
             reference.Show();
-            reference.dataSearch.ClearSelection();
             reference.dataSearch2.ClearSelection();
+            reference.dataSearch.ClearSelection();
             reference.loadUsers();
             this.Close();
         }

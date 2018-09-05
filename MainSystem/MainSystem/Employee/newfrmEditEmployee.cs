@@ -25,6 +25,7 @@ namespace MainSystem.Employee
         public string religion { get; set; }
         public string maritalstatus { get; set; }
         public string status { get; set; }
+        public string userID { get; set; }
         public newfrmEditEmployee()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace MainSystem.Employee
 
         private void newfrmEditEmployee_Load(object sender, EventArgs e)
         {
+            txtUserAccountID.Text = userID;
             txtFirstName.Text = firstname; 
             txtLastName.Text = lastname; 
             txtMiddleName.Text = middlename; 
@@ -73,6 +75,7 @@ namespace MainSystem.Employee
                 religion = cmbReligion.Text;
             }
             dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, religion, cmbMaritalStatus.Text, status, id);
+            dbquery.updateAccountStatus(id, status, userID);
             MessageBox.Show("Succesfully Updated");
             reference.Show();
             reference.loadEmployeeDetails();

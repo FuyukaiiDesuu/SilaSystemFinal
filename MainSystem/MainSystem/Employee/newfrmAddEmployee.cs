@@ -14,7 +14,6 @@ namespace MainSystem.Employee
     {
         public Employee.newfrmEmployee reference { get; set; }
         Employee.DbQueries dbquery = new Employee.DbQueries();
-        int countPayment;
         
         public newfrmAddEmployee()
         {

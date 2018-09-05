@@ -54,6 +54,8 @@
             this.lblReligion = new System.Windows.Forms.Label();
             this.lblSex = new System.Windows.Forms.Label();
             this.lblBirthDate = new System.Windows.Forms.Label();
+            this.txtUserAccountID = new System.Windows.Forms.TextBox();
+            this.lblUserAccountID = new System.Windows.Forms.Label();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +63,7 @@
             // txtMiddleName
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
-            this.txtMiddleName.Location = new System.Drawing.Point(115, 66);
+            this.txtMiddleName.Location = new System.Drawing.Point(115, 97);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
             this.txtMiddleName.TabIndex = 2;
@@ -70,7 +72,7 @@
             // 
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(14, 70);
+            this.lblMiddleName.Location = new System.Drawing.Point(14, 101);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(89, 16);
             this.lblMiddleName.TabIndex = 20;
@@ -80,7 +82,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(14, 34);
+            this.lblFirstName.Location = new System.Drawing.Point(14, 66);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(73, 16);
             this.lblFirstName.TabIndex = 19;
@@ -89,7 +91,7 @@
             // txtLastName
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
-            this.txtLastName.Location = new System.Drawing.Point(115, 101);
+            this.txtLastName.Location = new System.Drawing.Point(115, 136);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(180, 20);
             this.txtLastName.TabIndex = 3;
@@ -97,7 +99,7 @@
             // txtFirstName
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
-            this.txtFirstName.Location = new System.Drawing.Point(115, 30);
+            this.txtFirstName.Location = new System.Drawing.Point(115, 62);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(180, 20);
             this.txtFirstName.TabIndex = 1;
@@ -106,7 +108,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(14, 142);
+            this.lblStatus.Location = new System.Drawing.Point(14, 180);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(45, 16);
             this.lblStatus.TabIndex = 11;
@@ -116,7 +118,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(14, 105);
+            this.lblLastName.Location = new System.Drawing.Point(14, 141);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(73, 16);
             this.lblLastName.TabIndex = 5;
@@ -124,6 +126,8 @@
             // 
             // grpEmployeeDetails
             // 
+            this.grpEmployeeDetails.Controls.Add(this.txtUserAccountID);
+            this.grpEmployeeDetails.Controls.Add(this.lblUserAccountID);
             this.grpEmployeeDetails.Controls.Add(this.cmbStatus);
             this.grpEmployeeDetails.Controls.Add(this.txtMiddleName);
             this.grpEmployeeDetails.Controls.Add(this.txtFirstName);
@@ -147,7 +151,7 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(115, 137);
+            this.cmbStatus.Location = new System.Drawing.Point(115, 175);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(180, 21);
             this.cmbStatus.TabIndex = 4;
@@ -345,6 +349,24 @@
             this.lblBirthDate.TabIndex = 4;
             this.lblBirthDate.Text = "Birth Date";
             // 
+            // txtUserAccountID
+            // 
+            this.txtUserAccountID.BackColor = System.Drawing.Color.White;
+            this.txtUserAccountID.Location = new System.Drawing.Point(115, 26);
+            this.txtUserAccountID.Name = "txtUserAccountID";
+            this.txtUserAccountID.Size = new System.Drawing.Size(180, 20);
+            this.txtUserAccountID.TabIndex = 21;
+            // 
+            // lblUserAccountID
+            // 
+            this.lblUserAccountID.AutoSize = true;
+            this.lblUserAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserAccountID.Location = new System.Drawing.Point(14, 30);
+            this.lblUserAccountID.Name = "lblUserAccountID";
+            this.lblUserAccountID.Size = new System.Drawing.Size(104, 16);
+            this.lblUserAccountID.TabIndex = 22;
+            this.lblUserAccountID.Text = "User Account ID";
+            // 
             // newfrmEditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,5 +418,7 @@
         private System.Windows.Forms.Label lblReligion;
         private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.Label lblBirthDate;
+        public System.Windows.Forms.TextBox txtUserAccountID;
+        private System.Windows.Forms.Label lblUserAccountID;
     }
 }

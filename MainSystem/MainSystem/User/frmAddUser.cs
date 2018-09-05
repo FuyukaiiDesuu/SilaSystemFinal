@@ -16,7 +16,6 @@ namespace MainSystem.User
         User.DbQueries dbquery = new User.DbQueries();
         public string id { get; set; }
         public string fullname { get; set; }
-        int countUserID;
         public frmAddUser(string uname)
         {
             InitializeComponent();
@@ -25,9 +24,6 @@ namespace MainSystem.User
 
         private void frmAddUser_Load(object sender, EventArgs e)
         {
-            DataTable countEmployeeID = dbquery.countUserID();
-            countUserID = countEmployeeID.Rows.Count + 1;
-            txtID.Text = countUserID.ToString();
             txtEmployeeID.Text = id;
             txtFullName.Text = fullname;
         }

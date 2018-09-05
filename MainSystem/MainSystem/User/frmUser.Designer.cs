@@ -43,8 +43,6 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
-            this.lblEmployeeID = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
             this.txtMaritalStatus = new System.Windows.Forms.TextBox();
@@ -68,8 +66,6 @@
             this.grpUserDetails = new System.Windows.Forms.GroupBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.lblFullName = new System.Windows.Forms.Label();
-            this.txtUserID = new System.Windows.Forms.TextBox();
-            this.lblUserID = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -170,7 +166,7 @@
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
             this.txtMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtMiddleName.Location = new System.Drawing.Point(143, 105);
+            this.txtMiddleName.Location = new System.Drawing.Point(143, 72);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.ReadOnly = true;
             this.txtMiddleName.Size = new System.Drawing.Size(219, 27);
@@ -181,7 +177,7 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtFirstName.Location = new System.Drawing.Point(143, 72);
+            this.txtFirstName.Location = new System.Drawing.Point(143, 39);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(219, 27);
@@ -193,7 +189,7 @@
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblMiddleName.Location = new System.Drawing.Point(22, 111);
+            this.lblMiddleName.Location = new System.Drawing.Point(22, 78);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(115, 21);
             this.lblMiddleName.TabIndex = 20;
@@ -204,7 +200,7 @@
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblFirstName.Location = new System.Drawing.Point(22, 78);
+            this.lblFirstName.Location = new System.Drawing.Point(22, 45);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(91, 21);
             this.lblFirstName.TabIndex = 19;
@@ -214,7 +210,7 @@
             // 
             this.txtStatus.BackColor = System.Drawing.Color.White;
             this.txtStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtStatus.Location = new System.Drawing.Point(143, 171);
+            this.txtStatus.Location = new System.Drawing.Point(143, 138);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
             this.txtStatus.Size = new System.Drawing.Size(219, 27);
@@ -225,7 +221,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtLastName.Location = new System.Drawing.Point(143, 138);
+            this.txtLastName.Location = new System.Drawing.Point(143, 105);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(219, 27);
@@ -237,7 +233,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblStatus.Location = new System.Drawing.Point(22, 177);
+            this.lblStatus.Location = new System.Drawing.Point(22, 144);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(59, 21);
             this.lblStatus.TabIndex = 11;
@@ -248,33 +244,11 @@
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblLastName.Location = new System.Drawing.Point(22, 144);
+            this.lblLastName.Location = new System.Drawing.Point(22, 111);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(93, 21);
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name";
-            // 
-            // txtEmployeeID
-            // 
-            this.txtEmployeeID.BackColor = System.Drawing.Color.White;
-            this.txtEmployeeID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeID.Location = new System.Drawing.Point(143, 39);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.ReadOnly = true;
-            this.txtEmployeeID.Size = new System.Drawing.Size(219, 27);
-            this.txtEmployeeID.TabIndex = 0;
-            this.txtEmployeeID.TabStop = false;
-            // 
-            // lblEmployeeID
-            // 
-            this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblEmployeeID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblEmployeeID.Location = new System.Drawing.Point(22, 45);
-            this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(27, 21);
-            this.lblEmployeeID.TabIndex = 0;
-            this.lblEmployeeID.Text = "ID";
             // 
             // lblUser
             // 
@@ -467,8 +441,6 @@
             this.grpEmployeeDetails.Controls.Add(this.txtLastName);
             this.grpEmployeeDetails.Controls.Add(this.lblStatus);
             this.grpEmployeeDetails.Controls.Add(this.lblLastName);
-            this.grpEmployeeDetails.Controls.Add(this.txtEmployeeID);
-            this.grpEmployeeDetails.Controls.Add(this.lblEmployeeID);
             this.grpEmployeeDetails.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.grpEmployeeDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.grpEmployeeDetails.Location = new System.Drawing.Point(535, 93);
@@ -538,8 +510,6 @@
             // 
             this.grpUserDetails.Controls.Add(this.txtFullName);
             this.grpUserDetails.Controls.Add(this.lblFullName);
-            this.grpUserDetails.Controls.Add(this.txtUserID);
-            this.grpUserDetails.Controls.Add(this.lblUserID);
             this.grpUserDetails.Controls.Add(this.txtPassword);
             this.grpUserDetails.Controls.Add(this.txtUsername);
             this.grpUserDetails.Controls.Add(this.lblPassword);
@@ -557,7 +527,7 @@
             // 
             this.txtFullName.BackColor = System.Drawing.Color.White;
             this.txtFullName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(143, 78);
+            this.txtFullName.Location = new System.Drawing.Point(143, 46);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.ReadOnly = true;
             this.txtFullName.Size = new System.Drawing.Size(219, 27);
@@ -569,39 +539,17 @@
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblFullName.Location = new System.Drawing.Point(22, 84);
+            this.lblFullName.Location = new System.Drawing.Point(22, 52);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(86, 21);
             this.lblFullName.TabIndex = 26;
             this.lblFullName.Text = "Full Name";
             // 
-            // txtUserID
-            // 
-            this.txtUserID.BackColor = System.Drawing.Color.White;
-            this.txtUserID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(143, 45);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.ReadOnly = true;
-            this.txtUserID.Size = new System.Drawing.Size(219, 27);
-            this.txtUserID.TabIndex = 23;
-            this.txtUserID.TabStop = false;
-            // 
-            // lblUserID
-            // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblUserID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblUserID.Location = new System.Drawing.Point(22, 51);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(27, 21);
-            this.lblUserID.TabIndex = 24;
-            this.lblUserID.Text = "ID";
-            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPassword.Location = new System.Drawing.Point(143, 144);
+            this.txtPassword.Location = new System.Drawing.Point(143, 112);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(219, 27);
@@ -613,7 +561,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtUsername.Location = new System.Drawing.Point(143, 111);
+            this.txtUsername.Location = new System.Drawing.Point(143, 79);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(219, 27);
@@ -625,7 +573,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblPassword.Location = new System.Drawing.Point(22, 150);
+            this.lblPassword.Location = new System.Drawing.Point(22, 118);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(82, 21);
             this.lblPassword.TabIndex = 20;
@@ -636,7 +584,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblUsername.Location = new System.Drawing.Point(22, 117);
+            this.lblUsername.Location = new System.Drawing.Point(22, 85);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(88, 21);
             this.lblUsername.TabIndex = 19;
@@ -698,8 +646,6 @@
         public System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblLastName;
-        public System.Windows.Forms.TextBox txtEmployeeID;
-        private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.GroupBox grpPersonalDetails;
         public System.Windows.Forms.TextBox txtMaritalStatus;
@@ -725,8 +671,6 @@
         public System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUsername;
-        public System.Windows.Forms.TextBox txtUserID;
-        private System.Windows.Forms.Label lblUserID;
         public System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label lblFullName;
     }

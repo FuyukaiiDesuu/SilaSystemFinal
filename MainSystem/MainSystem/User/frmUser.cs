@@ -16,11 +16,10 @@ namespace MainSystem.User
         User.DbQueries dbquery = new User.DbQueries();
         string fullname;
         public string uname;
-        public string uid;
-        public string eid;
-        public string fn;
-        public string un;
-        public string pw;
+        public string userID;
+        public string empID;
+        public string empID2;
+
         public frmUser(string uname)
         {
             InitializeComponent();
@@ -31,8 +30,8 @@ namespace MainSystem.User
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-            dataSearch.ClearSelection();
             dataSearch2.ClearSelection();
+            dataSearch.ClearSelection();
         }
 
         public void loadEmployeeDetails()
@@ -52,6 +51,13 @@ namespace MainSystem.User
             dataSearch.Columns["religion"].Visible = false;
             dataSearch.Columns["marital_status"].Visible = false;
             dataSearch.Columns["status"].Visible = false;
+
+            dataSearch.Columns["userID"].Visible = true;
+            dataSearch.Columns["username"].Visible = false;
+            dataSearch.Columns["password"].Visible = false;
+            dataSearch.Columns["idemp"].Visible = false;
+            dataSearch.Columns["restrictions"].Visible = false;
+            dataSearch.Columns["status1"].Visible = false;
 
             dataSearch.Columns["fullname"].DisplayIndex = 4;
             this.dataSearch.Columns["fullname"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -93,21 +99,29 @@ namespace MainSystem.User
         {
             if (e.RowIndex >= 0)
             {
-                txtEmployeeID.Text = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
+                empID = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
                 txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
                 txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
                 txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
-                txtBirthDate.Text = dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString();
+                DateTime dt = DateTime.Parse(dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString());
+                txtBirthDate.Text = dt.ToString("yyyy/MM/dd");
                 txtBirthPlace.Text = dataSearch.SelectedRows[0].Cells["birth_place"].Value.ToString();
                 txtContactNo.Text = dataSearch.SelectedRows[0].Cells["contactNo"].Value.ToString();
                 txtSex.Text = dataSearch.SelectedRows[0].Cells["sex"].Value.ToString();
                 txtReligion.Text = dataSearch.SelectedRows[0].Cells["religion"].Value.ToString();
                 txtMaritalStatus.Text = dataSearch.SelectedRows[0].Cells["marital_status"].Value.ToString();
                 txtStatus.Text = dataSearch.SelectedRows[0].Cells["status"].Value.ToString();
+                if(txtStatus.Text == "1")
+                {
+                    txtStatus.Text = "Active";
+                }
+                else
+                {
+                    txtStatus.Text = "Inactive";
+                }
                 fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
 
                 btnAdd.Enabled = true;
-                btnEdit.Enabled = true;
             }
             else
             { return; }
@@ -150,7 +164,7 @@ namespace MainSystem.User
             DataTable holder = dbquery.User(uname);
             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             adduser = new User.frmAddUser(uname);
-            adduser.id = txtEmployeeID.Text;
+            adduser.id = empID;
             adduser.fullname = fullname;
 
             adduser.Show();
@@ -164,11 +178,11 @@ namespace MainSystem.User
             DataTable holder = dbquery.User(uname);
             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             edituser = new User.frmEditUser(uname);
-            edituser.id = txtEmployeeID.Text = dataSearch2.SelectedRows[0].Cells["empID"].Value.ToString();
-            edituser.fullname = txtFullName.Text = dataSearch2.SelectedRows[0].Cells["fullname"].Value.ToString();
+            edituser.empID = empID2;
+            edituser.fullname = txtFullName.Text;
             edituser.restriction = dataSearch2.SelectedRows[0].Cells["restrictions"].Value.ToString();
             edituser.username = txtUsername.Text;
-            edituser.userID = txtUserID.Text;
+            edituser.userID = userID;
             edituser.password = txtPassword.Text;
             edituser.Show();
             edituser.reference = this;
@@ -179,11 +193,11 @@ namespace MainSystem.User
         {
             if (e.RowIndex >= 0)
             {
-                txtUserID.Text = dataSearch2.SelectedRows[0].Cells["userID"].Value.ToString();
+                userID = dataSearch2.SelectedRows[0].Cells["userID"].Value.ToString();
                 txtFullName.Text = dataSearch2.SelectedRows[0].Cells["fullname"].Value.ToString();
                 txtUsername.Text = dataSearch2.SelectedRows[0].Cells["username"].Value.ToString();
                 txtPassword.Text = dataSearch2.SelectedRows[0].Cells["password"].Value.ToString();
-
+                empID2 = dataSearch2.SelectedRows[0].Cells["idemp"].Value.ToString();
                 btnEdit.Enabled = true;
             }
             else

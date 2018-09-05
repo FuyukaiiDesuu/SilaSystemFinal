@@ -15,8 +15,8 @@ namespace MainSystem.User
         public DataTable EmployeeDisplay()
         {
             string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname'
-                            FROM employee as emp
-                            where status = 1
+                            FROM employee as emp LEFT JOIN usertable on usertable.idemp = emp.empID
+                            where (emp.status = 1 AND usertable.status = 1 OR usertable.userID IS NULL OR usertable.status = 0)
                             order by empID";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
@@ -38,13 +38,6 @@ namespace MainSystem.User
                             where status = 1 AND last_name 
                             like '" + lastname + "%'" +
                             "order by empID";
-            DataTable itmContainer = con.Select(query);
-            return itmContainer;
-        }
-
-        public DataTable countUserID()
-        {
-            string query = @"SELECT userID from usertable";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }

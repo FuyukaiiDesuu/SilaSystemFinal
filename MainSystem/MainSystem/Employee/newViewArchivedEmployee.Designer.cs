@@ -52,10 +52,10 @@
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
-            this.dateBirthDate = new System.Windows.Forms.DateTimePicker();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataSearch = new System.Windows.Forms.DataGridView();
+            this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
@@ -306,7 +306,7 @@
             // 
             // grpPersonalDetails
             // 
-            this.grpPersonalDetails.Controls.Add(this.dateBirthDate);
+            this.grpPersonalDetails.Controls.Add(this.txtBirthDate);
             this.grpPersonalDetails.Controls.Add(this.txtMaritalStatus);
             this.grpPersonalDetails.Controls.Add(this.lblMaritalStatus);
             this.grpPersonalDetails.Controls.Add(this.txtBirthPlace);
@@ -324,16 +324,6 @@
             this.grpPersonalDetails.TabIndex = 25;
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
-            // 
-            // dateBirthDate
-            // 
-            this.dateBirthDate.CustomFormat = "yyyy/MM/dd";
-            this.dateBirthDate.Enabled = false;
-            this.dateBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateBirthDate.Location = new System.Drawing.Point(155, 32);
-            this.dateBirthDate.Name = "dateBirthDate";
-            this.dateBirthDate.Size = new System.Drawing.Size(180, 20);
-            this.dateBirthDate.TabIndex = 16;
             // 
             // btnDashboard
             // 
@@ -368,6 +358,16 @@
             this.dataSearch.Size = new System.Drawing.Size(773, 165);
             this.dataSearch.TabIndex = 22;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
+            // 
+            // txtBirthDate
+            // 
+            this.txtBirthDate.BackColor = System.Drawing.Color.White;
+            this.txtBirthDate.Location = new System.Drawing.Point(155, 29);
+            this.txtBirthDate.Name = "txtBirthDate";
+            this.txtBirthDate.ReadOnly = true;
+            this.txtBirthDate.Size = new System.Drawing.Size(180, 20);
+            this.txtBirthDate.TabIndex = 16;
+            this.txtBirthDate.TabStop = false;
             // 
             // newViewArchivedEmployee
             // 
@@ -427,6 +427,6 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataSearch;
-        public System.Windows.Forms.DateTimePicker dateBirthDate;
+        public System.Windows.Forms.TextBox txtBirthDate;
     }
 }

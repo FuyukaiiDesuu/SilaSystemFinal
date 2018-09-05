@@ -70,7 +70,8 @@ namespace MainSystem.Employee
             {
                 status = "0";
             }
-            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, id);
+            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, id);
+            dbquery.updateAccountStatus(id, status, id);
             MessageBox.Show("Succesfully Updated");
             reference.Show();
             reference.loadEmployeeDetails();
@@ -87,7 +88,8 @@ namespace MainSystem.Employee
                 txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
                 txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
                 txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
-                dateBirthDate.Text = dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString();
+                DateTime dt = DateTime.Parse(dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString());
+                txtBirthDate.Text = dt.ToString("yyyy/MM/dd");
                 txtBirthPlace.Text = dataSearch.SelectedRows[0].Cells["birth_place"].Value.ToString();
                 txtContactNo.Text = dataSearch.SelectedRows[0].Cells["contactNo"].Value.ToString();
                 txtSex.Text = dataSearch.SelectedRows[0].Cells["sex"].Value.ToString();

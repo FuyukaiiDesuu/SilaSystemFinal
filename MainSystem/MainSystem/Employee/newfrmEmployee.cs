@@ -17,6 +17,7 @@ namespace MainSystem.Employee
         string fullname;
         public string uname;
         public string empID;
+        public string userID;
         public newfrmEmployee(string uname)
         {
             InitializeComponent();
@@ -47,6 +48,13 @@ namespace MainSystem.Employee
             dataSearch.Columns["marital_status"].HeaderText = "Marital Status";
             dataSearch.Columns["status"].Visible = false;
 
+            dataSearch.Columns["userID"].Visible = true;
+            dataSearch.Columns["username"].Visible = false;
+            dataSearch.Columns["password"].Visible = false;
+            dataSearch.Columns["idemp"].Visible = false;
+            dataSearch.Columns["restrictions"].Visible = false;
+            dataSearch.Columns["status1"].Visible = false;
+
             dataSearch.Columns["fullname"].DisplayIndex = 4;
             this.dataSearch.Columns["fullname"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
@@ -58,11 +66,13 @@ namespace MainSystem.Employee
         {
             if (e.RowIndex >= 0)
             {
+                userID = dataSearch.SelectedRows[0].Cells["userID"].Value.ToString();
                 empID = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
                 txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
                 txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
                 txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
-                txtBirthDate.Text = dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString();
+                DateTime dt = DateTime.Parse(dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString());
+                txtBirthDate.Text = dt.ToString("yyyy/MM/dd");
                 txtBirthPlace.Text = dataSearch.SelectedRows[0].Cells["birth_place"].Value.ToString();
                 txtContactNo.Text = dataSearch.SelectedRows[0].Cells["contactNo"].Value.ToString();
                 txtSex.Text = dataSearch.SelectedRows[0].Cells["sex"].Value.ToString();
@@ -104,6 +114,7 @@ namespace MainSystem.Employee
         private void btnEdit_Click(object sender, EventArgs e)
         {
             editemp = new Employee.newfrmEditEmployee();
+            editemp.userID = userID;
             editemp.id = empID;
             editemp.firstname = txtFirstName.Text;
             editemp.lastname = txtLastName.Text;

@@ -37,8 +37,6 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.lblFullName = new System.Windows.Forms.Label();
@@ -158,8 +156,6 @@
             // 
             // grpEmployeeDetails
             // 
-            this.grpEmployeeDetails.Controls.Add(this.txtID);
-            this.grpEmployeeDetails.Controls.Add(this.lblID);
             this.grpEmployeeDetails.Controls.Add(this.txtFullName);
             this.grpEmployeeDetails.Controls.Add(this.txtEmployeeID);
             this.grpEmployeeDetails.Controls.Add(this.lblFullName);
@@ -173,33 +169,16 @@
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
             // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(149, 67);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(215, 27);
-            this.txtID.TabIndex = 5;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(20, 73);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(27, 21);
-            this.lblID.TabIndex = 4;
-            this.lblID.Text = "ID";
-            // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(149, 207);
+            this.txtFullName.Location = new System.Drawing.Point(149, 138);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(215, 27);
             this.txtFullName.TabIndex = 3;
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(149, 138);
+            this.txtEmployeeID.Location = new System.Drawing.Point(149, 70);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(215, 27);
             this.txtEmployeeID.TabIndex = 2;
@@ -207,7 +186,7 @@
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
-            this.lblFullName.Location = new System.Drawing.Point(20, 213);
+            this.lblFullName.Location = new System.Drawing.Point(20, 144);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(86, 21);
             this.lblFullName.TabIndex = 1;
@@ -216,7 +195,7 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(20, 144);
+            this.lblEmployeeID.Location = new System.Drawing.Point(20, 76);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(107, 21);
             this.lblEmployeeID.TabIndex = 0;
@@ -422,7 +401,5 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lblID;
     }
 }

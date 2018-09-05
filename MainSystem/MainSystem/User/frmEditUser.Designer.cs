@@ -45,8 +45,6 @@
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
@@ -170,7 +168,7 @@
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(149, 207);
+            this.txtFullName.Location = new System.Drawing.Point(149, 138);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.ReadOnly = true;
             this.txtFullName.Size = new System.Drawing.Size(215, 27);
@@ -178,7 +176,7 @@
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(149, 138);
+            this.txtEmployeeID.Location = new System.Drawing.Point(149, 67);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.ReadOnly = true;
             this.txtEmployeeID.Size = new System.Drawing.Size(215, 27);
@@ -187,7 +185,7 @@
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
-            this.lblFullName.Location = new System.Drawing.Point(20, 213);
+            this.lblFullName.Location = new System.Drawing.Point(20, 144);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(86, 21);
             this.lblFullName.TabIndex = 1;
@@ -196,7 +194,7 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(20, 144);
+            this.lblEmployeeID.Location = new System.Drawing.Point(20, 73);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(107, 21);
             this.lblEmployeeID.TabIndex = 0;
@@ -225,8 +223,6 @@
             // 
             // grpEmployeeDetails
             // 
-            this.grpEmployeeDetails.Controls.Add(this.txtID);
-            this.grpEmployeeDetails.Controls.Add(this.lblID);
             this.grpEmployeeDetails.Controls.Add(this.txtFullName);
             this.grpEmployeeDetails.Controls.Add(this.txtEmployeeID);
             this.grpEmployeeDetails.Controls.Add(this.lblFullName);
@@ -239,23 +235,6 @@
             this.grpEmployeeDetails.TabIndex = 57;
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(149, 67);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(215, 27);
-            this.txtID.TabIndex = 7;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(20, 73);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(27, 21);
-            this.lblID.TabIndex = 6;
-            this.lblID.Text = "ID";
             // 
             // lblLoggedinas
             // 
@@ -424,7 +403,5 @@
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lblID;
     }
 }
