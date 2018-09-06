@@ -79,7 +79,7 @@ namespace MainSystem.Accounting
             this.dataSearch.Columns["fullname"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.dataSearch.Refresh();
         }
-
+        public string syeartempo = "2018 - 2019";
         public void loadBalanceDetails(string adid)
         {
             /*
@@ -97,7 +97,7 @@ namespace MainSystem.Accounting
             dataBalanceDetails.ReadOnly = true;*/
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" + adid+"' AND syear = '2018 - 2019';";
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" + adid+"' AND syear = '"+syeartempo+"' AND paymentStatus = 1;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -105,14 +105,14 @@ namespace MainSystem.Accounting
             }
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT paid_amount, payment_status, spid, did, fid, FirstName, LastName, MiddleName, Status " +
-                    "FROM accountdetails " +
-                    "INNER JOIN studentprofile " +
-                    "ON accountdetails.spid = studentprofile.idstudentprofile";
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 2;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
+                dgvpending.DataSource = dt;
             }
+            dgvpending.ClearSelection();
+            this.dgvpending.Refresh();
             dataBalanceDetails.ClearSelection();
             this.dataBalanceDetails.Refresh();
         }
@@ -297,6 +297,15 @@ namespace MainSystem.Accounting
         private void dataBalanceDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvpending_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            button1.Enabled = true;
+            chqno.Text = dgvpending.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
+            tno.Text = dgvpending.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
+            amnt.Text = "₱ " + dgvpending.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
         }
     }
 }
