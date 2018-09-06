@@ -17,6 +17,7 @@ namespace MainSystem
         public MySqlDataAdapter adapter;
         public DataTable dt;
         public Accounting.newfrmAccount reference { get; set; }
+        public IDictionary<string, string> dict;
         public validateCheque()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace MainSystem
 
         private void validateCheque_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
