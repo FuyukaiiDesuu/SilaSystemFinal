@@ -48,7 +48,7 @@ namespace MainSystem.Employee
             dataSearch.Columns["marital_status"].HeaderText = "Marital Status";
             dataSearch.Columns["status"].Visible = false;
 
-            dataSearch.Columns["userID"].Visible = true;
+            dataSearch.Columns["userID"].Visible = false;
             dataSearch.Columns["username"].Visible = false;
             dataSearch.Columns["password"].Visible = false;
             dataSearch.Columns["idemp"].Visible = false;
@@ -165,6 +165,24 @@ namespace MainSystem.Employee
             viewemp.Show();
             viewemp.reference = this;
             this.Hide();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ namespace MainSystem.Employee
         public string uname;
         public string id;
         string fullname;
+        public string userID;
 
         public newViewArchivedEmployee(string uname)
         {
@@ -47,6 +48,13 @@ namespace MainSystem.Employee
             dataSearch.Columns["marital_status"].HeaderText = "Marital Status";
             dataSearch.Columns["status"].Visible = false;
 
+            dataSearch.Columns["userID"].Visible = false;
+            dataSearch.Columns["username"].Visible = false;
+            dataSearch.Columns["password"].Visible = false;
+            dataSearch.Columns["idemp"].Visible = false;
+            dataSearch.Columns["restrictions"].Visible = false;
+            dataSearch.Columns["status1"].Visible = false;
+
             dataSearch.Columns["fullname"].DisplayIndex = 4;
             this.dataSearch.Columns["fullname"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
@@ -71,7 +79,7 @@ namespace MainSystem.Employee
                 status = "0";
             }
             dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, id);
-            dbquery.updateAccountStatus(id, status, id);
+            dbquery.updateAccountStatus(id, status, userID);
             MessageBox.Show("Succesfully Updated");
             reference.Show();
             reference.loadEmployeeDetails();
@@ -84,6 +92,7 @@ namespace MainSystem.Employee
         {
             if (e.RowIndex >= 0)
             {
+                userID = dataSearch.SelectedRows[0].Cells["userID"].Value.ToString();
                 id = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
                 txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
                 txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
@@ -127,6 +136,24 @@ namespace MainSystem.Employee
             string last_name = txtSearch.Text;
             DataTable holder = dbquery.searcArchivedhEmployee(last_name);
             dataSearch.DataSource = holder;
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
         }
     }
 }

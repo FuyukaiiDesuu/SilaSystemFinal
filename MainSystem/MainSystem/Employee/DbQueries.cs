@@ -16,7 +16,7 @@ namespace MainSystem.Employee
         {
             string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname' 
                             FROM employee as emp LEFT JOIN usertable on usertable.idemp = emp.empID
-                            where (emp.status = 1 AND usertable.status = 1 OR usertable.userID IS NULL OR usertable.status = 0)
+                            where (emp.status = 1 AND usertable.status = 1 OR usertable.userID IS NULL)
                             order by empID";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
@@ -25,8 +25,8 @@ namespace MainSystem.Employee
         public DataTable ArchiveEmployeeDisplay()
         {
             string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname'
-                            FROM employee as emp
-                            where status = 0
+                            FROM employee as emp LEFT JOIN usertable on usertable.idemp = emp.empID
+                            where (emp.status = 0 AND usertable.status = 0 OR usertable.userID IS NULL)
                             order by empID";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
@@ -34,11 +34,11 @@ namespace MainSystem.Employee
 
         public DataTable searchEmployee(string lastname)
         {
-            string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname'
-                            FROM employee as emp
-                            where status = 1 AND last_name 
-                            like '" + lastname + "%'" +
-                            "order by empID";
+            string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname' 
+                            FROM employee as emp LEFT JOIN usertable ON emp.empID = usertable.idemp
+                            where (emp.status = 1 AND emp.last_name AND usertable.status = 1)
+                            LIKE '" + lastname + "%'" +
+                            @"order by empID";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }
@@ -57,13 +57,6 @@ namespace MainSystem.Employee
         public DataTable User(string uname)
         {
             string query = "SELECT * FROM usertable INNER JOIN employee on usertable.idemp = employee.empID";
-            DataTable itmContainer = con.Select(query);
-            return itmContainer;
-        }
-
-        public DataTable getUserID()
-        {
-            string query = "SELECT * FROM employee INNER JOIN usertable on usertable.userID = usertable.idemp";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }

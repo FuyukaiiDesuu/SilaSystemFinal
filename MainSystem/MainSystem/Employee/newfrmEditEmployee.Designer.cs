@@ -36,6 +36,8 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
+            this.txtUserAccountID = new System.Windows.Forms.TextBox();
+            this.lblUserAccountID = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -54,73 +56,81 @@
             this.lblReligion = new System.Windows.Forms.Label();
             this.lblSex = new System.Windows.Forms.Label();
             this.lblBirthDate = new System.Windows.Forms.Label();
-            this.txtUserAccountID = new System.Windows.Forms.TextBox();
-            this.lblUserAccountID = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMiddleName
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
-            this.txtMiddleName.Location = new System.Drawing.Point(115, 97);
+            this.txtMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtMiddleName.Location = new System.Drawing.Point(156, 92);
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(180, 20);
+            this.txtMiddleName.Size = new System.Drawing.Size(180, 27);
             this.txtMiddleName.TabIndex = 2;
             // 
             // lblMiddleName
             // 
             this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(14, 101);
+            this.lblMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblMiddleName.Location = new System.Drawing.Point(14, 98);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(89, 16);
+            this.lblMiddleName.Size = new System.Drawing.Size(115, 21);
             this.lblMiddleName.TabIndex = 20;
             this.lblMiddleName.Text = "Middle Name";
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(14, 66);
+            this.lblFirstName.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblFirstName.Location = new System.Drawing.Point(14, 65);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(73, 16);
+            this.lblFirstName.Size = new System.Drawing.Size(91, 21);
             this.lblFirstName.TabIndex = 19;
             this.lblFirstName.Text = "First Name";
             // 
             // txtLastName
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
-            this.txtLastName.Location = new System.Drawing.Point(115, 136);
+            this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtLastName.Location = new System.Drawing.Point(156, 125);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(180, 20);
+            this.txtLastName.Size = new System.Drawing.Size(180, 27);
             this.txtLastName.TabIndex = 3;
             // 
             // txtFirstName
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
-            this.txtFirstName.Location = new System.Drawing.Point(115, 62);
+            this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtFirstName.Location = new System.Drawing.Point(156, 59);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(180, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(180, 27);
             this.txtFirstName.TabIndex = 1;
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(14, 180);
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblStatus.Location = new System.Drawing.Point(14, 164);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(45, 16);
+            this.lblStatus.Size = new System.Drawing.Size(59, 21);
             this.lblStatus.TabIndex = 11;
             this.lblStatus.Text = "Status";
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(14, 141);
+            this.lblLastName.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblLastName.Location = new System.Drawing.Point(14, 131);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(73, 16);
+            this.lblLastName.Size = new System.Drawing.Size(93, 21);
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name";
             // 
@@ -136,44 +146,74 @@
             this.grpEmployeeDetails.Controls.Add(this.txtLastName);
             this.grpEmployeeDetails.Controls.Add(this.lblStatus);
             this.grpEmployeeDetails.Controls.Add(this.lblLastName);
-            this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 13);
+            this.grpEmployeeDetails.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.grpEmployeeDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 64);
             this.grpEmployeeDetails.Name = "grpEmployeeDetails";
-            this.grpEmployeeDetails.Size = new System.Drawing.Size(317, 302);
+            this.grpEmployeeDetails.Size = new System.Drawing.Size(353, 302);
             this.grpEmployeeDetails.TabIndex = 19;
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
+            // 
+            // txtUserAccountID
+            // 
+            this.txtUserAccountID.BackColor = System.Drawing.Color.White;
+            this.txtUserAccountID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserAccountID.Location = new System.Drawing.Point(156, 26);
+            this.txtUserAccountID.Name = "txtUserAccountID";
+            this.txtUserAccountID.ReadOnly = true;
+            this.txtUserAccountID.Size = new System.Drawing.Size(180, 27);
+            this.txtUserAccountID.TabIndex = 1;
+            this.txtUserAccountID.TabStop = false;
+            // 
+            // lblUserAccountID
+            // 
+            this.lblUserAccountID.AutoSize = true;
+            this.lblUserAccountID.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblUserAccountID.Location = new System.Drawing.Point(14, 31);
+            this.lblUserAccountID.Name = "lblUserAccountID";
+            this.lblUserAccountID.Size = new System.Drawing.Size(137, 21);
+            this.lblUserAccountID.TabIndex = 22;
+            this.lblUserAccountID.Text = "User Account ID";
             // 
             // cmbStatus
             // 
             this.cmbStatus.BackColor = System.Drawing.Color.White;
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(115, 175);
+            this.cmbStatus.Location = new System.Drawing.Point(156, 158);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(180, 21);
+            this.cmbStatus.Size = new System.Drawing.Size(180, 27);
             this.cmbStatus.TabIndex = 4;
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(10, 321);
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnSave.Location = new System.Drawing.Point(519, 372);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(89, 28);
-            this.btnSave.TabIndex = 21;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(105, 321);
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnCancel.Location = new System.Drawing.Point(614, 372);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(89, 28);
-            this.btnCancel.TabIndex = 22;
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -194,9 +234,11 @@
             this.grpPersonalDetails.Controls.Add(this.lblReligion);
             this.grpPersonalDetails.Controls.Add(this.lblSex);
             this.grpPersonalDetails.Controls.Add(this.lblBirthDate);
-            this.grpPersonalDetails.Location = new System.Drawing.Point(336, 13);
+            this.grpPersonalDetails.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.grpPersonalDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.grpPersonalDetails.Location = new System.Drawing.Point(371, 64);
             this.grpPersonalDetails.Name = "grpPersonalDetails";
-            this.grpPersonalDetails.Size = new System.Drawing.Size(317, 302);
+            this.grpPersonalDetails.Size = new System.Drawing.Size(332, 302);
             this.grpPersonalDetails.TabIndex = 23;
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
@@ -205,18 +247,19 @@
             // 
             this.txtSpecify.BackColor = System.Drawing.Color.White;
             this.txtSpecify.Enabled = false;
-            this.txtSpecify.Location = new System.Drawing.Point(112, 214);
+            this.txtSpecify.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSpecify.Location = new System.Drawing.Point(132, 189);
             this.txtSpecify.Name = "txtSpecify";
-            this.txtSpecify.Size = new System.Drawing.Size(180, 20);
-            this.txtSpecify.TabIndex = 31;
+            this.txtSpecify.Size = new System.Drawing.Size(180, 27);
+            this.txtSpecify.TabIndex = 10;
             // 
             // lblSpecify
             // 
             this.lblSpecify.AutoSize = true;
-            this.lblSpecify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpecify.Location = new System.Drawing.Point(8, 218);
+            this.lblSpecify.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblSpecify.Location = new System.Drawing.Point(8, 195);
             this.lblSpecify.Name = "lblSpecify";
-            this.lblSpecify.Size = new System.Drawing.Size(99, 16);
+            this.lblSpecify.Size = new System.Drawing.Size(118, 21);
             this.lblSpecify.TabIndex = 30;
             this.lblSpecify.Text = "Please Specify";
             // 
@@ -224,20 +267,22 @@
             // 
             this.cmbMaritalStatus.BackColor = System.Drawing.Color.White;
             this.cmbMaritalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaritalStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.cmbMaritalStatus.FormattingEnabled = true;
             this.cmbMaritalStatus.Items.AddRange(new object[] {
             "Single",
             "Married",
             "Divorced"});
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(112, 252);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(132, 222);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(180, 21);
-            this.cmbMaritalStatus.TabIndex = 29;
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(180, 27);
+            this.cmbMaritalStatus.TabIndex = 11;
             // 
             // cmbReligion
             // 
             this.cmbReligion.BackColor = System.Drawing.Color.White;
             this.cmbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReligion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.cmbReligion.FormattingEnabled = true;
             this.cmbReligion.Items.AddRange(new object[] {
             "Roman Catholic",
@@ -245,45 +290,47 @@
             "Iglesia Ni Cristo",
             "Jehovah\'s Witness",
             "Others"});
-            this.cmbReligion.Location = new System.Drawing.Point(112, 175);
+            this.cmbReligion.Location = new System.Drawing.Point(132, 156);
             this.cmbReligion.Name = "cmbReligion";
-            this.cmbReligion.Size = new System.Drawing.Size(180, 21);
-            this.cmbReligion.TabIndex = 28;
+            this.cmbReligion.Size = new System.Drawing.Size(180, 27);
+            this.cmbReligion.TabIndex = 9;
             this.cmbReligion.TextChanged += new System.EventHandler(this.cmbReligion_TextChanged);
             // 
             // txtContactNo
             // 
             this.txtContactNo.BackColor = System.Drawing.Color.White;
-            this.txtContactNo.Location = new System.Drawing.Point(112, 97);
+            this.txtContactNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtContactNo.Location = new System.Drawing.Point(132, 90);
             this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(180, 20);
+            this.txtContactNo.Size = new System.Drawing.Size(180, 27);
             this.txtContactNo.TabIndex = 7;
             // 
             // lblContactNo
             // 
             this.lblContactNo.AutoSize = true;
-            this.lblContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactNo.Location = new System.Drawing.Point(8, 101);
+            this.lblContactNo.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblContactNo.Location = new System.Drawing.Point(8, 98);
             this.lblContactNo.Name = "lblContactNo";
-            this.lblContactNo.Size = new System.Drawing.Size(74, 16);
+            this.lblContactNo.Size = new System.Drawing.Size(104, 21);
             this.lblContactNo.TabIndex = 27;
             this.lblContactNo.Text = "Contact No";
             // 
             // txtBirthPlace
             // 
             this.txtBirthPlace.BackColor = System.Drawing.Color.White;
-            this.txtBirthPlace.Location = new System.Drawing.Point(112, 62);
+            this.txtBirthPlace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtBirthPlace.Location = new System.Drawing.Point(132, 57);
             this.txtBirthPlace.Name = "txtBirthPlace";
-            this.txtBirthPlace.Size = new System.Drawing.Size(180, 20);
+            this.txtBirthPlace.Size = new System.Drawing.Size(180, 27);
             this.txtBirthPlace.TabIndex = 6;
             // 
             // lblBirthPlace
             // 
             this.lblBirthPlace.AutoSize = true;
-            this.lblBirthPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthPlace.Location = new System.Drawing.Point(8, 66);
+            this.lblBirthPlace.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblBirthPlace.Location = new System.Drawing.Point(8, 65);
             this.lblBirthPlace.Name = "lblBirthPlace";
-            this.lblBirthPlace.Size = new System.Drawing.Size(72, 16);
+            this.lblBirthPlace.Size = new System.Drawing.Size(91, 21);
             this.lblBirthPlace.TabIndex = 25;
             this.lblBirthPlace.Text = "Birth Place";
             // 
@@ -291,93 +338,137 @@
             // 
             this.cmbSex.BackColor = System.Drawing.Color.White;
             this.cmbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSex.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.cmbSex.FormattingEnabled = true;
             this.cmbSex.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbSex.Location = new System.Drawing.Point(112, 136);
+            this.cmbSex.Location = new System.Drawing.Point(132, 123);
             this.cmbSex.Name = "cmbSex";
-            this.cmbSex.Size = new System.Drawing.Size(180, 21);
+            this.cmbSex.Size = new System.Drawing.Size(180, 27);
             this.cmbSex.TabIndex = 8;
             // 
             // dateBirthDate
             // 
             this.dateBirthDate.CustomFormat = "yyyy/MM/dd";
+            this.dateBirthDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.dateBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateBirthDate.Location = new System.Drawing.Point(112, 26);
+            this.dateBirthDate.Location = new System.Drawing.Point(132, 24);
             this.dateBirthDate.Name = "dateBirthDate";
-            this.dateBirthDate.Size = new System.Drawing.Size(180, 20);
+            this.dateBirthDate.Size = new System.Drawing.Size(180, 27);
             this.dateBirthDate.TabIndex = 5;
             // 
             // lblMaritalStatus
             // 
             this.lblMaritalStatus.AutoSize = true;
-            this.lblMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaritalStatus.Location = new System.Drawing.Point(8, 257);
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblMaritalStatus.Location = new System.Drawing.Point(8, 228);
             this.lblMaritalStatus.Name = "lblMaritalStatus";
-            this.lblMaritalStatus.Size = new System.Drawing.Size(88, 16);
+            this.lblMaritalStatus.Size = new System.Drawing.Size(118, 21);
             this.lblMaritalStatus.TabIndex = 10;
             this.lblMaritalStatus.Text = "Marital Status";
             // 
             // lblReligion
             // 
             this.lblReligion.AutoSize = true;
-            this.lblReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReligion.Location = new System.Drawing.Point(8, 175);
+            this.lblReligion.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblReligion.Location = new System.Drawing.Point(8, 164);
             this.lblReligion.Name = "lblReligion";
-            this.lblReligion.Size = new System.Drawing.Size(58, 16);
+            this.lblReligion.Size = new System.Drawing.Size(70, 21);
             this.lblReligion.TabIndex = 8;
             this.lblReligion.Text = "Religion";
             // 
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSex.Location = new System.Drawing.Point(8, 137);
+            this.lblSex.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblSex.Location = new System.Drawing.Point(8, 131);
             this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(31, 16);
+            this.lblSex.Size = new System.Drawing.Size(36, 21);
             this.lblSex.TabIndex = 6;
             this.lblSex.Text = "Sex";
             // 
             // lblBirthDate
             // 
             this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthDate.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblBirthDate.Location = new System.Drawing.Point(8, 30);
             this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(66, 16);
+            this.lblBirthDate.Size = new System.Drawing.Size(88, 21);
             this.lblBirthDate.TabIndex = 4;
             this.lblBirthDate.Text = "Birth Date";
             // 
-            // txtUserAccountID
+            // panel1
             // 
-            this.txtUserAccountID.BackColor = System.Drawing.Color.White;
-            this.txtUserAccountID.Location = new System.Drawing.Point(115, 26);
-            this.txtUserAccountID.Name = "txtUserAccountID";
-            this.txtUserAccountID.Size = new System.Drawing.Size(180, 20);
-            this.txtUserAccountID.TabIndex = 21;
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(724, 31);
+            this.panel1.TabIndex = 38;
             // 
-            // lblUserAccountID
+            // label11
             // 
-            this.lblUserAccountID.AutoSize = true;
-            this.lblUserAccountID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserAccountID.Location = new System.Drawing.Point(14, 30);
-            this.lblUserAccountID.Name = "lblUserAccountID";
-            this.lblUserAccountID.Size = new System.Drawing.Size(104, 16);
-            this.lblUserAccountID.TabIndex = 22;
-            this.lblUserAccountID.Text = "User Account ID";
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.DimGray;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label11.Location = new System.Drawing.Point(673, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 23);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "_";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Firebrick;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label15.Location = new System.Drawing.Point(699, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(22, 23);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "X";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // lblSilaSchoolManagementSoftware
+            // 
+            this.lblSilaSchoolManagementSoftware.AutoSize = true;
+            this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 9);
+            this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(469, 19);
+            this.lblSilaSchoolManagementSoftware.TabIndex = 0;
+            this.lblSilaSchoolManagementSoftware.Text = "EMPLOYEE MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
             // newfrmEditEmployee
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(665, 362);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(724, 415);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.grpPersonalDetails);
             this.Controls.Add(this.grpEmployeeDetails);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "newfrmEditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Employee";
@@ -386,6 +477,9 @@
             this.grpEmployeeDetails.PerformLayout();
             this.grpPersonalDetails.ResumeLayout(false);
             this.grpPersonalDetails.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -420,5 +514,10 @@
         private System.Windows.Forms.Label lblBirthDate;
         public System.Windows.Forms.TextBox txtUserAccountID;
         private System.Windows.Forms.Label lblUserAccountID;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
     }
 }

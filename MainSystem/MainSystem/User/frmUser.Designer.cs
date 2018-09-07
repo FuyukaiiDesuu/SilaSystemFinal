@@ -142,7 +142,7 @@
             this.lblLoggedinas.AutoSize = true;
             this.lblLoggedinas.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblLoggedinas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblLoggedinas.Location = new System.Drawing.Point(-4, 37);
+            this.lblLoggedinas.Location = new System.Drawing.Point(-4, 34);
             this.lblLoggedinas.Name = "lblLoggedinas";
             this.lblLoggedinas.Size = new System.Drawing.Size(104, 19);
             this.lblLoggedinas.TabIndex = 44;
@@ -255,7 +255,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblUser.Location = new System.Drawing.Point(96, 37);
+            this.lblUser.Location = new System.Drawing.Point(97, 34);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(42, 19);
             this.lblUser.TabIndex = 45;

@@ -52,7 +52,7 @@ namespace MainSystem.User
             dataSearch.Columns["marital_status"].Visible = false;
             dataSearch.Columns["status"].Visible = false;
 
-            dataSearch.Columns["userID"].Visible = true;
+            dataSearch.Columns["userID"].Visible = false;
             dataSearch.Columns["username"].Visible = false;
             dataSearch.Columns["password"].Visible = false;
             dataSearch.Columns["idemp"].Visible = false;
