@@ -197,6 +197,8 @@ namespace MainSystem.Accounting
                     MessageBox.Show("Succesfully Paid");
                     reference.Show();
                     //reference.loadBalanceDetails(id);
+                    reference.loadBalanceDetails();
+                    reference.loadPaymentDetails();
                     reference.dataSearch.ClearSelection();
                     reference.dataBalanceDetails.ClearSelection();
                     this.Close();

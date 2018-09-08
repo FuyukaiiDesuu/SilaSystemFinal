@@ -37,7 +37,7 @@ namespace MainSystem.Accounting
         {
             txttpb.Text = "₱0.00";
             txtregp.Text = "₱0.00";
-            tuitiontxt.Text = "₱0.00";
+            //tuitiontxt.Text = "₱0.00";
             txtbp.Text = "₱0.00";
             txtmp.Text = "₱0.00";
              
@@ -96,6 +96,7 @@ namespace MainSystem.Accounting
         }
         private decimal balTuition()
         {
+            decimal totalpayablesum = 0.00M;
             decimal sum = 0.00M;
             using (MySqlConnection conn = connect.connector())
             {
@@ -143,7 +144,8 @@ namespace MainSystem.Accounting
                 }
 
             }
-            return sum - sum2;
+            totalpayablesum = sum * schoolMonths;
+            return totalpayablesum - sum2;
 
         }
         private decimal balRegis()
@@ -248,9 +250,10 @@ namespace MainSystem.Accounting
             }
             return sum - sum2;
         }
-        public Int32 schoolMonths = 0;
-        private decimal totalPayableTuition()
+        public Int32 schoolMonths = 10;
+        private void totalPayableTuition()
         {
+            /*
             schoolMonths = 10;
             decimal sum = 0.00M;
             using (MySqlConnection conn = connect.connector())
@@ -275,20 +278,20 @@ namespace MainSystem.Accounting
                     return sum = 0.00M;
                 }
 
-            }
+            }*/
+            
         }
 
         private decimal totalBalancePayable()
         {
-            return totalPayableTuition() + balRegis() + balOthers() + balBooks();
+            return balTuition() + balRegis() + balOthers() + balBooks();
         }
 
         private void textboxfill()
         {
-            tuitiontxt.Text = "₱" + balTuition().ToString();
+            txttottu.Text = "₱" + balTuition().ToString();
             txtmp.Text = "₱" + balOthers().ToString();
             txttpb.Text = "₱" + totalBalancePayable().ToString();
-            txttottu.Text = "₱" + totalPayableTuition().ToString();
             txtregp.Text = "₱" + balRegis().ToString();
             txtbp.Text = "₱" + balBooks().ToString();
 

@@ -45,6 +45,7 @@ namespace MainSystem.Accounting
             loadFeeDetails();
             dataSearch.ClearSelection();
             dataFeeValue.ClearSelection();
+            button1.Enabled = false;
         }
 
         public void loadStudentProfileTable()
@@ -80,7 +81,7 @@ namespace MainSystem.Accounting
             this.dataSearch.Refresh();
         }
         public string syeartempo = "2018 - 2019";
-        public void loadBalanceDetails(string adid)
+        public void loadBalanceDetails()
         {
             /*
             DataTable balanceDisplay = dbquery.balanceDetails(student_id);
@@ -95,9 +96,11 @@ namespace MainSystem.Accounting
             dataBalanceDetails.Columns["fid"].Visible = false;
 
             dataBalanceDetails.ReadOnly = true;*/
+            string adid = dic2["adid"];
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" + adid+"' AND syear = '"+syeartempo+"' AND paymentStatus = 1;";
+              
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" +adid+"' AND syear = '"+syeartempo+"' AND paymentStatus = 1;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -105,27 +108,36 @@ namespace MainSystem.Accounting
             }
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 2;";
+                string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, paymentStatus FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 2;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
                 dgvpending.DataSource = dt;
             }
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, paymentStatus FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 3;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dgvvoid.DataSource = dt;
+            }
+            dgvvoid.ClearSelection();
+            this.dgvvoid.Refresh();
             dgvpending.ClearSelection();
             this.dgvpending.Refresh();
             dataBalanceDetails.ClearSelection();
             this.dataBalanceDetails.Refresh();
+
+            dgvpending.Columns["paymentStatus"].Visible = false;
+            dgvvoid.Columns["paymentStatus"].Visible = false;
+            dgvpending.Columns["pid"].Visible = false;
+            dgvvoid.Columns["pid"].Visible = false;
         }
-        public void loadPaymentDetails(string adid)
+        public void loadPaymentDetails()
         {
-            DataTable paymentDisplay = dbquery.paymentHistory(adid);
-            this.dataFeeValue.DataSource = paymentDisplay;
-
-            dataFeeValue.Columns["amount_paid"].HeaderText = "Amount Paid";
-            dataFeeValue.Columns["current_balance"].HeaderText = "Current Balance";
-            dataFeeValue.Columns["date_paid"].HeaderText = "Date Paid";
+           
         }
-
         public void loadFeeDetails()
         {
             DataTable feeDisplay = dbquery.feevalues();
@@ -163,7 +175,7 @@ namespace MainSystem.Accounting
                 dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
                 dic2.Add("fullname", dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString());
 
-                loadBalanceDetails(dataSearch.Rows[e.RowIndex].Cells["adid"].Value.ToString());
+                loadBalanceDetails();
                 dataFeeValue.Refresh();
                 btnAddTransaction.Enabled = true;
                 btnEditAccount.Enabled = true;
@@ -175,7 +187,7 @@ namespace MainSystem.Accounting
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Close();
+            this.Dispose();
         }
         public Accounting.newfrmAddTransaction transac;
         private void btnAddTransaction_Click(object sender, EventArgs e)
@@ -298,14 +310,74 @@ namespace MainSystem.Accounting
         {
 
         }
-
+        public IDictionary<string, string> dicForPend;
         private void dgvpending_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
             button1.Enabled = true;
+            dicForPend = new Dictionary<string, string>();
+            dicForPend.Add("cno", dgvpending.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString());
+            dicForPend.Add("tno", dgvpending.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString());
+            dicForPend.Add("apaid", dgvpending.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString());
+            dicForPend.Add("status", dgvpending.Rows[e.RowIndex].Cells["paymentStatus"].Value.ToString());
+            dicForPend.Add("pid", dgvpending.Rows[e.RowIndex].Cells["pid"].Value.ToString());
+
+            button1.Enabled = true;
             chqno.Text = dgvpending.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
             tno.Text = dgvpending.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
             amnt.Text = "₱ " + dgvpending.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
+        }
+        public validateCheque vcform;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            vcform = new validateCheque(dicForPend);
+            vcform.Show();
+            vcform.reference = this;
+            this.Hide();
+        }
+
+        private void dgvvoid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) return;
+            button1.Enabled = false;
+            dicForPend = new Dictionary<string, string>();
+            dicForPend.Add("cno", dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString());
+            dicForPend.Add("tno", dgvvoid.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString());
+            dicForPend.Add("apaid", dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString());
+            dicForPend.Add("status", dgvvoid.Rows[e.RowIndex].Cells["paymentStatus"].Value.ToString());
+
+            button1.Enabled = true;
+            chqno.Text = dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
+            tno.Text = dgvvoid.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
+            amnt.Text = "₱ " + dgvvoid.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
+
+        }
+
+        private void tabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+         
+            chqno.Clear();
+            tno.Clear();
+            amnt.Clear();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab.Name == "tabPage3")
+            {
+                button1.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
+            dgvvoid.ClearSelection();
+            dgvpending.ClearSelection();
         }
     }
 }

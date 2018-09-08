@@ -40,10 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtbp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblPaymentStatus2 = new System.Windows.Forms.Label();
-            this.lblPaymentStatus = new System.Windows.Forms.Label();
-            this.tuitiontxt = new System.Windows.Forms.TextBox();
-            this.lblPaidAmount = new System.Windows.Forms.Label();
             this.txttpb = new System.Windows.Forms.TextBox();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -114,10 +110,6 @@
             this.grpStudentAccount.Controls.Add(this.label2);
             this.grpStudentAccount.Controls.Add(this.txtbp);
             this.grpStudentAccount.Controls.Add(this.label1);
-            this.grpStudentAccount.Controls.Add(this.lblPaymentStatus2);
-            this.grpStudentAccount.Controls.Add(this.lblPaymentStatus);
-            this.grpStudentAccount.Controls.Add(this.tuitiontxt);
-            this.grpStudentAccount.Controls.Add(this.lblPaidAmount);
             this.grpStudentAccount.Controls.Add(this.txttpb);
             this.grpStudentAccount.Controls.Add(this.lblTotalAmount);
             this.grpStudentAccount.Location = new System.Drawing.Point(12, 107);
@@ -202,45 +194,6 @@
             this.label1.Size = new System.Drawing.Size(111, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Books Payables:";
-            // 
-            // lblPaymentStatus2
-            // 
-            this.lblPaymentStatus2.AutoSize = true;
-            this.lblPaymentStatus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentStatus2.Location = new System.Drawing.Point(436, 27);
-            this.lblPaymentStatus2.Name = "lblPaymentStatus2";
-            this.lblPaymentStatus2.Size = new System.Drawing.Size(114, 16);
-            this.lblPaymentStatus2.TabIndex = 18;
-            this.lblPaymentStatus2.Text = "PARTIALLY PAID";
-            // 
-            // lblPaymentStatus
-            // 
-            this.lblPaymentStatus.AutoSize = true;
-            this.lblPaymentStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentStatus.Location = new System.Drawing.Point(331, 27);
-            this.lblPaymentStatus.Name = "lblPaymentStatus";
-            this.lblPaymentStatus.Size = new System.Drawing.Size(104, 16);
-            this.lblPaymentStatus.TabIndex = 16;
-            this.lblPaymentStatus.Text = "Payment Status:";
-            // 
-            // tuitiontxt
-            // 
-            this.tuitiontxt.BackColor = System.Drawing.Color.White;
-            this.tuitiontxt.Location = new System.Drawing.Point(485, 79);
-            this.tuitiontxt.Name = "tuitiontxt";
-            this.tuitiontxt.ReadOnly = true;
-            this.tuitiontxt.Size = new System.Drawing.Size(153, 20);
-            this.tuitiontxt.TabIndex = 15;
-            // 
-            // lblPaidAmount
-            // 
-            this.lblPaidAmount.AutoSize = true;
-            this.lblPaidAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaidAmount.Location = new System.Drawing.Point(324, 80);
-            this.lblPaidAmount.Name = "lblPaidAmount";
-            this.lblPaidAmount.Size = new System.Drawing.Size(158, 16);
-            this.lblPaidAmount.TabIndex = 14;
-            this.lblPaidAmount.Text = "Monthly Tuiton Payables:";
             // 
             // txttpb
             // 
@@ -604,9 +557,6 @@
         private System.Windows.Forms.Label lblDate2;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.GroupBox grpStudentAccount;
-        private System.Windows.Forms.Label lblPaymentStatus;
-        public System.Windows.Forms.TextBox tuitiontxt;
-        private System.Windows.Forms.Label lblPaidAmount;
         public System.Windows.Forms.TextBox txttpb;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Button btnPrint;
@@ -619,7 +569,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblLoggedinas;
-        private System.Windows.Forms.Label lblPaymentStatus2;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtmp;
         private System.Windows.Forms.Label label2;
