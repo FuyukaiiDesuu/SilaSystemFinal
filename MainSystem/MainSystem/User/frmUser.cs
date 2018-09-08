@@ -14,6 +14,8 @@ namespace MainSystem.User
     {
         public frmMain reference { get; set; }
         User.DbQueries dbquery = new User.DbQueries();
+        DataTable employeeDisplay = new DataTable();
+        string filterField = "fullname";
         string fullname;
         public string uname;
         public string userID;
@@ -36,7 +38,7 @@ namespace MainSystem.User
 
         public void loadEmployeeDetails()
         {
-            DataTable employeeDisplay = dbquery.EmployeeDisplay();
+            employeeDisplay = dbquery.EmployeeDisplay();
             this.dataSearch.DataSource = employeeDisplay;
 
             dataSearch.Columns["empID"].Visible = false;
@@ -135,9 +137,7 @@ namespace MainSystem.User
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string lastname = txtSearch.Text;
-            DataTable holder = dbquery.searchEmployee(lastname);
-            dataSearch.DataSource = holder;
+            employeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
         }
 
         private void label15_Click(object sender, EventArgs e)

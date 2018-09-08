@@ -14,6 +14,8 @@ namespace MainSystem.Employee
     {
         public newfrmEmployee reference { get; set; }
         Employee.DbQueries dbquery = new Employee.DbQueries();
+        DataTable archivedemployeeDisplay = new DataTable();
+        string filterField = "fullname";
         public string uname;
         public string id;
         string fullname;
@@ -33,7 +35,7 @@ namespace MainSystem.Employee
 
         public void loadArchivedEmployee()
         {
-            DataTable archivedemployeeDisplay = dbquery.ArchiveEmployeeDisplay();
+            archivedemployeeDisplay = dbquery.ArchiveEmployeeDisplay();
             this.dataSearch.DataSource = archivedemployeeDisplay;
             dataSearch.Columns["empID"].Visible = false;
             dataSearch.Columns["first_name"].Visible = false;
@@ -133,9 +135,7 @@ namespace MainSystem.Employee
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string last_name = txtSearch.Text;
-            DataTable holder = dbquery.searcArchivedhEmployee(last_name);
-            dataSearch.DataSource = holder;
+            archivedemployeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
         }
 
         private void label11_Click(object sender, EventArgs e)

@@ -31,16 +31,6 @@ namespace MainSystem.User
             return itmContainer;
         }
 
-        public DataTable searchEmployee(string lastname)
-        {
-            string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname'
-                            FROM employee as emp
-                            where status = 1 AND last_name 
-                            like '" + lastname + "%'" +
-                            "order by empID";
-            DataTable itmContainer = con.Select(query);
-            return itmContainer;
-        }
 
         public DataTable User(string uname)
         {

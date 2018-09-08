@@ -14,6 +14,8 @@ namespace MainSystem.Employee
     {
         public frmMain reference { get; set; }
         Employee.DbQueries dbquery = new Employee.DbQueries();
+        DataTable employeeDisplay = new DataTable();
+        string filterField = "fullname";
         string fullname;
         public string uname;
         public string empID;
@@ -32,7 +34,7 @@ namespace MainSystem.Employee
 
         public void loadEmployeeDetails()
         {
-            DataTable employeeDisplay = dbquery.EmployeeDisplay();
+            employeeDisplay = dbquery.EmployeeDisplay();
             this.dataSearch.DataSource = employeeDisplay;
 
             dataSearch.Columns["empID"].Visible = false;
@@ -149,9 +151,7 @@ namespace MainSystem.Employee
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string lastname = txtSearch.Text;
-            DataTable holder = dbquery.searchEmployee(lastname);
-            dataSearch.DataSource = holder;
+            employeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
         }
 
         public Employee.newViewArchivedEmployee viewemp;

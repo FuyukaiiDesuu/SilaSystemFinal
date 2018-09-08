@@ -32,27 +32,6 @@ namespace MainSystem.Employee
             return itmContainer;
         }
 
-        public DataTable searchEmployee(string lastname)
-        {
-            string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname' 
-                            FROM employee as emp LEFT JOIN usertable ON emp.empID = usertable.idemp
-                            where (emp.status = 1 AND emp.last_name AND usertable.status = 1)
-                            LIKE '" + lastname + "%'" +
-                            @"order by empID";
-            DataTable itmContainer = con.Select(query);
-            return itmContainer;
-        }
-
-        public DataTable searcArchivedhEmployee(string lastname)
-        {
-            string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname'
-                            FROM employee as emp
-                            where status = 0 AND last_name 
-                            like '" + lastname + "%'" +
-                            "order by empID";
-            DataTable itmContainer = con.Select(query);
-            return itmContainer;
-        }
 
         public DataTable User(string uname)
         {
