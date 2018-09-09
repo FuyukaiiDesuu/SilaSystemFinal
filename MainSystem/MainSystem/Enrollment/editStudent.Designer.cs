@@ -302,6 +302,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(129, 21);
             this.comboBox3.TabIndex = 71;
+            this.comboBox3.TextChanged += new System.EventHandler(this.comboBox3_TextChanged);
             // 
             // editStudent
             // 

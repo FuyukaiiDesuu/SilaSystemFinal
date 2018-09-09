@@ -86,15 +86,25 @@ namespace MainSystem
 
                     command.ExecuteNonQuery();
                 }
+                IDictionary<string, string> dic = comboboxpicker();
                 using (var command = new MySqlCommand("UPDATE studdetails set department = @dpt, level = @lvl, school_year = @sy where idstddet = @aydd;", dbconnection))
                 {
-                    IDictionary<string, string> dic = comboboxpicker();
+                   
                     command.Parameters.AddWithValue("@dpt", dic["dept"]);
                     command.Parameters.AddWithValue("@lvl", dic["level"]);
                     Int32 temp = Convert.ToInt32(sygetter().ToString()) + 1;
                     command.Parameters.AddWithValue("@sy", sygetter().ToString() + "-" + temp.ToString());
                     command.Parameters.AddWithValue("@aydd", studid);
                     command.ExecuteNonQuery();
+                }
+
+                string query3 = "INSERT INTO accountdetails(paid_amount, spid, fid) VALUES(@paid_amount, @spid, @fid);";
+                using (var command3 = new MySqlCommand(query3, dbconnection))
+                {
+                    command3.Parameters.AddWithValue("@paid_amount", 0);
+                    command3.Parameters.AddWithValue("@spid", studid);
+                    command3.Parameters.AddWithValue("@fid", dic["feelevel"]);
+                    command3.ExecuteNonQuery();
                 }
             }
 
@@ -115,45 +125,59 @@ namespace MainSystem
             {
                 case "Toddler":
                     d1.Add("level", "11");
+                    d1.Add("feelevel", "1");
                     break;
                 case "Nursery":
                     d1.Add("level", "12");
+                    d1.Add("feelevel", "2");
                     break;
                 case "Kinder":
                     d1.Add("level", "13");
+                    d1.Add("feelevel", "3");
                     break;
                 case "Preparatory":
                     d1.Add("level", "14");
+                    d1.Add("feelevel", "4");
                     break;
                 case "Grade 1":
                     d1.Add("level", "21");
+                    d1.Add("feelevel", "5");
                     break;
                 case "Grade 2":
                     d1.Add("level", "22");
+                    d1.Add("feelevel", "6");
                     break;
                 case "Grade 3":
                     d1.Add("level", "23");
+                    d1.Add("feelevel", "7");
                     break;
                 case "Grade 4":
                     d1.Add("level", "24");
+                    d1.Add("feelevel", "8");
                     break;
                 case "Grade 5":
                     d1.Add("level", "25");
+                    d1.Add("feelevel", "9");
                     break;
                 case "Grade 6":
                     d1.Add("level", "26");
+                    d1.Add("feelevel", "10");
                     break;
                 case "Grade 7":
                     d1.Add("level", "31");
+                    d1.Add("feelevel", "11");
                     break;
                 case "Grade 8":
                     d1.Add("level", "32");
+                    d1.Add("feelevel", "12");
                     break;
                 case "Grade 9":
                     d1.Add("level", "33");
+                    d1.Add("feelevel", "13");
                     break;
                 case "Grade 10":
                     d1.Add("level", "34");
+                    d1.Add("feelevel", "14");
                     break;
             }
             switch(comboBox1.Text)
