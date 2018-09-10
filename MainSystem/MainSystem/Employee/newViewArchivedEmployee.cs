@@ -49,6 +49,7 @@ namespace MainSystem.Employee
             dataSearch.Columns["religion"].HeaderText = "Religion";
             dataSearch.Columns["marital_status"].HeaderText = "Marital Status";
             dataSearch.Columns["status"].Visible = false;
+            dataSearch.Columns["position"].Visible = false;
 
             dataSearch.Columns["userID"].Visible = false;
             dataSearch.Columns["username"].Visible = false;
@@ -80,7 +81,7 @@ namespace MainSystem.Employee
             {
                 status = "0";
             }
-            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, id);
+            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, txtPosition.Text, id);
             dbquery.updateAccountStatus(id, status, userID);
             MessageBox.Show("Succesfully Updated");
             reference.Show();
@@ -114,6 +115,7 @@ namespace MainSystem.Employee
                 {
                     cmbStatus.Text = "Inactive";
                 }
+                txtPosition.Text = dataSearch.SelectedRows[0].Cells["position"].Value.ToString();
                 fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
 
             }

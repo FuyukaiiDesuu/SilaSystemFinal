@@ -137,7 +137,7 @@ namespace MainSystem.User
                     txtStatus.Text = "Inactive";
                 }
                 fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
-
+                txtPosition.Text = dataSearch.SelectedRows[0].Cells["position"].Value.ToString();
                 btnAdd.Enabled = true;
             }
             else

@@ -25,6 +25,7 @@ namespace MainSystem.Employee
         public string religion { get; set; }
         public string maritalstatus { get; set; }
         public string status { get; set; }
+        public string position { get; set; }
         public string userID { get; set; }
         public newfrmEditEmployee()
         {
@@ -44,7 +45,7 @@ namespace MainSystem.Employee
             cmbReligion.Text = religion; 
             cmbMaritalStatus.Text = maritalstatus;
             cmbStatus.Text = status;
-            
+            cmbPosition.Text = position;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace MainSystem.Employee
             {
                 religion = cmbReligion.Text;
             }
-            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, religion, cmbMaritalStatus.Text, status, id);
+            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, religion, cmbMaritalStatus.Text, status, cmbPosition.Text, id);
             dbquery.updateAccountStatus(id, status, userID);
             MessageBox.Show("Succesfully Updated");
             reference.Show();

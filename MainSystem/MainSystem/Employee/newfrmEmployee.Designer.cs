@@ -63,6 +63,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.grpPersonalDetails.SuspendLayout();
             this.grpEmployeeDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
@@ -329,7 +331,7 @@
             // 
             this.txtStatus.BackColor = System.Drawing.Color.White;
             this.txtStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtStatus.Location = new System.Drawing.Point(154, 131);
+            this.txtStatus.Location = new System.Drawing.Point(154, 164);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
             this.txtStatus.Size = new System.Drawing.Size(180, 27);
@@ -351,7 +353,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblStatus.Location = new System.Drawing.Point(22, 137);
+            this.lblStatus.Location = new System.Drawing.Point(22, 170);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(59, 21);
             this.lblStatus.TabIndex = 11;
@@ -384,6 +386,8 @@
             // 
             // grpEmployeeDetails
             // 
+            this.grpEmployeeDetails.Controls.Add(this.txtPosition);
+            this.grpEmployeeDetails.Controls.Add(this.lblPosition);
             this.grpEmployeeDetails.Controls.Add(this.txtMiddleName);
             this.grpEmployeeDetails.Controls.Add(this.txtFirstName);
             this.grpEmployeeDetails.Controls.Add(this.lblMiddleName);
@@ -484,6 +488,27 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "EMPLOYEE MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
+            // txtPosition
+            // 
+            this.txtPosition.BackColor = System.Drawing.Color.White;
+            this.txtPosition.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtPosition.Location = new System.Drawing.Point(154, 131);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.ReadOnly = true;
+            this.txtPosition.Size = new System.Drawing.Size(180, 27);
+            this.txtPosition.TabIndex = 24;
+            this.txtPosition.TabStop = false;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblPosition.Location = new System.Drawing.Point(22, 137);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(68, 21);
+            this.lblPosition.TabIndex = 23;
+            this.lblPosition.Text = "Position";
+            // 
             // newfrmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,5 +581,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
+        public System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.Label lblPosition;
     }
 }

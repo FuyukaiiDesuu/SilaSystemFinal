@@ -40,14 +40,14 @@ namespace MainSystem.Employee
             return itmContainer;
         }
 
-        public void addEmployee(string first_name, string last_name, string middle_name, string birth_date, string birth_place, string contactNo, string sex, string religion, string marital_status, string status)
+        public void addEmployee(string first_name, string last_name, string middle_name, string birth_date, string birth_place, string contactNo, string sex, string religion, string marital_status, string status, string position)
         {
-            string query = @"INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status)
-                            VALUES ('" + first_name + "', '" + last_name + "', '" + middle_name + "', '" + birth_date + "', '" + birth_place + "', '" + contactNo + "', '" + sex + "', '" + religion + "', '" + marital_status + "', '" + status + "')";
+            string query = @"INSERT INTO employee(first_name, last_name, middle_name, birth_date, birth_place, contactNo, sex, religion, marital_status, status, position)
+                            VALUES ('" + first_name + "', '" + last_name + "', '" + middle_name + "', '" + birth_date + "', '" + birth_place + "', '" + contactNo + "', '" + sex + "', '" + religion + "', '" + marital_status + "', '" + status +  "','" + position + "')";
             con.executeQuery(query);
         }
 
-        public void updateEmployee(string first_name, string last_name, string middle_name, string birth_date, string birth_place, string contactNo, string sex, string religion, string marital_status, string status, string empID)
+        public void updateEmployee(string first_name, string last_name, string middle_name, string birth_date, string birth_place, string contactNo, string sex, string religion, string marital_status, string status, string position, string empID)
         {
             string query = "UPDATE employee SET first_name='" + first_name +
                 "',last_name='" + last_name +
@@ -59,6 +59,7 @@ namespace MainSystem.Employee
                 "',religion='" + religion +
                 "',marital_status='" + marital_status +
                 "',status='" + status +
+                "',position='" + position + 
                 "' WHERE empID='" + empID + "'";
             con.executeQuery(query);
         }

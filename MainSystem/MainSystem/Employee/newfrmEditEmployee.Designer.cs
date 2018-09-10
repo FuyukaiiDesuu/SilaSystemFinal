@@ -61,6 +61,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -118,7 +120,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblStatus.Location = new System.Drawing.Point(14, 164);
+            this.lblStatus.Location = new System.Drawing.Point(14, 195);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(59, 21);
             this.lblStatus.TabIndex = 11;
@@ -136,6 +138,8 @@
             // 
             // grpEmployeeDetails
             // 
+            this.grpEmployeeDetails.Controls.Add(this.cmbPosition);
+            this.grpEmployeeDetails.Controls.Add(this.lblPosition);
             this.grpEmployeeDetails.Controls.Add(this.txtUserAccountID);
             this.grpEmployeeDetails.Controls.Add(this.lblUserAccountID);
             this.grpEmployeeDetails.Controls.Add(this.cmbStatus);
@@ -185,7 +189,7 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(156, 158);
+            this.cmbStatus.Location = new System.Drawing.Point(156, 191);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(180, 27);
             this.cmbStatus.TabIndex = 4;
@@ -456,6 +460,32 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "EMPLOYEE MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
+            // cmbPosition
+            // 
+            this.cmbPosition.BackColor = System.Drawing.Color.White;
+            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPosition.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Items.AddRange(new object[] {
+            "Admin",
+            "Faculty",
+            "Staff",
+            "Teacher"});
+            this.cmbPosition.Location = new System.Drawing.Point(156, 158);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(180, 27);
+            this.cmbPosition.TabIndex = 24;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblPosition.Location = new System.Drawing.Point(14, 162);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(68, 21);
+            this.lblPosition.TabIndex = 23;
+            this.lblPosition.Text = "Position";
+            // 
             // newfrmEditEmployee
             // 
             this.AcceptButton = this.btnSave;
@@ -519,5 +549,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
+        public System.Windows.Forms.ComboBox cmbPosition;
+        private System.Windows.Forms.Label lblPosition;
     }
 }

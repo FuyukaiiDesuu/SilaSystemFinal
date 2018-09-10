@@ -49,6 +49,7 @@ namespace MainSystem.Employee
             dataSearch.Columns["religion"].HeaderText = "Religion";
             dataSearch.Columns["marital_status"].HeaderText = "Marital Status";
             dataSearch.Columns["status"].Visible = false;
+            dataSearch.Columns["position"].Visible = false;
 
             dataSearch.Columns["userID"].Visible = false;
             dataSearch.Columns["username"].Visible = false;
@@ -89,8 +90,9 @@ namespace MainSystem.Employee
                 {
                     txtStatus.Text = "Inactive";
                 }
-                fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
 
+                fullname = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
+                txtPosition.Text = dataSearch.SelectedRows[0].Cells["position"].Value.ToString();
                 btnEdit.Enabled = true;
             }
             else
@@ -128,6 +130,7 @@ namespace MainSystem.Employee
             editemp.religion = txtReligion.Text;
             editemp.maritalstatus = txtMaritalStatus.Text;
             editemp.status = txtStatus.Text;
+            editemp.position = txtPosition.Text;
 
             editemp.Show();
             editemp.reference = this;
@@ -147,6 +150,7 @@ namespace MainSystem.Employee
             txtReligion.Text = "";
             txtMaritalStatus.Text = "";
             txtStatus.Text = "";
+            txtPosition.Text = "";
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
