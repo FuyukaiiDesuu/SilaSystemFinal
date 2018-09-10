@@ -379,5 +379,13 @@ namespace MainSystem.Accounting
             dgvvoid.ClearSelection();
             dgvpending.ClearSelection();
         }
+        public dailyCashFlow dcfform;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dcfform = new dailyCashFlow();
+            dcfform.reference = this;
+            dcfform.Show();
+            this.Hide();
+        }
     }
 }
