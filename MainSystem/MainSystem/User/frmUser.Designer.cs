@@ -488,6 +488,7 @@
             this.dataSearch.Size = new System.Drawing.Size(517, 252);
             this.dataSearch.TabIndex = 37;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
+            this.dataSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellContentClick);
             // 
             // dataSearch2
             // 

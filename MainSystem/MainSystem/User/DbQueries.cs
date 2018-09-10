@@ -51,5 +51,12 @@ namespace MainSystem.User
             string query = "update usertable set username='" + username + "',password='" + password + "',restrictions='" + restrictions + "',status='" + status + "'where usertable.userID='" + userID + "'";
             con.executeQuery(query);
         }
+
+        public DataTable checkExisting(string empID)
+        {
+            string query = "SELECT * FROM usertable where userID='" + empID + "'";
+            DataTable itmContainer = con.Select(query);
+            return itmContainer;
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace MainSystem.User
         public string userID;
         public string empID;
         public string empID2;
+        public string checkExisting;
 
         public frmUser(string uname)
         {
@@ -97,6 +98,20 @@ namespace MainSystem.User
             this.dataSearch2.Refresh();
         }
 
+        private Boolean checker()
+        {
+            DataTable userExisting = dbquery.checkExisting(empID);
+            if(userExisting.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
         private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -161,15 +176,23 @@ namespace MainSystem.User
         public User.frmAddUser adduser;
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DataTable holder = dbquery.User(uname);
-            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-            adduser = new User.frmAddUser(uname);
-            adduser.id = empID;
-            adduser.fullname = fullname;
+            if(!checker())
+            {
+                DataTable holder = dbquery.User(uname);
+                uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                adduser = new User.frmAddUser(uname);
+                adduser.id = empID;
+                adduser.fullname = fullname;
 
-            adduser.Show();
-            adduser.reference = this;
-            this.Hide();
+                adduser.Show();
+                adduser.reference = this;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("This employee has already an existing user account");
+            }
+            
         }
 
         public User.frmEditUser edituser;
@@ -202,6 +225,11 @@ namespace MainSystem.User
             }
             else
             { return; }
+        }
+
+        private void dataSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
