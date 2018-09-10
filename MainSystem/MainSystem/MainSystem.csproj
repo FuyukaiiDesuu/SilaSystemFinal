@@ -59,12 +59,7 @@
     <Compile Include="Accounting\dailyCashFlow.Designer.cs">
       <DependentUpon>dailyCashFlow.cs</DependentUpon>
     </Compile>
-    <Compile Include="DCF.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DCF.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
+   
     <Compile Include="Inventory\frmNewEntry.cs">
       <SubType>Form</SubType>
     </Compile>
