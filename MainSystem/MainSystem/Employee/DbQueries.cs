@@ -16,7 +16,7 @@ namespace MainSystem.Employee
         {
             string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname' 
                             FROM employee as emp LEFT JOIN usertable on usertable.idemp = emp.empID
-                            where (emp.status = 1 AND usertable.status = 1 OR usertable.userID IS NULL)
+                            where (emp.status = 1 AND usertable.status = 1)
                             order by empID";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
@@ -26,7 +26,7 @@ namespace MainSystem.Employee
         {
             string query = @"SELECT *, concat(emp.last_name, ', ' , emp.first_name, ' ', emp.middle_name) as 'fullname'
                             FROM employee as emp LEFT JOIN usertable on usertable.idemp = emp.empID
-                            where (emp.status = 0 AND usertable.status = 0 OR usertable.userID IS NULL)
+                            where (emp.status = 0 AND usertable.status = 0)
                             order by empID";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
