@@ -59,7 +59,6 @@
     <Compile Include="Accounting\dailyCashFlow.Designer.cs">
       <DependentUpon>dailyCashFlow.cs</DependentUpon>
     </Compile>
-   
     <Compile Include="Inventory\frmNewEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,10 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\newfrmEditAccount.resx">
       <DependentUpon>newfrmEditAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DCF.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DCF.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\newfrmAddEmployee.resx">
       <DependentUpon>newfrmAddEmployee.cs</DependentUpon>
