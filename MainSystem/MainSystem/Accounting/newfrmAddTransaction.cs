@@ -89,7 +89,7 @@ namespace MainSystem.Accounting
                 }
             }
            
-            return date + a.ToString("0000");
+            return date + a.ToString("10000");
         }
 
         private Boolean checker()

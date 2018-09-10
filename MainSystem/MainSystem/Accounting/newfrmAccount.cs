@@ -43,6 +43,7 @@ namespace MainSystem.Accounting
         private void newfrmAccount_Load(object sender, EventArgs e)
         {
             loadFeeDetails();
+            loadDisbursementtbl();
             dataSearch.ClearSelection();
             dataFeeValue.ClearSelection();
             button1.Enabled = false;
@@ -81,6 +82,18 @@ namespace MainSystem.Accounting
             this.dataSearch.Refresh();
         }
         public string syeartempo = "2018 - 2019";
+        public void loadDisbursementtbl()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "SELECT * FROM disbursement;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
         public void loadBalanceDetails()
         {
             /*
@@ -390,6 +403,15 @@ namespace MainSystem.Accounting
 
         private void tabPage4_Click(object sender, EventArgs e)
         {
+
+        }
+        public frmCreatevoucher fcv;
+        private void btnAddDisb_Click(object sender, EventArgs e)
+        {
+            fcv = new frmCreatevoucher(eid, uname);
+            fcv.Show();
+            fcv.reference = this;
+            this.Hide();
 
         }
     }

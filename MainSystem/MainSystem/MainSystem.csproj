@@ -65,6 +65,12 @@
       <DependentUpon>DCF.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Accounting\frmCreatevoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\frmCreatevoucher.Designer.cs">
+      <DependentUpon>frmCreatevoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory\frmNewEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\frmAddFee.resx">
       <DependentUpon>frmAddFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\frmCreatevoucher.resx">
+      <DependentUpon>frmCreatevoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\frmViewPaymentHistory.resx">
       <DependentUpon>frmViewPaymentHistory.cs</DependentUpon>

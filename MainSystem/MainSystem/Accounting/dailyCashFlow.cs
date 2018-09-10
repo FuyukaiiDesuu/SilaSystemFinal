@@ -20,7 +20,17 @@ namespace MainSystem
      
         private void dailyCashFlow_Load(object sender, EventArgs e)
         {
+            crystalReportViewer1.RefreshReport();
+        }
 
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dailyCashFlow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            reference.Show();
         }
     }
 }
