@@ -387,5 +387,10 @@ namespace MainSystem.Accounting
             dcfform.Show();
             this.Hide();
         }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

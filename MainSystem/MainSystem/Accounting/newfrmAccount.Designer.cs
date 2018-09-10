@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataSearch = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -77,7 +78,8 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,14 +94,17 @@
             this.grpStudentDetails.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabStudentTransaction);
             this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Location = new System.Drawing.Point(16, 36);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Controls.Add(this.tabPage4);
+            this.tabControl.Location = new System.Drawing.Point(16, 35);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1372, 630);
@@ -115,23 +120,36 @@
             this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
             this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 25);
-            this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
-            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4);
             this.tabStudentTransaction.Size = new System.Drawing.Size(1364, 601);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.UseVisualStyleBackColor = true;
             this.tabStudentTransaction.Click += new System.EventHandler(this.tabStudentTransaction_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button2.Location = new System.Drawing.Point(589, 537);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(188, 55);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Print Daily Cash Flow";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Location = new System.Drawing.Point(8, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(764, 241);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
@@ -146,7 +164,7 @@
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSearch.Location = new System.Drawing.Point(11, 52);
-            this.dataSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataSearch.Margin = new System.Windows.Forms.Padding(4);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -158,7 +176,7 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(11, 23);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(307, 22);
             this.txtSearch.TabIndex = 1;
@@ -190,9 +208,9 @@
             this.grpBalanceDetails.Controls.Add(this.label1);
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
             this.grpBalanceDetails.Location = new System.Drawing.Point(784, 7);
-            this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4);
             this.grpBalanceDetails.Size = new System.Drawing.Size(569, 583);
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
@@ -203,7 +221,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(8, 246);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(553, 186);
@@ -216,9 +234,9 @@
             // 
             this.tabPage2.Controls.Add(this.dgvpending);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(545, 157);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "PENDING";
@@ -233,7 +251,7 @@
             this.dgvpending.BackgroundColor = System.Drawing.Color.White;
             this.dgvpending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvpending.Location = new System.Drawing.Point(8, 10);
-            this.dgvpending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvpending.Margin = new System.Windows.Forms.Padding(4);
             this.dgvpending.Name = "dgvpending";
             this.dgvpending.RowHeadersVisible = false;
             this.dgvpending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -245,9 +263,9 @@
             // 
             this.tabPage3.Controls.Add(this.dgvvoid);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(545, 157);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "VOIDED";
@@ -262,7 +280,7 @@
             this.dgvvoid.BackgroundColor = System.Drawing.Color.White;
             this.dgvvoid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvvoid.Location = new System.Drawing.Point(8, 9);
-            this.dgvvoid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvvoid.Margin = new System.Windows.Forms.Padding(4);
             this.dgvvoid.Name = "dgvvoid";
             this.dgvvoid.RowHeadersVisible = false;
             this.dgvvoid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -308,7 +326,7 @@
             this.amnt.BackColor = System.Drawing.Color.White;
             this.amnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amnt.Location = new System.Drawing.Point(149, 513);
-            this.amnt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.amnt.Margin = new System.Windows.Forms.Padding(4);
             this.amnt.Multiline = true;
             this.amnt.Name = "amnt";
             this.amnt.ReadOnly = true;
@@ -319,7 +337,7 @@
             // 
             this.tno.BackColor = System.Drawing.Color.White;
             this.tno.Location = new System.Drawing.Point(149, 478);
-            this.tno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tno.Margin = new System.Windows.Forms.Padding(4);
             this.tno.Name = "tno";
             this.tno.ReadOnly = true;
             this.tno.Size = new System.Drawing.Size(411, 22);
@@ -329,7 +347,7 @@
             // 
             this.chqno.BackColor = System.Drawing.Color.White;
             this.chqno.Location = new System.Drawing.Point(149, 446);
-            this.chqno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chqno.Margin = new System.Windows.Forms.Padding(4);
             this.chqno.Name = "chqno";
             this.chqno.ReadOnly = true;
             this.chqno.Size = new System.Drawing.Size(411, 22);
@@ -340,7 +358,7 @@
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(368, 513);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 44);
             this.button1.TabIndex = 13;
@@ -368,7 +386,7 @@
             this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataBalanceDetails.Location = new System.Drawing.Point(8, 52);
-            this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.RowHeadersVisible = false;
             this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -381,7 +399,7 @@
             this.btnEditAccount.Enabled = false;
             this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.Location = new System.Drawing.Point(187, 537);
-            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(219, 55);
             this.btnEditAccount.TabIndex = 3;
@@ -394,7 +412,7 @@
             this.btnAddTransaction.Enabled = false;
             this.btnAddTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.Location = new System.Drawing.Point(12, 537);
-            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTransaction.Name = "btnAddTransaction";
             this.btnAddTransaction.Size = new System.Drawing.Size(167, 55);
             this.btnAddTransaction.TabIndex = 2;
@@ -423,9 +441,9 @@
             this.grpStudentDetails.Controls.Add(this.txtStudentID);
             this.grpStudentDetails.Controls.Add(this.lblStudentID);
             this.grpStudentDetails.Location = new System.Drawing.Point(12, 254);
-            this.grpStudentDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpStudentDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpStudentDetails.Name = "grpStudentDetails";
-            this.grpStudentDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpStudentDetails.Padding = new System.Windows.Forms.Padding(4);
             this.grpStudentDetails.Size = new System.Drawing.Size(764, 276);
             this.grpStudentDetails.TabIndex = 4;
             this.grpStudentDetails.TabStop = false;
@@ -435,7 +453,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.Location = new System.Drawing.Point(153, 164);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(239, 22);
@@ -445,7 +463,7 @@
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
             this.txtMiddleName.Location = new System.Drawing.Point(153, 119);
-            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.ReadOnly = true;
             this.txtMiddleName.Size = new System.Drawing.Size(239, 22);
@@ -477,7 +495,7 @@
             // 
             this.txtDateOfBirth.BackColor = System.Drawing.Color.White;
             this.txtDateOfBirth.Location = new System.Drawing.Point(513, 32);
-            this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(4);
             this.txtDateOfBirth.Name = "txtDateOfBirth";
             this.txtDateOfBirth.ReadOnly = true;
             this.txtDateOfBirth.Size = new System.Drawing.Size(239, 22);
@@ -487,7 +505,7 @@
             // 
             this.txtReligion.BackColor = System.Drawing.Color.White;
             this.txtReligion.Location = new System.Drawing.Point(513, 122);
-            this.txtReligion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReligion.Margin = new System.Windows.Forms.Padding(4);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.ReadOnly = true;
             this.txtReligion.Size = new System.Drawing.Size(239, 22);
@@ -497,7 +515,7 @@
             // 
             this.txtPlaceOfBirth.BackColor = System.Drawing.Color.White;
             this.txtPlaceOfBirth.Location = new System.Drawing.Point(513, 76);
-            this.txtPlaceOfBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPlaceOfBirth.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlaceOfBirth.Name = "txtPlaceOfBirth";
             this.txtPlaceOfBirth.ReadOnly = true;
             this.txtPlaceOfBirth.Size = new System.Drawing.Size(239, 22);
@@ -507,7 +525,7 @@
             // 
             this.txtNickName.BackColor = System.Drawing.Color.White;
             this.txtNickName.Location = new System.Drawing.Point(513, 167);
-            this.txtNickName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNickName.Margin = new System.Windows.Forms.Padding(4);
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.ReadOnly = true;
             this.txtNickName.Size = new System.Drawing.Size(239, 22);
@@ -517,7 +535,7 @@
             // 
             this.txtSex.BackColor = System.Drawing.Color.White;
             this.txtSex.Location = new System.Drawing.Point(153, 210);
-            this.txtSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSex.Margin = new System.Windows.Forms.Padding(4);
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
             this.txtSex.Size = new System.Drawing.Size(239, 22);
@@ -582,7 +600,7 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.Location = new System.Drawing.Point(153, 76);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(239, 22);
@@ -603,7 +621,7 @@
             // 
             this.txtStudentID.BackColor = System.Drawing.Color.White;
             this.txtStudentID.Location = new System.Drawing.Point(153, 32);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.ReadOnly = true;
             this.txtStudentID.Size = new System.Drawing.Size(239, 22);
@@ -626,9 +644,9 @@
             this.tabPage1.Controls.Add(this.btnAddFee);
             this.tabPage1.Controls.Add(this.btnUpdateFee);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1364, 601);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Fee Management";
@@ -643,11 +661,11 @@
             this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
             this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataFeeValue.Location = new System.Drawing.Point(8, 7);
-            this.dataFeeValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataFeeValue.Margin = new System.Windows.Forms.Padding(4);
             this.dataFeeValue.Name = "dataFeeValue";
             this.dataFeeValue.RowHeadersVisible = false;
             this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(1215, 524);
+            this.dataFeeValue.Size = new System.Drawing.Size(1348, 524);
             this.dataFeeValue.TabIndex = 7;
             this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
             this.dataFeeValue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellContentClick);
@@ -656,7 +674,7 @@
             // 
             this.btnAddFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFee.Location = new System.Drawing.Point(8, 539);
-            this.btnAddFee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddFee.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddFee.Name = "btnAddFee";
             this.btnAddFee.Size = new System.Drawing.Size(167, 34);
             this.btnAddFee.TabIndex = 5;
@@ -681,7 +699,7 @@
             // btnDashboard
             // 
             this.btnDashboard.Location = new System.Drawing.Point(1255, 11);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(133, 46);
             this.btnDashboard.TabIndex = 7;
@@ -711,18 +729,32 @@
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
             // 
-            // button2
+            // tabPage4
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(589, 537);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 55);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Print Daily Cash Flow";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1364, 601);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "Expense Disbursement";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 5);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1348, 524);
+            this.dataGridView1.TabIndex = 8;
             // 
             // newfrmAccount
             // 
@@ -734,7 +766,7 @@
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "newfrmAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounting Management";
@@ -756,6 +788,8 @@
             this.grpStudentDetails.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -813,5 +847,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         public System.Windows.Forms.DataGridView dgvvoid;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage tabPage4;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
