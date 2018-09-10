@@ -12,12 +12,12 @@ namespace MainSystem
 {
     public partial class dailyCashFlow : Form
     {
-        public 
+        public Accounting.newfrmAccount reference { get; set; }
         public dailyCashFlow()
         {
             InitializeComponent();
         }
-
+     
         private void dailyCashFlow_Load(object sender, EventArgs e)
         {
 

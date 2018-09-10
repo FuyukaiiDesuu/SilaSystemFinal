@@ -192,6 +192,9 @@
     <Compile Include="Accounting\validateCheque.Designer.cs">
       <DependentUpon>validateCheque.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accounting\dailyCashFlow.resx">
+      <DependentUpon>dailyCashFlow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accounting\frmAddFee.resx">
       <DependentUpon>frmAddFee.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,9 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\newfrmEditAccount.resx">
       <DependentUpon>newfrmEditAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Accounting\dailyCashFlow.resx">
-      <DependentUpon>dailyCashFlow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DCF.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
