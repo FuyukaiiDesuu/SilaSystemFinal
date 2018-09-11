@@ -89,7 +89,7 @@ namespace MainSystem
             itemedit = new editItemmanagement(dic);
             itemedit.Show();
             itemedit.reference = this;
-            this.Close();
+            this.Hide();
         }
         
         public editItemmanagement itemedit;

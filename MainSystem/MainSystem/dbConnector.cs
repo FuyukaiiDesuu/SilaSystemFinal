@@ -11,7 +11,7 @@ namespace MainSystem
     {
         public MySqlConnection connector()
         {
-            String connecttodb = "server=localhost;username=root;password=1234;database=silasystemdb";
+            String connecttodb = "server=localhost;username=root;password=root;database=silasystemdb";
             MySqlConnection conn = new MySqlConnection(connecttodb);
             return conn;
         }

@@ -83,7 +83,7 @@ namespace MainSystem
 
         private void btnEnrollmentForm_Click(object sender, EventArgs e)
         {
-            frmEnroll = new EnrollmentConsole();
+            frmEnroll = new EnrollmentConsole(lblusername.Text);
             frmEnroll.Show();
             frmEnroll.reference = this;
             this.Hide();

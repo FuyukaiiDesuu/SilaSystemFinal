@@ -18,14 +18,15 @@ namespace MainSystem
         //private dbConnector dbconnect = new dbConnector();
         private MySqlConnection dbconnection;
         public string stid;
-        
-        public EnrollmentConsole()
+
+        public EnrollmentConsole(string uname)
         {
             InitializeComponent();
-            
+            label8.Text = uname;
             //btnCreate.Enabled = false;
             btnUpdate.Enabled = false;
             btnView.Enabled = true;
+            timer1.Enabled = true;
             //label11.Text = counterr().ToString();
             
         }
@@ -208,7 +209,7 @@ namespace MainSystem
         {
             //btnCreate.Enabled = false;
             btnUpdate.Enabled = false;
-            btnView.Enabled = false;
+            //btnView.Enabled = false;
         }
         private void btnEnable()
         {
@@ -322,6 +323,16 @@ namespace MainSystem
         private void label11_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label9.Text = DateTime.Now.ToString("MMMM-dd-yyyy hh:mm:ss ");
+            timer1.Start();
+        }
+
+        private void btnUpdate_EnabledChanged(object sender, EventArgs e)
+        {
         }
     }
 }
