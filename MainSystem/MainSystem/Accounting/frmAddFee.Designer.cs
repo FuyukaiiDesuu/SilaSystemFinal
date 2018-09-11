@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpAddFee = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -46,8 +47,14 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblDate2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.grpAddFee.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // grpAddFee
@@ -62,44 +69,63 @@
             this.grpAddFee.Controls.Add(this.lblFeeDescription);
             this.grpAddFee.Controls.Add(this.cmbGradeLevel);
             this.grpAddFee.Controls.Add(this.lblGradeLevel);
-            this.grpAddFee.Location = new System.Drawing.Point(12, 55);
+            this.grpAddFee.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.grpAddFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.grpAddFee.Location = new System.Drawing.Point(110, 79);
             this.grpAddFee.Name = "grpAddFee";
-            this.grpAddFee.Size = new System.Drawing.Size(340, 254);
+            this.grpAddFee.Size = new System.Drawing.Size(393, 254);
             this.grpAddFee.TabIndex = 0;
             this.grpAddFee.TabStop = false;
             this.grpAddFee.Text = "Add Fee";
             this.grpAddFee.Enter += new System.EventHandler(this.grpAddFee_Enter);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "2018 - 2019",
+            "2019 - 2020",
+            "2020 - 2021",
+            "2021 - 2022",
+            "2022 - 2023"});
+            this.comboBox2.Location = new System.Drawing.Point(200, 30);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 27);
+            this.comboBox2.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label1.Location = new System.Drawing.Point(9, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(106, 21);
             this.label1.TabIndex = 21;
             this.label1.Text = "School Year:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 144);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.Location = new System.Drawing.Point(9, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 16);
+            this.label3.Size = new System.Drawing.Size(178, 21);
             this.label3.TabIndex = 20;
             this.label3.Text = "Others Please Specify:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 143);
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(198, 135);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(161, 55);
-            this.textBox1.TabIndex = 19;
+            this.textBox1.TabIndex = 4;
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "",
@@ -107,36 +133,37 @@
             "Tuition",
             "Books",
             "Others"});
-            this.comboBox1.Location = new System.Drawing.Point(119, 106);
+            this.comboBox1.Location = new System.Drawing.Point(160, 100);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 21);
-            this.comboBox1.TabIndex = 18;
+            this.comboBox1.Size = new System.Drawing.Size(199, 27);
+            this.comboBox1.TabIndex = 3;
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(119, 207);
+            this.txtAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtAmount.Location = new System.Drawing.Point(159, 196);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(200, 20);
-            this.txtAmount.TabIndex = 3;
+            this.txtAmount.Size = new System.Drawing.Size(200, 27);
+            this.txtAmount.TabIndex = 5;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(57, 211);
+            this.lblAmount.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblAmount.Location = new System.Drawing.Point(9, 202);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(56, 16);
+            this.lblAmount.Size = new System.Drawing.Size(79, 21);
             this.lblAmount.TabIndex = 14;
             this.lblAmount.Text = "Amount:";
             // 
             // lblFeeDescription
             // 
             this.lblFeeDescription.AutoSize = true;
-            this.lblFeeDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeeDescription.Location = new System.Drawing.Point(9, 107);
+            this.lblFeeDescription.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblFeeDescription.Location = new System.Drawing.Point(9, 108);
             this.lblFeeDescription.Name = "lblFeeDescription";
-            this.lblFeeDescription.Size = new System.Drawing.Size(106, 16);
+            this.lblFeeDescription.Size = new System.Drawing.Size(133, 21);
             this.lblFeeDescription.TabIndex = 10;
             this.lblFeeDescription.Text = "Fee Description:";
             // 
@@ -144,8 +171,9 @@
             // 
             this.cmbGradeLevel.BackColor = System.Drawing.Color.White;
             this.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGradeLevel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.cmbGradeLevel.FormattingEnabled = true;
-            this.cmbGradeLevel.ItemHeight = 13;
+            this.cmbGradeLevel.ItemHeight = 19;
             this.cmbGradeLevel.Items.AddRange(new object[] {
             "",
             "Toddler",
@@ -162,55 +190,61 @@
             "Grade 8",
             "Grade 9",
             "Grade 10"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(118, 70);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(159, 65);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
-            this.cmbGradeLevel.Size = new System.Drawing.Size(200, 21);
-            this.cmbGradeLevel.TabIndex = 1;
+            this.cmbGradeLevel.Size = new System.Drawing.Size(200, 27);
+            this.cmbGradeLevel.TabIndex = 2;
             // 
             // lblGradeLevel
             // 
             this.lblGradeLevel.AutoSize = true;
-            this.lblGradeLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradeLevel.Location = new System.Drawing.Point(9, 71);
+            this.lblGradeLevel.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblGradeLevel.Location = new System.Drawing.Point(9, 73);
             this.lblGradeLevel.Name = "lblGradeLevel";
-            this.lblGradeLevel.Size = new System.Drawing.Size(85, 16);
+            this.lblGradeLevel.Size = new System.Drawing.Size(109, 21);
             this.lblGradeLevel.TabIndex = 5;
             this.lblGradeLevel.Text = "Grade Level:";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDate.Location = new System.Drawing.Point(220, 21);
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblDate.Location = new System.Drawing.Point(460, 34);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(38, 17);
+            this.lblDate.Size = new System.Drawing.Size(43, 19);
             this.lblDate.TabIndex = 6;
             this.lblDate.Text = "Date";
             // 
             // lblLoggedinas
             // 
             this.lblLoggedinas.AutoSize = true;
-            this.lblLoggedinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblLoggedinas.Location = new System.Drawing.Point(9, 21);
+            this.lblLoggedinas.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblLoggedinas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblLoggedinas.Location = new System.Drawing.Point(-4, 34);
             this.lblLoggedinas.Name = "lblLoggedinas";
-            this.lblLoggedinas.Size = new System.Drawing.Size(94, 17);
+            this.lblLoggedinas.Size = new System.Drawing.Size(100, 19);
             this.lblLoggedinas.TabIndex = 8;
             this.lblLoggedinas.Text = "Logged in as:";
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblUser.Location = new System.Drawing.Point(106, 21);
+            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblUser.Location = new System.Drawing.Point(96, 34);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(38, 17);
+            this.lblUser.Size = new System.Drawing.Size(36, 19);
             this.lblUser.TabIndex = 9;
             this.lblUser.Text = "User";
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(109, 324);
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnCancel.Location = new System.Drawing.Point(412, 339);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(91, 31);
             this.btnCancel.TabIndex = 7;
@@ -220,8 +254,11 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(12, 324);
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnAdd.Location = new System.Drawing.Point(315, 339);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(91, 31);
             this.btnAdd.TabIndex = 6;
@@ -236,33 +273,78 @@
             // lblDate2
             // 
             this.lblDate2.AutoSize = true;
-            this.lblDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDate2.Location = new System.Drawing.Point(403, 21);
+            this.lblDate2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblDate2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblDate2.Location = new System.Drawing.Point(558, 34);
             this.lblDate2.Name = "lblDate2";
-            this.lblDate2.Size = new System.Drawing.Size(38, 17);
+            this.lblDate2.Size = new System.Drawing.Size(43, 19);
             this.lblDate2.TabIndex = 16;
             this.lblDate2.Text = "Date";
             // 
-            // comboBox2
+            // panel1
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "2018 - 2019",
-            "2019 - 2020",
-            "2020 - 2021",
-            "2021 - 2022",
-            "2022 - 2023"});
-            this.comboBox2.Location = new System.Drawing.Point(118, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 22;
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(613, 31);
+            this.panel1.TabIndex = 38;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.DimGray;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label11.Location = new System.Drawing.Point(562, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 23);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "_";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Firebrick;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label15.Location = new System.Drawing.Point(588, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(22, 23);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "X";
+            // 
+            // lblSilaSchoolManagementSoftware
+            // 
+            this.lblSilaSchoolManagementSoftware.AutoSize = true;
+            this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 9);
+            this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(491, 19);
+            this.lblSilaSchoolManagementSoftware.TabIndex = 0;
+            this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
             // frmAddFee
             // 
+            this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(363, 367);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(613, 390);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDate2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -270,7 +352,7 @@
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.grpAddFee);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmAddFee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -278,6 +360,9 @@
             this.Load += new System.EventHandler(this.frmAddFee_Load);
             this.grpAddFee.ResumeLayout(false);
             this.grpAddFee.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +388,10 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
     }
 }
