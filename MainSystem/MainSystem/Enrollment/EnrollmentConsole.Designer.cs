@@ -68,6 +68,7 @@
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label16 = new System.Windows.Forms.Label();
+            this.btnsmgmt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,9 +85,8 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 82);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(625, 545);
@@ -102,7 +102,7 @@
             this.btnCreate.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnCreate.Location = new System.Drawing.Point(319, 635);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(157, 44);
             this.btnCreate.TabIndex = 1;
@@ -117,7 +117,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnUpdate.Location = new System.Drawing.Point(484, 635);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(157, 44);
             this.btnUpdate.TabIndex = 2;
@@ -132,8 +132,8 @@
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnView.Location = new System.Drawing.Point(948, 86);
-            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnView.Location = new System.Drawing.Point(1040, 42);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(260, 42);
             this.btnView.TabIndex = 3;
@@ -145,7 +145,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(948, 135);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 212);
             this.pictureBox1.TabIndex = 6;
@@ -239,7 +239,7 @@
             // 
             this.txtfn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfn.Location = new System.Drawing.Point(823, 386);
-            this.txtfn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtfn.Margin = new System.Windows.Forms.Padding(4);
             this.txtfn.Name = "txtfn";
             this.txtfn.Size = new System.Drawing.Size(171, 27);
             this.txtfn.TabIndex = 0;
@@ -249,7 +249,7 @@
             // 
             this.txtln.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtln.Location = new System.Drawing.Point(823, 422);
-            this.txtln.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtln.Margin = new System.Windows.Forms.Padding(4);
             this.txtln.Name = "txtln";
             this.txtln.Size = new System.Drawing.Size(171, 27);
             this.txtln.TabIndex = 0;
@@ -258,7 +258,7 @@
             // 
             this.txtmi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtmi.Location = new System.Drawing.Point(823, 458);
-            this.txtmi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmi.Margin = new System.Windows.Forms.Padding(4);
             this.txtmi.Name = "txtmi";
             this.txtmi.Size = new System.Drawing.Size(171, 27);
             this.txtmi.TabIndex = 0;
@@ -267,7 +267,7 @@
             // 
             this.txtsex.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtsex.Location = new System.Drawing.Point(823, 564);
-            this.txtsex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsex.Margin = new System.Windows.Forms.Padding(4);
             this.txtsex.Name = "txtsex";
             this.txtsex.Size = new System.Drawing.Size(171, 27);
             this.txtsex.TabIndex = 0;
@@ -276,7 +276,7 @@
             // 
             this.txtbd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtbd.Location = new System.Drawing.Point(823, 494);
-            this.txtbd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbd.Margin = new System.Windows.Forms.Padding(4);
             this.txtbd.Name = "txtbd";
             this.txtbd.Size = new System.Drawing.Size(171, 27);
             this.txtbd.TabIndex = 0;
@@ -285,7 +285,7 @@
             // 
             this.txtbp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtbp.Location = new System.Drawing.Point(823, 528);
-            this.txtbp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbp.Margin = new System.Windows.Forms.Padding(4);
             this.txtbp.Name = "txtbp";
             this.txtbp.Size = new System.Drawing.Size(171, 27);
             this.txtbp.TabIndex = 0;
@@ -294,7 +294,7 @@
             // 
             this.txtrel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtrel.Location = new System.Drawing.Point(823, 599);
-            this.txtrel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtrel.Margin = new System.Windows.Forms.Padding(4);
             this.txtrel.Name = "txtrel";
             this.txtrel.Size = new System.Drawing.Size(171, 27);
             this.txtrel.TabIndex = 0;
@@ -330,7 +330,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.button1.Location = new System.Drawing.Point(1308, 42);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 42);
             this.button1.TabIndex = 22;
@@ -354,7 +354,7 @@
             // 
             this.txtnn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtnn.Location = new System.Drawing.Point(823, 634);
-            this.txtnn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnn.Margin = new System.Windows.Forms.Padding(4);
             this.txtnn.Name = "txtnn";
             this.txtnn.Size = new System.Drawing.Size(171, 27);
             this.txtnn.TabIndex = 0;
@@ -363,7 +363,7 @@
             // 
             this.txtdep.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtdep.Location = new System.Drawing.Point(1213, 386);
-            this.txtdep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdep.Margin = new System.Windows.Forms.Padding(4);
             this.txtdep.Name = "txtdep";
             this.txtdep.Size = new System.Drawing.Size(171, 27);
             this.txtdep.TabIndex = 0;
@@ -372,7 +372,7 @@
             // 
             this.txtlev.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtlev.Location = new System.Drawing.Point(1213, 422);
-            this.txtlev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtlev.Margin = new System.Windows.Forms.Padding(4);
             this.txtlev.Name = "txtlev";
             this.txtlev.Size = new System.Drawing.Size(171, 27);
             this.txtlev.TabIndex = 0;
@@ -381,7 +381,7 @@
             // 
             this.txtsy.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtsy.Location = new System.Drawing.Point(1213, 458);
-            this.txtsy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsy.Margin = new System.Windows.Forms.Padding(4);
             this.txtsy.Name = "txtsy";
             this.txtsy.Size = new System.Drawing.Size(171, 27);
             this.txtsy.TabIndex = 0;
@@ -438,7 +438,7 @@
             // 
             this.txtstatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtstatus.Location = new System.Drawing.Point(1213, 494);
-            this.txtstatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtstatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtstatus.Name = "txtstatus";
             this.txtstatus.Size = new System.Drawing.Size(171, 27);
             this.txtstatus.TabIndex = 0;
@@ -451,7 +451,7 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1459, 38);
             this.panel1.TabIndex = 34;
@@ -473,7 +473,7 @@
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -522,12 +522,28 @@
             this.label16.TabIndex = 35;
             this.label16.Text = "User:";
             // 
+            // btnsmgmt
+            // 
+            this.btnsmgmt.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnsmgmt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsmgmt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsmgmt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnsmgmt.Location = new System.Drawing.Point(772, 42);
+            this.btnsmgmt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnsmgmt.Name = "btnsmgmt";
+            this.btnsmgmt.Size = new System.Drawing.Size(260, 42);
+            this.btnsmgmt.TabIndex = 36;
+            this.btnsmgmt.Text = "SECTION MANAGEMENT";
+            this.btnsmgmt.UseVisualStyleBackColor = true;
+            this.btnsmgmt.Click += new System.EventHandler(this.btnsmgmt_Click);
+            // 
             // EnrollmentConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1459, 718);
+            this.Controls.Add(this.btnsmgmt);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtstatus);
@@ -563,7 +579,7 @@
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EnrollmentConsole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
@@ -620,5 +636,6 @@
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnsmgmt;
     }
 }

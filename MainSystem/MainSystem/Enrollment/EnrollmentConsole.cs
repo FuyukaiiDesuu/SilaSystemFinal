@@ -333,6 +333,11 @@ namespace MainSystem
 
         private void btnUpdate_EnabledChanged(object sender, EventArgs e)
         {
+
+        }
+        private void btnsmgmt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
