@@ -34,8 +34,6 @@
             this.lblstatus = new System.Windows.Forms.Label();
             this.txtsodate = new System.Windows.Forms.TextBox();
             this.lblsodate = new System.Windows.Forms.Label();
-            this.txtinvcode = new System.Windows.Forms.TextBox();
-            this.lblinvcode = new System.Windows.Forms.Label();
             this.btnStockInOut = new System.Windows.Forms.Button();
             this.btnOrderList = new System.Windows.Forms.Button();
             this.txtsidate = new System.Windows.Forms.TextBox();
@@ -60,8 +58,6 @@
             this.gboxitemdetails.Controls.Add(this.lblstatus);
             this.gboxitemdetails.Controls.Add(this.txtsodate);
             this.gboxitemdetails.Controls.Add(this.lblsodate);
-            this.gboxitemdetails.Controls.Add(this.txtinvcode);
-            this.gboxitemdetails.Controls.Add(this.lblinvcode);
             this.gboxitemdetails.Controls.Add(this.btnStockInOut);
             this.gboxitemdetails.Controls.Add(this.btnOrderList);
             this.gboxitemdetails.Controls.Add(this.txtsidate);
@@ -79,9 +75,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(206, 208);
+            this.button1.Location = new System.Drawing.Point(227, 185);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
+            this.button1.Size = new System.Drawing.Size(114, 46);
             this.button1.TabIndex = 29;
             this.button1.Text = "Stock-Out";
             this.button1.UseVisualStyleBackColor = true;
@@ -89,15 +85,16 @@
             // 
             // txtstatus
             // 
-            this.txtstatus.Location = new System.Drawing.Point(98, 174);
+            this.txtstatus.Location = new System.Drawing.Point(90, 149);
             this.txtstatus.Name = "txtstatus";
+            this.txtstatus.ReadOnly = true;
             this.txtstatus.Size = new System.Drawing.Size(251, 20);
             this.txtstatus.TabIndex = 28;
             // 
             // lblstatus
             // 
             this.lblstatus.AutoSize = true;
-            this.lblstatus.Location = new System.Drawing.Point(52, 174);
+            this.lblstatus.Location = new System.Drawing.Point(44, 149);
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(40, 13);
             this.lblstatus.TabIndex = 27;
@@ -105,42 +102,27 @@
             // 
             // txtsodate
             // 
-            this.txtsodate.Location = new System.Drawing.Point(98, 124);
+            this.txtsodate.Location = new System.Drawing.Point(90, 99);
             this.txtsodate.Name = "txtsodate";
+            this.txtsodate.ReadOnly = true;
             this.txtsodate.Size = new System.Drawing.Size(251, 20);
             this.txtsodate.TabIndex = 26;
             // 
             // lblsodate
             // 
             this.lblsodate.AutoSize = true;
-            this.lblsodate.Location = new System.Drawing.Point(10, 127);
+            this.lblsodate.Location = new System.Drawing.Point(2, 102);
             this.lblsodate.Name = "lblsodate";
             this.lblsodate.Size = new System.Drawing.Size(82, 13);
             this.lblsodate.TabIndex = 25;
             this.lblsodate.Text = "Stock-out Date:";
             this.lblsodate.Click += new System.EventHandler(this.lblsodate_Click);
             // 
-            // txtinvcode
-            // 
-            this.txtinvcode.Location = new System.Drawing.Point(100, 33);
-            this.txtinvcode.Name = "txtinvcode";
-            this.txtinvcode.Size = new System.Drawing.Size(249, 20);
-            this.txtinvcode.TabIndex = 24;
-            // 
-            // lblinvcode
-            // 
-            this.lblinvcode.AutoSize = true;
-            this.lblinvcode.Location = new System.Drawing.Point(13, 36);
-            this.lblinvcode.Name = "lblinvcode";
-            this.lblinvcode.Size = new System.Drawing.Size(68, 13);
-            this.lblinvcode.TabIndex = 23;
-            this.lblinvcode.Text = "Inventory ID:";
-            // 
             // btnStockInOut
             // 
-            this.btnStockInOut.Location = new System.Drawing.Point(113, 208);
+            this.btnStockInOut.Location = new System.Drawing.Point(113, 185);
             this.btnStockInOut.Name = "btnStockInOut";
-            this.btnStockInOut.Size = new System.Drawing.Size(87, 23);
+            this.btnStockInOut.Size = new System.Drawing.Size(111, 46);
             this.btnStockInOut.TabIndex = 22;
             this.btnStockInOut.Text = "Stock-In";
             this.btnStockInOut.UseVisualStyleBackColor = true;
@@ -148,9 +130,9 @@
             // 
             // btnOrderList
             // 
-            this.btnOrderList.Location = new System.Drawing.Point(10, 208);
+            this.btnOrderList.Location = new System.Drawing.Point(10, 185);
             this.btnOrderList.Name = "btnOrderList";
-            this.btnOrderList.Size = new System.Drawing.Size(99, 23);
+            this.btnOrderList.Size = new System.Drawing.Size(99, 46);
             this.btnOrderList.TabIndex = 21;
             this.btnOrderList.Text = "Create Order List";
             this.btnOrderList.UseVisualStyleBackColor = true;
@@ -158,15 +140,16 @@
             // 
             // txtsidate
             // 
-            this.txtsidate.Location = new System.Drawing.Point(98, 92);
+            this.txtsidate.Location = new System.Drawing.Point(90, 67);
             this.txtsidate.Name = "txtsidate";
+            this.txtsidate.ReadOnly = true;
             this.txtsidate.Size = new System.Drawing.Size(251, 20);
             this.txtsidate.TabIndex = 20;
             // 
             // lblsidate
             // 
             this.lblsidate.AutoSize = true;
-            this.lblsidate.Location = new System.Drawing.Point(20, 95);
+            this.lblsidate.Location = new System.Drawing.Point(12, 70);
             this.lblsidate.Name = "lblsidate";
             this.lblsidate.Size = new System.Drawing.Size(75, 13);
             this.lblsidate.TabIndex = 19;
@@ -174,22 +157,24 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(98, 148);
+            this.txtQuantity.Location = new System.Drawing.Point(90, 123);
             this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.ReadOnly = true;
             this.txtQuantity.Size = new System.Drawing.Size(251, 20);
             this.txtQuantity.TabIndex = 18;
             // 
             // txtItemCode
             // 
-            this.txtItemCode.Location = new System.Drawing.Point(98, 59);
+            this.txtItemCode.Location = new System.Drawing.Point(90, 34);
             this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.ReadOnly = true;
             this.txtItemCode.Size = new System.Drawing.Size(251, 20);
             this.txtItemCode.TabIndex = 13;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(43, 151);
+            this.lblQuantity.Location = new System.Drawing.Point(35, 126);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(49, 13);
             this.lblQuantity.TabIndex = 5;
@@ -198,7 +183,7 @@
             // lblItemCode
             // 
             this.lblItemCode.AutoSize = true;
-            this.lblItemCode.Location = new System.Drawing.Point(37, 66);
+            this.lblItemCode.Location = new System.Drawing.Point(29, 41);
             this.lblItemCode.Name = "lblItemCode";
             this.lblItemCode.Size = new System.Drawing.Size(44, 13);
             this.lblItemCode.TabIndex = 0;
@@ -216,11 +201,13 @@
             // 
             // dgvInventory
             // 
+            this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Location = new System.Drawing.Point(377, 49);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.Size = new System.Drawing.Size(761, 239);
             this.dgvInventory.TabIndex = 1;
+            this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
             this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnDashboard
@@ -237,7 +224,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(495, 17);
+            this.label1.Location = new System.Drawing.Point(372, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 22;
@@ -245,10 +232,11 @@
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(127, 19);
+            this.search.Location = new System.Drawing.Point(547, 24);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(244, 20);
             this.search.TabIndex = 23;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
             // FormInventory
             // 
@@ -284,8 +272,6 @@
         private System.Windows.Forms.Label lblsidate;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnStockInOut;
-        private System.Windows.Forms.TextBox txtinvcode;
-        private System.Windows.Forms.Label lblinvcode;
         private System.Windows.Forms.Label lblsodate;
         private System.Windows.Forms.TextBox txtsidate;
         private System.Windows.Forms.TextBox txtstatus;

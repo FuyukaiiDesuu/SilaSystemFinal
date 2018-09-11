@@ -19,6 +19,7 @@ namespace MainSystem
         public frmitemmanagement()
         {
             InitializeComponent();
+            btnedit.Enabled = false;    
         }
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
@@ -28,10 +29,14 @@ namespace MainSystem
             reference.Show();
             this.Hide();
         }
-        
+
+        public createitemfrm itemcreate;
         private void btnCreate_Click(object sender, EventArgs e)
         {
-           
+            itemcreate = new createitemfrm();
+            itemcreate.Show();
+            itemcreate.reference = this;
+            this.Hide();
         }
 
         private void frmItemCreate_Load(object sender, EventArgs e)
@@ -81,42 +86,64 @@ namespace MainSystem
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            editData();
-        }
-        private void editData()
-        {
-            itemedit = new editItemmanagement();
-            for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
-            {
-                itemedit.txtitemid.Text = dataGridView1.SelectedRows[i].Cells[0].Value.ToString();
-                itemedit.txtitemcode.Text = dataGridView1.SelectedRows[i].Cells[1].Value.ToString();
-                itemedit.txtdesc.Text = dataGridView1.SelectedRows[i].Cells[3].Value.ToString();
-                itemedit.cmbstatus.Text = dataGridView1.SelectedRows[i].Cells[4].Value.ToString();
-                itemedit.txtitemname.Text = dataGridView1.SelectedRows[i].Cells[5].Value.ToString();
-            }
+            itemedit = new editItemmanagement(dic);
             itemedit.Show();
             itemedit.reference = this;
-            this.Hide();
-            readData();
-            dataGridView1.Rows[0].Selected = false;
+            this.Close();
         }
+        
         public editItemmanagement itemedit;
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                txtitemid.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                txtitemcode.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                txtdesc.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-                cmbstatus.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-                txtitemname.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                
             }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void gbItemDetails2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtitemcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public IDictionary<string, string> dic;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnedit.Enabled = true;
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dic = new Dictionary<string, string>();
+                dic.Add("itemcode", dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString());
+                dic.Add("description", dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString());
+                dic.Add("itemstatus", dataGridView1.Rows[e.RowIndex].Cells["itemstatus"].Value.ToString());
+                dic.Add("itemname", dataGridView1.Rows[e.RowIndex].Cells["itemname"].Value.ToString());
+
+
+                txtitemcode.Text = dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString();
+                txtdesc.Text = dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString();
+                if (dataGridView1.Rows[e.RowIndex].Cells["itemstatus"].Value.ToString() == "1")
+                {
+                    txtstat.Text = "ACTIVE";
+                }
+                else if (dataGridView1.Rows[e.RowIndex].Cells["itemstatus"].Value.ToString() == "0")
+                {
+                    txtstat.Text = "INACTIVE";
+                }
+                txtitemname.Text = dataGridView1.Rows[e.RowIndex].Cells["itemname"].Value.ToString();
+
+                //txtitemid.Text = dgvInventory.SelectedRows[0].Cells[0].Value.ToString();
+
+            }
         }
     }
 }

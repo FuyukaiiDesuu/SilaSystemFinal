@@ -18,7 +18,7 @@ namespace MainSystem.Employee
             string Server = "localhost";
             string Database = "silasystemdb";
             string Uid = "root";
-            string Password = "root";
+            string Password = "1234";
             string Port = "3306";
 
             string connectionString;

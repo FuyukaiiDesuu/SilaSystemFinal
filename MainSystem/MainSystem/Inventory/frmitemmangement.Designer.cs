@@ -30,31 +30,29 @@
         {
             this.btnback3 = new System.Windows.Forms.Button();
             this.gbItemDetails2 = new System.Windows.Forms.GroupBox();
-            this.cmbstatus = new System.Windows.Forms.ComboBox();
             this.lblstatus = new System.Windows.Forms.Label();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtitemname = new System.Windows.Forms.TextBox();
             this.txtitemcode = new System.Windows.Forms.TextBox();
-            this.txtitemid = new System.Windows.Forms.TextBox();
             this.lbldesc = new System.Windows.Forms.Label();
             this.lblitemname = new System.Windows.Forms.Label();
             this.lblitemcode = new System.Windows.Forms.Label();
-            this.lblitemid = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.btnview = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtstat = new System.Windows.Forms.TextBox();
             this.gbItemDetails2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnback3
             // 
-            this.btnback3.Location = new System.Drawing.Point(331, 494);
+            this.btnback3.Location = new System.Drawing.Point(529, 484);
             this.btnback3.Name = "btnback3";
-            this.btnback3.Size = new System.Drawing.Size(75, 23);
+            this.btnback3.Size = new System.Drawing.Size(168, 48);
             this.btnback3.TabIndex = 0;
             this.btnback3.Text = "Back";
             this.btnback3.UseVisualStyleBackColor = true;
@@ -62,40 +60,26 @@
             // 
             // gbItemDetails2
             // 
-            this.gbItemDetails2.Controls.Add(this.cmbstatus);
+            this.gbItemDetails2.Controls.Add(this.txtstat);
             this.gbItemDetails2.Controls.Add(this.lblstatus);
             this.gbItemDetails2.Controls.Add(this.txtdesc);
             this.gbItemDetails2.Controls.Add(this.txtitemname);
             this.gbItemDetails2.Controls.Add(this.txtitemcode);
-            this.gbItemDetails2.Controls.Add(this.txtitemid);
             this.gbItemDetails2.Controls.Add(this.lbldesc);
             this.gbItemDetails2.Controls.Add(this.lblitemname);
             this.gbItemDetails2.Controls.Add(this.lblitemcode);
-            this.gbItemDetails2.Controls.Add(this.lblitemid);
             this.gbItemDetails2.Location = new System.Drawing.Point(12, 297);
             this.gbItemDetails2.Name = "gbItemDetails2";
-            this.gbItemDetails2.Size = new System.Drawing.Size(313, 223);
+            this.gbItemDetails2.Size = new System.Drawing.Size(313, 181);
             this.gbItemDetails2.TabIndex = 1;
             this.gbItemDetails2.TabStop = false;
             this.gbItemDetails2.Text = "Item Details";
-            // 
-            // cmbstatus
-            // 
-            this.cmbstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbstatus.FormattingEnabled = true;
-            this.cmbstatus.Items.AddRange(new object[] {
-            "",
-            "0",
-            "1"});
-            this.cmbstatus.Location = new System.Drawing.Point(90, 149);
-            this.cmbstatus.Name = "cmbstatus";
-            this.cmbstatus.Size = new System.Drawing.Size(204, 21);
-            this.cmbstatus.TabIndex = 13;
+            this.gbItemDetails2.Enter += new System.EventHandler(this.gbItemDetails2_Enter);
             // 
             // lblstatus
             // 
             this.lblstatus.AutoSize = true;
-            this.lblstatus.Location = new System.Drawing.Point(14, 151);
+            this.lblstatus.Location = new System.Drawing.Point(15, 118);
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(37, 13);
             this.lblstatus.TabIndex = 12;
@@ -103,7 +87,7 @@
             // 
             // txtdesc
             // 
-            this.txtdesc.Location = new System.Drawing.Point(90, 96);
+            this.txtdesc.Location = new System.Drawing.Point(91, 63);
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.Size = new System.Drawing.Size(204, 46);
@@ -111,31 +95,23 @@
             // 
             // txtitemname
             // 
-            this.txtitemname.Location = new System.Drawing.Point(90, 174);
+            this.txtitemname.Location = new System.Drawing.Point(91, 141);
             this.txtitemname.Name = "txtitemname";
             this.txtitemname.Size = new System.Drawing.Size(204, 20);
             this.txtitemname.TabIndex = 3;
             // 
             // txtitemcode
             // 
-            this.txtitemcode.Location = new System.Drawing.Point(90, 70);
+            this.txtitemcode.Location = new System.Drawing.Point(91, 37);
             this.txtitemcode.Name = "txtitemcode";
             this.txtitemcode.Size = new System.Drawing.Size(204, 20);
             this.txtitemcode.TabIndex = 2;
-            // 
-            // txtitemid
-            // 
-            this.txtitemid.Location = new System.Drawing.Point(90, 35);
-            this.txtitemid.Name = "txtitemid";
-            this.txtitemid.ReadOnly = true;
-            this.txtitemid.Size = new System.Drawing.Size(204, 20);
-            this.txtitemid.TabIndex = 0;
-            this.txtitemid.TabStop = false;
+            this.txtitemcode.TextChanged += new System.EventHandler(this.txtitemcode_TextChanged);
             // 
             // lbldesc
             // 
             this.lbldesc.AutoSize = true;
-            this.lbldesc.Location = new System.Drawing.Point(14, 99);
+            this.lbldesc.Location = new System.Drawing.Point(15, 66);
             this.lbldesc.Name = "lbldesc";
             this.lbldesc.Size = new System.Drawing.Size(63, 13);
             this.lbldesc.TabIndex = 4;
@@ -144,7 +120,7 @@
             // lblitemname
             // 
             this.lblitemname.AutoSize = true;
-            this.lblitemname.Location = new System.Drawing.Point(14, 178);
+            this.lblitemname.Location = new System.Drawing.Point(15, 145);
             this.lblitemname.Name = "lblitemname";
             this.lblitemname.Size = new System.Drawing.Size(61, 13);
             this.lblitemname.TabIndex = 3;
@@ -153,26 +129,17 @@
             // lblitemcode
             // 
             this.lblitemcode.AutoSize = true;
-            this.lblitemcode.Location = new System.Drawing.Point(14, 70);
+            this.lblitemcode.Location = new System.Drawing.Point(15, 37);
             this.lblitemcode.Name = "lblitemcode";
             this.lblitemcode.Size = new System.Drawing.Size(58, 13);
             this.lblitemcode.TabIndex = 2;
             this.lblitemcode.Text = "Item Code:";
             // 
-            // lblitemid
-            // 
-            this.lblitemid.AutoSize = true;
-            this.lblitemid.Location = new System.Drawing.Point(14, 35);
-            this.lblitemid.Name = "lblitemid";
-            this.lblitemid.Size = new System.Drawing.Size(44, 13);
-            this.lblitemid.TabIndex = 1;
-            this.lblitemid.Text = "Item ID:";
-            // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(331, 408);
+            this.btnCreate.Location = new System.Drawing.Point(12, 484);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.Size = new System.Drawing.Size(122, 48);
             this.btnCreate.TabIndex = 11;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -180,9 +147,9 @@
             // 
             // btnedit
             // 
-            this.btnedit.Location = new System.Drawing.Point(331, 465);
+            this.btnedit.Location = new System.Drawing.Point(140, 484);
             this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(75, 23);
+            this.btnedit.Size = new System.Drawing.Size(97, 48);
             this.btnedit.TabIndex = 15;
             this.btnedit.Text = "Edit";
             this.btnedit.UseVisualStyleBackColor = true;
@@ -190,9 +157,9 @@
             // 
             // btnview
             // 
-            this.btnview.Location = new System.Drawing.Point(331, 437);
+            this.btnview.Location = new System.Drawing.Point(243, 484);
             this.btnview.Name = "btnview";
-            this.btnview.Size = new System.Drawing.Size(75, 23);
+            this.btnview.Size = new System.Drawing.Size(82, 48);
             this.btnview.TabIndex = 16;
             this.btnview.Text = "View";
             this.btnview.UseVisualStyleBackColor = true;
@@ -206,6 +173,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(684, 202);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
@@ -227,11 +195,18 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Item Management";
             // 
+            // txtstat
+            // 
+            this.txtstat.Location = new System.Drawing.Point(91, 115);
+            this.txtstat.Name = "txtstat";
+            this.txtstat.Size = new System.Drawing.Size(204, 20);
+            this.txtstat.TabIndex = 13;
+            // 
             // frmitemmanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 530);
+            this.ClientSize = new System.Drawing.Size(709, 544);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnview);
             this.Controls.Add(this.txtsearch);
@@ -258,18 +233,16 @@
         private System.Windows.Forms.Label lbldesc;
         private System.Windows.Forms.Label lblitemname;
         private System.Windows.Forms.Label lblitemcode;
-        private System.Windows.Forms.Label lblitemid;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox txtdesc;
         private System.Windows.Forms.TextBox txtitemname;
         private System.Windows.Forms.TextBox txtitemcode;
-        private System.Windows.Forms.TextBox txtitemid;
         private System.Windows.Forms.Label lblstatus;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button btnview;
         private System.Windows.Forms.TextBox txtsearch;
         public System.Windows.Forms.DataGridView dataGridView1;
-        public System.Windows.Forms.ComboBox cmbstatus;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtstat;
     }
 }

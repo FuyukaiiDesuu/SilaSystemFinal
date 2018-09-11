@@ -25,6 +25,7 @@ namespace MainSystem
         {
             readData();
             disablebtn();
+            btnconfirm.Enabled = false;
         }
 
         private void btnback3_Click(object sender, EventArgs e)
@@ -68,12 +69,13 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM itemdetails WHERE itemstatus = 0";
+                string query = "SELECT * FROM itemdetails;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns["itemID"].Visible = false;
+                dataGridView1.Columns["itemstatus"].Visible = false;
             }
         }
 
@@ -84,26 +86,12 @@ namespace MainSystem
 
         private void cmbstatus_TextChanged(object sender, EventArgs e)
         {
-            if (cmbstatus.Text == "1")
-            {
-                btnconfirm.Enabled = true;
-            }
-            else
-            {
-                btnconfirm.Enabled = false;
-            }
+            
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
-            {
-                txtitemid.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                txtitemcode.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                txtdesc.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-                cmbstatus.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-                txtitemname.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            }
+
         }
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
@@ -116,6 +104,26 @@ namespace MainSystem
                 dt = new DataTable();
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dataGridView1.Rows.Count > 0)
+            {
+                txtitemcode.Text = dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString();
+                txtdesc.Text = dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString();
+                if (dataGridView1.Rows[e.RowIndex].Cells["itemstatus"].Value.ToString() == "1")
+                {
+                    cmbstatus.Text = "ACTIVE";
+                    
+                }
+                else if (dataGridView1.Rows[e.RowIndex].Cells["itemstatus"].Value.ToString() == "0")
+                {
+                    
+                }
+                txtitemname.Text = dataGridView1.Rows[e.RowIndex].Cells["itemname"].Value.ToString();
             }
         }
     }
