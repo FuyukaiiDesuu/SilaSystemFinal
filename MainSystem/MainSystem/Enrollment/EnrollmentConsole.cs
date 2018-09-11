@@ -58,7 +58,7 @@ namespace MainSystem
                 dataGridView1.Columns["idstuddet"].Visible = false;
                 dataGridView1.Columns["Status"].Visible = false;
                 dataGridView1.Columns["department"].Visible = false;
-                dataGridView1.Columns["level"].Visible = false;
+                dataGridView1.Columns["level"].Visible = true;
                 dataGridView1.Columns["school_year"].Visible = false;
                 dataGridView1.Columns["idstddet"].Visible = false;
 
@@ -170,6 +170,7 @@ namespace MainSystem
             
             return studdet;
         }
+        private string status;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -187,6 +188,7 @@ namespace MainSystem
                 txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
                 txtnn.Text = dataGridView1.Rows[e.RowIndex].Cells["Nickname"].Value.ToString();
                 IDictionary<string, string> dic = studdetails(dataGridView1.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["level"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
+                status = dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString();
                 txtdep.Text = dic["dept"];
                 txtlev.Text = dic["level"];
                 txtsy.Text = dataGridView1.Rows[e.RowIndex].Cells["school_year"].Value.ToString();
@@ -244,6 +246,7 @@ namespace MainSystem
             dict.Add("nn", txtnn.Text);
             dict.Add("dept", txtdep.Text);
             dict.Add("lvl", txtlev.Text);
+            dict.Add("stat", status);
             return dict;
         }
 

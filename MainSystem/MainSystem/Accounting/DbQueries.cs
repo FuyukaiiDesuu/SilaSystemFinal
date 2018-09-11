@@ -16,7 +16,7 @@ namespace MainSystem.Accounting
         public DataTable studentProfileDisplay()
         {
             string query = @"SELECT *, concat(sp.LastName, ', ' , sp.FirstName, ' ', sp.MiddleName) as 'fullname'
-                            FROM studentprofile as sp
+                            FROM studentprofile as sp INNER JOIN accountdetails ON sp.idstudentprofile = accountdetails.spid
                             where sp.Status = 1
                             order by sp.idstudentprofile";
             DataTable itmContainer = con.Select(query);
@@ -52,7 +52,7 @@ namespace MainSystem.Accounting
         public DataTable feevalues()
         {
             string query = @"Select * 
-                             from feevalues";
+                             from feevalues WHERE status = 1 ORDER BY f_key ASC;";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }

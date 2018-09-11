@@ -13,6 +13,7 @@ namespace MainSystem
 {
     public partial class editStudent : Form
     {
+        
         public EnrollmentConsole reference { get; set; }
         public string idstud;
         public editStudent(string idstudent, IDictionary<string, string> dic)
@@ -20,14 +21,95 @@ namespace MainSystem
             InitializeComponent();
             idstud = idstudent;
             txtboxfill(dic);
+            combochanger();
+            txtboxfill(dic);
         }
+        public IDictionary<string, string> studdet;
         public MySqlConnection dbconnection;
+        public void studdetails(string dept, string level)
+        {
+            studdet = new Dictionary<string, string>();
+            switch (dept)
+            {
+                case "Pre-school":
+                    studdet.Add("dept", "1");
+                    break;
+                case "Grade-school":
+                    studdet.Add("dept", "2");
+                    break;
+                case "High-school":
+                    studdet.Add("dept", "3");
+                    break;
+            }
+            switch (level)
+            {
+                case "Toddler":
+                    studdet.Add("level", "11");
+                    studdet.Add("feelevel", "1");
+                    break;
+                case "Nursery":
+                    studdet.Add("level", "12");
+                    studdet.Add("feelevel", "2");
+                    break;
+                case "Kinder":
+                    studdet.Add("level", "13");
+                    studdet.Add("feelevel", "3");
+                    break;
+                case "Preparatory":
+                    studdet.Add("level", "14");
+                    studdet.Add("feelevel", "4");
+                    break;
+                case "Grade 1":
+                    studdet.Add("level", "21");
+                    studdet.Add("feelevel", "5");
+                    break;
+                case "Grade 2":
+                    studdet.Add("level", "22");
+                    studdet.Add("feelevel", "6");
+                    break;
+                case "Grade 3":
+                    studdet.Add("level", "23");
+                    studdet.Add("feelevel", "6");
+                    break;
+                case "Grade 4":
+                    studdet.Add("level", "24");
+                    studdet.Add("feelevel", "7");
+                    break;
+                case "Grade 5":
+                    studdet.Add("level", "25");
+                    studdet.Add("feelevel", "8");
+                    break;
+                case "Grade 6":
+                    studdet.Add("level", "26");
+                    studdet.Add("feelevel", "9");
+                    break;
+                case "Grade 7":
+                    studdet.Add("level", "31");
+                    studdet.Add("feelevel", "10");
+                    break;
+                case "Grade 8":
+                    studdet.Add("level", "32");
+                    studdet.Add("feelevel", "11");
+                    break;
+                case "Grade 9":
+                    studdet.Add("level", "33");
+                    studdet.Add("feelevel", "12");
+                    break;
+                case "Grade 10":
+                    studdet.Add("level", "34");
+                    studdet.Add("feelevel", "13");
+                    break;
+            }
+          
+        }
         private void updatevalue()
         {
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
+                studdetails(comboBox3.Text, comboBox2.Text);
+                //MessageBox.Show(studdet["dept"]);
                 using (var command = new MySqlCommand("UPDATE studentprofile set FirstName = @fn, LastName = @ln, MiddleName = @mn, DateOfBirth = @dof, PlaceOfBirth = @pof, Sex = @sex, Religion = @rel, Nickname = @nickname WHERE idstudentprofile = @ayd;", dbconnection))
                 {
                     command.Parameters.AddWithValue("@ayd", idstud);
@@ -44,10 +126,16 @@ namespace MainSystem
                 using (var command = new MySqlCommand("UPDATE studdetails SET department = @dept, level = @lvl, school_year = @sy WHERE idstddet = @ayd", dbconnection))
                 {
                     command.Parameters.AddWithValue("@ayd", idstud);
-                    command.Parameters.AddWithValue("@dept", comboBox3.Text);
-                    command.Parameters.AddWithValue("@lvl", comboBox2.Text);
+                    command.Parameters.AddWithValue("@dept", studdet["dept"]);
+                    command.Parameters.AddWithValue("@lvl", studdet["level"]);
                     command.Parameters.AddWithValue("@sy", sygetter());
                     //need to update query to insert department integer value
+                    command.ExecuteNonQuery();
+                }
+                using (var command = new MySqlCommand("UPDATE accountdetails SET fid = @fid WHERE spid = @ayd", dbconnection))
+                {
+                    command.Parameters.AddWithValue("@ayd", idstud);
+                    command.Parameters.AddWithValue("@fid", studdet["feelevel"]);
                     command.ExecuteNonQuery();
                 }
             }
@@ -73,8 +161,8 @@ namespace MainSystem
             txtnn.Text = dic["nn"];
             comboBox3.Text = dic["dept"];
             comboBox2.Text = dic["lvl"];
-
             
+
         }
 
         private void editStudent_Load(object sender, EventArgs e)
@@ -94,6 +182,36 @@ namespace MainSystem
             MessageBox.Show("Records Succesfully Altered!");
             reference.loadData();
             this.Close();
+        }
+        private void combochanger()
+        {
+            comboBox2.Items.Clear();
+            switch (comboBox3.Text)
+            {
+                case "Pre-school":
+                    comboBox2.Items.Add("Nursery");
+                    comboBox2.Items.Add("Kinder");
+                    comboBox2.Items.Add("Preparatory");
+                    break;
+                case "Grade-school":
+                    comboBox2.Items.Add("Grade 1");
+                    comboBox2.Items.Add("Grade 2");
+                    comboBox2.Items.Add("Grade 3");
+                    comboBox2.Items.Add("Grade 4");
+                    comboBox2.Items.Add("Grade 5");
+                    comboBox2.Items.Add("Grade 6");
+                    break;
+                case "High-school":
+                    comboBox2.Items.Add("Grade 7");
+                    comboBox2.Items.Add("Grade 8");
+                    comboBox2.Items.Add("Grade 9");
+                    comboBox2.Items.Add("Grade 10");
+                    break;
+            }
+        }
+        private void comboBox3_TextChanged(object sender, EventArgs e)
+        {
+            combochanger();
         }
 
         private void label15_Click(object sender, EventArgs e)

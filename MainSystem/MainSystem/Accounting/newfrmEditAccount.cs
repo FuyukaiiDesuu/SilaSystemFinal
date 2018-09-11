@@ -7,28 +7,308 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MainSystem.Accounting
 {
     public partial class newfrmEditAccount : Form
     {
+        public MySqlConnection dbconnection;
+        public MySqlDataAdapter adapter;
+        public DataTable dt;
+        dbConnector connect = new dbConnector();
         public Accounting.newfrmAccount reference { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
-        public DataTable editacc = null;
-        public string id { get; set; }
-        public string name { get; set; }
-        public string uname { get; set; }
-        public newfrmEditAccount()
+        //public DataTable editacc = null;
+        //public string id { get; set; }
+        //public string name { get; set; }
+        //public string uname { get; set; }
+        public IDictionary<string, string> dict;
+        public string TEMPORARYSYEAR = "2018 - 2019";
+        public newfrmEditAccount(IDictionary<string, string>d)
         {
             InitializeComponent();
+            dict = d;
+            defaulttext();
+            textboxfill();
+            sygetter();
+        }
+        private void defaulttext()
+        {
+            txttpb.Text = "₱0.00";
+            txtregp.Text = "₱0.00";
+            //tuitiontxt.Text = "₱0.00";
+            txtbp.Text = "₱0.00";
+            txtmp.Text = "₱0.00";
+             
+        }
+        //string accid;
+        private decimal balOthers()
+        {
+            decimal sum = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+                
+                string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
+                    "AND fee_description = 'Others' " +
+                    "AND Status = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
+                    }
+                    
+                }
+                else
+                {
+                    sum = 0.00M;
+                }
+
+            }
+            decimal sum2 = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "SELECT * FROM payment WHERE adid = '" + dict["adid"] + "' " +
+                    "AND payment_to = 'Others' AND paymentStatus = 1 AND syear = '"+TEMPORARYSYEAR+"';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum2 = sum2 + decimal.Round(decimal.Parse(row["amount_paid"].ToString()), 2);
+                    }
+
+                }
+                else
+                {
+                    sum2 = 0.00M;
+                }
+
+            }
+            return sum - sum2;
+        }
+        private decimal balTuition()
+        {
+            decimal totalpayablesum = 0.00M;
+            decimal sum = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+                
+                string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
+                    "AND fee_description = 'Tuition' " +
+                    "AND Status = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
+                    }
+                    
+                }
+                else
+                {
+                   sum = 0.00M;
+                }
+
+            }
+            decimal sum2 = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "SELECT * FROM payment WHERE adid = '" + dict["adid"] + "' " +
+                    "AND payment_to = 'Tuition' AND paymentStatus = 1 AND syear = '" + TEMPORARYSYEAR + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum2 = sum2 + decimal.Round(decimal.Parse(row["amount_paid"].ToString()), 2);
+                    }
+
+                }
+                else
+                {
+                    sum2 = 0.00M;
+                }
+
+            }
+            totalpayablesum = sum * schoolMonths;
+            return totalpayablesum - sum2;
+
+        }
+        private decimal balRegis()
+        {
+            decimal sum = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+                
+                string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
+                    "AND fee_description = 'Registration' " +
+                    "AND Status = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if(dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
+                    }
+                    
+                }
+                else
+                {
+                   sum = 0.00M;
+                }
+                
+            }
+            decimal sum2 = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "SELECT * FROM payment WHERE adid = '" + dict["adid"] + "' " +
+                    "AND payment_to = 'Registration' AND paymentStatus = 1 AND syear = '" + TEMPORARYSYEAR + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum2 = sum2 + decimal.Round(decimal.Parse(row["amount_paid"].ToString()), 2);
+                    }
+                    
+                }
+                else
+                {
+                    sum2 = 0.00M;
+                }
+
+            }
+            return sum - sum2;
+        }
+        private decimal balBooks()
+        {
+            decimal sum = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+                
+                string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
+                    "AND fee_description = 'Books' " +
+                    "AND Status = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if(dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
+                    }
+                    
+                }
+                else
+                {
+                    sum = 0.00M;
+                }
+
+            }
+            decimal sum2 = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "SELECT * FROM payment WHERE adid = '" + dict["adid"] + "' " +
+                    "AND payment_to = 'Books' AND paymentStatus = 1 AND syear = '" + TEMPORARYSYEAR + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum2 = sum2 + decimal.Round(decimal.Parse(row["amount_paid"].ToString()), 2);
+                    }
+
+                }
+                else
+                {
+                    sum2 = 0.00M;
+                }
+
+            }
+            return sum - sum2;
+        }
+        public Int32 schoolMonths = 10;
+        private void totalPayableTuition()
+        {
+            /*
+            schoolMonths = 10;
+            decimal sum = 0.00M;
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
+                    "AND fee_description = 'Tuition' " +
+                    "AND Status = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
+                    }
+                    return sum * schoolMonths;
+                }
+                else
+                {
+                    return sum = 0.00M;
+                }
+
+            }*/
+            
         }
 
+        private decimal totalBalancePayable()
+        {
+            return balTuition() + balRegis() + balOthers() + balBooks();
+        }
+
+        private void textboxfill()
+        {
+            txttottu.Text = "₱" + balTuition().ToString();
+            txtmp.Text = "₱" + balOthers().ToString();
+            txttpb.Text = "₱" + totalBalancePayable().ToString();
+            txtregp.Text = "₱" + balRegis().ToString();
+            txtbp.Text = "₱" + balBooks().ToString();
+
+        }
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
+            /*
             timer1.Enabled = true;
             lblUser.Text = uname;
             txtStudentID.Text = id;
             txtStudentName.Text = name;
+            */
+            dateTimePicker2.CustomFormat = "MMMM, yyyy";
+            dateTimePicker3.CustomFormat = "MMMM, yyyy";
+            //MessageBox.Show(balOthers().ToString());
+
+            /*
             DataTable adid = dbquery.getAdid(id);
             txtStudentAccountID.Text = adid.Rows[0][0].ToString();
             txtDateDue.Text = adid.Rows[0][1].ToString();
@@ -36,7 +316,7 @@ namespace MainSystem.Accounting
             txtCurrentBalance.Text = adid.Rows[0][3].ToString();
             txtPaidAmount.Text = adid.Rows[0][4].ToString();
             lblPaymentStatus2.Text = adid.Rows[0][5].ToString();
-            TextColor();
+            TextColor();*/
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -51,7 +331,7 @@ namespace MainSystem.Accounting
             lblDate2.Text = DateTime.Now.ToString("tt");
             timer1.Start();
         }
-
+        /*
         private void TextColor()
         {
             if (lblPaymentStatus2.Text == "PAID")
@@ -63,6 +343,19 @@ namespace MainSystem.Accounting
             {
                 lblPaymentStatus2.ForeColor = Color.Red;
             }
+        }*/
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void sygetter()
+        {
+            
+        }
+        private void grpStudentDetails_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
