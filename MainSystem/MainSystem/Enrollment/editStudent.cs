@@ -16,13 +16,16 @@ namespace MainSystem
         
         public EnrollmentConsole reference { get; set; }
         public string idstud;
-        public editStudent(string idstudent, IDictionary<string, string> dic)
+        public string imgpath;
+        public editStudent(string idstudent, IDictionary<string, string> dic, string imgpth)
         {
             InitializeComponent();
             idstud = idstudent;
             txtboxfill(dic);
             combochanger();
             txtboxfill(dic);
+            imgpath = imgpth;
+            pictureBox1.ImageLocation = imgpth;
         }
         public IDictionary<string, string> studdet;
         public MySqlConnection dbconnection;
@@ -110,7 +113,7 @@ namespace MainSystem
                 dbconnection.Open();
                 studdetails(comboBox3.Text, comboBox2.Text);
                 //MessageBox.Show(studdet["dept"]);
-                using (var command = new MySqlCommand("UPDATE studentprofile set FirstName = @fn, LastName = @ln, MiddleName = @mn, DateOfBirth = @dof, PlaceOfBirth = @pof, Sex = @sex, Religion = @rel, Nickname = @nickname WHERE idstudentprofile = @ayd;", dbconnection))
+                using (var command = new MySqlCommand("UPDATE studentprofile set FirstName = @fn, LastName = @ln, MiddleName = @mn, DateOfBirth = @dof, PlaceOfBirth = @pof, Sex = @sex, Religion = @rel, Nickname = @nickname, image_path = @imgpt WHERE idstudentprofile = @ayd;", dbconnection))
                 {
                     command.Parameters.AddWithValue("@ayd", idstud);
                     command.Parameters.AddWithValue("@fn", txtfn.Text);
@@ -121,6 +124,7 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@sex", comboBox1.Text);
                     command.Parameters.AddWithValue("@rel", txtrel.Text);
                     command.Parameters.AddWithValue("@nickname", txtnn.Text);
+                    command.Parameters.AddWithValue("@imgpt", imgpath);
                     command.ExecuteNonQuery();
                 }
                 using (var command = new MySqlCommand("UPDATE studdetails SET department = @dept, level = @lvl, school_year = @sy WHERE idstddet = @ayd", dbconnection))
@@ -173,6 +177,8 @@ namespace MainSystem
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            reference.dataGridView1.ClearSelection();
+            reference.textboxClear();
             reference.Show();
         }
 
@@ -181,6 +187,8 @@ namespace MainSystem
             updatevalue();
             MessageBox.Show("Records Succesfully Altered!");
             reference.loadData();
+            reference.dataGridView1.ClearSelection();
+            reference.textboxClear();
             this.Close();
         }
         private void combochanger()
@@ -230,6 +238,20 @@ namespace MainSystem
         private void label11_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // open file dialog   
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png;)|*.jpg; *.jpeg; *.gif; *.bmp; *.png;";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box  
+                pictureBox1.Image = new Bitmap(open.FileName);
+                imgpath = open.FileName;
+                // image file path  
+            }
         }
     }
 }

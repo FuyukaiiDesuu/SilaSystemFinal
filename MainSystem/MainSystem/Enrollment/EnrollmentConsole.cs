@@ -62,6 +62,8 @@ namespace MainSystem
                 dataGridView1.Columns["level"].Visible = true;
                 dataGridView1.Columns["school_year"].Visible = false;
                 dataGridView1.Columns["idstddet"].Visible = false;
+                dataGridView1.Columns["section"].Visible = false;
+                dataGridView1.Columns["image_path"].Visible = false;
 
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
@@ -171,7 +173,8 @@ namespace MainSystem
             
             return studdet;
         }
-        private string status;
+        public string status;
+        public string imgpath;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -188,12 +191,14 @@ namespace MainSystem
                 txtsex.Text = dataGridView1.Rows[e.RowIndex].Cells["Sex"].Value.ToString();
                 txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
                 txtnn.Text = dataGridView1.Rows[e.RowIndex].Cells["Nickname"].Value.ToString();
+                imgpath = dataGridView1.Rows[e.RowIndex].Cells["image_path"].Value.ToString();
                 IDictionary<string, string> dic = studdetails(dataGridView1.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["level"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
                 status = dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString();
                 txtdep.Text = dic["dept"];
                 txtlev.Text = dic["level"];
                 txtsy.Text = dataGridView1.Rows[e.RowIndex].Cells["school_year"].Value.ToString();
                 txtstatus.Text = dic["status"];
+                pictureBox1.ImageLocation = dataGridView1.Rows[e.RowIndex].Cells["image_path"].Value.ToString();
                 btnEnable();
             }
             catch(Exception ee)
@@ -217,7 +222,7 @@ namespace MainSystem
             btnUpdate.Enabled = true;
             btnView.Enabled = true;
         }
-        private void textboxClear()
+        public void textboxClear()
         {
             txtfn.Clear();
             txtln.Clear();
@@ -292,7 +297,7 @@ namespace MainSystem
         public editStudent esform;
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            esform = new editStudent(studid2, injector());
+            esform = new editStudent(studid2, injector(), imgpath);
             esform.Show();
             esform.reference = this;
             //this.Hide();
@@ -335,9 +340,14 @@ namespace MainSystem
         {
 
         }
+        public frmSectionMgmt fsm;
         private void btnsmgmt_Click(object sender, EventArgs e)
         {
-
+            fsm = new frmSectionMgmt();
+            fsm.reference = this;
+            fsm.Show();
+            this.Hide();
+            
         }
     }
 }

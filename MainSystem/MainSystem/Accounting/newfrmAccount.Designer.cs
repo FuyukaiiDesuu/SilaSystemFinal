@@ -36,10 +36,19 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
             this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.searchtppayments = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.searchtppending = new System.Windows.Forms.DateTimePicker();
             this.dgvpending = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.searchtpvoided = new System.Windows.Forms.DateTimePicker();
             this.dgvvoid = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,24 +85,15 @@
             this.btnAddFee = new System.Windows.Forms.Button();
             this.btnUpdateFee = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddDisb = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.btnAddDisb = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.searchtpvoided = new System.Windows.Forms.DateTimePicker();
-            this.searchtppending = new System.Windows.Forms.DateTimePicker();
-            this.searchtppayments = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -134,7 +134,7 @@
             this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 22);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
-            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
             this.tabStudentTransaction.Size = new System.Drawing.Size(1021, 539);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student Transaction";
@@ -146,7 +146,7 @@
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button2.Location = new System.Drawing.Point(442, 488);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 45);
             this.button2.TabIndex = 13;
@@ -195,7 +195,7 @@
             this.btnViewPaymentHistory.BackColor = System.Drawing.Color.Transparent;
             this.btnViewPaymentHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnViewPaymentHistory.Location = new System.Drawing.Point(309, 488);
-            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
             this.btnViewPaymentHistory.Size = new System.Drawing.Size(128, 45);
             this.btnViewPaymentHistory.TabIndex = 5;
@@ -225,6 +225,35 @@
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance And Payment";
             // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(121, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(42, 21);
+            this.button5.TabIndex = 31;
+            this.button5.Text = "RST";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(169, 19);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(42, 21);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "SRC";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // searchtppayments
+            // 
+            this.searchtppayments.Location = new System.Drawing.Point(217, 19);
+            this.searchtppayments.Name = "searchtppayments";
+            this.searchtppayments.Size = new System.Drawing.Size(204, 20);
+            this.searchtppayments.TabIndex = 4;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -246,11 +275,40 @@
             this.tabPage2.Controls.Add(this.dgvpending);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(407, 193);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "PENDING";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Enabled = false;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(99, 5);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(42, 21);
+            this.button10.TabIndex = 35;
+            this.button10.Text = "RST";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Enabled = false;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(147, 5);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(42, 21);
+            this.button11.TabIndex = 34;
+            this.button11.Text = "SRC";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // searchtppending
+            // 
+            this.searchtppending.Location = new System.Drawing.Point(197, 6);
+            this.searchtppending.Name = "searchtppending";
+            this.searchtppending.Size = new System.Drawing.Size(204, 20);
+            this.searchtppending.TabIndex = 4;
             // 
             // dgvpending
             // 
@@ -267,6 +325,7 @@
             this.dgvpending.Size = new System.Drawing.Size(395, 155);
             this.dgvpending.TabIndex = 1;
             this.dgvpending.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpending_CellClick);
+            this.dgvpending.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpending_CellContentClick);
             // 
             // tabPage3
             // 
@@ -276,11 +335,40 @@
             this.tabPage3.Controls.Add(this.dgvvoid);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(407, 193);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "VOIDED";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(99, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(42, 21);
+            this.button6.TabIndex = 33;
+            this.button6.Text = "RST";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Enabled = false;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(147, 6);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(42, 21);
+            this.button7.TabIndex = 32;
+            this.button7.Text = "SRC";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // searchtpvoided
+            // 
+            this.searchtpvoided.Location = new System.Drawing.Point(196, 7);
+            this.searchtpvoided.Name = "searchtpvoided";
+            this.searchtpvoided.Size = new System.Drawing.Size(204, 20);
+            this.searchtpvoided.TabIndex = 3;
             // 
             // dgvvoid
             // 
@@ -624,7 +712,7 @@
             this.tabPage1.Controls.Add(this.btnUpdateFee);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1021, 539);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Fee Management";
@@ -664,7 +752,7 @@
             this.btnUpdateFee.Enabled = false;
             this.btnUpdateFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnUpdateFee.Location = new System.Drawing.Point(136, 438);
-            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateFee.Name = "btnUpdateFee";
             this.btnUpdateFee.Size = new System.Drawing.Size(125, 28);
             this.btnUpdateFee.TabIndex = 6;
@@ -681,13 +769,61 @@
             this.tabPage4.Controls.Add(this.btnAddDisb);
             this.tabPage4.Controls.Add(this.dataGridView1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1021, 539);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Expense Disbursement";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // button8
+            // 
+            this.button8.Enabled = false;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(5, 10);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(42, 21);
+            this.button8.TabIndex = 34;
+            this.button8.Text = "RST";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Enabled = false;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(53, 10);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(42, 21);
+            this.button9.TabIndex = 33;
+            this.button9.Text = "SRC";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // searchtpexpense
+            // 
+            this.searchtpexpense.Location = new System.Drawing.Point(101, 11);
+            this.searchtpexpense.Name = "searchtpexpense";
+            this.searchtpexpense.Size = new System.Drawing.Size(204, 20);
+            this.searchtpexpense.TabIndex = 32;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(166, 435);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(156, 37);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Update Voucher";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnAddDisb
+            // 
+            this.btnAddDisb.Location = new System.Drawing.Point(4, 435);
+            this.btnAddDisb.Name = "btnAddDisb";
+            this.btnAddDisb.Size = new System.Drawing.Size(156, 37);
+            this.btnAddDisb.TabIndex = 14;
+            this.btnAddDisb.Text = "Create Voucher";
+            this.btnAddDisb.UseVisualStyleBackColor = true;
+            this.btnAddDisb.Click += new System.EventHandler(this.btnAddDisb_Click);
             // 
             // dataGridView1
             // 
@@ -733,141 +869,6 @@
             this.lblUser.Size = new System.Drawing.Size(46, 17);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
-            // 
-            // btnAddDisb
-            // 
-            this.btnAddDisb.Location = new System.Drawing.Point(4, 435);
-            this.btnAddDisb.Name = "btnAddDisb";
-            this.btnAddDisb.Size = new System.Drawing.Size(156, 37);
-            this.btnAddDisb.TabIndex = 14;
-            this.btnAddDisb.Text = "Create Voucher";
-            this.btnAddDisb.UseVisualStyleBackColor = true;
-            this.btnAddDisb.Click += new System.EventHandler(this.btnAddDisb_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(166, 435);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 37);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Update Voucher";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // searchtpvoided
-            // 
-            this.searchtpvoided.Location = new System.Drawing.Point(196, 7);
-            this.searchtpvoided.Name = "searchtpvoided";
-            this.searchtpvoided.Size = new System.Drawing.Size(204, 20);
-            this.searchtpvoided.TabIndex = 3;
-            // 
-            // searchtppending
-            // 
-            this.searchtppending.Location = new System.Drawing.Point(197, 6);
-            this.searchtppending.Name = "searchtppending";
-            this.searchtppending.Size = new System.Drawing.Size(204, 20);
-            this.searchtppending.TabIndex = 4;
-            // 
-            // searchtppayments
-            // 
-            this.searchtppayments.Location = new System.Drawing.Point(217, 19);
-            this.searchtppayments.Name = "searchtppayments";
-            this.searchtppayments.Size = new System.Drawing.Size(204, 20);
-            this.searchtppayments.TabIndex = 4;
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(169, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(42, 21);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "SRC";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Enabled = false;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(121, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(42, 21);
-            this.button5.TabIndex = 31;
-            this.button5.Text = "RST";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Enabled = false;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(99, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(42, 21);
-            this.button6.TabIndex = 33;
-            this.button6.Text = "RST";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Enabled = false;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(147, 6);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(42, 21);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "SRC";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Enabled = false;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(5, 10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(42, 21);
-            this.button8.TabIndex = 34;
-            this.button8.Text = "RST";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Enabled = false;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(53, 10);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(42, 21);
-            this.button9.TabIndex = 33;
-            this.button9.Text = "SRC";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // searchtpexpense
-            // 
-            this.searchtpexpense.Location = new System.Drawing.Point(101, 11);
-            this.searchtpexpense.Name = "searchtpexpense";
-            this.searchtpexpense.Size = new System.Drawing.Size(204, 20);
-            this.searchtpexpense.TabIndex = 32;
-            // 
-            // button10
-            // 
-            this.button10.Enabled = false;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(99, 5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(42, 21);
-            this.button10.TabIndex = 35;
-            this.button10.Text = "RST";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Enabled = false;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(147, 5);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(42, 21);
-            this.button11.TabIndex = 34;
-            this.button11.Text = "SRC";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // newfrmAccount
             // 

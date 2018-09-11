@@ -414,5 +414,10 @@ namespace MainSystem.Accounting
             this.Hide();
 
         }
+
+        private void dgvpending_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

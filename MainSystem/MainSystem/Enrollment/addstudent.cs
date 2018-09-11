@@ -34,7 +34,7 @@ namespace MainSystem
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void createdefault()
         {
@@ -63,7 +63,7 @@ namespace MainSystem
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                using (var command = new MySqlCommand("UPDATE studentprofile set FirstName = @fn, LastName = @ln, MiddleName = @mn, DateOfBirth = @dof, PlaceOfBirth = @pof, Sex = @sex, Religion = @rel, Nickname = @nickname, Status = @stat, idstuddet = @ayd2  WHERE idstudentprofile = @ayd;", dbconnection))
+                using (var command = new MySqlCommand("UPDATE studentprofile set FirstName = @fn, LastName = @ln, MiddleName = @mn, DateOfBirth = @dof, PlaceOfBirth = @pof, Sex = @sex, Religion = @rel, Nickname = @nickname, image_path = @ipath, Status = @stat, idstuddet = @ayd2  WHERE idstudentprofile = @ayd;", dbconnection))
                 {
                     command.Parameters.AddWithValue("@ayd", studid);
                     command.Parameters.AddWithValue("@fn", txtfn.Text);
@@ -72,7 +72,7 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@dof", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@pof", txtbp.Text);
                     command.Parameters.AddWithValue("@sex", comboBox3.Text);
-                    if(comboBox4.Text == "Others")
+                    if (comboBox4.Text == "Others")
                     {
                         command.Parameters.AddWithValue("@rel", txtrel.Text);
                     }
@@ -81,6 +81,7 @@ namespace MainSystem
                         command.Parameters.AddWithValue("@rel", comboBox4.Text);
                     }
                     command.Parameters.AddWithValue("@nickname", txtnn.Text);
+                    command.Parameters.AddWithValue("@ipath", imgpath);
                     command.Parameters.AddWithValue("@stat", 1);
                     command.Parameters.AddWithValue("@ayd2", studid);
 
@@ -89,7 +90,7 @@ namespace MainSystem
                 IDictionary<string, string> dic = comboboxpicker();
                 using (var command = new MySqlCommand("UPDATE studdetails set department = @dpt, level = @lvl, school_year = @sy where idstddet = @aydd;", dbconnection))
                 {
-                   
+
                     command.Parameters.AddWithValue("@dpt", dic["dept"]);
                     command.Parameters.AddWithValue("@lvl", dic["level"]);
                     Int32 temp = Convert.ToInt32(sygetter().ToString()) + 1;
@@ -112,16 +113,16 @@ namespace MainSystem
 
 
         }
-        
+
         private string sygetter()
         {
             return DateTime.Now.Year.ToString();
-            
+
         }
         private IDictionary<string, string> comboboxpicker()
         {
             IDictionary<string, string> d1 = new Dictionary<string, string>();
-            switch(comboBox2.Text)
+            switch (comboBox2.Text)
             {
                 case "Toddler":
                     d1.Add("level", "11");
@@ -180,7 +181,7 @@ namespace MainSystem
                     d1.Add("feelevel", "14");
                     break;
             }
-            switch(comboBox1.Text)
+            switch (comboBox1.Text)
             {
                 case "Pre-school":
                     d1.Add("dept", "1");
@@ -215,6 +216,8 @@ namespace MainSystem
             btnSave.Enabled = false;
             //gboxDisabler();
             reference.loadData();
+            reference.dataGridView1.ClearSelection();
+            reference.textboxClear();
             reference.Show();
             this.Close();
         }
@@ -240,15 +243,17 @@ namespace MainSystem
                     command2.Parameters.AddWithValue("@ayd", studid);
                     command2.ExecuteNonQuery();
                 }
-                
+
             }
-            
+
             altertable();
             this.Close();
             reference.Show();
             reference.loadData();
+            reference.textboxClear();
+            reference.dataGridView1.ClearSelection();
             dbconnection.Close();
-            
+
         }
         private void altertable()
         {
@@ -257,24 +262,24 @@ namespace MainSystem
             {
                 //int a = int.Parse(studid);
                 dbconnection.Open();
-                using (var command = new MySqlCommand("alter table studentprofile auto_increment ="+studid+";", dbconnection))
+                using (var command = new MySqlCommand("alter table studentprofile auto_increment =" + studid + ";", dbconnection))
                 {
                     //command.Parameters.AddWithValue("@count", studid);
                     command.ExecuteNonQuery();
                 }
-                using (var command2 = new MySqlCommand("alter table studdetails auto_increment = "+studid+";", dbconnection))
+                using (var command2 = new MySqlCommand("alter table studdetails auto_increment = " + studid + ";", dbconnection))
                 {
                     //command2.Parameters.AddWithValue("@count", studid);
                     command2.ExecuteNonQuery();
                 }
 
             }
-           
+
         }
 
         private void comboBox4_SelectedValueChanged(object sender, EventArgs e)
         {
-            if(comboBox4.Text == "Others")
+            if (comboBox4.Text == "Others")
             {
                 txtrel.Enabled = true;
             }
@@ -289,7 +294,7 @@ namespace MainSystem
             comboBox2.Items.Clear();
             switch (comboBox1.Text)
             {
-               case "Pre-school":
+                case "Pre-school":
                     comboBox2.Items.Add("Nursery");
                     comboBox2.Items.Add("Kinder");
                     comboBox2.Items.Add("Preparatory");
@@ -309,8 +314,8 @@ namespace MainSystem
                     comboBox2.Items.Add("Grade 10");
                     break;
             }
- 
-                    
+
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -334,6 +339,21 @@ namespace MainSystem
         private void label12_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        public string imgpath;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // open file dialog   
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png;)|*.jpg; *.jpeg; *.gif; *.bmp; *.png;";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box  
+                pictureBox1.Image = new Bitmap(open.FileName);
+                imgpath = open.FileName;
+                // image file path  
+            }
         }
     }
 }
