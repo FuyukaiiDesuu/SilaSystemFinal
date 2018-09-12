@@ -22,7 +22,86 @@ namespace MainSystem
             cbclm.HeaderText = "Select";
             dataGridView1.Columns.Add(cbclm);
             loadData();
+            loadData2();
             
+        }
+        public void loadSearch()
+        {
+            var dbconnect = new dbConnector();
+            string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet" +
+                " WHERE studentprofile.Status = 1" +
+                " AND studdetails.section LIKE '%"+textBox2.Text+"%';";
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                MySqlDataAdapter ad = new MySqlDataAdapter(query, dbconnection);
+                DataSet data = new DataSet();
+                ad.Fill(data);
+                dataGridView2.DataSource = data.Tables[0];
+
+                dataGridView2.Columns["idstudentprofile"].Visible = true;
+                dataGridView2.Columns["FirstName"].Visible = true;
+                dataGridView2.Columns["LastName"].Visible = true;
+                dataGridView2.Columns["MiddleName"].Visible = true;
+                dataGridView2.Columns["DateOfBirth"].Visible = true;
+                dataGridView2.Columns["PlaceOfBirth"].Visible = false;
+                dataGridView2.Columns["Sex"].Visible = true;
+                dataGridView2.Columns["Religion"].Visible = false;
+                dataGridView2.Columns["Nickname"].Visible = false;
+                dataGridView2.Columns["idstuddet"].Visible = false;
+                dataGridView2.Columns["Status"].Visible = false;
+                dataGridView2.Columns["department"].Visible = false;
+                dataGridView2.Columns["level"].Visible = true;
+                dataGridView2.Columns["school_year"].Visible = false;
+                dataGridView2.Columns["idstddet"].Visible = false;
+                dataGridView2.Columns["section"].Visible = true;
+
+                dataGridView2.Columns["idstudentprofile"].HeaderText = "Student ID No.";
+                dataGridView2.Columns["FirstName"].HeaderText = "First Name";
+                dataGridView2.Columns["LastName"].HeaderText = "Last Name";
+                dataGridView2.Columns["MiddleName"].HeaderText = "Middle Name";
+
+            }
+            dbconnection.Close();
+        }
+        public void loadData2()
+        {
+            var dbconnect = new dbConnector();
+            string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet WHERE studentprofile.Status = 1;";
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                MySqlDataAdapter ad = new MySqlDataAdapter(query, dbconnection);
+                DataSet data = new DataSet();
+                ad.Fill(data);
+                dataGridView2.DataSource = data.Tables[0];
+
+                dataGridView2.Columns["idstudentprofile"].Visible = true;
+                dataGridView2.Columns["FirstName"].Visible = true;
+                dataGridView2.Columns["LastName"].Visible = true;
+                dataGridView2.Columns["MiddleName"].Visible = true;
+                dataGridView2.Columns["DateOfBirth"].Visible = true;
+                dataGridView2.Columns["PlaceOfBirth"].Visible = false;
+                dataGridView2.Columns["Sex"].Visible = true;
+                dataGridView2.Columns["Religion"].Visible = false;
+                dataGridView2.Columns["Nickname"].Visible = false;
+                dataGridView2.Columns["idstuddet"].Visible = false;
+                dataGridView2.Columns["Status"].Visible = false;
+                dataGridView2.Columns["department"].Visible = false;
+                dataGridView2.Columns["level"].Visible = true;
+                dataGridView2.Columns["school_year"].Visible = false;
+                dataGridView2.Columns["idstddet"].Visible = false;
+                dataGridView2.Columns["section"].Visible = true;
+
+                dataGridView2.Columns["idstudentprofile"].HeaderText = "Student ID No.";
+                dataGridView2.Columns["FirstName"].HeaderText = "First Name";
+                dataGridView2.Columns["LastName"].HeaderText = "Last Name";
+                dataGridView2.Columns["MiddleName"].HeaderText = "Middle Name";
+
+            }
+            dbconnection.Close();
+
+
         }
 
         public void loadData()
@@ -107,6 +186,7 @@ namespace MainSystem
                 }
             }
             loadData();
+            loadData2();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -140,6 +220,21 @@ namespace MainSystem
             {
                 Console.WriteLine(id);
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            loadSearch();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            loadData2();
         }
     }
 }
