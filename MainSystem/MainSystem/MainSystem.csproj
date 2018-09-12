@@ -97,7 +97,7 @@
     <Compile Include="Inventory\editItemmanagement.Designer.cs">
       <DependentUpon>editItemmanagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accounting\DbConnect.cs" />
+    <Compile Include="DbConnect.cs" />
     <Compile Include="Accounting\DbQueries.cs" />
     <Compile Include="Accounting\frmAddFee.cs">
       <SubType>Form</SubType>
@@ -130,7 +130,6 @@
       <DependentUpon>newfrmEditAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="dbConnector.cs" />
-    <Compile Include="Employee\DbConnect.cs" />
     <Compile Include="Employee\DbQueries.cs" />
     <Compile Include="Employee\newfrmAddEmployee.cs">
       <SubType>Form</SubType>

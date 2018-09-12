@@ -7,11 +7,12 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
 
-namespace MainSystem.Employee
+namespace MainSystem
 {
     class DbConnect
     {
         private MySqlConnection connection;
+
         //Initialize values
         private void Initialize()
         {
@@ -20,6 +21,12 @@ namespace MainSystem.Employee
             string Uid = "root";
             string Password = "root";
             string Port = "3306";
+            /*
+            string Server = "192.168.254.108";
+            string Database = "silasystemdb";
+            string Uid = "user_test";
+            string Password = "123456789";
+            string Port = "3306";*/
 
             string connectionString;
             connectionString = "SERVER=" + Server + ";" + "DATABASE=" +
@@ -27,6 +34,7 @@ namespace MainSystem.Employee
 
             connection = new MySqlConnection(connectionString);
         }
+
         //open connection to database
         private void OpenConnection()
         {
@@ -64,7 +72,6 @@ namespace MainSystem.Employee
                 return false;
             }
         }
-
 
         //Insert statement
         public void executeQuery(string query)
