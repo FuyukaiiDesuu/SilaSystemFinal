@@ -72,6 +72,7 @@ namespace MainSystem.Accounting
             dataSearch.Columns["spid"].Visible = false;
             dataSearch.Columns["did"].Visible = false;
             dataSearch.Columns["fid"].Visible = false;
+            dataSearch.Columns["image_path"].Visible = false;
 
 
 
@@ -142,10 +143,34 @@ namespace MainSystem.Accounting
             dataBalanceDetails.ClearSelection();
             this.dataBalanceDetails.Refresh();
 
+            dataBalanceDetails.Columns["transaction_no"].HeaderText = "Transaction No.";
+            dataBalanceDetails.Columns["date_paid"].HeaderText = "Date Paid";
+            dataBalanceDetails.Columns["amount_paid"].HeaderText = "Amount Paid";
+            dataBalanceDetails.Columns["cheque_no"].HeaderText = "Cheque No.";
+            dataBalanceDetails.Columns["payment_to"].HeaderText = "Payment No.";
+            dataBalanceDetails.Columns["additional_details"].HeaderText = "Additional Details";
+            dataBalanceDetails.Columns["syear"].HeaderText = "School Year";
+
+            dgvpending.Columns["transaction_no"].HeaderText = "Transaction No.";
+            dgvpending.Columns["date_paid"].HeaderText = "Date Paid";
+            dgvpending.Columns["amount_paid"].HeaderText = "Amount Paid";
+            dgvpending.Columns["cheque_no"].HeaderText = "Cheque No.";
+            dgvpending.Columns["payment_to"].HeaderText = "Payment No.";
+            dgvpending.Columns["additional_details"].HeaderText = "Additional Details";
+            dgvpending.Columns["syear"].HeaderText = "School Year";
             dgvpending.Columns["paymentStatus"].Visible = false;
-            dgvvoid.Columns["paymentStatus"].Visible = false;
             dgvpending.Columns["pid"].Visible = false;
+
+            dgvvoid.Columns["transaction_no"].HeaderText = "Transaction No.";
+            dgvvoid.Columns["date_paid"].HeaderText = "Date Paid";
+            dgvvoid.Columns["amount_paid"].HeaderText = "Amount Paid";
+            dgvvoid.Columns["cheque_no"].HeaderText = "Cheque No.";
+            dgvvoid.Columns["payment_to"].HeaderText = "Payment No.";
+            dgvvoid.Columns["additional_details"].HeaderText = "Additional Details";
+            dgvvoid.Columns["syear"].HeaderText = "School Year";
+            dgvvoid.Columns["paymentStatus"].Visible = false;
             dgvvoid.Columns["pid"].Visible = false;
+
         }
         public void loadPaymentDetails()
         {
