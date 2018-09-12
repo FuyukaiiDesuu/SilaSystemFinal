@@ -16,7 +16,7 @@ namespace MainSystem.Accounting
         public DataTable studentProfileDisplay()
         {
             string query = @"SELECT *, concat(sp.LastName, ', ' , sp.FirstName, ' ', sp.MiddleName) as 'fullname'
-                            FROM studentprofile as sp INNER JOIN accountdetails ON sp.idstudentprofile = accountdetails.spid
+                            FROM studentprofile as sp INNER JOIN accountdetails ON sp.idstudentprofile = accountdetails.spid INNER JOIN studdetails as sdet ON sp.idstudentprofile = sdet.idstddet
                             where sp.Status = 1
                             order by sp.idstudentprofile";
             DataTable itmContainer = con.Select(query);

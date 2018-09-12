@@ -327,9 +327,6 @@ namespace MainSystem.Accounting
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            lblDate2.Text = DateTime.Now.ToString("tt");
-            timer1.Start();
         }
         /*
         private void TextColor()
@@ -374,6 +371,16 @@ namespace MainSystem.Accounting
         private void label13_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpStudentAccount_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

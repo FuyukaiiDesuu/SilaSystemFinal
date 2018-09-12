@@ -34,8 +34,7 @@ namespace MainSystem
                 comboBox1.Text = "Pending";
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void updater()
         {
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
@@ -44,14 +43,14 @@ namespace MainSystem
                 string query2 = "UPDATE payment SET paymentStatus = @status WHERE pid = @ayd";
                 using (var command2 = new MySqlCommand(query2, dbconnection))
                 {
-                    if(comboBox1.Text == "Validated")
+                    if (comboBox1.Text == "Validated")
                     {
                         command2.Parameters.AddWithValue("@status", 1);
                     }
-                    else if(comboBox1.Text == "Pending")
+                    else if (comboBox1.Text == "Pending")
                     {
                         command2.Parameters.AddWithValue("@status", 2);
-                        
+
                     }
                     else
                     {
@@ -61,11 +60,34 @@ namespace MainSystem
                     command2.ExecuteNonQuery();
                 }
             }
-            MessageBox.Show("Payment Validated!");
-            this.Dispose();
-            reference.Show();
-            reference.loadBalanceDetails();
-            reference.loadPaymentDetails();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.Text == "Validated")
+            {
+                DialogResult result1 = MessageBox.Show("THIS CHEQUE WILL BE VALIDATED, PROCEED?", "CONFIRM ACTION!" ,MessageBoxButtons.YesNo);
+                if(result1 == DialogResult.Yes)
+                {
+                    updater();
+                    this.Dispose();
+                    reference.Show();
+                    reference.loadBalanceDetails();
+                    reference.loadPaymentDetails();
+                }
+            }
+            else
+            {
+                DialogResult result1 = MessageBox.Show("THIS CHEQUE WILL BE VOIDED. PROCEED?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
+                if (result1 == DialogResult.Yes)
+                {
+                    updater();
+                    this.Dispose();
+                    reference.Show();
+                    reference.loadBalanceDetails();
+                    reference.loadPaymentDetails();
+                }
+            }
+           
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
@@ -84,8 +106,8 @@ namespace MainSystem
         {
             this.Dispose();
             reference.Show();
-            reference.loadBalanceDetails();
-            reference.loadPaymentDetails();
+            //reference.loadBalanceDetails();
+            //reference.loadPaymentDetails();
         }
 
         private void label15_Click(object sender, EventArgs e)

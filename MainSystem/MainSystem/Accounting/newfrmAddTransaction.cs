@@ -40,7 +40,7 @@ namespace MainSystem.Accounting
             lblUser.Text = uname;
             txtStudentName.Text = dic["fullname"];
         }
-
+       
         private void newfrmAddTransaction_Load(object sender, EventArgs e)
         {
             txtTransactionNo.Text = SerialMaker();
@@ -208,8 +208,8 @@ namespace MainSystem.Accounting
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
-            reference.dataBalanceDetails.ClearSelection();
-            reference.dataSearch.ClearSelection();
+            //reference.dataBalanceDetails.ClearSelection();
+            //reference.dataSearch.ClearSelection();
             this.Close();
         }
 

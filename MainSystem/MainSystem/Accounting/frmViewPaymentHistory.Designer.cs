@@ -33,14 +33,10 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
-            this.lblDate2 = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -58,13 +54,13 @@
             this.dataPaymentHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataPaymentHistory.BackgroundColor = System.Drawing.Color.White;
             this.dataPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPaymentHistory.Location = new System.Drawing.Point(16, 134);
-            this.dataPaymentHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataPaymentHistory.Location = new System.Drawing.Point(12, 109);
+            this.dataPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataPaymentHistory.Name = "dataPaymentHistory";
             this.dataPaymentHistory.RowHeadersVisible = false;
             this.dataPaymentHistory.RowTemplate.Height = 24;
             this.dataPaymentHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataPaymentHistory.Size = new System.Drawing.Size(1063, 337);
+            this.dataPaymentHistory.Size = new System.Drawing.Size(1197, 428);
             this.dataPaymentHistory.TabIndex = 2;
             // 
             // btnBack
@@ -73,10 +69,10 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnBack.Location = new System.Drawing.Point(991, 480);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Location = new System.Drawing.Point(1021, 541);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(88, 38);
+            this.btnBack.Size = new System.Drawing.Size(188, 47);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -87,9 +83,10 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblUser.Location = new System.Drawing.Point(128, 42);
+            this.lblUser.Location = new System.Drawing.Point(111, 43);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(45, 21);
+            this.lblUser.Size = new System.Drawing.Size(36, 19);
             this.lblUser.TabIndex = 34;
             this.lblUser.Text = "User";
             // 
@@ -98,33 +95,12 @@
             this.lblLoggedinas.AutoSize = true;
             this.lblLoggedinas.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblLoggedinas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblLoggedinas.Location = new System.Drawing.Point(-5, 42);
+            this.lblLoggedinas.Location = new System.Drawing.Point(11, 43);
+            this.lblLoggedinas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggedinas.Name = "lblLoggedinas";
-            this.lblLoggedinas.Size = new System.Drawing.Size(121, 21);
+            this.lblLoggedinas.Size = new System.Drawing.Size(100, 19);
             this.lblLoggedinas.TabIndex = 33;
             this.lblLoggedinas.Text = "Logged in as:";
-            // 
-            // lblDate2
-            // 
-            this.lblDate2.AutoSize = true;
-            this.lblDate2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lblDate2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblDate2.Location = new System.Drawing.Point(1009, 42);
-            this.lblDate2.Name = "lblDate2";
-            this.lblDate2.Size = new System.Drawing.Size(60, 21);
-            this.lblDate2.TabIndex = 32;
-            this.lblDate2.Text = "label1";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblDate.Location = new System.Drawing.Point(815, 42);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(60, 21);
-            this.lblDate.TabIndex = 31;
-            this.lblDate.Text = "label1";
             // 
             // timer1
             // 
@@ -133,62 +109,31 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(16, 95);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Location = new System.Drawing.Point(12, 77);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(307, 32);
+            this.txtSearch.Size = new System.Drawing.Size(231, 27);
             this.txtSearch.TabIndex = 35;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 38);
+            this.panel1.Size = new System.Drawing.Size(1220, 31);
             this.panel1.TabIndex = 40;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.DimGray;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.label11.Location = new System.Drawing.Point(1032, 4);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 31);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "_";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 38);
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Firebrick;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.label15.Location = new System.Drawing.Point(1067, 4);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 31);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "X";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // lblSilaSchoolManagementSoftware
             // 
@@ -196,10 +141,9 @@
             this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(68, 11);
-            this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 9);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(631, 21);
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(491, 19);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
@@ -211,10 +155,9 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(332, 95);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Location = new System.Drawing.Point(249, 77);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 32);
+            this.button5.Size = new System.Drawing.Size(31, 26);
             this.button5.TabIndex = 42;
             this.button5.UseVisualStyleBackColor = true;
             // 
@@ -226,31 +169,29 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(381, 94);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(286, 76);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(43, 32);
+            this.button4.Size = new System.Drawing.Size(32, 26);
             this.button4.TabIndex = 41;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // frmViewPaymentHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1100, 532);
+            this.ClientSize = new System.Drawing.Size(1220, 599);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);
-            this.Controls.Add(this.lblDate2);
-            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataPaymentHistory);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(1236, 638);
+            this.MinimumSize = new System.Drawing.Size(1236, 638);
             this.Name = "frmViewPaymentHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Payment History";
@@ -269,14 +210,10 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblLoggedinas;
-        private System.Windows.Forms.Label lblDate2;
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;

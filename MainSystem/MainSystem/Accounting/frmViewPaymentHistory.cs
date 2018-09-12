@@ -61,9 +61,7 @@ namespace MainSystem.Accounting
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            lblDate2.Text = DateTime.Now.ToString("tt");
-            timer1.Start();
+        
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

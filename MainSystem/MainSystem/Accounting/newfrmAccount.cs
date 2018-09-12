@@ -55,15 +55,15 @@ namespace MainSystem.Accounting
             this.dataSearch.DataSource = studentDisplay;
 
             dataSearch.Columns["idstudentprofile"].Visible = false;
-            dataSearch.Columns["FirstName"].Visible = false;
-            dataSearch.Columns["LastName"].Visible = false;
-            dataSearch.Columns["MiddleName"].Visible = false;
-            dataSearch.Columns["fullname"].HeaderText = "Full Name";
-            dataSearch.Columns["DateOfBirth"].HeaderText = "Date Of Birth";
+            //dataSearch.Columns["FirstName"].Visible = false;
+            //dataSearch.Columns["LastName"].Visible = false;
+            //dataSearch.Columns["MiddleName"].Visible = false;
+            dataSearch.Columns["fullname"].Visible = false;
+            dataSearch.Columns["DateOfBirth"].Visible = false;
             dataSearch.Columns["PlaceOfBirth"].Visible = false;
-            dataSearch.Columns["Sex"].HeaderText = "Sex";
+            dataSearch.Columns["Sex"].Visible = false;
             dataSearch.Columns["Religion"].Visible = false;
-            dataSearch.Columns["NickName"].HeaderText = "Nickname";
+            dataSearch.Columns["NickName"].Visible = false;
             dataSearch.Columns["Status"].Visible = false;
             dataSearch.Columns["idstuddet"].Visible = false;
             dataSearch.Columns["adid"].Visible = false;
@@ -72,14 +72,12 @@ namespace MainSystem.Accounting
             dataSearch.Columns["spid"].Visible = false;
             dataSearch.Columns["did"].Visible = false;
             dataSearch.Columns["fid"].Visible = false;
+            dataSearch.Columns["department"].Visible = false;
+            dataSearch.Columns["section"].Visible = false;
+            dataSearch.Columns["level"].Visible = false;
+            dataSearch.Columns["idstddet"].Visible = false;
             dataSearch.Columns["image_path"].Visible = false;
-
-
-
-            dataSearch.Columns["fullname"].DisplayIndex = 4;
-
             dataSearch.ReadOnly = true;
-            this.dataSearch.Columns["fullname"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.dataSearch.Refresh();
         }
         public string syeartempo = "2018 - 2019";
@@ -136,12 +134,7 @@ namespace MainSystem.Accounting
                 adapter.Fill(dt);
                 dgvvoid.DataSource = dt;
             }
-            dgvvoid.ClearSelection();
-            this.dgvvoid.Refresh();
-            dgvpending.ClearSelection();
-            this.dgvpending.Refresh();
-            dataBalanceDetails.ClearSelection();
-            this.dataBalanceDetails.Refresh();
+           
 
             dataBalanceDetails.Columns["transaction_no"].HeaderText = "Transaction No.";
             dataBalanceDetails.Columns["date_paid"].HeaderText = "Date Paid";
@@ -192,11 +185,71 @@ namespace MainSystem.Accounting
             dataFeeValue.Columns["date_modified"].Visible = false;
             dataFeeValue.Columns["date_created"].Visible = false;
             dataFeeValue.Columns["f_key"].Visible = false;
-
-            this.dataFeeValue.Columns["fee_type"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            dataFeeValue.ReadOnly = true;
+            //dataFeeValue.ReadOnly = true;
             this.dataFeeValue.Refresh();
+        }
+        public IDictionary<string, string> studdetails(string dept, string level)
+        {
+            IDictionary<string, string> studdet = new Dictionary<string, string>();
+            switch (dept)
+            {
+                case "1":
+                    studdet.Add("dept", "Pre-school");
+                    break;
+                case "2":
+                    studdet.Add("dept", "Grade-school");
+                    break;
+                case "3":
+                    studdet.Add("dept", "High-school");
+                    break;
+            }
+            switch (level)
+            {
+                case "11":
+                    studdet.Add("level", "Toddler");
+                    break;
+                case "12":
+                    studdet.Add("level", "Nursery");
+                    break;
+                case "13":
+                    studdet.Add("level", "Kinder");
+                    break;
+                case "14":
+                    studdet.Add("level", "Preparatory");
+                    break;
+                case "21":
+                    studdet.Add("level", "Grade 1");
+                    break;
+                case "22":
+                    studdet.Add("level", "Grade 2");
+                    break;
+                case "23":
+                    studdet.Add("level", "Grade 3");
+                    break;
+                case "24":
+                    studdet.Add("level", "Grade 4");
+                    break;
+                case "25":
+                    studdet.Add("level", "Grade 5");
+                    break;
+                case "26":
+                    studdet.Add("level", "Grade 6");
+                    break;
+                case "31":
+                    studdet.Add("level", "Grade 7");
+                    break;
+                case "32":
+                    studdet.Add("level", "Grade 8");
+                    break;
+                case "33":
+                    studdet.Add("level", "Grade 9");
+                    break;
+                case "34":
+                    studdet.Add("level", "Grade 10");
+                    break;
+            }
+           
+            return studdet;
         }
         public IDictionary<string, string> dic2;
         private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -212,7 +265,11 @@ namespace MainSystem.Accounting
                 dic2.Add("fid", dataSearch.Rows[e.RowIndex].Cells["fid"].Value.ToString());
                 dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
                 dic2.Add("fullname", dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString());
-
+                txtfn.Text = dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
+                var studdetailss = studdetails(dataSearch.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataSearch.Rows[e.RowIndex].Cells["level"].Value.ToString());
+                txtdp.Text = studdetailss["dept"];
+                txtlvl.Text = studdetailss["level"];
+                txtsct.Text = dataSearch.Rows[e.RowIndex].Cells["section"].Value.ToString();
                 loadBalanceDetails();
                 dataFeeValue.Refresh();
                 btnAddTransaction.Enabled = true;
@@ -245,7 +302,6 @@ namespace MainSystem.Accounting
             transac = new newfrmAddTransaction(dic2, eid, uname);
             transac.Show();
             transac.reference = this;
-            this.Hide();
         }
 
         private void dataBalanceDetails_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -278,7 +334,6 @@ namespace MainSystem.Accounting
             editaccount = new Accounting.newfrmEditAccount(dic2);
             editaccount.Show();
             editaccount.reference = this;
-            this.Hide();
         }
         public IDictionary<string, string> dic;
         private void dataFeeValue_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -331,7 +386,7 @@ namespace MainSystem.Accounting
 
         private void tabStudentTransaction_Click(object sender, EventArgs e)
         {
-
+            clearfields();
         }
 
         private void dataFeeValue_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -371,9 +426,16 @@ namespace MainSystem.Accounting
             vcform = new validateCheque(dicForPend);
             vcform.Show();
             vcform.reference = this;
-            this.Hide();
         }
-
+        private void clearfields()
+        {
+           dgvvoid.ClearSelection();
+           this.dgvvoid.Refresh();
+           dgvpending.ClearSelection();
+           this.dgvpending.Refresh();
+           dataBalanceDetails.ClearSelection();
+           this.dataBalanceDetails.Refresh();
+        }
         private void dgvvoid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
@@ -466,6 +528,16 @@ namespace MainSystem.Accounting
         private void label11_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            loadStudentProfileTable();
         }
     }
 }
