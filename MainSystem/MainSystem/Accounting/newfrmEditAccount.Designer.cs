@@ -51,11 +51,6 @@
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -73,7 +68,6 @@
             this.grpStudentAccount.SuspendLayout();
             this.grpStudentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -102,8 +96,9 @@
             // 
             // txttottu
             // 
-            this.txttottu.BackColor = System.Drawing.Color.White;
+            this.txttottu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.txttottu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txttottu.ForeColor = System.Drawing.SystemColors.Window;
             this.txttottu.Location = new System.Drawing.Point(232, 60);
             this.txttottu.Name = "txttottu";
             this.txttottu.ReadOnly = true;
@@ -123,8 +118,9 @@
             // 
             // txtregp
             // 
-            this.txtregp.BackColor = System.Drawing.Color.White;
+            this.txtregp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.txtregp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtregp.ForeColor = System.Drawing.SystemColors.Window;
             this.txtregp.Location = new System.Drawing.Point(232, 27);
             this.txtregp.Name = "txtregp";
             this.txtregp.ReadOnly = true;
@@ -144,8 +140,9 @@
             // 
             // txtmp
             // 
-            this.txtmp.BackColor = System.Drawing.Color.White;
+            this.txtmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.txtmp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtmp.ForeColor = System.Drawing.SystemColors.Window;
             this.txtmp.Location = new System.Drawing.Point(232, 126);
             this.txtmp.Name = "txtmp";
             this.txtmp.ReadOnly = true;
@@ -165,8 +162,9 @@
             // 
             // txtbp
             // 
-            this.txtbp.BackColor = System.Drawing.Color.White;
+            this.txtbp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.txtbp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtbp.ForeColor = System.Drawing.SystemColors.Window;
             this.txtbp.Location = new System.Drawing.Point(232, 93);
             this.txtbp.Name = "txtbp";
             this.txtbp.ReadOnly = true;
@@ -186,12 +184,13 @@
             // 
             // txttpb
             // 
-            this.txttpb.BackColor = System.Drawing.Color.White;
-            this.txttpb.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txttpb.Location = new System.Drawing.Point(232, 163);
+            this.txttpb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.txttpb.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttpb.ForeColor = System.Drawing.SystemColors.Window;
+            this.txttpb.Location = new System.Drawing.Point(232, 159);
             this.txttpb.Name = "txttpb";
             this.txttpb.ReadOnly = true;
-            this.txttpb.Size = new System.Drawing.Size(153, 27);
+            this.txttpb.Size = new System.Drawing.Size(153, 31);
             this.txttpb.TabIndex = 3;
             this.txttpb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -267,7 +266,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnClose.Location = new System.Drawing.Point(499, 625);
+            this.btnClose.Location = new System.Drawing.Point(500, 544);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(140, 57);
             this.btnClose.TabIndex = 18;
@@ -309,7 +308,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button1.Location = new System.Drawing.Point(357, 625);
+            this.button1.Location = new System.Drawing.Point(357, 544);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 57);
             this.button1.TabIndex = 16;
@@ -319,7 +318,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label6);
@@ -333,93 +333,37 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.groupBox1.Location = new System.Drawing.Point(15, 345);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(625, 274);
+            this.groupBox1.Size = new System.Drawing.Size(625, 193);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Particulars";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox2.Location = new System.Drawing.Point(13, 26);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(606, 133);
-            this.groupBox2.TabIndex = 36;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tuiton Fee";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(135, 26);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(166, 27);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(416, 25);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(171, 27);
-            this.dateTimePicker3.TabIndex = 9;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label12.Location = new System.Drawing.Point(307, 28);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 21);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "Month End:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label11.Location = new System.Drawing.Point(21, 30);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 21);
-            this.label11.TabIndex = 36;
-            this.label11.Text = "Month Start:";
-            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(257, 73);
+            this.textBox2.Location = new System.Drawing.Point(138, 38);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(330, 27);
+            this.textBox2.Size = new System.Drawing.Size(149, 27);
             this.textBox2.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 75);
+            this.label9.Location = new System.Drawing.Point(68, 40);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(230, 21);
+            this.label9.Size = new System.Drawing.Size(64, 21);
             this.label9.TabIndex = 32;
-            this.label9.Text = "Tuition For Selected Month/s:";
+            this.label9.Text = "Tuition:";
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox5.Location = new System.Drawing.Point(133, 231);
+            this.textBox5.Location = new System.Drawing.Point(138, 137);
             this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(149, 27);
             this.textBox5.TabIndex = 15;
             // 
@@ -427,7 +371,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label10.Location = new System.Drawing.Point(22, 237);
+            this.label10.Location = new System.Drawing.Point(27, 137);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 21);
             this.label10.TabIndex = 33;
@@ -437,7 +381,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label6.Location = new System.Drawing.Point(22, 204);
+            this.label6.Location = new System.Drawing.Point(75, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 21);
             this.label6.TabIndex = 29;
@@ -447,7 +391,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label5.Location = new System.Drawing.Point(22, 171);
+            this.label5.Location = new System.Drawing.Point(27, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 21);
             this.label5.TabIndex = 28;
@@ -466,7 +410,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label3.Location = new System.Drawing.Point(320, 171);
+            this.label3.Location = new System.Drawing.Point(322, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 21);
             this.label3.TabIndex = 23;
@@ -476,16 +420,15 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(133, 198);
+            this.textBox3.Location = new System.Drawing.Point(138, 104);
             this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(149, 27);
             this.textBox3.TabIndex = 14;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Location = new System.Drawing.Point(418, 167);
+            this.dateTimePicker1.Location = new System.Drawing.Point(420, 137);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(182, 27);
             this.dateTimePicker1.TabIndex = 12;
@@ -494,9 +437,8 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(133, 165);
+            this.textBox1.Location = new System.Drawing.Point(138, 71);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(149, 27);
             this.textBox1.TabIndex = 13;
             // 
@@ -538,7 +480,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(655, 692);
+            this.ClientSize = new System.Drawing.Size(655, 617);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -549,7 +491,8 @@
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(655, 685);
+            this.MaximumSize = new System.Drawing.Size(655, 617);
+            this.MinimumSize = new System.Drawing.Size(655, 617);
             this.Name = "newfrmEditAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Statement of Account";
@@ -560,8 +503,6 @@
             this.grpStudentDetails.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -591,9 +532,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox txtregp;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.TextBox textBox5;
@@ -605,8 +543,6 @@
         public System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         public System.Windows.Forms.TextBox txttottu;
         private System.Windows.Forms.Label txttottuit;
         private System.Windows.Forms.Panel panel1;

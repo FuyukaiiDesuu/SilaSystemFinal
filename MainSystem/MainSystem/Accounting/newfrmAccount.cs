@@ -44,11 +44,19 @@ namespace MainSystem.Accounting
         {
             loadFeeDetails();
             loadDisbursementtbl();
-            dataSearch.ClearSelection();
-            dataFeeValue.ClearSelection();
+            clearfields();
+            dgvcolorsloader();
             button1.Enabled = false;
         }
+        public void dgvcolorsloader()
+        {
+            dataSearch.DefaultCellStyle.ForeColor = Color.Black;
+            dataBalanceDetails.DefaultCellStyle.ForeColor = Color.Black;
+            dgvpending.DefaultCellStyle.ForeColor = Color.Black;
+            dataFeeValue.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
 
+        }
         public void loadStudentProfileTable()
         {
             DataTable studentDisplay = dbquery.studentProfileDisplay();
@@ -416,9 +424,9 @@ namespace MainSystem.Accounting
             dicForPend.Add("pid", dgvpending.Rows[e.RowIndex].Cells["pid"].Value.ToString());
 
             button1.Enabled = true;
-            chqno.Text = dgvpending.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
-            tno.Text = dgvpending.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
-            amnt.Text = "₱ " + dgvpending.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
+            //chqno.Text = dgvpending.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
+            //tno.Text = dgvpending.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
+            //amnt.Text = "₱ " + dgvpending.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
         }
         public validateCheque vcform;
         private void button1_Click(object sender, EventArgs e)
@@ -430,11 +438,10 @@ namespace MainSystem.Accounting
         private void clearfields()
         {
            dgvvoid.ClearSelection();
-           this.dgvvoid.Refresh();
            dgvpending.ClearSelection();
-           this.dgvpending.Refresh();
            dataBalanceDetails.ClearSelection();
-           this.dataBalanceDetails.Refresh();
+           dataSearch.ClearSelection();
+           dataFeeValue.ClearSelection();
         }
         private void dgvvoid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -447,9 +454,9 @@ namespace MainSystem.Accounting
             dicForPend.Add("status", dgvvoid.Rows[e.RowIndex].Cells["paymentStatus"].Value.ToString());
 
             button1.Enabled = true;
-            chqno.Text = dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
-            tno.Text = dgvvoid.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
-            amnt.Text = "₱ " + dgvvoid.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
+            //chqno.Text = dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
+            //tno.Text = dgvvoid.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
+            //amnt.Text = "₱ " + dgvvoid.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
 
         }
 
@@ -461,9 +468,9 @@ namespace MainSystem.Accounting
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
          
-            chqno.Clear();
-            tno.Clear();
-            amnt.Clear();
+            //chqno.Clear();
+            //tno.Clear();
+            //amnt.Clear();
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -538,6 +545,11 @@ namespace MainSystem.Accounting
         private void button12_Click(object sender, EventArgs e)
         {
             loadStudentProfileTable();
+        }
+
+        private void dataSearch_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

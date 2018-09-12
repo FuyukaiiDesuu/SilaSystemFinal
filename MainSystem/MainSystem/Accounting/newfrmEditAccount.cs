@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace MainSystem.Accounting
 {
@@ -289,12 +290,48 @@ namespace MainSystem.Accounting
 
         private void textboxfill()
         {
-            txttottu.Text = "₱" + balTuition().ToString();
-            txtmp.Text = "₱" + balOthers().ToString();
-            txttpb.Text = "₱" + totalBalancePayable().ToString();
-            txtregp.Text = "₱" + balRegis().ToString();
-            txtbp.Text = "₱" + balBooks().ToString();
+            txttottu.Text = balTuition().ToString("C", new CultureInfo("en-PH"));
+            txtmp.Text = balOthers().ToString("C", new CultureInfo("en-PH"));
+            txttpb.Text = totalBalancePayable().ToString("C", new CultureInfo("en-PH"));
+            txtregp.Text = balRegis().ToString("C", new CultureInfo("en-PH"));
+            txtbp.Text = balBooks().ToString("C", new CultureInfo("en-PH"));
+        }
+        private void tuitionBalanceCalculate()
+        {
+            /*
+            using (MySqlConnection conn = connect.connector())
+            {
+                decimal sum = 0.00M;
+                string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
+                    "AND fee_description = 'Tuition' " +
+                    "AND Status = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
+                    }
 
+                }
+                else
+                {
+                    sum = 0.00M;
+                }
+
+                int astart = int.Parse(dateTimePicker2.Value.ToString("MM"));
+                MessageBox.Show(astart.ToString());
+                int aend = int.Parse(dateTimePicker3.Value.ToString("MM"));
+                int yrs = int.Parse(dateTimePicker2.Value.ToString("MM"));
+                int yre = int.Parse(dateTimePicker3.Value.ToString("MM"));
+                int final = Math.Abs(((yrs - yre) * 12) + astart - aend);
+                MessageBox.Show(final.ToString());
+                decimal finalnajud = Convert.ToDecimal(final) * sum;
+
+                return decimal.Round(finalnajud, 2);*/
+            
         }
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
@@ -304,8 +341,6 @@ namespace MainSystem.Accounting
             txtStudentID.Text = id;
             txtStudentName.Text = name;
             */
-            dateTimePicker2.CustomFormat = "MMMM, yyyy";
-            dateTimePicker3.CustomFormat = "MMMM, yyyy";
             //MessageBox.Show(balOthers().ToString());
 
             /*
@@ -372,15 +407,27 @@ namespace MainSystem.Accounting
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        public SOAccount soaform;
         private void button1_Click(object sender, EventArgs e)
         {
+            soaform = new SOAccount();
+            soaform.Show();
 
         }
 
         private void grpStudentAccount_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

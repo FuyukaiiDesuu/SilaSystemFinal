@@ -73,6 +73,18 @@
     <Compile Include="Accounting\frmCreatevoucher.Designer.cs">
       <DependentUpon>frmCreatevoucher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accounting\SOA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SOA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Accounting\SOAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\SOAccount.Designer.cs">
+      <DependentUpon>SOAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment\frmSectionMgmt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +273,13 @@
     <EmbeddedResource Include="Accounting\DCF.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DCF.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\SOA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SOA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\SOAccount.resx">
+      <DependentUpon>SOAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\newfrmAddEmployee.resx">
       <DependentUpon>newfrmAddEmployee.cs</DependentUpon>
