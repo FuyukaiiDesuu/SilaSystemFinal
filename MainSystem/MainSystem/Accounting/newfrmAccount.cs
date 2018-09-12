@@ -415,6 +415,11 @@ namespace MainSystem.Accounting
 
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dgvpending_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
