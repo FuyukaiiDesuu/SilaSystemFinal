@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -66,25 +63,6 @@
             this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnAddTransaction = new System.Windows.Forms.Button();
-            this.grpStudentDetails = new System.Windows.Forms.GroupBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.txtMiddleName = new System.Windows.Forms.TextBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblMiddleName = new System.Windows.Forms.Label();
-            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
-            this.txtReligion = new System.Windows.Forms.TextBox();
-            this.txtPlaceOfBirth = new System.Windows.Forms.TextBox();
-            this.txtNickName = new System.Windows.Forms.TextBox();
-            this.txtSex = new System.Windows.Forms.TextBox();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.lblPlaceOfBirth = new System.Windows.Forms.Label();
-            this.lblReligion = new System.Windows.Forms.Label();
-            this.lblNickname = new System.Windows.Forms.Label();
-            this.lblSex = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.lblStudentID = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataFeeValue = new System.Windows.Forms.DataGridView();
             this.btnAddFee = new System.Windows.Forms.Button();
@@ -100,9 +78,7 @@
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
@@ -115,7 +91,6 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvvoid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
-            this.grpStudentDetails.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -126,6 +101,9 @@
             // 
             // tabControl
             // 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabStudentTransaction);
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage4);
@@ -134,7 +112,7 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1683, 753);
+            this.tabControl.Size = new System.Drawing.Size(1865, 900);
             this.tabControl.TabIndex = 13;
             // 
             // tabStudentTransaction
@@ -146,24 +124,24 @@
             this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
             this.tabStudentTransaction.Controls.Add(this.btnEditAccount);
             this.tabStudentTransaction.Controls.Add(this.btnAddTransaction);
-            this.tabStudentTransaction.Controls.Add(this.grpStudentDetails);
             this.tabStudentTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 32);
             this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
             this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4);
-            this.tabStudentTransaction.Size = new System.Drawing.Size(1675, 717);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(1857, 864);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student Transaction";
             this.tabStudentTransaction.Click += new System.EventHandler(this.tabStudentTransaction_Click);
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.button2.Location = new System.Drawing.Point(597, 628);
+            this.button2.Location = new System.Drawing.Point(597, 775);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(268, 76);
@@ -174,6 +152,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.button12);
             this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.dataSearch);
@@ -183,7 +163,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(857, 322);
+            this.groupBox1.Size = new System.Drawing.Size(857, 761);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account List";
@@ -224,22 +204,15 @@
             this.dataSearch.AllowUserToDeleteRows = false;
             this.dataSearch.AllowUserToResizeColumns = false;
             this.dataSearch.AllowUserToResizeRows = false;
+            this.dataSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataSearch.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataSearch.Location = new System.Drawing.Point(8, 81);
+            this.dataSearch.Location = new System.Drawing.Point(8, 92);
             this.dataSearch.Margin = new System.Windows.Forms.Padding(4);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSearch.Size = new System.Drawing.Size(839, 234);
+            this.dataSearch.Size = new System.Drawing.Size(839, 525);
             this.dataSearch.TabIndex = 5;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             this.dataSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellContentClick);
@@ -255,10 +228,11 @@
             // 
             // btnViewPaymentHistory
             // 
+            this.btnViewPaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnViewPaymentHistory.BackColor = System.Drawing.Color.Transparent;
             this.btnViewPaymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewPaymentHistory.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnViewPaymentHistory.Location = new System.Drawing.Point(421, 629);
+            this.btnViewPaymentHistory.Location = new System.Drawing.Point(421, 776);
             this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
             this.btnViewPaymentHistory.Size = new System.Drawing.Size(171, 76);
@@ -269,6 +243,9 @@
             // 
             // grpBalanceDetails
             // 
+            this.grpBalanceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBalanceDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.grpBalanceDetails.Controls.Add(this.button5);
             this.grpBalanceDetails.Controls.Add(this.button4);
@@ -288,7 +265,7 @@
             this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
             this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4);
-            this.grpBalanceDetails.Size = new System.Drawing.Size(752, 697);
+            this.grpBalanceDetails.Size = new System.Drawing.Size(934, 844);
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance And Payment";
@@ -334,13 +311,14 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(13, 252);
+            this.tabControl1.Location = new System.Drawing.Point(13, 325);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(719, 292);
+            this.tabControl1.Size = new System.Drawing.Size(901, 292);
             this.tabControl1.TabIndex = 30;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
@@ -357,19 +335,20 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(711, 256);
+            this.tabPage2.Size = new System.Drawing.Size(893, 256);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "PENDING";
             // 
             // button10
             // 
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button10.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button10.Enabled = false;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(181, 7);
+            this.button10.Location = new System.Drawing.Point(272, 7);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(41, 32);
@@ -378,13 +357,14 @@
             // 
             // button11
             // 
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button11.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button11.Enabled = false;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(231, 7);
+            this.button11.Location = new System.Drawing.Point(322, 7);
             this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(43, 32);
@@ -393,8 +373,9 @@
             // 
             // searchtppending
             // 
+            this.searchtppending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchtppending.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.searchtppending.Location = new System.Drawing.Point(281, 7);
+            this.searchtppending.Location = new System.Drawing.Point(463, 7);
             this.searchtppending.Margin = new System.Windows.Forms.Padding(4);
             this.searchtppending.Name = "searchtppending";
             this.searchtppending.Size = new System.Drawing.Size(412, 32);
@@ -406,22 +387,16 @@
             this.dgvpending.AllowUserToDeleteRows = false;
             this.dgvpending.AllowUserToResizeColumns = false;
             this.dgvpending.AllowUserToResizeRows = false;
+            this.dgvpending.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvpending.BackgroundColor = System.Drawing.Color.White;
             this.dgvpending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpending.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvpending.Location = new System.Drawing.Point(17, 48);
             this.dgvpending.Margin = new System.Windows.Forms.Padding(4);
             this.dgvpending.Name = "dgvpending";
             this.dgvpending.RowHeadersVisible = false;
             this.dgvpending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvpending.Size = new System.Drawing.Size(677, 191);
+            this.dgvpending.Size = new System.Drawing.Size(859, 191);
             this.dgvpending.TabIndex = 1;
             this.dgvpending.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpending_CellClick);
             this.dgvpending.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpending_CellContentClick);
@@ -499,9 +474,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label5.Location = new System.Drawing.Point(64, 651);
+            this.label5.Location = new System.Drawing.Point(64, 724);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 23);
@@ -510,9 +486,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label4.Location = new System.Drawing.Point(64, 603);
+            this.label4.Location = new System.Drawing.Point(64, 676);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 23);
@@ -521,9 +498,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label3.Location = new System.Drawing.Point(64, 559);
+            this.label3.Location = new System.Drawing.Point(64, 633);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 23);
@@ -532,9 +510,10 @@
             // 
             // amnt
             // 
+            this.amnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.amnt.BackColor = System.Drawing.Color.White;
             this.amnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amnt.Location = new System.Drawing.Point(261, 633);
+            this.amnt.Location = new System.Drawing.Point(443, 780);
             this.amnt.Margin = new System.Windows.Forms.Padding(4);
             this.amnt.Multiline = true;
             this.amnt.Name = "amnt";
@@ -544,8 +523,9 @@
             // 
             // tno
             // 
+            this.tno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tno.BackColor = System.Drawing.Color.White;
-            this.tno.Location = new System.Drawing.Point(261, 592);
+            this.tno.Location = new System.Drawing.Point(443, 739);
             this.tno.Margin = new System.Windows.Forms.Padding(4);
             this.tno.Name = "tno";
             this.tno.ReadOnly = true;
@@ -554,8 +534,9 @@
             // 
             // chqno
             // 
+            this.chqno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chqno.BackColor = System.Drawing.Color.White;
-            this.chqno.Location = new System.Drawing.Point(261, 551);
+            this.chqno.Location = new System.Drawing.Point(443, 698);
             this.chqno.Margin = new System.Windows.Forms.Padding(4);
             this.chqno.Name = "chqno";
             this.chqno.ReadOnly = true;
@@ -564,11 +545,12 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.button1.Location = new System.Drawing.Point(480, 633);
+            this.button1.Location = new System.Drawing.Point(662, 780);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 44);
@@ -596,14 +578,6 @@
             this.dataBalanceDetails.AllowUserToResizeRows = false;
             this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataBalanceDetails.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataBalanceDetails.Location = new System.Drawing.Point(32, 81);
             this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
@@ -615,10 +589,11 @@
             // 
             // btnEditAccount
             // 
+            this.btnEditAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEditAccount.Enabled = false;
             this.btnEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditAccount.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnEditAccount.Location = new System.Drawing.Point(196, 629);
+            this.btnEditAccount.Location = new System.Drawing.Point(196, 776);
             this.btnEditAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(219, 76);
@@ -629,10 +604,11 @@
             // 
             // btnAddTransaction
             // 
+            this.btnAddTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddTransaction.Enabled = false;
             this.btnAddTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTransaction.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.btnAddTransaction.Location = new System.Drawing.Point(8, 629);
+            this.btnAddTransaction.Location = new System.Drawing.Point(8, 776);
             this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTransaction.Name = "btnAddTransaction";
             this.btnAddTransaction.Size = new System.Drawing.Size(180, 76);
@@ -640,225 +616,6 @@
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = true;
             this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
-            // 
-            // grpStudentDetails
-            // 
-            this.grpStudentDetails.Controls.Add(this.txtLastName);
-            this.grpStudentDetails.Controls.Add(this.txtMiddleName);
-            this.grpStudentDetails.Controls.Add(this.lblLastName);
-            this.grpStudentDetails.Controls.Add(this.lblMiddleName);
-            this.grpStudentDetails.Controls.Add(this.txtDateOfBirth);
-            this.grpStudentDetails.Controls.Add(this.txtReligion);
-            this.grpStudentDetails.Controls.Add(this.txtPlaceOfBirth);
-            this.grpStudentDetails.Controls.Add(this.txtNickName);
-            this.grpStudentDetails.Controls.Add(this.txtSex);
-            this.grpStudentDetails.Controls.Add(this.lblDateOfBirth);
-            this.grpStudentDetails.Controls.Add(this.lblPlaceOfBirth);
-            this.grpStudentDetails.Controls.Add(this.lblReligion);
-            this.grpStudentDetails.Controls.Add(this.lblNickname);
-            this.grpStudentDetails.Controls.Add(this.lblSex);
-            this.grpStudentDetails.Controls.Add(this.txtFirstName);
-            this.grpStudentDetails.Controls.Add(this.lblFirstName);
-            this.grpStudentDetails.Controls.Add(this.txtStudentID);
-            this.grpStudentDetails.Controls.Add(this.lblStudentID);
-            this.grpStudentDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.grpStudentDetails.Location = new System.Drawing.Point(8, 338);
-            this.grpStudentDetails.Margin = new System.Windows.Forms.Padding(4);
-            this.grpStudentDetails.Name = "grpStudentDetails";
-            this.grpStudentDetails.Padding = new System.Windows.Forms.Padding(4);
-            this.grpStudentDetails.Size = new System.Drawing.Size(857, 283);
-            this.grpStudentDetails.TabIndex = 4;
-            this.grpStudentDetails.TabStop = false;
-            this.grpStudentDetails.Text = "Student Details";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.BackColor = System.Drawing.Color.White;
-            this.txtLastName.Location = new System.Drawing.Point(179, 151);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(239, 32);
-            this.txtLastName.TabIndex = 22;
-            // 
-            // txtMiddleName
-            // 
-            this.txtMiddleName.BackColor = System.Drawing.Color.White;
-            this.txtMiddleName.Location = new System.Drawing.Point(179, 111);
-            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.ReadOnly = true;
-            this.txtMiddleName.Size = new System.Drawing.Size(239, 32);
-            this.txtMiddleName.TabIndex = 21;
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblLastName.Location = new System.Drawing.Point(21, 159);
-            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(115, 23);
-            this.lblLastName.TabIndex = 20;
-            this.lblLastName.Text = "Last Name";
-            // 
-            // lblMiddleName
-            // 
-            this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblMiddleName.Location = new System.Drawing.Point(21, 118);
-            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(143, 23);
-            this.lblMiddleName.TabIndex = 19;
-            this.lblMiddleName.Text = "Middle Name";
-            // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.BackColor = System.Drawing.Color.White;
-            this.txtDateOfBirth.Location = new System.Drawing.Point(581, 30);
-            this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.ReadOnly = true;
-            this.txtDateOfBirth.Size = new System.Drawing.Size(239, 32);
-            this.txtDateOfBirth.TabIndex = 18;
-            // 
-            // txtReligion
-            // 
-            this.txtReligion.BackColor = System.Drawing.Color.White;
-            this.txtReligion.Location = new System.Drawing.Point(581, 111);
-            this.txtReligion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtReligion.Name = "txtReligion";
-            this.txtReligion.ReadOnly = true;
-            this.txtReligion.Size = new System.Drawing.Size(239, 32);
-            this.txtReligion.TabIndex = 17;
-            // 
-            // txtPlaceOfBirth
-            // 
-            this.txtPlaceOfBirth.BackColor = System.Drawing.Color.White;
-            this.txtPlaceOfBirth.Location = new System.Drawing.Point(581, 70);
-            this.txtPlaceOfBirth.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPlaceOfBirth.Name = "txtPlaceOfBirth";
-            this.txtPlaceOfBirth.ReadOnly = true;
-            this.txtPlaceOfBirth.Size = new System.Drawing.Size(239, 32);
-            this.txtPlaceOfBirth.TabIndex = 16;
-            // 
-            // txtNickName
-            // 
-            this.txtNickName.BackColor = System.Drawing.Color.White;
-            this.txtNickName.Location = new System.Drawing.Point(581, 151);
-            this.txtNickName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNickName.Name = "txtNickName";
-            this.txtNickName.ReadOnly = true;
-            this.txtNickName.Size = new System.Drawing.Size(239, 32);
-            this.txtNickName.TabIndex = 15;
-            // 
-            // txtSex
-            // 
-            this.txtSex.BackColor = System.Drawing.Color.White;
-            this.txtSex.Location = new System.Drawing.Point(179, 192);
-            this.txtSex.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSex.Name = "txtSex";
-            this.txtSex.ReadOnly = true;
-            this.txtSex.Size = new System.Drawing.Size(239, 32);
-            this.txtSex.TabIndex = 14;
-            // 
-            // lblDateOfBirth
-            // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblDateOfBirth.Location = new System.Drawing.Point(431, 37);
-            this.lblDateOfBirth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(129, 23);
-            this.lblDateOfBirth.TabIndex = 13;
-            this.lblDateOfBirth.Text = "Date of Birth";
-            // 
-            // lblPlaceOfBirth
-            // 
-            this.lblPlaceOfBirth.AutoSize = true;
-            this.lblPlaceOfBirth.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblPlaceOfBirth.Location = new System.Drawing.Point(431, 78);
-            this.lblPlaceOfBirth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPlaceOfBirth.Name = "lblPlaceOfBirth";
-            this.lblPlaceOfBirth.Size = new System.Drawing.Size(137, 23);
-            this.lblPlaceOfBirth.TabIndex = 11;
-            this.lblPlaceOfBirth.Text = "Place of Birth";
-            // 
-            // lblReligion
-            // 
-            this.lblReligion.AutoSize = true;
-            this.lblReligion.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblReligion.Location = new System.Drawing.Point(431, 118);
-            this.lblReligion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblReligion.Name = "lblReligion";
-            this.lblReligion.Size = new System.Drawing.Size(84, 23);
-            this.lblReligion.TabIndex = 9;
-            this.lblReligion.Text = "Religion";
-            // 
-            // lblNickname
-            // 
-            this.lblNickname.AutoSize = true;
-            this.lblNickname.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblNickname.Location = new System.Drawing.Point(431, 159);
-            this.lblNickname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNickname.Name = "lblNickname";
-            this.lblNickname.Size = new System.Drawing.Size(109, 23);
-            this.lblNickname.TabIndex = 6;
-            this.lblNickname.Text = "Nickname";
-            // 
-            // lblSex
-            // 
-            this.lblSex.AutoSize = true;
-            this.lblSex.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblSex.Location = new System.Drawing.Point(21, 199);
-            this.lblSex.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(43, 23);
-            this.lblSex.TabIndex = 5;
-            this.lblSex.Text = "Sex";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.BackColor = System.Drawing.Color.White;
-            this.txtFirstName.Location = new System.Drawing.Point(179, 70);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.ReadOnly = true;
-            this.txtFirstName.Size = new System.Drawing.Size(239, 32);
-            this.txtFirstName.TabIndex = 3;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblFirstName.Location = new System.Drawing.Point(21, 78);
-            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(111, 23);
-            this.lblFirstName.TabIndex = 2;
-            this.lblFirstName.Text = "First Name";
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.BackColor = System.Drawing.Color.White;
-            this.txtStudentID.Location = new System.Drawing.Point(179, 30);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.ReadOnly = true;
-            this.txtStudentID.Size = new System.Drawing.Size(239, 32);
-            this.txtStudentID.TabIndex = 3;
-            // 
-            // lblStudentID
-            // 
-            this.lblStudentID.AutoSize = true;
-            this.lblStudentID.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblStudentID.Location = new System.Drawing.Point(21, 37);
-            this.lblStudentID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(30, 23);
-            this.lblStudentID.TabIndex = 0;
-            this.lblStudentID.Text = "ID";
             // 
             // tabPage1
             // 
@@ -1027,11 +784,12 @@
             // 
             // btnDashboard
             // 
+            this.btnDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDashboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnDashboard.Location = new System.Drawing.Point(1580, 42);
+            this.btnDashboard.Location = new System.Drawing.Point(1762, 42);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(140, 46);
@@ -1066,29 +824,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1720, 38);
+            this.panel1.Size = new System.Drawing.Size(1902, 38);
             this.panel1.TabIndex = 41;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.DimGray;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.label11.Location = new System.Drawing.Point(1652, 4);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 31);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "_";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // pictureBox2
             // 
@@ -1100,19 +843,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Firebrick;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.label15.Location = new System.Drawing.Point(1687, 4);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 31);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "X";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // lblSilaSchoolManagementSoftware
             // 
@@ -1131,15 +861,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1720, 886);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.tabControl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "newfrmAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1158,8 +887,6 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvvoid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
-            this.grpStudentDetails.ResumeLayout(false);
-            this.grpStudentDetails.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
             this.tabPage4.ResumeLayout(false);
@@ -1178,25 +905,6 @@
         private System.Windows.Forms.TabPage tabStudentTransaction;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnAddTransaction;
-        private System.Windows.Forms.GroupBox grpStudentDetails;
-        public System.Windows.Forms.TextBox txtLastName;
-        public System.Windows.Forms.TextBox txtMiddleName;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblMiddleName;
-        public System.Windows.Forms.TextBox txtDateOfBirth;
-        public System.Windows.Forms.TextBox txtReligion;
-        public System.Windows.Forms.TextBox txtPlaceOfBirth;
-        public System.Windows.Forms.TextBox txtNickName;
-        public System.Windows.Forms.TextBox txtSex;
-        private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.Label lblPlaceOfBirth;
-        private System.Windows.Forms.Label lblReligion;
-        private System.Windows.Forms.Label lblNickname;
-        private System.Windows.Forms.Label lblSex;
-        public System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.Label lblFirstName;
-        public System.Windows.Forms.TextBox txtStudentID;
-        private System.Windows.Forms.Label lblStudentID;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label lblLoggedinas;
         private System.Windows.Forms.Label lblUser;
@@ -1235,9 +943,7 @@
         private System.Windows.Forms.DateTimePicker searchtpvoided;
         private System.Windows.Forms.DateTimePicker searchtpexpense;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
