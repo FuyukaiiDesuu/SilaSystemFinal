@@ -28,92 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtsct = new System.Windows.Forms.TextBox();
+            this.txtlvl = new System.Windows.Forms.TextBox();
+            this.txtfn = new System.Windows.Forms.TextBox();
+            this.txtdp = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.dataSearch = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
+            this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.searchtppayments = new System.Windows.Forms.DateTimePicker();
+            this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.searchtppending = new System.Windows.Forms.DateTimePicker();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.searchtppending = new System.Windows.Forms.DateTimePicker();
             this.dgvpending = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.searchtpvoided = new System.Windows.Forms.DateTimePicker();
             this.dgvvoid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tno = new System.Windows.Forms.TextBox();
+            this.chqno = new System.Windows.Forms.TextBox();
+            this.amnt = new System.Windows.Forms.TextBox();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnAddTransaction = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataFeeValue = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.btnAddFee = new System.Windows.Forms.Button();
             this.btnUpdateFee = new System.Windows.Forms.Button();
+            this.dataFeeValue = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnAddDisb = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button9 = new System.Windows.Forms.Button();
+            this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
-            this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.chqno = new System.Windows.Forms.TextBox();
-            this.tno = new System.Windows.Forms.TextBox();
-            this.amnt = new System.Windows.Forms.TextBox();
-            this.searchtppayments = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnAddDisb = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtdp = new System.Windows.Forms.TextBox();
-            this.txtfn = new System.Windows.Forms.TextBox();
-            this.txtlvl = new System.Windows.Forms.TextBox();
-            this.txtsct = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
+            this.grpBalanceDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpending)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvvoid)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).BeginInit();
-            this.grpBalanceDetails.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -143,7 +140,7 @@
             this.tabStudentTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 30);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
-            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(3);
             this.tabStudentTransaction.Size = new System.Drawing.Size(1869, 899);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Student List";
@@ -157,7 +154,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button2.Location = new System.Drawing.Point(1404, 708);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(446, 157);
             this.button2.TabIndex = 13;
@@ -188,6 +185,90 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account List";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label7.Location = new System.Drawing.Point(454, 365);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 21);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Section:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label6.Location = new System.Drawing.Point(75, 431);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 21);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Level:";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.Location = new System.Drawing.Point(17, 398);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 21);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Department:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.Location = new System.Drawing.Point(39, 365);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 21);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Full Name:";
+            // 
+            // txtsct
+            // 
+            this.txtsct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsct.BackColor = System.Drawing.Color.White;
+            this.txtsct.Location = new System.Drawing.Point(532, 362);
+            this.txtsct.Name = "txtsct";
+            this.txtsct.ReadOnly = true;
+            this.txtsct.Size = new System.Drawing.Size(338, 27);
+            this.txtsct.TabIndex = 38;
+            // 
+            // txtlvl
+            // 
+            this.txtlvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtlvl.BackColor = System.Drawing.Color.White;
+            this.txtlvl.Location = new System.Drawing.Point(135, 428);
+            this.txtlvl.Name = "txtlvl";
+            this.txtlvl.ReadOnly = true;
+            this.txtlvl.Size = new System.Drawing.Size(309, 27);
+            this.txtlvl.TabIndex = 37;
+            // 
+            // txtfn
+            // 
+            this.txtfn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtfn.BackColor = System.Drawing.Color.White;
+            this.txtfn.Location = new System.Drawing.Point(135, 362);
+            this.txtfn.Name = "txtfn";
+            this.txtfn.ReadOnly = true;
+            this.txtfn.Size = new System.Drawing.Size(309, 27);
+            this.txtfn.TabIndex = 36;
+            // 
+            // txtdp
+            // 
+            this.txtdp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtdp.BackColor = System.Drawing.Color.White;
+            this.txtdp.Location = new System.Drawing.Point(135, 395);
+            this.txtdp.Name = "txtdp";
+            this.txtdp.ReadOnly = true;
+            this.txtdp.Size = new System.Drawing.Size(309, 27);
+            this.txtdp.TabIndex = 35;
             // 
             // button12
             // 
@@ -228,14 +309,6 @@
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeight = 45;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataSearch.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataSearch.Location = new System.Drawing.Point(8, 66);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.ReadOnly = true;
@@ -261,13 +334,140 @@
             this.btnViewPaymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewPaymentHistory.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnViewPaymentHistory.Location = new System.Drawing.Point(924, 708);
-            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
             this.btnViewPaymentHistory.Size = new System.Drawing.Size(446, 157);
             this.btnViewPaymentHistory.TabIndex = 5;
             this.btnViewPaymentHistory.Text = "View Payment History";
             this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
             this.btnViewPaymentHistory.Click += new System.EventHandler(this.btnViewPaymentHistory_Click);
+            // 
+            // grpBalanceDetails
+            // 
+            this.grpBalanceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBalanceDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.grpBalanceDetails.Controls.Add(this.button5);
+            this.grpBalanceDetails.Controls.Add(this.button4);
+            this.grpBalanceDetails.Controls.Add(this.searchtppayments);
+            this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
+            this.grpBalanceDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.grpBalanceDetails.Location = new System.Drawing.Point(6, 488);
+            this.grpBalanceDetails.Name = "grpBalanceDetails";
+            this.grpBalanceDetails.Size = new System.Drawing.Size(885, 405);
+            this.grpBalanceDetails.TabIndex = 11;
+            this.grpBalanceDetails.TabStop = false;
+            this.grpBalanceDetails.Text = "Balance And Payment";
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Enabled = false;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(360, 33);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(31, 26);
+            this.button5.TabIndex = 31;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(322, 33);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 26);
+            this.button4.TabIndex = 14;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // searchtppayments
+            // 
+            this.searchtppayments.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.searchtppayments.Location = new System.Drawing.Point(6, 34);
+            this.searchtppayments.Name = "searchtppayments";
+            this.searchtppayments.Size = new System.Drawing.Size(310, 27);
+            this.searchtppayments.TabIndex = 4;
+            // 
+            // dataBalanceDetails
+            // 
+            this.dataBalanceDetails.AllowUserToAddRows = false;
+            this.dataBalanceDetails.AllowUserToDeleteRows = false;
+            this.dataBalanceDetails.AllowUserToResizeColumns = false;
+            this.dataBalanceDetails.AllowUserToResizeRows = false;
+            this.dataBalanceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataBalanceDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
+            this.dataBalanceDetails.ColumnHeadersHeight = 45;
+            this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataBalanceDetails.Location = new System.Drawing.Point(4, 67);
+            this.dataBalanceDetails.Name = "dataBalanceDetails";
+            this.dataBalanceDetails.ReadOnly = true;
+            this.dataBalanceDetails.RowHeadersVisible = false;
+            this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataBalanceDetails.Size = new System.Drawing.Size(875, 333);
+            this.dataBalanceDetails.TabIndex = 0;
+            this.dataBalanceDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellContentClick);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.tabControl1);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.tno);
+            this.groupBox2.Controls.Add(this.chqno);
+            this.groupBox2.Controls.Add(this.amnt);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.groupBox2.Location = new System.Drawing.Point(908, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(955, 476);
+            this.groupBox2.TabIndex = 31;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cheque Payments";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label5.Location = new System.Drawing.Point(79, 437);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 21);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Amount:";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.Location = new System.Drawing.Point(54, 356);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 21);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Cheque No:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label4.Location = new System.Drawing.Point(32, 389);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 21);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Transaction No:";
             // 
             // tabControl1
             // 
@@ -292,10 +492,19 @@
             this.tabPage2.Controls.Add(this.dgvpending);
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(935, 290);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "PENDING";
+            // 
+            // searchtppending
+            // 
+            this.searchtppending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchtppending.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.searchtppending.Location = new System.Drawing.Point(6, 9);
+            this.searchtppending.Name = "searchtppending";
+            this.searchtppending.Size = new System.Drawing.Size(310, 27);
+            this.searchtppending.TabIndex = 4;
             // 
             // button10
             // 
@@ -327,15 +536,6 @@
             this.button11.TabIndex = 32;
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // searchtppending
-            // 
-            this.searchtppending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchtppending.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.searchtppending.Location = new System.Drawing.Point(6, 9);
-            this.searchtppending.Name = "searchtppending";
-            this.searchtppending.Size = new System.Drawing.Size(310, 27);
-            this.searchtppending.TabIndex = 4;
-            // 
             // dgvpending
             // 
             this.dgvpending.AllowUserToAddRows = false;
@@ -366,7 +566,7 @@
             this.tabPage3.Controls.Add(this.dgvvoid);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(935, 290);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "VOIDED";
@@ -426,6 +626,53 @@
             this.dgvvoid.TabIndex = 2;
             this.dgvvoid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvvoid_CellClick);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.button1.Location = new System.Drawing.Point(502, 356);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(447, 108);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Validate";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tno
+            // 
+            this.tno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tno.BackColor = System.Drawing.Color.White;
+            this.tno.Location = new System.Drawing.Point(183, 389);
+            this.tno.Name = "tno";
+            this.tno.ReadOnly = true;
+            this.tno.Size = new System.Drawing.Size(309, 27);
+            this.tno.TabIndex = 25;
+            // 
+            // chqno
+            // 
+            this.chqno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chqno.BackColor = System.Drawing.Color.White;
+            this.chqno.Location = new System.Drawing.Point(183, 356);
+            this.chqno.Name = "chqno";
+            this.chqno.ReadOnly = true;
+            this.chqno.Size = new System.Drawing.Size(309, 27);
+            this.chqno.TabIndex = 23;
+            // 
+            // amnt
+            // 
+            this.amnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.amnt.BackColor = System.Drawing.Color.White;
+            this.amnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amnt.Location = new System.Drawing.Point(183, 422);
+            this.amnt.Multiline = true;
+            this.amnt.Name = "amnt";
+            this.amnt.ReadOnly = true;
+            this.amnt.Size = new System.Drawing.Size(196, 48);
+            this.amnt.TabIndex = 26;
+            // 
             // btnEditAccount
             // 
             this.btnEditAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -462,37 +709,75 @@
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1869, 899);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Fees And Disbursement";
             // 
-            // dataFeeValue
+            // button3
             // 
-            this.dataFeeValue.AllowUserToAddRows = false;
-            this.dataFeeValue.AllowUserToDeleteRows = false;
-            this.dataFeeValue.AllowUserToResizeColumns = false;
-            this.dataFeeValue.AllowUserToResizeRows = false;
-            this.dataFeeValue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
-            this.dataFeeValue.ColumnHeadersHeight = 40;
-            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataFeeValue.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataFeeValue.Location = new System.Drawing.Point(6, 73);
-            this.dataFeeValue.Name = "dataFeeValue";
-            this.dataFeeValue.RowHeadersVisible = false;
-            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(907, 460);
-            this.dataFeeValue.TabIndex = 7;
-            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
-            this.dataFeeValue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellContentClick);
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button3.Location = new System.Drawing.Point(2061, 640);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(156, 37);
+            this.button3.TabIndex = 37;
+            this.button3.Text = "Update Voucher";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.button14);
+            this.groupBox3.Controls.Add(this.button15);
+            this.groupBox3.Controls.Add(this.btnAddFee);
+            this.groupBox3.Controls.Add(this.btnUpdateFee);
+            this.groupBox3.Controls.Add(this.dataFeeValue);
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(920, 605);
+            this.groupBox3.TabIndex = 41;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Fee Management";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(248, 27);
+            this.textBox1.TabIndex = 44;
+            // 
+            // button14
+            // 
+            this.button14.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button14.Enabled = false;
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(298, 41);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(31, 26);
+            this.button14.TabIndex = 43;
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button15.Enabled = false;
+            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(260, 41);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(32, 26);
+            this.button15.TabIndex = 42;
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // btnAddFee
             // 
@@ -517,13 +802,115 @@
             this.btnUpdateFee.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnUpdateFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnUpdateFee.Location = new System.Drawing.Point(172, 538);
-            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateFee.Name = "btnUpdateFee";
             this.btnUpdateFee.Size = new System.Drawing.Size(161, 60);
             this.btnUpdateFee.TabIndex = 6;
             this.btnUpdateFee.Text = "Update Fee";
             this.btnUpdateFee.UseVisualStyleBackColor = false;
             this.btnUpdateFee.Click += new System.EventHandler(this.btnUpdateFee_Click);
+            // 
+            // dataFeeValue
+            // 
+            this.dataFeeValue.AllowUserToAddRows = false;
+            this.dataFeeValue.AllowUserToDeleteRows = false;
+            this.dataFeeValue.AllowUserToResizeColumns = false;
+            this.dataFeeValue.AllowUserToResizeRows = false;
+            this.dataFeeValue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataFeeValue.BackgroundColor = System.Drawing.Color.White;
+            this.dataFeeValue.ColumnHeadersHeight = 40;
+            this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataFeeValue.Location = new System.Drawing.Point(6, 73);
+            this.dataFeeValue.Name = "dataFeeValue";
+            this.dataFeeValue.RowHeadersVisible = false;
+            this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataFeeValue.Size = new System.Drawing.Size(907, 460);
+            this.dataFeeValue.TabIndex = 7;
+            this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
+            this.dataFeeValue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellContentClick);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnAddDisb);
+            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.dataGridView1);
+            this.groupBox4.Controls.Add(this.button9);
+            this.groupBox4.Controls.Add(this.searchtpexpense);
+            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.groupBox4.Location = new System.Drawing.Point(952, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1049, 605);
+            this.groupBox4.TabIndex = 42;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Disbursement Management";
+            // 
+            // btnAddDisb
+            // 
+            this.btnAddDisb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnAddDisb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDisb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnAddDisb.Location = new System.Drawing.Point(6, 537);
+            this.btnAddDisb.Name = "btnAddDisb";
+            this.btnAddDisb.Size = new System.Drawing.Size(182, 59);
+            this.btnAddDisb.TabIndex = 36;
+            this.btnAddDisb.Text = "Create Voucher";
+            this.btnAddDisb.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.Enabled = false;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(354, 41);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(31, 26);
+            this.button8.TabIndex = 40;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeight = 40;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 73);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(919, 460);
+            this.dataGridView1.TabIndex = 35;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.Enabled = false;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(316, 42);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(32, 26);
+            this.button9.TabIndex = 39;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // searchtpexpense
+            // 
+            this.searchtpexpense.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchtpexpense.Location = new System.Drawing.Point(6, 41);
+            this.searchtpexpense.Name = "searchtpexpense";
+            this.searchtpexpense.Size = new System.Drawing.Size(304, 27);
+            this.searchtpexpense.TabIndex = 38;
             // 
             // btnDashboard
             // 
@@ -594,424 +981,9 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
-            // dataBalanceDetails
-            // 
-            this.dataBalanceDetails.AllowUserToAddRows = false;
-            this.dataBalanceDetails.AllowUserToDeleteRows = false;
-            this.dataBalanceDetails.AllowUserToResizeColumns = false;
-            this.dataBalanceDetails.AllowUserToResizeRows = false;
-            this.dataBalanceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataBalanceDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
-            this.dataBalanceDetails.ColumnHeadersHeight = 45;
-            this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataBalanceDetails.Location = new System.Drawing.Point(4, 67);
-            this.dataBalanceDetails.Name = "dataBalanceDetails";
-            this.dataBalanceDetails.ReadOnly = true;
-            this.dataBalanceDetails.RowHeadersVisible = false;
-            this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBalanceDetails.Size = new System.Drawing.Size(875, 333);
-            this.dataBalanceDetails.TabIndex = 0;
-            this.dataBalanceDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.button1.Location = new System.Drawing.Point(502, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(447, 108);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Validate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // chqno
-            // 
-            this.chqno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chqno.BackColor = System.Drawing.Color.White;
-            this.chqno.Location = new System.Drawing.Point(183, 356);
-            this.chqno.Name = "chqno";
-            this.chqno.ReadOnly = true;
-            this.chqno.Size = new System.Drawing.Size(309, 27);
-            this.chqno.TabIndex = 23;
-            // 
-            // tno
-            // 
-            this.tno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tno.BackColor = System.Drawing.Color.White;
-            this.tno.Location = new System.Drawing.Point(183, 389);
-            this.tno.Name = "tno";
-            this.tno.ReadOnly = true;
-            this.tno.Size = new System.Drawing.Size(309, 27);
-            this.tno.TabIndex = 25;
-            // 
-            // amnt
-            // 
-            this.amnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.amnt.BackColor = System.Drawing.Color.White;
-            this.amnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amnt.Location = new System.Drawing.Point(183, 422);
-            this.amnt.Multiline = true;
-            this.amnt.Name = "amnt";
-            this.amnt.ReadOnly = true;
-            this.amnt.Size = new System.Drawing.Size(196, 48);
-            this.amnt.TabIndex = 26;
-            // 
-            // searchtppayments
-            // 
-            this.searchtppayments.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.searchtppayments.Location = new System.Drawing.Point(6, 34);
-            this.searchtppayments.Name = "searchtppayments";
-            this.searchtppayments.Size = new System.Drawing.Size(310, 27);
-            this.searchtppayments.TabIndex = 4;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(322, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 26);
-            this.button4.TabIndex = 14;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Enabled = false;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(360, 33);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(31, 26);
-            this.button5.TabIndex = 31;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // grpBalanceDetails
-            // 
-            this.grpBalanceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpBalanceDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.grpBalanceDetails.Controls.Add(this.button5);
-            this.grpBalanceDetails.Controls.Add(this.button4);
-            this.grpBalanceDetails.Controls.Add(this.searchtppayments);
-            this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
-            this.grpBalanceDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.grpBalanceDetails.Location = new System.Drawing.Point(6, 488);
-            this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Size = new System.Drawing.Size(885, 405);
-            this.grpBalanceDetails.TabIndex = 11;
-            this.grpBalanceDetails.TabStop = false;
-            this.grpBalanceDetails.Text = "Balance And Payment";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.tabControl1);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.tno);
-            this.groupBox2.Controls.Add(this.chqno);
-            this.groupBox2.Controls.Add(this.amnt);
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox2.Location = new System.Drawing.Point(908, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(955, 476);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cheque Payments";
-            // 
-            // button8
-            // 
-            this.button8.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Enabled = false;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(354, 41);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(31, 26);
-            this.button8.TabIndex = 40;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button9.Enabled = false;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(316, 42);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(32, 26);
-            this.button9.TabIndex = 39;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // searchtpexpense
-            // 
-            this.searchtpexpense.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchtpexpense.Location = new System.Drawing.Point(6, 41);
-            this.searchtpexpense.Name = "searchtpexpense";
-            this.searchtpexpense.Size = new System.Drawing.Size(304, 27);
-            this.searchtpexpense.TabIndex = 38;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button3.Location = new System.Drawing.Point(2061, 640);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 37);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Update Voucher";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // btnAddDisb
-            // 
-            this.btnAddDisb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnAddDisb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDisb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnAddDisb.Location = new System.Drawing.Point(6, 537);
-            this.btnAddDisb.Name = "btnAddDisb";
-            this.btnAddDisb.Size = new System.Drawing.Size(182, 59);
-            this.btnAddDisb.TabIndex = 36;
-            this.btnAddDisb.Text = "Create Voucher";
-            this.btnAddDisb.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.button14);
-            this.groupBox3.Controls.Add(this.button15);
-            this.groupBox3.Controls.Add(this.btnAddFee);
-            this.groupBox3.Controls.Add(this.btnUpdateFee);
-            this.groupBox3.Controls.Add(this.dataFeeValue);
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox3.Location = new System.Drawing.Point(6, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(920, 605);
-            this.groupBox3.TabIndex = 41;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Fee Management";
-            // 
-            // button14
-            // 
-            this.button14.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button14.Enabled = false;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(298, 41);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(31, 26);
-            this.button14.TabIndex = 43;
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button15.Enabled = false;
-            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(260, 41);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(32, 26);
-            this.button15.TabIndex = 42;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 27);
-            this.textBox1.TabIndex = 44;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnAddDisb);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.searchtpexpense);
-            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox4.Location = new System.Drawing.Point(952, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1049, 605);
-            this.groupBox4.TabIndex = 42;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Disbursement Management";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeight = 40;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(919, 460);
-            this.dataGridView1.TabIndex = 35;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label5.Location = new System.Drawing.Point(79, 437);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 21);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Amount:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label3.Location = new System.Drawing.Point(54, 356);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 21);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Cheque No:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label4.Location = new System.Drawing.Point(32, 389);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 21);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Transaction No:";
-            // 
-            // txtdp
-            // 
-            this.txtdp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtdp.BackColor = System.Drawing.Color.White;
-            this.txtdp.Location = new System.Drawing.Point(135, 395);
-            this.txtdp.Name = "txtdp";
-            this.txtdp.ReadOnly = true;
-            this.txtdp.Size = new System.Drawing.Size(309, 27);
-            this.txtdp.TabIndex = 35;
-            // 
-            // txtfn
-            // 
-            this.txtfn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtfn.BackColor = System.Drawing.Color.White;
-            this.txtfn.Location = new System.Drawing.Point(135, 362);
-            this.txtfn.Name = "txtfn";
-            this.txtfn.ReadOnly = true;
-            this.txtfn.Size = new System.Drawing.Size(309, 27);
-            this.txtfn.TabIndex = 36;
-            // 
-            // txtlvl
-            // 
-            this.txtlvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtlvl.BackColor = System.Drawing.Color.White;
-            this.txtlvl.Location = new System.Drawing.Point(135, 428);
-            this.txtlvl.Name = "txtlvl";
-            this.txtlvl.ReadOnly = true;
-            this.txtlvl.Size = new System.Drawing.Size(309, 27);
-            this.txtlvl.TabIndex = 37;
-            // 
-            // txtsct
-            // 
-            this.txtsct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsct.BackColor = System.Drawing.Color.White;
-            this.txtsct.Location = new System.Drawing.Point(532, 362);
-            this.txtsct.Name = "txtsct";
-            this.txtsct.ReadOnly = true;
-            this.txtsct.Size = new System.Drawing.Size(338, 27);
-            this.txtsct.TabIndex = 38;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label1.Location = new System.Drawing.Point(39, 365);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Full Name:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label2.Location = new System.Drawing.Point(17, 398);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 21);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Department:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label6.Location = new System.Drawing.Point(75, 431);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 21);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Level:";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label7.Location = new System.Drawing.Point(454, 365);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 21);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Section:";
-            // 
             // newfrmAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.panel1);
@@ -1029,24 +1001,24 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
+            this.grpBalanceDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpending)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvvoid)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFeeValue)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
-            this.grpBalanceDetails.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
