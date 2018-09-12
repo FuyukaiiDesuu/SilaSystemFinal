@@ -38,118 +38,198 @@
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(57, 120);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label5.Location = new System.Drawing.Point(12, 134);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.Size = new System.Drawing.Size(79, 21);
             this.label5.TabIndex = 36;
             this.label5.Text = "Amount:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 36);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label4.Location = new System.Drawing.Point(12, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 16);
+            this.label4.Size = new System.Drawing.Size(131, 21);
             this.label4.TabIndex = 35;
             this.label4.Text = "Transaction No:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 77);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label3.Location = new System.Drawing.Point(12, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.Size = new System.Drawing.Size(104, 21);
             this.label3.TabIndex = 34;
             this.label3.Text = "Cheque No:";
             // 
             // amnt
             // 
             this.amnt.BackColor = System.Drawing.Color.White;
-            this.amnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amnt.Location = new System.Drawing.Point(121, 118);
+            this.amnt.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.amnt.Location = new System.Drawing.Point(250, 119);
             this.amnt.Multiline = true;
             this.amnt.Name = "amnt";
             this.amnt.ReadOnly = true;
             this.amnt.Size = new System.Drawing.Size(158, 36);
-            this.amnt.TabIndex = 33;
+            this.amnt.TabIndex = 3;
             // 
             // tno
             // 
             this.tno.BackColor = System.Drawing.Color.White;
-            this.tno.Location = new System.Drawing.Point(121, 32);
+            this.tno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tno.Location = new System.Drawing.Point(178, 53);
             this.tno.Name = "tno";
             this.tno.ReadOnly = true;
-            this.tno.Size = new System.Drawing.Size(309, 20);
-            this.tno.TabIndex = 32;
+            this.tno.Size = new System.Drawing.Size(309, 27);
+            this.tno.TabIndex = 1;
             // 
             // chqno
             // 
             this.chqno.BackColor = System.Drawing.Color.White;
-            this.chqno.Location = new System.Drawing.Point(121, 76);
+            this.chqno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.chqno.Location = new System.Drawing.Point(178, 86);
             this.chqno.Name = "chqno";
             this.chqno.ReadOnly = true;
-            this.chqno.Size = new System.Drawing.Size(309, 20);
-            this.chqno.TabIndex = 31;
+            this.chqno.Size = new System.Drawing.Size(309, 27);
+            this.chqno.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(147, 211);
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button1.Location = new System.Drawing.Point(389, 213);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 48);
-            this.button1.TabIndex = 30;
+            this.button1.Size = new System.Drawing.Size(110, 46);
+            this.button1.TabIndex = 5;
             this.button1.Text = "CONFIRM";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(315, 211);
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button3.Location = new System.Drawing.Point(505, 213);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 46);
-            this.button3.TabIndex = 38;
+            this.button3.TabIndex = 6;
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Validated",
             "Pending",
             "Void"});
-            this.comboBox1.Location = new System.Drawing.Point(121, 173);
+            this.comboBox1.Location = new System.Drawing.Point(250, 161);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 21);
-            this.comboBox1.TabIndex = 39;
+            this.comboBox1.Size = new System.Drawing.Size(158, 27);
+            this.comboBox1.TabIndex = 4;
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 174);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label1.Location = new System.Drawing.Point(12, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 16);
+            this.label1.Size = new System.Drawing.Size(63, 21);
             this.label1.TabIndex = 40;
             this.label1.Text = "Status:";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(627, 31);
+            this.panel1.TabIndex = 44;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.DimGray;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label13.Location = new System.Drawing.Point(576, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 23);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "_";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Firebrick;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label15.Location = new System.Drawing.Point(602, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(22, 23);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "X";
+            // 
+            // lblSilaSchoolManagementSoftware
+            // 
+            this.lblSilaSchoolManagementSoftware.AutoSize = true;
+            this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 9);
+            this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(491, 19);
+            this.lblSilaSchoolManagementSoftware.TabIndex = 0;
+            this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
+            // 
             // validateCheque
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 272);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(627, 275);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button3);
@@ -160,9 +240,14 @@
             this.Controls.Add(this.tno);
             this.Controls.Add(this.chqno);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "validateCheque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "validateCheque";
             this.Load += new System.EventHandler(this.validateCheque_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +265,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
     }
 }

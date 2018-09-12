@@ -42,6 +42,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataPaymentHistory)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -197,12 +199,42 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Enabled = false;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(249, 77);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(31, 26);
+            this.button5.TabIndex = 42;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(286, 76);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 26);
+            this.button4.TabIndex = 41;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // frmViewPaymentHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(825, 432);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblUser);
@@ -239,5 +271,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }

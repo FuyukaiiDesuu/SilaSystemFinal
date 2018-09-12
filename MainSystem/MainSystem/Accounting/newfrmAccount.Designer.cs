@@ -36,12 +36,18 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
             this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.searchtppayments = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.searchtppending = new System.Windows.Forms.DateTimePicker();
             this.dgvpending = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.searchtpvoided = new System.Windows.Forms.DateTimePicker();
             this.dgvvoid = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,6 +85,8 @@
             this.btnAddFee = new System.Windows.Forms.Button();
             this.btnUpdateFee = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
             this.btnAddDisb = new System.Windows.Forms.Button();
@@ -88,17 +96,11 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -167,6 +169,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button12);
+            this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.dataSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
@@ -240,6 +244,34 @@
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance And Payment";
             // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Enabled = false;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(150, 34);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(31, 26);
+            this.button5.TabIndex = 31;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(187, 33);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 26);
+            this.button4.TabIndex = 14;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // searchtppayments
             // 
             this.searchtppayments.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -274,6 +306,34 @@
             this.tabPage2.Size = new System.Drawing.Size(531, 203);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "PENDING";
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.Enabled = false;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(136, 6);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(31, 26);
+            this.button10.TabIndex = 33;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button11.Enabled = false;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(173, 6);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(32, 26);
+            this.button11.TabIndex = 32;
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // searchtppending
             // 
@@ -312,6 +372,34 @@
             this.tabPage3.Size = new System.Drawing.Size(531, 203);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "VOIDED";
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Enabled = false;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(136, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(31, 26);
+            this.button6.TabIndex = 33;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Enabled = false;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(173, 6);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(32, 26);
+            this.button7.TabIndex = 32;
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // searchtpvoided
             // 
@@ -739,6 +827,36 @@
             this.tabPage4.Text = "Expense Disbursement";
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
+            // button8
+            // 
+            this.button8.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.Enabled = false;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(3, 11);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(31, 26);
+            this.button8.TabIndex = 34;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.Enabled = false;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(40, 11);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(32, 26);
+            this.button9.TabIndex = 33;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // searchtpexpense
             // 
             this.searchtpexpense.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -846,6 +964,16 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "_";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -869,129 +997,33 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
-            // pictureBox2
+            // button12
             // 
-            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.button12.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button12.Enabled = false;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(243, 34);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(31, 26);
+            this.button12.TabIndex = 33;
+            this.button12.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // button13
             // 
-            this.button5.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Enabled = false;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(150, 34);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(31, 26);
-            this.button5.TabIndex = 31;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(187, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 26);
-            this.button4.TabIndex = 14;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.Enabled = false;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(136, 6);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(31, 26);
-            this.button10.TabIndex = 33;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.Enabled = false;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(173, 6);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(32, 26);
-            this.button11.TabIndex = 32;
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Enabled = false;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(3, 11);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(31, 26);
-            this.button8.TabIndex = 34;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button9.Enabled = false;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(40, 11);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(32, 26);
-            this.button9.TabIndex = 33;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Enabled = false;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(136, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(31, 26);
-            this.button6.TabIndex = 33;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Enabled = false;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(173, 6);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(32, 26);
-            this.button7.TabIndex = 32;
-            this.button7.UseVisualStyleBackColor = true;
+            this.button13.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button13.Enabled = false;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(280, 34);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(32, 26);
+            this.button13.TabIndex = 32;
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // newfrmAccount
             // 
@@ -1109,5 +1141,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }
