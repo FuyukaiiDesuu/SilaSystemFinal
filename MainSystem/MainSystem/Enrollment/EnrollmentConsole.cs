@@ -113,7 +113,10 @@ namespace MainSystem
                     studdet.Add("dept", "Grade-school");
                     break;
                 case "3":
-                    studdet.Add("dept", "High-school");
+                    studdet.Add("dept", "Junior-Higschool");
+                    break;
+                case "4":
+                    studdet.Add("dept", "Senior-Highschool");
                     break;
             }
             switch (level)
@@ -159,6 +162,12 @@ namespace MainSystem
                     break;
                 case "34":
                     studdet.Add("level", "Grade 10");
+                    break;
+                case "41":
+                    studdet.Add("level", "Grade 11");
+                    break;
+                case "42":
+                    studdet.Add("level", "Grade 12");
                     break;
             }
             switch(status)
@@ -291,8 +300,6 @@ namespace MainSystem
             addstudentform = new addStudent(counterr());
             addstudentform.Show();
             addstudentform.reference = this;
-            this.Hide();
-            
         }
         public editStudent esform;
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -346,7 +353,6 @@ namespace MainSystem
             fsm = new frmSectionMgmt();
             fsm.reference = this;
             fsm.Show();
-            this.Hide();
             
         }
     }

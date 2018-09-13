@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MainSystem.Accounting
 {
@@ -15,9 +16,16 @@ namespace MainSystem.Accounting
         public Accounting.newfrmAccount reference { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         public string uname { get; set; }
-        public frmViewPaymentHistory()
+        public IDictionary<string, string> d2;
+        public MySqlConnection dbconnection;
+        dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;
+        public string syeartempo = "2018 - 2019";
+        public frmViewPaymentHistory(IDictionary<string,string> dict)
         {
             InitializeComponent();
+            d2 = dict;
         }
 
         private void frmViewPaymentHistory_Load(object sender, EventArgs e)
@@ -34,29 +42,24 @@ namespace MainSystem.Accounting
         }
         public void loadStudentPaymentLog()
         {
-            DataTable studentpaymentlog = dbquery.StudentPaymentLog();
-            this.dataPaymentHistory.DataSource = studentpaymentlog;
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment " +
+                    "WHERE adid = '" + d2["adid"] + "' AND syear = '" + syeartempo + "' AND paymentStatus = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataPaymentHistory.DataSource = dt;
 
-            dataPaymentHistory.Columns["student_id"].HeaderText = "Student ID";
-            dataPaymentHistory.Columns["payment_id"].HeaderText = "Payment ID";
-            dataPaymentHistory.Columns["date_created"].HeaderText = "Date Created";
-            dataPaymentHistory.Columns["grade_level"].HeaderText = "Grade Level";
-            dataPaymentHistory.Columns["current_balance"].HeaderText = "Current Balance";
-            dataPaymentHistory.Columns["amount_paid"].HeaderText = "Amount Paid";
-            dataPaymentHistory.Columns["payment_status"].HeaderText = "Payment Status";
-            dataPaymentHistory.Columns["student_name"].HeaderText = "Student Name";
-            dataPaymentHistory.Columns["id"].Visible = false;
-            dataPaymentHistory.Columns["student_name"].DisplayIndex = 2;
-
-            this.dataPaymentHistory.Columns["student_name"].Width = 200;
-            this.dataPaymentHistory.Columns["student_id"].Width = 50;
-            this.dataPaymentHistory.Columns["date_created"].Width = 120;
-            this.dataPaymentHistory.Columns["grade_level"].Width = 70;
-            this.dataPaymentHistory.Columns["payment_id"].Width = 70;
-            this.dataPaymentHistory.Columns["amount_paid"].Width = 60;
-            this.dataPaymentHistory.Columns["current_balance"].Width = 70;
-            dataPaymentHistory.ReadOnly = true;
-            this.dataPaymentHistory.Refresh();
+                dataPaymentHistory.Columns["transaction_no"].HeaderText = "Transaction No.";
+                dataPaymentHistory.Columns["date_paid"].HeaderText = "Date Paid";
+                dataPaymentHistory.Columns["amount_paid"].HeaderText = "Amount Paid";
+                dataPaymentHistory.Columns["cheque_no"].HeaderText = "Cheque No.";
+                dataPaymentHistory.Columns["payment_to"].HeaderText = "Payment No.";
+                dataPaymentHistory.Columns["additional_details"].HeaderText = "Additional Details";
+                dataPaymentHistory.Columns["syear"].HeaderText = "School Year";
+            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -66,23 +69,12 @@ namespace MainSystem.Accounting
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string student_name = txtSearch.Text;
-            DataTable holder = dbquery.SearchPayment(student_name);
-            dataPaymentHistory.DataSource = holder;
 
         }
 
         private void label15_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                return;
-            }
+        
         }
 
         private void label11_Click(object sender, EventArgs e)

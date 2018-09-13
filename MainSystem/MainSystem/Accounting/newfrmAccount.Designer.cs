@@ -63,7 +63,6 @@
             this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.searchtppayments = new System.Windows.Forms.DateTimePicker();
             this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
@@ -86,6 +85,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -397,6 +397,7 @@
             // 
             this.btnViewPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnViewPaymentHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnViewPaymentHistory.Enabled = false;
             this.btnViewPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
             this.btnViewPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
             this.btnViewPaymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -580,9 +581,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBalanceDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.grpBalanceDetails.Controls.Add(this.textBox2);
             this.grpBalanceDetails.Controls.Add(this.button5);
             this.grpBalanceDetails.Controls.Add(this.button4);
-            this.grpBalanceDetails.Controls.Add(this.searchtppayments);
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
             this.grpBalanceDetails.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBalanceDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
@@ -592,6 +593,7 @@
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance And Payment";
+            this.grpBalanceDetails.Enter += new System.EventHandler(this.grpBalanceDetails_Enter);
             // 
             // button5
             // 
@@ -601,7 +603,7 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(313, 21);
+            this.button5.Location = new System.Drawing.Point(280, 22);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(31, 26);
             this.button5.TabIndex = 31;
@@ -615,20 +617,11 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(275, 21);
+            this.button4.Location = new System.Drawing.Point(245, 23);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(32, 26);
             this.button4.TabIndex = 14;
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // searchtppayments
-            // 
-            this.searchtppayments.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchtppayments.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchtppayments.Location = new System.Drawing.Point(8, 22);
-            this.searchtppayments.Name = "searchtppayments";
-            this.searchtppayments.Size = new System.Drawing.Size(261, 26);
-            this.searchtppayments.TabIndex = 4;
             // 
             // dataBalanceDetails
             // 
@@ -822,6 +815,7 @@
             this.btnAddDisb.TabIndex = 36;
             this.btnAddDisb.Text = "Create Voucher";
             this.btnAddDisb.UseVisualStyleBackColor = false;
+            this.btnAddDisb.Click += new System.EventHandler(this.btnAddDisb_Click);
             // 
             // button8
             // 
@@ -949,6 +943,14 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox2.Location = new System.Drawing.Point(8, 22);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(231, 26);
+            this.textBox2.TabIndex = 55;
+            // 
             // newfrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -976,6 +978,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).EndInit();
             this.grpBalanceDetails.ResumeLayout(false);
+            this.grpBalanceDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBalanceDetails)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -1024,7 +1027,6 @@
         private System.Windows.Forms.GroupBox grpBalanceDetails;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DateTimePicker searchtppayments;
         public System.Windows.Forms.DataGridView dataBalanceDetails;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1051,5 +1053,6 @@
         private System.Windows.Forms.Button button13;
         public System.Windows.Forms.DataGridView dataSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

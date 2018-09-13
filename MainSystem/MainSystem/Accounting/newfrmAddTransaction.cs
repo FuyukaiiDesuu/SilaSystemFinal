@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace MainSystem.Accounting
 {
@@ -59,6 +60,8 @@ namespace MainSystem.Accounting
             txtAccountID.Text = adid.Rows[0][0].ToString();
             lblUser.Text = uname;
             lblUserID.Visible = false;*/
+            txtAmount.Text = "₱0.00";
+            txttendered.Text = "₱0.00";
         }
         private decimal paidforaccount(decimal amount)
         {
@@ -97,120 +100,96 @@ namespace MainSystem.Accounting
 
             return false;
         }
+        public TenderedForm tf;
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            var dbconnect = new dbConnector();
-            using (dbconnection = dbconnect.connector())
+            DialogResult result = MessageBox.Show("Do You Want To Proceed To Payment?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
             {
-                dbconnection.Open();
-                string query2 = "INSERT INTO payment" +
-                    "(payment_type, cheque_no, paymentStatus, amount_paid, date_paid, eid, adid, transaction_no, additional_details, payment_to, syear) " +
-                    "VALUES(@pt, @cqno, @pstatus, @apaid, @dpaid, @eid, @adid, @tansaction_no, @adet, @pto, @sy);";
-                using (var command2 = new MySqlCommand(query2, dbconnection))
+                tf = new TenderedForm();
+                tf.amount = txtAmount.Text;
+                tf.tndr = txttendered.Text;
+                tf.reference = this;
+                if (tf.ShowDialog() == DialogResult.OK)
                 {
-                    if (cmbPaymentType.Text == "Cheque")
+                    var dbconnect = new dbConnector();
+                    using (dbconnection = dbconnect.connector())
                     {
-                        command2.Parameters.AddWithValue("@pt", 2);
-                        command2.Parameters.AddWithValue("@cqno", txtChequeNo.Text);
-                        command2.Parameters.AddWithValue("@pstatus", 2);
-                    }
-                    else
-                    {
+                        dbconnection.Open();
+                        string query2 = "INSERT INTO payment" +
+                            "(payment_type, cheque_no, paymentStatus, amount_paid, date_paid, eid, adid, transaction_no, additional_details, payment_to, syear) " +
+                            "VALUES(@pt, @cqno, @pstatus, @apaid, @dpaid, @eid, @adid, @tansaction_no, @adet, @pto, @sy);";
+                        using (var command2 = new MySqlCommand(query2, dbconnection))
+                        {
+                            if (cmbPaymentType.Text == "Cheque")
+                            {
+                                command2.Parameters.AddWithValue("@pt", 2);
+                                command2.Parameters.AddWithValue("@cqno", txtChequeNo.Text);
+                                command2.Parameters.AddWithValue("@pstatus", 2);
+                            }
+                            else
+                            {
 
-                        command2.Parameters.AddWithValue("@pt", 1);
-                        command2.Parameters.AddWithValue("@cqno", null);
-                        command2.Parameters.AddWithValue("@pstatus", 1);
-                    }
-                    command2.Parameters.AddWithValue("@apaid", txtAmount.Text);
-                    command2.Parameters.AddWithValue("@dpaid", lblPaymentDate2.Text);
-                    command2.Parameters.AddWithValue("@eid", eid);
-                    command2.Parameters.AddWithValue("@adid", dic["adid"]);
-                    command2.Parameters.AddWithValue("@tansaction_no", SerialMaker());
-                    command2.Parameters.AddWithValue("@pto", cmbPaymentTo.Text);
-                    command2.Parameters.AddWithValue("@adet", txtAdditionalDetails.Text);
-                    command2.Parameters.AddWithValue("@sy", comboBox2.Text);
+                                command2.Parameters.AddWithValue("@pt", 1);
+                                command2.Parameters.AddWithValue("@cqno", null);
+                                command2.Parameters.AddWithValue("@pstatus", 1);
+                            }
+                            var a = txtAmount.Text.TrimStart('₱');
+                            command2.Parameters.AddWithValue("@apaid", a);
+                            command2.Parameters.AddWithValue("@dpaid", lblPaymentDate2.Text);
+                            command2.Parameters.AddWithValue("@eid", eid);
+                            command2.Parameters.AddWithValue("@adid", dic["adid"]);
+                            command2.Parameters.AddWithValue("@tansaction_no", SerialMaker());
+                            command2.Parameters.AddWithValue("@pto", cmbPaymentTo.Text);
+                            command2.Parameters.AddWithValue("@adet", txtAdditionalDetails.Text);
+                            command2.Parameters.AddWithValue("@sy", comboBox2.Text);
 
-                    command2.ExecuteNonQuery();
+                            command2.ExecuteNonQuery();
+                        }
+                        using (dbconnection = dbconnect.connector())
+                        {
+                            dbconnection.Open();
+                            string queryy = "UPDATE accountdetails SET paid_amount = @paidamount WHERE adid = @ayd;";
+                            using (var command2 = new MySqlCommand(queryy, dbconnection))
+                            {
+                                command2.Parameters.AddWithValue("@ayd", dic["adid"]);
+                                command2.Parameters.AddWithValue("@paidamount", paidforaccount(decimal.Parse(txtAmount.Text)));
+                                command2.ExecuteNonQuery();
+                            }
+                            MessageBox.Show("Succesfully Paid");
+                            reference.Show();
+                            //reference.loadBalanceDetails(id);
+                            reference.loadBalanceDetails();
+                            reference.loadPaymentDetails();
+                            this.Close();
+                        }
+                    }
                 }
-                using (dbconnection = dbconnect.connector())
+                else
                 {
-                    dbconnection.Open();
-                    string queryy = "UPDATE accountdetails SET paid_amount = @paidamount WHERE adid = @ayd;";
-                    using (var command2 = new MySqlCommand(queryy, dbconnection))
-                    {
-                        command2.Parameters.AddWithValue("@ayd", dic["adid"]);
-                        command2.Parameters.AddWithValue("@paidamount", paidforaccount(decimal.Parse(txtAmount.Text)));
-                        command2.ExecuteNonQuery();
-                    }
 
-                    /*
-                    dbquery.updatePayments(txtTransactionNo.Text, cmbPaymentType.Text, txtChequeNo.Text, txtAmount.Text, lblPaymentDate2.Text, lblUserID.Text, txtAccountID.Text, txtAdditionalDetails.Text, cmbPaymentTo.Text, balanceDisplay.Rows[0]["fid"].ToString());
-
-                    string amount;
-                    if (balanceDisplay.Rows[0]["paid_amount"].ToString() == null || balanceDisplay.Rows[0]["paid_amount"].ToString() == "")
-                    {
-                        amount = txtAmount.Text;
-                    }
-                    else
-                    {
-                        if (Convert.ToInt32(balanceDisplay.Rows[0]["paid_amount"].ToString()) == 0)
-                        {
-                            amount = txtAmount.Text;
-                        }
-                        else
-                        {
-                            amount = (Convert.ToInt32(balanceDisplay.Rows[0]["paid_amount"].ToString()) + Convert.ToInt32(txtAmount.Text)).ToString();
-                        }
-                    }
-
-                    if (cmbPaymentTo.Text == "Others")
-                    {
-                        if (Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) == 0 || Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) < 0)
-                        {
-                            dbquery.updateAccountDetails(txtAccountID.Text, balanceDisplay.Rows[0]["current_balance"].ToString(), amount, "PAID");
-                            dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), balanceDisplay.Rows[0]["current_balance"].ToString(), txtAmount.Text, "PAID", txtStudentName.Text);
-                        }
-                        else
-                        {
-                            dbquery.updateAccountDetails(txtAccountID.Text, balanceDisplay.Rows[0]["current_balance"].ToString(), amount, "PARTIALLY PAID");
-                            dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), balanceDisplay.Rows[0]["current_balance"].ToString(), txtAmount.Text, "PARTIALLY PAID", txtStudentName.Text);
-                        }
-
-                    }
-                    else
-                    {
-                        string currentbal = (Convert.ToInt32(balanceDisplay.Rows[0]["current_balance"].ToString()) - Convert.ToInt32(txtAmount.Text)).ToString();
-                        if (Convert.ToInt32(currentbal) == 0 || Convert.ToInt32(currentbal) < 0)
-                        {
-                            dbquery.updateAccountDetails(txtAccountID.Text, currentbal, amount, "PAID");
-                            dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), currentbal, txtAmount.Text, "PAID", txtStudentName.Text);
-                        }
-                        else
-                        {
-                            dbquery.updateAccountDetails(txtAccountID.Text, currentbal, amount, "PARTIALLY PAID");
-                            dbquery.updatePaymentLog(txtStudentID.Text, txtTransactionNo.Text, lblPaymentDate2.Text, GradeLevelDisplay.Rows[0]["fee_type"].ToString(), currentbal, txtAmount.Text, "PARTIALLY PAID", txtStudentName.Text);
-                        }
-                    }
-                    */
-
-                    MessageBox.Show("Succesfully Paid");
-                    reference.Show();
-                    //reference.loadBalanceDetails(id);
-                    reference.loadBalanceDetails();
-                    reference.loadPaymentDetails();
-                    reference.dataSearch.ClearSelection();
-                    reference.dataBalanceDetails.ClearSelection();
-                    this.Close();
                 }
             }
+            else
+            {
+
+            }
+               
+            
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            reference.Show();
-            //reference.dataBalanceDetails.ClearSelection();
-            //reference.dataSearch.ClearSelection();
-            this.Close();
+            DialogResult result = MessageBox.Show("DISCARD TRANSACTION?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+
+            }
+           
         }
 
         private void cmbPaymentType_TextChanged(object sender, EventArgs e)
@@ -254,6 +233,72 @@ namespace MainSystem.Accounting
         private void label11_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAmount.Text.Length <= 1)
+            {
+                txtAmount.Text = "₱";
+                txtAmount.SelectionStart = txtAmount.Text.Length;
+            }
+        }
+
+        private void txtAmount_Leave(object sender, EventArgs e)
+        {
+            if (txtAmount.Text.Length <= 1)
+            {
+                txtAmount.Text = "₱0.00";
+            }
+            Decimal a = Decimal.Round(Decimal.Parse(txtAmount.Text.TrimStart('₱')), 2);
+            txtAmount.Text = "₱" + a.ToString("0.##");
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txttendered_TextChanged(object sender, EventArgs e)
+        {
+            if (txttendered.Text.Length <= 1)
+            {
+                txttendered.Text = "₱";
+                txttendered.SelectionStart = txtAmount.Text.Length;
+            }
+        }
+
+        private void txttendered_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txttendered_Leave(object sender, EventArgs e)
+        {
+            if (txttendered.Text.Length <= 1)
+            {
+                txttendered.Text = "₱0.00";
+            }
+            Decimal a = Decimal.Round(Decimal.Parse(txttendered.Text.TrimStart('₱')), 2);
+            txttendered.Text = "₱" + a.ToString("0.##");
         }
     }
 }

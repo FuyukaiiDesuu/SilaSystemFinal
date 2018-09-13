@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpNewPayment = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txttendered = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.lblPaymentDate2 = new System.Windows.Forms.Label();
@@ -63,6 +65,8 @@
             // 
             // grpNewPayment
             // 
+            this.grpNewPayment.Controls.Add(this.label2);
+            this.grpNewPayment.Controls.Add(this.txttendered);
             this.grpNewPayment.Controls.Add(this.label1);
             this.grpNewPayment.Controls.Add(this.comboBox2);
             this.grpNewPayment.Controls.Add(this.lblPaymentDate2);
@@ -85,10 +89,31 @@
             this.grpNewPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.grpNewPayment.Location = new System.Drawing.Point(12, 74);
             this.grpNewPayment.Name = "grpNewPayment";
-            this.grpNewPayment.Size = new System.Drawing.Size(740, 270);
+            this.grpNewPayment.Size = new System.Drawing.Size(740, 375);
             this.grpNewPayment.TabIndex = 9;
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = " New Payment";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.Location = new System.Drawing.Point(103, 285);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(224, 21);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "ENTER TENDERED AMOUNT:";
+            // 
+            // txttendered
+            // 
+            this.txttendered.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
+            this.txttendered.Location = new System.Drawing.Point(114, 311);
+            this.txttendered.Name = "txttendered";
+            this.txttendered.Size = new System.Drawing.Size(200, 47);
+            this.txttendered.TabIndex = 25;
+            this.txttendered.TextChanged += new System.EventHandler(this.txttendered_TextChanged);
+            this.txttendered.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttendered_KeyPress);
+            this.txttendered.Leave += new System.EventHandler(this.txttendered_Leave);
             // 
             // label1
             // 
@@ -148,20 +173,23 @@
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.txtAmount.Location = new System.Drawing.Point(172, 198);
+            this.txtAmount.Location = new System.Drawing.Point(114, 227);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(200, 47);
             this.txtAmount.TabIndex = 6;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
+            this.txtAmount.Leave += new System.EventHandler(this.txtAmount_Leave);
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblAmount.Location = new System.Drawing.Point(23, 224);
+            this.lblAmount.Location = new System.Drawing.Point(123, 203);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(79, 21);
+            this.lblAmount.Size = new System.Drawing.Size(175, 21);
             this.lblAmount.TabIndex = 14;
-            this.lblAmount.Text = "Amount:";
+            this.lblAmount.Text = "ENTER AMOUNT DUE:";
             // 
             // txtTransactionNo
             // 
@@ -227,7 +255,7 @@
             // 
             this.lblPaymentTo.AutoSize = true;
             this.lblPaymentTo.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblPaymentTo.Location = new System.Drawing.Point(23, 171);
+            this.lblPaymentTo.Location = new System.Drawing.Point(42, 171);
             this.lblPaymentTo.Name = "lblPaymentTo";
             this.lblPaymentTo.Size = new System.Drawing.Size(106, 21);
             this.lblPaymentTo.TabIndex = 5;
@@ -247,7 +275,7 @@
             // 
             this.lblChequeNo.AutoSize = true;
             this.lblChequeNo.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblChequeNo.Location = new System.Drawing.Point(23, 138);
+            this.lblChequeNo.Location = new System.Drawing.Point(44, 140);
             this.lblChequeNo.Name = "lblChequeNo";
             this.lblChequeNo.Size = new System.Drawing.Size(104, 21);
             this.lblChequeNo.TabIndex = 3;
@@ -289,9 +317,9 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnCancel.Location = new System.Drawing.Point(642, 350);
+            this.btnCancel.Location = new System.Drawing.Point(586, 455);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(110, 37);
+            this.btnCancel.Size = new System.Drawing.Size(157, 39);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -303,11 +331,11 @@
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnPay.Location = new System.Drawing.Point(526, 350);
+            this.btnPay.Location = new System.Drawing.Point(423, 455);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(110, 37);
+            this.btnPay.Size = new System.Drawing.Size(157, 39);
             this.btnPay.TabIndex = 9;
-            this.btnPay.Text = "Pay";
+            this.btnPay.Text = "PROCEED TO PAY";
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
@@ -375,7 +403,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(764, 401);
+            this.ClientSize = new System.Drawing.Size(764, 504);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);
@@ -427,5 +455,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txttendered;
     }
 }

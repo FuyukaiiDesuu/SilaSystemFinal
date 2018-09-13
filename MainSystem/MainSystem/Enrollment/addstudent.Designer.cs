@@ -60,9 +60,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -258,7 +256,8 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Pre-school",
             "Grade-school",
-            "High-school"});
+            "Junior-Highschool",
+            "Senior-Highschool"});
             this.comboBox1.Location = new System.Drawing.Point(124, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(155, 29);
@@ -422,27 +421,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 31);
             this.panel1.TabIndex = 77;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.DimGray;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.label12.Location = new System.Drawing.Point(665, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 23);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "_";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // pictureBox2
             // 
@@ -453,18 +438,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Firebrick;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.label15.Location = new System.Drawing.Point(691, 3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(22, 23);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "X";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // lblSilaSchoolManagementSoftware
             // 
@@ -492,6 +465,8 @@
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(716, 491);
+            this.MinimumSize = new System.Drawing.Size(716, 491);
             this.Name = "addStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addStudent";
@@ -543,9 +518,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
     }
 }

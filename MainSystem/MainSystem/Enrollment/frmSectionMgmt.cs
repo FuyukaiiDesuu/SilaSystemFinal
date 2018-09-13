@@ -168,25 +168,31 @@ namespace MainSystem
             if (secinput.ShowDialog() == DialogResult.OK)
             {
                 sectionname = secinput.sectioninputt;
-            }
-            idlistgrabber();
-            var dbconnect = new dbConnector();
-            using (dbconnection = dbconnect.connector())
-            {
-                dbconnection.Open();
-                foreach (string id in stdlistid)
+                idlistgrabber();
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
                 {
-                    string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @idstud;";
-                    using (var command2 = new MySqlCommand(query2, dbconnection))
+                    dbconnection.Open();
+                    foreach (string id in stdlistid)
                     {
-                        command2.Parameters.AddWithValue("@sec", sectionname);
-                        command2.Parameters.AddWithValue("@idstud", id);
-                        command2.ExecuteNonQuery();
+                        string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @idstud;";
+                        using (var command2 = new MySqlCommand(query2, dbconnection))
+                        {
+                            command2.Parameters.AddWithValue("@sec", sectionname);
+                            command2.Parameters.AddWithValue("@idstud", id);
+                            command2.ExecuteNonQuery();
+                        }
                     }
                 }
+                loadData();
+                loadData2();
             }
-            loadData();
-            loadData2();
+            else
+            {
+                loadData();
+                loadData2();
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -235,6 +241,15 @@ namespace MainSystem
         private void button4_Click(object sender, EventArgs e)
         {
             loadData2();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

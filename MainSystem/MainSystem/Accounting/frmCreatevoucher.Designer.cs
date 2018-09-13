@@ -49,13 +49,13 @@
             this.textBox1.Location = new System.Drawing.Point(12, 152);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(589, 90);
+            this.textBox1.Size = new System.Drawing.Size(589, 106);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(12, 285);
+            this.textBox2.Location = new System.Drawing.Point(12, 298);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(149, 27);
             this.textBox2.TabIndex = 3;
@@ -76,7 +76,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label2.Location = new System.Drawing.Point(8, 261);
+            this.label2.Location = new System.Drawing.Point(8, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 21);
             this.label2.TabIndex = 3;
@@ -88,7 +88,7 @@
             this.btnAddFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFee.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnAddFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnAddFee.Location = new System.Drawing.Point(297, 349);
+            this.btnAddFee.Location = new System.Drawing.Point(297, 355);
             this.btnAddFee.Name = "btnAddFee";
             this.btnAddFee.Size = new System.Drawing.Size(149, 49);
             this.btnAddFee.TabIndex = 6;
@@ -121,7 +121,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button2.Location = new System.Drawing.Point(452, 349);
+            this.button2.Location = new System.Drawing.Point(452, 355);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 49);
             this.button2.TabIndex = 10;
@@ -136,7 +136,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 31);
+            this.panel1.Size = new System.Drawing.Size(608, 31);
             this.panel1.TabIndex = 39;
             // 
             // pictureBox2
@@ -167,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(613, 410);
+            this.ClientSize = new System.Drawing.Size(608, 416);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
@@ -177,9 +177,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximumSize = new System.Drawing.Size(629, 449);
-            this.MinimumSize = new System.Drawing.Size(629, 449);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(608, 416);
+            this.MinimumSize = new System.Drawing.Size(608, 416);
             this.Name = "frmCreatevoucher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCreatevoucher";

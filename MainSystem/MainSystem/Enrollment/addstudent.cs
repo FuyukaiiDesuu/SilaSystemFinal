@@ -180,6 +180,14 @@ namespace MainSystem
                     d1.Add("level", "34");
                     d1.Add("feelevel", "14");
                     break;
+                case "Grade 11":
+                    d1.Add("level", "41");
+                    d1.Add("feelevel", "15");
+                    break;
+                case "Grade 12":
+                    d1.Add("level", "42");
+                    d1.Add("feelevel", "16");
+                    break;
             }
             switch (comboBox1.Text)
             {
@@ -189,8 +197,11 @@ namespace MainSystem
                 case "Grade-school":
                     d1.Add("dept", "2");
                     break;
-                case "High-school":
+                case "Junior-Highschool":
                     d1.Add("dept", "3");
+                    break;
+                case "Senior-Highschool":
+                    d1.Add("dept", "4");
                     break;
             }
             return d1;
@@ -307,11 +318,15 @@ namespace MainSystem
                     comboBox2.Items.Add("Grade 5");
                     comboBox2.Items.Add("Grade 6");
                     break;
-                case "High-school":
+                case "Junior-Highschool":
                     comboBox2.Items.Add("Grade 7");
                     comboBox2.Items.Add("Grade 8");
                     comboBox2.Items.Add("Grade 9");
                     comboBox2.Items.Add("Grade 10");
+                    break;
+                case "Senior-Highschool":
+                    comboBox2.Items.Add("Grade 11");
+                    comboBox2.Items.Add("Grade 12");
                     break;
             }
 

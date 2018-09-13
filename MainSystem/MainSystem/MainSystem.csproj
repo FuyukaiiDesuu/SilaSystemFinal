@@ -85,6 +85,12 @@
     <Compile Include="Accounting\SOAccount.Designer.cs">
       <DependentUpon>SOAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accounting\TenderedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\TenderedForm.Designer.cs">
+      <DependentUpon>TenderedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment\frmSectionMgmt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounting\SOAccount.resx">
       <DependentUpon>SOAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\TenderedForm.resx">
+      <DependentUpon>TenderedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\newfrmAddEmployee.resx">
       <DependentUpon>newfrmAddEmployee.cs</DependentUpon>

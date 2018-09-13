@@ -40,8 +40,11 @@ namespace MainSystem
                 case "Grade-school":
                     studdet.Add("dept", "2");
                     break;
-                case "High-school":
+                case "Junior-Highschool":
                     studdet.Add("dept", "3");
+                    break;
+                case "Senior-Highschool":
+                    studdet.Add("dept", "4");
                     break;
             }
             switch (level)
@@ -101,6 +104,14 @@ namespace MainSystem
                 case "Grade 10":
                     studdet.Add("level", "34");
                     studdet.Add("feelevel", "13");
+                    break;
+                case "Grade 11":
+                    studdet.Add("level", "41");
+                    studdet.Add("feelevel", "14");
+                    break;
+                case "Grade 12":
+                    studdet.Add("level", "42");
+                    studdet.Add("feelevel", "15");
                     break;
             }
           
@@ -209,11 +220,15 @@ namespace MainSystem
                     comboBox2.Items.Add("Grade 5");
                     comboBox2.Items.Add("Grade 6");
                     break;
-                case "High-school":
+                case "Junior-Highschool":
                     comboBox2.Items.Add("Grade 7");
                     comboBox2.Items.Add("Grade 8");
                     comboBox2.Items.Add("Grade 9");
                     comboBox2.Items.Add("Grade 10");
+                    break;
+                case "Senior-Highschool":
+                    comboBox2.Items.Add("Grade 11");
+                    comboBox2.Items.Add("Grade 12");
                     break;
             }
         }

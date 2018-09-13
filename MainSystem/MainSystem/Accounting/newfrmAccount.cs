@@ -120,7 +120,8 @@ namespace MainSystem.Accounting
             using (MySqlConnection conn = connect.connector())
             {
               
-                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment WHERE adid = '" +adid+"' AND syear = '"+syeartempo+"' AND paymentStatus = 1;";
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment " +
+                    "WHERE adid = '" +adid+"' AND syear = '"+syeartempo+"' AND paymentStatus = 1 AND date_paid LIKE '%"+DateTime.Now.ToString("yyyy-MM-dd")+"%';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -208,7 +209,10 @@ namespace MainSystem.Accounting
                     studdet.Add("dept", "Grade-school");
                     break;
                 case "3":
-                    studdet.Add("dept", "High-school");
+                    studdet.Add("dept", "Junior-Highschool");
+                    break;
+                case "4":
+                    studdet.Add("dept", "Senior-Highschool");
                     break;
             }
             switch (level)
@@ -255,6 +259,12 @@ namespace MainSystem.Accounting
                 case "34":
                     studdet.Add("level", "Grade 10");
                     break;
+                case "41":
+                    studdet.Add("level", "Grade 11");
+                    break;
+                case "42":
+                    studdet.Add("level", "Grade 12");
+                    break;
             }
            
             return studdet;
@@ -273,7 +283,7 @@ namespace MainSystem.Accounting
                 dic2.Add("fid", dataSearch.Rows[e.RowIndex].Cells["fid"].Value.ToString());
                 dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
                 dic2.Add("fullname", dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString());
-                txtfn.Text = dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
+                txtfn.Text = dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["FirstName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
                 var studdetailss = studdetails(dataSearch.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataSearch.Rows[e.RowIndex].Cells["level"].Value.ToString());
                 txtdp.Text = studdetailss["dept"];
                 txtlvl.Text = studdetailss["level"];
@@ -285,6 +295,7 @@ namespace MainSystem.Accounting
                 dataFeeValue.Refresh();
                 btnAddTransaction.Enabled = true;
                 btnEditAccount.Enabled = true;
+                btnViewPaymentHistory.Enabled = true;
             }
             else
             { return; }
@@ -298,18 +309,6 @@ namespace MainSystem.Accounting
         public Accounting.newfrmAddTransaction transac;
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
-            /*
-            DataTable holder = dbquery.User(uname);
-            DataTable holder2 = dbquery.UserID(uid);
-            uid = holder2.Rows[0]["empID"].ToString();
-            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-            transac = new Accounting.newfrmAddTransaction();
-            transac.uname = uname;
-            transac.uid = uid;
-            transac.id = txtStudentID.Text.ToString();
-            transac.balanceDisplay = (dataBalanceDetails.DataSource as DataTable);
-            transac.GradeLevelDisplay = (dataBalanceDetails.DataSource as DataTable);
-            transac.name = fullname.ToString();*/
             transac = new newfrmAddTransaction(dic2, eid, uname);
             transac.Show();
             transac.reference = this;
@@ -329,7 +328,6 @@ namespace MainSystem.Accounting
             addfee.uname = uname;
             addfee.Show();
             addfee.reference = this;
-            this.Hide();
         }
 
         public Accounting.newfrmEditAccount editaccount;
@@ -369,13 +367,11 @@ namespace MainSystem.Accounting
         public Accounting.frmViewPaymentHistory viewpaymenthistory;
         private void btnViewPaymentHistory_Click(object sender, EventArgs e)
         {
-            DataTable holder = dbquery.User(uname);
-            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-            viewpaymenthistory = new Accounting.frmViewPaymentHistory();
+            viewpaymenthistory = new Accounting.frmViewPaymentHistory(dic2);
             viewpaymenthistory.uname = uname;
             viewpaymenthistory.Show();
-            viewpaymenthistory.reference = this;
             this.Hide();
+            viewpaymenthistory.reference = this;
         }
 
         private void btnUpdateFee_Click(object sender, EventArgs e)
@@ -385,7 +381,6 @@ namespace MainSystem.Accounting
             addfee.dtadd = dt;
             addfee.Show();
             addfee.reference = this;
-            this.Hide();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -399,17 +394,14 @@ namespace MainSystem.Accounting
         {
             clearfields();
         }
-
         private void dataFeeValue_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void dataSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void dataBalanceDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -508,8 +500,6 @@ namespace MainSystem.Accounting
             fcv = new frmCreatevoucher(eid, uname);
             fcv.Show();
             fcv.reference = this;
-            this.Hide();
-
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -551,6 +541,11 @@ namespace MainSystem.Accounting
         }
 
         private void dataSearch_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grpBalanceDetails_Enter(object sender, EventArgs e)
         {
 
         }

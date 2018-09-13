@@ -27,7 +27,7 @@ namespace MainSystem.Accounting
         //public string uname { get; set; }
         public IDictionary<string, string> dict;
         public string TEMPORARYSYEAR = "2018 - 2019";
-        public newfrmEditAccount(IDictionary<string, string>d)
+        public newfrmEditAccount(IDictionary<string, string> d)
         {
             InitializeComponent();
             dict = d;
@@ -59,7 +59,7 @@ namespace MainSystem.Accounting
             decimal sum = 0.00M;
             using (MySqlConnection conn = connect.connector())
             {
-                
+
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Others' " +
                     "AND Status = 1;";
@@ -72,7 +72,7 @@ namespace MainSystem.Accounting
                     {
                         sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
                     }
-                    
+
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace MainSystem.Accounting
             {
 
                 string query = "SELECT * FROM payment WHERE adid = '" + dict["adid"] + "' " +
-                    "AND payment_to = 'Others' AND paymentStatus = 1 AND syear = '"+TEMPORARYSYEAR+"';";
+                    "AND payment_to = 'Others' AND paymentStatus = 1 AND syear = '" + TEMPORARYSYEAR + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -111,7 +111,7 @@ namespace MainSystem.Accounting
             decimal sum = 0.00M;
             using (MySqlConnection conn = connect.connector())
             {
-                
+
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Tuition' " +
                     "AND Status = 1;";
@@ -124,11 +124,11 @@ namespace MainSystem.Accounting
                     {
                         sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
                     }
-                    
+
                 }
                 else
                 {
-                   sum = 0.00M;
+                    sum = 0.00M;
                 }
 
             }
@@ -164,26 +164,26 @@ namespace MainSystem.Accounting
             decimal sum = 0.00M;
             using (MySqlConnection conn = connect.connector())
             {
-                
+
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Registration' " +
                     "AND Status = 1;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     foreach (DataRow row in dt.Rows)
                     {
                         sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
                     }
-                    
+
                 }
                 else
                 {
-                   sum = 0.00M;
+                    sum = 0.00M;
                 }
-                
+
             }
             decimal sum2 = 0.00M;
             using (MySqlConnection conn = connect.connector())
@@ -200,7 +200,7 @@ namespace MainSystem.Accounting
                     {
                         sum2 = sum2 + decimal.Round(decimal.Parse(row["amount_paid"].ToString()), 2);
                     }
-                    
+
                 }
                 else
                 {
@@ -215,20 +215,20 @@ namespace MainSystem.Accounting
             decimal sum = 0.00M;
             using (MySqlConnection conn = connect.connector())
             {
-                
+
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Books' " +
                     "AND Status = 1;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     foreach (DataRow row in dt.Rows)
                     {
                         sum = sum + decimal.Round(decimal.Parse(row["current_amount"].ToString()), 2);
                     }
-                    
+
                 }
                 else
                 {
@@ -290,7 +290,7 @@ namespace MainSystem.Accounting
                 }
 
             }*/
-            
+
         }
 
         private decimal totalBalancePayable()
@@ -341,7 +341,7 @@ namespace MainSystem.Accounting
                 decimal finalnajud = Convert.ToDecimal(final) * sum;
 
                 return decimal.Round(finalnajud, 2);*/
-            
+
         }
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
@@ -363,7 +363,6 @@ namespace MainSystem.Accounting
             lblPaymentStatus2.Text = adid.Rows[0][5].ToString();
             TextColor();*/
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reference.Show();
@@ -393,15 +392,12 @@ namespace MainSystem.Accounting
         }
         private void sygetter()
         {
-            
+
         }
         private void grpStudentDetails_Enter(object sender, EventArgs e)
         {
 
-        }
-
-
-
+        }    
         private void label15_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
@@ -423,143 +419,159 @@ namespace MainSystem.Accounting
         public IDictionary<string, string> dicforsoaform;
         private void button1_Click(object sender, EventArgs e)
         {
-            dicforsoaform = new Dictionary<string, string>();
-            dicforsoaform.Add("tuition", texttuiton.Text);
-            dicforsoaform.Add("books", textbooks.Text);
-            dicforsoaform.Add("regis", textregis.Text);
-            dicforsoaform.Add("others", textmisc.Text);
-            dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
-            dicforsoaform.Add("fullname", txtStudentName.Text);
-            dicforsoaform.Add("section", txtsec.Text);
-            dicforsoaform.Add("level", txtlvl.Text);
+            DialogResult dialogResult = MessageBox.Show("Confirm Action!", "The Document Will Be Printed", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                dicforsoaform = new Dictionary<string, string>();
+                dicforsoaform.Add("tuition", texttuiton.Text);
+                dicforsoaform.Add("books", textbooks.Text);
+                dicforsoaform.Add("regis", textregis.Text);
+                dicforsoaform.Add("others", textmisc.Text);
+                dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
+                dicforsoaform.Add("fullname", txtStudentName.Text);
+                dicforsoaform.Add("section", txtsec.Text);
+                dicforsoaform.Add("level", txtlvl.Text);
 
-            soaform = new SOAccount(dicforsoaform);
-            soaform.Show();
-
+                soaform = new SOAccount(dicforsoaform);
+                soaform.Show();
+            }
         }
 
         private void grpStudentAccount_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-           
-        }
 
+        }
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
-           
-        }
 
+        }
+        private void textregis_TextChanged(object sender, EventArgs e)
+        {
+            if (textregis.Text.Length <= 1)
+            {
+                textregis.Text = "₱";
+                textregis.SelectionStart = texttuiton.Text.Length;
+            }
+        }
+        private void textregis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void textregis_Leave(object sender, EventArgs e)
+        {
+            Decimal a = Decimal.Round(Decimal.Parse(textregis.Text.TrimStart('₱')), 2);
+            textregis.Text = a.ToString("C2", new CultureInfo("en-PH"));
+        }
+        private void textbooks_Leave(object sender, EventArgs e)
+        {
+            if (textbooks.Text.Length <= 1)
+            {
+                textbooks.Text = "₱0.00";
+            }
+            Decimal a = Decimal.Round(Decimal.Parse(textbooks.Text.TrimStart('₱')), 2);
+            textbooks.Text = a.ToString("C2", new CultureInfo("en-PH"));
+        }
+        private void textbooks_TextChanged(object sender, EventArgs e)
+        {
+            if (textbooks.Text.Length <= 1)
+            {
+                textbooks.Text = "₱";
+                textbooks.SelectionStart = texttuiton.Text.Length;
+            }
+        }
+        private void textbooks_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+        private void textbooks_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void textmisc_Leave(object sender, EventArgs e)
+        {
+            if (textmisc.Text.Length <= 1)
+            {
+                textmisc.Text = "₱0.00";
+            }
+            Decimal a = Decimal.Round(Decimal.Parse(textmisc.Text.TrimStart('₱')), 2);
+            textmisc.Text = a.ToString("C2", new CultureInfo("en-PH"));
+        }
+        private void textmisc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void textmisc_TextChanged(object sender, EventArgs e)
+        {
+            if (textmisc.Text.Length <= 1)
+            {
+                textmisc.Text = "₱";
+                textmisc.SelectionStart = textmisc.Text.Length;
+            }
+        }
         private void texttuiton_Leave(object sender, EventArgs e)
         {
-            /*
-            Decimal a = Decimal.Round(Decimal.Parse(texttuiton.Text),2);
-            texttuiton.Text = a.ToString("C2", new CultureInfo("en-PH"));*/
-        }
-        public void formatter(TextBox tbox)
-        {
-            //string t = texttuiton.Text;
-            if (texttuiton.Text.Length <= 5)
+            if(texttuiton.Text.Length <= 1)
             {
                 texttuiton.Text = "₱0.00";
-                texttuiton.SelectionStart = texttuiton.Text.Length; // add some logic if length is 0
-                texttuiton.SelectionLength = 0;
             }
-            //texttuiton.Text = texttuiton.Text.Insert(0, "₱");
-            //Remove previous formatting, or the decimal check will fail including leading zeros
-            string value = texttuiton.Text.Replace(",", "")
-                .Replace("₱", "").Replace(".", "").TrimStart('0');
-            decimal ul;
-
-            //Check we are indeed handling a number
-            if (decimal.TryParse(value, out ul))
+            Decimal a = Decimal.Round(Decimal.Parse(texttuiton.Text.TrimStart('₱')), 2);
+            texttuiton.Text = a.ToString("C2", new CultureInfo("en-PH"));
+        }
+        private void texttuiton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                ul /= 100;
-                //Unsub the event so we don't enter a loop
-                texttuiton.TextChanged -= texttuiton_TextChanged;
-                //Format the text as currency
-                texttuiton.Text = string.Format(CultureInfo.CreateSpecificCulture("en-PH"), "{0:C2}", ul);
-                texttuiton.TextChanged += texttuiton_TextChanged;
-                texttuiton.Select(texttuiton.Text.Length, 0);
-
+                e.Handled = true;
             }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void texttuiton_Enter(object sender, EventArgs e)
+        {
+            
         }
         private void texttuiton_TextChanged(object sender, EventArgs e)
         {
-            //string t = texttuiton.Text;
-            if (texttuiton.Text.Length <= 5)
+          if(texttuiton.Text.Length <= 1)
             {
-                texttuiton.Text = "₱0.00";
-                texttuiton.SelectionStart = texttuiton.Text.Length; // add some logic if length is 0
-                texttuiton.SelectionLength = 0;
-            }
-            //texttuiton.Text = texttuiton.Text.Insert(0, "₱");
-            //Remove previous formatting, or the decimal check will fail including leading zeros
-            string value = texttuiton.Text.Replace(",", "")
-                .Replace("₱", "").Replace(".", "").TrimStart('0');
-            decimal ul;
-            
-            //Check we are indeed handling a number
-            if (decimal.TryParse(value, out ul))
-            {
-                ul /= 100;
-                //Unsub the event so we don't enter a loop
-                texttuiton.TextChanged -= texttuiton_TextChanged;
-                //Format the text as currency
-                texttuiton.Text = string.Format(CultureInfo.CreateSpecificCulture("en-PH"), "{0:C2}", ul);
-                texttuiton.TextChanged += texttuiton_TextChanged;
-                texttuiton.Select(texttuiton.Text.Length, 0);
-                
+                texttuiton.Text = "₱";
+                texttuiton.SelectionStart = texttuiton.Text.Length;
             }
         }
-
-        private void texttuiton_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textregis_TextChanged(object sender, EventArgs e)
-        {
-
-            //string t = textregis.Text;
-            if (textregis.Text.Length <= 5)
-            {
-                textregis.Text = "₱0.00";
-                textregis.SelectionStart = textregis.Text.Length; // add some logic if length is 0
-                textregis.SelectionLength = 0;
-            }
-            //textregis.Text = textregis.Text.Insert(0, "₱");
-            //Remove previous formatting, or the decimal check will fail including leading zeros
-            string value = textregis.Text.Replace(",", "")
-                .Replace("₱", "").Replace(".", "").TrimStart('0');
-            decimal ul;
-
-            //Check we are indeed handling a number
-            if (decimal.TryParse(value, out ul))
-            {
-                ul /= 100;
-                //Unsub the event so we don't enter a loop
-                textregis.TextChanged -= textregis_TextChanged;
-                //Format the text as currency
-                textregis.Text = string.Format(CultureInfo.CreateSpecificCulture("en-PH"), "{0:C2}", ul);
-                textregis.TextChanged += textregis_TextChanged;
-                textregis.Select(textregis.Text.Length, 0);
-
-            }
-        }
-
-        private void textregis_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-    }
+    } 
 }

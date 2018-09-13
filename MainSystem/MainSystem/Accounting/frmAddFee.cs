@@ -80,12 +80,15 @@ namespace MainSystem.Accounting
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            reference.Show();
-            reference.dataSearch.ClearSelection();
-            reference.dataBalanceDetails.ClearSelection();
-            this.Close();
+            DialogResult res = MessageBox.Show("DO YOU WANT TO CANCEL?", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(res == DialogResult.Yes)
+            {
+                reference.dataSearch.ClearSelection();
+                reference.dataBalanceDetails.ClearSelection();
+                this.Close();
+            }
+           
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
@@ -103,6 +106,7 @@ namespace MainSystem.Accounting
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+           
             string s_key;
             if (cmbGradeLevel.Text == "Toddler")
             {
@@ -156,94 +160,107 @@ namespace MainSystem.Accounting
             {
                 s_key = "13";
             }
-            else
+            else if (cmbGradeLevel.Text == "Grade 10")
             {
                 s_key = "14";
             }
+            else
+            {
+                s_key = "15";
+            }
             if(checker)
             {
-                var dbconnect = new dbConnector();
-                using (dbconnection = dbconnect.connector())
+                DialogResult res = MessageBox.Show("CONFIRM FEE CREATION!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.Yes)
                 {
-                    dbconnection.Open();
-                    string query2 = "INSERT INTO feevalues" +
-                        "(fee_type, fee_description, misc_desc, current_amount, date_created, f_key, Status, syear)" +
-                        "VALUES(@ftype, @fdesc, @mdesc, @cmount, @dcrt, @fkey, @status, @sy);";
-                    using (var command2 = new MySqlCommand(query2, dbconnection))
+                    var dbconnect = new dbConnector();
+                    using (dbconnection = dbconnect.connector())
                     {
-                        command2.Parameters.AddWithValue("@ftype", cmbGradeLevel.Text);
-                        if(comboBox1.Text != "Others")
+                        dbconnection.Open();
+                        string query2 = "INSERT INTO feevalues" +
+                            "(fee_type, fee_description, misc_desc, current_amount, date_created, f_key, Status, syear)" +
+                            "VALUES(@ftype, @fdesc, @mdesc, @cmount, @dcrt, @fkey, @status, @sy);";
+                        using (var command2 = new MySqlCommand(query2, dbconnection))
                         {
-                            command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
-                            command2.Parameters.AddWithValue("@mdesc", null);
-                        }
-                        else
-                        {
-                            command2.Parameters.AddWithValue("@mdesc", textBox1.Text);
-                            command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
-                        }
-                        command2.Parameters.AddWithValue("@cmount", txtAmount.Text);
-                        command2.Parameters.AddWithValue("@dcrt", lblDate.Text);
-                        command2.Parameters.AddWithValue("@fkey", s_key);
-                        command2.Parameters.AddWithValue("@status", 1);
-                        command2.Parameters.AddWithValue("@sy", comboBox2.Text);
+                            command2.Parameters.AddWithValue("@ftype", cmbGradeLevel.Text);
+                            if (comboBox1.Text != "Others")
+                            {
+                                command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
+                                command2.Parameters.AddWithValue("@mdesc", null);
+                            }
+                            else
+                            {
+                                command2.Parameters.AddWithValue("@mdesc", textBox1.Text);
+                                command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
+                            }
+                            command2.Parameters.AddWithValue("@cmount", txtAmount.Text);
+                            command2.Parameters.AddWithValue("@dcrt", lblDate.Text);
+                            command2.Parameters.AddWithValue("@fkey", s_key);
+                            command2.Parameters.AddWithValue("@status", 1);
+                            command2.Parameters.AddWithValue("@sy", comboBox2.Text);
 
-                        command2.ExecuteNonQuery();
+                            command2.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Successfully Added");
+                        reference.Show();
+                        reference.loadFeeDetails();
+                        reference.dataBalanceDetails.ClearSelection();
+                        reference.dataSearch.ClearSelection();
+                        this.Close();
+
                     }
-                    MessageBox.Show("Successfully Added");
-                    reference.Show();
-                    reference.loadFeeDetails();
-                    reference.dataBalanceDetails.ClearSelection();
-                    reference.dataSearch.ClearSelection();
-                    this.Close();
-
                 }
             }
             if(!checker)
             {
-                var dbconnect = new dbConnector();
-                using (dbconnection = dbconnect.connector())
+                DialogResult res = MessageBox.Show("DO YOU WANT TO PROCEED WITH UPDATES?", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.Yes)
                 {
-                    dbconnection.Open();
-                    string query2 = "UPDATE feevalues " +
-                        "SET fee_type = @ftype, " +
-                        "fee_description = @fdesc, " +
-                        "misc_desc = @mdesc, " +
-                        "current_amount = @cmount, " +
-                        "date_created = @dcrt, " +
-                        "date_modified = @dmod, " +
-                        "f_key = @fkey, " +
-                        "Status = @status, " +
-                        "syear = @sy WHERE fid = @ayd;";
-                    using (var command2 = new MySqlCommand(query2, dbconnection))
+                    var dbconnect = new dbConnector();
+                    using (dbconnection = dbconnect.connector())
                     {
-                        command2.Parameters.AddWithValue("@ftype", cmbGradeLevel.Text);
-                        if (comboBox1.Text != "Others")
+                        dbconnection.Open();
+                        string query2 = "UPDATE feevalues " +
+                            "SET fee_type = @ftype, " +
+                            "fee_description = @fdesc, " +
+                            "misc_desc = @mdesc, " +
+                            "current_amount = @cmount, " +
+                            "date_created = @dcrt, " +
+                            "date_modified = @dmod, " +
+                            "f_key = @fkey, " +
+                            "Status = @status, " +
+                            "syear = @sy WHERE fid = @ayd;";
+                        using (var command2 = new MySqlCommand(query2, dbconnection))
                         {
-                            command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
-                            command2.Parameters.AddWithValue("@mdesc", null);
-                        }
-                        else
-                        {
-                            command2.Parameters.AddWithValue("@mdesc", textBox1.Text);
-                            command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
-                        }
-                        command2.Parameters.AddWithValue("@cmount", txtAmount.Text);
-                        command2.Parameters.AddWithValue("@dcrt", dateC);
-                        command2.Parameters.AddWithValue("@dmod", lblDate.Text);
-                        command2.Parameters.AddWithValue("@fkey", s_key);
-                        command2.Parameters.AddWithValue("@status", 1);
-                        command2.Parameters.AddWithValue("@sy", sygetter());
-                        command2.Parameters.AddWithValue("@ayd", ayd);
+                            command2.Parameters.AddWithValue("@ftype", cmbGradeLevel.Text);
+                            if (comboBox1.Text != "Others")
+                            {
+                                command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
+                                command2.Parameters.AddWithValue("@mdesc", null);
+                            }
+                            else
+                            {
+                                command2.Parameters.AddWithValue("@mdesc", textBox1.Text);
+                                command2.Parameters.AddWithValue("@fdesc", comboBox1.Text);
+                            }
+                            command2.Parameters.AddWithValue("@cmount", txtAmount.Text);
+                            command2.Parameters.AddWithValue("@dcrt", dateC);
+                            command2.Parameters.AddWithValue("@dmod", lblDate.Text);
+                            command2.Parameters.AddWithValue("@fkey", s_key);
+                            command2.Parameters.AddWithValue("@status", 1);
+                            command2.Parameters.AddWithValue("@sy", sygetter());
+                            command2.Parameters.AddWithValue("@ayd", ayd);
 
-                        command2.ExecuteNonQuery();
+                            command2.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Successfully Updated");
+                        reference.Show();
+                        reference.loadFeeDetails();
+                        reference.dataBalanceDetails.ClearSelection();
+                        reference.dataSearch.ClearSelection();
+                        this.Close();
+
                     }
-                    MessageBox.Show("Successfully Updated");
-                    reference.Show();
-                    reference.loadFeeDetails();
-                    reference.dataBalanceDetails.ClearSelection();
-                    reference.dataSearch.ClearSelection();
-                    this.Close();
 
                 }
             }
