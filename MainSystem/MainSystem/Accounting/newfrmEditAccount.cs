@@ -459,10 +459,9 @@ namespace MainSystem.Accounting
             Decimal a = Decimal.Round(Decimal.Parse(texttuiton.Text),2);
             texttuiton.Text = a.ToString("C2", new CultureInfo("en-PH"));*/
         }
-
-        private void texttuiton_TextChanged(object sender, EventArgs e)
+        public void formatter(TextBox tbox)
         {
-            string t = texttuiton.Text;
+            //string t = texttuiton.Text;
             if (texttuiton.Text.Length <= 5)
             {
                 texttuiton.Text = "₱0.00";
@@ -474,6 +473,7 @@ namespace MainSystem.Accounting
             string value = texttuiton.Text.Replace(",", "")
                 .Replace("₱", "").Replace(".", "").TrimStart('0');
             decimal ul;
+
             //Check we are indeed handling a number
             if (decimal.TryParse(value, out ul))
             {
@@ -484,15 +484,82 @@ namespace MainSystem.Accounting
                 texttuiton.Text = string.Format(CultureInfo.CreateSpecificCulture("en-PH"), "{0:C2}", ul);
                 texttuiton.TextChanged += texttuiton_TextChanged;
                 texttuiton.Select(texttuiton.Text.Length, 0);
+
             }
-            else
+        }
+        private void texttuiton_TextChanged(object sender, EventArgs e)
+        {
+            //string t = texttuiton.Text;
+            if (texttuiton.Text.Length <= 5)
             {
                 texttuiton.Text = "₱0.00";
                 texttuiton.SelectionStart = texttuiton.Text.Length; // add some logic if length is 0
                 texttuiton.SelectionLength = 0;
             }
+            //texttuiton.Text = texttuiton.Text.Insert(0, "₱");
+            //Remove previous formatting, or the decimal check will fail including leading zeros
+            string value = texttuiton.Text.Replace(",", "")
+                .Replace("₱", "").Replace(".", "").TrimStart('0');
+            decimal ul;
+            
+            //Check we are indeed handling a number
+            if (decimal.TryParse(value, out ul))
+            {
+                ul /= 100;
+                //Unsub the event so we don't enter a loop
+                texttuiton.TextChanged -= texttuiton_TextChanged;
+                //Format the text as currency
+                texttuiton.Text = string.Format(CultureInfo.CreateSpecificCulture("en-PH"), "{0:C2}", ul);
+                texttuiton.TextChanged += texttuiton_TextChanged;
+                texttuiton.Select(texttuiton.Text.Length, 0);
+                
+            }
         }
-    
 
+        private void texttuiton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textregis_TextChanged(object sender, EventArgs e)
+        {
+
+            //string t = textregis.Text;
+            if (textregis.Text.Length <= 5)
+            {
+                textregis.Text = "₱0.00";
+                textregis.SelectionStart = textregis.Text.Length; // add some logic if length is 0
+                textregis.SelectionLength = 0;
+            }
+            //textregis.Text = textregis.Text.Insert(0, "₱");
+            //Remove previous formatting, or the decimal check will fail including leading zeros
+            string value = textregis.Text.Replace(",", "")
+                .Replace("₱", "").Replace(".", "").TrimStart('0');
+            decimal ul;
+
+            //Check we are indeed handling a number
+            if (decimal.TryParse(value, out ul))
+            {
+                ul /= 100;
+                //Unsub the event so we don't enter a loop
+                textregis.TextChanged -= textregis_TextChanged;
+                //Format the text as currency
+                textregis.Text = string.Format(CultureInfo.CreateSpecificCulture("en-PH"), "{0:C2}", ul);
+                textregis.TextChanged += textregis_TextChanged;
+                textregis.Select(textregis.Text.Length, 0);
+
+            }
+        }
+
+        private void textregis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

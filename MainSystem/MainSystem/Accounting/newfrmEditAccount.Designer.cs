@@ -352,6 +352,7 @@
             this.texttuiton.Size = new System.Drawing.Size(197, 32);
             this.texttuiton.TabIndex = 10;
             this.texttuiton.TextChanged += new System.EventHandler(this.texttuiton_TextChanged);
+            this.texttuiton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.texttuiton_KeyPress);
             this.texttuiton.Leave += new System.EventHandler(this.texttuiton_Leave);
             // 
             // label9
@@ -457,6 +458,8 @@
             this.textregis.Name = "textregis";
             this.textregis.Size = new System.Drawing.Size(197, 32);
             this.textregis.TabIndex = 13;
+            this.textregis.TextChanged += new System.EventHandler(this.textregis_TextChanged);
+            this.textregis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textregis_KeyPress);
             // 
             // panel1
             // 
