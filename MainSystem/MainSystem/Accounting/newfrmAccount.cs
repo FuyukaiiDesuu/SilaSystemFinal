@@ -277,7 +277,10 @@ namespace MainSystem.Accounting
                 var studdetailss = studdetails(dataSearch.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataSearch.Rows[e.RowIndex].Cells["level"].Value.ToString());
                 txtdp.Text = studdetailss["dept"];
                 txtlvl.Text = studdetailss["level"];
+                dic2.Add("level", studdetailss["level"]);
+                //dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
                 txtsct.Text = dataSearch.Rows[e.RowIndex].Cells["section"].Value.ToString();
+                dic2.Add("sect", dataSearch.Rows[e.RowIndex].Cells["section"].Value.ToString());
                 loadBalanceDetails();
                 dataFeeValue.Refresh();
                 btnAddTransaction.Enabled = true;

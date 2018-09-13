@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace MainSystem.Accounting
 {
@@ -36,12 +37,21 @@ namespace MainSystem.Accounting
         }
         private void defaulttext()
         {
+
+            txtStudentName.Text = dict["fullname"];
+            txtsec.Text = dict["sect"];
+            txtlvl.Text = dict["level"];
             txttpb.Text = "₱0.00";
             txtregp.Text = "₱0.00";
             //tuitiontxt.Text = "₱0.00";
             txtbp.Text = "₱0.00";
             txtmp.Text = "₱0.00";
-             
+            texttuiton.Text = "₱0.00";
+            texttuiton.SelectionStart = texttuiton.Text.Length;
+            textbooks.Text = "₱0.00";
+            textmisc.Text = "₱0.00";
+            textregis.Text = "₱0.00";
+
         }
         //string accid;
         private decimal balOthers()
@@ -290,11 +300,11 @@ namespace MainSystem.Accounting
 
         private void textboxfill()
         {
-            txttottu.Text = balTuition().ToString("C", new CultureInfo("en-PH"));
-            txtmp.Text = balOthers().ToString("C", new CultureInfo("en-PH"));
-            txttpb.Text = totalBalancePayable().ToString("C", new CultureInfo("en-PH"));
-            txtregp.Text = balRegis().ToString("C", new CultureInfo("en-PH"));
-            txtbp.Text = balBooks().ToString("C", new CultureInfo("en-PH"));
+            txttottu.Text = balTuition().ToString("C2", new CultureInfo("en-PH"));
+            txtmp.Text = balOthers().ToString("C2", new CultureInfo("en-PH"));
+            txttpb.Text = totalBalancePayable().ToString("C2", new CultureInfo("en-PH"));
+            txtregp.Text = balRegis().ToString("C2", new CultureInfo("en-PH"));
+            txtbp.Text = balBooks().ToString("C2", new CultureInfo("en-PH"));
         }
         private void tuitionBalanceCalculate()
         {
@@ -390,6 +400,8 @@ namespace MainSystem.Accounting
 
         }
 
+
+
         private void label15_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
@@ -408,9 +420,20 @@ namespace MainSystem.Accounting
             this.WindowState = FormWindowState.Minimized;
         }
         public SOAccount soaform;
+        public IDictionary<string, string> dicforsoaform;
         private void button1_Click(object sender, EventArgs e)
         {
-            soaform = new SOAccount();
+            dicforsoaform = new Dictionary<string, string>();
+            dicforsoaform.Add("tuition", texttuiton.Text);
+            dicforsoaform.Add("books", textbooks.Text);
+            dicforsoaform.Add("regis", textregis.Text);
+            dicforsoaform.Add("others", textmisc.Text);
+            dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
+            dicforsoaform.Add("fullname", txtStudentName.Text);
+            dicforsoaform.Add("section", txtsec.Text);
+            dicforsoaform.Add("level", txtlvl.Text);
+
+            soaform = new SOAccount(dicforsoaform);
             soaform.Show();
 
         }
@@ -429,5 +452,47 @@ namespace MainSystem.Accounting
         {
            
         }
+
+        private void texttuiton_Leave(object sender, EventArgs e)
+        {
+            /*
+            Decimal a = Decimal.Round(Decimal.Parse(texttuiton.Text),2);
+            texttuiton.Text = a.ToString("C2", new CultureInfo("en-PH"));*/
+        }
+
+        private void texttuiton_TextChanged(object sender, EventArgs e)
+        {
+            string t = texttuiton.Text;
+            if (texttuiton.Text.Length <= 5)
+            {
+                texttuiton.Text = "₱0.00";
+                texttuiton.SelectionStart = texttuiton.Text.Length; // add some logic if length is 0
+                texttuiton.SelectionLength = 0;
+            }
+            //texttuiton.Text = texttuiton.Text.Insert(0, "₱");
+            //Remove previous formatting, or the decimal check will fail including leading zeros
+            string value = texttuiton.Text.Replace(",", "")
+                .Replace("₱", "").Replace(".", "").TrimStart('0');
+            decimal ul;
+            //Check we are indeed handling a number
+            if (decimal.TryParse(value, out ul))
+            {
+                ul /= 100;
+                //Unsub the event so we don't enter a loop
+                texttuiton.TextChanged -= texttuiton_TextChanged;
+                //Format the text as currency
+                texttuiton.Text = string.Format(CultureInfo.CreateSpecificCulture("en-PH"), "{0:C2}", ul);
+                texttuiton.TextChanged += texttuiton_TextChanged;
+                texttuiton.Select(texttuiton.Text.Length, 0);
+            }
+            else
+            {
+                texttuiton.Text = "₱0.00";
+                texttuiton.SelectionStart = texttuiton.Text.Length; // add some logic if length is 0
+                texttuiton.SelectionLength = 0;
+            }
+        }
+    
+
     }
 }

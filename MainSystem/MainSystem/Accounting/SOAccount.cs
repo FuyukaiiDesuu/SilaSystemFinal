@@ -12,23 +12,36 @@ namespace MainSystem.Accounting
 {
     public partial class SOAccount : Form
     {
-        public SOAccount()
+        public SOAccount(IDictionary<string, string> dic)
         {
             InitializeComponent();
-        }
-
-        private void SOAccount_Load(object sender, EventArgs e)
-        {
+            
             SOA soa = new SOA();
-            soa.SetParameterValue("fname", "BENJO");
-            soa.SetParameterValue("registration", "BENJO");
-            soa.SetParameterValue("tuition", "BENJO");
-            soa.SetParameterValue("others", "BENJO");
-            soa.SetParameterValue("books", "BENJO");
-            soa.SetParameterValue("studlevel", "BENJO");
-            soa.SetParameterValue("datedue", "BENJO");
+            soa.SetParameterValue("fname", dic["fullname"]);
+            soa.SetParameterValue("registration", dic["regis"]);
+            soa.SetParameterValue("tuition", dic["tuition"]);
+            soa.SetParameterValue("others",dic["others"]);
+            soa.SetParameterValue("books", dic["books"]);
+            soa.SetParameterValue("studlevel", dic["level"]);
+            soa.SetParameterValue("section", dic["section"]);
+            soa.SetParameterValue("datedue", dic["date"]);
+            soa.SetParameterValue("totalSum", addeverything(dic["tuition"].TrimStart('₱'), dic["regis"].TrimStart('₱'), dic["others"].TrimStart('₱'), dic["books"].TrimStart('₱')));
+            
             crystalReportViewer1.ReportSource = soa;
             crystalReportViewer1.Refresh();
+        }
+        public string addeverything(string tuition, string regis, string others, string books)
+        {
+            Decimal t = Decimal.Parse(tuition);
+            Decimal r = Decimal.Parse(regis);
+            Decimal o = Decimal.Parse(others);
+            Decimal b = Decimal.Parse(books);
+            string final = Decimal.Round((t + r + o + b), 2).ToString();
+            return "₱"+ final;
+        }
+        private void SOAccount_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

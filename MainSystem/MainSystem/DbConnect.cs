@@ -16,18 +16,18 @@ namespace MainSystem
         //Initialize values
         private void Initialize()
         {
-            /*
+            
             string Server = "localhost";
             string Database = "silasystemdb";
             string Uid = "root";
             string Password = "root";
             string Port = "3306";
-            */
+            /*
             string Server = "192.168.254.108";
             string Database = "silasystemdb";
             string Uid = "user_test";
             string Password = "123456789";
-            string Port = "3306";
+            string Port = "3306";*/
 
             string connectionString;
             connectionString = "SERVER=" + Server + ";" + "DATABASE=" +
