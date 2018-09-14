@@ -85,6 +85,7 @@ namespace MainSystem.Accounting
             dataSearch.Columns["level"].Visible = false;
             dataSearch.Columns["idstddet"].Visible = false;
             dataSearch.Columns["image_path"].Visible = false;
+            dataSearch.Columns["level_dummyval"].Visible = false;
             dataSearch.ReadOnly = true;
             this.dataSearch.Refresh();
         }
@@ -101,58 +102,17 @@ namespace MainSystem.Accounting
                 dataGridView1.DataSource = dt;
             }
         }
-        public void loadBalanceDetails()
+        public string adid;
+        public void loadCpending()
         {
-            /*
-            DataTable balanceDisplay = dbquery.balanceDetails(student_id);
-            this.dataBalanceDetails.DataSource = balanceDisplay;
-
-            dataBalanceDetails.Columns["Name"].HeaderText = "Name";
-            dataBalanceDetails.Columns["fee_type"].HeaderText = "Grade Level";
-            dataBalanceDetails.Columns["current_balance"].HeaderText = "Current Balance";
-            dataBalanceDetails.Columns["paid_amount"].HeaderText = "Amount Paid";
-            dataBalanceDetails.Columns["payment_status"].HeaderText = "Payment Status";
-            dataBalanceDetails.Columns["adid"].Visible = false;
-            dataBalanceDetails.Columns["fid"].Visible = false;
-
-            dataBalanceDetails.ReadOnly = true;*/
-            string adid = dic2["adid"];
             using (MySqlConnection conn = connect.connector())
             {
-              
-                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment " +
-                    "WHERE adid = '" +adid+"' AND syear = '"+syeartempo+"' AND paymentStatus = 1 AND date_paid LIKE '%"+DateTime.Now.ToString("yyyy-MM-dd")+"%';";
-                dt = new DataTable();
-                adapter = new MySqlDataAdapter(query, conn);
-                adapter.Fill(dt);
-                dataBalanceDetails.DataSource = dt;
-            }
-            using (MySqlConnection conn = connect.connector())
-            {
-                string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, paymentStatus FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 2;";
+                string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, adid, paymentStatus FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 2;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
                 dgvpending.DataSource = dt;
             }
-            using (MySqlConnection conn = connect.connector())
-            {
-                string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, paymentStatus FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 3;";
-                dt = new DataTable();
-                adapter = new MySqlDataAdapter(query, conn);
-                adapter.Fill(dt);
-                dgvvoid.DataSource = dt;
-            }
-           
-
-            dataBalanceDetails.Columns["transaction_no"].HeaderText = "Transaction No.";
-            dataBalanceDetails.Columns["date_paid"].HeaderText = "Date Paid";
-            dataBalanceDetails.Columns["amount_paid"].HeaderText = "Amount Paid";
-            dataBalanceDetails.Columns["cheque_no"].HeaderText = "Cheque No.";
-            dataBalanceDetails.Columns["payment_to"].HeaderText = "Payment No.";
-            dataBalanceDetails.Columns["additional_details"].HeaderText = "Additional Details";
-            dataBalanceDetails.Columns["syear"].HeaderText = "School Year";
-
             dgvpending.Columns["transaction_no"].HeaderText = "Transaction No.";
             dgvpending.Columns["date_paid"].HeaderText = "Date Paid";
             dgvpending.Columns["amount_paid"].HeaderText = "Amount Paid";
@@ -161,8 +121,19 @@ namespace MainSystem.Accounting
             dgvpending.Columns["additional_details"].HeaderText = "Additional Details";
             dgvpending.Columns["syear"].HeaderText = "School Year";
             dgvpending.Columns["paymentStatus"].Visible = false;
+            dgvpending.Columns["adid"].Visible = false;
             dgvpending.Columns["pid"].Visible = false;
-
+        }
+        public void loadCvoid()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, adid, paymentStatus FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 3;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dgvvoid.DataSource = dt;
+            }
             dgvvoid.Columns["transaction_no"].HeaderText = "Transaction No.";
             dgvvoid.Columns["date_paid"].HeaderText = "Date Paid";
             dgvvoid.Columns["amount_paid"].HeaderText = "Amount Paid";
@@ -171,8 +142,35 @@ namespace MainSystem.Accounting
             dgvvoid.Columns["additional_details"].HeaderText = "Additional Details";
             dgvvoid.Columns["syear"].HeaderText = "School Year";
             dgvvoid.Columns["paymentStatus"].Visible = false;
+            dgvvoid.Columns["adid"].Visible = false;
             dgvvoid.Columns["pid"].Visible = false;
+        }
+        public void loadPBalance()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
 
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment " +
+                    "WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 1 AND date_paid LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataBalanceDetails.DataSource = dt;
+            }
+            dataBalanceDetails.Columns["transaction_no"].HeaderText = "Transaction No.";
+            dataBalanceDetails.Columns["date_paid"].HeaderText = "Date Paid";
+            dataBalanceDetails.Columns["amount_paid"].HeaderText = "Amount Paid";
+            dataBalanceDetails.Columns["cheque_no"].HeaderText = "Cheque No.";
+            dataBalanceDetails.Columns["payment_to"].HeaderText = "Payment To:";
+            dataBalanceDetails.Columns["additional_details"].HeaderText = "Additional Details";
+            dataBalanceDetails.Columns["syear"].HeaderText = "School Year";
+        }
+        public void loadBalanceDetails()
+        {
+            adid = dic2["adid"];
+            loadCpending();
+            loadCvoid();
+            loadPBalance();
         }
         public void loadPaymentDetails()
         {
@@ -412,6 +410,7 @@ namespace MainSystem.Accounting
             if (e.RowIndex == -1) return;
             button1.Enabled = true;
             dicForPend = new Dictionary<string, string>();
+            dicForPend.Add("adid", dgvpending.Rows[e.RowIndex].Cells["adid"].Value.ToString());
             dicForPend.Add("cno", dgvpending.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString());
             dicForPend.Add("tno", dgvpending.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString());
             dicForPend.Add("apaid", dgvpending.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString());
@@ -548,6 +547,112 @@ namespace MainSystem.Accounting
         private void grpBalanceDetails_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void search_VALIDATECHEQUE(int i)
+        {
+            if(i == 1)
+            {
+                using (MySqlConnection conn = connect.connector())
+                {
+                    string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, paymentStatus, adid" +
+                        " FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 2" +
+                        " AND date_paid LIKE '%"+searchtppending.Value.ToString("yyyy-MM-dd")+"%';";
+                    dt = new DataTable();
+                    adapter = new MySqlDataAdapter(query, conn);
+                    adapter.Fill(dt);
+                    dgvpending.DataSource = dt;
+                    dgvpending.Columns["transaction_no"].HeaderText = "Transaction No.";
+                    dgvpending.Columns["date_paid"].HeaderText = "Date Paid";
+                    dgvpending.Columns["amount_paid"].HeaderText = "Amount Paid";
+                    dgvpending.Columns["cheque_no"].HeaderText = "Cheque No.";
+                    dgvpending.Columns["payment_to"].HeaderText = "Payment No.";
+                    dgvpending.Columns["additional_details"].HeaderText = "Additional Details";
+                    dgvpending.Columns["syear"].HeaderText = "School Year";
+                    dgvpending.Columns["paymentStatus"].Visible = false;
+                    dgvpending.Columns["pid"].Visible = false;
+                    dgvpending.Columns["adid"].Visible = false;
+                }
+            }
+            else
+            {
+                using (MySqlConnection conn = connect.connector())
+                {
+                    string query = "SELECT pid, transaction_no, payment_to, date_paid, amount_paid, cheque_no, additional_details, syear, paymentStatus, adid" +
+                        " FROM silasystemdb.payment WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 2" +
+                        " AND date_paid LIKE '%" + searchtppending.Value.ToString("yyyy-MM-dd") + "%';";
+                    dt = new DataTable();
+                    adapter = new MySqlDataAdapter(query, conn);
+                    adapter.Fill(dt);
+                    dgvvoid.DataSource = dt;
+                    dgvvoid.Columns["transaction_no"].HeaderText = "Transaction No.";
+                    dgvvoid.Columns["date_paid"].HeaderText = "Date Paid";
+                    dgvvoid.Columns["amount_paid"].HeaderText = "Amount Paid";
+                    dgvvoid.Columns["cheque_no"].HeaderText = "Cheque No.";
+                    dgvvoid.Columns["payment_to"].HeaderText = "Payment No.";
+                    dgvvoid.Columns["additional_details"].HeaderText = "Additional Details";
+                    dgvvoid.Columns["syear"].HeaderText = "School Year";
+                    dgvvoid.Columns["paymentStatus"].Visible = false;
+                    dgvvoid.Columns["pid"].Visible = false;
+                    dgvvoid.Columns["adid"].Visible = false;
+                }
+            }
+        }
+        //DGV PENDING SHIZZZ
+        private void button11_Click(object sender, EventArgs e)
+        {
+            search_VALIDATECHEQUE(1);
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            loadCpending();
+        }
+        //DGV PENDING SHIZZZ
+
+        private void btnSRCDGVOID_Click(object sender, EventArgs e)
+        {
+            search_VALIDATECHEQUE(2);
+        }
+        private void btnRLDDGVOID_Click(object sender, EventArgs e)
+        {
+            loadCvoid();
+        }
+
+        private void searchpaymenttxtbox_TextChanged(object sender, EventArgs e)
+        {
+            paymentSearch();
+        }
+
+        private void paymentSearch()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "SELECT transaction_no, date_paid, amount_paid, cheque_no, payment_to, additional_details, syear FROM silasystemdb.payment " +
+                    "WHERE adid = '" + adid + "' AND syear = '" + syeartempo + "' AND paymentStatus = 1 AND date_paid LIKE '%" + DateTime.Now.ToString("yyyy-MM-dd") + "%'" +
+                    " AND payment_to LIKE '%" + searchpaymenttxtbox.Text + "%';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataBalanceDetails.DataSource = dt;
+            }
+            dataBalanceDetails.Columns["transaction_no"].HeaderText = "Transaction No.";
+            dataBalanceDetails.Columns["date_paid"].HeaderText = "Date Paid";
+            dataBalanceDetails.Columns["amount_paid"].HeaderText = "Amount Paid";
+            dataBalanceDetails.Columns["cheque_no"].HeaderText = "Cheque No.";
+            dataBalanceDetails.Columns["payment_to"].HeaderText = "Payment To:";
+            dataBalanceDetails.Columns["additional_details"].HeaderText = "Additional Details";
+            dataBalanceDetails.Columns["syear"].HeaderText = "School Year";
+        }
+        private void btnpaymentsrc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnpaymentrel_Click(object sender, EventArgs e)
+        {
+            loadPBalance();
         }
     }
 }

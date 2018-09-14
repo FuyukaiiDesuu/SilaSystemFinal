@@ -97,11 +97,61 @@ namespace MainSystem.Accounting
 
         private Boolean checker()
         {
-
             return false;
         }
         public TenderedForm tf;
+        public void payermechanism()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                string query2 = "INSERT INTO payment" +
+                    "(payment_type, cheque_no, paymentStatus, amount_paid, date_paid, eid, adid, transaction_no, additional_details, payment_to, syear) " +
+                    "VALUES(@pt, @cqno, @pstatus, @apaid, @dpaid, @eid, @adid, @tansaction_no, @adet, @pto, @sy);";
+                using (var command2 = new MySqlCommand(query2, dbconnection))
+                {
+                    if (cmbPaymentType.Text == "Cheque")
+                    {
+                        command2.Parameters.AddWithValue("@pt", 2);
+                        command2.Parameters.AddWithValue("@cqno", txtChequeNo.Text);
+                        command2.Parameters.AddWithValue("@pstatus", 2);
+                    }
+                    else
+                    {
 
+                        command2.Parameters.AddWithValue("@pt", 1);
+                        command2.Parameters.AddWithValue("@cqno", null);
+                        command2.Parameters.AddWithValue("@pstatus", 1);
+                    }
+                    var a = txtAmount.Text.TrimStart('₱');
+                    command2.Parameters.AddWithValue("@apaid", a);
+                    command2.Parameters.AddWithValue("@dpaid", lblPaymentDate2.Text);
+                    command2.Parameters.AddWithValue("@eid", eid);
+                    command2.Parameters.AddWithValue("@adid", dic["adid"]);
+                    command2.Parameters.AddWithValue("@tansaction_no", SerialMaker());
+                    command2.Parameters.AddWithValue("@pto", cmbPaymentTo.Text);
+                    command2.Parameters.AddWithValue("@adet", txtAdditionalDetails.Text);
+                    command2.Parameters.AddWithValue("@sy", comboBox2.Text);
+
+                    command2.ExecuteNonQuery();
+                }
+            }
+        }
+        public void checkpayer()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                string queryy = "UPDATE accountdetails SET paid_amount = @paidamount WHERE adid = @ayd;";
+                using (var command2 = new MySqlCommand(queryy, dbconnection))
+                {
+                    command2.Parameters.AddWithValue("@ayd", dic["adid"]);
+                    command2.Parameters.AddWithValue("@paidamount", paidforaccount(decimal.Parse(txtAmount.Text.TrimStart('₱'))));
+                    command2.ExecuteNonQuery();
+                }   
+            }
+        }
         private void btnPay_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Do You Want To Proceed To Payment?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
@@ -113,58 +163,11 @@ namespace MainSystem.Accounting
                 tf.reference = this;
                 if (tf.ShowDialog() == DialogResult.OK)
                 {
-                    var dbconnect = new dbConnector();
-                    using (dbconnection = dbconnect.connector())
-                    {
-                        dbconnection.Open();
-                        string query2 = "INSERT INTO payment" +
-                            "(payment_type, cheque_no, paymentStatus, amount_paid, date_paid, eid, adid, transaction_no, additional_details, payment_to, syear) " +
-                            "VALUES(@pt, @cqno, @pstatus, @apaid, @dpaid, @eid, @adid, @tansaction_no, @adet, @pto, @sy);";
-                        using (var command2 = new MySqlCommand(query2, dbconnection))
-                        {
-                            if (cmbPaymentType.Text == "Cheque")
-                            {
-                                command2.Parameters.AddWithValue("@pt", 2);
-                                command2.Parameters.AddWithValue("@cqno", txtChequeNo.Text);
-                                command2.Parameters.AddWithValue("@pstatus", 2);
-                            }
-                            else
-                            {
-
-                                command2.Parameters.AddWithValue("@pt", 1);
-                                command2.Parameters.AddWithValue("@cqno", null);
-                                command2.Parameters.AddWithValue("@pstatus", 1);
-                            }
-                            var a = txtAmount.Text.TrimStart('₱');
-                            command2.Parameters.AddWithValue("@apaid", a);
-                            command2.Parameters.AddWithValue("@dpaid", lblPaymentDate2.Text);
-                            command2.Parameters.AddWithValue("@eid", eid);
-                            command2.Parameters.AddWithValue("@adid", dic["adid"]);
-                            command2.Parameters.AddWithValue("@tansaction_no", SerialMaker());
-                            command2.Parameters.AddWithValue("@pto", cmbPaymentTo.Text);
-                            command2.Parameters.AddWithValue("@adet", txtAdditionalDetails.Text);
-                            command2.Parameters.AddWithValue("@sy", comboBox2.Text);
-
-                            command2.ExecuteNonQuery();
-                        }
-                        using (dbconnection = dbconnect.connector())
-                        {
-                            dbconnection.Open();
-                            string queryy = "UPDATE accountdetails SET paid_amount = @paidamount WHERE adid = @ayd;";
-                            using (var command2 = new MySqlCommand(queryy, dbconnection))
-                            {
-                                command2.Parameters.AddWithValue("@ayd", dic["adid"]);
-                                command2.Parameters.AddWithValue("@paidamount", paidforaccount(decimal.Parse(txtAmount.Text)));
-                                command2.ExecuteNonQuery();
-                            }
-                            MessageBox.Show("Succesfully Paid");
-                            reference.Show();
-                            //reference.loadBalanceDetails(id);
-                            reference.loadBalanceDetails();
-                            reference.loadPaymentDetails();
-                            this.Close();
-                        }
-                    }
+                    reference.Show();
+                    //reference.loadBalanceDetails(id);
+                    reference.loadBalanceDetails();
+                    reference.loadPaymentDetails();
+                    this.Close();
                 }
                 else
                 {
@@ -299,6 +302,46 @@ namespace MainSystem.Accounting
             }
             Decimal a = Decimal.Round(Decimal.Parse(txttendered.Text.TrimStart('₱')), 2);
             txttendered.Text = "₱" + a.ToString("0.##");
+        }
+
+        private void txtSubTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (txttendered.Text.Length <= 1)
+            {
+                txttendered.Text = "₱";
+                txttendered.SelectionStart = txtAmount.Text.Length;
+            }
+        }
+
+        private void txtSubTotal_Leave(object sender, EventArgs e)
+        {
+            if (txtSubTotal.Text.Length <= 1)
+            {
+                txtSubTotal.Text = "₱0.00";
+            }
+            Decimal a = Decimal.Round(Decimal.Parse(txttendered.Text.TrimStart('₱')), 2);
+            txtSubTotal.Text = "₱" + a.ToString("0.##");
+        }
+
+        private void txtSubTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnADDTOCART_Click(object sender, EventArgs e)
+        {
+            int rowindex = dgvcart.Rows.Add();
+            dgvcart.Rows[rowindex].Cells[0].Value = "";
+
         }
     }
 }

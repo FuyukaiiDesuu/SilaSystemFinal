@@ -60,6 +60,17 @@ namespace MainSystem
                     command2.ExecuteNonQuery();
                 }
             }
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                string queryy = "UPDATE accountdetails SET paid_amount = @paidamount WHERE adid = @ayd;";
+                using (var command2 = new MySqlCommand(queryy, dbconnection))
+                {
+                    command2.Parameters.AddWithValue("@ayd", dict["adid"]);
+                    command2.Parameters.AddWithValue("@paidamount", amnt.Text.TrimStart('₱'));
+                    command2.ExecuteNonQuery();
+                }
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -70,6 +81,7 @@ namespace MainSystem
                 {
                     updater();
                     this.Dispose();
+                    MessageBox.Show("PAYMENT HAS ALSO BEEN SUCCESSFULLY REGISTERED INTO ACCOUNT BALANCE!");
                     reference.Show();
                     reference.loadBalanceDetails();
                     reference.loadPaymentDetails();
