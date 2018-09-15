@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtSpecify = new System.Windows.Forms.TextBox();
@@ -47,6 +48,8 @@
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
@@ -57,12 +60,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
-            this.lblPosition = new System.Windows.Forms.Label();
-            this.cmbPosition = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpPersonalDetails.SuspendLayout();
             this.grpEmployeeDetails.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -302,6 +305,32 @@
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
             // 
+            // cmbPosition
+            // 
+            this.cmbPosition.BackColor = System.Drawing.Color.White;
+            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPosition.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Items.AddRange(new object[] {
+            "Admin",
+            "Faculty",
+            "Staff",
+            "Teacher"});
+            this.cmbPosition.Location = new System.Drawing.Point(136, 129);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(180, 27);
+            this.cmbPosition.TabIndex = 11;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblPosition.Location = new System.Drawing.Point(16, 135);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(68, 21);
+            this.lblPosition.TabIndex = 4;
+            this.lblPosition.Text = "Position";
+            // 
             // txtMiddleName
             // 
             this.txtMiddleName.BackColor = System.Drawing.Color.White;
@@ -319,6 +348,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(180, 27);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
             // lblMiddleName
             // 
@@ -407,31 +437,9 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "EMPLOYEE MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
-            // lblPosition
+            // errorProvider1
             // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblPosition.Location = new System.Drawing.Point(16, 135);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(68, 21);
-            this.lblPosition.TabIndex = 4;
-            this.lblPosition.Text = "Position";
-            // 
-            // cmbPosition
-            // 
-            this.cmbPosition.BackColor = System.Drawing.Color.White;
-            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPosition.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.cmbPosition.FormattingEnabled = true;
-            this.cmbPosition.Items.AddRange(new object[] {
-            "Admin",
-            "Faculty",
-            "Staff",
-            "Teacher"});
-            this.cmbPosition.Location = new System.Drawing.Point(136, 129);
-            this.cmbPosition.Name = "cmbPosition";
-            this.cmbPosition.Size = new System.Drawing.Size(180, 27);
-            this.cmbPosition.TabIndex = 11;
+            this.errorProvider1.ContainerControl = this;
             // 
             // newfrmAddEmployee
             // 
@@ -457,6 +465,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,5 +503,6 @@
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
         public System.Windows.Forms.ComboBox cmbPosition;
         private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMiddleName = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFullName = new System.Windows.Forms.Label();
             this.txtMaritalStatus = new System.Windows.Forms.TextBox();
             this.lblMaritalStatus = new System.Windows.Forms.Label();
             this.txtBirthPlace = new System.Windows.Forms.TextBox();
@@ -43,12 +42,11 @@
             this.txtSex = new System.Windows.Forms.TextBox();
             this.lblSex = new System.Windows.Forms.Label();
             this.btnEnable = new System.Windows.Forms.Button();
-            this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
@@ -61,8 +59,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
-            this.lblPosition = new System.Windows.Forms.Label();
-            this.txtPosition = new System.Windows.Forms.TextBox();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
@@ -70,46 +66,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblMiddleName
+            // txtFullName
             // 
-            this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblMiddleName.Location = new System.Drawing.Point(22, 73);
-            this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(115, 21);
-            this.lblMiddleName.TabIndex = 20;
-            this.lblMiddleName.Text = "Middle Name";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.BackColor = System.Drawing.Color.White;
-            this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtLastName.Location = new System.Drawing.Point(154, 98);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(180, 27);
-            this.txtLastName.TabIndex = 14;
-            this.txtLastName.TabStop = false;
+            this.txtFullName.BackColor = System.Drawing.Color.White;
+            this.txtFullName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtFullName.Location = new System.Drawing.Point(114, 32);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.ReadOnly = true;
+            this.txtFullName.Size = new System.Drawing.Size(244, 27);
+            this.txtFullName.TabIndex = 14;
+            this.txtFullName.TabStop = false;
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblStatus.Location = new System.Drawing.Point(22, 170);
+            this.lblStatus.Location = new System.Drawing.Point(22, 104);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(59, 21);
             this.lblStatus.TabIndex = 11;
             this.lblStatus.Text = "Status";
             // 
-            // lblLastName
+            // lblFullName
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblLastName.Location = new System.Drawing.Point(22, 104);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(93, 21);
-            this.lblLastName.TabIndex = 5;
-            this.lblLastName.Text = "Last Name";
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblFullName.Location = new System.Drawing.Point(22, 38);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(86, 21);
+            this.lblFullName.TabIndex = 5;
+            this.lblFullName.Text = "Full Name";
             // 
             // txtMaritalStatus
             // 
@@ -118,7 +104,7 @@
             this.txtMaritalStatus.Location = new System.Drawing.Point(155, 197);
             this.txtMaritalStatus.Name = "txtMaritalStatus";
             this.txtMaritalStatus.ReadOnly = true;
-            this.txtMaritalStatus.Size = new System.Drawing.Size(180, 27);
+            this.txtMaritalStatus.Size = new System.Drawing.Size(197, 27);
             this.txtMaritalStatus.TabIndex = 15;
             this.txtMaritalStatus.TabStop = false;
             // 
@@ -139,7 +125,7 @@
             this.txtBirthPlace.Location = new System.Drawing.Point(155, 65);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.ReadOnly = true;
-            this.txtBirthPlace.Size = new System.Drawing.Size(180, 27);
+            this.txtBirthPlace.Size = new System.Drawing.Size(197, 27);
             this.txtBirthPlace.TabIndex = 13;
             this.txtBirthPlace.TabStop = false;
             // 
@@ -160,7 +146,7 @@
             this.txtReligion.Location = new System.Drawing.Point(155, 164);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.ReadOnly = true;
-            this.txtReligion.Size = new System.Drawing.Size(180, 27);
+            this.txtReligion.Size = new System.Drawing.Size(197, 27);
             this.txtReligion.TabIndex = 11;
             this.txtReligion.TabStop = false;
             // 
@@ -181,7 +167,7 @@
             this.txtContactNo.Location = new System.Drawing.Point(155, 98);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.ReadOnly = true;
-            this.txtContactNo.Size = new System.Drawing.Size(180, 27);
+            this.txtContactNo.Size = new System.Drawing.Size(197, 27);
             this.txtContactNo.TabIndex = 9;
             this.txtContactNo.TabStop = false;
             // 
@@ -202,7 +188,7 @@
             this.txtSex.Location = new System.Drawing.Point(155, 131);
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
-            this.txtSex.Size = new System.Drawing.Size(180, 27);
+            this.txtSex.Size = new System.Drawing.Size(197, 27);
             this.txtSex.TabIndex = 7;
             this.txtSex.TabStop = false;
             // 
@@ -231,16 +217,6 @@
             this.btnEnable.UseVisualStyleBackColor = true;
             this.btnEnable.Click += new System.EventHandler(this.btnEnable_Click);
             // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblFirstName.Location = new System.Drawing.Point(22, 38);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(91, 21);
-            this.lblFirstName.TabIndex = 19;
-            this.lblFirstName.Text = "First Name";
-            // 
             // lblLoggedinas
             // 
             this.lblLoggedinas.AutoSize = true;
@@ -261,35 +237,20 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(154, 164);
+            this.cmbStatus.Location = new System.Drawing.Point(114, 98);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(180, 27);
+            this.cmbStatus.Size = new System.Drawing.Size(244, 27);
             this.cmbStatus.TabIndex = 23;
             this.cmbStatus.TextChanged += new System.EventHandler(this.cmbStatus_TextChanged);
-            // 
-            // txtMiddleName
-            // 
-            this.txtMiddleName.BackColor = System.Drawing.Color.White;
-            this.txtMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtMiddleName.Location = new System.Drawing.Point(154, 65);
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.ReadOnly = true;
-            this.txtMiddleName.Size = new System.Drawing.Size(180, 27);
-            this.txtMiddleName.TabIndex = 22;
-            this.txtMiddleName.TabStop = false;
             // 
             // grpEmployeeDetails
             // 
             this.grpEmployeeDetails.Controls.Add(this.txtPosition);
             this.grpEmployeeDetails.Controls.Add(this.lblPosition);
             this.grpEmployeeDetails.Controls.Add(this.cmbStatus);
-            this.grpEmployeeDetails.Controls.Add(this.txtMiddleName);
-            this.grpEmployeeDetails.Controls.Add(this.txtFirstName);
-            this.grpEmployeeDetails.Controls.Add(this.lblMiddleName);
-            this.grpEmployeeDetails.Controls.Add(this.lblFirstName);
-            this.grpEmployeeDetails.Controls.Add(this.txtLastName);
+            this.grpEmployeeDetails.Controls.Add(this.txtFullName);
             this.grpEmployeeDetails.Controls.Add(this.lblStatus);
-            this.grpEmployeeDetails.Controls.Add(this.lblLastName);
+            this.grpEmployeeDetails.Controls.Add(this.lblFullName);
             this.grpEmployeeDetails.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.grpEmployeeDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.grpEmployeeDetails.Location = new System.Drawing.Point(12, 275);
@@ -299,16 +260,26 @@
             this.grpEmployeeDetails.TabStop = false;
             this.grpEmployeeDetails.Text = "Employee Details";
             // 
-            // txtFirstName
+            // txtPosition
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.White;
-            this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(154, 32);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.ReadOnly = true;
-            this.txtFirstName.Size = new System.Drawing.Size(180, 27);
-            this.txtFirstName.TabIndex = 21;
-            this.txtFirstName.TabStop = false;
+            this.txtPosition.BackColor = System.Drawing.Color.White;
+            this.txtPosition.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtPosition.Location = new System.Drawing.Point(114, 65);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.ReadOnly = true;
+            this.txtPosition.Size = new System.Drawing.Size(244, 27);
+            this.txtPosition.TabIndex = 25;
+            this.txtPosition.TabStop = false;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblPosition.Location = new System.Drawing.Point(22, 73);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(68, 21);
+            this.lblPosition.TabIndex = 24;
+            this.lblPosition.Text = "Position";
             // 
             // lblBirthDate
             // 
@@ -361,7 +332,7 @@
             this.txtBirthDate.Location = new System.Drawing.Point(155, 32);
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.ReadOnly = true;
-            this.txtBirthDate.Size = new System.Drawing.Size(180, 27);
+            this.txtBirthDate.Size = new System.Drawing.Size(197, 27);
             this.txtBirthDate.TabIndex = 16;
             this.txtBirthDate.TabStop = false;
             // 
@@ -462,27 +433,6 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "EMPLOYEE MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
-            // lblPosition
-            // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblPosition.Location = new System.Drawing.Point(22, 137);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(68, 21);
-            this.lblPosition.TabIndex = 24;
-            this.lblPosition.Text = "Position";
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.BackColor = System.Drawing.Color.White;
-            this.txtPosition.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtPosition.Location = new System.Drawing.Point(154, 131);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.ReadOnly = true;
-            this.txtPosition.Size = new System.Drawing.Size(180, 27);
-            this.txtPosition.TabIndex = 25;
-            this.txtPosition.TabStop = false;
-            // 
             // newViewArchivedEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,11 +467,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblMiddleName;
-        public System.Windows.Forms.TextBox txtLastName;
+        public System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFullName;
         public System.Windows.Forms.TextBox txtMaritalStatus;
         private System.Windows.Forms.Label lblMaritalStatus;
         public System.Windows.Forms.TextBox txtBirthPlace;
@@ -533,12 +481,9 @@
         public System.Windows.Forms.TextBox txtSex;
         private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.Button btnEnable;
-        private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblLoggedinas;
         private System.Windows.Forms.ComboBox cmbStatus;
-        public System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.GroupBox grpEmployeeDetails;
-        public System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblBirthDate;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.GroupBox grpPersonalDetails;

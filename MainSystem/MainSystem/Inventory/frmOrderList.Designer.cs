@@ -36,7 +36,6 @@
             this.txtquantity2 = new System.Windows.Forms.TextBox();
             this.txtvendor = new System.Windows.Forms.TextBox();
             this.txtdatereq = new System.Windows.Forms.TextBox();
-            this.txtdate2 = new System.Windows.Forms.TextBox();
             this.txtitemname2 = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblVendor = new System.Windows.Forms.Label();
@@ -44,6 +43,8 @@
             this.lblDate2 = new System.Windows.Forms.Label();
             this.lblItemName2 = new System.Windows.Forms.Label();
             this.lblOrderList = new System.Windows.Forms.Label();
+            this.btnStockIn = new System.Windows.Forms.Button();
+            this.dateDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gboxitemdetails2.SuspendLayout();
             this.SuspendLayout();
@@ -51,20 +52,23 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(290, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(426, 48);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 177);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(607, 177);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // gboxitemdetails2
             // 
+            this.gboxitemdetails2.Controls.Add(this.dateDate);
+            this.gboxitemdetails2.Controls.Add(this.btnStockIn);
             this.gboxitemdetails2.Controls.Add(this.btnback);
             this.gboxitemdetails2.Controls.Add(this.btnRemove);
             this.gboxitemdetails2.Controls.Add(this.btnAdd2);
             this.gboxitemdetails2.Controls.Add(this.txtquantity2);
             this.gboxitemdetails2.Controls.Add(this.txtvendor);
             this.gboxitemdetails2.Controls.Add(this.txtdatereq);
-            this.gboxitemdetails2.Controls.Add(this.txtdate2);
             this.gboxitemdetails2.Controls.Add(this.txtitemname2);
             this.gboxitemdetails2.Controls.Add(this.lblQuantity);
             this.gboxitemdetails2.Controls.Add(this.lblVendor);
@@ -73,14 +77,14 @@
             this.gboxitemdetails2.Controls.Add(this.lblItemName2);
             this.gboxitemdetails2.Location = new System.Drawing.Point(12, 12);
             this.gboxitemdetails2.Name = "gboxitemdetails2";
-            this.gboxitemdetails2.Size = new System.Drawing.Size(272, 213);
+            this.gboxitemdetails2.Size = new System.Drawing.Size(354, 213);
             this.gboxitemdetails2.TabIndex = 1;
             this.gboxitemdetails2.TabStop = false;
             this.gboxitemdetails2.Text = "Item Details";
             // 
             // btnback
             // 
-            this.btnback.Location = new System.Drawing.Point(181, 178);
+            this.btnback.Location = new System.Drawing.Point(262, 178);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 23);
             this.btnback.TabIndex = 12;
@@ -128,13 +132,6 @@
             this.txtdatereq.Name = "txtdatereq";
             this.txtdatereq.Size = new System.Drawing.Size(100, 20);
             this.txtdatereq.TabIndex = 7;
-            // 
-            // txtdate2
-            // 
-            this.txtdate2.Location = new System.Drawing.Point(91, 59);
-            this.txtdate2.Name = "txtdate2";
-            this.txtdate2.Size = new System.Drawing.Size(100, 20);
-            this.txtdate2.TabIndex = 6;
             // 
             // txtitemname2
             // 
@@ -194,11 +191,29 @@
             // 
             this.lblOrderList.AutoSize = true;
             this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderList.Location = new System.Drawing.Point(290, 21);
+            this.lblOrderList.Location = new System.Drawing.Point(422, 21);
             this.lblOrderList.Name = "lblOrderList";
             this.lblOrderList.Size = new System.Drawing.Size(101, 24);
             this.lblOrderList.TabIndex = 2;
             this.lblOrderList.Text = "Order List";
+            // 
+            // btnStockIn
+            // 
+            this.btnStockIn.Location = new System.Drawing.Point(181, 178);
+            this.btnStockIn.Name = "btnStockIn";
+            this.btnStockIn.Size = new System.Drawing.Size(75, 23);
+            this.btnStockIn.TabIndex = 13;
+            this.btnStockIn.Text = "Stock-in";
+            this.btnStockIn.UseVisualStyleBackColor = true;
+            // 
+            // dateDate
+            // 
+            this.dateDate.CustomFormat = "yyyy/MM/dd";
+            this.dateDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateDate.Location = new System.Drawing.Point(91, 60);
+            this.dateDate.Name = "dateDate";
+            this.dateDate.Size = new System.Drawing.Size(100, 20);
+            this.dateDate.TabIndex = 14;
             // 
             // frmOrderList
             // 
@@ -234,8 +249,9 @@
         private System.Windows.Forms.TextBox txtquantity2;
         private System.Windows.Forms.TextBox txtvendor;
         private System.Windows.Forms.TextBox txtdatereq;
-        private System.Windows.Forms.TextBox txtdate2;
         private System.Windows.Forms.TextBox txtitemname2;
         private System.Windows.Forms.Button btnback;
+        private System.Windows.Forms.Button btnStockIn;
+        private System.Windows.Forms.DateTimePicker dateDate;
     }
 }

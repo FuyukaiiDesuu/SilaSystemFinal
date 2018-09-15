@@ -27,7 +27,6 @@ namespace MainSystem.Employee
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             if(cmbReligion.Text == "Others")
             {
                 dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, txtSpecify.Text, cmbMaritalStatus.Text, "1", cmbPosition.Text);
@@ -79,6 +78,21 @@ namespace MainSystem.Employee
         private void label11_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtFirstName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFirstName.Text))
+            {
+                e.Cancel = true;
+                txtFirstName.Focus();
+                errorProvider1.SetError(txtFirstName, "Please enter the first name");
+            }
+            else
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtFirstName, null);
+            }
         }
     }
 }
