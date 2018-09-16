@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpNewPayment = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.btnADDTOCART = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.lblPaymentDate2 = new System.Windows.Forms.Label();
@@ -61,10 +63,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.dgvcart = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnADDTOCART = new System.Windows.Forms.Button();
-            this.txtSubTotal = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ptype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +72,8 @@
             this.syear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adddetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnremovecart = new System.Windows.Forms.Button();
             this.grpNewPayment.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,6 +111,46 @@
             this.grpNewPayment.TabIndex = 9;
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = "Transaction Details";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGreen;
+            this.label3.Location = new System.Drawing.Point(422, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(231, 25);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "ENTER SUB TOTAL DUE:";
+            // 
+            // txtSubTotal
+            // 
+            this.txtSubTotal.Font = new System.Drawing.Font("Tahoma", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubTotal.Location = new System.Drawing.Point(395, 208);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.Size = new System.Drawing.Size(299, 46);
+            this.txtSubTotal.TabIndex = 27;
+            this.txtSubTotal.TextChanged += new System.EventHandler(this.txtSubTotal_TextChanged);
+            this.txtSubTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubTotal_KeyPress);
+            this.txtSubTotal.Leave += new System.EventHandler(this.txtSubTotal_Leave);
+            // 
+            // btnADDTOCART
+            // 
+            this.btnADDTOCART.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnADDTOCART.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnADDTOCART.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnADDTOCART.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnADDTOCART.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnADDTOCART.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADDTOCART.Font = new System.Drawing.Font("Bebas Neue", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADDTOCART.ForeColor = System.Drawing.Color.White;
+            this.btnADDTOCART.Location = new System.Drawing.Point(396, 266);
+            this.btnADDTOCART.Name = "btnADDTOCART";
+            this.btnADDTOCART.Size = new System.Drawing.Size(298, 49);
+            this.btnADDTOCART.TabIndex = 25;
+            this.btnADDTOCART.Text = "ADD TRANSACTION";
+            this.btnADDTOCART.UseVisualStyleBackColor = false;
+            this.btnADDTOCART.Click += new System.EventHandler(this.btnADDTOCART_Click);
             // 
             // label1
             // 
@@ -304,7 +344,7 @@
             this.panel2.Controls.Add(this.txtAmount);
             this.panel2.Controls.Add(this.txttendered);
             this.panel2.Controls.Add(this.lblAmount);
-            this.panel2.Location = new System.Drawing.Point(10, 619);
+            this.panel2.Location = new System.Drawing.Point(10, 683);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(362, 162);
@@ -323,9 +363,11 @@
             // 
             // txtAmount
             // 
+            this.txtAmount.Enabled = false;
             this.txtAmount.Font = new System.Drawing.Font("Tahoma", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.Location = new System.Drawing.Point(10, 31);
             this.txtAmount.Name = "txtAmount";
+            this.txtAmount.ReadOnly = true;
             this.txtAmount.Size = new System.Drawing.Size(299, 46);
             this.txtAmount.TabIndex = 6;
             this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
@@ -361,7 +403,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Bebas Neue", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnCancel.Location = new System.Drawing.Point(385, 710);
+            this.btnCancel.Location = new System.Drawing.Point(385, 774);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(365, 63);
             this.btnCancel.TabIndex = 10;
@@ -376,7 +418,7 @@
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Bebas Neue", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.Black;
-            this.btnPay.Location = new System.Drawing.Point(385, 619);
+            this.btnPay.Location = new System.Drawing.Point(385, 683);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(365, 87);
             this.btnPay.TabIndex = 9;
@@ -463,74 +505,13 @@
             this.syear,
             this.pdate,
             this.adddetails});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcart.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvcart.Location = new System.Drawing.Point(9, 30);
+            this.dgvcart.Location = new System.Drawing.Point(6, 32);
             this.dgvcart.Name = "dgvcart";
             this.dgvcart.ReadOnly = true;
             this.dgvcart.RowHeadersVisible = false;
             this.dgvcart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcart.Size = new System.Drawing.Size(722, 176);
+            this.dgvcart.Size = new System.Drawing.Size(722, 190);
             this.dgvcart.TabIndex = 45;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvcart);
-            this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox1.Location = new System.Drawing.Point(10, 401);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(737, 212);
-            this.groupBox1.TabIndex = 46;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "TRANSACTION/S TO CHECKOUT";
-            // 
-            // btnADDTOCART
-            // 
-            this.btnADDTOCART.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnADDTOCART.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnADDTOCART.Enabled = false;
-            this.btnADDTOCART.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
-            this.btnADDTOCART.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnADDTOCART.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnADDTOCART.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADDTOCART.Font = new System.Drawing.Font("Bebas Neue", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADDTOCART.ForeColor = System.Drawing.Color.White;
-            this.btnADDTOCART.Location = new System.Drawing.Point(396, 266);
-            this.btnADDTOCART.Name = "btnADDTOCART";
-            this.btnADDTOCART.Size = new System.Drawing.Size(298, 49);
-            this.btnADDTOCART.TabIndex = 25;
-            this.btnADDTOCART.Text = "ADD TRANSACTION";
-            this.btnADDTOCART.UseVisualStyleBackColor = false;
-            this.btnADDTOCART.Click += new System.EventHandler(this.btnADDTOCART_Click);
-            // 
-            // txtSubTotal
-            // 
-            this.txtSubTotal.Font = new System.Drawing.Font("Tahoma", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubTotal.Location = new System.Drawing.Point(395, 208);
-            this.txtSubTotal.Name = "txtSubTotal";
-            this.txtSubTotal.Size = new System.Drawing.Size(299, 46);
-            this.txtSubTotal.TabIndex = 27;
-            this.txtSubTotal.TextChanged += new System.EventHandler(this.txtSubTotal_TextChanged);
-            this.txtSubTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubTotal_KeyPress);
-            this.txtSubTotal.Leave += new System.EventHandler(this.txtSubTotal_Leave);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LightGreen;
-            this.label3.Location = new System.Drawing.Point(422, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 25);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "ENTER SUB TOTAL DUE:";
             // 
             // tno
             // 
@@ -586,13 +567,41 @@
             this.adddetails.Name = "adddetails";
             this.adddetails.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnremovecart);
+            this.groupBox1.Controls.Add(this.dgvcart);
+            this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.groupBox1.Location = new System.Drawing.Point(10, 401);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(737, 276);
+            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "TRANSACTION/S TO CHECKOUT";
+            // 
+            // btnremovecart
+            // 
+            this.btnremovecart.BackColor = System.Drawing.Color.DarkRed;
+            this.btnremovecart.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnremovecart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnremovecart.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnremovecart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnremovecart.Location = new System.Drawing.Point(6, 228);
+            this.btnremovecart.Name = "btnremovecart";
+            this.btnremovecart.Size = new System.Drawing.Size(219, 42);
+            this.btnremovecart.TabIndex = 47;
+            this.btnremovecart.Text = "REMOVE SELECTED";
+            this.btnremovecart.UseVisualStyleBackColor = false;
+            this.btnremovecart.Click += new System.EventHandler(this.btnremovecart_Click);
+            // 
             // newfrmAddTransaction
             // 
             this.AcceptButton = this.btnPay;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(764, 792);
+            this.ClientSize = new System.Drawing.Size(764, 851);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);
@@ -667,5 +676,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn syear;
         private System.Windows.Forms.DataGridViewTextBoxColumn pdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn adddetails;
+        private System.Windows.Forms.Button btnremovecart;
     }
 }
