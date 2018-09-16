@@ -75,6 +75,7 @@ namespace MainSystem.Employee
 
         private void btnEnable_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Do you want to save your changes?", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             string status;
             if (cmbStatus.Text == "Active")
             {
@@ -84,14 +85,21 @@ namespace MainSystem.Employee
             {
                 status = "0";
             }
-            dbquery.updateEmployee(firstname, lastname, middlename, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, txtPosition.Text, id);
-            dbquery.updateAccountStatus(id, status, userID);
-            MessageBox.Show("Succesfully Updated");
-            reference.Show();
-            reference.loadEmployeeDetails();
-            reference.dataSearch.ClearSelection();
-            reference.clearText();
-            this.Close();
+            if (result.Equals(DialogResult.OK))
+            {
+                dbquery.updateEmployee(firstname, lastname, middlename, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, txtPosition.Text, id);
+                dbquery.updateAccountStatus(id, status, userID);
+                MessageBox.Show("Succesfully Updated");
+                reference.Show();
+                reference.loadEmployeeDetails();
+                reference.dataSearch.ClearSelection();
+                reference.clearText();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Changes has not been made");
+            }
         }
 
         private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -141,7 +149,7 @@ namespace MainSystem.Employee
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            archivedemployeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
+            
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -160,6 +168,16 @@ namespace MainSystem.Employee
             {
                 return;
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            archivedemployeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
         }
     }
 }

@@ -155,6 +155,8 @@
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
             this.cmbMaritalStatus.Size = new System.Drawing.Size(180, 27);
             this.cmbMaritalStatus.TabIndex = 10;
+            this.cmbMaritalStatus.TextChanged += new System.EventHandler(this.cmbMaritalStatus_TextChanged);
+            this.cmbMaritalStatus.Validating += new System.ComponentModel.CancelEventHandler(this.cmbMaritalStatus_Validating);
             // 
             // cmbReligion
             // 
@@ -173,6 +175,7 @@
             this.cmbReligion.Size = new System.Drawing.Size(180, 27);
             this.cmbReligion.TabIndex = 8;
             this.cmbReligion.TextChanged += new System.EventHandler(this.cmbReligion_TextChanged);
+            this.cmbReligion.Validating += new System.ComponentModel.CancelEventHandler(this.cmbReligion_Validating);
             // 
             // txtContactNo
             // 
@@ -182,6 +185,8 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(180, 27);
             this.txtContactNo.TabIndex = 6;
+            this.txtContactNo.TextChanged += new System.EventHandler(this.txtContactNo_TextChanged);
+            this.txtContactNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtContactNo_Validating);
             // 
             // lblContactNo
             // 
@@ -201,6 +206,8 @@
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.Size = new System.Drawing.Size(180, 27);
             this.txtBirthPlace.TabIndex = 5;
+            this.txtBirthPlace.TextChanged += new System.EventHandler(this.txtBirthPlace_TextChanged);
+            this.txtBirthPlace.Validating += new System.ComponentModel.CancelEventHandler(this.txtBirthPlace_Validating);
             // 
             // lblBirthPlace
             // 
@@ -225,6 +232,8 @@
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(180, 27);
             this.cmbSex.TabIndex = 7;
+            this.cmbSex.TextChanged += new System.EventHandler(this.cmbSex_TextChanged);
+            this.cmbSex.Validating += new System.ComponentModel.CancelEventHandler(this.cmbSex_Validating);
             // 
             // dateBirthDate
             // 
@@ -235,6 +244,8 @@
             this.dateBirthDate.Name = "dateBirthDate";
             this.dateBirthDate.Size = new System.Drawing.Size(180, 27);
             this.dateBirthDate.TabIndex = 4;
+            this.dateBirthDate.ValueChanged += new System.EventHandler(this.dateBirthDate_ValueChanged);
+            this.dateBirthDate.Validating += new System.ComponentModel.CancelEventHandler(this.dateBirthDate_Validating);
             // 
             // lblMaritalStatus
             // 
@@ -320,6 +331,8 @@
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(180, 27);
             this.cmbPosition.TabIndex = 11;
+            this.cmbPosition.TextChanged += new System.EventHandler(this.cmbPosition_TextChanged);
+            this.cmbPosition.Validating += new System.ComponentModel.CancelEventHandler(this.cmbPosition_Validating);
             // 
             // lblPosition
             // 
@@ -339,6 +352,8 @@
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(180, 27);
             this.txtMiddleName.TabIndex = 2;
+            this.txtMiddleName.TextChanged += new System.EventHandler(this.txtMiddleName_TextChanged);
+            this.txtMiddleName.Validating += new System.ComponentModel.CancelEventHandler(this.txtMiddleName_Validating);
             // 
             // txtFirstName
             // 
@@ -348,6 +363,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(180, 27);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
             // lblMiddleName
@@ -378,6 +394,8 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(180, 27);
             this.txtLastName.TabIndex = 3;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
+            this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
             // panel1
             // 
