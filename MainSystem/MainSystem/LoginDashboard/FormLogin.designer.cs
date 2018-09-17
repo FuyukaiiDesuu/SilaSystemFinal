@@ -48,7 +48,7 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Silver;
-            this.txtUsername.Location = new System.Drawing.Point(157, 264);
+            this.txtUsername.Location = new System.Drawing.Point(107, 264);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(347, 43);
             this.txtUsername.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.txtPassword.ForeColor = System.Drawing.Color.Silver;
-            this.txtPassword.Location = new System.Drawing.Point(157, 328);
+            this.txtPassword.Location = new System.Drawing.Point(107, 328);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(347, 43);
@@ -82,7 +82,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button1.Location = new System.Drawing.Point(178, 447);
+            this.button1.Location = new System.Drawing.Point(128, 447);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(230, 84);
             this.button1.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = global::MainSystem.Properties.Resources._lock;
-            this.pictureBox3.Location = new System.Drawing.Point(76, 328);
+            this.pictureBox3.Location = new System.Drawing.Point(26, 328);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(75, 43);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +108,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.user1;
-            this.pictureBox2.Location = new System.Drawing.Point(76, 264);
+            this.pictureBox2.Location = new System.Drawing.Point(26, 264);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 43);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(178, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(128, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(230, 222);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,8 +138,8 @@
             "2020 - 2021",
             "2021 - 2022",
             "2022 - 2023"});
-            this.comboBox2.Location = new System.Drawing.Point(178, 415);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Location = new System.Drawing.Point(128, 415);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(230, 27);
             this.comboBox2.TabIndex = 11;
@@ -152,7 +152,7 @@
             this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(173, 384);
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(123, 384);
             this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
             this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(238, 29);
@@ -165,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(574, 555);
+            this.ClientSize = new System.Drawing.Size(475, 555);
             this.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.pictureBox3);
