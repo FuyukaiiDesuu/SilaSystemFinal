@@ -42,7 +42,7 @@
             // 
             // btnin
             // 
-            this.btnin.Location = new System.Drawing.Point(369, 258);
+            this.btnin.Location = new System.Drawing.Point(279, 258);
             this.btnin.Name = "btnin";
             this.btnin.Size = new System.Drawing.Size(75, 23);
             this.btnin.TabIndex = 2;

@@ -141,21 +141,30 @@ namespace MainSystem
         }
         private void btnin_Click(object sender, EventArgs e)
         {
-            quantity_delivered = Convert.ToInt32(quantity_remaining - quantity_delivered);
+
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
                 using (var com = new MySqlCommand("INSERT INTO stkin(quantity_delivered, quantity_remaining, date, status, id) VALUES(@quantity_delivered, @date, @status, @id, @quantity_remaining)", dbconnection))
                 {
-                    com.Parameters.AddWithValue("@quantity_delivered", txtEnter);
+                    com.Parameters.AddWithValue("@quantity_delivered", txtEnter.Text);
                     com.Parameters.AddWithValue("@quantity_remaining", quantity_remaining.ToString());
                     com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"));
                     com.Parameters.AddWithValue("@status", 1);
                     com.Parameters.AddWithValue("@id", orderlistID);
                     com.ExecuteNonQuery();
                 }
-                
+                using (var com = new MySqlCommand("UPDATE stkin SET  VALUES(@quantity_delivered, @date, @status, @id, @quantity_remaining)", dbconnection))
+                {
+                    com.Parameters.AddWithValue("@quantity_delivered", txtEnter.Text);
+                    com.Parameters.AddWithValue("@quantity_remaining", quantity_remaining.ToString());
+                    com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"));
+                    com.Parameters.AddWithValue("@status", 1);
+                    com.Parameters.AddWithValue("@id", orderlistID);
+                    com.ExecuteNonQuery();
+                }
+
             }
             MessageBox.Show("ITEM STOCKED-IN!");
             readData2();
