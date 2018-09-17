@@ -15,6 +15,7 @@ namespace MainSystem
     {
         
         public frmMain reference { get; set; }
+        public string syear { get; set; }
         //private dbConnector dbconnect = new dbConnector();
         private MySqlConnection dbconnection;
         public string stid;
@@ -33,6 +34,7 @@ namespace MainSystem
         private void EnrollmentConsole_Load(object sender, EventArgs e)
         {
             loadData();
+            lblsy.Text = syear;
             dataGridView1.ClearSelection();
         }
         public void loadData()
@@ -298,6 +300,7 @@ namespace MainSystem
         {
             int count = dataGridView1.Rows.Count;
             addstudentform = new addStudent(counterr());
+            addstudentform.syear = lblsy.Text;
             addstudentform.Show();
             addstudentform.reference = this;
         }
@@ -305,6 +308,7 @@ namespace MainSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             esform = new editStudent(studid2, injector(), imgpath);
+            esform.syear = lblsy.Text;
             esform.Show();
             esform.reference = this;
             //this.Hide();
@@ -354,6 +358,13 @@ namespace MainSystem
             fsm.reference = this;
             fsm.Show();
             
+        }
+        public Enrollment.levelmgmtform lform;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lform = new Enrollment.levelmgmtform();
+            lform.reference = this;
+            lform.Show();
         }
     }
 }

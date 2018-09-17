@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpNewPayment = new System.Windows.Forms.GroupBox();
+            this.lblsy2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.btnADDTOCART = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.lblPaymentDate2 = new System.Windows.Forms.Label();
             this.txtAdditionalDetails = new System.Windows.Forms.TextBox();
             this.lblAddtionalDetails = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblsy = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.dgvcart = new System.Windows.Forms.DataGridView();
@@ -74,6 +75,7 @@
             this.adddetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnremovecart = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpNewPayment.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,11 +86,11 @@
             // 
             // grpNewPayment
             // 
+            this.grpNewPayment.Controls.Add(this.lblsy2);
             this.grpNewPayment.Controls.Add(this.label3);
             this.grpNewPayment.Controls.Add(this.txtSubTotal);
             this.grpNewPayment.Controls.Add(this.btnADDTOCART);
             this.grpNewPayment.Controls.Add(this.label1);
-            this.grpNewPayment.Controls.Add(this.comboBox2);
             this.grpNewPayment.Controls.Add(this.lblPaymentDate2);
             this.grpNewPayment.Controls.Add(this.txtAdditionalDetails);
             this.grpNewPayment.Controls.Add(this.lblAddtionalDetails);
@@ -111,6 +113,19 @@
             this.grpNewPayment.TabIndex = 9;
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = "Transaction Details";
+            this.grpNewPayment.Enter += new System.EventHandler(this.grpNewPayment_Enter);
+            // 
+            // lblsy2
+            // 
+            this.lblsy2.AutoSize = true;
+            this.lblsy2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy2.ForeColor = System.Drawing.Color.White;
+            this.lblsy2.Location = new System.Drawing.Point(144, 245);
+            this.lblsy2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblsy2.Name = "lblsy2";
+            this.lblsy2.Size = new System.Drawing.Size(59, 23);
+            this.lblsy2.TabIndex = 28;
+            this.lblsy2.Text = "label1";
             // 
             // label3
             // 
@@ -162,21 +177,6 @@
             this.label1.Size = new System.Drawing.Size(104, 26);
             this.label1.TabIndex = 24;
             this.label1.Text = "School Year:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "2018 - 2019",
-            "2019 - 2020",
-            "2020 - 2021",
-            "2021 - 2022",
-            "2022 - 2023"});
-            this.comboBox2.Location = new System.Drawing.Point(145, 244);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 27);
-            this.comboBox2.TabIndex = 7;
             // 
             // lblPaymentDate2
             // 
@@ -363,7 +363,6 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Enabled = false;
             this.txtAmount.Font = new System.Drawing.Font("Tahoma", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.Location = new System.Drawing.Point(10, 31);
             this.txtAmount.Name = "txtAmount";
@@ -454,6 +453,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblsy);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -461,6 +462,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(764, 31);
             this.panel1.TabIndex = 42;
+            // 
+            // lblsy
+            // 
+            this.lblsy.AutoSize = true;
+            this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblsy.Location = new System.Drawing.Point(633, 5);
+            this.lblsy.Name = "lblsy";
+            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.TabIndex = 2;
+            this.lblsy.Text = "S.Y ";
             // 
             // pictureBox2
             // 
@@ -548,24 +561,28 @@
             this.studname.HeaderText = "studentname";
             this.studname.Name = "studname";
             this.studname.ReadOnly = true;
+            this.studname.Visible = false;
             // 
             // syear
             // 
             this.syear.HeaderText = "schoolyear";
             this.syear.Name = "syear";
             this.syear.ReadOnly = true;
+            this.syear.Visible = false;
             // 
             // pdate
             // 
             this.pdate.HeaderText = "paymentdate";
             this.pdate.Name = "pdate";
             this.pdate.ReadOnly = true;
+            this.pdate.Visible = false;
             // 
             // adddetails
             // 
             this.adddetails.HeaderText = "adddetails";
             this.adddetails.Name = "adddetails";
             this.adddetails.ReadOnly = true;
+            this.adddetails.Visible = false;
             // 
             // groupBox1
             // 
@@ -594,6 +611,18 @@
             this.btnremovecart.Text = "REMOVE SELECTED";
             this.btnremovecart.UseVisualStyleBackColor = false;
             this.btnremovecart.Click += new System.EventHandler(this.btnremovecart_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label4.Location = new System.Drawing.Point(554, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 23);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "CURRENT S.Y";
             // 
             // newfrmAddTransaction
             // 
@@ -655,7 +684,6 @@
         private System.Windows.Forms.Label lblLoggedinas;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
@@ -667,6 +695,7 @@
         private System.Windows.Forms.Button btnADDTOCART;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtSubTotal;
+        private System.Windows.Forms.Button btnremovecart;
         private System.Windows.Forms.DataGridViewTextBoxColumn tno;
         private System.Windows.Forms.DataGridViewTextBoxColumn ptype;
         private System.Windows.Forms.DataGridViewTextBoxColumn cno;
@@ -676,6 +705,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn syear;
         private System.Windows.Forms.DataGridViewTextBoxColumn pdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn adddetails;
-        private System.Windows.Forms.Button btnremovecart;
+        private System.Windows.Forms.Label lblsy;
+        private System.Windows.Forms.Label lblsy2;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -12,23 +12,12 @@ namespace MainSystem.Accounting
 {
     public partial class SOAccount : Form
     {
-        public SOAccount(IDictionary<string, string> dic)
+        public string syear { get; set; }
+        public IDictionary<string, string> dic;
+        public SOAccount(IDictionary<string, string> d)
         {
             InitializeComponent();
-            
-            SOA soa = new SOA();
-            soa.SetParameterValue("fname", dic["fullname"]);
-            soa.SetParameterValue("registration", dic["regis"]);
-            soa.SetParameterValue("tuition", dic["tuition"]);
-            soa.SetParameterValue("others",dic["others"]);
-            soa.SetParameterValue("books", dic["books"]);
-            soa.SetParameterValue("studlevel", dic["level"]);
-            soa.SetParameterValue("section", dic["section"]);
-            soa.SetParameterValue("datedue", dic["date"]);
-            soa.SetParameterValue("totalSum", addeverything(dic["tuition"].TrimStart('₱'), dic["regis"].TrimStart('₱'), dic["others"].TrimStart('₱'), dic["books"].TrimStart('₱')));
-            
-            crystalReportViewer1.ReportSource = soa;
-            crystalReportViewer1.Refresh();
+            dic = d;
         }
         public string addeverything(string tuition, string regis, string others, string books)
         {
@@ -41,7 +30,20 @@ namespace MainSystem.Accounting
         }
         private void SOAccount_Load(object sender, EventArgs e)
         {
-            
+            SOA soa = new SOA();
+            soa.SetParameterValue("fname", dic["fullname"]);
+            soa.SetParameterValue("registration", dic["regis"]);
+            soa.SetParameterValue("tuition", dic["tuition"]);
+            soa.SetParameterValue("others", dic["others"]);
+            soa.SetParameterValue("books", dic["books"]);
+            soa.SetParameterValue("studlevel", dic["level"]);
+            soa.SetParameterValue("section", dic["section"]);
+            soa.SetParameterValue("datedue", dic["date"]);
+            soa.SetParameterValue("schoolyear", "S.Y " + syear);
+            soa.SetParameterValue("totalSum", addeverything(dic["tuition"].TrimStart('₱'), dic["regis"].TrimStart('₱'), dic["others"].TrimStart('₱'), dic["books"].TrimStart('₱')));
+
+            crystalReportViewer1.ReportSource = soa;
+            crystalReportViewer1.Refresh();
         }
     }
 }

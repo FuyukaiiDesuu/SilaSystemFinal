@@ -17,6 +17,7 @@ namespace MainSystem
         public MySqlDataAdapter adapter;
         public DataTable dt;
         public Accounting.newfrmAccount reference { get; set; }
+        public string syear { get; set; }
         string username;
         string empId;
         public frmCreatevoucher(string empid, string uname)
@@ -29,6 +30,7 @@ namespace MainSystem
         private void frmCreatevoucher_Load(object sender, EventArgs e)
         {
             textBox3.Text = SerialMaker();
+            lblsy.Text = syear;
         }
         private string SerialMaker()
         {
@@ -56,7 +58,7 @@ namespace MainSystem
                 using (dbconnection = dbconnect.connector())
                 {
                     dbconnection.Open();
-                    string query2 = "INSERT INTO disbursement(Voucher_Number, Amount, Details, Date_recorded, empID) VALUES(@vn, @amnt, @details, @date, @eid);";
+                    string query2 = "INSERT INTO disbursement(Voucher_Number, Amount, Details, Date_recorded, empID, syear) VALUES(@vn, @amnt, @details, @date, @eid, @syear);";
                     using (var command2 = new MySqlCommand(query2, dbconnection))
                     {
                         command2.Parameters.AddWithValue("@vn", SerialMaker());
@@ -64,6 +66,7 @@ namespace MainSystem
                         command2.Parameters.AddWithValue("@details", textBox1.Text);
                         command2.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"));
                         command2.Parameters.AddWithValue("@eid", empId);
+                        command2.Parameters.AddWithValue("@syear", syear);
                         command2.ExecuteNonQuery();
                     }
                 }

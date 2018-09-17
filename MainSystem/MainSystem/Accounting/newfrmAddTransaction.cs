@@ -15,6 +15,7 @@ namespace MainSystem.Accounting
     public partial class newfrmAddTransaction : Form
     {
         public Accounting.newfrmAccount reference { get; set; }
+        public string syeartemp { get; set; }
         public MySqlConnection dbconnection;
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
@@ -45,7 +46,7 @@ namespace MainSystem.Accounting
         private void textboxclr()
         {
             cmbPaymentTo.SelectedIndex = -1;
-            comboBox2.SelectedIndex = -1;
+            //comboBox2.SelectedIndex = -1;
             txtAdditionalDetails.Text = "NONE";
             txtSubTotal.Text = "₱0.00";
             txtChequeNo.Clear();
@@ -54,6 +55,8 @@ namespace MainSystem.Accounting
         private void newfrmAddTransaction_Load(object sender, EventArgs e)
         {
             txtTransactionNo.Text = SerialMaker();
+            lblsy.Text = syeartemp;
+            lblsy2.Text = syeartemp;
             timer1.Enabled = true;
             /*
             txtStudentID.Text = id;
@@ -400,7 +403,7 @@ namespace MainSystem.Accounting
                 textboxadder(txtSubTotal.Text);
                 dgvcart.Rows[rowindex].Cells[4].Value = cmbPaymentTo.Text;
                 dgvcart.Rows[rowindex].Cells[5].Value = txtStudentName.Text;
-                dgvcart.Rows[rowindex].Cells[6].Value = comboBox2.Text;
+                dgvcart.Rows[rowindex].Cells[6].Value = lblsy2.Text;
                 dgvcart.Rows[rowindex].Cells[7].Value = lblPaymentDate2.Text;
                 dgvcart.Rows[rowindex].Cells[8].Value = txtAdditionalDetails.Text;
                 textboxclr();
@@ -423,6 +426,11 @@ namespace MainSystem.Accounting
                 }
             }
            
+        }
+
+        private void grpNewPayment_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

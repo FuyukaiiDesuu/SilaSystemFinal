@@ -70,8 +70,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textregis = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblsy = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.grpStudentAccount.SuspendLayout();
             this.grpStudentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -570,6 +572,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lblsy);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -577,6 +581,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(655, 31);
             this.panel1.TabIndex = 43;
+            // 
+            // lblsy
+            // 
+            this.lblsy.AutoSize = true;
+            this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblsy.Location = new System.Drawing.Point(553, 5);
+            this.lblsy.Name = "lblsy";
+            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.TabIndex = 1;
+            this.lblsy.Text = "S.Y ";
             // 
             // pictureBox2
             // 
@@ -599,6 +615,18 @@
             this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(409, 23);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label12.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label12.Location = new System.Drawing.Point(473, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 23);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "CURRENT S.Y";
             // 
             // newfrmEditAccount
             // 
@@ -681,5 +709,7 @@
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblsy;
+        private System.Windows.Forms.Label label12;
     }
 }

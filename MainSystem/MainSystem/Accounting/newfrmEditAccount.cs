@@ -26,14 +26,13 @@ namespace MainSystem.Accounting
         //public string name { get; set; }
         //public string uname { get; set; }
         public IDictionary<string, string> dict;
-        public string TEMPORARYSYEAR = "2018 - 2019";
+        public string TEMPORARYSYEAR { get; set; }
         public newfrmEditAccount(IDictionary<string, string> d)
         {
             InitializeComponent();
             dict = d;
             defaulttext();
-            textboxfill();
-            sygetter();
+            //sygetter();
         }
         private void defaulttext()
         {
@@ -62,7 +61,8 @@ namespace MainSystem.Accounting
 
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Others' " +
-                    "AND Status = 1;";
+                    "AND Status = 1 " +
+                    "AND syear = '" + TEMPORARYSYEAR + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -114,7 +114,8 @@ namespace MainSystem.Accounting
 
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Tuition' " +
-                    "AND Status = 1;";
+                    "AND Status = 1 " +
+                    "AND syear = '" + TEMPORARYSYEAR + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -167,7 +168,8 @@ namespace MainSystem.Accounting
 
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Registration' " +
-                    "AND Status = 1;";
+                    "AND Status = 1 " +
+                    "AND syear = '" + TEMPORARYSYEAR + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -218,7 +220,8 @@ namespace MainSystem.Accounting
 
                 string query = "SELECT * FROM feevalues WHERE f_key = '" + dict["fid"] + "' " +
                     "AND fee_description = 'Books' " +
-                    "AND Status = 1;";
+                    "AND Status = 1 " +
+                    "AND syear = '"+TEMPORARYSYEAR+"';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -345,6 +348,9 @@ namespace MainSystem.Accounting
         }
         private void newfrmEditAccount_Load(object sender, EventArgs e)
         {
+            lblsy.Text = TEMPORARYSYEAR;
+            //MessageBox.Show(TEMPORARYSYEAR);
+            textboxfill();
             /*
             timer1.Enabled = true;
             lblUser.Text = uname;
@@ -433,6 +439,7 @@ namespace MainSystem.Accounting
                 dicforsoaform.Add("level", txtlvl.Text);
 
                 soaform = new SOAccount(dicforsoaform);
+                soaform.syear = lblsy.Text;
                 soaform.Show();
             }
         }

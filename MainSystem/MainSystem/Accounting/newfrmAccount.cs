@@ -13,7 +13,9 @@ namespace MainSystem.Accounting
 {
     public partial class newfrmAccount : Form
     {
+       
         public frmMain reference { get; set; }
+        public string syeartempo { get; set; }
         Accounting.DbQueries dbquery = new Accounting.DbQueries();
         public string uname;
         //string fullname;
@@ -34,7 +36,7 @@ namespace MainSystem.Accounting
         public newfrmAccount(string unam, string empid)
         {
             InitializeComponent();
-            loadStudentProfileTable();
+            
             eid = empid;
             lblUser.Text = unam;
             uname = unam;
@@ -42,6 +44,8 @@ namespace MainSystem.Accounting
 
         private void newfrmAccount_Load(object sender, EventArgs e)
         {
+            lblsy.Text = syeartempo;
+            loadStudentProfileTable();
             loadFeeDetails();
             loadDisbursementtbl();
             clearfields();
@@ -59,14 +63,21 @@ namespace MainSystem.Accounting
         }
         public void loadStudentProfileTable()
         {
-            DataTable studentDisplay = dbquery.studentProfileDisplay();
-            this.dataSearch.DataSource = studentDisplay;
-
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM studentprofile INNER JOIN studdetails ON studentprofile.idstuddet = studdetails.idstddet " +
+                    "INNER JOIN accountdetails ON accountdetails.spid = studentprofile.idstudentprofile WHERE studentprofile.Status = 1 " +
+                    "AND studdetails.school_year = '"+lblsy.Text+"';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataSearch.DataSource = dt;
+            }
             dataSearch.Columns["idstudentprofile"].Visible = false;
             //dataSearch.Columns["FirstName"].Visible = false;
             //dataSearch.Columns["LastName"].Visible = false;
             //dataSearch.Columns["MiddleName"].Visible = false;
-            dataSearch.Columns["fullname"].Visible = false;
+            //dataSearch.Columns["fullname"].Visible = false;
             dataSearch.Columns["DateOfBirth"].Visible = false;
             dataSearch.Columns["PlaceOfBirth"].Visible = false;
             dataSearch.Columns["Sex"].Visible = false;
@@ -81,21 +92,21 @@ namespace MainSystem.Accounting
             dataSearch.Columns["did"].Visible = false;
             dataSearch.Columns["fid"].Visible = false;
             dataSearch.Columns["department"].Visible = false;
-            dataSearch.Columns["section"].Visible = false;
+            //dataSearch.Columns["section"].Visible = false;
             dataSearch.Columns["level"].Visible = false;
             dataSearch.Columns["idstddet"].Visible = false;
             dataSearch.Columns["image_path"].Visible = false;
-            dataSearch.Columns["level_dummyval"].Visible = false;
+            dataSearch.Columns["level_dummyval"].HeaderText = "Level";
             dataSearch.ReadOnly = true;
             this.dataSearch.Refresh();
         }
-        public string syeartempo = "2018 - 2019";
+       
         public void loadDisbursementtbl()
         {
             using (MySqlConnection conn = connect.connector())
             {
 
-                string query = "SELECT * FROM disbursement;";
+                string query = "SELECT * FROM disbursement WHERE syear = '"+syeartempo+"';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -284,10 +295,11 @@ namespace MainSystem.Accounting
                 txtfn.Text = dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["FirstName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
                 var studdetailss = studdetails(dataSearch.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataSearch.Rows[e.RowIndex].Cells["level"].Value.ToString());
                 txtdp.Text = studdetailss["dept"];
-                txtlvl.Text = studdetailss["level"];
+                //txtlvl.Text = studdetailss["level"];
                 dic2.Add("level", studdetailss["level"]);
+                dic2.Add("dept", studdetailss["dept"]);
                 //dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
-                txtsct.Text = dataSearch.Rows[e.RowIndex].Cells["section"].Value.ToString();
+                //txtsct.Text = dataSearch.Rows[e.RowIndex].Cells["section"].Value.ToString();
                 dic2.Add("sect", dataSearch.Rows[e.RowIndex].Cells["section"].Value.ToString());
                 loadBalanceDetails();
                 dataFeeValue.Refresh();
@@ -308,6 +320,7 @@ namespace MainSystem.Accounting
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
             transac = new newfrmAddTransaction(dic2, eid, uname);
+            transac.syeartemp = lblsy.Text;
             transac.Show();
             transac.reference = this;
         }
@@ -323,6 +336,7 @@ namespace MainSystem.Accounting
             DataTable holder = dbquery.User(uname);
             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
             addfee = new Accounting.frmAddFee(true);
+            addfee.syear = lblsy.Text;
             addfee.uname = uname;
             addfee.Show();
             addfee.reference = this;
@@ -339,6 +353,7 @@ namespace MainSystem.Accounting
             editaccount.id = txtStudentID.Text.ToString();
             editaccount.name = fullname.ToString();*/
             editaccount = new Accounting.newfrmEditAccount(dic2);
+            editaccount.TEMPORARYSYEAR = lblsy.Text;
             editaccount.Show();
             editaccount.reference = this;
         }
@@ -367,6 +382,7 @@ namespace MainSystem.Accounting
         {
             viewpaymenthistory = new Accounting.frmViewPaymentHistory(dic2);
             viewpaymenthistory.uname = uname;
+            viewpaymenthistory.syeartempo = this.syeartempo;
             viewpaymenthistory.Show();
             this.Hide();
             viewpaymenthistory.reference = this;
@@ -376,6 +392,7 @@ namespace MainSystem.Accounting
         {
             addfee = new Accounting.frmAddFee(false, dic);
             addfee.uname = uname;
+            addfee.syear = lblsy.Text;
             addfee.dtadd = dt;
             addfee.Show();
             addfee.reference = this;
@@ -497,6 +514,7 @@ namespace MainSystem.Accounting
         private void btnAddDisb_Click(object sender, EventArgs e)
         {
             fcv = new frmCreatevoucher(eid, uname);
+            fcv.syear = lblsy.Text;
             fcv.Show();
             fcv.reference = this;
         }
@@ -653,6 +671,112 @@ namespace MainSystem.Accounting
         private void btnpaymentrel_Click(object sender, EventArgs e)
         {
             loadPBalance();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void loadStudentListDeactivated()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM studentprofile INNER JOIN studdetails ON studentprofile.idstuddet = studdetails.idstddet " +
+                    "INNER JOIN accountdetails ON accountdetails.spid = studentprofile.idstudentprofile WHERE studentprofile.Status = 0 " +
+                    "AND studdetails.school_year = '" + lblsy.Text + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataSearch.DataSource = dt;
+            }
+            dataSearch.Columns["idstudentprofile"].Visible = false;
+            //dataSearch.Columns["FirstName"].Visible = false;
+            //dataSearch.Columns["LastName"].Visible = false;
+            //dataSearch.Columns["MiddleName"].Visible = false;
+            //dataSearch.Columns["fullname"].Visible = false;
+            dataSearch.Columns["DateOfBirth"].Visible = false;
+            dataSearch.Columns["PlaceOfBirth"].Visible = false;
+            dataSearch.Columns["Sex"].Visible = false;
+            dataSearch.Columns["Religion"].Visible = false;
+            dataSearch.Columns["NickName"].Visible = false;
+            dataSearch.Columns["Status"].Visible = false;
+            dataSearch.Columns["idstuddet"].Visible = false;
+            dataSearch.Columns["adid"].Visible = false;
+            dataSearch.Columns["paid_amount"].Visible = false;
+            dataSearch.Columns["payment_status"].Visible = false;
+            dataSearch.Columns["spid"].Visible = false;
+            dataSearch.Columns["did"].Visible = false;
+            dataSearch.Columns["fid"].Visible = false;
+            dataSearch.Columns["department"].Visible = false;
+            //dataSearch.Columns["section"].Visible = false;
+            dataSearch.Columns["level"].Visible = false;
+            dataSearch.Columns["idstddet"].Visible = false;
+            dataSearch.Columns["image_path"].Visible = false;
+            dataSearch.Columns["level_dummyval"].HeaderText = "Level";
+            dataSearch.ReadOnly = true;
+            this.dataSearch.Refresh();
+        }
+        private void searchQueryStudent1(string a)
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM studentprofile INNER JOIN studdetails ON studentprofile.idstuddet = studdetails.idstddet " +
+                    "INNER JOIN accountdetails ON accountdetails.spid = studentprofile.idstudentprofile WHERE FirstName LIKE '%"+a+"%' OR LastName LIKE '%"+a+"%' " +
+                    "AND studentprofile.Status = 1 " +
+                    "AND studdetails.school_year = '" + lblsy.Text + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataSearch.DataSource = dt;
+            }
+            dataSearch.Columns["idstudentprofile"].Visible = false;
+            //dataSearch.Columns["FirstName"].Visible = false;
+            //dataSearch.Columns["LastName"].Visible = false;
+            //dataSearch.Columns["MiddleName"].Visible = false;
+            //dataSearch.Columns["fullname"].Visible = false;
+            dataSearch.Columns["DateOfBirth"].Visible = false;
+            dataSearch.Columns["PlaceOfBirth"].Visible = false;
+            dataSearch.Columns["Sex"].Visible = false;
+            dataSearch.Columns["Religion"].Visible = false;
+            dataSearch.Columns["NickName"].Visible = false;
+            dataSearch.Columns["Status"].Visible = false;
+            dataSearch.Columns["idstuddet"].Visible = false;
+            dataSearch.Columns["adid"].Visible = false;
+            dataSearch.Columns["paid_amount"].Visible = false;
+            dataSearch.Columns["payment_status"].Visible = false;
+            dataSearch.Columns["spid"].Visible = false;
+            dataSearch.Columns["did"].Visible = false;
+            dataSearch.Columns["fid"].Visible = false;
+            dataSearch.Columns["department"].Visible = false;
+            //dataSearch.Columns["section"].Visible = false;
+            dataSearch.Columns["level"].Visible = false;
+            dataSearch.Columns["idstddet"].Visible = false;
+            dataSearch.Columns["image_path"].Visible = false;
+            dataSearch.Columns["level_dummyval"].HeaderText = "Level";
+            //dataSearch.Columns["level_dummyval"].Visible = false;
+            dataSearch.ReadOnly = true;
+            this.dataSearch.Refresh();
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                loadStudentListDeactivated();
+            }
+            else
+            {
+                loadStudentProfileTable();
+            }
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            searchQueryStudent1(txtSearch.Text);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

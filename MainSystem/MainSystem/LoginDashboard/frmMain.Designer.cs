@@ -33,6 +33,8 @@
             this.lblusername = new System.Windows.Forms.Label();
             this.btnLGOUT = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSY = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -102,6 +104,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblSY);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -109,6 +113,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(983, 31);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblSY
+            // 
+            this.lblSY.AutoSize = true;
+            this.lblSY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblSY.Location = new System.Drawing.Point(649, 9);
+            this.lblSY.Name = "lblSY";
+            this.lblSY.Size = new System.Drawing.Size(114, 16);
+            this.lblSY.TabIndex = 16;
+            this.lblSY.Text = "CURRENT S.Y:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label2.Location = new System.Drawing.Point(548, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "CURRENT S.Y:";
             // 
             // pictureBox1
             // 
@@ -306,5 +335,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblSY;
+        private System.Windows.Forms.Label label2;
     }
 }

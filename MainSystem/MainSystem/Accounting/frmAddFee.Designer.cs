@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpAddFee = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lblsy2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -49,7 +49,9 @@
             this.lblDate2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblsy = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpAddFee.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -57,7 +59,7 @@
             // 
             // grpAddFee
             // 
-            this.grpAddFee.Controls.Add(this.comboBox2);
+            this.grpAddFee.Controls.Add(this.lblsy2);
             this.grpAddFee.Controls.Add(this.label1);
             this.grpAddFee.Controls.Add(this.label3);
             this.grpAddFee.Controls.Add(this.textBox1);
@@ -77,20 +79,17 @@
             this.grpAddFee.Text = "Add Fee";
             this.grpAddFee.Enter += new System.EventHandler(this.grpAddFee_Enter);
             // 
-            // comboBox2
+            // lblsy2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "2018 - 2019",
-            "2019 - 2020",
-            "2020 - 2021",
-            "2021 - 2022",
-            "2022 - 2023"});
-            this.comboBox2.Location = new System.Drawing.Point(257, 32);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 27);
-            this.comboBox2.TabIndex = 1;
+            this.lblsy2.AutoSize = true;
+            this.lblsy2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy2.ForeColor = System.Drawing.Color.White;
+            this.lblsy2.Location = new System.Drawing.Point(257, 35);
+            this.lblsy2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblsy2.Name = "lblsy2";
+            this.lblsy2.Size = new System.Drawing.Size(59, 23);
+            this.lblsy2.TabIndex = 30;
+            this.lblsy2.Text = "label1";
             // 
             // label1
             // 
@@ -193,7 +192,7 @@
             "Grade 9",
             "Grade 10",
             "Grade 11",
-            "Grade 10"});
+            "Grade 12"});
             this.cmbGradeLevel.Location = new System.Drawing.Point(257, 67);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(200, 27);
@@ -290,7 +289,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.lblsy);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -308,17 +309,41 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // lblsy
+            // 
+            this.lblsy.AutoSize = true;
+            this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblsy.Location = new System.Drawing.Point(539, 5);
+            this.lblsy.Name = "lblsy";
+            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.TabIndex = 29;
+            this.lblsy.Text = "S.Y ";
+            // 
             // lblSilaSchoolManagementSoftware
             // 
             this.lblSilaSchoolManagementSoftware.AutoSize = true;
             this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(49, 5);
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(43, 5);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
             this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(409, 23);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label2.Location = new System.Drawing.Point(459, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 23);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "CURRENT S.Y";
             // 
             // frmAddFee
             // 
@@ -370,9 +395,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
+        private System.Windows.Forms.Label lblsy2;
+        private System.Windows.Forms.Label lblsy;
+        private System.Windows.Forms.Label label2;
     }
 }

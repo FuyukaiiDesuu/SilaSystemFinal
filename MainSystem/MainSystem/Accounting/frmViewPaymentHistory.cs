@@ -21,7 +21,7 @@ namespace MainSystem.Accounting
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
         DataTable dt;
-        public string syeartempo = "2018 - 2019";
+        public string syeartempo { get; set; }
         public frmViewPaymentHistory(IDictionary<string,string> dict)
         {
             InitializeComponent();

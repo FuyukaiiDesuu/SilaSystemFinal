@@ -37,8 +37,10 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblsy = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -141,6 +143,18 @@
             this.panel1.Size = new System.Drawing.Size(608, 31);
             this.panel1.TabIndex = 39;
             // 
+            // lblsy
+            // 
+            this.lblsy.AutoSize = true;
+            this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblsy.Location = new System.Drawing.Point(527, 34);
+            this.lblsy.Name = "lblsy";
+            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.TabIndex = 40;
+            this.lblsy.Text = "S.Y ";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
@@ -163,6 +177,18 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label4.Location = new System.Drawing.Point(447, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 23);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "CURRENT S.Y";
+            // 
             // frmCreatevoucher
             // 
             this.AcceptButton = this.btnAddFee;
@@ -170,6 +196,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(608, 416);
+            this.Controls.Add(this.lblsy);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
@@ -207,5 +235,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
+        private System.Windows.Forms.Label lblsy;
+        private System.Windows.Forms.Label label4;
     }
 }

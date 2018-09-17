@@ -15,6 +15,7 @@ namespace MainSystem
     {
         
         public EnrollmentConsole reference { get; set; }
+        public string syear { get; set; }
         public string idstud;
         public string imgpath;
         public editStudent(string idstudent, IDictionary<string, string> dic, string imgpth)
@@ -75,43 +76,43 @@ namespace MainSystem
                     break;
                 case "Grade 3":
                     studdet.Add("level", "23");
-                    studdet.Add("feelevel", "6");
+                    studdet.Add("feelevel", "7");
                     break;
                 case "Grade 4":
                     studdet.Add("level", "24");
-                    studdet.Add("feelevel", "7");
+                    studdet.Add("feelevel", "8");
                     break;
                 case "Grade 5":
                     studdet.Add("level", "25");
-                    studdet.Add("feelevel", "8");
+                    studdet.Add("feelevel", "9");
                     break;
                 case "Grade 6":
                     studdet.Add("level", "26");
-                    studdet.Add("feelevel", "9");
+                    studdet.Add("feelevel", "10");
                     break;
                 case "Grade 7":
                     studdet.Add("level", "31");
-                    studdet.Add("feelevel", "10");
+                    studdet.Add("feelevel", "11");
                     break;
                 case "Grade 8":
                     studdet.Add("level", "32");
-                    studdet.Add("feelevel", "11");
+                    studdet.Add("feelevel", "12");
                     break;
                 case "Grade 9":
                     studdet.Add("level", "33");
-                    studdet.Add("feelevel", "12");
+                    studdet.Add("feelevel", "13");
                     break;
                 case "Grade 10":
                     studdet.Add("level", "34");
-                    studdet.Add("feelevel", "13");
+                    studdet.Add("feelevel", "14");
                     break;
                 case "Grade 11":
                     studdet.Add("level", "41");
-                    studdet.Add("feelevel", "14");
+                    studdet.Add("feelevel", "15");
                     break;
                 case "Grade 12":
                     studdet.Add("level", "42");
-                    studdet.Add("feelevel", "15");
+                    studdet.Add("feelevel", "16");
                     break;
             }
           
@@ -138,12 +139,13 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@imgpt", imgpath);
                     command.ExecuteNonQuery();
                 }
-                using (var command = new MySqlCommand("UPDATE studdetails SET department = @dept, level = @lvl, school_year = @sy WHERE idstddet = @ayd", dbconnection))
+                using (var command = new MySqlCommand("UPDATE studdetails SET level_dummyval = @lvldval, department = @dept, level = @lvl WHERE idstddet = @ayd", dbconnection))
                 {
                     command.Parameters.AddWithValue("@ayd", idstud);
                     command.Parameters.AddWithValue("@dept", studdet["dept"]);
                     command.Parameters.AddWithValue("@lvl", studdet["level"]);
-                    command.Parameters.AddWithValue("@sy", sygetter());
+                    //command.Parameters.AddWithValue("@sy", lblsy.Text);
+                    command.Parameters.AddWithValue("@lvldval", comboBox2.Text);
                     //need to update query to insert department integer value
                     command.ExecuteNonQuery();
                 }

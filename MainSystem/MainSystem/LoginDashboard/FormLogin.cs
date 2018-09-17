@@ -43,47 +43,56 @@ namespace MainSystem
 
         }
         string uname;
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            var dbconnector = new dbConnector();
-            using (dbconnect = dbconnector.connector())
+            if(comboBox2.Text != "")
             {
-                dbconnect.Open();
-                MySqlCommand query = new MySqlCommand("SELECT * from usertable inner join employee on " +
-                    "usertable.idemp = employee.empID " +
-                    "where usertable.username = '"+ txtUsername.Text +"' " +
-                    "and usertable.password = '"+ txtPassword.Text +"';", dbconnect);
-                MySqlDataAdapter listener = new MySqlDataAdapter(query);
-                DataTable holder = new DataTable();
-                listener.Fill(holder);
-               
-                //MessageBox.Show(perm.Substring(0,1));
-
-                if (holder.Rows.Count > 0)
+                var dbconnector = new dbConnector();
+                using (dbconnect = dbconnector.connector())
                 {
-                    string perm = holder.Rows[0]["restrictions"].ToString();
-                    //string[] split = perm.Split(' ')
-                    if(statusFlag())
+                    dbconnect.Open();
+                    MySqlCommand query = new MySqlCommand("SELECT * from usertable inner join employee on " +
+                        "usertable.idemp = employee.empID " +
+                        "where usertable.username = '" + txtUsername.Text + "' " +
+                        "and usertable.password = '" + txtPassword.Text + "';", dbconnect);
+                    MySqlDataAdapter listener = new MySqlDataAdapter(query);
+                    DataTable holder = new DataTable();
+                    listener.Fill(holder);
+
+                    //MessageBox.Show(perm.Substring(0,1));
+
+                    if (holder.Rows.Count > 0)
                     {
-                        uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-                        MessageBox.Show("Succesful Login!");
-                        frmmain = new frmMain(uname, perm);
-                        frmmain.Show();
-                        frmmain.reference = this;
-                        this.Hide();
+                        string perm = holder.Rows[0]["restrictions"].ToString();
+                        //string[] split = perm.Split(' ')
+                        if (statusFlag())
+                        {
+                            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                            MessageBox.Show("Succesful Login!");
+                            frmmain = new frmMain(uname, perm);
+                            frmmain.schoolyear = comboBox2.Text;
+                            frmmain.Show();
+                            frmmain.reference = this;
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("This Account is no longer active");
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("This Account is no longer active");
+                        MessageBox.Show("Wrong Credentials!");
                     }
-
-                }
-                else
-                {
-                    MessageBox.Show("Wrong Credentials!");
                 }
             }
+            else
+            {
+                MessageBox.Show("SCHOOLYEAR HAS NOT BEEN SELECTED!");
+            }
+           
            
         }
 
@@ -201,6 +210,19 @@ namespace MainSystem
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("SELECTED SCHOOL YEAR SELECTED IS " + comboBox2.Text, "PLEASE CONFIRM!", MessageBoxButtons.YesNo);
+            if(res == DialogResult.Yes)
+            {
+
+            }
+            else
+            {
+                comboBox2.SelectedIndex = -1;
+            }
         }
     }
 }

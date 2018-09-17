@@ -15,6 +15,7 @@ namespace MainSystem
     {
 
         public EnrollmentConsole reference { get; set; }
+        public string syear { get; set; }
         public string studid;
         public addStudent(int id)
         {
@@ -26,6 +27,7 @@ namespace MainSystem
         public MySqlConnection dbconnection;
         private void addStudent_Load(object sender, EventArgs e)
         {
+            lblsy.Text = syear;
             createdefault();
             gboxEnabler();
             txtstno.Text = studid;
@@ -88,14 +90,15 @@ namespace MainSystem
                     command.ExecuteNonQuery();
                 }
                 IDictionary<string, string> dic = comboboxpicker();
-                using (var command = new MySqlCommand("UPDATE studdetails set department = @dpt, level = @lvl, school_year = @sy where idstddet = @aydd;", dbconnection))
+                using (var command = new MySqlCommand("UPDATE studdetails set level_dummyval = @lvldval, department = @dpt, level = @lvl, school_year = @sy where idstddet = @aydd;", dbconnection))
                 {
 
                     command.Parameters.AddWithValue("@dpt", dic["dept"]);
                     command.Parameters.AddWithValue("@lvl", dic["level"]);
                     Int32 temp = Convert.ToInt32(sygetter().ToString()) + 1;
-                    command.Parameters.AddWithValue("@sy", sygetter().ToString() + "-" + temp.ToString());
+                    command.Parameters.AddWithValue("@sy", lblsy.Text);
                     command.Parameters.AddWithValue("@aydd", studid);
+                    command.Parameters.AddWithValue("@lvldval", comboBox2.Text);
                     command.ExecuteNonQuery();
                 }
 
@@ -369,6 +372,16 @@ namespace MainSystem
                 imgpath = open.FileName;
                 // image file path  
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

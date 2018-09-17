@@ -97,6 +97,12 @@
     <Compile Include="Enrollment\frmSectionMgmt.Designer.cs">
       <DependentUpon>frmSectionMgmt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enrollment\levelmgmtform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enrollment\levelmgmtform.Designer.cs">
+      <DependentUpon>levelmgmtform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory\createitemfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\frmSectionMgmt.resx">
       <DependentUpon>frmSectionMgmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enrollment\levelmgmtform.resx">
+      <DependentUpon>levelmgmtform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\createitemfrm.resx">
       <DependentUpon>createitemfrm.cs</DependentUpon>

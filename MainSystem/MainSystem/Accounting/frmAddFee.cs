@@ -18,7 +18,7 @@ namespace MainSystem.Accounting
         MySqlDataAdapter adapter;
         DataTable dt;
         public Accounting.newfrmAccount reference { get; set; }
-
+        public string syear { get; set; }
         public DataTable dtadd = null;
         DbQueries dbquery = new DbQueries();
         DataTable accountDetailsValues = null;
@@ -57,13 +57,14 @@ namespace MainSystem.Accounting
                 comboBox1.Text = d["fdesc"];
             }
             txtAmount.Text = d["amount"];
-            comboBox2.Text = d["sy"];
+            lblsy2.Text = d["sy"];
         }
         private void frmAddFee_Load(object sender, EventArgs e)
         {
             textBox1.Enabled = false;
             timer1.Enabled = true;
             lblUser.Text = uname;
+            lblsy.Text = syear;
             //textBox2.Text = sygetter();
 
             if (checker == false)
@@ -197,7 +198,7 @@ namespace MainSystem.Accounting
                             command2.Parameters.AddWithValue("@dcrt", lblDate.Text);
                             command2.Parameters.AddWithValue("@fkey", s_key);
                             command2.Parameters.AddWithValue("@status", 1);
-                            command2.Parameters.AddWithValue("@sy", comboBox2.Text);
+                            command2.Parameters.AddWithValue("@sy", lblsy2.Text);
 
                             command2.ExecuteNonQuery();
                         }
@@ -248,7 +249,7 @@ namespace MainSystem.Accounting
                             command2.Parameters.AddWithValue("@dmod", lblDate.Text);
                             command2.Parameters.AddWithValue("@fkey", s_key);
                             command2.Parameters.AddWithValue("@status", 1);
-                            command2.Parameters.AddWithValue("@sy", sygetter());
+                            command2.Parameters.AddWithValue("@sy", lblsy2.Text);
                             command2.Parameters.AddWithValue("@ayd", ayd);
 
                             command2.ExecuteNonQuery();

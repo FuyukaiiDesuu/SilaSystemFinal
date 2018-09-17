@@ -60,6 +60,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblsy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -81,19 +83,19 @@
             // 
             // txtstno
             // 
-            this.txtstno.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtstno.Location = new System.Drawing.Point(229, 53);
+            this.txtstno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstno.Location = new System.Drawing.Point(232, 25);
             this.txtstno.Name = "txtstno";
-            this.txtstno.Size = new System.Drawing.Size(38, 23);
+            this.txtstno.Size = new System.Drawing.Size(38, 27);
             this.txtstno.TabIndex = 0;
             this.txtstno.TabStop = false;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Location = new System.Drawing.Point(159, 173);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(162, 161);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(188, 27);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // btnExit
@@ -155,10 +157,10 @@
             // 
             // txtnn
             // 
-            this.txtnn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtnn.Location = new System.Drawing.Point(159, 290);
+            this.txtnn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnn.Location = new System.Drawing.Point(162, 297);
             this.txtnn.Name = "txtnn";
-            this.txtnn.Size = new System.Drawing.Size(188, 23);
+            this.txtnn.Size = new System.Drawing.Size(188, 27);
             this.txtnn.TabIndex = 8;
             // 
             // label10
@@ -174,42 +176,42 @@
             // 
             // txtrel
             // 
-            this.txtrel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtrel.Location = new System.Drawing.Point(159, 261);
+            this.txtrel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtrel.Location = new System.Drawing.Point(162, 263);
             this.txtrel.Name = "txtrel";
-            this.txtrel.Size = new System.Drawing.Size(188, 23);
+            this.txtrel.Size = new System.Drawing.Size(188, 27);
             this.txtrel.TabIndex = 7;
             // 
             // txtbp
             // 
-            this.txtbp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtbp.Location = new System.Drawing.Point(159, 202);
+            this.txtbp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbp.Location = new System.Drawing.Point(162, 195);
             this.txtbp.Name = "txtbp";
-            this.txtbp.Size = new System.Drawing.Size(188, 23);
+            this.txtbp.Size = new System.Drawing.Size(188, 27);
             this.txtbp.TabIndex = 5;
             // 
             // txtmn
             // 
-            this.txtmn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtmn.Location = new System.Drawing.Point(159, 144);
+            this.txtmn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmn.Location = new System.Drawing.Point(162, 127);
             this.txtmn.Name = "txtmn";
-            this.txtmn.Size = new System.Drawing.Size(188, 23);
+            this.txtmn.Size = new System.Drawing.Size(188, 27);
             this.txtmn.TabIndex = 3;
             // 
             // txtln
             // 
-            this.txtln.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtln.Location = new System.Drawing.Point(159, 115);
+            this.txtln.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtln.Location = new System.Drawing.Point(162, 93);
             this.txtln.Name = "txtln";
-            this.txtln.Size = new System.Drawing.Size(188, 23);
+            this.txtln.Size = new System.Drawing.Size(188, 27);
             this.txtln.TabIndex = 2;
             // 
             // txtfn
             // 
-            this.txtfn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtfn.Location = new System.Drawing.Point(159, 86);
+            this.txtfn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfn.Location = new System.Drawing.Point(162, 59);
             this.txtfn.Name = "txtfn";
-            this.txtfn.Size = new System.Drawing.Size(188, 23);
+            this.txtfn.Size = new System.Drawing.Size(188, 27);
             this.txtfn.TabIndex = 1;
             // 
             // label7
@@ -293,15 +295,15 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Male",
             "Female",
             "Others"});
-            this.comboBox1.Location = new System.Drawing.Point(159, 231);
+            this.comboBox1.Location = new System.Drawing.Point(162, 229);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 24);
+            this.comboBox1.Size = new System.Drawing.Size(188, 27);
             this.comboBox1.TabIndex = 70;
             // 
             // label9
@@ -370,6 +372,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.lblsy);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -457,6 +461,30 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "LEVEL/DEPARTMENT";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label11.Location = new System.Drawing.Point(553, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 23);
+            this.label11.TabIndex = 80;
+            this.label11.Text = "CURRENT S.Y";
+            // 
+            // lblsy
+            // 
+            this.lblsy.AutoSize = true;
+            this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblsy.Location = new System.Drawing.Point(632, 5);
+            this.lblsy.Name = "lblsy";
+            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.TabIndex = 79;
+            this.lblsy.Text = "S.Y ";
+            // 
             // editStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,5 +551,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblsy;
     }
 }

@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,22 +48,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtsct = new System.Windows.Forms.TextBox();
-            this.txtlvl = new System.Windows.Forms.TextBox();
             this.txtfn = new System.Windows.Forms.TextBox();
             this.txtdp = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.dataSearch = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
             this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
             this.searchpaymenttxtbox = new System.Windows.Forms.TextBox();
-            this.btnpaymentrel = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -88,8 +77,11 @@
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblsy = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -276,14 +268,6 @@
             this.dgvpending.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvpending.ColumnHeadersHeight = 48;
             this.dgvpending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpending.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvpending.Location = new System.Drawing.Point(6, 41);
             this.dgvpending.Name = "dgvpending";
             this.dgvpending.RowHeadersVisible = false;
@@ -355,14 +339,6 @@
             this.dgvvoid.BackgroundColor = System.Drawing.Color.White;
             this.dgvvoid.ColumnHeadersHeight = 48;
             this.dgvvoid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvvoid.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvvoid.Location = new System.Drawing.Point(6, 41);
             this.dgvvoid.Name = "dgvvoid";
             this.dgvvoid.ReadOnly = true;
@@ -395,18 +371,13 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.btnViewPaymentHistory);
             this.groupBox1.Controls.Add(this.btnEditAccount);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtsct);
-            this.groupBox1.Controls.Add(this.txtlvl);
             this.groupBox1.Controls.Add(this.txtfn);
             this.groupBox1.Controls.Add(this.txtdp);
-            this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.dataSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -417,21 +388,23 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account List";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnViewPaymentHistory
             // 
-            this.btnViewPaymentHistory.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnViewPaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnViewPaymentHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnViewPaymentHistory.Enabled = false;
             this.btnViewPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
             this.btnViewPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
             this.btnViewPaymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewPaymentHistory.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewPaymentHistory.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewPaymentHistory.ForeColor = System.Drawing.Color.Black;
-            this.btnViewPaymentHistory.Location = new System.Drawing.Point(318, 206);
+            this.btnViewPaymentHistory.Location = new System.Drawing.Point(313, 274);
             this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
-            this.btnViewPaymentHistory.Size = new System.Drawing.Size(196, 49);
+            this.btnViewPaymentHistory.Size = new System.Drawing.Size(196, 74);
             this.btnViewPaymentHistory.TabIndex = 5;
             this.btnViewPaymentHistory.Text = "View Payment History";
             this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
@@ -439,45 +412,21 @@
             // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnEditAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEditAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnEditAccount.Enabled = false;
             this.btnEditAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
             this.btnEditAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
             this.btnEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditAccount.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditAccount.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.ForeColor = System.Drawing.Color.Black;
-            this.btnEditAccount.Location = new System.Drawing.Point(318, 260);
+            this.btnEditAccount.Location = new System.Drawing.Point(8, 274);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(196, 74);
+            this.btnEditAccount.Size = new System.Drawing.Size(300, 74);
             this.btnEditAccount.TabIndex = 3;
             this.btnEditAccount.Text = "View Statement Of Accounts";
             this.btnEditAccount.UseVisualStyleBackColor = false;
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(52, 277);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 19);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "Section:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(67, 311);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 19);
-            this.label6.TabIndex = 53;
-            this.label6.Text = "Level:";
             // 
             // label2
             // 
@@ -485,7 +434,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 244);
+            this.label2.Location = new System.Drawing.Point(17, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 19);
             this.label2.TabIndex = 52;
@@ -497,40 +446,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 210);
+            this.label1.Location = new System.Drawing.Point(32, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 19);
             this.label1.TabIndex = 51;
             this.label1.Text = "Full Name:";
-            // 
-            // txtsct
-            // 
-            this.txtsct.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtsct.BackColor = System.Drawing.Color.White;
-            this.txtsct.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsct.Location = new System.Drawing.Point(124, 274);
-            this.txtsct.Name = "txtsct";
-            this.txtsct.ReadOnly = true;
-            this.txtsct.Size = new System.Drawing.Size(187, 27);
-            this.txtsct.TabIndex = 50;
-            // 
-            // txtlvl
-            // 
-            this.txtlvl.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtlvl.BackColor = System.Drawing.Color.White;
-            this.txtlvl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlvl.Location = new System.Drawing.Point(124, 308);
-            this.txtlvl.Name = "txtlvl";
-            this.txtlvl.ReadOnly = true;
-            this.txtlvl.Size = new System.Drawing.Size(188, 27);
-            this.txtlvl.TabIndex = 49;
             // 
             // txtfn
             // 
             this.txtfn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtfn.BackColor = System.Drawing.Color.White;
             this.txtfn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfn.Location = new System.Drawing.Point(124, 207);
+            this.txtfn.Location = new System.Drawing.Point(121, 209);
             this.txtfn.Name = "txtfn";
             this.txtfn.ReadOnly = true;
             this.txtfn.Size = new System.Drawing.Size(187, 27);
@@ -541,39 +468,11 @@
             this.txtdp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtdp.BackColor = System.Drawing.Color.White;
             this.txtdp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdp.Location = new System.Drawing.Point(124, 241);
+            this.txtdp.Location = new System.Drawing.Point(121, 241);
             this.txtdp.Name = "txtdp";
             this.txtdp.ReadOnly = true;
             this.txtdp.Size = new System.Drawing.Size(187, 27);
             this.txtdp.TabIndex = 47;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button12.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(277, 27);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(31, 26);
-            this.button12.TabIndex = 46;
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button13.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(243, 27);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(32, 26);
-            this.button13.TabIndex = 45;
-            this.button13.UseVisualStyleBackColor = true;
             // 
             // dataSearch
             // 
@@ -586,14 +485,6 @@
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             this.dataSearch.ColumnHeadersHeight = 45;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataSearch.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataSearch.Location = new System.Drawing.Point(6, 59);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.ReadOnly = true;
@@ -612,6 +503,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(231, 27);
             this.txtSearch.TabIndex = 43;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
             // 
             // grpBalanceDetails
             // 
@@ -621,7 +513,6 @@
             this.grpBalanceDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
             this.grpBalanceDetails.Controls.Add(this.searchpaymenttxtbox);
-            this.grpBalanceDetails.Controls.Add(this.btnpaymentrel);
             this.grpBalanceDetails.Font = new System.Drawing.Font("Bebas Neue", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBalanceDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.grpBalanceDetails.Location = new System.Drawing.Point(6, 361);
@@ -645,14 +536,6 @@
             this.dataBalanceDetails.BackgroundColor = System.Drawing.Color.White;
             this.dataBalanceDetails.ColumnHeadersHeight = 45;
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataBalanceDetails.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataBalanceDetails.Location = new System.Drawing.Point(6, 54);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.ReadOnly = true;
@@ -669,21 +552,6 @@
             this.searchpaymenttxtbox.Size = new System.Drawing.Size(231, 29);
             this.searchpaymenttxtbox.TabIndex = 55;
             this.searchpaymenttxtbox.TextChanged += new System.EventHandler(this.searchpaymenttxtbox_TextChanged);
-            // 
-            // btnpaymentrel
-            // 
-            this.btnpaymentrel.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.btnpaymentrel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnpaymentrel.Enabled = false;
-            this.btnpaymentrel.FlatAppearance.BorderSize = 0;
-            this.btnpaymentrel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnpaymentrel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpaymentrel.Location = new System.Drawing.Point(245, 23);
-            this.btnpaymentrel.Name = "btnpaymentrel";
-            this.btnpaymentrel.Size = new System.Drawing.Size(31, 26);
-            this.btnpaymentrel.TabIndex = 31;
-            this.btnpaymentrel.UseVisualStyleBackColor = true;
-            this.btnpaymentrel.Click += new System.EventHandler(this.btnpaymentrel_Click);
             // 
             // tabPage1
             // 
@@ -868,6 +736,7 @@
             this.btnAddDisb.TabIndex = 36;
             this.btnAddDisb.Text = "Create Voucher";
             this.btnAddDisb.UseVisualStyleBackColor = false;
+            this.btnAddDisb.Click += new System.EventHandler(this.btnAddDisb_Click);
             // 
             // button8
             // 
@@ -968,6 +837,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblsy);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -975,6 +846,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 31);
             this.panel1.TabIndex = 41;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label3.Location = new System.Drawing.Point(1016, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 23);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "CURRENT S.Y";
+            // 
+            // lblsy
+            // 
+            this.lblsy.AutoSize = true;
+            this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblsy.Location = new System.Drawing.Point(1096, 7);
+            this.lblsy.Name = "lblsy";
+            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.TabIndex = 2;
+            this.lblsy.Text = "S.Y ";
             // 
             // pictureBox2
             // 
@@ -997,6 +893,17 @@
             this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(409, 23);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(352, 28);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(165, 26);
+            this.checkBox1.TabIndex = 55;
+            this.checkBox1.Text = "VIEW INACTIVE STUDENTS";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // newfrmAccount
             // 
@@ -1081,16 +988,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtsct;
-        public System.Windows.Forms.TextBox txtlvl;
         public System.Windows.Forms.TextBox txtfn;
         public System.Windows.Forms.TextBox txtdp;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
         public System.Windows.Forms.DataGridView dataSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TextBox searchpaymenttxtbox;
@@ -1101,6 +1002,8 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DateTimePicker searchtpexpense;
-        private System.Windows.Forms.Button btnpaymentrel;
+        private System.Windows.Forms.Label lblsy;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

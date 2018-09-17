@@ -13,8 +13,10 @@ namespace MainSystem
 {
     public partial class frmMain : Form
     {
+        
         private MySqlConnection dbconnect;
         public FormLogin reference { get; set; }
+        public string schoolyear { get; set; }
         public frmMain(string uname, string perm)
         {
             InitializeComponent();
@@ -78,12 +80,13 @@ namespace MainSystem
         
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            lblSY.Text = schoolyear;
         }
 
         private void btnEnrollmentForm_Click(object sender, EventArgs e)
         {
             frmEnroll = new EnrollmentConsole(lblusername.Text);
+            frmEnroll.syear = lblSY.Text;
             frmEnroll.Show();
             frmEnroll.reference = this;
             this.Hide();
@@ -150,11 +153,11 @@ namespace MainSystem
                 listener.Fill(holder);
                 if (holder.Rows.Count > 0)
                 {
-
                     uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString() +" "+ holder.Rows[0]["middle_name"].ToString();
                     frmacc = new Accounting.newfrmAccount(uname, holder.Rows[0]["empID"].ToString());
-                    frmacc.Show();
                     frmacc.reference = this;
+                    frmacc.syeartempo = lblSY.Text;
+                    frmacc.Show();
                     this.Hide();
                 }
             }
@@ -200,6 +203,11 @@ namespace MainSystem
                     this.Hide();
                 }
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
