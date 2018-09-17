@@ -20,7 +20,9 @@ namespace MainSystem.Employee
         public string id;
         string fullname;
         public string userID;
-
+        public string firstname;
+        public string middlename;
+        public string lastname;
         public newViewArchivedEmployee(string uname)
         {
             InitializeComponent();
@@ -38,16 +40,16 @@ namespace MainSystem.Employee
             archivedemployeeDisplay = dbquery.ArchiveEmployeeDisplay();
             this.dataSearch.DataSource = archivedemployeeDisplay;
             dataSearch.Columns["empID"].Visible = false;
-            dataSearch.Columns["first_name"].Visible = false;
-            dataSearch.Columns["middle_name"].Visible = false;
-            dataSearch.Columns["last_name"].Visible = false;
-            dataSearch.Columns["fullname"].HeaderText = "Full Name";
-            dataSearch.Columns["birth_date"].HeaderText = "Birth Date";
-            dataSearch.Columns["birth_place"].HeaderText = "Birth Place";
-            dataSearch.Columns["contactNo"].HeaderText = "Contact No";
-            dataSearch.Columns["sex"].HeaderText = "Sex";
-            dataSearch.Columns["religion"].HeaderText = "Religion";
-            dataSearch.Columns["marital_status"].HeaderText = "Marital Status";
+            dataSearch.Columns["first_name"].HeaderText = "First Name";
+            dataSearch.Columns["middle_name"].HeaderText = "Middle Name";
+            dataSearch.Columns["last_name"].HeaderText = "Last Name";
+            dataSearch.Columns["fullname"].Visible = false;
+            dataSearch.Columns["birth_date"].Visible = false;
+            dataSearch.Columns["birth_place"].Visible = false;
+            dataSearch.Columns["contactNo"].Visible = false;
+            dataSearch.Columns["sex"].Visible = false;
+            dataSearch.Columns["religion"].Visible = false;
+            dataSearch.Columns["marital_status"].Visible = false;
             dataSearch.Columns["status"].Visible = false;
             dataSearch.Columns["position"].Visible = false;
 
@@ -58,8 +60,9 @@ namespace MainSystem.Employee
             dataSearch.Columns["restrictions"].Visible = false;
             dataSearch.Columns["status1"].Visible = false;
 
-            dataSearch.Columns["fullname"].DisplayIndex = 4;
-            this.dataSearch.Columns["fullname"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dataSearch.Columns["first_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dataSearch.Columns["middle_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dataSearch.Columns["last_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dataSearch.ReadOnly = true;
             this.dataSearch.Refresh();
@@ -72,6 +75,7 @@ namespace MainSystem.Employee
 
         private void btnEnable_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Do you want to save your changes?", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             string status;
             if (cmbStatus.Text == "Active")
             {
@@ -81,14 +85,21 @@ namespace MainSystem.Employee
             {
                 status = "0";
             }
-            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, txtPosition.Text, id);
-            dbquery.updateAccountStatus(id, status, userID);
-            MessageBox.Show("Succesfully Updated");
-            reference.Show();
-            reference.loadEmployeeDetails();
-            reference.dataSearch.ClearSelection();
-            reference.clearText();
-            this.Close();
+            if (result.Equals(DialogResult.OK))
+            {
+                dbquery.updateEmployee(firstname, lastname, middlename, txtBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, txtSex.Text, txtReligion.Text, txtMaritalStatus.Text, status, txtPosition.Text, id);
+                dbquery.updateAccountStatus(id, status, userID);
+                MessageBox.Show("Succesfully Updated");
+                reference.Show();
+                reference.loadEmployeeDetails();
+                reference.dataSearch.ClearSelection();
+                reference.clearText();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Changes has not been made");
+            }
         }
 
         private void dataSearch_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -97,9 +108,10 @@ namespace MainSystem.Employee
             {
                 userID = dataSearch.SelectedRows[0].Cells["userID"].Value.ToString();
                 id = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
-                txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
-                txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
-                txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
+                firstname = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
+                lastname = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
+                middlename = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
+                txtFullName.Text = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
                 DateTime dt = DateTime.Parse(dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString());
                 txtBirthDate.Text = dt.ToString("yyyy/MM/dd");
                 txtBirthPlace.Text = dataSearch.SelectedRows[0].Cells["birth_place"].Value.ToString();
@@ -137,7 +149,7 @@ namespace MainSystem.Employee
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            archivedemployeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
+            
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -156,6 +168,16 @@ namespace MainSystem.Employee
             {
                 return;
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            archivedemployeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
         }
     }
 }

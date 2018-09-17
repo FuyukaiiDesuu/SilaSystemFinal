@@ -22,12 +22,11 @@ namespace MainSystem.Employee
 
         private void newfrmAddEmployee_Load(object sender, EventArgs e)
         {
-
+            enableButton();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             if(cmbReligion.Text == "Others")
             {
                 dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, txtSpecify.Text, cmbMaritalStatus.Text, "1", cmbPosition.Text);
@@ -56,10 +55,12 @@ namespace MainSystem.Employee
             if(cmbReligion.Text == "Others")
             {
                 txtSpecify.Enabled = true;
+                enableButton();
             }
             else
             {
                 txtSpecify.Enabled = false;
+                enableButton();
             }
         }
 
@@ -79,6 +80,178 @@ namespace MainSystem.Employee
         private void label11_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtFirstName_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtFirstName.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtFirstName, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(txtFirstName, "");
+            }
+        }
+
+        private void txtMiddleName_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtMiddleName.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtMiddleName, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(txtMiddleName, "");
+            }
+        }
+
+        private void txtLastName_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtLastName.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtLastName, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(txtLastName, "");
+            }
+        }
+
+        private void cmbPosition_Validating(object sender, CancelEventArgs e)
+        {
+            if (cmbPosition.Text == string.Empty)
+            {
+                errorProvider1.SetError(cmbPosition, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbPosition, "");
+            }
+        }
+
+        private void dateBirthDate_Validating(object sender, CancelEventArgs e)
+        {
+            if (dateBirthDate.Text == string.Empty)
+            {
+                errorProvider1.SetError(dateBirthDate, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(dateBirthDate, "");            }
+        }
+
+        private void txtBirthPlace_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtBirthPlace.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtBirthPlace, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(txtBirthPlace, "");
+            }
+        }
+
+        private void txtContactNo_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtContactNo.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtContactNo, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(txtContactNo, "");
+            }
+        }
+
+        private void cmbSex_Validating(object sender, CancelEventArgs e)
+        {
+            if (cmbSex.Text == string.Empty)
+            {
+                errorProvider1.SetError(cmbSex, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbSex, "");
+            }
+        }
+
+        private void cmbReligion_Validating(object sender, CancelEventArgs e)
+        {
+            if (cmbReligion.Text == string.Empty)
+            {
+                errorProvider1.SetError(cmbReligion, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbReligion, "");
+            }
+        }
+
+        private void cmbMaritalStatus_Validating(object sender, CancelEventArgs e)
+        {
+            if (cmbMaritalStatus.Text == string.Empty)
+            {
+                errorProvider1.SetError(cmbMaritalStatus, "Please fill out this field");
+            }
+            else
+            {
+                errorProvider1.SetError(cmbMaritalStatus, "");
+            }
+        }
+        private void enableButton()
+        {
+            btnSave.Enabled = !string.IsNullOrEmpty(txtFirstName.Text) && !string.IsNullOrEmpty(txtMiddleName.Text)
+                && !string.IsNullOrEmpty(txtLastName.Text) && !string.IsNullOrEmpty(cmbPosition.Text)
+                && !string.IsNullOrEmpty(dateBirthDate.Text) && !string.IsNullOrEmpty(txtBirthPlace.Text)
+                && !string.IsNullOrEmpty(txtContactNo.Text) && !string.IsNullOrEmpty(cmbSex.Text)
+                && !string.IsNullOrEmpty(cmbReligion.Text) && !string.IsNullOrEmpty(cmbMaritalStatus.Text);
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+           enableButton();
+        }
+
+        private void txtMiddleName_TextChanged(object sender, EventArgs e)
+        {
+           enableButton();
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            enableButton();
+        }
+
+        private void cmbPosition_TextChanged(object sender, EventArgs e)
+        {
+            enableButton();
+        }
+
+        private void dateBirthDate_ValueChanged(object sender, EventArgs e)
+        {
+            enableButton();
+        }
+
+        private void txtBirthPlace_TextChanged(object sender, EventArgs e)
+        {
+            enableButton();
+        }
+
+        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        {
+            enableButton();
+        }
+
+        private void cmbSex_TextChanged(object sender, EventArgs e)
+        {
+            enableButton();
+        }
+
+        private void cmbMaritalStatus_TextChanged(object sender, EventArgs e)
+        {
+            enableButton();
         }
     }
 }

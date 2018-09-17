@@ -57,6 +57,7 @@ namespace MainSystem.Employee
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Do you want to save your changes?", "Save Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             string status, religion;
             if(cmbStatus.Text == "Active")
             {
@@ -75,14 +76,22 @@ namespace MainSystem.Employee
             {
                 religion = cmbReligion.Text;
             }
-            dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, religion, cmbMaritalStatus.Text, status, cmbPosition.Text, id);
-            dbquery.updateAccountStatus(id, status, userID);
-            MessageBox.Show("Succesfully Updated");
-            reference.Show();
-            reference.loadEmployeeDetails();
-            reference.dataSearch.ClearSelection();
-            reference.clearText();
-            this.Close();
+            if (result.Equals(DialogResult.OK))
+            {
+                dbquery.updateEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, religion, cmbMaritalStatus.Text, status, cmbPosition.Text, id);
+                dbquery.updateAccountStatus(id, status, userID);
+                MessageBox.Show("Succesfully Updated");
+                reference.Show();
+                reference.loadEmployeeDetails();
+                reference.dataSearch.ClearSelection();
+                reference.clearText();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Changes has not been made");
+            }
+            
         }
 
         private void cmbReligion_TextChanged(object sender, EventArgs e)

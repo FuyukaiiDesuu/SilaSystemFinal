@@ -38,16 +38,16 @@ namespace MainSystem.Employee
             this.dataSearch.DataSource = employeeDisplay;
 
             dataSearch.Columns["empID"].Visible = false;
-            dataSearch.Columns["first_name"].Visible = false;
-            dataSearch.Columns["middle_name"].Visible = false;
-            dataSearch.Columns["last_name"].Visible = false;
-            dataSearch.Columns["fullname"].HeaderText = "Full Name";
-            dataSearch.Columns["birth_date"].HeaderText = "Birth Date";
-            dataSearch.Columns["birth_place"].HeaderText = "Birth Place";
-            dataSearch.Columns["contactNo"].HeaderText = "Contact No";
-            dataSearch.Columns["sex"].HeaderText = "Sex";
-            dataSearch.Columns["religion"].HeaderText = "Religion";
-            dataSearch.Columns["marital_status"].HeaderText = "Marital Status";
+            dataSearch.Columns["first_name"].HeaderText = "First Name";
+            dataSearch.Columns["middle_name"].HeaderText = "Middle Name";
+            dataSearch.Columns["last_name"].HeaderText = "Last Name";
+            dataSearch.Columns["fullname"].Visible = false;
+            dataSearch.Columns["birth_date"].Visible = false;
+            dataSearch.Columns["birth_place"].Visible = false;
+            dataSearch.Columns["contactNo"].Visible = false;
+            dataSearch.Columns["sex"].Visible = false;
+            dataSearch.Columns["religion"].Visible = false;
+            dataSearch.Columns["marital_status"].Visible = false;
             dataSearch.Columns["status"].Visible = false;
             dataSearch.Columns["position"].Visible = false;
 
@@ -58,8 +58,10 @@ namespace MainSystem.Employee
             dataSearch.Columns["restrictions"].Visible = false;
             dataSearch.Columns["status1"].Visible = false;
 
-            dataSearch.Columns["fullname"].DisplayIndex = 4;
-            this.dataSearch.Columns["fullname"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataSearch.Columns["fullname"].DisplayIndex = 4;
+            this.dataSearch.Columns["first_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dataSearch.Columns["middle_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dataSearch.Columns["last_name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dataSearch.ReadOnly = true;
             this.dataSearch.Refresh();
@@ -71,9 +73,7 @@ namespace MainSystem.Employee
             {
                 userID = dataSearch.SelectedRows[0].Cells["userID"].Value.ToString();
                 empID = dataSearch.SelectedRows[0].Cells["empID"].Value.ToString();
-                txtFirstName.Text = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
-                txtLastName.Text = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
-                txtMiddleName.Text = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
+                txtFullName.Text = dataSearch.SelectedRows[0].Cells["fullname"].Value.ToString();
                 DateTime dt = DateTime.Parse(dataSearch.SelectedRows[0].Cells["birth_date"].Value.ToString());
                 txtBirthDate.Text = dt.ToString("yyyy/MM/dd");
                 txtBirthPlace.Text = dataSearch.SelectedRows[0].Cells["birth_place"].Value.ToString();
@@ -120,9 +120,9 @@ namespace MainSystem.Employee
             editemp = new Employee.newfrmEditEmployee();
             editemp.userID = userID;
             editemp.id = empID;
-            editemp.firstname = txtFirstName.Text;
-            editemp.lastname = txtLastName.Text;
-            editemp.middlename = txtMiddleName.Text;
+            editemp.firstname = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString(); 
+            editemp.lastname = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
+            editemp.middlename = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
             editemp.birthdate = txtBirthDate.Text;
             editemp.birthplace = txtBirthPlace.Text;
             editemp.contactno = txtContactNo.Text;
@@ -139,9 +139,7 @@ namespace MainSystem.Employee
 
         public void clearText()
         {
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtMiddleName.Text = "";
+            txtFullName.Text = "";
             txtBirthDate.Text = "";
             txtBirthPlace.Text = "";
             txtContactNo.Text = "";
