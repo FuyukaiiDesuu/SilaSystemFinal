@@ -13,6 +13,9 @@ namespace MainSystem
 {
     public partial class Stockin_out : Form
     {
+        public Int32 quantity_remaining;
+        public Int32 quantity_delivered;
+        public string orderlistID;
         public FormInventory reference { get; set; }
         public Stockin_out()
         {
@@ -53,12 +56,13 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM itemdetails WHERE itemstatus = 1";
+                string query = "SELECT * FROM orderlist INNER JOIN itemdetails ON orderlist.item_id = itemdetails.itemID" +
+                    " WHERE status = 1";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
-                dataGridView1.Columns["itemID"].Visible = false;
+                dataGridView1.Columns["item_id"].Visible = false;
             }
         }
         public frmNewEntry newent;
@@ -73,7 +77,8 @@ namespace MainSystem
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            items(dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["itemname"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString());
+            quantity_remaining = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
+            orderlistID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -136,23 +141,21 @@ namespace MainSystem
         }
         private void btnin_Click(object sender, EventArgs e)
         {
+            quantity_delivered = Convert.ToInt32(quantity_remaining - quantity_delivered);
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                using (var com = new MySqlCommand("UPDATE stkin SET status = 1 WHERE stkinID = @ayyd", dbconnection))
+                using (var com = new MySqlCommand("INSERT INTO stkin(quantity_delivered, quantity_remaining, date, status, id) VALUES(@quantity_delivered, @date, @status, @id, @quantity_remaining)", dbconnection))
                 {
-                    com.Parameters.AddWithValue("@ayyd", stkID);
+                    com.Parameters.AddWithValue("@quantity_delivered", txtEnter);
+                    com.Parameters.AddWithValue("@quantity_remaining", quantity_remaining.ToString());
+                    com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"));
+                    com.Parameters.AddWithValue("@status", 1);
+                    com.Parameters.AddWithValue("@id", orderlistID);
                     com.ExecuteNonQuery();
                 }
-                using (var com2 = new MySqlCommand("UPDATE inventory SET stock_in_date = @dtnow, quantity = @quant WHERE invID = @invid", dbconnection))
-                {
-                    com2.Parameters.AddWithValue("@quant", quantityADD());
-                    string datttu = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    com2.Parameters.AddWithValue("@dtnow", datttu);
-                    com2.Parameters.AddWithValue("@invid", invID);
-                    com2.ExecuteNonQuery();
-                }
+                
             }
             MessageBox.Show("ITEM STOCKED-IN!");
             readData2();
@@ -177,6 +180,11 @@ namespace MainSystem
         }
 
         private void lblSinoutRecord_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calculateQuantity()
         {
 
         }

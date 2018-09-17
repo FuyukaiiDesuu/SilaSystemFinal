@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataOrderList = new System.Windows.Forms.DataGridView();
             this.gboxitemdetails2 = new System.Windows.Forms.GroupBox();
+            this.dateDate = new System.Windows.Forms.DateTimePicker();
             this.btnback = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd2 = new System.Windows.Forms.Button();
             this.txtquantity2 = new System.Windows.Forms.TextBox();
             this.txtvendor = new System.Windows.Forms.TextBox();
@@ -43,28 +43,33 @@
             this.lblDate2 = new System.Windows.Forms.Label();
             this.lblItemName2 = new System.Windows.Forms.Label();
             this.lblOrderList = new System.Windows.Forms.Label();
-            this.btnStockIn = new System.Windows.Forms.Button();
-            this.dateDate = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataItemCreation = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataOrderList)).BeginInit();
             this.gboxitemdetails2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataItemCreation)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataOrderList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(426, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(607, 177);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataOrderList.Location = new System.Drawing.Point(6, 6);
+            this.dataOrderList.Name = "dataOrderList";
+            this.dataOrderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataOrderList.Size = new System.Drawing.Size(682, 340);
+            this.dataOrderList.TabIndex = 0;
+            this.dataOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // gboxitemdetails2
             // 
             this.gboxitemdetails2.Controls.Add(this.dateDate);
-            this.gboxitemdetails2.Controls.Add(this.btnStockIn);
             this.gboxitemdetails2.Controls.Add(this.btnback);
-            this.gboxitemdetails2.Controls.Add(this.btnRemove);
             this.gboxitemdetails2.Controls.Add(this.btnAdd2);
             this.gboxitemdetails2.Controls.Add(this.txtquantity2);
             this.gboxitemdetails2.Controls.Add(this.txtvendor);
@@ -75,16 +80,25 @@
             this.gboxitemdetails2.Controls.Add(this.lbldateReq);
             this.gboxitemdetails2.Controls.Add(this.lblDate2);
             this.gboxitemdetails2.Controls.Add(this.lblItemName2);
-            this.gboxitemdetails2.Location = new System.Drawing.Point(12, 12);
+            this.gboxitemdetails2.Location = new System.Drawing.Point(6, 334);
             this.gboxitemdetails2.Name = "gboxitemdetails2";
-            this.gboxitemdetails2.Size = new System.Drawing.Size(354, 213);
+            this.gboxitemdetails2.Size = new System.Drawing.Size(682, 213);
             this.gboxitemdetails2.TabIndex = 1;
             this.gboxitemdetails2.TabStop = false;
             this.gboxitemdetails2.Text = "Item Details";
             // 
+            // dateDate
+            // 
+            this.dateDate.CustomFormat = "yyyy/MM/dd";
+            this.dateDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateDate.Location = new System.Drawing.Point(91, 60);
+            this.dateDate.Name = "dateDate";
+            this.dateDate.Size = new System.Drawing.Size(100, 20);
+            this.dateDate.TabIndex = 14;
+            // 
             // btnback
             // 
-            this.btnback.Location = new System.Drawing.Point(262, 178);
+            this.btnback.Location = new System.Drawing.Point(87, 184);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(75, 23);
             this.btnback.TabIndex = 12;
@@ -92,19 +106,9 @@
             this.btnback.UseVisualStyleBackColor = true;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(100, 178);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 11;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
             // btnAdd2
             // 
-            this.btnAdd2.Location = new System.Drawing.Point(19, 178);
+            this.btnAdd2.Location = new System.Drawing.Point(6, 184);
             this.btnAdd2.Name = "btnAdd2";
             this.btnAdd2.Size = new System.Drawing.Size(75, 23);
             this.btnAdd2.TabIndex = 10;
@@ -191,44 +195,82 @@
             // 
             this.lblOrderList.AutoSize = true;
             this.lblOrderList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderList.Location = new System.Drawing.Point(422, 21);
+            this.lblOrderList.Location = new System.Drawing.Point(302, 21);
             this.lblOrderList.Name = "lblOrderList";
             this.lblOrderList.Size = new System.Drawing.Size(101, 24);
             this.lblOrderList.TabIndex = 2;
             this.lblOrderList.Text = "Order List";
             // 
-            // btnStockIn
+            // dataItemCreation
             // 
-            this.btnStockIn.Location = new System.Drawing.Point(181, 178);
-            this.btnStockIn.Name = "btnStockIn";
-            this.btnStockIn.Size = new System.Drawing.Size(75, 23);
-            this.btnStockIn.TabIndex = 13;
-            this.btnStockIn.Text = "Stock-in";
-            this.btnStockIn.UseVisualStyleBackColor = true;
+            this.dataItemCreation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataItemCreation.Location = new System.Drawing.Point(6, 6);
+            this.dataItemCreation.Name = "dataItemCreation";
+            this.dataItemCreation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataItemCreation.Size = new System.Drawing.Size(682, 322);
+            this.dataItemCreation.TabIndex = 3;
+            this.dataItemCreation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCreation_CellClick);
             // 
-            // dateDate
+            // tabControl1
             // 
-            this.dateDate.CustomFormat = "yyyy/MM/dd";
-            this.dateDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateDate.Location = new System.Drawing.Point(91, 60);
-            this.dateDate.Name = "dateDate";
-            this.dateDate.Size = new System.Drawing.Size(100, 20);
-            this.dateDate.TabIndex = 14;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 48);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(702, 579);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataItemCreation);
+            this.tabPage1.Controls.Add(this.gboxitemdetails2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(694, 553);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Item Creation";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnCancel);
+            this.tabPage2.Controls.Add(this.dataOrderList);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(694, 553);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Order List";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(6, 352);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // frmOrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 241);
+            this.ClientSize = new System.Drawing.Size(722, 639);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblOrderList);
-            this.Controls.Add(this.gboxitemdetails2);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "frmOrderList";
             this.Text = "frmOrderList";
             this.Load += new System.EventHandler(this.frmOrderList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataOrderList)).EndInit();
             this.gboxitemdetails2.ResumeLayout(false);
             this.gboxitemdetails2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataItemCreation)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +278,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataOrderList;
         private System.Windows.Forms.GroupBox gboxitemdetails2;
         private System.Windows.Forms.Label lblDate2;
         private System.Windows.Forms.Label lblItemName2;
@@ -244,14 +286,17 @@
         private System.Windows.Forms.Label lblVendor;
         private System.Windows.Forms.Label lbldateReq;
         private System.Windows.Forms.Label lblOrderList;
-        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd2;
         private System.Windows.Forms.TextBox txtquantity2;
         private System.Windows.Forms.TextBox txtvendor;
         private System.Windows.Forms.TextBox txtdatereq;
         private System.Windows.Forms.TextBox txtitemname2;
         private System.Windows.Forms.Button btnback;
-        private System.Windows.Forms.Button btnStockIn;
         private System.Windows.Forms.DateTimePicker dateDate;
+        private System.Windows.Forms.DataGridView dataItemCreation;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

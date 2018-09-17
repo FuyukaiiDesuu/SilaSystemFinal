@@ -28,31 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNewEntry = new System.Windows.Forms.Button();
             this.btnin = new System.Windows.Forms.Button();
             this.lblSinoutRecord = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnback2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.search1 = new System.Windows.Forms.TextBox();
-            this.search2 = new System.Windows.Forms.TextBox();
+            this.txtEnter = new System.Windows.Forms.TextBox();
+            this.lblEnter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnNewEntry
-            // 
-            this.btnNewEntry.Location = new System.Drawing.Point(16, 261);
-            this.btnNewEntry.Name = "btnNewEntry";
-            this.btnNewEntry.Size = new System.Drawing.Size(75, 23);
-            this.btnNewEntry.TabIndex = 1;
-            this.btnNewEntry.Text = "New Entry";
-            this.btnNewEntry.UseVisualStyleBackColor = true;
-            this.btnNewEntry.Click += new System.EventHandler(this.btnNewEntry_Click);
-            // 
             // btnin
             // 
-            this.btnin.Location = new System.Drawing.Point(17, 472);
+            this.btnin.Location = new System.Drawing.Point(369, 258);
             this.btnin.Name = "btnin";
             this.btnin.Size = new System.Drawing.Size(75, 23);
             this.btnin.TabIndex = 2;
@@ -115,26 +105,35 @@
             this.search1.TabIndex = 11;
             this.search1.TextChanged += new System.EventHandler(this.search1_TextChanged);
             // 
-            // search2
+            // txtEnter
             // 
-            this.search2.Location = new System.Drawing.Point(97, 261);
-            this.search2.Name = "search2";
-            this.search2.Size = new System.Drawing.Size(157, 20);
-            this.search2.TabIndex = 10;
+            this.txtEnter.Location = new System.Drawing.Point(163, 260);
+            this.txtEnter.Name = "txtEnter";
+            this.txtEnter.Size = new System.Drawing.Size(100, 20);
+            this.txtEnter.TabIndex = 12;
+            // 
+            // lblEnter
+            // 
+            this.lblEnter.AutoSize = true;
+            this.lblEnter.Location = new System.Drawing.Point(14, 263);
+            this.lblEnter.Name = "lblEnter";
+            this.lblEnter.Size = new System.Drawing.Size(129, 13);
+            this.lblEnter.TabIndex = 13;
+            this.lblEnter.Text = "Enter Quantity to Stock-In";
             // 
             // Stockin_out
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 504);
+            this.Controls.Add(this.lblEnter);
+            this.Controls.Add(this.txtEnter);
             this.Controls.Add(this.search1);
-            this.Controls.Add(this.search2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnback2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblSinoutRecord);
             this.Controls.Add(this.btnin);
-            this.Controls.Add(this.btnNewEntry);
             this.Name = "Stockin_out";
             this.Text = "Stockin_out";
             this.Load += new System.EventHandler(this.Stockin_out_Load);
@@ -146,13 +145,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnNewEntry;
         private System.Windows.Forms.Button btnin;
         private System.Windows.Forms.Label lblSinoutRecord;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnback2;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox search1;
-        private System.Windows.Forms.TextBox search2;
+        private System.Windows.Forms.TextBox txtEnter;
+        private System.Windows.Forms.Label lblEnter;
     }
 }

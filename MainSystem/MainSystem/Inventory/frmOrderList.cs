@@ -15,6 +15,7 @@ namespace MainSystem
     {
         public FormInventory reference { get; set; }
         public MySqlConnection dbconnection;
+        public string itemid;
        
 
         public frmOrderList()
@@ -43,11 +44,12 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM orderlist";
+                conn.Open();
+                string query = "SELECT * FROM itemdetails";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
-                dataGridView1.DataSource = dt;
+                dataItemCreation.DataSource = dt;
             }
         }
 
@@ -56,7 +58,7 @@ namespace MainSystem
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
-                using (var command = new MySqlCommand("INSERT INTO orderlist(item_name, date, vendor, quantity, status) VALUES(@item_name, @date, @vendor, @quantity, @status);", dbconnection))
+                using (var command = new MySqlCommand("INSERT INTO orderlist(date, vendor, quantity, status, item_id) VALUES(@date, @vendor, @quantity, @status, @item_id);", dbconnection))
                 {
                     dbconnection.Open();
                     command.Parameters.AddWithValue("@item_name", txtitemname2.Text);
@@ -64,6 +66,7 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@vendor", txtvendor.Text);
                     command.Parameters.AddWithValue("@quantity", txtquantity2.Text);
                     command.Parameters.AddWithValue("@status", 1);
+                    command.Parameters.AddWithValue("@item_id", itemid);
                     command.ExecuteNonQuery();
                 }
             }
@@ -84,6 +87,15 @@ namespace MainSystem
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataItemCreation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataItemCreation.Rows.Count > 0)
+            {
+                txtitemname2.Text = dataItemCreation.Rows[e.RowIndex].Cells["itemname"].Value.ToString();
+                itemid = dataItemCreation.Rows[e.RowIndex].Cells["itemID"].Value.ToString();
+            }
         }
     }
 }
