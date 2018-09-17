@@ -81,5 +81,10 @@ namespace MainSystem.Accounting
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -93,7 +93,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.lblUser.Location = new System.Drawing.Point(117, 42);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(47, 28);
+            this.lblUser.Size = new System.Drawing.Size(51, 29);
             this.lblUser.TabIndex = 34;
             this.lblUser.Text = "User";
             // 
@@ -104,7 +104,7 @@
             this.lblLoggedinas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.lblLoggedinas.Location = new System.Drawing.Point(14, 42);
             this.lblLoggedinas.Name = "lblLoggedinas";
-            this.lblLoggedinas.Size = new System.Drawing.Size(108, 28);
+            this.lblLoggedinas.Size = new System.Drawing.Size(114, 29);
             this.lblLoggedinas.TabIndex = 33;
             this.lblLoggedinas.Text = "Logged in as:";
             // 
@@ -118,7 +118,7 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1685, 38);
             this.panel1.TabIndex = 40;
@@ -127,7 +127,7 @@
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,7 +143,7 @@
             this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(63, 6);
             this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(487, 28);
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(517, 29);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
@@ -156,11 +156,12 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(572, 93);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(41, 32);
             this.button5.TabIndex = 42;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -171,7 +172,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(617, 94);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(43, 32);
             this.button4.TabIndex = 41;
@@ -181,7 +182,7 @@
             // 
             this.datetimesearch.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetimesearch.Location = new System.Drawing.Point(187, 91);
-            this.datetimesearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datetimesearch.Margin = new System.Windows.Forms.Padding(4);
             this.datetimesearch.Name = "datetimesearch";
             this.datetimesearch.Size = new System.Drawing.Size(379, 35);
             this.datetimesearch.TabIndex = 43;
@@ -194,7 +195,7 @@
             this.panel2.Controls.Add(this.dataPaymentHistory);
             this.panel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 129);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1685, 647);
             this.panel2.TabIndex = 44;
@@ -231,7 +232,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmViewPaymentHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Payment History";
