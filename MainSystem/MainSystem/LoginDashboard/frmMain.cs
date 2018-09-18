@@ -126,9 +126,14 @@ namespace MainSystem
 
         private void btnLGOUT_Click(object sender, EventArgs e)
         {
-            this.Close();
-            reference.clearTxtBoxes();
-            reference.Show();
+            DialogResult res = MessageBox.Show("ARE YOU SURE YOU WANT TO LOG OUT!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if(res == DialogResult.Yes)
+            {
+                this.Close();
+                reference.clearTxtBoxes();
+                reference.Show();
+                MessageBox.Show("YOU HAVE SUCCESSFULLY BEEN LOGGED OUT!", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         public FormInventory frminv;
         private void btnInventoryForm_Click(object sender, EventArgs e)

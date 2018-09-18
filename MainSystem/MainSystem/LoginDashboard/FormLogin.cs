@@ -69,7 +69,7 @@ namespace MainSystem
                         if (statusFlag())
                         {
                             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-                            MessageBox.Show("Succesful Login!");
+                            MessageBox.Show("WELCOME TO SILA SCHOOL MANAGEMENT SYSTEM!", "WELCOME!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             frmmain = new frmMain(uname, perm);
                             frmmain.schoolyear = comboBox2.Text;
                             frmmain.Show();
@@ -78,19 +78,19 @@ namespace MainSystem
                         }
                         else
                         {
-                            MessageBox.Show("This Account is no longer active");
+                            MessageBox.Show("This Account is no longer active", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("Wrong Credentials!");
+                        MessageBox.Show("WRONG CREDENTIALS!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("SCHOOLYEAR HAS NOT BEEN SELECTED!");
+                MessageBox.Show("SCHOOLYEAR HAS NOT BEEN SELECTED!", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
            
            
@@ -214,7 +214,7 @@ namespace MainSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("SELECTED SCHOOL YEAR SELECTED IS " + comboBox2.Text, "PLEASE CONFIRM!", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("SELECTED SCHOOL YEAR SELECTED IS " + comboBox2.Text, "PLEASE CONFIRM!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(res == DialogResult.Yes)
             {
 

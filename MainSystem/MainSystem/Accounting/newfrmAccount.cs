@@ -58,8 +58,14 @@ namespace MainSystem.Accounting
             dataBalanceDetails.DefaultCellStyle.ForeColor = Color.Black;
             dgvpending.DefaultCellStyle.ForeColor = Color.Black;
             dataFeeValue.DefaultCellStyle.ForeColor = Color.Black;
+            dgvvoid.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
-
+            dataSearch.DefaultCellStyle.Font = new Font("Tahoma", 12f);
+            dataBalanceDetails.DefaultCellStyle.Font = new Font("Tahoma", 12f);
+            dgvpending.DefaultCellStyle.Font = new Font("Tahoma", 12f);
+            dgvvoid.DefaultCellStyle.Font = new Font("Tahoma", 12f);
+            dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 12f);
+            dataFeeValue.DefaultCellStyle.Font = new Font("Tahoma", 12f);
         }
         public void loadStudentProfileTable()
         {
@@ -105,8 +111,7 @@ namespace MainSystem.Accounting
         {
             using (MySqlConnection conn = connect.connector())
             {
-
-                string query = "SELECT * FROM disbursement WHERE syear = '"+syeartempo+"';";
+                string query = "SELECT * FROM disbursement WHERE syear = '"+syeartempo+"' AND Date_recorded = '"+DateTime.Now.ToString("yyyy-MM-dd")+"';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -187,11 +192,17 @@ namespace MainSystem.Accounting
         {
            
         }
+
         public void loadFeeDetails()
         {
-            DataTable feeDisplay = dbquery.feevalues();
-            this.dataFeeValue.DataSource = feeDisplay;
-
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM feevalues WHERE syear = '"+syeartempo+"';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataFeeValue.DataSource = dt;
+            }
             dataFeeValue.Columns["fee_type"].HeaderText = "Fee Type";
             dataFeeValue.Columns["fee_description"].HeaderText = "Fee Description";
             dataFeeValue.Columns["current_amount"].HeaderText = "Current Amount";
@@ -303,9 +314,13 @@ namespace MainSystem.Accounting
                 dic2.Add("sect", dataSearch.Rows[e.RowIndex].Cells["section"].Value.ToString());
                 loadBalanceDetails();
                 dataFeeValue.Refresh();
-                btnAddTransaction.Enabled = true;
-                btnEditAccount.Enabled = true;
-                btnViewPaymentHistory.Enabled = true;
+                if(!checkBox1.Checked)
+                {
+                    btnAddTransaction.Enabled = true;
+                    btnEditAccount.Enabled = true;
+                    //btnViewPaymentHistory.Enabled = true;
+                }
+               
             }
             else
             { return; }
@@ -313,8 +328,12 @@ namespace MainSystem.Accounting
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            reference.Show();
-            this.Dispose();
+            DialogResult res = MessageBox.Show("DO YOU WANT TO GO BACK TO THE DASHBOARD?", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                reference.Show();
+                this.Dispose();
+            }
         }
         public Accounting.newfrmAddTransaction transac;
         private void btnAddTransaction_Click(object sender, EventArgs e)
@@ -382,9 +401,9 @@ namespace MainSystem.Accounting
         {
             viewpaymenthistory = new Accounting.frmViewPaymentHistory(dic2);
             viewpaymenthistory.uname = uname;
-            viewpaymenthistory.syeartempo = this.syeartempo;
+            viewpaymenthistory.syeartempo = lblsy.Text;
             viewpaymenthistory.Show();
-            this.Hide();
+            //this.Hide();
             viewpaymenthistory.reference = this;
         }
 
@@ -757,15 +776,22 @@ namespace MainSystem.Accounting
             dataSearch.ReadOnly = true;
             this.dataSearch.Refresh();
         }
+        private void btnenablerr(Boolean a)
+        {
+            btnAddTransaction.Enabled = a;
+            button1.Enabled = a;
+        }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if(checkBox1.Checked)
             {
                 loadStudentListDeactivated();
+                btnenablerr(false);
             }
             else
             {
                 loadStudentProfileTable();
+                btnenablerr(true);
             }
         }
 
@@ -777,6 +803,57 @@ namespace MainSystem.Accounting
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+        private void feeSearch()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM feevalues WHERE fee_description LIKE '%" + txtfeesearch.Text + "%' " +
+                    "OR misc_desc LIKE '%" + txtfeesearch.Text + "%' " +
+                    "OR fee_type LIKE '%"+txtfeesearch.Text+"' AND syear = '" + syeartempo + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataFeeValue.DataSource = dt;
+            }
+            dataFeeValue.Columns["fee_type"].HeaderText = "Fee Type";
+            dataFeeValue.Columns["fee_description"].HeaderText = "Fee Description";
+            dataFeeValue.Columns["current_amount"].HeaderText = "Current Amount";
+            //dataFeeValue.Columns["school_year_start"].HeaderText = "School Year Start";
+            // dataFeeValue.Columns["school_year_end"].HeaderText = "School Year End";
+
+            dataFeeValue.Columns["Status"].Visible = false;
+            dataFeeValue.Columns["fid"].Visible = false;
+            dataFeeValue.Columns["date_modified"].Visible = false;
+            dataFeeValue.Columns["date_created"].Visible = false;
+            dataFeeValue.Columns["f_key"].Visible = false;
+            //dataFeeValue.ReadOnly = true;
+            this.dataFeeValue.Refresh();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            feeSearch();
+        }
+        private void disbsearch()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM disbursement WHERE syear = '" + syeartempo + "' AND Date_recorded = '"+searchtpexpense.Value.ToString("yyyy-MM-dd")+"';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
+        private void btnsdb_Click(object sender, EventArgs e)
+        {
+            disbsearch();
+        }
+
+        private void btnreldb_Click(object sender, EventArgs e)
+        {
+            loadDisbursementtbl();
         }
     }
 }

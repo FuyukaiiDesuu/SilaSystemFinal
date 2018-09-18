@@ -76,7 +76,7 @@ namespace MainSystem
         {
             if(comboBox1.Text == "Validated")
             {
-                DialogResult result1 = MessageBox.Show("THIS CHEQUE WILL BE VALIDATED, PROCEED?", "CONFIRM ACTION!" ,MessageBoxButtons.YesNo);
+                DialogResult result1 = MessageBox.Show("THIS CHEQUE WILL BE VALIDATED, PROCEED?", "CONFIRM ACTION!" ,MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if(result1 == DialogResult.Yes)
                 {
                     updater();
@@ -89,7 +89,7 @@ namespace MainSystem
             }
             else
             {
-                DialogResult result1 = MessageBox.Show("THIS CHEQUE WILL BE VOIDED. PROCEED?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
+                DialogResult result1 = MessageBox.Show("THIS CHEQUE WILL BE VOIDED. PROCEED?", "CONFIRM ACTION!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (result1 == DialogResult.Yes)
                 {
                     updater();
@@ -124,7 +124,7 @@ namespace MainSystem
 
         private void label15_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (dialogResult == DialogResult.Yes)
             {
                 Application.Exit();

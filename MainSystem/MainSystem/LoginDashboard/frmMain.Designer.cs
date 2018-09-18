@@ -35,17 +35,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSY = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUserForm = new System.Windows.Forms.Button();
             this.btnInventoryForm = new System.Windows.Forms.Button();
             this.btnEmployeeForm = new System.Windows.Forms.Button();
             this.btnRegistrationForm = new System.Windows.Forms.Button();
             this.btnAccountForm = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,10 +56,9 @@
             this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(60, 3);
-            this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(45, 2);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(344, 32);
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(275, 26);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
@@ -69,10 +68,9 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label1.Location = new System.Drawing.Point(10, 55);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 32);
+            this.label1.Size = new System.Drawing.Size(120, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "LOGGED IN USER:";
             // 
@@ -82,10 +80,9 @@
             this.lblusername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblusername.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblusername.Location = new System.Drawing.Point(154, 55);
-            this.lblusername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblusername.Location = new System.Drawing.Point(116, 45);
             this.lblusername.Name = "lblusername";
-            this.lblusername.Size = new System.Drawing.Size(139, 32);
+            this.lblusername.Size = new System.Drawing.Size(112, 26);
             this.lblusername.TabIndex = 7;
             this.lblusername.Text = "%USERNAME%";
             this.lblusername.Click += new System.EventHandler(this.label2_Click);
@@ -98,10 +95,9 @@
             this.btnLGOUT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLGOUT.Font = new System.Drawing.Font("Bebas Neue", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLGOUT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnLGOUT.Location = new System.Drawing.Point(1075, 46);
-            this.btnLGOUT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLGOUT.Location = new System.Drawing.Point(806, 37);
             this.btnLGOUT.Name = "btnLGOUT";
-            this.btnLGOUT.Size = new System.Drawing.Size(229, 66);
+            this.btnLGOUT.Size = new System.Drawing.Size(172, 54);
             this.btnLGOUT.TabIndex = 8;
             this.btnLGOUT.Text = "Logout";
             this.btnLGOUT.UseVisualStyleBackColor = false;
@@ -115,9 +111,8 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1311, 38);
+            this.panel1.Size = new System.Drawing.Size(983, 31);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -127,10 +122,9 @@
             this.lblSY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSY.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSY.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSY.Location = new System.Drawing.Point(1205, 7);
-            this.lblSY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSY.Location = new System.Drawing.Point(884, 4);
             this.lblSY.Name = "lblSY";
-            this.lblSY.Size = new System.Drawing.Size(102, 28);
+            this.lblSY.Size = new System.Drawing.Size(87, 23);
             this.lblSY.TabIndex = 16;
             this.lblSY.Text = "CURRENT S.Y:";
             // 
@@ -140,23 +134,11 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label2.Location = new System.Drawing.Point(1107, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(802, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 28);
+            this.label2.Size = new System.Drawing.Size(87, 23);
             this.label2.TabIndex = 15;
             this.label2.Text = "CURRENT S.Y:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -165,10 +147,9 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Bebas Neue", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label4.Location = new System.Drawing.Point(87, 360);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(49, 301);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(285, 40);
+            this.label4.Size = new System.Drawing.Size(239, 32);
             this.label4.TabIndex = 10;
             this.label4.Text = "Accounting Management";
             // 
@@ -179,10 +160,9 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label5.Location = new System.Drawing.Point(530, 360);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(382, 301);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(291, 40);
+            this.label5.Size = new System.Drawing.Size(245, 32);
             this.label5.TabIndex = 11;
             this.label5.Text = "Enrollment Management";
             // 
@@ -193,10 +173,9 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Bebas Neue", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label6.Location = new System.Drawing.Point(993, 360);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(729, 301);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(264, 40);
+            this.label6.Size = new System.Drawing.Size(222, 32);
             this.label6.TabIndex = 12;
             this.label6.Text = "Employee Management";
             // 
@@ -207,87 +186,11 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Bebas Neue", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label7.Location = new System.Drawing.Point(309, 675);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(216, 557);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(271, 40);
+            this.label7.Size = new System.Drawing.Size(229, 32);
             this.label7.TabIndex = 13;
             this.label7.Text = "Inventory Management";
-            // 
-            // btnUserForm
-            // 
-            this.btnUserForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUserForm.BackgroundImage = global::MainSystem.Properties.Resources.team;
-            this.btnUserForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUserForm.FlatAppearance.BorderSize = 0;
-            this.btnUserForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserForm.Location = new System.Drawing.Point(801, 472);
-            this.btnUserForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnUserForm.Name = "btnUserForm";
-            this.btnUserForm.Size = new System.Drawing.Size(223, 174);
-            this.btnUserForm.TabIndex = 5;
-            this.btnUserForm.UseVisualStyleBackColor = true;
-            this.btnUserForm.Click += new System.EventHandler(this.btnUserForm_Click);
-            // 
-            // btnInventoryForm
-            // 
-            this.btnInventoryForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnInventoryForm.BackgroundImage = global::MainSystem.Properties.Resources.checklist;
-            this.btnInventoryForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInventoryForm.FlatAppearance.BorderSize = 0;
-            this.btnInventoryForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventoryForm.Location = new System.Drawing.Point(327, 472);
-            this.btnInventoryForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnInventoryForm.Name = "btnInventoryForm";
-            this.btnInventoryForm.Size = new System.Drawing.Size(223, 174);
-            this.btnInventoryForm.TabIndex = 4;
-            this.btnInventoryForm.UseVisualStyleBackColor = true;
-            this.btnInventoryForm.Click += new System.EventHandler(this.btnInventoryForm_Click);
-            // 
-            // btnEmployeeForm
-            // 
-            this.btnEmployeeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEmployeeForm.BackgroundImage = global::MainSystem.Properties.Resources.employees1;
-            this.btnEmployeeForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEmployeeForm.FlatAppearance.BorderSize = 0;
-            this.btnEmployeeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployeeForm.Location = new System.Drawing.Point(1000, 165);
-            this.btnEmployeeForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEmployeeForm.Name = "btnEmployeeForm";
-            this.btnEmployeeForm.Size = new System.Drawing.Size(223, 174);
-            this.btnEmployeeForm.TabIndex = 3;
-            this.btnEmployeeForm.UseVisualStyleBackColor = true;
-            this.btnEmployeeForm.Click += new System.EventHandler(this.btnEmployeeForm_Click);
-            // 
-            // btnRegistrationForm
-            // 
-            this.btnRegistrationForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegistrationForm.BackgroundImage = global::MainSystem.Properties.Resources.edit1;
-            this.btnRegistrationForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRegistrationForm.FlatAppearance.BorderSize = 0;
-            this.btnRegistrationForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrationForm.Location = new System.Drawing.Point(573, 165);
-            this.btnRegistrationForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRegistrationForm.Name = "btnRegistrationForm";
-            this.btnRegistrationForm.Size = new System.Drawing.Size(223, 174);
-            this.btnRegistrationForm.TabIndex = 2;
-            this.btnRegistrationForm.UseVisualStyleBackColor = true;
-            this.btnRegistrationForm.Click += new System.EventHandler(this.btnEnrollmentForm_Click);
-            // 
-            // btnAccountForm
-            // 
-            this.btnAccountForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAccountForm.BackgroundImage = global::MainSystem.Properties.Resources.money1;
-            this.btnAccountForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAccountForm.FlatAppearance.BorderSize = 0;
-            this.btnAccountForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccountForm.Location = new System.Drawing.Point(108, 165);
-            this.btnAccountForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAccountForm.Name = "btnAccountForm";
-            this.btnAccountForm.Size = new System.Drawing.Size(223, 174);
-            this.btnAccountForm.TabIndex = 1;
-            this.btnAccountForm.UseVisualStyleBackColor = true;
-            this.btnAccountForm.Click += new System.EventHandler(this.btnAccountForm_Click);
             // 
             // label8
             // 
@@ -296,19 +199,98 @@
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("Bebas Neue", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label8.Location = new System.Drawing.Point(813, 675);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(594, 557);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(211, 40);
+            this.label8.Size = new System.Drawing.Size(178, 32);
             this.label8.TabIndex = 14;
             this.label8.Text = "User Management";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnUserForm
+            // 
+            this.btnUserForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUserForm.BackgroundImage = global::MainSystem.Properties.Resources.settings;
+            this.btnUserForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUserForm.FlatAppearance.BorderSize = 0;
+            this.btnUserForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserForm.Location = new System.Drawing.Point(585, 372);
+            this.btnUserForm.Name = "btnUserForm";
+            this.btnUserForm.Size = new System.Drawing.Size(205, 183);
+            this.btnUserForm.TabIndex = 5;
+            this.btnUserForm.UseVisualStyleBackColor = true;
+            this.btnUserForm.Click += new System.EventHandler(this.btnUserForm_Click);
+            // 
+            // btnInventoryForm
+            // 
+            this.btnInventoryForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnInventoryForm.BackgroundImage = global::MainSystem.Properties.Resources.box;
+            this.btnInventoryForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInventoryForm.FlatAppearance.BorderSize = 0;
+            this.btnInventoryForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventoryForm.Location = new System.Drawing.Point(233, 372);
+            this.btnInventoryForm.Name = "btnInventoryForm";
+            this.btnInventoryForm.Size = new System.Drawing.Size(200, 182);
+            this.btnInventoryForm.TabIndex = 4;
+            this.btnInventoryForm.UseVisualStyleBackColor = true;
+            this.btnInventoryForm.Click += new System.EventHandler(this.btnInventoryForm_Click);
+            // 
+            // btnEmployeeForm
+            // 
+            this.btnEmployeeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEmployeeForm.BackgroundImage = global::MainSystem.Properties.Resources.student;
+            this.btnEmployeeForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEmployeeForm.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeForm.Location = new System.Drawing.Point(749, 121);
+            this.btnEmployeeForm.Name = "btnEmployeeForm";
+            this.btnEmployeeForm.Size = new System.Drawing.Size(183, 177);
+            this.btnEmployeeForm.TabIndex = 3;
+            this.btnEmployeeForm.UseVisualStyleBackColor = true;
+            this.btnEmployeeForm.Click += new System.EventHandler(this.btnEmployeeForm_Click);
+            // 
+            // btnRegistrationForm
+            // 
+            this.btnRegistrationForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegistrationForm.BackgroundImage = global::MainSystem.Properties.Resources.document;
+            this.btnRegistrationForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRegistrationForm.FlatAppearance.BorderSize = 0;
+            this.btnRegistrationForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrationForm.Location = new System.Drawing.Point(420, 136);
+            this.btnRegistrationForm.Name = "btnRegistrationForm";
+            this.btnRegistrationForm.Size = new System.Drawing.Size(182, 162);
+            this.btnRegistrationForm.TabIndex = 2;
+            this.btnRegistrationForm.UseVisualStyleBackColor = true;
+            this.btnRegistrationForm.Click += new System.EventHandler(this.btnEnrollmentForm_Click);
+            // 
+            // btnAccountForm
+            // 
+            this.btnAccountForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAccountForm.BackgroundImage = global::MainSystem.Properties.Resources.piggy_bank;
+            this.btnAccountForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAccountForm.FlatAppearance.BorderSize = 0;
+            this.btnAccountForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccountForm.Location = new System.Drawing.Point(66, 121);
+            this.btnAccountForm.Name = "btnAccountForm";
+            this.btnAccountForm.Size = new System.Drawing.Size(200, 177);
+            this.btnAccountForm.TabIndex = 1;
+            this.btnAccountForm.UseVisualStyleBackColor = true;
+            this.btnAccountForm.Click += new System.EventHandler(this.btnAccountForm_Click);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1311, 756);
+            this.ClientSize = new System.Drawing.Size(983, 614);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -324,7 +306,6 @@
             this.Controls.Add(this.btnRegistrationForm);
             this.Controls.Add(this.btnAccountForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";

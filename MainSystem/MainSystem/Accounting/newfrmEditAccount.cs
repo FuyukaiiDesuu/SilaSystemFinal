@@ -371,8 +371,13 @@ namespace MainSystem.Accounting
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            reference.Show();
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Details Will Be Discarded!, Proceed?", "WARNING!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.OK)
+            {
+                reference.Show();
+                this.Close();
+            }
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -423,24 +428,39 @@ namespace MainSystem.Accounting
         }
         public SOAccount soaform;
         public IDictionary<string, string> dicforsoaform;
+        private Boolean txtboxvalidate()
+        {
+            if (texttuiton.Text == "₱0.00" || texttuiton.Text == "₱0" || textbooks.Text == "₱0.00" || textbooks.Text == "₱0" || textregis.Text == "₱0.00" || textregis.Text == "₱0" || textmisc.Text == "₱0.00" || textmisc.Text == "₱0")
+            {
+                MessageBox.Show("PLEASE FILL ALL NECESSARY FIELDS!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Confirm Action!", "The Document Will Be Printed", MessageBoxButtons.OKCancel);
-            if (dialogResult == DialogResult.OK)
+            if(txtboxvalidate())
             {
-                dicforsoaform = new Dictionary<string, string>();
-                dicforsoaform.Add("tuition", texttuiton.Text);
-                dicforsoaform.Add("books", textbooks.Text);
-                dicforsoaform.Add("regis", textregis.Text);
-                dicforsoaform.Add("others", textmisc.Text);
-                dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
-                dicforsoaform.Add("fullname", txtStudentName.Text);
-                dicforsoaform.Add("section", txtsec.Text);
-                dicforsoaform.Add("level", txtlvl.Text);
+                DialogResult dialogResult = MessageBox.Show("Confirm Action!", "The Document Will Be Printed", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.OK)
+                {
+                    dicforsoaform = new Dictionary<string, string>();
+                    dicforsoaform.Add("tuition", texttuiton.Text);
+                    dicforsoaform.Add("books", textbooks.Text);
+                    dicforsoaform.Add("regis", textregis.Text);
+                    dicforsoaform.Add("others", textmisc.Text);
+                    dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
+                    dicforsoaform.Add("fullname", txtStudentName.Text);
+                    dicforsoaform.Add("section", txtsec.Text);
+                    dicforsoaform.Add("level", txtlvl.Text);
 
-                soaform = new SOAccount(dicforsoaform);
-                soaform.syear = lblsy.Text;
-                soaform.Show();
+                    soaform = new SOAccount(dicforsoaform);
+                    soaform.syear = lblsy.Text;
+                    soaform.Show();
+                }
             }
         }
 
@@ -479,8 +499,12 @@ namespace MainSystem.Accounting
         }
         private void textregis_Leave(object sender, EventArgs e)
         {
-            Decimal a = Decimal.Round(Decimal.Parse(textregis.Text.TrimStart('₱')), 2);
-            textregis.Text = a.ToString("C2", new CultureInfo("en-PH"));
+            if (texttuiton.Text.Length <= 1)
+            {
+                texttuiton.Text = "₱0.00";
+            }
+            Decimal a = Decimal.Round(Decimal.Parse(texttuiton.Text.TrimStart('₱')), 2);
+            texttuiton.Text = a.ToString("C2", new CultureInfo("en-PH"));
         }
         private void textbooks_Leave(object sender, EventArgs e)
         {

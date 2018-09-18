@@ -191,42 +191,69 @@ namespace MainSystem.Accounting
                 }   
             }
         }
-     
-        private void btnPay_Click(object sender, EventArgs e)
+        private Boolean dgvemptycheck()
         {
-            DialogResult result = MessageBox.Show("Do You Want To Proceed To Payment?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
-            if(result == DialogResult.Yes)
+            if(dgvcart.Rows.Count == 0)
             {
-                tf = new TenderedForm();
-                tf.amount = txtAmount.Text;
-                tf.tndr = txttendered.Text;
-                tf.reference = this;
-                if (tf.ShowDialog() == DialogResult.OK)
-                {
-                    MessageBox.Show("TRANSACTION SUCESSFULLY COMPLETED!");
-                    payermechanism();
-                    reference.Show();
-                    //reference.loadBalanceDetails(id);
-                    reference.loadBalanceDetails();
-                    reference.loadPaymentDetails();
-                    this.Close();
-                }
-                else
-                {
-
-                }
+                DialogResult result = MessageBox.Show("There Are Currently No Subtransactions!", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return true;
             }
             else
             {
-
+                return false;
             }
-               
-            
+        }
+        private Boolean finalamountcheck()
+        {
+            if (txttendered.Text == "₱0.00" || txttendered.Text == "₱0" || txttendered.Text == "₱" || txttendered.Text == "₱0." || txttendered.Text == "₱0.0")
+            {
+                MessageBox.Show("PLEASE CHECK TENDERED AMOUNT!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if(!dgvemptycheck())
+            {
+                if(finalamountcheck())
+                {
+                    DialogResult result = MessageBox.Show("Do You Want To Proceed To Payment?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        tf = new TenderedForm();
+                        tf.amount = txtAmount.Text;
+                        tf.tndr = txttendered.Text;
+                        tf.reference = this;
+                        if (tf.ShowDialog() == DialogResult.OK)
+                        {
+                            MessageBox.Show("TRANSACTION SUCESSFULLY COMPLETED!");
+                            payermechanism();
+                            reference.Show();
+                            //reference.loadBalanceDetails(id);
+                            reference.loadBalanceDetails();
+                            reference.loadPaymentDetails();
+                            this.Close();
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("DISCARD TRANSACTION?", "CONFIRM ACTION!", MessageBoxButtons.YesNo);
-            if(result == DialogResult.Yes)
+            DialogResult result = MessageBox.Show("DISCARD TRANSACTION?", "CONFIRM ACTION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(result == DialogResult.OK)
             {
                 this.Close();
             }
@@ -390,24 +417,54 @@ namespace MainSystem.Accounting
             Decimal a = Decimal.Round(Decimal.Parse(subtotal.ToString().TrimStart('₱')), 2);
             txtAmount.Text = "₱" + (b - a).ToString();
         }
+        private Boolean addcarttxtvalidate()
+        {
+            if(txtTransactionNo.Text == "" || cmbPaymentType.Text == "" || txtSubTotal.Text == "" || cmbPaymentTo.Text == "" || txtStudentName.Text == "" || txtAdditionalDetails.Text == "")
+            {
+                MessageBox.Show("PLEASE FILL ALL NECESSARY FIELDS!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private Boolean subtotalCheck()
+        {
+            if (txtSubTotal.Text == "₱0.00" || txtSubTotal.Text == "₱0" || txtSubTotal.Text == "₱" || txtSubTotal.Text == "₱0." || txtSubTotal.Text == "₱0.0")
+            {
+                MessageBox.Show("PLEASE CHECK ENTERED SUBTOTAL AMOUNT!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btnADDTOCART_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("This Sub-transaction Will Be Added! Proceed?", "WARNING!", MessageBoxButtons.OKCancel);
-            if (rs == DialogResult.OK)
+            if(addcarttxtvalidate())
             {
-                int rowindex = dgvcart.Rows.Add();
-                dgvcart.Rows[rowindex].Cells[0].Value = txtTransactionNo.Text;
-                dgvcart.Rows[rowindex].Cells[1].Value = cmbPaymentType.Text;
-                dgvcart.Rows[rowindex].Cells[2].Value = txtChequeNo.Text;
-                dgvcart.Rows[rowindex].Cells[3].Value = txtSubTotal.Text;
-                textboxadder(txtSubTotal.Text);
-                dgvcart.Rows[rowindex].Cells[4].Value = cmbPaymentTo.Text;
-                dgvcart.Rows[rowindex].Cells[5].Value = txtStudentName.Text;
-                dgvcart.Rows[rowindex].Cells[6].Value = lblsy2.Text;
-                dgvcart.Rows[rowindex].Cells[7].Value = lblPaymentDate2.Text;
-                dgvcart.Rows[rowindex].Cells[8].Value = txtAdditionalDetails.Text;
-                textboxclr();
-                MessageBox.Show("Sub-transaction Added!");
+                if(subtotalCheck())
+                {
+                    DialogResult rs = MessageBox.Show("This Sub-transaction Will Be Added! Proceed?", "WARNING!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    if (rs == DialogResult.OK)
+                    {
+                        int rowindex = dgvcart.Rows.Add();
+                        dgvcart.Rows[rowindex].Cells[0].Value = txtTransactionNo.Text;
+                        dgvcart.Rows[rowindex].Cells[1].Value = cmbPaymentType.Text;
+                        dgvcart.Rows[rowindex].Cells[2].Value = txtChequeNo.Text;
+                        dgvcart.Rows[rowindex].Cells[3].Value = txtSubTotal.Text;
+                        textboxadder(txtSubTotal.Text);
+                        dgvcart.Rows[rowindex].Cells[4].Value = cmbPaymentTo.Text;
+                        dgvcart.Rows[rowindex].Cells[5].Value = txtStudentName.Text;
+                        dgvcart.Rows[rowindex].Cells[6].Value = lblsy2.Text;
+                        dgvcart.Rows[rowindex].Cells[7].Value = lblPaymentDate2.Text;
+                        dgvcart.Rows[rowindex].Cells[8].Value = txtAdditionalDetails.Text;
+                        textboxclr();
+                        MessageBox.Show("Sub-transaction Added!");
+                    }
+                }
             }
             //ADD DIALOG BOX!
             
@@ -415,17 +472,19 @@ namespace MainSystem.Accounting
 
         private void btnremovecart_Click(object sender, EventArgs e)
         {
-            DialogResult rs = MessageBox.Show("This Sub-transaction will be deleted! Proceed?", "WARNING!", MessageBoxButtons.OKCancel);
-            if(rs == DialogResult.OK)
+            if(!dgvemptycheck())
             {
-                foreach (DataGridViewRow item in this.dgvcart.SelectedRows)
+                DialogResult rs = MessageBox.Show("This Sub-transaction will be deleted! Proceed?", "WARNING!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                if (rs == DialogResult.OK)
                 {
-                    txtboxminus(dgvcart.Rows[item.Index].Cells[3].Value.ToString());
-                    dgvcart.Rows.RemoveAt(item.Index);
-                    MessageBox.Show("Sub-transaction Removed!");
+                    foreach (DataGridViewRow item in this.dgvcart.SelectedRows)
+                    {
+                        txtboxminus(dgvcart.Rows[item.Index].Cells[3].Value.ToString());
+                        dgvcart.Rows.RemoveAt(item.Index);
+                        MessageBox.Show("Sub-transaction Removed!");
+                    }
                 }
             }
-           
         }
 
         private void grpNewPayment_Enter(object sender, EventArgs e)
