@@ -134,7 +134,14 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@dof", dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@pof", txtbp.Text);
                     command.Parameters.AddWithValue("@sex", comboBox1.Text);
-                    command.Parameters.AddWithValue("@rel", txtrel.Text);
+                    if (comboBox4.Text == "Others")
+                    {
+                        command.Parameters.AddWithValue("@rel", textBox1.Text);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@rel", comboBox4.Text);
+                    }
                     command.Parameters.AddWithValue("@nickname", txtnn.Text);
                     command.Parameters.AddWithValue("@imgpt", imgpath);
                     command.ExecuteNonQuery();
@@ -164,6 +171,7 @@ namespace MainSystem
             int a = Convert.ToInt32(dt.ToString("yyyy"));
             return dt.ToString("yyyy") + "-" + (a + 1).ToString();
         }
+        public Boolean a;
         public void txtboxfill(IDictionary<string, string> dic)
         {
             DateTime dt = DateTime.Parse(dic["bd"]);
@@ -174,7 +182,17 @@ namespace MainSystem
             txtmn.Text = dic["mn"];
             txtbp.Text = dic["bp"];
             comboBox1.Text = dic["sex"];
-            txtrel.Text = dic["rel"];
+            
+            if(dic["rel"] == "Born-again" || dic["rel"] == "Roman Catholic")
+            { 
+                comboBox4.Text = dic["rel"];
+            }
+            else
+            {
+                textBox1.Enabled = true;
+                comboBox4.Text = "Others";
+                textBox1.Text = dic["rel"];
+            }
             txtnn.Text = dic["nn"];
             comboBox3.Text = dic["dept"];
             comboBox2.Text = dic["lvl"];
@@ -194,15 +212,34 @@ namespace MainSystem
             reference.textboxClear();
             reference.Show();
         }
+        private Boolean textboxvalidate()
+        {
+            if (txtfn.Text == "" || txtln.Text == "" || txtmn.Text == "" || txtbp.Text == "" || txtnn.Text == "" || dateTimePicker1.Value.ToString("yyyy-MM-dd") == DateTime.Now.ToString("yyyy-MM-dd") || comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "" || comboBox4.Text == "")
+            {
+                MessageBox.Show("PLEASE FILL OUT ALL TEXT FEILDS!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
 
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            updatevalue();
-            MessageBox.Show("Records Succesfully Altered!");
-            reference.loadData();
-            reference.dataGridView1.ClearSelection();
-            reference.textboxClear();
-            this.Close();
+            if(textboxvalidate())
+            {
+                DialogResult res = MessageBox.Show("CONFIRM STUDENT CREATION!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.Yes)
+                {
+                    updatevalue();
+                    MessageBox.Show("Records Succesfully Altered!");
+                    reference.loadData();
+                    reference.dataGridView1.ClearSelection();
+                    reference.textboxClear();
+                    this.Close();
+                }
+            }
         }
         private void combochanger()
         {

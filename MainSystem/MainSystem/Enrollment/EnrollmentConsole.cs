@@ -35,6 +35,8 @@ namespace MainSystem
         {
             loadData();
             lblsy.Text = syear;
+            dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 14f);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView1.ClearSelection();
         }
         public void loadData()
@@ -61,12 +63,13 @@ namespace MainSystem
                 dataGridView1.Columns["idstuddet"].Visible = false;
                 dataGridView1.Columns["Status"].Visible = false;
                 dataGridView1.Columns["department"].Visible = false;
-                dataGridView1.Columns["level"].Visible = true;
+                dataGridView1.Columns["level"].Visible = false;
                 dataGridView1.Columns["school_year"].Visible = false;
                 dataGridView1.Columns["idstddet"].Visible = false;
                 dataGridView1.Columns["section"].Visible = false;
                 dataGridView1.Columns["image_path"].Visible = false;
 
+                dataGridView1.Columns["level_dummyval"].HeaderText = "Student Level";
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView1.Columns["LastName"].HeaderText = "Last Name";
@@ -87,9 +90,13 @@ namespace MainSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            reference.Show();
-            dbconnection.Close();
-            this.Close();
+            DialogResult res = MessageBox.Show("DO YOU WANT TO GO BACK TO THE DASHBOARD?", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                reference.Show();
+                dbconnection.Close();
+                this.Close();
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -201,6 +208,7 @@ namespace MainSystem
                 txtbp.Text = dataGridView1.Rows[e.RowIndex].Cells["PlaceOfBirth"].Value.ToString();
                 txtsex.Text = dataGridView1.Rows[e.RowIndex].Cells["Sex"].Value.ToString();
                 txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
+                //txtrel.Text = dataGridView1.Rows[e.RowIndex].Cells["Religion"].Value.ToString();
                 txtnn.Text = dataGridView1.Rows[e.RowIndex].Cells["Nickname"].Value.ToString();
                 imgpath = dataGridView1.Rows[e.RowIndex].Cells["image_path"].Value.ToString();
                 IDictionary<string, string> dic = studdetails(dataGridView1.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["level"].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
@@ -365,6 +373,11 @@ namespace MainSystem
             lform = new Enrollment.levelmgmtform();
             lform.reference = this;
             lform.Show();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

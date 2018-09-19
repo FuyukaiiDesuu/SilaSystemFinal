@@ -13,7 +13,8 @@ namespace MainSystem
 {
     public partial class addStudent : Form
     {
-
+        public MySqlDataAdapter adapter;
+        public DataTable dt;
         public EnrollmentConsole reference { get; set; }
         public string syear { get; set; }
         public string studid;
@@ -222,18 +223,54 @@ namespace MainSystem
             groupBox2.Enabled = false;
             groupBox3.Enabled = false;
         }
+        private Boolean doublenamecheck(string fn , string ln, string mn)
+        {
+            var connect = new dbConnector();
+            using (MySqlConnection conn = connect.connector())
+            {
+
+                string query = "";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                   
+
+                }
+            }
+            return false;
+        }
+        private Boolean textboxvalidate()
+        {
+            if(txtfn.Text == "" || txtln.Text == "" || txtmn.Text == "" || txtbp.Text == "" || txtnn.Text == "" || dateTimePicker1.Value.ToString("yyyy-MM-dd") == DateTime.Now.ToString("yyyy-MM-dd") || comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "" || comboBox4.Text == "")
+            {
+                MessageBox.Show("PLEASE FILL OUT ALL TEXT FEILDS!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+                
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            createfunction();
-            MessageBox.Show("Record Created Successfully!");
-            //connection.Close();
-            btnSave.Enabled = false;
-            //gboxDisabler();
-            reference.loadData();
-            reference.dataGridView1.ClearSelection();
-            reference.textboxClear();
-            reference.Show();
-            this.Close();
+            if(textboxvalidate())
+            {
+                DialogResult res = MessageBox.Show("CONFIRM STUDENT CREATION!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.Yes)
+                {
+                    createfunction();
+                    MessageBox.Show("Record Created Successfully!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSave.Enabled = false;
+                    reference.loadData();
+                    reference.dataGridView1.ClearSelection();
+                    reference.textboxClear();
+                    reference.Show();
+                    this.Close();
+                }
+            }
         }
 
         private void Department_Click(object sender, EventArgs e)
@@ -243,31 +280,35 @@ namespace MainSystem
 
         private void btncanc_Click(object sender, EventArgs e)
         {
-            var dbconnect = new dbConnector();
-            using (dbconnection = dbconnect.connector())
+            DialogResult res = MessageBox.Show("DO YOU WANT TO CANCEL? INFORMATION WILL BE DISCARDED", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
             {
-                dbconnection.Open();
-                using (var command = new MySqlCommand("DELETE from studentprofile WHERE idstudentprofile = @ayd;", dbconnection))
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
                 {
-                    command.Parameters.AddWithValue("@ayd", studid);
-                    command.ExecuteNonQuery();
-                }
-                using (var command2 = new MySqlCommand("DELETE from studdetails WHERE idstddet = @ayd;", dbconnection))
-                {
-                    command2.Parameters.AddWithValue("@ayd", studid);
-                    command2.ExecuteNonQuery();
+                    dbconnection.Open();
+                    using (var command = new MySqlCommand("DELETE from studentprofile WHERE idstudentprofile = @ayd;", dbconnection))
+                    {
+                        command.Parameters.AddWithValue("@ayd", studid);
+                        command.ExecuteNonQuery();
+                    }
+                    using (var command2 = new MySqlCommand("DELETE from studdetails WHERE idstddet = @ayd;", dbconnection))
+                    {
+                        command2.Parameters.AddWithValue("@ayd", studid);
+                        command2.ExecuteNonQuery();
+                    }
+
                 }
 
+                altertable();
+                this.Close();
+                reference.Show();
+                reference.loadData();
+                reference.textboxClear();
+                reference.dataGridView1.ClearSelection();
+                dbconnection.Close();
             }
-
-            altertable();
-            this.Close();
-            reference.Show();
-            reference.loadData();
-            reference.textboxClear();
-            reference.dataGridView1.ClearSelection();
-            dbconnection.Close();
-
+            
         }
         private void altertable()
         {

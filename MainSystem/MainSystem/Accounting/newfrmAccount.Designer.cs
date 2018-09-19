@@ -30,7 +30,6 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabStudentTransaction = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnAddTransaction = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -47,7 +46,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btnViewPaymentHistory = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,6 +70,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnsdb = new System.Windows.Forms.Button();
             this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnViewPaymentHistory = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
@@ -133,32 +133,11 @@
             this.tabStudentTransaction.Text = "Student List";
             this.tabStudentTransaction.Click += new System.EventHandler(this.tabStudentTransaction_Click);
             // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(591, 32);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 48);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Generate DCF Report";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // btnAddTransaction
             // 
             this.btnAddTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddTransaction.BackColor = System.Drawing.Color.DarkGreen;
             this.btnAddTransaction.Enabled = false;
-            this.btnAddTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
-            this.btnAddTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
             this.btnAddTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTransaction.Font = new System.Drawing.Font("Bebas Neue", 42F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.ForeColor = System.Drawing.Color.White;
@@ -396,24 +375,6 @@
             this.checkBox1.Text = "VIEW INACTIVE STUDENTS";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // btnViewPaymentHistory
-            // 
-            this.btnViewPaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewPaymentHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnViewPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
-            this.btnViewPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
-            this.btnViewPaymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewPaymentHistory.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewPaymentHistory.ForeColor = System.Drawing.Color.Black;
-            this.btnViewPaymentHistory.Location = new System.Drawing.Point(850, 32);
-            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
-            this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
-            this.btnViewPaymentHistory.Size = new System.Drawing.Size(262, 48);
-            this.btnViewPaymentHistory.TabIndex = 5;
-            this.btnViewPaymentHistory.Text = "View Payment History";
-            this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
-            this.btnViewPaymentHistory.Click += new System.EventHandler(this.btnViewPaymentHistory_Click);
             // 
             // btnEditAccount
             // 
@@ -769,6 +730,43 @@
             this.searchtpexpense.Size = new System.Drawing.Size(304, 27);
             this.searchtpexpense.TabIndex = 38;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(591, 32);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(255, 48);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Generate DCF Report";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnViewPaymentHistory
+            // 
+            this.btnViewPaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnViewPaymentHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnViewPaymentHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
+            this.btnViewPaymentHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
+            this.btnViewPaymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewPaymentHistory.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewPaymentHistory.ForeColor = System.Drawing.Color.Black;
+            this.btnViewPaymentHistory.Location = new System.Drawing.Point(850, 32);
+            this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
+            this.btnViewPaymentHistory.Size = new System.Drawing.Size(262, 48);
+            this.btnViewPaymentHistory.TabIndex = 5;
+            this.btnViewPaymentHistory.Text = "View Payment History";
+            this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
+            this.btnViewPaymentHistory.Click += new System.EventHandler(this.btnViewPaymentHistory_Click);
+            // 
             // btnDashboard
             // 
             this.btnDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -826,7 +824,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label3.Location = new System.Drawing.Point(1016, 7);
+            this.label3.Location = new System.Drawing.Point(1079, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 23);
             this.label3.TabIndex = 3;
@@ -838,7 +836,7 @@
             this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblsy.Location = new System.Drawing.Point(1096, 7);
+            this.lblsy.Location = new System.Drawing.Point(1159, 7);
             this.lblsy.Name = "lblsy";
             this.lblsy.Size = new System.Drawing.Size(30, 23);
             this.lblsy.TabIndex = 2;
