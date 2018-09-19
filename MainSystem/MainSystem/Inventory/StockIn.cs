@@ -16,6 +16,7 @@ namespace MainSystem
         public Int32 quantity_remaining;
         public Int32 quantity_delivered;
         public string orderlistID;
+        public string itemid;
         public FormInventory reference { get; set; }
         public Stockin_out()
         {
@@ -78,6 +79,7 @@ namespace MainSystem
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             quantity_remaining = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
+            itemid = dataGridView1.Rows[e.RowIndex].Cells["item_id"].Value.ToString();
             orderlistID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
         }
 
@@ -96,6 +98,19 @@ namespace MainSystem
                 dataGridView2.DataSource = dt;
                 //dataGridView2.Columns["itemID"].Visible = false;
             }
+        }
+        private string adder()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM stkin WHERE status = 0";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dt.Rows[]
+                //dataGridView2.Columns["itemID"].Visible = false;
+            }
+            return "";
         }
         /*
         private void btnout_Click(object sender, EventArgs e)
@@ -122,49 +137,121 @@ namespace MainSystem
             readData2();
             dataGridView2.ClearSelection();
         }*/
-       
-        private string quantityADD()
+        private Int32 inventorycount()
         {
-            Int32 a = 0;
-            Int32 b = 0;
+            using (MySqlConnection conn = connect.connector())
+
+            {
+                string query = "SELECT COUNT(*) FROM inventory;";
+                using (var com = new MySqlCommand(query, dbconnection))
+                {
+                    return Convert.ToInt32(com.ExecuteScalar());
+                }
+            }
+        }
+        private Boolean checkif_in_inventory(string itemid)
+        {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM inventory WHERE invID = '"+ invID +"';";
+                string query = "SELECT * FROM inventory WHERE invID = '" + invID + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
-                MessageBox.Show(dt.Rows[0]["quantity"].ToString());
-                a = Convert.ToInt32(dt.Rows[0]["quantity"].ToString());
-                b = Convert.ToInt32(quantity);
+                if(dt.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            return (a + b).ToString();
         }
-        private void btnin_Click(object sender, EventArgs e)
+        private void insertintoInventory()
         {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
 
+                dbconnection.Open();
+                using (var com = new MySqlCommand("INSERT INTO inventory(item_id, stock_in_date, Quantity, status) VALUES(@item_id, @stock_in_date, @Quantity, @status)", dbconnection))
+                {
+                    
+                    com.Parameters.AddWithValue("@item_id", itemid);
+                    com.Parameters.AddWithValue("@qdel",);
+                    com.ExecuteNonQuery();
+                }
+            }
+        }
+        private void updateInventory()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+
+                dbconnection.Open();
+                using (var com = new MySqlCommand("UPDATE inventory SET stock_in_date = @stock_in_date, Quantity = @Quantity, status = @status WHERE item_id = @itemayd", dbconnection))
+                {
+
+                    com.Parameters.AddWithValue("@itemayd", itemid);
+                    com.Parameters.AddWithValue("@stock_in_date", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                    com.Parameters.AddWithValue("@Quantity", txtEnter.Text);
+                    com.Parameters.AddWithValue("@status", 1);
+                    com.ExecuteNonQuery();
+                }
+            }
+        }
+        private void insertstkin()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+
+                dbconnection.Open();
+                using (var com = new MySqlCommand("INSERT INTO stkin(inventory_id, date, quantity_delivered, status, orderlistID) VALUES(@invid, @date, @quantity_delivered, @status, @orderlistID)", dbconnection))
+                {
+                    com.Parameters.AddWithValue("@invid", inventorycount().ToString());
+                    com.Parameters.AddWithValue("@quantity_delivered", txtEnter.Text);
+                    //com.Parameters.AddWithValue("@quantity_remaining", quantity_remaining.ToString());
+                    //MessageBox.Show(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                    com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                    com.Parameters.AddWithValue("@status", 1);
+                    com.Parameters.AddWithValue("@orderlistID", orderlistID);
+                    com.ExecuteNonQuery();
+                }
+            }
+        }
+        private void updateorderlist()
+        {
+          
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                using (var com = new MySqlCommand("INSERT INTO stkin(quantity_delivered, quantity_remaining, date, status, id) VALUES(@quantity_delivered, @date, @status, @id, @quantity_remaining)", dbconnection))
+                using (var com = new MySqlCommand("UPDATE orderlist SET quantity_delivered = @qdel", dbconnection))
                 {
-                    com.Parameters.AddWithValue("@quantity_delivered", txtEnter.Text);
-                    com.Parameters.AddWithValue("@quantity_remaining", quantity_remaining.ToString());
-                    com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"));
-                    com.Parameters.AddWithValue("@status", 1);
-                    com.Parameters.AddWithValue("@id", orderlistID);
-                    com.ExecuteNonQuery();
-                }
-                using (var com = new MySqlCommand("UPDATE stkin SET  VALUES(@quantity_delivered, @date, @status, @id, @quantity_remaining)", dbconnection))
-                {
-                    com.Parameters.AddWithValue("@quantity_delivered", txtEnter.Text);
-                    com.Parameters.AddWithValue("@quantity_remaining", quantity_remaining.ToString());
-                    com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd"));
-                    com.Parameters.AddWithValue("@status", 1);
-                    com.Parameters.AddWithValue("@id", orderlistID);
-                    com.ExecuteNonQuery();
-                }
 
+                    com.Parameters.AddWithValue("@itemayd", itemid);
+                    com.Parameters.AddWithValue("@stock_in_date", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                    com.Parameters.AddWithValue("@Quantity", txtEnter.Text);
+                    com.Parameters.AddWithValue("@status", 1);
+                    com.ExecuteNonQuery();
+                }
+            }
+            
+        }
+        private void btnin_Click(object sender, EventArgs e)
+        {
+
+            if(!checkif_in_inventory(itemid))
+            {
+                insertintoInventory();
+                insertstkin();
+            }
+            else
+            {
+                updateInventory();
+                insertstkin();
             }
             MessageBox.Show("ITEM STOCKED-IN!");
             readData2();

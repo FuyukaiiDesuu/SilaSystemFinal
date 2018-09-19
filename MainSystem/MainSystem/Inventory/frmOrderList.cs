@@ -52,16 +52,29 @@ namespace MainSystem
                 dataItemCreation.DataSource = dt;
             }
         }
+        public void readDataOrderList()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                conn.Open();
+                string query = "SELECT * FROM itemdetails INNER JOIN orderlist ON itemdetails.itemID = orderlist.item_id";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataOrderList.DataSource = dt;
+            }
+        }
 
         private void btnAdd2_Click(object sender, EventArgs e)
         {
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
-                using (var command = new MySqlCommand("INSERT INTO orderlist(date, vendor, quantity, status, item_id) VALUES(@date, @vendor, @quantity, @status, @item_id);", dbconnection))
+                using (var command = new MySqlCommand("INSERT INTO orderlist(date_created, date, vendor, quantity, status, item_id) VALUES(@date_created, @date, @vendor, @quantity, @status, @item_id);", dbconnection))
                 {
                     dbconnection.Open();
                     command.Parameters.AddWithValue("@item_name", txtitemname2.Text);
+                    command.Parameters.AddWithValue("@date_created", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     command.Parameters.AddWithValue("@date", dateDate.Text);
                     command.Parameters.AddWithValue("@vendor", txtvendor.Text);
                     command.Parameters.AddWithValue("@quantity", txtquantity2.Text);
@@ -72,6 +85,7 @@ namespace MainSystem
             }
             MessageBox.Show("Successfully Added");
             readData();
+            readDataOrderList();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -82,6 +96,7 @@ namespace MainSystem
         private void frmOrderList_Load(object sender, EventArgs e)
         {
             readData();
+            readDataOrderList();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
