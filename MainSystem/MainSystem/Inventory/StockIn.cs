@@ -91,7 +91,7 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM stkin WHERE status = 0";
+                string query = "SELECT * FROM stkin WHERE status = 1";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -107,7 +107,7 @@ namespace MainSystem
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
-                dt.Rows[]
+                dt.Rows[0]["quantity_delivered"].ToString();
                 //dataGridView2.Columns["itemID"].Visible = false;
             }
             return "";
@@ -178,7 +178,9 @@ namespace MainSystem
                 {
                     
                     com.Parameters.AddWithValue("@item_id", itemid);
-                    com.Parameters.AddWithValue("@qdel",);
+                    com.Parameters.AddWithValue("@stock_in_date",DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                    com.Parameters.AddWithValue("@Quantity", txtEnter.Text);
+                    com.Parameters.AddWithValue("@status", 0);
                     com.ExecuteNonQuery();
                 }
             }
@@ -242,7 +244,6 @@ namespace MainSystem
         }
         private void btnin_Click(object sender, EventArgs e)
         {
-
             if(!checkif_in_inventory(itemid))
             {
                 insertintoInventory();
