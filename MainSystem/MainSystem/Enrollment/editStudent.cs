@@ -207,10 +207,16 @@ namespace MainSystem
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
-            reference.dataGridView1.ClearSelection();
-            reference.textboxClear();
-            reference.Show();
+            DialogResult res = MessageBox.Show("DO YOU WANT TO EXIT?", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (res == DialogResult.Yes)
+            {
+                this.Close();
+                reference.dataGridView1.ClearSelection();
+                reference.textboxClear();
+                reference.Show();
+                
+            }
+           
         }
         private Boolean textboxvalidate()
         {
@@ -229,7 +235,7 @@ namespace MainSystem
         {
             if(textboxvalidate())
             {
-                DialogResult res = MessageBox.Show("CONFIRM STUDENT CREATION!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult res = MessageBox.Show("CONFIRM STUDENT UPDATE!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (res == DialogResult.Yes)
                 {
                     updatevalue();

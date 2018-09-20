@@ -21,6 +21,8 @@ namespace MainSystem
             DataGridViewCheckBoxColumn cbclm = new DataGridViewCheckBoxColumn();
             cbclm.HeaderText = "Select";
             dataGridView1.Columns.Add(cbclm);
+            dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 14f);
+            dataGridView2.DefaultCellStyle.Font = new Font("Tahoma", 14f);
             loadData();
             loadData2();
             
@@ -67,7 +69,7 @@ namespace MainSystem
         public void loadData2()
         {
             var dbconnect = new dbConnector();
-            string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet WHERE studentprofile.Status = 1;";
+            string query = "select * from sectionnames;";
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
@@ -75,29 +77,10 @@ namespace MainSystem
                 DataSet data = new DataSet();
                 ad.Fill(data);
                 dataGridView2.DataSource = data.Tables[0];
-
-                dataGridView2.Columns["idstudentprofile"].Visible = true;
-                dataGridView2.Columns["FirstName"].Visible = true;
-                dataGridView2.Columns["LastName"].Visible = true;
-                dataGridView2.Columns["MiddleName"].Visible = true;
-                dataGridView2.Columns["DateOfBirth"].Visible = true;
-                dataGridView2.Columns["PlaceOfBirth"].Visible = false;
-                dataGridView2.Columns["Sex"].Visible = true;
-                dataGridView2.Columns["Religion"].Visible = false;
-                dataGridView2.Columns["Nickname"].Visible = false;
-                dataGridView2.Columns["idstuddet"].Visible = false;
-                dataGridView2.Columns["Status"].Visible = false;
+                dataGridView2.Columns["idsnames"].Visible = false;
                 dataGridView2.Columns["department"].Visible = false;
-                dataGridView2.Columns["level"].Visible = true;
-                dataGridView2.Columns["school_year"].Visible = false;
-                dataGridView2.Columns["idstddet"].Visible = false;
-                dataGridView2.Columns["section"].Visible = true;
-
-                dataGridView2.Columns["idstudentprofile"].HeaderText = "Student ID No.";
-                dataGridView2.Columns["FirstName"].HeaderText = "First Name";
-                dataGridView2.Columns["LastName"].HeaderText = "Last Name";
-                dataGridView2.Columns["MiddleName"].HeaderText = "Middle Name";
-
+                dataGridView2.Columns["gradelevel"].HeaderText = "LEVEL";
+                dataGridView2.Columns["section_name"].HeaderText = "SECTION NAME";
             }
             dbconnection.Close();
 
@@ -162,37 +145,59 @@ namespace MainSystem
         }
         public sectioninput secinput;
         public string sectionname;
-        private void button5_Click(object sender, EventArgs e)
+        private Boolean checkifcheckerchecked()
         {
-            secinput = new sectioninput();
-            if (secinput.ShowDialog() == DialogResult.OK)
+            var x = false;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                sectionname = secinput.sectioninputt;
-                idlistgrabber();
-                var dbconnect = new dbConnector();
-                using (dbconnection = dbconnect.connector())
+                if (Convert.ToBoolean(row.Cells[0].Value))
                 {
-                    dbconnection.Open();
-                    foreach (string id in stdlistid)
-                    {
-                        string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @idstud;";
-                        using (var command2 = new MySqlCommand(query2, dbconnection))
-                        {
-                            command2.Parameters.AddWithValue("@sec", sectionname);
-                            command2.Parameters.AddWithValue("@idstud", id);
-                            command2.ExecuteNonQuery();
-                        }
-                    }
+                    x = true;
                 }
-                loadData();
-                loadData2();
+            }
+            if(x)
+            {
+                return true;
             }
             else
             {
-                loadData();
-                loadData2();
+                MessageBox.Show("NO STUDENT/S ARE CURRENTLY SELECTED!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (checkifcheckerchecked())
+            {
+                secinput = new sectioninput();
+                if (secinput.ShowDialog() == DialogResult.OK)
+                {
+                    sectionname = secinput.sectioninputt;
+                    idlistgrabber();
+                    var dbconnect = new dbConnector();
+                    using (dbconnection = dbconnect.connector())
+                    {
+                        dbconnection.Open();
+                        foreach (string id in stdlistid)
+                        {
+                            string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @idstud;";
+                            using (var command2 = new MySqlCommand(query2, dbconnection))
+                            {
+                                command2.Parameters.AddWithValue("@sec", sectionname);
+                                command2.Parameters.AddWithValue("@idstud", id);
+                                command2.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    loadData();
+                    loadData2();
+                }
+                else
+                {
+                    loadData();
+                    loadData2();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -250,6 +255,61 @@ namespace MainSystem
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        public Enrollment.sectioncreator screate;
+        private void createsect_Click(object sender, EventArgs e)
+        {
+            screate = new Enrollment.sectioncreator(1, list);
+            screate.reference = this;
+            screate.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (checkifcheckerchecked())
+            {
+                DialogResult res = MessageBox.Show("SELECTED STUDENT/S WILL BE REMOVED FROM CURRENT SECTIONS!", "WARNING!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if(res == DialogResult.OK)
+                {
+                    idlistgrabber();
+                    var dbconnect = new dbConnector();
+                    using (dbconnection = dbconnect.connector())
+                    {
+                        dbconnection.Open();
+                        foreach (string id in stdlistid)
+                        {
+                            string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @idstud;";
+                            using (var command2 = new MySqlCommand(query2, dbconnection))
+                            {
+                                command2.Parameters.AddWithValue("@sec", null);
+                                command2.Parameters.AddWithValue("@idstud", id);
+                                command2.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    loadData();
+                    loadData2();
+                }
+                
+            }
+        }
+        public List<string> list;
+        private void updatesect_Click(object sender, EventArgs e)
+        {
+            screate = new Enrollment.sectioncreator(2, list);
+            screate.reference = this;
+            screate.Show();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            list = new List<string>();
+            updatesect.Enabled = true;
+            //MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells["department"].Value.ToString());
+            list.Add(dataGridView2.Rows[e.RowIndex].Cells["idsnames"].Value.ToString());
+            list.Add(dataGridView2.Rows[e.RowIndex].Cells["section_name"].Value.ToString());
+            list.Add(dataGridView2.Rows[e.RowIndex].Cells["department"].Value.ToString());
+            list.Add(dataGridView2.Rows[e.RowIndex].Cells["gradelevel"].Value.ToString());
         }
     }
 }

@@ -34,20 +34,25 @@ namespace MainSystem
             DialogResult dr = MessageBox.Show("Confirm Adding Into Section?", "WARNING!", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                sectioninputt = comboBox2.Text;
+                var x = "";
+                int index = comboBox2.Text.IndexOf('-');
+                if (index >= 0)
+                {
+                   x = comboBox2.Text.Substring(0, index);
+                }
+                sectioninputt = x;
                 MessageBox.Show("Student/s Assigned to Section Sucessfully!");
                 this.Dispose();
             }
             else
             {
-
                 button2.PerformClick();
             }
             
            
         }
         public List<string> sec = new List<string>();
-        
+        public string hehe;
         private void comboloader()
         {
             using (MySqlConnection conn = connect.connector())
@@ -60,7 +65,7 @@ namespace MainSystem
                 {
                     foreach (DataRow row in dt.Rows)
                     {
-                        sec.Add(row["section_name"].ToString());
+                        comboBox2.Items.Add(row["section_name"].ToString() + "-" + row["gradelevel"].ToString());
                     }
                 }
             }
@@ -91,17 +96,22 @@ namespace MainSystem
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
-            sec.Clear();
             comboloader();
-            foreach (string itm in sec)
-            {
-                comboBox2.Items.Add(itm);
-            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

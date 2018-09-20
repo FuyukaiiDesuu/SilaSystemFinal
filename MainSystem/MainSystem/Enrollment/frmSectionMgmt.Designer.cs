@@ -34,15 +34,13 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.updatesect = new System.Windows.Forms.Button();
+            this.createsect = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -61,11 +59,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 47);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 57);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1220, 495);
+            this.dataGridView1.Size = new System.Drawing.Size(1214, 495);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -77,36 +75,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(12, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1240, 581);
+            this.tabControl1.Size = new System.Drawing.Size(1240, 663);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.tabPage1.Controls.Add(this.button12);
-            this.tabPage1.Controls.Add(this.button13);
+            this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1232, 548);
+            this.tabPage1.Size = new System.Drawing.Size(1232, 625);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Student List";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
+            this.checkBox1.Location = new System.Drawing.Point(9, 22);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(105, 22);
+            this.checkBox1.Size = new System.Drawing.Size(103, 29);
             this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "SELECT ALL";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -115,52 +113,26 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(855, 15);
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(926, 22);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 26);
+            this.textBox1.Size = new System.Drawing.Size(294, 30);
             this.textBox1.TabIndex = 4;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button7);
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.createsect);
+            this.tabPage2.Controls.Add(this.updatesect);
             this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1232, 515);
+            this.tabPage2.Size = new System.Drawing.Size(1232, 625);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Section List";
-            this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(434, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 21);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "rel";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(489, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(53, 21);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "src";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(544, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 26);
-            this.textBox2.TabIndex = 7;
             // 
             // dataGridView2
             // 
@@ -171,91 +143,111 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 46);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 54);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(709, 377);
+            this.dataGridView2.Size = new System.Drawing.Size(1218, 489);
             this.dataGridView2.TabIndex = 4;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.BackColor = System.Drawing.Color.DarkRed;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.button6.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button6.Location = new System.Drawing.Point(212, 608);
+            this.button6.Location = new System.Drawing.Point(207, 558);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 61);
+            this.button6.Size = new System.Drawing.Size(237, 61);
             this.button6.TabIndex = 9;
-            this.button6.Text = "REMOVE SELECTED FROM SECTION";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Text = "REMOVE FROM SECTION";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button5.BackColor = System.Drawing.Color.DarkGreen;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button5.Location = new System.Drawing.Point(16, 608);
+            this.button5.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(9, 558);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(194, 61);
+            this.button5.Size = new System.Drawing.Size(192, 61);
             this.button5.TabIndex = 8;
             this.button5.Text = "UPDATE SELECTED";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.DarkRed;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.button1.Font = new System.Drawing.Font("Bebas Neue", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button1.Location = new System.Drawing.Point(429, 610);
+            this.button1.Location = new System.Drawing.Point(1070, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 59);
+            this.button1.Size = new System.Drawing.Size(182, 57);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Back to Enrollment Console";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "BACK";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button12
+            // updatesect
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(1193, 15);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(31, 26);
-            this.button12.TabIndex = 48;
-            this.button12.UseVisualStyleBackColor = true;
+            this.updatesect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.updatesect.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.updatesect.Enabled = false;
+            this.updatesect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.updatesect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updatesect.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatesect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.updatesect.Location = new System.Drawing.Point(206, 549);
+            this.updatesect.Name = "updatesect";
+            this.updatesect.Size = new System.Drawing.Size(197, 61);
+            this.updatesect.TabIndex = 9;
+            this.updatesect.Text = "update";
+            this.updatesect.UseVisualStyleBackColor = false;
+            this.updatesect.Click += new System.EventHandler(this.updatesect_Click);
             // 
-            // button13
+            // createsect
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(1155, 15);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(32, 26);
-            this.button13.TabIndex = 47;
-            this.button13.UseVisualStyleBackColor = true;
+            this.createsect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.createsect.BackColor = System.Drawing.Color.DarkGreen;
+            this.createsect.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.createsect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createsect.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createsect.ForeColor = System.Drawing.Color.White;
+            this.createsect.Location = new System.Drawing.Point(8, 549);
+            this.createsect.Name = "createsect";
+            this.createsect.Size = new System.Drawing.Size(192, 61);
+            this.createsect.TabIndex = 10;
+            this.createsect.Text = "CREATE";
+            this.createsect.UseVisualStyleBackColor = false;
+            this.createsect.Click += new System.EventHandler(this.createsect_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(932, 18);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(294, 30);
+            this.textBox2.TabIndex = 11;
             // 
             // frmSectionMgmt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(1264, 716);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -286,10 +278,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button createsect;
+        private System.Windows.Forms.Button updatesect;
     }
 }
