@@ -16,6 +16,10 @@ namespace MainSystem.Enrollment
         public frmSectionMgmt reference { get; set; }
         public int checker = 0;
         public List<string> x;
+        public MySqlConnection dbconnection;
+        dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;
         public sectioncreator(int a, List<string> b)
         {
             InitializeComponent();
@@ -63,7 +67,7 @@ namespace MainSystem.Enrollment
         {
            
         }
-        private MySqlConnection dbconnection;
+        //private MySqlConnection dbconnection;
         private void creator()
         {
             var dbconnect = new dbConnector();
@@ -88,15 +92,43 @@ namespace MainSystem.Enrollment
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                string query2 = "UPDATE sectionnames SET section_name = @section_name, department = @department, gradelevel = @gradelevel);";
+                string query2 = "UPDATE sectionnames SET section_name = @section_name, department = @department, gradelevel = @gradelevel WHERE idsnames = @ids;";
                 using (var command2 = new MySqlCommand(query2, dbconnection))
                 {
                     command2.Parameters.AddWithValue("@section_name", textBox1.Text);
                     command2.Parameters.AddWithValue("@gradelevel", comboBox2.Text);
-                    var x = comboBox2.SelectedIndex + 1;
-                    command2.Parameters.AddWithValue("@department", x.ToString());
-
+                    command2.Parameters.AddWithValue("@department", x[2]);
+                    command2.Parameters.AddWithValue("@ids", x[0]);
                     command2.ExecuteNonQuery();
+                }
+            }
+        }
+        private void sectionupdater(string xy)
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @iddd;";
+                using (var command2 = new MySqlCommand(query2, dbconnection))
+                {
+                    command2.Parameters.AddWithValue("@sec", textBox1.Text);
+                    command2.Parameters.AddWithValue("@iddd", xy);
+                    command2.ExecuteNonQuery();
+                }
+            }
+        }
+        private void alterrer()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM studdetails WHERE sectionid = '" + x[0] + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                foreach(DataRow row in dt.Rows)
+                {
+                    sectionupdater(row["idstddet"].ToString());
                 }
             }
         }
@@ -105,11 +137,17 @@ namespace MainSystem.Enrollment
            if(checker == 1)
            {
                 creator();
-           }
+                reference.loadData2();
+                this.Dispose();
+            }
            else if(checker == 2)
-           {
+           { 
                 creator2();
-           }
+                alterrer();
+                reference.loadData2();
+                this.Dispose();
+                
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -127,12 +165,12 @@ namespace MainSystem.Enrollment
             comboBox2.Items.Clear();
             switch (comboBox1.Text)
             {
-                case "Pre-school":
+                case "Pre-School":
                     comboBox2.Items.Add("Nursery");
                     comboBox2.Items.Add("Kinder");
                     comboBox2.Items.Add("Preparatory");
                     break;
-                case "Grade-school":
+                case "Grade-School":
                     comboBox2.Items.Add("Grade 1");
                     comboBox2.Items.Add("Grade 2");
                     comboBox2.Items.Add("Grade 3");

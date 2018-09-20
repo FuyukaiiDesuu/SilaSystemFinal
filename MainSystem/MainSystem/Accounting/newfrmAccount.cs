@@ -98,6 +98,7 @@ namespace MainSystem.Accounting
             dataSearch.Columns["did"].Visible = false;
             dataSearch.Columns["fid"].Visible = false;
             dataSearch.Columns["department"].Visible = false;
+            dataSearch.Columns["sectionid"].Visible = false;
             //dataSearch.Columns["section"].Visible = false;
             dataSearch.Columns["level"].Visible = false;
             dataSearch.Columns["idstddet"].Visible = false;

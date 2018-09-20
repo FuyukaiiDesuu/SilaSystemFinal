@@ -15,6 +15,7 @@ namespace MainSystem
     {
         public frmSectionMgmt reference { get; set; }
         public string sectioninputt { get; set; }
+        public string sectionid { get; set; }
         public MySqlConnection dbconnection;
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
@@ -41,6 +42,7 @@ namespace MainSystem
                    x = comboBox2.Text.Substring(0, index);
                 }
                 sectioninputt = x;
+                idfinder(x);
                 MessageBox.Show("Student/s Assigned to Section Sucessfully!");
                 this.Dispose();
             }
@@ -51,10 +53,23 @@ namespace MainSystem
             
            
         }
+        
+        private void idfinder(string x)
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM sectionnames WHERE section_name = '" + x + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                sectionid = dt.Rows[0]["idsnames"].ToString();
+            }
+        }
         public List<string> sec = new List<string>();
         public string hehe;
         private void comboloader()
         {
+            
             using (MySqlConnection conn = connect.connector())
             {
                 string query = "SELECT * FROM sectionnames WHERE department = '"+(comboBox1.SelectedIndex + 1)+"';";

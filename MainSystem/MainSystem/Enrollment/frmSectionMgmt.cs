@@ -14,6 +14,10 @@ namespace MainSystem
     public partial class frmSectionMgmt : Form
     {
         public EnrollmentConsole reference { get; set; }
+        //public MySqlConnection dbconnection;
+        dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;
         private MySqlConnection dbconnection;
         public frmSectionMgmt()
         {
@@ -115,6 +119,7 @@ namespace MainSystem
                 dataGridView1.Columns["school_year"].Visible = false;
                 dataGridView1.Columns["idstddet"].Visible = false;
                 dataGridView1.Columns["section"].Visible = true;
+                dataGridView1.Columns["sectionid"].Visible = false ;
 
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
@@ -165,6 +170,7 @@ namespace MainSystem
                 return false;
             }
         }
+        public string secid;
         private void button5_Click(object sender, EventArgs e)
         {
             if (checkifcheckerchecked())
@@ -173,6 +179,7 @@ namespace MainSystem
                 if (secinput.ShowDialog() == DialogResult.OK)
                 {
                     sectionname = secinput.sectioninputt;
+                    secid = secinput.sectionid;
                     idlistgrabber();
                     var dbconnect = new dbConnector();
                     using (dbconnection = dbconnect.connector())
@@ -180,10 +187,11 @@ namespace MainSystem
                         dbconnection.Open();
                         foreach (string id in stdlistid)
                         {
-                            string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @idstud;";
+                            string query2 = "UPDATE studdetails SET section = @sec, sectionid = @secid WHERE idstddet = @idstud;";
                             using (var command2 = new MySqlCommand(query2, dbconnection))
                             {
                                 command2.Parameters.AddWithValue("@sec", sectionname);
+                                command2.Parameters.AddWithValue("@secid", secid);
                                 command2.Parameters.AddWithValue("@idstud", id);
                                 command2.ExecuteNonQuery();
                             }
@@ -278,10 +286,11 @@ namespace MainSystem
                         dbconnection.Open();
                         foreach (string id in stdlistid)
                         {
-                            string query2 = "UPDATE studdetails SET section = @sec WHERE idstddet = @idstud;";
+                            string query2 = "UPDATE studdetails SET section = @sec, sectionid = @secid WHERE idstddet = @idstud;";
                             using (var command2 = new MySqlCommand(query2, dbconnection))
                             {
                                 command2.Parameters.AddWithValue("@sec", null);
+                                command2.Parameters.AddWithValue("@secid", null);
                                 command2.Parameters.AddWithValue("@idstud", id);
                                 command2.ExecuteNonQuery();
                             }
@@ -303,13 +312,17 @@ namespace MainSystem
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            list = new List<string>();
+                list = new List<string>();
             updatesect.Enabled = true;
-            //MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells["department"].Value.ToString());
-            list.Add(dataGridView2.Rows[e.RowIndex].Cells["idsnames"].Value.ToString());
-            list.Add(dataGridView2.Rows[e.RowIndex].Cells["section_name"].Value.ToString());
-            list.Add(dataGridView2.Rows[e.RowIndex].Cells["department"].Value.ToString());
-            list.Add(dataGridView2.Rows[e.RowIndex].Cells["gradelevel"].Value.ToString());
+            if (e.RowIndex >= 0)
+            {
+                //MessageBox.Show(dataGridView2.Rows[e.RowIndex].Cells["department"].Value.ToString());
+                list.Add(dataGridView2.Rows[e.RowIndex].Cells["idsnames"].Value.ToString());
+                list.Add(dataGridView2.Rows[e.RowIndex].Cells["section_name"].Value.ToString());
+                list.Add(dataGridView2.Rows[e.RowIndex].Cells["department"].Value.ToString());
+                list.Add(dataGridView2.Rows[e.RowIndex].Cells["gradelevel"].Value.ToString());
+            }
+               
         }
     }
 }
