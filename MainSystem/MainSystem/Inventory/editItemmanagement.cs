@@ -32,14 +32,6 @@ namespace MainSystem
         {
             txtitemcode.Text = dic["itemcode"];
             txtdesc.Text = dic["description"];
-            if(dic["itemstatus"] == "1")
-            {
-                textBox1.Text = "Active";
-            }
-            else if(dic["itemstatus"] == "0")
-            {
-                textBox1.Text = "Inactive";
-            }
             txtitemname.Text = dic["itemname"];
 
         }
@@ -48,9 +40,8 @@ namespace MainSystem
             MySqlConnection conn = connect.connector();
             String query = "UPDATE itemdetails SET item_code ='" + txtitemcode.Text +
                 "', description ='" + txtdesc.Text +
-                "', itemstatus ='" + dic["itemstatus"] +
                 "', itemname ='" + txtitemname.Text + 
-                "' WHERE itemID ='" + txtitemid.Text + "'";
+                "' WHERE itemID ='" + dic["ayd"] + "'";
             MySqlCommand command = new MySqlCommand(query, conn);
             try
             {

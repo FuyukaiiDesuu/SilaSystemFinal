@@ -209,6 +209,12 @@
     <Compile Include="Inventory\itemview.Designer.cs">
       <DependentUpon>itemview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\stkoutlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\stkoutlist.Designer.cs">
+      <DependentUpon>stkoutlist.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginDashboard\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,12 +314,6 @@
     <EmbeddedResource Include="Employee\newViewArchivedEmployee.resx">
       <DependentUpon>newViewArchivedEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Inventory\StockOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventory\StockOut.Designer.cs">
-      <DependentUpon>StockOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inventory\frmOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,11 +362,11 @@
     <EmbeddedResource Include="Inventory\itemview.resx">
       <DependentUpon>itemview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory\StockOut.resx">
-      <DependentUpon>StockOut.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\viewForm.resx">
       <DependentUpon>viewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\stkoutlist.resx">
+      <DependentUpon>stkoutlist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginDashboard\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

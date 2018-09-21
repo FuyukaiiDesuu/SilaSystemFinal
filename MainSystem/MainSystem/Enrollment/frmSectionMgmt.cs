@@ -312,7 +312,7 @@ namespace MainSystem
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                list = new List<string>();
+            list = new List<string>();
             updatesect.Enabled = true;
             if (e.RowIndex >= 0)
             {

@@ -32,11 +32,9 @@
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtitemname = new System.Windows.Forms.TextBox();
             this.txtitemcode = new System.Windows.Forms.TextBox();
-            this.txtitemid = new System.Windows.Forms.TextBox();
             this.lbldesc = new System.Windows.Forms.Label();
             this.lblitemname = new System.Windows.Forms.Label();
             this.lblitemcode = new System.Windows.Forms.Label();
-            this.lblitemid = new System.Windows.Forms.Label();
             this.btnconfirm = new System.Windows.Forms.Button();
             this.btnbak = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,24 +51,22 @@
             this.gbItemDetails2.Controls.Add(this.txtdesc);
             this.gbItemDetails2.Controls.Add(this.txtitemname);
             this.gbItemDetails2.Controls.Add(this.txtitemcode);
-            this.gbItemDetails2.Controls.Add(this.txtitemid);
             this.gbItemDetails2.Controls.Add(this.lbldesc);
             this.gbItemDetails2.Controls.Add(this.lblitemname);
             this.gbItemDetails2.Controls.Add(this.lblitemcode);
-            this.gbItemDetails2.Controls.Add(this.lblitemid);
-            this.gbItemDetails2.Font = new System.Drawing.Font("Bebas Neue", 14.25F);
+            this.gbItemDetails2.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbItemDetails2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.gbItemDetails2.Location = new System.Drawing.Point(29, 59);
+            this.gbItemDetails2.Location = new System.Drawing.Point(12, 50);
             this.gbItemDetails2.Name = "gbItemDetails2";
-            this.gbItemDetails2.Size = new System.Drawing.Size(401, 231);
+            this.gbItemDetails2.Size = new System.Drawing.Size(465, 262);
             this.gbItemDetails2.TabIndex = 2;
             this.gbItemDetails2.TabStop = false;
             this.gbItemDetails2.Text = "Item Details";
             // 
             // txtdesc
             // 
-            this.txtdesc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtdesc.Location = new System.Drawing.Point(114, 101);
+            this.txtdesc.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdesc.Location = new System.Drawing.Point(160, 135);
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.Size = new System.Drawing.Size(253, 70);
@@ -78,85 +74,66 @@
             // 
             // txtitemname
             // 
-            this.txtitemname.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtitemname.Location = new System.Drawing.Point(114, 177);
+            this.txtitemname.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitemname.Location = new System.Drawing.Point(160, 96);
             this.txtitemname.Name = "txtitemname";
-            this.txtitemname.Size = new System.Drawing.Size(253, 27);
+            this.txtitemname.Size = new System.Drawing.Size(253, 33);
             this.txtitemname.TabIndex = 3;
             // 
             // txtitemcode
             // 
-            this.txtitemcode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtitemcode.Location = new System.Drawing.Point(114, 68);
+            this.txtitemcode.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitemcode.Location = new System.Drawing.Point(160, 57);
             this.txtitemcode.Name = "txtitemcode";
-            this.txtitemcode.Size = new System.Drawing.Size(253, 27);
+            this.txtitemcode.Size = new System.Drawing.Size(253, 33);
             this.txtitemcode.TabIndex = 2;
-            // 
-            // txtitemid
-            // 
-            this.txtitemid.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.txtitemid.Location = new System.Drawing.Point(114, 35);
-            this.txtitemid.Name = "txtitemid";
-            this.txtitemid.ReadOnly = true;
-            this.txtitemid.Size = new System.Drawing.Size(253, 27);
-            this.txtitemid.TabIndex = 0;
-            this.txtitemid.TabStop = false;
             // 
             // lbldesc
             // 
             this.lbldesc.AutoSize = true;
-            this.lbldesc.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbldesc.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldesc.ForeColor = System.Drawing.Color.White;
-            this.lbldesc.Location = new System.Drawing.Point(14, 148);
+            this.lbldesc.Location = new System.Drawing.Point(43, 135);
             this.lbldesc.Name = "lbldesc";
-            this.lbldesc.Size = new System.Drawing.Size(94, 19);
+            this.lbldesc.Size = new System.Drawing.Size(97, 25);
             this.lbldesc.TabIndex = 4;
             this.lbldesc.Text = "Descrpition:";
             // 
             // lblitemname
             // 
             this.lblitemname.AutoSize = true;
-            this.lblitemname.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblitemname.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblitemname.ForeColor = System.Drawing.Color.White;
-            this.lblitemname.Location = new System.Drawing.Point(14, 181);
+            this.lblitemname.Location = new System.Drawing.Point(54, 104);
             this.lblitemname.Name = "lblitemname";
-            this.lblitemname.Size = new System.Drawing.Size(94, 19);
+            this.lblitemname.Size = new System.Drawing.Size(86, 25);
             this.lblitemname.TabIndex = 3;
             this.lblitemname.Text = "Item Name:";
             // 
             // lblitemcode
             // 
             this.lblitemcode.AutoSize = true;
-            this.lblitemcode.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblitemcode.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblitemcode.ForeColor = System.Drawing.Color.White;
-            this.lblitemcode.Location = new System.Drawing.Point(14, 72);
+            this.lblitemcode.Location = new System.Drawing.Point(58, 62);
             this.lblitemcode.Name = "lblitemcode";
-            this.lblitemcode.Size = new System.Drawing.Size(89, 19);
+            this.lblitemcode.Size = new System.Drawing.Size(82, 25);
             this.lblitemcode.TabIndex = 2;
             this.lblitemcode.Text = "Item Code:";
-            // 
-            // lblitemid
-            // 
-            this.lblitemid.AutoSize = true;
-            this.lblitemid.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblitemid.ForeColor = System.Drawing.Color.White;
-            this.lblitemid.Location = new System.Drawing.Point(14, 39);
-            this.lblitemid.Name = "lblitemid";
-            this.lblitemid.Size = new System.Drawing.Size(70, 19);
-            this.lblitemid.TabIndex = 1;
-            this.lblitemid.Text = "Item ID:";
             // 
             // btnconfirm
             // 
             this.btnconfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnconfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnconfirm.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnconfirm.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
             this.btnconfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
             this.btnconfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
             this.btnconfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnconfirm.Font = new System.Drawing.Font("Bebas Neue", 18F);
-            this.btnconfirm.Location = new System.Drawing.Point(208, 296);
+            this.btnconfirm.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconfirm.ForeColor = System.Drawing.Color.White;
+            this.btnconfirm.Location = new System.Drawing.Point(187, 318);
             this.btnconfirm.Name = "btnconfirm";
-            this.btnconfirm.Size = new System.Drawing.Size(108, 36);
+            this.btnconfirm.Size = new System.Drawing.Size(169, 58);
             this.btnconfirm.TabIndex = 12;
             this.btnconfirm.Text = "Confirm";
             this.btnconfirm.UseVisualStyleBackColor = false;
@@ -168,11 +145,11 @@
             this.btnbak.BackColor = System.Drawing.Color.DarkRed;
             this.btnbak.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnbak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbak.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnbak.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnbak.Location = new System.Drawing.Point(322, 296);
+            this.btnbak.Location = new System.Drawing.Point(362, 318);
             this.btnbak.Name = "btnbak";
-            this.btnbak.Size = new System.Drawing.Size(108, 36);
+            this.btnbak.Size = new System.Drawing.Size(115, 58);
             this.btnbak.TabIndex = 13;
             this.btnbak.Text = "Back";
             this.btnbak.UseVisualStyleBackColor = false;
@@ -185,7 +162,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 34);
+            this.panel1.Size = new System.Drawing.Size(489, 34);
             this.panel1.TabIndex = 41;
             // 
             // pictureBox2
@@ -215,11 +192,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(469, 344);
+            this.ClientSize = new System.Drawing.Size(489, 388);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnbak);
             this.Controls.Add(this.btnconfirm);
             this.Controls.Add(this.gbItemDetails2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(485, 383);
             this.Name = "createitemfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -240,11 +218,9 @@
         private System.Windows.Forms.TextBox txtdesc;
         private System.Windows.Forms.TextBox txtitemname;
         private System.Windows.Forms.TextBox txtitemcode;
-        private System.Windows.Forms.TextBox txtitemid;
         private System.Windows.Forms.Label lbldesc;
         private System.Windows.Forms.Label lblitemname;
         private System.Windows.Forms.Label lblitemcode;
-        private System.Windows.Forms.Label lblitemid;
         private System.Windows.Forms.Button btnconfirm;
         private System.Windows.Forms.Button btnbak;
         private System.Windows.Forms.Panel panel1;

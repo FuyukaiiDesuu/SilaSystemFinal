@@ -30,29 +30,34 @@ namespace MainSystem
         private void btnbak_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnconfirm_Click(object sender, EventArgs e)
         {
-            var dbconnect = new dbConnector();
-            using (dbconnection = dbconnect.connector())
+            DialogResult res = MessageBox.Show("CONFIRM ITEM CREATION!", "CONFIRM!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
             {
-                using (var command = new MySqlCommand("INSERT INTO itemdetails(item_code, date_of_creation, description, itemstatus, itemname) VALUES(@item_code, @date_of_creation, @description, @itemstatus, @itemname);", dbconnection))
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
                 {
-                    dbconnection.Open();
-                    command.Parameters.AddWithValue("@item_code", txtitemcode.Text);
-                    command.Parameters.AddWithValue("@date_of_creation", DateTime.Now.ToString("yyyy-MM-dd"));
-                    command.Parameters.AddWithValue("@description", txtdesc.Text);
-                    command.Parameters.AddWithValue("@itemstatus", 1);
-                    command.Parameters.AddWithValue("@itemname", txtitemname.Text);
-                    command.ExecuteNonQuery();
+                    using (var command = new MySqlCommand("INSERT INTO itemdetails(item_code, date_of_creation, description, itemstatus, itemname) VALUES(@item_code, @date_of_creation, @description, @itemstatus, @itemname);", dbconnection))
+                    {
+                        dbconnection.Open();
+                        command.Parameters.AddWithValue("@item_code", txtitemcode.Text);
+                        command.Parameters.AddWithValue("@date_of_creation", DateTime.Now.ToString("yyyy-MM-dd"));
+                        command.Parameters.AddWithValue("@description", txtdesc.Text);
+                        command.Parameters.AddWithValue("@itemstatus", 1);
+                        command.Parameters.AddWithValue("@itemname", txtitemname.Text);
+                        command.ExecuteNonQuery();
+                    }
                 }
+                MessageBox.Show("Item Successfully Created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                reference.Show();
+                reference.readData();
             }
-            MessageBox.Show("Successfully Added");
-            this.Close();
-            reference.Show();
-            reference.readData();
+           
         }
        
         

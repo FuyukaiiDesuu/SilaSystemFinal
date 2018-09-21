@@ -13,6 +13,7 @@ namespace MainSystem
 {
     public partial class itemview : Form
     {
+        private MySqlConnection dbconnection;
         public frmitemmanagement reference { get; set; }
         public itemview()
         {
@@ -23,11 +24,12 @@ namespace MainSystem
         DataTable dt;
         private void itemview_Load(object sender, EventArgs e)
         {
+            comboBox1.Text = "Inactive";
+            dataGridView1.ClearSelection();
             readData();
             disablebtn();
             btnconfirm.Enabled = false;
         }
-
         private void btnback3_Click(object sender, EventArgs e)
         {
             reference.Show();
@@ -36,29 +38,7 @@ namespace MainSystem
 
         private void btnconfirm_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = connect.connector();
-            String query = "UPDATE itemdetails SET item_code ='" + txtitemcode.Text +
-                "', description ='" + txtdesc.Text +
-                "', itemstatus ='" + cmbstatus.Text +
-                "', itemname ='" + txtitemname.Text +
-                "' WHERE itemID ='" + txtitemid.Text + "'";
-            MySqlCommand command = new MySqlCommand(query, conn);
-            try
-            {
-                conn.Open();
-                command.ExecuteNonQuery();
-                MessageBox.Show("Successfully Updated");
-                this.Close();
-                reference.Show();
-                reference.readData();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Invalid");
-            }
-            this.Close();
-            reference.Show();
-            reference.dataGridView1.Rows[0].Selected = false;
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,7 +49,20 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM itemdetails;";
+                string query = "SELECT * FROM itemdetails WHERE itemstatus = 0;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dataGridView1.Columns["itemID"].Visible = false;
+                dataGridView1.Columns["itemstatus"].Visible = false;
+            }
+        }
+        public void readData2()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM itemdetails WHERE itemstatus = 1;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -81,7 +74,7 @@ namespace MainSystem
 
         private void disablebtn()
         {
-            btnconfirm.Enabled = !string.IsNullOrWhiteSpace(cmbstatus.Text);
+           
         }
 
         private void cmbstatus_TextChanged(object sender, EventArgs e)
@@ -99,32 +92,108 @@ namespace MainSystem
             using (MySqlConnection conn = connect.connector())
             {
                 conn.Open();
-                string query = ("SELECT * FROM itemdetails where itemname like '" + txtsearch.Text + "%'");
+                string query = ("SELECT * FROM itemdetails where itemname like '%" + txtsearch.Text + "%'");
                 adapter = new MySqlDataAdapter(query, conn);
                 dt = new DataTable();
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
             }
         }
-
+        public string id;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (dataGridView1.Rows.Count > 0)
+            if (e.RowIndex >= 0)
             {
-                txtitemcode.Text = dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString();
-                txtdesc.Text = dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString();
-                if (dataGridView1.Rows[e.RowIndex].Cells["itemstatus"].Value.ToString() == "1")
-                {
-                    cmbstatus.Text = "ACTIVE";
-                    
-                }
-                else if (dataGridView1.Rows[e.RowIndex].Cells["itemstatus"].Value.ToString() == "0")
-                {
-                    
-                }
-                txtitemname.Text = dataGridView1.Rows[e.RowIndex].Cells["itemname"].Value.ToString();
+               id = dataGridView1.Rows[e.RowIndex].Cells["item_code"].Value.ToString();
             }
+        }
+        private void activator()
+        {
+            DialogResult res = MessageBox.Show("Confirm Item Activation?", "Confirm Action!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
+                {
+                    dbconnection.Open();
+                    string query2 = "UPDATE itemdetails SET itemstatus = @istatus WHERE itemID = @ayd;";
+                    using (var command2 = new MySqlCommand(query2, dbconnection))
+                    {
+                        command2.Parameters.AddWithValue("@istatus", 1);
+                        command2.Parameters.AddWithValue("@ayd", id);
+                        command2.ExecuteNonQuery();
+                    }
+
+                }
+                MessageBox.Show("ITEM/S ACTIVATED!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                readData();
+            }
+        }
+        private void deactivator()
+        {
+            DialogResult res = MessageBox.Show("Confirm Item Deactivation?", "Confirm Action!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                var dbconnect = new dbConnector();
+                using (dbconnection = dbconnect.connector())
+                {
+                    dbconnection.Open();
+                    string query2 = "UPDATE itemdetails SET itemstatus = @istatus WHERE itemID = @ayd;";
+                    using (var command2 = new MySqlCommand(query2, dbconnection))
+                    {
+                        command2.Parameters.AddWithValue("@istatus", 0);
+                        command2.Parameters.AddWithValue("@ayd", id);
+                        command2.ExecuteNonQuery();
+                    }
+
+                }
+                MessageBox.Show("ITEM/S DEACTIVATED!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                readData2();
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+               
+                    activator();
+            }
+            else
+            {
+                MessageBox.Show("There Are No Selected Item/s!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.Text == "Inactive")
+            {
+                button1.Enabled = true;
+                button2.Enabled = false;
+                readData();
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                button2.Enabled = true;
+                button1.Enabled = false;
+                readData2();
+                dataGridView1.ClearSelection();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                deactivator();
+            }
+            else
+            {
+                MessageBox.Show("There Are No Selected Item/s!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
     }
 }
