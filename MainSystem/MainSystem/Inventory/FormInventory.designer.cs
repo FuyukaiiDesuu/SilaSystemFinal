@@ -31,19 +31,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gboxitemdetails = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtstatus = new System.Windows.Forms.TextBox();
             this.lblstatus = new System.Windows.Forms.Label();
             this.txtsodate = new System.Windows.Forms.TextBox();
             this.lblsodate = new System.Windows.Forms.Label();
-            this.btnStockInOut = new System.Windows.Forms.Button();
-            this.btnOrderList = new System.Windows.Forms.Button();
             this.txtsidate = new System.Windows.Forms.TextBox();
             this.lblsidate = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblItemCode = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnStockInOut = new System.Windows.Forms.Button();
+            this.btnOrderList = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -78,23 +78,6 @@
             this.gboxitemdetails.TabIndex = 0;
             this.gboxitemdetails.TabStop = false;
             this.gboxitemdetails.Text = "Inventory Details";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bebas Neue", 18F);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(653, 608);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 49);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Stock-Out";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtstatus
             // 
@@ -136,40 +119,6 @@
             this.lblsodate.TabIndex = 25;
             this.lblsodate.Text = "Stock-out Date:";
             this.lblsodate.Click += new System.EventHandler(this.lblsodate_Click);
-            // 
-            // btnStockInOut
-            // 
-            this.btnStockInOut.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnStockInOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnStockInOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
-            this.btnStockInOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
-            this.btnStockInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockInOut.Font = new System.Drawing.Font("Bebas Neue", 18F);
-            this.btnStockInOut.ForeColor = System.Drawing.Color.Black;
-            this.btnStockInOut.Location = new System.Drawing.Point(536, 608);
-            this.btnStockInOut.Name = "btnStockInOut";
-            this.btnStockInOut.Size = new System.Drawing.Size(113, 49);
-            this.btnStockInOut.TabIndex = 22;
-            this.btnStockInOut.Text = "Stock-In";
-            this.btnStockInOut.UseVisualStyleBackColor = false;
-            this.btnStockInOut.Click += new System.EventHandler(this.btnStockInOut_Click);
-            // 
-            // btnOrderList
-            // 
-            this.btnOrderList.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnOrderList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnOrderList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
-            this.btnOrderList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
-            this.btnOrderList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderList.Font = new System.Drawing.Font("Bebas Neue", 18F);
-            this.btnOrderList.ForeColor = System.Drawing.Color.Black;
-            this.btnOrderList.Location = new System.Drawing.Point(354, 608);
-            this.btnOrderList.Name = "btnOrderList";
-            this.btnOrderList.Size = new System.Drawing.Size(176, 49);
-            this.btnOrderList.TabIndex = 21;
-            this.btnOrderList.Text = "Create Order List";
-            this.btnOrderList.UseVisualStyleBackColor = false;
-            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
             // txtsidate
             // 
@@ -230,6 +179,57 @@
             this.lblItemCode.Size = new System.Drawing.Size(70, 19);
             this.lblItemCode.TabIndex = 0;
             this.lblItemCode.Text = "Item ID:";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(653, 608);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 49);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Stock-Out";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnStockInOut
+            // 
+            this.btnStockInOut.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnStockInOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnStockInOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
+            this.btnStockInOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
+            this.btnStockInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockInOut.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnStockInOut.ForeColor = System.Drawing.Color.Black;
+            this.btnStockInOut.Location = new System.Drawing.Point(536, 608);
+            this.btnStockInOut.Name = "btnStockInOut";
+            this.btnStockInOut.Size = new System.Drawing.Size(113, 49);
+            this.btnStockInOut.TabIndex = 22;
+            this.btnStockInOut.Text = "Stock-In";
+            this.btnStockInOut.UseVisualStyleBackColor = false;
+            this.btnStockInOut.Click += new System.EventHandler(this.btnStockInOut_Click);
+            // 
+            // btnOrderList
+            // 
+            this.btnOrderList.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnOrderList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnOrderList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
+            this.btnOrderList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
+            this.btnOrderList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderList.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnOrderList.ForeColor = System.Drawing.Color.Black;
+            this.btnOrderList.Location = new System.Drawing.Point(354, 608);
+            this.btnOrderList.Name = "btnOrderList";
+            this.btnOrderList.Size = new System.Drawing.Size(176, 49);
+            this.btnOrderList.TabIndex = 21;
+            this.btnOrderList.Text = "Create Order List";
+            this.btnOrderList.UseVisualStyleBackColor = false;
+            this.btnOrderList.Click += new System.EventHandler(this.btnOrderList_Click);
             // 
             // btnAdd
             // 

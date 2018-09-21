@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataOrderList = new System.Windows.Forms.DataGridView();
             this.gboxitemdetails2 = new System.Windows.Forms.GroupBox();
             this.dateDate = new System.Windows.Forms.DateTimePicker();
-            this.btnback = new System.Windows.Forms.Button();
-            this.btnAdd2 = new System.Windows.Forms.Button();
             this.txtquantity2 = new System.Windows.Forms.TextBox();
             this.txtvendor = new System.Windows.Forms.TextBox();
             this.txtitemname2 = new System.Windows.Forms.TextBox();
@@ -44,6 +38,8 @@
             this.lblVendor = new System.Windows.Forms.Label();
             this.lblDate2 = new System.Windows.Forms.Label();
             this.lblItemName2 = new System.Windows.Forms.Label();
+            this.btnback = new System.Windows.Forms.Button();
+            this.btnAdd2 = new System.Windows.Forms.Button();
             this.dataItemCreation = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -69,23 +65,7 @@
             this.dataOrderList.AllowUserToResizeColumns = false;
             this.dataOrderList.AllowUserToResizeRows = false;
             this.dataOrderList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataOrderList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataOrderList.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataOrderList.Location = new System.Drawing.Point(6, 6);
             this.dataOrderList.Name = "dataOrderList";
             this.dataOrderList.ReadOnly = true;
@@ -122,36 +102,6 @@
             this.dateDate.Name = "dateDate";
             this.dateDate.Size = new System.Drawing.Size(290, 27);
             this.dateDate.TabIndex = 14;
-            // 
-            // btnback
-            // 
-            this.btnback.BackColor = System.Drawing.Color.DarkRed;
-            this.btnback.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnback.Font = new System.Drawing.Font("Bebas Neue", 18F);
-            this.btnback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnback.Location = new System.Drawing.Point(580, 512);
-            this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(108, 36);
-            this.btnback.TabIndex = 12;
-            this.btnback.Text = "Back";
-            this.btnback.UseVisualStyleBackColor = false;
-            this.btnback.Click += new System.EventHandler(this.btnback_Click);
-            // 
-            // btnAdd2
-            // 
-            this.btnAdd2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnAdd2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
-            this.btnAdd2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
-            this.btnAdd2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd2.Font = new System.Drawing.Font("Bebas Neue", 18F);
-            this.btnAdd2.Location = new System.Drawing.Point(466, 512);
-            this.btnAdd2.Name = "btnAdd2";
-            this.btnAdd2.Size = new System.Drawing.Size(108, 36);
-            this.btnAdd2.TabIndex = 10;
-            this.btnAdd2.Text = "Add";
-            this.btnAdd2.UseVisualStyleBackColor = false;
-            this.btnAdd2.Click += new System.EventHandler(this.btnAdd2_Click);
             // 
             // txtquantity2
             // 
@@ -222,6 +172,36 @@
             this.lblItemName2.TabIndex = 0;
             this.lblItemName2.Text = "Item Name:";
             // 
+            // btnback
+            // 
+            this.btnback.BackColor = System.Drawing.Color.DarkRed;
+            this.btnback.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnback.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnback.Location = new System.Drawing.Point(580, 512);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(108, 36);
+            this.btnback.TabIndex = 12;
+            this.btnback.Text = "Back";
+            this.btnback.UseVisualStyleBackColor = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
+            // 
+            // btnAdd2
+            // 
+            this.btnAdd2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnAdd2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
+            this.btnAdd2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
+            this.btnAdd2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd2.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnAdd2.Location = new System.Drawing.Point(466, 512);
+            this.btnAdd2.Name = "btnAdd2";
+            this.btnAdd2.Size = new System.Drawing.Size(108, 36);
+            this.btnAdd2.TabIndex = 10;
+            this.btnAdd2.Text = "Add";
+            this.btnAdd2.UseVisualStyleBackColor = false;
+            this.btnAdd2.Click += new System.EventHandler(this.btnAdd2_Click);
+            // 
             // dataItemCreation
             // 
             this.dataItemCreation.AllowUserToAddRows = false;
@@ -229,23 +209,7 @@
             this.dataItemCreation.AllowUserToResizeColumns = false;
             this.dataItemCreation.AllowUserToResizeRows = false;
             this.dataItemCreation.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataItemCreation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataItemCreation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataItemCreation.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataItemCreation.Location = new System.Drawing.Point(6, 6);
             this.dataItemCreation.Name = "dataItemCreation";
             this.dataItemCreation.ReadOnly = true;

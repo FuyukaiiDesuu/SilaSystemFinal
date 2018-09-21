@@ -33,14 +33,14 @@
             this.gboxentry = new System.Windows.Forms.GroupBox();
             this.lblinvID = new System.Windows.Forms.Label();
             this.txtinvID = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtquantity = new System.Windows.Forms.TextBox();
             this.txtdesc = new System.Windows.Forms.TextBox();
             this.txtitemname = new System.Windows.Forms.TextBox();
             this.lblquantity = new System.Windows.Forms.Label();
             this.lblmiscdesc = new System.Windows.Forms.Label();
-            this.lbldate = new System.Windows.Forms.Label();
             this.lblitemname = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbldate = new System.Windows.Forms.Label();
             this.btnconfirm = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -107,17 +107,6 @@
             this.txtinvID.Size = new System.Drawing.Size(267, 27);
             this.txtinvID.TabIndex = 13;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label2.Location = new System.Drawing.Point(51, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "label2";
-            // 
             // txtquantity
             // 
             this.txtquantity.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
@@ -165,17 +154,6 @@
             this.lblmiscdesc.TabIndex = 5;
             this.lblmiscdesc.Text = "Miscellaneous Description:";
             // 
-            // lbldate
-            // 
-            this.lbldate.AutoSize = true;
-            this.lbldate.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.lbldate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lbldate.Location = new System.Drawing.Point(-2, 37);
-            this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(47, 19);
-            this.lbldate.TabIndex = 4;
-            this.lbldate.Text = "Date:";
-            // 
             // lblitemname
             // 
             this.lblitemname.AutoSize = true;
@@ -186,6 +164,28 @@
             this.lblitemname.Size = new System.Drawing.Size(94, 19);
             this.lblitemname.TabIndex = 2;
             this.lblitemname.Text = "Item Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label2.Location = new System.Drawing.Point(51, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 19);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "label2";
+            // 
+            // lbldate
+            // 
+            this.lbldate.AutoSize = true;
+            this.lbldate.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lbldate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lbldate.Location = new System.Drawing.Point(-2, 37);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(47, 19);
+            this.lbldate.TabIndex = 4;
+            this.lbldate.Text = "Date:";
             // 
             // btnconfirm
             // 
