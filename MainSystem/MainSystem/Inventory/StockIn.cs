@@ -37,16 +37,13 @@ namespace MainSystem
         private void Stockin_out_Load(object sender, EventArgs e)
         {
             readData();
-            readData2();
+            readDataDGV1();
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
         }
         private void btnNewEntry_Click(object sender, EventArgs e)
         {
-            newent = new frmNewEntry(forreturn);
-            newent.Show();
-            newent.reference = this;
-            this.Hide();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,7 +63,7 @@ namespace MainSystem
                 dataGridView1.Columns["item_id"].Visible = false;
             }
         }
-        public frmNewEntry newent;
+       
         IDictionary<string, string> forreturn;
         private void items(string id, string name, string desc)
         {
@@ -81,23 +78,32 @@ namespace MainSystem
             quantity_remaining = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
             itemid = dataGridView1.Rows[e.RowIndex].Cells["item_id"].Value.ToString();
             orderlistID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+            readDataDGV1();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        public void readData2()
+        public void readDataDGV1()
         {
-            using (MySqlConnection conn = connect.connector())
+            try
             {
-                string query = "SELECT * FROM stkin WHERE status = 1";
-                dt = new DataTable();
-                adapter = new MySqlDataAdapter(query, conn);
-                adapter.Fill(dt);
-                dataGridView2.DataSource = dt;
-                //dataGridView2.Columns["itemID"].Visible = false;
+                using (MySqlConnection conn = connect.connector())
+                {
+                    string query = "SELECT * FROM stkin WHERE orderlistID = '" + orderlistID + "' AND status = 1";
+                    dt = new DataTable();
+                    adapter = new MySqlDataAdapter(query, conn);
+                    adapter.Fill(dt);
+                    dataGridView2.DataSource = dt;
+                    //dataGridView2.Columns["itemID"].Visible = false;
+                }
             }
+            catch(Exception ee)
+            {
+                throw ee;
+            }
+          
         }
         private string adder()
         {
@@ -153,7 +159,7 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM inventory WHERE invID = '" + invID + "';";
+                string query = "SELECT * FROM inventory WHERE item_id = '" + itemid + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -185,6 +191,23 @@ namespace MainSystem
                 }
             }
         }
+        private Int32 textboxsolver()
+        {
+            var a = 0;
+            var b = 0;
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM orderlist WHERE id = '"+orderlistID+"' AND status = 1";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                a = Convert.ToInt32(dt.Rows[0]["quantity"].ToString());
+                a = Convert.ToInt32(dt.Rows[0]["quantity_delivered"].ToString());
+                //dataGridView2.Columns["itemID"].Visible = false;
+            }
+            return b - a;
+        }
+        
         private void updateInventory()
         {
             var dbconnect = new dbConnector();
@@ -223,19 +246,31 @@ namespace MainSystem
                 }
             }
         }
+        private Int32 solver()
+        {
+            var a = 0;
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM orderlist WHERE id = '" + orderlistID + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                a = Convert.ToInt32(dt.Rows[0]["quantity_delivered"].ToString());
+            }
+            
+            return a + Convert.ToInt32(txtEnter.Text);
+        }
         private void updateorderlist()
         {
-          
+            MessageBox.Show(solver().ToString());
             var dbconnect = new dbConnector();
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                using (var com = new MySqlCommand("UPDATE orderlist SET quantity_delivered = @qdel", dbconnection))
+                using (var com = new MySqlCommand("UPDATE orderlist SET quantity_delivered = @qdel WHERE id = '"+orderlistID+"';", dbconnection))
                 {
 
-                    com.Parameters.AddWithValue("@itemayd", itemid);
-                    com.Parameters.AddWithValue("@stock_in_date", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
-                    com.Parameters.AddWithValue("@Quantity", txtEnter.Text);
+                    com.Parameters.AddWithValue("@qdel", solver().ToString());
                     com.Parameters.AddWithValue("@status", 1);
                     com.ExecuteNonQuery();
                 }
@@ -247,15 +282,18 @@ namespace MainSystem
             if(!checkif_in_inventory(itemid))
             {
                 insertintoInventory();
+                solver();
+                updateorderlist();
                 insertstkin();
             }
             else
             {
                 updateInventory();
+                solver();
+                updateorderlist();
                 insertstkin();
             }
             MessageBox.Show("ITEM STOCKED-IN!");
-            readData2();
             dataGridView2.ClearSelection();
         }
 
@@ -268,14 +306,12 @@ namespace MainSystem
             stkID = dataGridView2.Rows[e.RowIndex].Cells["stkinID"].Value.ToString();
             invID = dataGridView2.Rows[e.RowIndex].Cells["inventory_id"].Value.ToString();
             quantity = dataGridView2.Rows[e.RowIndex].Cells["quantity"].Value.ToString();
-
         }
 
         private void search1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
-
         private void lblSinoutRecord_Click(object sender, EventArgs e)
         {
 
