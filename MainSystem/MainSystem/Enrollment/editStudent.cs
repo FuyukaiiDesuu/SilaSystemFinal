@@ -183,7 +183,7 @@ namespace MainSystem
             txtbp.Text = dic["bp"];
             comboBox1.Text = dic["sex"];
             
-            if(dic["rel"] == "Born-again" || dic["rel"] == "Roman Catholic")
+            if(dic["rel"] == "Born-again" || dic["rel"] == "Roman Catholic" || dic["rel"] == "Iglesia Ni Cristo" || dic["rel"] == "Islam" || dic["rel"] == "Seventh Day Adventist")
             { 
                 comboBox4.Text = dic["rel"];
             }
