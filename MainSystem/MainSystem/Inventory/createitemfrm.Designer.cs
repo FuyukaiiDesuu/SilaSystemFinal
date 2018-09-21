@@ -39,11 +39,17 @@
             this.lblitemid = new System.Windows.Forms.Label();
             this.btnconfirm = new System.Windows.Forms.Button();
             this.btnbak = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.gbItemDetails2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // gbItemDetails2
             // 
+            this.gbItemDetails2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbItemDetails2.Controls.Add(this.txtdesc);
             this.gbItemDetails2.Controls.Add(this.txtitemname);
             this.gbItemDetails2.Controls.Add(this.txtitemcode);
@@ -52,113 +58,178 @@
             this.gbItemDetails2.Controls.Add(this.lblitemname);
             this.gbItemDetails2.Controls.Add(this.lblitemcode);
             this.gbItemDetails2.Controls.Add(this.lblitemid);
-            this.gbItemDetails2.Location = new System.Drawing.Point(12, 12);
+            this.gbItemDetails2.Font = new System.Drawing.Font("Bebas Neue", 14.25F);
+            this.gbItemDetails2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.gbItemDetails2.Location = new System.Drawing.Point(29, 59);
             this.gbItemDetails2.Name = "gbItemDetails2";
-            this.gbItemDetails2.Size = new System.Drawing.Size(313, 185);
+            this.gbItemDetails2.Size = new System.Drawing.Size(401, 231);
             this.gbItemDetails2.TabIndex = 2;
             this.gbItemDetails2.TabStop = false;
             this.gbItemDetails2.Text = "Item Details";
             // 
             // txtdesc
             // 
-            this.txtdesc.Location = new System.Drawing.Point(90, 96);
+            this.txtdesc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.txtdesc.Location = new System.Drawing.Point(114, 101);
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
-            this.txtdesc.Size = new System.Drawing.Size(204, 46);
+            this.txtdesc.Size = new System.Drawing.Size(253, 70);
             this.txtdesc.TabIndex = 4;
             // 
             // txtitemname
             // 
-            this.txtitemname.Location = new System.Drawing.Point(90, 148);
+            this.txtitemname.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.txtitemname.Location = new System.Drawing.Point(114, 177);
             this.txtitemname.Name = "txtitemname";
-            this.txtitemname.Size = new System.Drawing.Size(204, 20);
+            this.txtitemname.Size = new System.Drawing.Size(253, 27);
             this.txtitemname.TabIndex = 3;
             // 
             // txtitemcode
             // 
-            this.txtitemcode.Location = new System.Drawing.Point(90, 70);
+            this.txtitemcode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.txtitemcode.Location = new System.Drawing.Point(114, 68);
             this.txtitemcode.Name = "txtitemcode";
-            this.txtitemcode.Size = new System.Drawing.Size(204, 20);
+            this.txtitemcode.Size = new System.Drawing.Size(253, 27);
             this.txtitemcode.TabIndex = 2;
             // 
             // txtitemid
             // 
-            this.txtitemid.Location = new System.Drawing.Point(90, 35);
+            this.txtitemid.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.txtitemid.Location = new System.Drawing.Point(114, 35);
             this.txtitemid.Name = "txtitemid";
             this.txtitemid.ReadOnly = true;
-            this.txtitemid.Size = new System.Drawing.Size(204, 20);
+            this.txtitemid.Size = new System.Drawing.Size(253, 27);
             this.txtitemid.TabIndex = 0;
             this.txtitemid.TabStop = false;
             // 
             // lbldesc
             // 
             this.lbldesc.AutoSize = true;
-            this.lbldesc.Location = new System.Drawing.Point(14, 99);
+            this.lbldesc.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbldesc.ForeColor = System.Drawing.Color.White;
+            this.lbldesc.Location = new System.Drawing.Point(14, 148);
             this.lbldesc.Name = "lbldesc";
-            this.lbldesc.Size = new System.Drawing.Size(63, 13);
+            this.lbldesc.Size = new System.Drawing.Size(94, 19);
             this.lbldesc.TabIndex = 4;
             this.lbldesc.Text = "Descrpition:";
             // 
             // lblitemname
             // 
             this.lblitemname.AutoSize = true;
-            this.lblitemname.Location = new System.Drawing.Point(11, 151);
+            this.lblitemname.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblitemname.ForeColor = System.Drawing.Color.White;
+            this.lblitemname.Location = new System.Drawing.Point(14, 181);
             this.lblitemname.Name = "lblitemname";
-            this.lblitemname.Size = new System.Drawing.Size(61, 13);
+            this.lblitemname.Size = new System.Drawing.Size(94, 19);
             this.lblitemname.TabIndex = 3;
             this.lblitemname.Text = "Item Name:";
             // 
             // lblitemcode
             // 
             this.lblitemcode.AutoSize = true;
-            this.lblitemcode.Location = new System.Drawing.Point(14, 70);
+            this.lblitemcode.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblitemcode.ForeColor = System.Drawing.Color.White;
+            this.lblitemcode.Location = new System.Drawing.Point(14, 72);
             this.lblitemcode.Name = "lblitemcode";
-            this.lblitemcode.Size = new System.Drawing.Size(58, 13);
+            this.lblitemcode.Size = new System.Drawing.Size(89, 19);
             this.lblitemcode.TabIndex = 2;
             this.lblitemcode.Text = "Item Code:";
             // 
             // lblitemid
             // 
             this.lblitemid.AutoSize = true;
-            this.lblitemid.Location = new System.Drawing.Point(14, 35);
+            this.lblitemid.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblitemid.ForeColor = System.Drawing.Color.White;
+            this.lblitemid.Location = new System.Drawing.Point(14, 39);
             this.lblitemid.Name = "lblitemid";
-            this.lblitemid.Size = new System.Drawing.Size(44, 13);
+            this.lblitemid.Size = new System.Drawing.Size(70, 19);
             this.lblitemid.TabIndex = 1;
             this.lblitemid.Text = "Item ID:";
             // 
             // btnconfirm
             // 
-            this.btnconfirm.Location = new System.Drawing.Point(14, 203);
+            this.btnconfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnconfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnconfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
+            this.btnconfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
+            this.btnconfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconfirm.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnconfirm.Location = new System.Drawing.Point(208, 296);
             this.btnconfirm.Name = "btnconfirm";
-            this.btnconfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnconfirm.Size = new System.Drawing.Size(108, 36);
             this.btnconfirm.TabIndex = 12;
             this.btnconfirm.Text = "Confirm";
-            this.btnconfirm.UseVisualStyleBackColor = true;
+            this.btnconfirm.UseVisualStyleBackColor = false;
             this.btnconfirm.Click += new System.EventHandler(this.btnconfirm_Click);
             // 
             // btnbak
             // 
-            this.btnbak.Location = new System.Drawing.Point(93, 203);
+            this.btnbak.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnbak.BackColor = System.Drawing.Color.DarkRed;
+            this.btnbak.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnbak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbak.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnbak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnbak.Location = new System.Drawing.Point(322, 296);
             this.btnbak.Name = "btnbak";
-            this.btnbak.Size = new System.Drawing.Size(75, 23);
+            this.btnbak.Size = new System.Drawing.Size(108, 36);
             this.btnbak.TabIndex = 13;
             this.btnbak.Text = "Back";
-            this.btnbak.UseVisualStyleBackColor = true;
+            this.btnbak.UseVisualStyleBackColor = false;
             this.btnbak.Click += new System.EventHandler(this.btnbak_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(469, 34);
+            this.panel1.TabIndex = 41;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblSilaSchoolManagementSoftware
+            // 
+            this.lblSilaSchoolManagementSoftware.AutoSize = true;
+            this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic);
+            this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 8);
+            this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(403, 23);
+            this.lblSilaSchoolManagementSoftware.TabIndex = 0;
+            this.lblSilaSchoolManagementSoftware.Text = "INVENTORY MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
             // createitemfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 236);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(469, 344);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnbak);
             this.Controls.Add(this.btnconfirm);
             this.Controls.Add(this.gbItemDetails2);
+            this.MinimumSize = new System.Drawing.Size(485, 383);
             this.Name = "createitemfrm";
-            this.Text = "createitemfrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create Item";
             this.Load += new System.EventHandler(this.createitemfrm_Load);
             this.gbItemDetails2.ResumeLayout(false);
             this.gbItemDetails2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,5 +247,8 @@
         private System.Windows.Forms.Label lblitemid;
         private System.Windows.Forms.Button btnconfirm;
         private System.Windows.Forms.Button btnbak;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
     }
 }
