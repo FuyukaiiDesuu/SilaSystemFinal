@@ -273,6 +273,16 @@ namespace MainSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap settings_work_tool {
+            get {
+                object obj = ResourceManager.GetObject("settings-work-tool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shopping_list {
             get {
                 object obj = ResourceManager.GetObject("shopping-list", resourceCulture);

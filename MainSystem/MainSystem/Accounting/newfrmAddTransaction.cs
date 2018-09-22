@@ -42,6 +42,7 @@ namespace MainSystem.Accounting
             lblUser.Text = uname;
             txtStudentName.Text = dic["fullname"];
             dgvcart.DefaultCellStyle.ForeColor = Color.Black;
+            dgvcart.Columns["subamount"].DefaultCellStyle.Format = "N2";
         }
         private void textboxclr()
         {
@@ -54,6 +55,7 @@ namespace MainSystem.Accounting
         }
         private void newfrmAddTransaction_Load(object sender, EventArgs e)
         {
+            
             txtTransactionNo.Text = SerialMaker();
             lblsy.Text = syeartemp;
             lblsy2.Text = syeartemp;
@@ -138,7 +140,7 @@ namespace MainSystem.Accounting
                         command2.Parameters.AddWithValue("@cqno", null);
                         command2.Parameters.AddWithValue("@pstatus", 1);
                     }
-                    var a = d["adue"].TrimStart('₱');
+                    var a = d["adue"];
                     command2.Parameters.AddWithValue("@apaid", a);
                     command2.Parameters.AddWithValue("@dpaid", d["pdate"]);
                     command2.Parameters.AddWithValue("@eid", eid);
@@ -442,7 +444,7 @@ namespace MainSystem.Accounting
             }
         }
         private void btnADDTOCART_Click(object sender, EventArgs e)
-        {
+        { 
             if(addcarttxtvalidate())
             {
                 if(subtotalCheck())
@@ -451,10 +453,11 @@ namespace MainSystem.Accounting
                     if (rs == DialogResult.OK)
                     {
                         int rowindex = dgvcart.Rows.Add();
+                        
                         dgvcart.Rows[rowindex].Cells[0].Value = txtTransactionNo.Text;
                         dgvcart.Rows[rowindex].Cells[1].Value = cmbPaymentType.Text;
                         dgvcart.Rows[rowindex].Cells[2].Value = txtChequeNo.Text;
-                        dgvcart.Rows[rowindex].Cells[3].Value = txtSubTotal.Text;
+                        dgvcart.Rows[rowindex].Cells[3].Value = Decimal.Round(Decimal.Parse(txtSubTotal.Text.TrimStart('₱')),2);
                         textboxadder(txtSubTotal.Text);
                         dgvcart.Rows[rowindex].Cells[4].Value = cmbPaymentTo.Text;
                         dgvcart.Rows[rowindex].Cells[5].Value = txtStudentName.Text;

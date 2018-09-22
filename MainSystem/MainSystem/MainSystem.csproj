@@ -233,6 +233,12 @@
     <Compile Include="LoginDashboard\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginDashboard\frmsyear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDashboard\frmsyear.Designer.cs">
+      <DependentUpon>frmsyear.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enrollment\sectioninput.cs">
@@ -380,6 +386,9 @@
     <EmbeddedResource Include="Inventory\frmOrderList.resx">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginDashboard\frmsyear.resx">
+      <DependentUpon>frmsyear.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -515,6 +524,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-work-tool.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

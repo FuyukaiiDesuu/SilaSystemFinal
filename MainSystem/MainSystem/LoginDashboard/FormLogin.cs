@@ -15,11 +15,15 @@ namespace MainSystem
     {
         //public MySqlConnection dbconnect;
         private MySqlConnection dbconnect;
+        public MySqlConnection dbconnection;
+        dbConnector connect = new dbConnector();
+        MySqlDataAdapter adapter;
+        DataTable dt;
         public FormLogin()
         {
             InitializeComponent();
             dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
-            
+            getsyear();
             dbconnect.Open();
         }
         public frmMain frmmain;
@@ -27,7 +31,24 @@ namespace MainSystem
         {
 
         }
+        public void getsyear()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                conn.Open();
+                string query = "SELECT * FROM schoolyear WHERE statussyear = 'OPEN';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if(dt.Rows.Count > 0)
+                {
+                    lblsy.Text = dt.Rows[0]["syear"].ToString();
+                }
+               
+            }
+            
 
+        }
         public void clearTxtBoxes()
         {
             txtUsername.Clear();
@@ -40,13 +61,13 @@ namespace MainSystem
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+           
         }
         string uname;
         
         private void button1_Click(object sender, EventArgs e)
         {
-            if(comboBox2.Text != "")
+            if(lblsy.Text != "NO S.Y. SELECTED")
             {
                 var dbconnector = new dbConnector();
                 using (dbconnect = dbconnector.connector())
@@ -71,7 +92,7 @@ namespace MainSystem
                             uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
                             MessageBox.Show("WELCOME TO SILA SCHOOL MANAGEMENT SYSTEM!", "WELCOME!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             frmmain = new frmMain(uname, perm);
-                            frmmain.schoolyear = comboBox2.Text;
+                            frmmain.schoolyear = lblsy.Text;
                             frmmain.Show();
                             frmmain.reference = this;
                             this.Hide();
@@ -90,7 +111,7 @@ namespace MainSystem
             }
             else
             {
-                MessageBox.Show("SCHOOLYEAR HAS NOT BEEN SELECTED!", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("There is no currently opened School Year!", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
            
            
@@ -214,15 +235,14 @@ namespace MainSystem
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("SELECTED SCHOOL YEAR SELECTED IS " + comboBox2.Text, "PLEASE CONFIRM!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(res == DialogResult.Yes)
-            {
-
-            }
-            else
-            {
-                comboBox2.SelectedIndex = -1;
-            }
+        }
+        public LoginDashboard.frmsyear fsy;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fsy = new LoginDashboard.frmsyear();
+            fsy.Show();
+            fsy.reference = this;
+            this.Hide();
         }
     }
 }

@@ -181,6 +181,7 @@ namespace MainSystem.Accounting
             dataBalanceDetails.Columns["payment_to"].HeaderText = "Payment To:";
             dataBalanceDetails.Columns["additional_details"].HeaderText = "Additional Details";
             dataBalanceDetails.Columns["syear"].HeaderText = "School Year";
+            dataBalanceDetails.Columns["amount_paid"].DefaultCellStyle.Format = "N2";
         }
         public void loadBalanceDetails()
         {
@@ -204,6 +205,7 @@ namespace MainSystem.Accounting
                 adapter.Fill(dt);
                 dataFeeValue.DataSource = dt;
             }
+            dataFeeValue.Columns["current_amount"].DefaultCellStyle.Format = "N2";
             dataFeeValue.Columns["fee_type"].HeaderText = "Fee Type";
             dataFeeValue.Columns["fee_description"].HeaderText = "Fee Description";
             dataFeeValue.Columns["current_amount"].HeaderText = "Current Amount";

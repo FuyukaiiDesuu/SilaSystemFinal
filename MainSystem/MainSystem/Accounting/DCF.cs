@@ -98,7 +98,7 @@ namespace MainSystem.Accounting {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_SUMMARY_OF_DISBURSEMENTS_date {
+        public CrystalDecisions.Shared.IParameterField Parameter_DateStart {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -106,9 +106,25 @@ namespace MainSystem.Accounting {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_SUMMARY_OF_PAYMENTS_date {
+        public CrystalDecisions.Shared.IParameterField Parameter_DateEnd {
             get {
                 return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_SUMMARY_OF_DISBURSEMENTS_date {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_SUMMARY_OF_PAYMENTS_date {
+            get {
+                return this.DataDefinition.ParameterFields[3];
             }
         }
     }
