@@ -61,11 +61,15 @@ namespace MainSystem
                 dataGridView1.Columns["level"].Visible = false;
                 dataGridView1.Columns["school_year"].Visible = false;
                 dataGridView1.Columns["idstddet"].Visible = false;
+                dataGridView1.Columns["image_path"].Visible = false;
+                dataGridView1.Columns["level_dummyval"].Visible = false;
+                dataGridView1.Columns["sectionid"].Visible = false;
 
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView1.Columns["LastName"].HeaderText = "Last Name";
                 dataGridView1.Columns["MiddleName"].HeaderText = "Middle Name";
+                dataGridView1.Columns["DateOfBirth"].HeaderText = "Date of Birth";
 
 
             }
@@ -88,7 +92,6 @@ namespace MainSystem
                 dataGridView2.Columns["FirstName"].Visible = true;
                 dataGridView2.Columns["LastName"].Visible = true;
                 dataGridView2.Columns["MiddleName"].Visible = true;
-                dataGridView2.Columns["DateOfBirth"].Visible = true;
                 dataGridView2.Columns["PlaceOfBirth"].Visible = false;
                 dataGridView2.Columns["Sex"].Visible = true;
                 dataGridView2.Columns["Religion"].Visible = false;
@@ -99,11 +102,15 @@ namespace MainSystem
                 dataGridView2.Columns["level"].Visible = false;
                 dataGridView2.Columns["school_year"].Visible = false;
                 dataGridView2.Columns["idstddet"].Visible = false;
+                dataGridView2.Columns["image_path"].Visible = false;
+                dataGridView2.Columns["level_dummyval"].Visible = false;
+                dataGridView2.Columns["sectionid"].Visible = false;
 
                 dataGridView2.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView2.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView2.Columns["LastName"].HeaderText = "Last Name";
                 dataGridView2.Columns["MiddleName"].HeaderText = "Middle Name";
+                dataGridView2.Columns["DateOfBirth"].HeaderText = "Date of Birth";
 
 
             }
@@ -209,22 +216,6 @@ namespace MainSystem
             dataGridView1.ClearSelection();
         }
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to close this application?", "S.I.L.A Enrollment and Accounting System", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                return;
-            }
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        
     }
 }

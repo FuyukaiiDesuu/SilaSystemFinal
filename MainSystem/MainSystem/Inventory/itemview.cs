@@ -56,6 +56,9 @@ namespace MainSystem
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns["itemID"].Visible = false;
                 dataGridView1.Columns["itemstatus"].Visible = false;
+                dataGridView1.Columns["date_modified"].HeaderText = "Date Modified";
+                dataGridView1.Columns["item_code"].HeaderText = "Item Code";
+                dataGridView1.Columns["date_of_creation"].HeaderText = "Date of Creation";
             }
         }
         public void readData2()

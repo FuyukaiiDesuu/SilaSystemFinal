@@ -97,15 +97,19 @@ namespace MainSystem.Enrollment
                 dataGridView1.Columns["idstuddet"].Visible = false;
                 dataGridView1.Columns["Status"].Visible = false;
                 dataGridView1.Columns["department"].Visible = false;
-                dataGridView1.Columns["level"].Visible = true;
+                dataGridView1.Columns["level"].Visible = false;
                 dataGridView1.Columns["school_year"].Visible = true;
                 dataGridView1.Columns["idstddet"].Visible = false;
                 dataGridView1.Columns["section"].Visible = true;
+                dataGridView1.Columns["image_path"].Visible = false;
+                dataGridView1.Columns["sectionid"].Visible = false;
 
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView1.Columns["LastName"].HeaderText = "Last Name";
                 dataGridView1.Columns["MiddleName"].HeaderText = "Middle Name";
+                dataGridView1.Columns["DateOfBirth"].HeaderText = "Date of Birth";
+                dataGridView1.Columns["level_dummyval"].HeaderText = "Level";
 
             }
             dbconnection.Close();

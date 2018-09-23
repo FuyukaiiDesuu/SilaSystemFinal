@@ -41,6 +41,8 @@ namespace MainSystem
         private void frmItemCreate_Load(object sender, EventArgs e)
         {
             readData();
+            dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 12f);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView1.ClearSelection();
         }
 
@@ -60,6 +62,12 @@ namespace MainSystem
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns["itemID"].Visible = false;
+                dataGridView1.Columns["itemstatus"].Visible = false;
+                dataGridView1.Columns["description"].Visible = false;
+                dataGridView1.Columns["item_code"].HeaderText = "Item Code";
+                dataGridView1.Columns["date_of_creation"].HeaderText = "Date of Creation";
+                dataGridView1.Columns["itemname"].HeaderText = "Item Name";
+                dataGridView1.Columns["date_modified"].HeaderText = "Date Modified";
             }
         }
 

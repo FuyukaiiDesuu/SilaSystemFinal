@@ -856,5 +856,10 @@ namespace MainSystem.Accounting
         {
             loadDisbursementtbl();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,6 +14,9 @@ namespace MainSystem
 {
     public partial class editItemmanagement : Form
     {
+        public MySqlDataAdapter adapter;
+        public DataTable dt;
+        public MySqlConnection dbconnection;
         public frmitemmanagement reference { get; set; }
         IDictionary<string, string> dic;
         public editItemmanagement(IDictionary<string, string> d)
@@ -35,29 +38,55 @@ namespace MainSystem
             txtitemname.Text = dic["itemname"];
 
         }
+        private Boolean itemchecker(string itemname, string item_description)
+        {
+            var connect = new dbConnector();
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM itemdetails WHERE itemname = '" + itemname + "' " +
+                    "AND itemID <> '" + dic["ayd"] + "' " +
+                    "AND description = '" + item_description + "' " +
+                    "AND itemID <> '" + dic["ayd"] + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("An Item Has Already Been Added With The Same Item!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         private void editData()
         {
-            MySqlConnection conn = connect.connector();
-            String query = "UPDATE itemdetails SET item_code ='" + txtitemcode.Text +
-                "', description ='" + txtdesc.Text +
-                "', itemname ='" + txtitemname.Text + 
-                "' WHERE itemID ='" + dic["ayd"] + "'";
-            MySqlCommand command = new MySqlCommand(query, conn);
-            try
+            if(!itemchecker(txtitemname.Text, txtdesc.Text))
             {
-                conn.Open();
-                command.ExecuteNonQuery();
-                MessageBox.Show("Successfully Updated");
-                this.Close();
-                reference.Show();
-                reference.readData();
-                reference.dataGridView1.ClearSelection();
+                MySqlConnection conn = connect.connector();
+                String query = "UPDATE itemdetails SET item_code ='" + txtitemcode.Text +
+                    "', description ='" + txtdesc.Text +
+                    "', itemname ='" + txtitemname.Text +
+                    "', date_modified = '" + DateTime.Now.ToString("yyyy-MM-dd") +
+                    "' WHERE itemID ='" + dic["ayd"] + "'";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Updated");
+                    this.Close();
+                    reference.Show();
+                    reference.readData();
+                    reference.dataGridView1.ClearSelection();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid");
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Invalid");
-            }
-            
         }
         private void btnconfirm_Click(object sender, EventArgs e)
         {

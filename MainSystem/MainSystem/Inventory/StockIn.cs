@@ -91,6 +91,7 @@ namespace MainSystem
                 dataGridView1.Columns["vendor"].HeaderText = "Vendor";
                 dataGridView1.Columns["description"].HeaderText = "Item Desc.";
                 dataGridView1.Columns["itemname"].HeaderText = "Item Name.";
+                dataGridView1.Columns["date_modified"].HeaderText = "Date Modified";
 
             }
         }
@@ -129,7 +130,11 @@ namespace MainSystem
                     adapter = new MySqlDataAdapter(query, conn);
                     adapter.Fill(dt);
                     dataGridView2.DataSource = dt;
-                    //dataGridView2.Columns["itemID"].Visible = false;
+                    dataGridView2.Columns["stkinID"].HeaderText = "Stock In ID";
+                    dataGridView2.Columns["inventory_id"].HeaderText = "Inventory ID";
+                    dataGridView2.Columns["date"].HeaderText = "Date";
+                    dataGridView2.Columns["quantity_delivered"].HeaderText = "Quantity Delivered";
+                    dataGridView2.Columns["orderlistID"].HeaderText = "Order List ID";
                 }
             }
             catch(Exception ee)

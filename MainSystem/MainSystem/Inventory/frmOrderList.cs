@@ -70,6 +70,7 @@ namespace MainSystem
                 dataItemCreation.Columns["date_of_creation"].HeaderText = "Date Created";
                 dataItemCreation.Columns["description"].HeaderText = "Item Description";
                 dataItemCreation.Columns["itemname"].HeaderText = "Item Name";
+                dataItemCreation.Columns["date_modified"].HeaderText = "Date Modified";
             }
         }
         public void readDataOrderList()
@@ -93,6 +94,9 @@ namespace MainSystem
                 dataOrderList.Columns["date"].HeaderText = "Date Delivery Due";
                 dataOrderList.Columns["description"].HeaderText = "Item Description";
                 dataOrderList.Columns["itemname"].HeaderText = "Item Name";
+                dataOrderList.Columns["date_modified"].HeaderText = "Date Modified";
+                dataOrderList.Columns["quantity_delivered"].HeaderText = "Quantity Delivered";
+                dataOrderList.Columns["date_created"].HeaderText = "Date Created";
             }
         }
         public void readDataOrderListCompl()
@@ -116,6 +120,9 @@ namespace MainSystem
                 dgvcompleted.Columns["date"].HeaderText = "Date Delivery Due";
                 dgvcompleted.Columns["description"].HeaderText = "Item Description";
                 dgvcompleted.Columns["itemname"].HeaderText = "Item Name";
+                dgvcompleted.Columns["date_modified"].HeaderText = "Date Modified";
+                dgvcompleted.Columns["quantity_delivered"].HeaderText = "Quantity Delivered";
+                dgvcompleted.Columns["date_created"].HeaderText = "Date Created";
             }
         }
         public void readDataOrderListCanceled()
@@ -139,6 +146,9 @@ namespace MainSystem
                 dgvcancelled.Columns["date"].HeaderText = "Date Delivery Due";
                 dgvcancelled.Columns["description"].HeaderText = "Item Description";
                 dgvcancelled.Columns["itemname"].HeaderText = "Item Name";
+                dgvcancelled.Columns["date_modified"].HeaderText = "Date Modified";
+                dgvcancelled.Columns["quantity_delivered"].HeaderText = "Quantity Delivered";
+                dgvcancelled.Columns["date_created"].HeaderText = "Date Created";
             }
         }
         private void txtboxdeleter()
