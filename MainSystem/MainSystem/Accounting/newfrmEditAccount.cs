@@ -430,7 +430,7 @@ namespace MainSystem.Accounting
         public IDictionary<string, string> dicforsoaform;
         private Boolean txtboxvalidate()
         {
-            if (texttuiton.Text == "₱0.00" || texttuiton.Text == "₱0" || textbooks.Text == "₱0.00" || textbooks.Text == "₱0" || textregis.Text == "₱0.00" || textregis.Text == "₱0" || textmisc.Text == "₱0.00" || textmisc.Text == "₱0")
+            if ((texttuiton.Text == "₱0.00"  || texttuiton.Text == "₱0") && (textbooks.Text == "₱0.00" || textbooks.Text == "₱0") && (textregis.Text == "₱0.00" || textregis.Text == "₱0" ) && (textmisc.Text == "₱0.00" || textmisc.Text == "₱0"))
             {
                 MessageBox.Show("PLEASE FILL ALL NECESSARY FIELDS!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -499,12 +499,12 @@ namespace MainSystem.Accounting
         }
         private void textregis_Leave(object sender, EventArgs e)
         {
-            if (texttuiton.Text.Length <= 1)
+            if (textregis.Text.Length <= 1)
             {
-                texttuiton.Text = "₱0.00";
+                textregis.Text = "₱0.00";
             }
-            Decimal a = Decimal.Round(Decimal.Parse(texttuiton.Text.TrimStart('₱')), 2);
-            texttuiton.Text = a.ToString("C2", new CultureInfo("en-PH"));
+            Decimal a = Decimal.Round(Decimal.Parse(textregis.Text.TrimStart('₱')), 2);
+            textregis.Text = a.ToString("C2", new CultureInfo("en-PH"));
         }
         private void textbooks_Leave(object sender, EventArgs e)
         {

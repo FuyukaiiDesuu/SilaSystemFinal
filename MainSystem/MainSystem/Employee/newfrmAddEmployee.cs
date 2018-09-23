@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MainSystem.Employee
 {
     public partial class newfrmAddEmployee : Form
     {
+        public MySqlDataAdapter adapter;
+        public DataTable dt;
+        public MySqlConnection dbconnection;
         public Employee.newfrmEmployee reference { get; set; }
         Employee.DbQueries dbquery = new Employee.DbQueries();
         
@@ -24,23 +28,45 @@ namespace MainSystem.Employee
         {
             enableButton();
         }
-
+        private Boolean empcheck(string fn, string ln, string mn)
+        {
+            var connect = new dbConnector();
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM employee WHERE first_name = '" + fn + "' AND last_name = '" + ln + "' AND middle_name = '" + mn + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("An Employee Has Already Been Added With The Same Name!", "CAUTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(cmbReligion.Text == "Others")
+            if(!empcheck(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text))
             {
-                dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, txtSpecify.Text, cmbMaritalStatus.Text, "1", cmbPosition.Text);
+                if (cmbReligion.Text == "Others")
+                {
+                    dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, txtSpecify.Text, cmbMaritalStatus.Text, "1", cmbPosition.Text);
+                }
+                else
+                {
+                    dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, cmbReligion.Text, cmbMaritalStatus.Text, "1", cmbPosition.Text);
+                }
+
+                MessageBox.Show("Succesfully Added");
+                reference.Show();
+                reference.loadEmployeeDetails();
+                reference.dataSearch.ClearSelection();
+                this.Close();
             }
-            else
-            {
-                dbquery.addEmployee(txtFirstName.Text, txtLastName.Text, txtMiddleName.Text, dateBirthDate.Text, txtBirthPlace.Text, txtContactNo.Text, cmbSex.Text, cmbReligion.Text, cmbMaritalStatus.Text, "1", cmbPosition.Text);
-            }
-            
-            MessageBox.Show("Succesfully Added");
-            reference.Show();
-            reference.loadEmployeeDetails();
-            reference.dataSearch.ClearSelection();
-            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

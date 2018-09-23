@@ -131,11 +131,13 @@ namespace MainSystem
             {
 
                 dbconnection.Open();
-                using (var com = new MySqlCommand("INSERT INTO stkout(inventory_id, stockout_date, quantity) VALUES(@invid, @date, @quan)", dbconnection))
+                using (var com = new MySqlCommand("INSERT INTO stkout(inventory_id, stockout_date, quantity, statusout) VALUES(@invid, @date, @quan, @sout)", dbconnection))
                 {
                     com.Parameters.AddWithValue("@invid", invid);
                     com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
                     com.Parameters.AddWithValue("@quan", textBox2.Text);
+                    com.Parameters.AddWithValue("@sout", comboBox1.Text);
+
                     com.ExecuteNonQuery();
                 }
             }
@@ -144,22 +146,29 @@ namespace MainSystem
         {
             if(textBox2.Text != "" && textBox2.Text != "0")
             {
-                if (quantityadder() > 0)
+                if(comboBox1.SelectedIndex != -1)
                 {
-                    DialogResult res = MessageBox.Show("CONFIRM STOCK-OUT OF ITEMS?", "CONFIRM!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if(res == DialogResult.Yes)
+                    if (quantityadder() > 0)
                     {
-                        updateinv();
-                        insertstkout();
-                        readData();
-                        textBox2.Clear();
-                        dgvInventory.ClearSelection();
-                        MessageBox.Show("SUCCESSFULLY STOCKED-OUT QUANTITY OF ITEMS!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult res = MessageBox.Show("CONFIRM STOCK-OUT OF ITEMS?", "CONFIRM!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (res == DialogResult.Yes)
+                        {
+                            updateinv();
+                            insertstkout();
+                            readData();
+                            textBox2.Clear();
+                            dgvInventory.ClearSelection();
+                            MessageBox.Show("SUCCESSFULLY STOCKED-OUT QUANTITY OF ITEMS!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("QUANTITY OF ITEMS TO BE STOCKED OUT CANNOT BE MORE THAN QUANTITY ON-HAND!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("QUANTITY OF ITEMS TO BE STOCKED OUT CANNOT BE 0!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A STOCK-OUT TYPE SHOULD BE SELECTED", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -187,6 +196,7 @@ namespace MainSystem
         {  
            if (e.RowIndex >= 0)
            {
+                button2.Enabled = true;
                 textBox2.Enabled = true;
                 button1.Enabled = true;
                 invid = dgvInventory.Rows[e.RowIndex].Cells["invID"].Value.ToString();
@@ -196,7 +206,7 @@ namespace MainSystem
         public Inventory.stkoutlist stklist;
         private void button2_Click(object sender, EventArgs e)
         {
-            stklist = new Inventory.stkoutlist();
+            stklist = new Inventory.stkoutlist(invid);
             stklist.reference = this;
             stklist.Show();
         }

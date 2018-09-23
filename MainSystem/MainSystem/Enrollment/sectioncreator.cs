@@ -79,7 +79,7 @@ namespace MainSystem.Enrollment
                 {
                     command2.Parameters.AddWithValue("@section_name", textBox1.Text);
                     command2.Parameters.AddWithValue("@gradelevel", comboBox2.Text);
-                    var x = comboBox2.SelectedIndex + 1;
+                    var x = comboBox1.SelectedIndex + 1;
                     command2.Parameters.AddWithValue("@department", x.ToString());
 
                     command2.ExecuteNonQuery();
@@ -97,7 +97,8 @@ namespace MainSystem.Enrollment
                 {
                     command2.Parameters.AddWithValue("@section_name", textBox1.Text);
                     command2.Parameters.AddWithValue("@gradelevel", comboBox2.Text);
-                    command2.Parameters.AddWithValue("@department", x[2]);
+                    var aa = comboBox1.SelectedIndex + 1;
+                    command2.Parameters.AddWithValue("@department", aa.ToString());
                     command2.Parameters.AddWithValue("@ids", x[0]);
                     command2.ExecuteNonQuery();
                 }

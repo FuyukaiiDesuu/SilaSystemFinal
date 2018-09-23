@@ -77,8 +77,8 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Pre-School",
             "Grade-School",
-            "Junior High-School",
-            "Senior High-School"});
+            "Junior-Highschool",
+            "Senior-Highschool"});
             this.comboBox1.Location = new System.Drawing.Point(44, 56);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(263, 31);

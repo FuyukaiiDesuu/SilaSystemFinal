@@ -68,6 +68,8 @@ namespace MainSystem
                 dataGridView1.Columns["idstddet"].Visible = false;
                 dataGridView1.Columns["section"].Visible = false;
                 dataGridView1.Columns["image_path"].Visible = false;
+                dataGridView1.Columns["sectionid"].Visible = false;
+
 
                 dataGridView1.Columns["level_dummyval"].HeaderText = "Student Level";
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
@@ -198,8 +200,8 @@ namespace MainSystem
             try
             {
                 studid2 = dataGridView1.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
-                txtfn.Text = dataGridView1.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
-                txtln.Text = dataGridView1.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
+                txtfn.Text = dataGridView1.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
+                txtln.Text = dataGridView1.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
                 txtmi.Text = dataGridView1.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
                 DateTime dt = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells["DateOfBirth"].Value.ToString());
                 txtbd.Text = dt.ToString("yyyy-MM-dd");

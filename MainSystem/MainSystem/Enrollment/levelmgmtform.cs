@@ -226,7 +226,7 @@ namespace MainSystem.Enrollment
                 dbconnection.Open();
                 foreach (string id in stdlistid)
                 {
-                    string query2 = "UPDATE studdetails SET section = @sec, level = @lvl, department = @dept, level_dummyval = @dum, school_year = @sy WHERE idstddet = @idstud;";
+                    string query2 = "UPDATE studdetails SET section = @sec, level = @lvl, department = @dept, level_dummyval = @dum, school_year = @sy, sectionid = @sectionid WHERE idstddet = @idstud;";
                     using (var command2 = new MySqlCommand(query2, dbconnection))
                     {
                         command2.Parameters.AddWithValue("@sec", null);
@@ -235,6 +235,7 @@ namespace MainSystem.Enrollment
                         command2.Parameters.AddWithValue("@dum", comboBox2.Text);
                         command2.Parameters.AddWithValue("@sy", comboBox3.Text);
                         command2.Parameters.AddWithValue("@idstud", id);
+                        command2.Parameters.AddWithValue("@sectionid", null);
                         command2.ExecuteNonQuery();
                     }
                     string query = "UPDATE accountdetails SET fid = @fid WHERE spid = @idstud;";
@@ -247,20 +248,45 @@ namespace MainSystem.Enrollment
                 }
             }
         }
-        private void btnupdate_Click(object sender, EventArgs e)
+        private Boolean checkercheckbox()
         {
-            DialogResult res = MessageBox.Show("Selected Student/s Level Details Will Be Altered! Proceed?", "WARNING!", MessageBoxButtons.YesNo);
-            if(res == DialogResult.Yes) 
+            var x = false;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                idlistgrabber();
-                updater();
-                MessageBox.Show("STUDENT RECORDS HAVE BEEN ALTERED!");
-                loadData2();
+                if (Convert.ToBoolean(row.Cells[0].Value))
+                {
+                    x = true;
+                }
+            }
+            if (x)
+            {
+                return true;
             }
             else
             {
-
+                MessageBox.Show("NO STUDENT/S ARE CURRENTLY SELECTED!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
+        }
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            if(checkercheckbox())
+            {
+                DialogResult res = MessageBox.Show("Selected Student/s Level Details Will Be Altered! Proceed?", "WARNING!", MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    idlistgrabber();
+                    updater();
+                    MessageBox.Show("STUDENT RECORDS HAVE BEEN ALTERED!");
+                    loadData2();
+                }
+                else
+                {
+
+                }
+            }
+           
+            
         }
 
         private void btnbackhome_Click(object sender, EventArgs e)

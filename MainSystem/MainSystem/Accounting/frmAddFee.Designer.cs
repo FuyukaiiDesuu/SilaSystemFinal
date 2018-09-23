@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpAddFee = new System.Windows.Forms.GroupBox();
-            this.lblsy2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -48,10 +46,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblDate2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblsy = new System.Windows.Forms.Label();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.grpAddFee.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -59,8 +57,6 @@
             // 
             // grpAddFee
             // 
-            this.grpAddFee.Controls.Add(this.lblsy2);
-            this.grpAddFee.Controls.Add(this.label1);
             this.grpAddFee.Controls.Add(this.label3);
             this.grpAddFee.Controls.Add(this.textBox1);
             this.grpAddFee.Controls.Add(this.comboBox1);
@@ -79,35 +75,12 @@
             this.grpAddFee.Text = "Add Fee";
             this.grpAddFee.Enter += new System.EventHandler(this.grpAddFee_Enter);
             // 
-            // lblsy2
-            // 
-            this.lblsy2.AutoSize = true;
-            this.lblsy2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsy2.ForeColor = System.Drawing.Color.White;
-            this.lblsy2.Location = new System.Drawing.Point(257, 35);
-            this.lblsy2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblsy2.Name = "lblsy2";
-            this.lblsy2.Size = new System.Drawing.Size(59, 23);
-            this.lblsy2.TabIndex = 30;
-            this.lblsy2.Text = "label1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(148, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 26);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "School Year:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(82, 134);
+            this.label3.Location = new System.Drawing.Point(81, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 26);
             this.label3.TabIndex = 20;
@@ -116,7 +89,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(257, 136);
+            this.textBox1.Location = new System.Drawing.Point(256, 123);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 55);
@@ -132,7 +105,7 @@
             "Tuition",
             "Books",
             "Others"});
-            this.comboBox1.Location = new System.Drawing.Point(258, 102);
+            this.comboBox1.Location = new System.Drawing.Point(257, 89);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(199, 27);
             this.comboBox1.TabIndex = 3;
@@ -141,7 +114,7 @@
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(257, 197);
+            this.txtAmount.Location = new System.Drawing.Point(256, 184);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(200, 27);
             this.txtAmount.TabIndex = 5;
@@ -151,7 +124,7 @@
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.ForeColor = System.Drawing.Color.White;
-            this.lblAmount.Location = new System.Drawing.Point(178, 193);
+            this.lblAmount.Location = new System.Drawing.Point(177, 180);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(71, 26);
             this.lblAmount.TabIndex = 14;
@@ -162,7 +135,7 @@
             this.lblFeeDescription.AutoSize = true;
             this.lblFeeDescription.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeeDescription.ForeColor = System.Drawing.Color.White;
-            this.lblFeeDescription.Location = new System.Drawing.Point(125, 103);
+            this.lblFeeDescription.Location = new System.Drawing.Point(124, 90);
             this.lblFeeDescription.Name = "lblFeeDescription";
             this.lblFeeDescription.Size = new System.Drawing.Size(127, 26);
             this.lblFeeDescription.TabIndex = 10;
@@ -193,7 +166,7 @@
             "Grade 10",
             "Grade 11",
             "Grade 12"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(257, 67);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(256, 54);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(200, 27);
             this.cmbGradeLevel.TabIndex = 2;
@@ -203,7 +176,7 @@
             this.lblGradeLevel.AutoSize = true;
             this.lblGradeLevel.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGradeLevel.ForeColor = System.Drawing.Color.White;
-            this.lblGradeLevel.Location = new System.Drawing.Point(148, 70);
+            this.lblGradeLevel.Location = new System.Drawing.Point(147, 57);
             this.lblGradeLevel.Name = "lblGradeLevel";
             this.lblGradeLevel.Size = new System.Drawing.Size(102, 26);
             this.lblGradeLevel.TabIndex = 5;
@@ -299,6 +272,18 @@
             this.panel1.Size = new System.Drawing.Size(613, 31);
             this.panel1.TabIndex = 38;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label2.Location = new System.Drawing.Point(458, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 19);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "CURRENT S.Y";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
@@ -313,11 +298,11 @@
             // 
             this.lblsy.AutoSize = true;
             this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblsy.Location = new System.Drawing.Point(539, 5);
+            this.lblsy.Location = new System.Drawing.Point(528, 9);
             this.lblsy.Name = "lblsy";
-            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.Size = new System.Drawing.Size(25, 19);
             this.lblsy.TabIndex = 29;
             this.lblsy.Text = "S.Y ";
             // 
@@ -332,18 +317,6 @@
             this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(409, 23);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label2.Location = new System.Drawing.Point(459, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 23);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "CURRENT S.Y";
             // 
             // frmAddFee
             // 
@@ -394,11 +367,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
-        private System.Windows.Forms.Label lblsy2;
         private System.Windows.Forms.Label lblsy;
         private System.Windows.Forms.Label label2;
     }

@@ -18,21 +18,26 @@ namespace MainSystem.Inventory
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
         DataTable dt;
-        public stkoutlist()
+        public string invid;
+        public stkoutlist(string a)
         {
             InitializeComponent();
+            invid = a;
         }
 
         private void stkoutlist_Load(object sender, EventArgs e)
         {
             readdata();
+            dgvstkout.DefaultCellStyle.ForeColor = Color.Black;
+            dgvstkout.DefaultCellStyle.Font = new Font("Tahoma", 14f);
             dgvstkout.ClearSelection();
         }
         private void readdata()
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT item_code, itemname, description, stockout_date, stkout.quantity FROM stkout INNER JOIN inventory ON stkout.inventory_id = inventory.invID INNER JOIN itemdetails ON inventory.item_id = itemdetails.itemID;";
+                string query = "SELECT item_code, itemname, description, stockout_date, stkout.quantity, statusout FROM stkout INNER JOIN inventory ON stkout.inventory_id = inventory.invID INNER JOIN itemdetails " +
+                    "ON inventory.item_id = itemdetails.itemID WHERE inventory.invID = '"+invid+"';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);

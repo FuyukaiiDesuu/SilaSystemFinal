@@ -35,6 +35,7 @@
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvstkout)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.dgvstkout.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvstkout.BackgroundColor = System.Drawing.Color.White;
             this.dgvstkout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvstkout.Location = new System.Drawing.Point(18, 71);
+            this.dgvstkout.Location = new System.Drawing.Point(6, 34);
             this.dgvstkout.Name = "dgvstkout";
             this.dgvstkout.ReadOnly = true;
             this.dgvstkout.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -76,6 +77,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dgvstkout);
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 42);
@@ -125,7 +127,6 @@
             this.ClientSize = new System.Drawing.Size(800, 491);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnbak);
-            this.Controls.Add(this.dgvstkout);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -134,6 +135,7 @@
             this.Text = "stkoutlist";
             this.Load += new System.EventHandler(this.stkoutlist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvstkout)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

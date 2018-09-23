@@ -72,7 +72,7 @@ namespace MainSystem
             
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM sectionnames WHERE department = '"+(comboBox1.SelectedIndex + 1)+"';";
+                string query = "SELECT * FROM sectionnames WHERE department = '"+(comboBox1.SelectedIndex + 1)+"' ORDER BY gradelevel ASC;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);

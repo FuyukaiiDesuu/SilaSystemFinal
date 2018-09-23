@@ -54,7 +54,7 @@ namespace MainSystem.User
 
         public DataTable checkExisting(string empID)
         {
-            string query = "SELECT * FROM usertable where userID='" + empID + "'";
+            string query = "SELECT * FROM usertable where idemp = '" + empID + "'";
             DataTable itmContainer = con.Select(query);
             return itmContainer;
         }

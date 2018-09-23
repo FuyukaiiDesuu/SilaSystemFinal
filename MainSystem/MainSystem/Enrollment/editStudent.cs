@@ -18,18 +18,21 @@ namespace MainSystem
         public string syear { get; set; }
         public string idstud;
         public string imgpath;
+        public MySqlDataAdapter adapter;
+        public DataTable dt;
+        public MySqlConnection dbconnection;
         public editStudent(string idstudent, IDictionary<string, string> dic, string imgpth)
         {
             InitializeComponent();
             idstud = idstudent;
             txtboxfill(dic);
-            combochanger();
-            txtboxfill(dic);
+            //combochanger();
+            //txtboxfill(dic);
             imgpath = imgpth;
             pictureBox1.ImageLocation = imgpth;
         }
         public IDictionary<string, string> studdet;
-        public MySqlConnection dbconnection;
+       
         public void studdetails(string dept, string level)
         {
             studdet = new Dictionary<string, string>();
@@ -231,21 +234,54 @@ namespace MainSystem
                 return true;
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
+       
+        private Boolean studentcheck2(string fn, string ln, string mn)
         {
-            if(textboxvalidate())
+            var connect = new dbConnector();
+            using (MySqlConnection conn = connect.connector())
             {
-                DialogResult res = MessageBox.Show("CONFIRM STUDENT UPDATE!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (res == DialogResult.Yes)
+                string query = "SELECT * FROM studentprofile WHERE FirstName = '" + fn + "' " +
+                    "AND idstudentprofile <> '" + idstud + "' " +
+                    "AND MiddleName = '" + mn + "' " +
+                    "AND idstudentprofile <> '" + idstud + "' " +
+                    "AND LastName = '" + ln + "' " +
+                    "AND idstudentprofile <> '" + idstud + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
                 {
-                    updatevalue();
-                    MessageBox.Show("Records Succesfully Altered!");
-                    reference.loadData();
-                    reference.dataGridView1.ClearSelection();
-                    reference.textboxClear();
-                    this.Close();
+                     MessageBox.Show("STUDENT WITH THE SAME NAME HAS ALREADY BEEN ENROLLED!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+                if (!studentcheck2(txtfn.Text, txtln.Text, txtmn.Text))
+                {
+                    if (textboxvalidate())
+                    {
+                        DialogResult res = MessageBox.Show("CONFIRM STUDENT UPDATE!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (res == DialogResult.Yes)
+                        {
+                            updatevalue();
+                            MessageBox.Show("Records Succesfully Altered!");
+                            reference.loadData();
+                            reference.dataGridView1.ClearSelection();
+                            reference.textboxClear();
+                            this.Close();
+                        }
+                    }
+                }
+            
+                  
+            
         }
         private void combochanger()
         {

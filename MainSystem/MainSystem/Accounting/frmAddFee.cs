@@ -57,7 +57,6 @@ namespace MainSystem.Accounting
                 comboBox1.Text = d["fdesc"];
             }
             txtAmount.Text = d["amount"];
-            lblsy2.Text = d["sy"];
         }
         private void frmAddFee_Load(object sender, EventArgs e)
         {
@@ -177,9 +176,13 @@ namespace MainSystem.Accounting
             {
                 s_key = "14";
             }
-            else
+            else if (cmbGradeLevel.Text == "Grade 11")
             {
                 s_key = "15";
+            }
+            else
+            {
+                s_key = "16";
             }
             if (textboxvalidate())
             {
@@ -212,7 +215,7 @@ namespace MainSystem.Accounting
                                 command2.Parameters.AddWithValue("@dcrt", lblDate.Text);
                                 command2.Parameters.AddWithValue("@fkey", s_key);
                                 command2.Parameters.AddWithValue("@status", 1);
-                                command2.Parameters.AddWithValue("@sy", lblsy2.Text);
+                                command2.Parameters.AddWithValue("@sy", lblsy.Text);
 
                                 command2.ExecuteNonQuery();
                             }
@@ -263,7 +266,7 @@ namespace MainSystem.Accounting
                                 command2.Parameters.AddWithValue("@dmod", lblDate.Text);
                                 command2.Parameters.AddWithValue("@fkey", s_key);
                                 command2.Parameters.AddWithValue("@status", 1);
-                                command2.Parameters.AddWithValue("@sy", lblsy2.Text);
+                                command2.Parameters.AddWithValue("@sy", lblsy.Text);
                                 command2.Parameters.AddWithValue("@ayd", ayd);
 
                                 command2.ExecuteNonQuery();

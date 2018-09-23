@@ -254,21 +254,45 @@ namespace MainSystem
                 return true;
             }
         }
+        private Boolean studentcheck(string fn, string ln, string mn)
+        {
+            var connect = new dbConnector();
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM studentprofile WHERE FirstName = '" + fn + "' AND LastName = '" + ln + "' AND MiddleName = '" + mn + "';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("A Student Has Already Been Enrolled With The Same Name!", "CAUTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
+           
             if(textboxvalidate())
             {
-                DialogResult res = MessageBox.Show("CONFIRM STUDENT CREATION!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (res == DialogResult.Yes)
+                if (!studentcheck(txtfn.Text, txtln.Text, txtmn.Text))
                 {
-                    createfunction();
-                    MessageBox.Show("Record Created Successfully!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnSave.Enabled = false;
-                    reference.loadData();
-                    reference.dataGridView1.ClearSelection();
-                    reference.textboxClear();
-                    reference.Show();
-                    this.Close();
+                    DialogResult res = MessageBox.Show("CONFIRM STUDENT CREATION!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (res == DialogResult.Yes)
+                    {
+                        createfunction();
+                        MessageBox.Show("Record Created Successfully!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnSave.Enabled = false;
+                        reference.loadData();
+                        reference.dataGridView1.ClearSelection();
+                        reference.textboxClear();
+                        reference.Show();
+                        this.Close();
+                    }
                 }
             }
         }

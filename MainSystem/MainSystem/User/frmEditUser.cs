@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MainSystem.User
 {
     public partial class frmEditUser : Form
     {
+        public MySqlDataAdapter adapter;
+        public DataTable dt;
+        public MySqlConnection dbconnection;
         public User.frmUser reference { get; set; }
         User.DbQueries dbquery = new User.DbQueries();
         public string empID { get; set; }
@@ -59,45 +63,68 @@ namespace MainSystem.User
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        private Boolean usercheck(string username)
+        {
+            var connect = new dbConnector();
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM usertable WHERE username = '" + username + "' AND userID <> '"+userID+"';";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("A User Has Already Been Added With The Same Username!", "CAUTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         IDictionary<string, string> dict;
         private void btnSave_Click(object sender, EventArgs e)
         {
-            dict = new Dictionary<string, string>();
-            dict.Add("acc", "0");
-            dict.Add("reg", "0");
-            dict.Add("emp", "0");
-            dict.Add("inv", "0");
-            dict.Add("user", "0");
+            if(!usercheck(txtUsername.Text))
+            {
+                dict = new Dictionary<string, string>();
+                dict.Add("acc", "0");
+                dict.Add("reg", "0");
+                dict.Add("emp", "0");
+                dict.Add("inv", "0");
+                dict.Add("user", "0");
+
+                if (checkAccounting.Checked)
+                {
+                    dict["acc"] = "1";
+                }
+                if (checkRegistration.Checked)
+                {
+                    dict["reg"] = "1";
+                }
+                if (checkEmployee.Checked)
+                {
+                    dict["emp"] = "1";
+                }
+                if (checkInventory.Checked)
+                {
+                    dict["inv"] = "1";
+                }
+                if (checkUser.Checked)
+                {
+                    dict["user"] = "1";
+                }
+                string temp = dict["acc"] + dict["reg"] + dict["emp"] + dict["inv"] + dict["user"];
+                dbquery.updatUser(txtUsername.Text, txtPassword.Text, temp, "1", userID);
+                MessageBox.Show("Succesfully Updated");
+                reference.Show();
+                reference.dataSearch2.ClearSelection();
+                reference.dataSearch.ClearSelection();
+                reference.loadUsers();
+                this.Close();
+            }
            
-            if (checkAccounting.Checked)
-            {
-                dict["acc"] = "1";
-            }
-            if(checkRegistration.Checked)
-            {
-                dict["reg"] = "1";
-            }
-            if (checkEmployee.Checked)
-            {
-                dict["emp"] = "1";
-            }
-            if (checkInventory.Checked)
-            {
-                dict["inv"] = "1";
-            }
-            if (checkUser.Checked)
-            {
-                dict["user"] = "1";
-            }
-            string temp = dict["acc"] + dict["reg"] + dict["emp"] + dict["inv"] + dict["user"];
-            dbquery.updatUser(txtUsername.Text, txtPassword.Text, temp, "1", userID);
-            MessageBox.Show("Succesfully Updated");
-            reference.Show();
-            reference.dataSearch2.ClearSelection();
-            reference.dataSearch.ClearSelection();
-            reference.loadUsers();
-            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -141,6 +168,11 @@ namespace MainSystem.User
                 checkInventory.Checked = true;
                 checkUser.Checked = true;
             }
+        }
+
+        private void btnDashboard_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

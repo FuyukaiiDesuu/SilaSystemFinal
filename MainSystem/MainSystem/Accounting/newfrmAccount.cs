@@ -95,7 +95,6 @@ namespace MainSystem.Accounting
             dataSearch.Columns["paid_amount"].Visible = false;
             dataSearch.Columns["payment_status"].Visible = false;
             dataSearch.Columns["spid"].Visible = false;
-            dataSearch.Columns["did"].Visible = false;
             dataSearch.Columns["fid"].Visible = false;
             dataSearch.Columns["department"].Visible = false;
             dataSearch.Columns["sectionid"].Visible = false;
@@ -304,8 +303,7 @@ namespace MainSystem.Accounting
                 dic2.Add("pstat", dataSearch.Rows[e.RowIndex].Cells["payment_status"].Value.ToString());
                 dic2.Add("spid", dataSearch.Rows[e.RowIndex].Cells["spid"].Value.ToString());
                 dic2.Add("fid", dataSearch.Rows[e.RowIndex].Cells["fid"].Value.ToString());
-                dic2.Add("did", dataSearch.Rows[e.RowIndex].Cells["did"].Value.ToString());
-                dic2.Add("fullname", dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString());
+                dic2.Add("fullname", dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["FirstName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString());
                 txtfn.Text = dataSearch.Rows[e.RowIndex].Cells["LastName"].Value.ToString() + ", " + dataSearch.Rows[e.RowIndex].Cells["FirstName"].Value.ToString() + " " + dataSearch.Rows[e.RowIndex].Cells["MiddleName"].Value.ToString();
                 var studdetailss = studdetails(dataSearch.Rows[e.RowIndex].Cells["department"].Value.ToString(), dataSearch.Rows[e.RowIndex].Cells["level"].Value.ToString());
                 txtdp.Text = studdetailss["dept"];
