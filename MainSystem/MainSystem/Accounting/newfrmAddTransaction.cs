@@ -20,17 +20,7 @@ namespace MainSystem.Accounting
         dbConnector connect = new dbConnector();
         MySqlDataAdapter adapter;
         DataTable dt;
-        //public DataTable balanceDisplay { get; set; }
-        //public DataTable GradeLevelDisplay { get; set; }
-        /*
-        public string id { get; set; }
-        public string name { get; set; }
-        public string uname { get; set; }
-        public string uid { get; set; }*/
-
-        //Accounting.DbQueries dbquery = new Accounting.DbQueries();
-        //bool cmbChecker = false;
-        //int countPayment;
+       
         public string eid;
         public IDictionary<string, string> dic;
         public newfrmAddTransaction(IDictionary<string, string> d, string empid, string uname)
@@ -60,20 +50,7 @@ namespace MainSystem.Accounting
             lblsy.Text = syeartemp;
             lblsy2.Text = syeartemp;
             timer1.Enabled = true;
-            /*
-            txtStudentID.Text = id;
-            lblUserID.Text = uid;
-            txtStudentName.Text = name;
-            
-            txtChequeNo.Enabled = false;
-            DataTable cntPayment = dbquery.countPayment();
-            countPayment = cntPayment.Rows.Count + 1;
-            txtTransactionNo.Text = countPayment.ToString().PadLeft(10, '0');
-            txtAdditionalDetails.Enabled = false;
-            DataTable adid = dbquery.getAdid(id);
-            txtAccountID.Text = adid.Rows[0][0].ToString();
-            lblUser.Text = uname;
-            lblUserID.Visible = false;*/
+          
             txtSubTotal.Text = "₱0.00";
             txtAmount.Text = "₱0.00";
             txttendered.Text = "₱0.00";
