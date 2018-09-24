@@ -725,7 +725,6 @@ namespace MainSystem.Accounting
             dataSearch.Columns["paid_amount"].Visible = false;
             dataSearch.Columns["payment_status"].Visible = false;
             dataSearch.Columns["spid"].Visible = false;
-            dataSearch.Columns["did"].Visible = false;
             dataSearch.Columns["fid"].Visible = false;
             dataSearch.Columns["department"].Visible = false;
             //dataSearch.Columns["section"].Visible = false;
