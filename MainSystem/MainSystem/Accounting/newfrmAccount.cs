@@ -764,7 +764,6 @@ namespace MainSystem.Accounting
             dataSearch.Columns["paid_amount"].Visible = false;
             dataSearch.Columns["payment_status"].Visible = false;
             dataSearch.Columns["spid"].Visible = false;
-            dataSearch.Columns["did"].Visible = false;
             dataSearch.Columns["fid"].Visible = false;
             dataSearch.Columns["department"].Visible = false;
             //dataSearch.Columns["section"].Visible = false;
@@ -810,7 +809,7 @@ namespace MainSystem.Accounting
             {
                 string query = "SELECT * FROM feevalues WHERE fee_description LIKE '%" + txtfeesearch.Text + "%' " +
                     "OR misc_desc LIKE '%" + txtfeesearch.Text + "%' " +
-                    "OR fee_type LIKE '%"+txtfeesearch.Text+"' AND syear = '" + syeartempo + "';";
+                    "OR fee_type LIKE '%"+txtfeesearch.Text+"%' AND syear = '" + syeartempo + "';";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);

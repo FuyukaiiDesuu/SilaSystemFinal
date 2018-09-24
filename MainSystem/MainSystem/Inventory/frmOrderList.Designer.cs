@@ -30,6 +30,8 @@
         {
             this.dataOrderList = new System.Windows.Forms.DataGridView();
             this.gboxitemdetails2 = new System.Windows.Forms.GroupBox();
+            this.txtitemname = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dateDate = new System.Windows.Forms.DateTimePicker();
             this.txtquantity2 = new System.Windows.Forms.TextBox();
             this.txtvendor = new System.Windows.Forms.TextBox();
@@ -43,27 +45,25 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
-            this.txtitemname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvcompleted = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvcancelled = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataOrderList)).BeginInit();
             this.gboxitemdetails2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataItemCreation)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompleted)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcancelled)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataOrderList
@@ -74,12 +74,13 @@
             this.dataOrderList.AllowUserToResizeRows = false;
             this.dataOrderList.BackgroundColor = System.Drawing.Color.White;
             this.dataOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataOrderList.Location = new System.Drawing.Point(6, 6);
+            this.dataOrderList.Location = new System.Drawing.Point(8, 7);
+            this.dataOrderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataOrderList.Name = "dataOrderList";
             this.dataOrderList.ReadOnly = true;
             this.dataOrderList.RowHeadersVisible = false;
             this.dataOrderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataOrderList.Size = new System.Drawing.Size(1125, 430);
+            this.dataOrderList.Size = new System.Drawing.Size(1500, 529);
             this.dataOrderList.TabIndex = 0;
             this.dataOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -95,37 +96,66 @@
             this.gboxitemdetails2.Controls.Add(this.lblDate2);
             this.gboxitemdetails2.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxitemdetails2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.gboxitemdetails2.Location = new System.Drawing.Point(6, 315);
+            this.gboxitemdetails2.Location = new System.Drawing.Point(8, 388);
+            this.gboxitemdetails2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gboxitemdetails2.Name = "gboxitemdetails2";
-            this.gboxitemdetails2.Size = new System.Drawing.Size(477, 191);
+            this.gboxitemdetails2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gboxitemdetails2.Size = new System.Drawing.Size(636, 235);
             this.gboxitemdetails2.TabIndex = 1;
             this.gboxitemdetails2.TabStop = false;
             this.gboxitemdetails2.Text = "Order Details";
+            // 
+            // txtitemname
+            // 
+            this.txtitemname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.txtitemname.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitemname.ForeColor = System.Drawing.Color.White;
+            this.txtitemname.Location = new System.Drawing.Point(165, 43);
+            this.txtitemname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtitemname.Name = "txtitemname";
+            this.txtitemname.ReadOnly = true;
+            this.txtitemname.Size = new System.Drawing.Size(432, 36);
+            this.txtitemname.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 36);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Item Name:";
             // 
             // dateDate
             // 
             this.dateDate.CustomFormat = "";
             this.dateDate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDate.Location = new System.Drawing.Point(124, 71);
+            this.dateDate.Location = new System.Drawing.Point(165, 87);
+            this.dateDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateDate.Name = "dateDate";
-            this.dateDate.Size = new System.Drawing.Size(325, 30);
+            this.dateDate.Size = new System.Drawing.Size(432, 36);
             this.dateDate.TabIndex = 14;
             this.dateDate.Value = new System.DateTime(2018, 9, 22, 0, 0, 0, 0);
             // 
             // txtquantity2
             // 
             this.txtquantity2.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtquantity2.Location = new System.Drawing.Point(124, 143);
+            this.txtquantity2.Location = new System.Drawing.Point(165, 176);
+            this.txtquantity2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtquantity2.Name = "txtquantity2";
-            this.txtquantity2.Size = new System.Drawing.Size(163, 40);
+            this.txtquantity2.Size = new System.Drawing.Size(216, 48);
             this.txtquantity2.TabIndex = 9;
             // 
             // txtvendor
             // 
             this.txtvendor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtvendor.Location = new System.Drawing.Point(124, 107);
+            this.txtvendor.Location = new System.Drawing.Point(165, 132);
+            this.txtvendor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtvendor.Name = "txtvendor";
-            this.txtvendor.Size = new System.Drawing.Size(325, 30);
+            this.txtvendor.Size = new System.Drawing.Size(432, 36);
             this.txtvendor.TabIndex = 8;
             // 
             // lblQuantity
@@ -133,9 +163,10 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(33, 143);
+            this.lblQuantity.Location = new System.Drawing.Point(44, 176);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(90, 29);
+            this.lblQuantity.Size = new System.Drawing.Size(109, 36);
             this.lblQuantity.TabIndex = 4;
             this.lblQuantity.Text = "Quantity:";
             // 
@@ -144,9 +175,10 @@
             this.lblVendor.AutoSize = true;
             this.lblVendor.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVendor.ForeColor = System.Drawing.Color.White;
-            this.lblVendor.Location = new System.Drawing.Point(47, 108);
+            this.lblVendor.Location = new System.Drawing.Point(63, 133);
+            this.lblVendor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVendor.Name = "lblVendor";
-            this.lblVendor.Size = new System.Drawing.Size(76, 29);
+            this.lblVendor.Size = new System.Drawing.Size(93, 36);
             this.lblVendor.TabIndex = 3;
             this.lblVendor.Text = "Vendor:";
             // 
@@ -155,9 +187,10 @@
             this.lblDate2.AutoSize = true;
             this.lblDate2.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate2.ForeColor = System.Drawing.Color.White;
-            this.lblDate2.Location = new System.Drawing.Point(69, 74);
+            this.lblDate2.Location = new System.Drawing.Point(92, 91);
+            this.lblDate2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate2.Name = "lblDate2";
-            this.lblDate2.Size = new System.Drawing.Size(54, 29);
+            this.lblDate2.Size = new System.Drawing.Size(66, 36);
             this.lblDate2.TabIndex = 1;
             this.lblDate2.Text = "Date:";
             this.lblDate2.Click += new System.EventHandler(this.lblDate2_Click);
@@ -169,9 +202,10 @@
             this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnback.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnback.Location = new System.Drawing.Point(973, 40);
+            this.btnback.Location = new System.Drawing.Point(1297, 49);
+            this.btnback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(177, 53);
+            this.btnback.Size = new System.Drawing.Size(236, 65);
             this.btnback.TabIndex = 12;
             this.btnback.Text = "Back";
             this.btnback.UseVisualStyleBackColor = false;
@@ -185,9 +219,10 @@
             this.btnAdd2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd2.Font = new System.Drawing.Font("Bebas Neue", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd2.ForeColor = System.Drawing.Color.White;
-            this.btnAdd2.Location = new System.Drawing.Point(855, 374);
+            this.btnAdd2.Location = new System.Drawing.Point(1140, 460);
+            this.btnAdd2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd2.Name = "btnAdd2";
-            this.btnAdd2.Size = new System.Drawing.Size(279, 132);
+            this.btnAdd2.Size = new System.Drawing.Size(372, 162);
             this.btnAdd2.TabIndex = 10;
             this.btnAdd2.Text = "Create";
             this.btnAdd2.UseVisualStyleBackColor = false;
@@ -201,12 +236,13 @@
             this.dataItemCreation.AllowUserToResizeRows = false;
             this.dataItemCreation.BackgroundColor = System.Drawing.Color.White;
             this.dataItemCreation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataItemCreation.Location = new System.Drawing.Point(6, 6);
+            this.dataItemCreation.Location = new System.Drawing.Point(8, 7);
+            this.dataItemCreation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataItemCreation.Name = "dataItemCreation";
             this.dataItemCreation.ReadOnly = true;
             this.dataItemCreation.RowHeadersVisible = false;
             this.dataItemCreation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataItemCreation.Size = new System.Drawing.Size(1125, 303);
+            this.dataItemCreation.Size = new System.Drawing.Size(1500, 373);
             this.dataItemCreation.TabIndex = 3;
             this.dataItemCreation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCreation_CellClick);
             this.dataItemCreation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCreation_CellContentClick);
@@ -219,10 +255,11 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 86);
+            this.tabControl1.Location = new System.Drawing.Point(16, 106);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1145, 551);
+            this.tabControl1.Size = new System.Drawing.Size(1527, 678);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -231,10 +268,11 @@
             this.tabPage1.Controls.Add(this.dataItemCreation);
             this.tabPage1.Controls.Add(this.gboxitemdetails2);
             this.tabPage1.Controls.Add(this.btnAdd2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 40);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1137, 513);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1519, 634);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Order Creation";
             // 
@@ -243,10 +281,11 @@
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.dataOrderList);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 40);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1137, 513);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1519, 634);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pending";
             // 
@@ -257,72 +296,23 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Bebas Neue", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnCancel.Location = new System.Drawing.Point(904, 442);
+            this.btnCancel.Location = new System.Drawing.Point(1205, 544);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(230, 65);
+            this.btnCancel.Size = new System.Drawing.Size(307, 80);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel Order";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1169, 34);
-            this.panel1.TabIndex = 45;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblSilaSchoolManagementSoftware
-            // 
-            this.lblSilaSchoolManagementSoftware.AutoSize = true;
-            this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic);
-            this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 8);
-            this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(403, 23);
-            this.lblSilaSchoolManagementSoftware.TabIndex = 0;
-            this.lblSilaSchoolManagementSoftware.Text = "INVENTORY MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
-            // 
-            // txtitemname
-            // 
-            this.txtitemname.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtitemname.Location = new System.Drawing.Point(124, 35);
-            this.txtitemname.Name = "txtitemname";
-            this.txtitemname.Size = new System.Drawing.Size(325, 30);
-            this.txtitemname.TabIndex = 16;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 29);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Item Name:";
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.tabPage3.Controls.Add(this.dgvcompleted);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 40);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1137, 513);
+            this.tabPage3.Size = new System.Drawing.Size(1519, 634);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Completed";
             // 
@@ -334,21 +324,23 @@
             this.dgvcompleted.AllowUserToResizeRows = false;
             this.dgvcompleted.BackgroundColor = System.Drawing.Color.White;
             this.dgvcompleted.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcompleted.Location = new System.Drawing.Point(7, 4);
+            this.dgvcompleted.Location = new System.Drawing.Point(9, 5);
+            this.dgvcompleted.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvcompleted.Name = "dgvcompleted";
             this.dgvcompleted.ReadOnly = true;
             this.dgvcompleted.RowHeadersVisible = false;
             this.dgvcompleted.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcompleted.Size = new System.Drawing.Size(1125, 504);
+            this.dgvcompleted.Size = new System.Drawing.Size(1500, 620);
             this.dgvcompleted.TabIndex = 1;
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.tabPage4.Controls.Add(this.dgvcancelled);
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
+            this.tabPage4.Location = new System.Drawing.Point(4, 40);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1137, 513);
+            this.tabPage4.Size = new System.Drawing.Size(1519, 634);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "CANCELLED";
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
@@ -361,24 +353,61 @@
             this.dgvcancelled.AllowUserToResizeRows = false;
             this.dgvcancelled.BackgroundColor = System.Drawing.Color.White;
             this.dgvcancelled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcancelled.Location = new System.Drawing.Point(6, 4);
+            this.dgvcancelled.Location = new System.Drawing.Point(8, 5);
+            this.dgvcancelled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvcancelled.Name = "dgvcancelled";
             this.dgvcancelled.ReadOnly = true;
             this.dgvcancelled.RowHeadersVisible = false;
             this.dgvcancelled.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcancelled.Size = new System.Drawing.Size(1125, 504);
+            this.dgvcancelled.Size = new System.Drawing.Size(1500, 620);
             this.dgvcancelled.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1559, 42);
+            this.panel1.TabIndex = 45;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblSilaSchoolManagementSoftware
+            // 
+            this.lblSilaSchoolManagementSoftware.AutoSize = true;
+            this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic);
+            this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(68, 10);
+            this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(509, 29);
+            this.lblSilaSchoolManagementSoftware.TabIndex = 0;
+            this.lblSilaSchoolManagementSoftware.Text = "INVENTORY MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
             // frmOrderList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1169, 647);
+            this.ClientSize = new System.Drawing.Size(1559, 796);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmOrderList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOrderList";
@@ -390,13 +419,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompleted)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcancelled)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

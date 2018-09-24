@@ -24,12 +24,14 @@ namespace MainSystem
             loaddata1();
             loaddata2();
             btnEnabler();
-            
+            dataGridView1.ClearSelection();
+            dataGridView2.ClearSelection();
+
         }
         public void btnEnabler()
         {
-            //button1.Enabled = false;
-            //button2.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
             dataGridView1.ClearSelection();
             dataGridView2.ClearSelection();
         }
@@ -170,6 +172,7 @@ namespace MainSystem
                 }
             }
             MessageBox.Show("STUDENT DEACTIVATED!");
+            txtstatus.Clear();
             loaddata1();
             loaddata2();
             btnEnabler();
@@ -198,6 +201,7 @@ namespace MainSystem
                 }
             }
             MessageBox.Show("STUDENT ACTIVATED!");
+            txtstatus.Clear();
             loaddata1();
             loaddata2();
             btnEnabler();
@@ -216,6 +220,9 @@ namespace MainSystem
             dataGridView1.ClearSelection();
         }
 
-        
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

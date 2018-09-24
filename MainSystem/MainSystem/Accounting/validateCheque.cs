@@ -34,6 +34,33 @@ namespace MainSystem
                 comboBox1.Text = "Pending";
             }
         }
+        private void updater2()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                string query2 = "UPDATE payment SET paymentStatus = @status WHERE pid = @ayd";
+                using (var command2 = new MySqlCommand(query2, dbconnection))
+                {
+                    if (comboBox1.Text == "Validated")
+                    {
+                        command2.Parameters.AddWithValue("@status", 1);
+                    }
+                    else if (comboBox1.Text == "Pending")
+                    {
+                        command2.Parameters.AddWithValue("@status", 2);
+
+                    }
+                    else
+                    {
+                        command2.Parameters.AddWithValue("@status", 3);
+                    }
+                    command2.Parameters.AddWithValue("@ayd", dict["pid"]);
+                    command2.ExecuteNonQuery();
+                }
+            }
+        }
         private void updater()
         {
             var dbconnect = new dbConnector();
@@ -92,7 +119,7 @@ namespace MainSystem
                 DialogResult result1 = MessageBox.Show("THIS CHEQUE WILL BE VOIDED. PROCEED?", "CONFIRM ACTION!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (result1 == DialogResult.Yes)
                 {
-                    updater();
+                    updater2();
                     this.Dispose();
                     reference.Show();
                     reference.loadBalanceDetails();
@@ -138,6 +165,14 @@ namespace MainSystem
         private void label13_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.Text == "Void")
+            {
+                button1.Text = "VOID";
+            }
         }
     }
 }

@@ -212,6 +212,7 @@ namespace MainSystem.Accounting
                             MessageBox.Show("TRANSACTION SUCESSFULLY COMPLETED!");
                             payermechanism();
                             reference.Show();
+                            reference.btnAddTransaction.Enabled = false;
                             //reference.loadBalanceDetails(id);
                             reference.loadBalanceDetails();
                             reference.loadPaymentDetails();
@@ -234,6 +235,7 @@ namespace MainSystem.Accounting
             DialogResult result = MessageBox.Show("DISCARD TRANSACTION?", "CONFIRM ACTION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if(result == DialogResult.OK)
             {
+                reference.btnAddTransaction.Enabled = false;
                 this.Close();
             }
             else

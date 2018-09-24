@@ -42,7 +42,7 @@ namespace MainSystem
         public void loadData()
         {
             var dbconnect = new dbConnector();
-            string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet WHERE studentprofile.Status = 1;";
+            string query = "select * from studentprofile inner join studdetails on studentprofile.idstuddet = studdetails.idstddet WHERE studentprofile.Status = 1;";
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
@@ -292,24 +292,25 @@ namespace MainSystem
            
         }
         public addStudent addstudentform;
-        private int counterr()
+        private Int32 counterr()
         {
             var dbconnect = new dbConnector();
-            string query = "SELECT COUNT(idstudentprofile) FROM studentprofile;";
+            string query = "SELECT COUNT(idstddet) FROM studdetails;";
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
                 var cmd = new MySqlCommand(query, dbconnection);
-                return (int)Convert.ToInt32(cmd.ExecuteScalar());
+                return Convert.ToInt32(cmd.ExecuteScalar()) + 1;
                
             }
 
             
         }
+        string sprofid;
         private void btnCreate_Click(object sender, EventArgs e)
         {
             int count = dataGridView1.Rows.Count;
-            addstudentform = new addStudent(counterr());
+            addstudentform = new addStudent(counterr().ToString());
             addstudentform.syear = lblsy.Text;
             addstudentform.Show();
             addstudentform.reference = this;

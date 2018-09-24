@@ -351,23 +351,8 @@ namespace MainSystem.Accounting
             lblsy.Text = TEMPORARYSYEAR;
             //MessageBox.Show(TEMPORARYSYEAR);
             textboxfill();
-            /*
-            timer1.Enabled = true;
-            lblUser.Text = uname;
-            txtStudentID.Text = id;
-            txtStudentName.Text = name;
-            */
-            //MessageBox.Show(balOthers().ToString());
-
-            /*
-            DataTable adid = dbquery.getAdid(id);
-            txtStudentAccountID.Text = adid.Rows[0][0].ToString();
-            txtDateDue.Text = adid.Rows[0][1].ToString();
-            txtTotalAmount.Text = adid.Rows[0][2].ToString();
-            txtCurrentBalance.Text = adid.Rows[0][3].ToString();
-            txtPaidAmount.Text = adid.Rows[0][4].ToString();
-            lblPaymentStatus2.Text = adid.Rows[0][5].ToString();
-            TextColor();*/
+            promptmaker();
+            
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -375,6 +360,8 @@ namespace MainSystem.Accounting
             if (dialogResult == DialogResult.OK)
             {
                 reference.Show();
+                //reference.dataSearch.ClearSelection();
+                reference.btnAddTransaction.Enabled = false;
                 this.Close();
             }
            
@@ -440,27 +427,79 @@ namespace MainSystem.Accounting
                 return true;
             }
         }
+        private void promptmaker()
+        {
+            if(txtregp.Text.Contains('-'))
+            {
+                label13.Visible = true;
+            }
+            if (txttottu.Text.Contains('-'))
+            {
+                label14.Visible = true;
+            }
+            if (txtbp.Text.Contains('-'))
+            {
+                label15.Visible = true;
+            }
+            if (txtmp.Text.Contains('-'))
+            {
+                label16.Visible = true;
+            }
+            if (txttpb.Text.Contains('-'))
+            {
+                label17.Visible = true;
+            }
+        }
+        private Boolean txtboxamountcheck()
+        {
+            var finfo = new NumberFormatInfo();
+            finfo.NegativeSign = "-";
+            var a = Decimal.Parse(txtregp.Text.Replace("₱", ""), finfo);
+            var b = Decimal.Parse(txttottu.Text.Replace("₱", ""), finfo);
+            var c = Decimal.Parse(txtbp.Text.Replace("₱", ""), finfo);
+            var d = Decimal.Parse(txtmp.Text.Replace("₱", ""), finfo);
+            var e = Decimal.Parse(txttpb.Text.Replace("₱", ""), finfo);
+
+            var a2 = Decimal.Parse(texttuiton.Text.TrimStart('₱'));
+            var b2 = Decimal.Parse(textregis.Text.TrimStart('₱'));
+            var c2 = Decimal.Parse(textbooks.Text.TrimStart('₱'));
+            var d2 = Decimal.Parse(textmisc.Text.TrimStart('₱'));
+
+            if(a2 > b || b2 > a || c2 > c || d2 > d)
+            {
+                MessageBox.Show("Check Charges Due Entered, Charges Due Must Not Exceed The Current Balance/s Of The Student!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if(txtboxvalidate())
             {
-                DialogResult dialogResult = MessageBox.Show("Confirm Action!", "The Document Will Be Printed", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.OK)
+                if(!txtboxamountcheck())
                 {
-                    dicforsoaform = new Dictionary<string, string>();
-                    dicforsoaform.Add("tuition", texttuiton.Text);
-                    dicforsoaform.Add("books", textbooks.Text);
-                    dicforsoaform.Add("regis", textregis.Text);
-                    dicforsoaform.Add("others", textmisc.Text);
-                    dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
-                    dicforsoaform.Add("fullname", txtStudentName.Text);
-                    dicforsoaform.Add("section", txtsec.Text);
-                    dicforsoaform.Add("level", txtlvl.Text);
+                    DialogResult dialogResult = MessageBox.Show("Confirm Action!", "The Document Will Be Printed", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        dicforsoaform = new Dictionary<string, string>();
+                        dicforsoaform.Add("tuition", texttuiton.Text);
+                        dicforsoaform.Add("books", textbooks.Text);
+                        dicforsoaform.Add("regis", textregis.Text);
+                        dicforsoaform.Add("others", textmisc.Text);
+                        dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
+                        dicforsoaform.Add("fullname", txtStudentName.Text);
+                        dicforsoaform.Add("section", txtsec.Text);
+                        dicforsoaform.Add("level", txtlvl.Text);
 
-                    soaform = new SOAccount(dicforsoaform);
-                    soaform.syear = lblsy.Text;
-                    soaform.Show();
+                        soaform = new SOAccount(dicforsoaform);
+                        soaform.syear = lblsy.Text;
+                        soaform.Show();
+                    }
                 }
+              
             }
         }
 

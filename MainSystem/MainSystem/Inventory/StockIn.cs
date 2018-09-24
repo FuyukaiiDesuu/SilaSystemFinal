@@ -173,7 +173,7 @@ namespace MainSystem
            
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM inventory WHERE item_id = '" + itemid + "';";
+                string query = "SELECT * FROM inventory WHERE item_id = '" + itemid + "' AND status = 1;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -184,7 +184,7 @@ namespace MainSystem
                 }
                 else
                 {
-                    MessageBox.Show("Exisiting Inventory Entry Not Found!, Records Will Be Created Accordingly.", "CAUTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Exisiting Inventory Entry Not Found!, Or Previous Inventory Record Has Already Been Deactivated, New Records Will Be Created Accordingly.", "CAUTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
             }
@@ -246,7 +246,7 @@ namespace MainSystem
             {
 
                 dbconnection.Open();
-                using (var com = new MySqlCommand("UPDATE inventory SET stock_in_date = @stock_in_date, Quantity = @Quantity, status = @status WHERE item_id = @itemayd", dbconnection))
+                using (var com = new MySqlCommand("UPDATE inventory SET stock_in_date = @stock_in_date, Quantity = @Quantity, status = @status WHERE item_id = @itemayd AND status <> 0;", dbconnection))
                 {
 
                     com.Parameters.AddWithValue("@itemayd", itemid);

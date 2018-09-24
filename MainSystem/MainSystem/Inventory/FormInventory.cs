@@ -26,7 +26,7 @@ namespace MainSystem
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT invID, item_code, itemname, description, stock_in_date, stock_out_date, Quantity, Status FROM inventory INNER JOIN itemdetails ON inventory.item_id = itemdetails.itemID WHERE itemdetails.itemstatus = 1;";
+                string query = "SELECT invID, item_code, itemname, description, stock_in_date, stock_out_date, Quantity, Status FROM inventory INNER JOIN itemdetails ON inventory.item_id = itemdetails.itemID WHERE inventory.status = 1;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -40,7 +40,26 @@ namespace MainSystem
             dgvInventory.Columns["item_code"].HeaderText = "Item Code";
             dgvInventory.Columns["itemname"].HeaderText = "Item Name";
             dgvInventory.Columns["description"].HeaderText = "Item Description";
-        } 
+        }
+        public void readData2()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT invID, item_code, itemname, description, stock_in_date, stock_out_date, Quantity, Status FROM inventory INNER JOIN itemdetails ON inventory.item_id = itemdetails.itemID WHERE inventory.status = 0;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dgvInventory.DataSource = dt;
+
+            }
+            dgvInventory.Columns["invID"].Visible = false;
+            dgvInventory.Columns["Status"].Visible = false;
+            dgvInventory.Columns["stock_in_date"].HeaderText = "Stock In Date";
+            dgvInventory.Columns["stock_out_date"].HeaderText = "Stock Out Date";
+            dgvInventory.Columns["item_code"].HeaderText = "Item Code";
+            dgvInventory.Columns["itemname"].HeaderText = "Item Name";
+            dgvInventory.Columns["description"].HeaderText = "Item Description";
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -99,7 +118,7 @@ namespace MainSystem
         private Int32 quantityadder()
         {
             var a = 0;
-            if(Convert.ToInt32(quantity) > 0)
+            if(Convert.ToInt32(quantity) >= 0)
             {
                 a = Convert.ToInt32(quantity) - Convert.ToInt32(textBox2.Text);
                 return a;
@@ -119,6 +138,19 @@ namespace MainSystem
                     dbconnection.Open();
                     command.Parameters.AddWithValue("@quantity", quantityadder());
                     command.Parameters.AddWithValue("@sod", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    command.Parameters.AddWithValue("@ayd", invid);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        private void deactivator()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                using (var command = new MySqlCommand("UPDATE inventory SET status = 0, invID = @ayd;", dbconnection))
+                {
+                    dbconnection.Open();
                     command.Parameters.AddWithValue("@ayd", invid);
                     command.ExecuteNonQuery();
                 }
@@ -148,7 +180,7 @@ namespace MainSystem
             {
                 if(comboBox1.SelectedIndex != -1)
                 {
-                    if (quantityadder() > 0)
+                    if (quantityadder() >= 0)
                     {
                         DialogResult res = MessageBox.Show("CONFIRM STOCK-OUT OF ITEMS?", "CONFIRM!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (res == DialogResult.Yes)
@@ -198,7 +230,11 @@ namespace MainSystem
            {
                 button2.Enabled = true;
                 textBox2.Enabled = true;
-                button1.Enabled = true;
+                if(!checkBox1.Checked)
+                {
+                    button1.Enabled = true;
+                }
+                button3.Enabled = true;
                 invid = dgvInventory.Rows[e.RowIndex].Cells["invID"].Value.ToString();
                 quantity = dgvInventory.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
             }
@@ -214,6 +250,32 @@ namespace MainSystem
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("CONFIRM DEACTIVATION OF INVENTORY RECORD?", "CONFIRM!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                deactivator();
+                readData();
+                MessageBox.Show("THE INVENTORY RECORD HAS BEEN SUCCESSFULLY DEACTIVATED!", "CAUTION!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                readData2();
+                dgvInventory.ClearSelection();
+                button1.Enabled = false;
+            }
+            else
+            {
+                readData();
+                dgvInventory.ClearSelection();
+            }
         }
     }
 }

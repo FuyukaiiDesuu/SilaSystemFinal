@@ -18,10 +18,11 @@ namespace MainSystem
         public EnrollmentConsole reference { get; set; }
         public string syear { get; set; }
         public string studid;
-        public addStudent(int id)
+        public string stdetid;
+        public addStudent(string a)
         {
             InitializeComponent();
-            studid = (id + 1).ToString();
+            stdetid = a;
         }
 
         //private dbConnector dbconnect = new dbConnector();
@@ -29,9 +30,7 @@ namespace MainSystem
         private void addStudent_Load(object sender, EventArgs e)
         {
             lblsy.Text = syear;
-            createdefault();
             gboxEnabler();
-            txtstno.Text = studid;
             txtrel.Enabled = false;
             //ph.Text = sygetter();
         }
@@ -45,30 +44,21 @@ namespace MainSystem
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
-                string query = "INSERT INTO studentprofile(idstuddet) VALUES(@ayd);";
-                string query2 = "INSERT INTO studdetails VALUES();";
+                string query2 = "INSERT INTO studdetails(level_dummyval, department, level, school_year) VALUES(@lvldval, @dpt, @lvl, @sy);";
+                IDictionary<string, string> dic = comboboxpicker();
                 using (var command2 = new MySqlCommand(query2, dbconnection))
                 {
+                    command2.Parameters.AddWithValue("@dpt", dic["dept"]);
+                    command2.Parameters.AddWithValue("@lvl", dic["level"]);
+                    command2.Parameters.AddWithValue("@sy", lblsy.Text);
+                    command2.Parameters.AddWithValue("@lvldval", comboBox2.Text);
                     command2.ExecuteNonQuery();
                 }
-
-                using (var command = new MySqlCommand(query, dbconnection))
+                string query1 = "INSERT INTO studentprofile(FirstName, LastName, MiddleName, DateOfBirth, PlaceOfBirth, Sex, Religion, Nickname, image_path, Status, idstuddet)" +
+                    " VALUES(@fn, @ln, @mn, @dof, @pof, @sex, @rel, @nickname, @ipath, @stat, @ayd2);";
+                using (var command = new MySqlCommand(query1, dbconnection))
                 {
-                    command.Parameters.AddWithValue("@ayd", studid);
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
-        private void createfunction()
-        {
-            var dbconnect = new dbConnector();
-            using (dbconnection = dbconnect.connector())
-            {
-                dbconnection.Open();
-                using (var command = new MySqlCommand("UPDATE studentprofile set FirstName = @fn, LastName = @ln, MiddleName = @mn, DateOfBirth = @dof, PlaceOfBirth = @pof, Sex = @sex, Religion = @rel, Nickname = @nickname, image_path = @ipath, Status = @stat, idstuddet = @ayd2  WHERE idstudentprofile = @ayd;", dbconnection))
-                {
-                    command.Parameters.AddWithValue("@ayd", studid);
+                    
                     command.Parameters.AddWithValue("@fn", txtfn.Text);
                     command.Parameters.AddWithValue("@ln", txtln.Text);
                     command.Parameters.AddWithValue("@mn", txtmn.Text);
@@ -86,38 +76,43 @@ namespace MainSystem
                     command.Parameters.AddWithValue("@nickname", txtnn.Text);
                     command.Parameters.AddWithValue("@ipath", imgpath);
                     command.Parameters.AddWithValue("@stat", 1);
-                    command.Parameters.AddWithValue("@ayd2", studid);
-
+                    command.Parameters.AddWithValue("@ayd2", stdetid);
                     command.ExecuteNonQuery();
                 }
-                IDictionary<string, string> dic = comboboxpicker();
-                using (var command = new MySqlCommand("UPDATE studdetails set level_dummyval = @lvldval, department = @dpt, level = @lvl, school_year = @sy where idstddet = @aydd;", dbconnection))
-                {
+               
+            }
+        }
+        private Int32 counters()
+        {
 
-                    command.Parameters.AddWithValue("@dpt", dic["dept"]);
-                    command.Parameters.AddWithValue("@lvl", dic["level"]);
-                    Int32 temp = Convert.ToInt32(sygetter().ToString()) + 1;
-                    command.Parameters.AddWithValue("@sy", lblsy.Text);
-                    command.Parameters.AddWithValue("@aydd", studid);
-                    command.Parameters.AddWithValue("@lvldval", comboBox2.Text);
-                    command.ExecuteNonQuery();
-                }
+            var dbconnect = new dbConnector();
+            string query = "SELECT COUNT(idstudentprofile) FROM studentprofile;";
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
+                var cmd = new MySqlCommand(query, dbconnection);
+                return Convert.ToInt32(cmd.ExecuteScalar());
 
+            }
+        }
+        private void createfunction2()
+        {
+            var dbconnect = new dbConnector();
+            using (dbconnection = dbconnect.connector())
+            {
+                dbconnection.Open();
                 string query3 = "INSERT INTO accountdetails(paid_amount, spid, fid) VALUES(@paid_amount, @spid, @fid);";
+                IDictionary<string, string> dic = comboboxpicker();
                 using (var command3 = new MySqlCommand(query3, dbconnection))
                 {
                     command3.Parameters.AddWithValue("@paid_amount", 0);
-                    command3.Parameters.AddWithValue("@spid", studid);
+                    command3.Parameters.AddWithValue("@spid", counters().ToString());
                     command3.Parameters.AddWithValue("@fid", dic["feelevel"]);
                     command3.ExecuteNonQuery();
                 }
             }
-
-
-
-
+            
         }
-
         private string sygetter()
         {
             return DateTime.Now.Year.ToString();
@@ -276,21 +271,20 @@ namespace MainSystem
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-           
             if(textboxvalidate())
             {
                 if (!studentcheck(txtfn.Text, txtln.Text, txtmn.Text))
                 {
-                    DialogResult res = MessageBox.Show("CONFIRM STUDENT CREATION!", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (res == DialogResult.Yes)
+                    DialogResult res = MessageBox.Show("CONFIRM STUDENT CREATION!", "WARNING!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (res == DialogResult.OK)
                     {
-                        createfunction();
+                        createdefault();
                         MessageBox.Show("Record Created Successfully!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnSave.Enabled = false;
+                        createfunction2();
+                        MessageBox.Show("Account For Student Created Successfully!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reference.loadData();
                         reference.dataGridView1.ClearSelection();
                         reference.textboxClear();
-                        reference.Show();
                         this.Close();
                     }
                 }
@@ -307,30 +301,10 @@ namespace MainSystem
             DialogResult res = MessageBox.Show("DO YOU WANT TO CANCEL? INFORMATION WILL BE DISCARDED", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (res == DialogResult.Yes)
             {
-                var dbconnect = new dbConnector();
-                using (dbconnection = dbconnect.connector())
-                {
-                    dbconnection.Open();
-                    using (var command = new MySqlCommand("DELETE from studentprofile WHERE idstudentprofile = @ayd;", dbconnection))
-                    {
-                        command.Parameters.AddWithValue("@ayd", studid);
-                        command.ExecuteNonQuery();
-                    }
-                    using (var command2 = new MySqlCommand("DELETE from studdetails WHERE idstddet = @ayd;", dbconnection))
-                    {
-                        command2.Parameters.AddWithValue("@ayd", studid);
-                        command2.ExecuteNonQuery();
-                    }
-
-                }
-
-                altertable();
                 this.Close();
-                reference.Show();
                 reference.loadData();
                 reference.textboxClear();
                 reference.dataGridView1.ClearSelection();
-                dbconnection.Close();
             }
             
         }
