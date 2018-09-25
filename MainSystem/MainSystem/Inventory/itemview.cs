@@ -93,15 +93,11 @@ namespace MainSystem
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = connect.connector())
-            {
-                conn.Open();
-                string query = ("SELECT * FROM itemdetails where itemname like '%" + txtsearch.Text + "%'");
-                adapter = new MySqlDataAdapter(query, conn);
-                dt = new DataTable();
-                adapter.Fill(dt);
-                dataGridView1.DataSource = dt;
-            }
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter =
+         string.Format("description LIKE '%{0}%' " +
+         "OR itemname LIKE '%{0}%' " +
+         "OR item_code LIKE '%{0}%'", txtsearch.Text);
+            dataGridView1.ClearSelection();
         }
         public string id;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

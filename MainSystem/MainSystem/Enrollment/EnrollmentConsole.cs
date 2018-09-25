@@ -66,12 +66,13 @@ namespace MainSystem
                 dataGridView1.Columns["level"].Visible = false;
                 dataGridView1.Columns["school_year"].Visible = false;
                 dataGridView1.Columns["idstddet"].Visible = false;
-                dataGridView1.Columns["section"].Visible = false;
+                dataGridView1.Columns["section"].Visible = true;
                 dataGridView1.Columns["image_path"].Visible = false;
                 dataGridView1.Columns["sectionid"].Visible = false;
 
 
                 dataGridView1.Columns["level_dummyval"].HeaderText = "Student Level";
+                dataGridView1.Columns["section"].HeaderText = "Student Section";
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView1.Columns["LastName"].HeaderText = "Last Name";
@@ -394,6 +395,17 @@ namespace MainSystem
         private void EnrollmentConsole_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter =
+          string.Format("FirstName LIKE '%{0}%' " +
+          "OR LastName LIKE '%{0}%' " +
+          "OR MiddleName LIKE '%{0}%' " +
+          "OR level_dummyval LIKE '%{0}' " +
+          "OR section LIKE '%{0}%'", search.Text);
+            dataGridView1.ClearSelection();
         }
     }
 }

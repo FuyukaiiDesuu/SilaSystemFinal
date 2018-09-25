@@ -323,5 +323,21 @@ namespace MainSystem.Enrollment
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter =
+           string.Format("FirstName LIKE '%{0}%' " +
+           "OR LastName LIKE '%{0}%' " +
+           "OR MiddleName LIKE '%{0}%' " +
+           "OR level_dummyval LIKE '%{0}' " +
+           "OR section LIKE '%{0}%'", textBox1.Text);
+            dataGridView1.ClearSelection();
+        }
+
+        private void sycombosearch_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

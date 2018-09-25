@@ -465,7 +465,7 @@ namespace MainSystem.Accounting
             var c2 = Decimal.Parse(textbooks.Text.TrimStart('₱'));
             var d2 = Decimal.Parse(textmisc.Text.TrimStart('₱'));
 
-            if(a2 > b || b2 > a || c2 > c || d2 > d)
+            if((a2 > b && a2 != 0) || (b2 > a && b2 != 0) || (c2 > c && c2 != 0) || (d2 > d && d2 != 0))
             {
                 MessageBox.Show("Check Charges Due Entered, Charges Due Must Not Exceed The Current Balance/s Of The Student!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
@@ -475,6 +475,7 @@ namespace MainSystem.Accounting
                 return false;
             }
         }
+       
         private void button1_Click(object sender, EventArgs e)
         {
             if(txtboxvalidate())
@@ -484,19 +485,42 @@ namespace MainSystem.Accounting
                     DialogResult dialogResult = MessageBox.Show("Confirm Action!", "The Document Will Be Printed", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.OK)
                     {
-                        dicforsoaform = new Dictionary<string, string>();
-                        dicforsoaform.Add("tuition", texttuiton.Text);
-                        dicforsoaform.Add("books", textbooks.Text);
-                        dicforsoaform.Add("regis", textregis.Text);
-                        dicforsoaform.Add("others", textmisc.Text);
-                        dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
-                        dicforsoaform.Add("fullname", txtStudentName.Text);
-                        dicforsoaform.Add("section", txtsec.Text);
-                        dicforsoaform.Add("level", txtlvl.Text);
 
-                        soaform = new SOAccount(dicforsoaform);
-                        soaform.syear = lblsy.Text;
-                        soaform.Show();
+                        if (dateTimePicker1.Value.ToString("yyyy-MM-dd") == DateTime.Now.ToString("yyyy-MM-dd"))
+                        {
+                            DialogResult res = MessageBox.Show("THE DATE DUE IS SET TO TODAY! CONFIRM?", "WARNING!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (res == DialogResult.Yes)
+                            {
+                                dicforsoaform = new Dictionary<string, string>();
+                                dicforsoaform.Add("tuition", texttuiton.Text);
+                                dicforsoaform.Add("books", textbooks.Text);
+                                dicforsoaform.Add("regis", textregis.Text);
+                                dicforsoaform.Add("others", textmisc.Text);
+                                dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
+                                dicforsoaform.Add("fullname", txtStudentName.Text);
+                                dicforsoaform.Add("section", txtsec.Text);
+                                dicforsoaform.Add("level", txtlvl.Text);
+                                soaform = new SOAccount(dicforsoaform);
+                                soaform.syear = lblsy.Text;
+                                soaform.Show();
+                            }
+                        }
+                        else
+                        {
+                            dicforsoaform = new Dictionary<string, string>();
+                            dicforsoaform.Add("tuition", texttuiton.Text);
+                            dicforsoaform.Add("books", textbooks.Text);
+                            dicforsoaform.Add("regis", textregis.Text);
+                            dicforsoaform.Add("others", textmisc.Text);
+                            dicforsoaform.Add("date", dateTimePicker1.Value.ToString("MMMM-dd-yyyy"));
+                            dicforsoaform.Add("fullname", txtStudentName.Text);
+                            dicforsoaform.Add("section", txtsec.Text);
+                            dicforsoaform.Add("level", txtlvl.Text);
+                            soaform = new SOAccount(dicforsoaform);
+                            soaform.syear = lblsy.Text;
+                            soaform.Show();
+                        }
+                        
                     }
                 }
               

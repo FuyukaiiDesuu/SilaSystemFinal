@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnback3 = new System.Windows.Forms.Button();
             this.gbItemDetails2 = new System.Windows.Forms.GroupBox();
             this.txtdesc = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.btnback3.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnback3.Location = new System.Drawing.Point(1015, 49);
-            this.btnback3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnback3.Margin = new System.Windows.Forms.Padding(4);
             this.btnback3.Name = "btnback3";
             this.btnback3.Size = new System.Drawing.Size(197, 65);
             this.btnback3.TabIndex = 0;
@@ -82,9 +82,9 @@
             this.gbItemDetails2.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbItemDetails2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.gbItemDetails2.Location = new System.Drawing.Point(16, 482);
-            this.gbItemDetails2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbItemDetails2.Margin = new System.Windows.Forms.Padding(4);
             this.gbItemDetails2.Name = "gbItemDetails2";
-            this.gbItemDetails2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbItemDetails2.Padding = new System.Windows.Forms.Padding(4);
             this.gbItemDetails2.Size = new System.Drawing.Size(711, 325);
             this.gbItemDetails2.TabIndex = 1;
             this.gbItemDetails2.TabStop = false;
@@ -95,7 +95,7 @@
             // 
             this.txtdesc.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdesc.Location = new System.Drawing.Point(223, 154);
-            this.txtdesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
             this.txtdesc.Size = new System.Drawing.Size(452, 149);
@@ -106,7 +106,7 @@
             // 
             this.txtitemname.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtitemname.Location = new System.Drawing.Point(223, 92);
-            this.txtitemname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtitemname.Margin = new System.Windows.Forms.Padding(4);
             this.txtitemname.Name = "txtitemname";
             this.txtitemname.Size = new System.Drawing.Size(452, 39);
             this.txtitemname.TabIndex = 3;
@@ -116,7 +116,7 @@
             // 
             this.txtitemcode.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtitemcode.Location = new System.Drawing.Point(223, 34);
-            this.txtitemcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtitemcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtitemcode.Name = "txtitemcode";
             this.txtitemcode.Size = new System.Drawing.Size(452, 39);
             this.txtitemcode.TabIndex = 2;
@@ -170,7 +170,7 @@
             this.btnCreate.Font = new System.Drawing.Font("Bebas Neue", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.Location = new System.Drawing.Point(735, 497);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(461, 213);
             this.btnCreate.TabIndex = 11;
@@ -188,7 +188,7 @@
             this.btnedit.Font = new System.Drawing.Font("Bebas Neue", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnedit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.btnedit.Location = new System.Drawing.Point(735, 718);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(4);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(461, 90);
             this.btnedit.TabIndex = 15;
@@ -207,25 +207,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bebas Neue", 13.8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(16, 143);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -240,7 +240,7 @@
             // 
             this.txtsearch.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtsearch.Location = new System.Drawing.Point(109, 104);
-            this.txtsearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(313, 32);
             this.txtsearch.TabIndex = 1;
@@ -253,7 +253,7 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1212, 42);
             this.panel1.TabIndex = 43;
@@ -262,7 +262,7 @@
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -291,7 +291,7 @@
             this.button1.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.button1.Location = new System.Drawing.Point(657, 49);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(349, 65);
             this.button1.TabIndex = 44;
@@ -309,6 +309,7 @@
             this.label1.Size = new System.Drawing.Size(92, 36);
             this.label1.TabIndex = 45;
             this.label1.Text = "SEARCH:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmitemmanagement
             // 
@@ -326,7 +327,7 @@
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnback3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(983, 836);
             this.Name = "frmitemmanagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

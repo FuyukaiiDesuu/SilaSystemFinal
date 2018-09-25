@@ -212,15 +212,8 @@ namespace MainSystem
 
         private void search_TextChanged(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = connect.connector())
-            {
-                conn.Open();
-                string query = ("SELECT * FROM itemdetails where itemname like '" + search.Text + "%'");
-                adapter = new MySqlDataAdapter(query, conn);
-                dt = new DataTable();
-                adapter.Fill(dt);
-                dgvInventory.DataSource = dt;
-            }
+            dt.DefaultView.RowFilter = string.Format("item_code LIKE '%{0}%' OR description LIKE '%{0}%' OR itemname LIKE '%{0}%'", search.Text);
+           
         }
         public string invid;
         public string quantity;

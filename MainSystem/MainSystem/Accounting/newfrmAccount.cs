@@ -830,7 +830,13 @@ namespace MainSystem.Accounting
 
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
-            searchQueryStudent1(txtSearch.Text);
+            (dataSearch.DataSource as DataTable).DefaultView.RowFilter =
+        string.Format("FirstName LIKE '%{0}%' " +
+        "OR LastName LIKE '%{0}%' " +
+        "OR MiddleName LIKE '%{0}%' " +
+        "OR level_dummyval LIKE '%{0}' " +
+        "OR section LIKE '%{0}'", txtSearch.Text);
+            dataSearch.ClearSelection();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

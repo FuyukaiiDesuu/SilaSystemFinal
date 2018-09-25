@@ -37,7 +37,7 @@ namespace MainSystem
             var dbconnect = new dbConnector();
             string query = "select * from studentprofile inner join studdetails on studentprofile.idstudentprofile = studdetails.idstddet" +
                 " WHERE studentprofile.Status = 1" +
-                " AND studdetails.section LIKE '%"+textBox2.Text+"%';";
+                " AND studdetails.section LIKE '%%';";
             using (dbconnection = dbconnect.connector())
             {
                 dbconnection.Open();
@@ -255,7 +255,7 @@ namespace MainSystem
 
         private void button7_Click(object sender, EventArgs e)
         {
-            loadSearch();
+            //loadSearch();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -344,7 +344,13 @@ namespace MainSystem
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter =
+         string.Format("FirstName LIKE '%{0}%' " +
+         "OR LastName LIKE '%{0}%' " +
+         "OR MiddleName LIKE '%{0}%' " +
+         "OR level_dummyval LIKE '%{0}' " +
+         "OR section LIKE '%{0}%'", textBox1.Text);
+            dataGridView1.ClearSelection();
         }
     }
 }

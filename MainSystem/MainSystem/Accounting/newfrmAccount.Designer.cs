@@ -35,8 +35,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.searchtppending = new System.Windows.Forms.DateTimePicker();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.dgvpending = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnRLDDGVOID = new System.Windows.Forms.Button();
+            this.btnSRCDGVOID = new System.Windows.Forms.Button();
             this.searchtpvoided = new System.Windows.Forms.DateTimePicker();
             this.dgvvoid = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -63,7 +67,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAddDisb = new System.Windows.Forms.Button();
+            this.btnreldb = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnsdb = new System.Windows.Forms.Button();
             this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
@@ -73,16 +79,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblsy = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.btnref = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.btnRLDDGVOID = new System.Windows.Forms.Button();
-            this.btnSRCDGVOID = new System.Windows.Forms.Button();
-            this.btnreldb = new System.Windows.Forms.Button();
-            this.btnsdb = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -215,6 +216,38 @@
             this.searchtppending.Size = new System.Drawing.Size(373, 32);
             this.searchtppending.TabIndex = 4;
             // 
+            // button10
+            // 
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button10.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(421, 11);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(24, 32);
+            this.button10.TabIndex = 33;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
+            // button11
+            // 
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button11.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(389, 11);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(25, 32);
+            this.button11.TabIndex = 32;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // dgvpending
             // 
             this.dgvpending.AllowUserToAddRows = false;
@@ -250,6 +283,38 @@
             this.tabPage3.Size = new System.Drawing.Size(828, 299);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "VOIDED";
+            // 
+            // btnRLDDGVOID
+            // 
+            this.btnRLDDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.btnRLDDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRLDDGVOID.Enabled = false;
+            this.btnRLDDGVOID.FlatAppearance.BorderSize = 0;
+            this.btnRLDDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRLDDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRLDDGVOID.Location = new System.Drawing.Point(421, 12);
+            this.btnRLDDGVOID.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRLDDGVOID.Name = "btnRLDDGVOID";
+            this.btnRLDDGVOID.Size = new System.Drawing.Size(24, 32);
+            this.btnRLDDGVOID.TabIndex = 33;
+            this.btnRLDDGVOID.UseVisualStyleBackColor = true;
+            this.btnRLDDGVOID.Click += new System.EventHandler(this.btnRLDDGVOID_Click);
+            // 
+            // btnSRCDGVOID
+            // 
+            this.btnSRCDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.btnSRCDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSRCDGVOID.Enabled = false;
+            this.btnSRCDGVOID.FlatAppearance.BorderSize = 0;
+            this.btnSRCDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSRCDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSRCDGVOID.Location = new System.Drawing.Point(389, 12);
+            this.btnSRCDGVOID.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSRCDGVOID.Name = "btnSRCDGVOID";
+            this.btnSRCDGVOID.Size = new System.Drawing.Size(24, 32);
+            this.btnSRCDGVOID.TabIndex = 32;
+            this.btnSRCDGVOID.UseVisualStyleBackColor = true;
+            this.btnSRCDGVOID.Click += new System.EventHandler(this.btnSRCDGVOID_Click);
             // 
             // searchtpvoided
             // 
@@ -304,6 +369,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.btnEditAccount);
             this.groupBox1.Controls.Add(this.label2);
@@ -327,7 +393,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(404, 32);
+            this.checkBox1.Location = new System.Drawing.Point(379, 37);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(199, 30);
@@ -346,7 +412,7 @@
             this.btnEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditAccount.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.ForeColor = System.Drawing.Color.White;
-            this.btnEditAccount.Location = new System.Drawing.Point(404, 322);
+            this.btnEditAccount.Location = new System.Drawing.Point(403, 320);
             this.btnEditAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(193, 112);
@@ -431,10 +497,10 @@
             // 
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(8, 32);
+            this.txtSearch.Location = new System.Drawing.Point(85, 34);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(288, 32);
+            this.txtSearch.Size = new System.Drawing.Size(241, 32);
             this.txtSearch.TabIndex = 43;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
             // 
@@ -666,6 +732,22 @@
             this.btnAddDisb.UseVisualStyleBackColor = false;
             this.btnAddDisb.Click += new System.EventHandler(this.btnAddDisb_Click);
             // 
+            // btnreldb
+            // 
+            this.btnreldb.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.btnreldb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnreldb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnreldb.FlatAppearance.BorderSize = 0;
+            this.btnreldb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreldb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreldb.Location = new System.Drawing.Point(435, 35);
+            this.btnreldb.Margin = new System.Windows.Forms.Padding(4);
+            this.btnreldb.Name = "btnreldb";
+            this.btnreldb.Size = new System.Drawing.Size(32, 31);
+            this.btnreldb.TabIndex = 40;
+            this.btnreldb.UseVisualStyleBackColor = true;
+            this.btnreldb.Click += new System.EventHandler(this.btnreldb_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -686,6 +768,22 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1525, 520);
             this.dataGridView1.TabIndex = 35;
+            // 
+            // btnsdb
+            // 
+            this.btnsdb.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.btnsdb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnsdb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnsdb.FlatAppearance.BorderSize = 0;
+            this.btnsdb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsdb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsdb.Location = new System.Drawing.Point(394, 35);
+            this.btnsdb.Margin = new System.Windows.Forms.Padding(4);
+            this.btnsdb.Name = "btnsdb";
+            this.btnsdb.Size = new System.Drawing.Size(32, 31);
+            this.btnsdb.TabIndex = 39;
+            this.btnsdb.UseVisualStyleBackColor = true;
+            this.btnsdb.Click += new System.EventHandler(this.btnsdb_Click);
             // 
             // searchtpexpense
             // 
@@ -817,6 +915,17 @@
             this.lblsy.TabIndex = 2;
             this.lblsy.Text = "S.Y ";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 39);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // lblSilaSchoolManagementSoftware
             // 
             this.lblSilaSchoolManagementSoftware.AutoSize = true;
@@ -846,113 +955,6 @@
             this.btnref.UseVisualStyleBackColor = true;
             this.btnref.Click += new System.EventHandler(this.btnref_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button10
-            // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button10.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(421, 11);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(24, 32);
-            this.button10.TabIndex = 33;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
-            // 
-            // button11
-            // 
-            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button11.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(389, 11);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(25, 32);
-            this.button11.TabIndex = 32;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // btnRLDDGVOID
-            // 
-            this.btnRLDDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.btnRLDDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRLDDGVOID.Enabled = false;
-            this.btnRLDDGVOID.FlatAppearance.BorderSize = 0;
-            this.btnRLDDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRLDDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRLDDGVOID.Location = new System.Drawing.Point(421, 12);
-            this.btnRLDDGVOID.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRLDDGVOID.Name = "btnRLDDGVOID";
-            this.btnRLDDGVOID.Size = new System.Drawing.Size(24, 32);
-            this.btnRLDDGVOID.TabIndex = 33;
-            this.btnRLDDGVOID.UseVisualStyleBackColor = true;
-            this.btnRLDDGVOID.Click += new System.EventHandler(this.btnRLDDGVOID_Click);
-            // 
-            // btnSRCDGVOID
-            // 
-            this.btnSRCDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.btnSRCDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSRCDGVOID.Enabled = false;
-            this.btnSRCDGVOID.FlatAppearance.BorderSize = 0;
-            this.btnSRCDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSRCDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSRCDGVOID.Location = new System.Drawing.Point(389, 12);
-            this.btnSRCDGVOID.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSRCDGVOID.Name = "btnSRCDGVOID";
-            this.btnSRCDGVOID.Size = new System.Drawing.Size(24, 32);
-            this.btnSRCDGVOID.TabIndex = 32;
-            this.btnSRCDGVOID.UseVisualStyleBackColor = true;
-            this.btnSRCDGVOID.Click += new System.EventHandler(this.btnSRCDGVOID_Click);
-            // 
-            // btnreldb
-            // 
-            this.btnreldb.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.btnreldb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnreldb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnreldb.FlatAppearance.BorderSize = 0;
-            this.btnreldb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreldb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreldb.Location = new System.Drawing.Point(435, 35);
-            this.btnreldb.Margin = new System.Windows.Forms.Padding(4);
-            this.btnreldb.Name = "btnreldb";
-            this.btnreldb.Size = new System.Drawing.Size(32, 31);
-            this.btnreldb.TabIndex = 40;
-            this.btnreldb.UseVisualStyleBackColor = true;
-            this.btnreldb.Click += new System.EventHandler(this.btnreldb_Click);
-            // 
-            // btnsdb
-            // 
-            this.btnsdb.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.btnsdb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnsdb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnsdb.FlatAppearance.BorderSize = 0;
-            this.btnsdb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsdb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsdb.Location = new System.Drawing.Point(394, 35);
-            this.btnsdb.Margin = new System.Windows.Forms.Padding(4);
-            this.btnsdb.Name = "btnsdb";
-            this.btnsdb.Size = new System.Drawing.Size(32, 31);
-            this.btnsdb.TabIndex = 39;
-            this.btnsdb.UseVisualStyleBackColor = true;
-            this.btnsdb.Click += new System.EventHandler(this.btnsdb_Click);
-            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -965,6 +967,19 @@
             this.label4.Size = new System.Drawing.Size(101, 23);
             this.label4.TabIndex = 42;
             this.label4.Text = "REFRESH: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label5.Location = new System.Drawing.Point(9, 36);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 29);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "search:";
             // 
             // newfrmAccount
             // 
@@ -1076,5 +1091,6 @@
         public System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button btnref;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

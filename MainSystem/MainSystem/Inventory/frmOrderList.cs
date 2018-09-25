@@ -91,13 +91,13 @@ namespace MainSystem
                 dataOrderList.Columns["status"].Visible = false;
                 dataOrderList.Columns["status"].Visible = false;
                 dataOrderList.Columns["item_code"].HeaderText = "Item Code";
-                dataOrderList.Columns["date_of_creation"].HeaderText = "Date Created";
+                dataOrderList.Columns["date_of_creation"].Visible = false;
                 dataOrderList.Columns["date"].HeaderText = "Date Delivery Due";
                 dataOrderList.Columns["description"].HeaderText = "Item Description";
                 dataOrderList.Columns["itemname"].HeaderText = "Item Name";
-                dataOrderList.Columns["date_modified"].HeaderText = "Date Modified";
+                dataOrderList.Columns["date_modified"].Visible = false;
                 dataOrderList.Columns["quantity_delivered"].HeaderText = "Quantity Delivered";
-                dataOrderList.Columns["date_created"].HeaderText = "Date Created";
+                dataOrderList.Columns["date_created"].HeaderText = "Date Order Placed";
             }
         }
         public void readDataOrderListCompl()
@@ -117,13 +117,13 @@ namespace MainSystem
                 dgvcompleted.Columns["status"].Visible = false;
                 dgvcompleted.Columns["status"].Visible = false;
                 dgvcompleted.Columns["item_code"].HeaderText = "Item Code";
-                dgvcompleted.Columns["date_of_creation"].HeaderText = "Date Created";
+                dgvcompleted.Columns["date_of_creation"].Visible = false;
                 dgvcompleted.Columns["date"].HeaderText = "Date Delivery Due";
                 dgvcompleted.Columns["description"].HeaderText = "Item Description";
                 dgvcompleted.Columns["itemname"].HeaderText = "Item Name";
-                dgvcompleted.Columns["date_modified"].HeaderText = "Date Modified";
+                dgvcompleted.Columns["date_modified"].Visible = false;
                 dgvcompleted.Columns["quantity_delivered"].HeaderText = "Quantity Delivered";
-                dgvcompleted.Columns["date_created"].HeaderText = "Date Created";
+                dgvcompleted.Columns["date_created"].HeaderText = "Date Order Placed";
             }
         }
         public void readDataOrderListCanceled()
@@ -143,13 +143,13 @@ namespace MainSystem
                 dgvcancelled.Columns["status"].Visible = false;
                 dgvcancelled.Columns["status"].Visible = false;
                 dgvcancelled.Columns["item_code"].HeaderText = "Item Code";
-                dgvcancelled.Columns["date_of_creation"].HeaderText = "Date Created";
+                dgvcancelled.Columns["date_of_creation"].Visible = false;
                 dgvcancelled.Columns["date"].HeaderText = "Date Delivery Due";
                 dgvcancelled.Columns["description"].HeaderText = "Item Description";
                 dgvcancelled.Columns["itemname"].HeaderText = "Item Name";
-                dgvcancelled.Columns["date_modified"].HeaderText = "Date Modified";
+                dgvcancelled.Columns["date_modified"].Visible = false;
                 dgvcancelled.Columns["quantity_delivered"].HeaderText = "Quantity Delivered";
-                dgvcancelled.Columns["date_created"].HeaderText = "Date Created";
+                dgvcancelled.Columns["date_created"].HeaderText = "Date Order Placed";
             }
         }
         private void txtboxdeleter()
@@ -266,6 +266,60 @@ namespace MainSystem
                 MessageBox.Show("The Text Must Can Only Consist Of Alphabets and Numbers, and The Characters: '-,.'", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Handled = true;
             }
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtitemcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            (dgvcancelled.DataSource as DataTable).DefaultView.RowFilter =
+           string.Format("vendor LIKE '%{0}%' " +
+           "OR description LIKE '%{0}%' " +
+           "OR itemname LIKE '%{0}%' " +
+           "OR item_code LIKE '%{0}%'", textBox3.Text);
+            dgvcancelled.ClearSelection();
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            (dgvcompleted.DataSource as DataTable).DefaultView.RowFilter =
+          string.Format("vendor LIKE '%{0}%' " +
+          "OR description LIKE '%{0}%' " +
+          "OR itemname LIKE '%{0}%' " +
+          "OR item_code LIKE '%{0}%'", textBox2.Text);
+            dgvcompleted.ClearSelection();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            (dataOrderList.DataSource as DataTable).DefaultView.RowFilter =
+         string.Format("vendor LIKE '%{0}%' " +
+         "OR description LIKE '%{0}%' " +
+         "OR itemname LIKE '%{0}%' " +
+         "OR item_code LIKE '%{0}%'", textBox1.Text);
+            dataOrderList.ClearSelection();
+        }
+
+        private void txtsearch_TextChanged_1(object sender, EventArgs e)
+        {
+            (dataItemCreation.DataSource as DataTable).DefaultView.RowFilter =
+          string.Format("description LIKE '%{0}%' " +
+          "OR itemname LIKE '%{0}%' " +
+          "OR item_code LIKE '%{0}%'", txtsearch.Text);
+            dataItemCreation.ClearSelection();
         }
     }
 }

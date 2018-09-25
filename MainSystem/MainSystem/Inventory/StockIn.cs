@@ -84,15 +84,16 @@ namespace MainSystem
                 dataGridView1.Columns["quantity_delivered"].Visible = false;
                 dataGridView1.Columns["date_of_creation"].Visible = false;
                 dataGridView1.Columns["itemstatus"].Visible = false;
-                dataGridView1.Columns["item_code"].Visible = false;
+                dataGridView1.Columns["item_code"].Visible = true;
                 dataGridView1.Columns["itemID"].Visible = false;
 
                 dataGridView1.Columns["date"].HeaderText = "Date To Be Delivered";
-                dataGridView1.Columns["date_created"].HeaderText = "Date Of Creation";
+                dataGridView1.Columns["item_code"].HeaderText = "Item Code";
+                dataGridView1.Columns["date_created"].Visible = false;
                 dataGridView1.Columns["vendor"].HeaderText = "Vendor";
                 dataGridView1.Columns["description"].HeaderText = "Item Desc.";
                 dataGridView1.Columns["itemname"].HeaderText = "Item Name.";
-                dataGridView1.Columns["date_modified"].HeaderText = "Date Modified";
+                dataGridView1.Columns["date_modified"].Visible = false;
 
             }
         }
@@ -416,7 +417,12 @@ namespace MainSystem
 
         private void search1_TextChanged(object sender, EventArgs e)
         {
-            
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = 
+            string.Format("vendor LIKE '%{0}%' " +
+            "OR description LIKE '%{0}%' " +
+            "OR itemname LIKE '%{0}%' " +
+            "OR item_code LIKE '%{0}%'", search1.Text);
+            dataGridView1.ClearSelection();
         }
         private void lblSinoutRecord_Click(object sender, EventArgs e)
         {
