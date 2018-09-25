@@ -62,13 +62,13 @@
             this.dataPaymentHistory.BackgroundColor = System.Drawing.Color.White;
             this.dataPaymentHistory.ColumnHeadersHeight = 35;
             this.dataPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataPaymentHistory.Location = new System.Drawing.Point(11, 10);
-            this.dataPaymentHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataPaymentHistory.Location = new System.Drawing.Point(15, 12);
+            this.dataPaymentHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataPaymentHistory.Name = "dataPaymentHistory";
             this.dataPaymentHistory.RowHeadersVisible = false;
             this.dataPaymentHistory.RowTemplate.Height = 24;
             this.dataPaymentHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataPaymentHistory.Size = new System.Drawing.Size(1238, 562);
+            this.dataPaymentHistory.Size = new System.Drawing.Size(1651, 692);
             this.dataPaymentHistory.TabIndex = 2;
             // 
             // btnBack
@@ -79,10 +79,10 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnBack.Location = new System.Drawing.Point(1017, 704);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Location = new System.Drawing.Point(1356, 866);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(232, 47);
+            this.btnBack.Size = new System.Drawing.Size(309, 58);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -93,10 +93,9 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblUser.Location = new System.Drawing.Point(88, 34);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUser.Location = new System.Drawing.Point(117, 42);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(40, 23);
+            this.lblUser.Size = new System.Drawing.Size(51, 29);
             this.lblUser.TabIndex = 34;
             this.lblUser.Text = "User";
             // 
@@ -105,10 +104,9 @@
             this.lblLoggedinas.AutoSize = true;
             this.lblLoggedinas.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedinas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblLoggedinas.Location = new System.Drawing.Point(10, 34);
-            this.lblLoggedinas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLoggedinas.Location = new System.Drawing.Point(13, 42);
             this.lblLoggedinas.Name = "lblLoggedinas";
-            this.lblLoggedinas.Size = new System.Drawing.Size(90, 23);
+            this.lblLoggedinas.Size = new System.Drawing.Size(114, 29);
             this.lblLoggedinas.TabIndex = 33;
             this.lblLoggedinas.Text = "Logged in as:";
             // 
@@ -122,16 +120,18 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 31);
+            this.panel1.Size = new System.Drawing.Size(1685, 38);
             this.panel1.TabIndex = 40;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -142,9 +142,10 @@
             this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(47, 5);
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(63, 6);
+            this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(409, 23);
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(517, 29);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
@@ -152,9 +153,10 @@
             // 
             this.datetimesearch.Enabled = false;
             this.datetimesearch.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datetimesearch.Location = new System.Drawing.Point(134, 92);
+            this.datetimesearch.Location = new System.Drawing.Point(179, 113);
+            this.datetimesearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datetimesearch.Name = "datetimesearch";
-            this.datetimesearch.Size = new System.Drawing.Size(285, 30);
+            this.datetimesearch.Size = new System.Drawing.Size(379, 35);
             this.datetimesearch.TabIndex = 43;
             this.datetimesearch.ValueChanged += new System.EventHandler(this.datetimesearch_ValueChanged);
             // 
@@ -165,9 +167,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.dataPaymentHistory);
             this.panel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 128);
+            this.panel2.Location = new System.Drawing.Point(0, 158);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1264, 580);
+            this.panel2.Size = new System.Drawing.Size(1685, 714);
             this.panel2.TabIndex = 44;
             // 
             // comboBox2
@@ -182,9 +185,10 @@
             "2020 - 2021",
             "2021 - 2022",
             "2022 - 2023"});
-            this.comboBox2.Location = new System.Drawing.Point(7, 92);
+            this.comboBox2.Location = new System.Drawing.Point(9, 113);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 30);
+            this.comboBox2.Size = new System.Drawing.Size(160, 36);
             this.comboBox2.TabIndex = 45;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             this.comboBox2.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
@@ -193,19 +197,22 @@
             // 
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(425, 92);
+            this.txtSearch.Location = new System.Drawing.Point(567, 113);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(231, 30);
+            this.txtSearch.Size = new System.Drawing.Size(307, 36);
             this.txtSearch.TabIndex = 46;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(7, 69);
+            this.checkBox1.Location = new System.Drawing.Point(9, 85);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 17);
+            this.checkBox1.Size = new System.Drawing.Size(107, 21);
             this.checkBox1.TabIndex = 47;
             this.checkBox1.Text = "School Year";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -215,9 +222,10 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(134, 69);
+            this.checkBox2.Location = new System.Drawing.Point(179, 85);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(49, 17);
+            this.checkBox2.Size = new System.Drawing.Size(60, 21);
             this.checkBox2.TabIndex = 48;
             this.checkBox2.Text = "Date";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -225,10 +233,10 @@
             // 
             // frmViewPaymentHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1264, 758);
+            this.ClientSize = new System.Drawing.Size(1685, 933);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtSearch);
@@ -240,6 +248,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmViewPaymentHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Payment History";

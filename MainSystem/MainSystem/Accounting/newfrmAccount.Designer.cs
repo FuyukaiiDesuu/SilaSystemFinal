@@ -84,6 +84,7 @@
             this.btnref = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -503,6 +504,7 @@
             this.txtSearch.Size = new System.Drawing.Size(241, 32);
             this.txtSearch.TabIndex = 43;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // grpBalanceDetails
             // 
@@ -510,6 +512,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBalanceDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.grpBalanceDetails.Controls.Add(this.label6);
             this.grpBalanceDetails.Controls.Add(this.dataBalanceDetails);
             this.grpBalanceDetails.Controls.Add(this.searchpaymenttxtbox);
             this.grpBalanceDetails.Font = new System.Drawing.Font("Bebas Neue", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -549,12 +552,13 @@
             // 
             // searchpaymenttxtbox
             // 
-            this.searchpaymenttxtbox.Location = new System.Drawing.Point(10, 26);
+            this.searchpaymenttxtbox.Location = new System.Drawing.Point(780, 26);
             this.searchpaymenttxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.searchpaymenttxtbox.Name = "searchpaymenttxtbox";
             this.searchpaymenttxtbox.Size = new System.Drawing.Size(288, 34);
             this.searchpaymenttxtbox.TabIndex = 55;
             this.searchpaymenttxtbox.TextChanged += new System.EventHandler(this.searchpaymenttxtbox_TextChanged);
+            this.searchpaymenttxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchpaymenttxtbox_KeyPress);
             // 
             // tabPage1
             // 
@@ -624,6 +628,7 @@
             this.txtfeesearch.Size = new System.Drawing.Size(309, 35);
             this.txtfeesearch.TabIndex = 44;
             this.txtfeesearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtfeesearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfeesearch_KeyPress);
             // 
             // btnAddFee
             // 
@@ -981,6 +986,19 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "search:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label6.Location = new System.Drawing.Point(701, 29);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 29);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "search:";
+            // 
             // newfrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1092,5 +1110,6 @@
         private System.Windows.Forms.Button btnref;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

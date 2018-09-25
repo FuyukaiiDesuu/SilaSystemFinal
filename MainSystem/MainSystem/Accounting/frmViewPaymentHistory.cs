@@ -290,5 +290,15 @@ namespace MainSystem.Accounting
                 datetimesearch.Value = DateTime.Today;
             }
         }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9\s\b,.-]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                MessageBox.Show("The Text Must Can Only Consist Of Alphabets and Numbers, and The Characters: '-,.'", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
     }
 }
