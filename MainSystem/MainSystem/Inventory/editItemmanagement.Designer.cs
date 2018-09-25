@@ -56,9 +56,11 @@
             this.gbItemDetails2.Controls.Add(this.lblitemcode);
             this.gbItemDetails2.Font = new System.Drawing.Font("Bebas Neue", 14.25F);
             this.gbItemDetails2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.gbItemDetails2.Location = new System.Drawing.Point(8, 56);
+            this.gbItemDetails2.Location = new System.Drawing.Point(11, 69);
+            this.gbItemDetails2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbItemDetails2.Name = "gbItemDetails2";
-            this.gbItemDetails2.Size = new System.Drawing.Size(465, 262);
+            this.gbItemDetails2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbItemDetails2.Size = new System.Drawing.Size(620, 322);
             this.gbItemDetails2.TabIndex = 2;
             this.gbItemDetails2.TabStop = false;
             this.gbItemDetails2.Text = "Item Details";
@@ -66,36 +68,43 @@
             // txtdesc
             // 
             this.txtdesc.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdesc.Location = new System.Drawing.Point(149, 118);
+            this.txtdesc.Location = new System.Drawing.Point(199, 145);
+            this.txtdesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtdesc.Multiline = true;
             this.txtdesc.Name = "txtdesc";
-            this.txtdesc.Size = new System.Drawing.Size(267, 102);
+            this.txtdesc.Size = new System.Drawing.Size(355, 125);
             this.txtdesc.TabIndex = 9;
+            this.txtdesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemcode_KeyPress);
             // 
             // txtitemname
             // 
             this.txtitemname.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtitemname.Location = new System.Drawing.Point(149, 79);
+            this.txtitemname.Location = new System.Drawing.Point(199, 97);
+            this.txtitemname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtitemname.Name = "txtitemname";
-            this.txtitemname.Size = new System.Drawing.Size(267, 33);
+            this.txtitemname.Size = new System.Drawing.Size(355, 39);
             this.txtitemname.TabIndex = 8;
+            this.txtitemname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemcode_KeyPress);
             // 
             // txtitemcode
             // 
             this.txtitemcode.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtitemcode.Location = new System.Drawing.Point(149, 40);
+            this.txtitemcode.Location = new System.Drawing.Point(199, 49);
+            this.txtitemcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtitemcode.Name = "txtitemcode";
-            this.txtitemcode.Size = new System.Drawing.Size(267, 33);
+            this.txtitemcode.Size = new System.Drawing.Size(355, 39);
             this.txtitemcode.TabIndex = 7;
+            this.txtitemcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemcode_KeyPress);
             // 
             // lbldesc
             // 
             this.lbldesc.AutoSize = true;
             this.lbldesc.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldesc.ForeColor = System.Drawing.Color.White;
-            this.lbldesc.Location = new System.Drawing.Point(29, 118);
+            this.lbldesc.Location = new System.Drawing.Point(39, 145);
+            this.lbldesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldesc.Name = "lbldesc";
-            this.lbldesc.Size = new System.Drawing.Size(97, 25);
+            this.lbldesc.Size = new System.Drawing.Size(125, 32);
             this.lbldesc.TabIndex = 4;
             this.lbldesc.Text = "Descrpition:";
             // 
@@ -104,9 +113,10 @@
             this.lblitemname.AutoSize = true;
             this.lblitemname.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblitemname.ForeColor = System.Drawing.Color.White;
-            this.lblitemname.Location = new System.Drawing.Point(39, 84);
+            this.lblitemname.Location = new System.Drawing.Point(52, 103);
+            this.lblitemname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblitemname.Name = "lblitemname";
-            this.lblitemname.Size = new System.Drawing.Size(86, 25);
+            this.lblitemname.Size = new System.Drawing.Size(112, 32);
             this.lblitemname.TabIndex = 3;
             this.lblitemname.Text = "Item Name:";
             // 
@@ -115,9 +125,10 @@
             this.lblitemcode.AutoSize = true;
             this.lblitemcode.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblitemcode.ForeColor = System.Drawing.Color.White;
-            this.lblitemcode.Location = new System.Drawing.Point(43, 45);
+            this.lblitemcode.Location = new System.Drawing.Point(57, 55);
+            this.lblitemcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblitemcode.Name = "lblitemcode";
-            this.lblitemcode.Size = new System.Drawing.Size(82, 25);
+            this.lblitemcode.Size = new System.Drawing.Size(106, 32);
             this.lblitemcode.TabIndex = 2;
             this.lblitemcode.Text = "Item Code:";
             // 
@@ -129,9 +140,10 @@
             this.btnconfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnconfirm.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnconfirm.ForeColor = System.Drawing.Color.White;
-            this.btnconfirm.Location = new System.Drawing.Point(157, 324);
+            this.btnconfirm.Location = new System.Drawing.Point(209, 399);
+            this.btnconfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnconfirm.Name = "btnconfirm";
-            this.btnconfirm.Size = new System.Drawing.Size(164, 82);
+            this.btnconfirm.Size = new System.Drawing.Size(219, 101);
             this.btnconfirm.TabIndex = 16;
             this.btnconfirm.Text = "Confirm";
             this.btnconfirm.UseVisualStyleBackColor = false;
@@ -145,9 +157,10 @@
             this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnback.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnback.Location = new System.Drawing.Point(327, 324);
+            this.btnback.Location = new System.Drawing.Point(436, 399);
+            this.btnback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnback.Name = "btnback";
-            this.btnback.Size = new System.Drawing.Size(146, 82);
+            this.btnback.Size = new System.Drawing.Size(195, 101);
             this.btnback.TabIndex = 17;
             this.btnback.Text = "Cancel";
             this.btnback.UseVisualStyleBackColor = false;
@@ -159,16 +172,18 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 34);
+            this.panel1.Size = new System.Drawing.Size(647, 42);
             this.panel1.TabIndex = 42;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -179,24 +194,26 @@
             this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic);
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 8);
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(68, 10);
+            this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(403, 23);
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(509, 29);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "INVENTORY MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
             // editItemmanagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(485, 427);
+            this.ClientSize = new System.Drawing.Size(647, 526);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnconfirm);
             this.Controls.Add(this.gbItemDetails2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(485, 427);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(647, 526);
             this.Name = "editItemmanagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Item";

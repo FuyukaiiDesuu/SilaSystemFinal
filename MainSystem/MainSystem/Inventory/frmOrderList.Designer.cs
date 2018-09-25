@@ -75,7 +75,7 @@
             this.dataOrderList.BackgroundColor = System.Drawing.Color.White;
             this.dataOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataOrderList.Location = new System.Drawing.Point(8, 7);
-            this.dataOrderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataOrderList.Margin = new System.Windows.Forms.Padding(4);
             this.dataOrderList.Name = "dataOrderList";
             this.dataOrderList.ReadOnly = true;
             this.dataOrderList.RowHeadersVisible = false;
@@ -97,9 +97,9 @@
             this.gboxitemdetails2.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxitemdetails2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.gboxitemdetails2.Location = new System.Drawing.Point(8, 388);
-            this.gboxitemdetails2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gboxitemdetails2.Margin = new System.Windows.Forms.Padding(4);
             this.gboxitemdetails2.Name = "gboxitemdetails2";
-            this.gboxitemdetails2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gboxitemdetails2.Padding = new System.Windows.Forms.Padding(4);
             this.gboxitemdetails2.Size = new System.Drawing.Size(636, 235);
             this.gboxitemdetails2.TabIndex = 1;
             this.gboxitemdetails2.TabStop = false;
@@ -111,7 +111,7 @@
             this.txtitemname.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtitemname.ForeColor = System.Drawing.Color.White;
             this.txtitemname.Location = new System.Drawing.Point(165, 43);
-            this.txtitemname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtitemname.Margin = new System.Windows.Forms.Padding(4);
             this.txtitemname.Name = "txtitemname";
             this.txtitemname.ReadOnly = true;
             this.txtitemname.Size = new System.Drawing.Size(432, 36);
@@ -134,7 +134,7 @@
             this.dateDate.CustomFormat = "";
             this.dateDate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDate.Location = new System.Drawing.Point(165, 87);
-            this.dateDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateDate.Margin = new System.Windows.Forms.Padding(4);
             this.dateDate.Name = "dateDate";
             this.dateDate.Size = new System.Drawing.Size(432, 36);
             this.dateDate.TabIndex = 14;
@@ -144,19 +144,22 @@
             // 
             this.txtquantity2.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtquantity2.Location = new System.Drawing.Point(165, 176);
-            this.txtquantity2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtquantity2.Margin = new System.Windows.Forms.Padding(4);
             this.txtquantity2.Name = "txtquantity2";
             this.txtquantity2.Size = new System.Drawing.Size(216, 48);
             this.txtquantity2.TabIndex = 9;
+            this.txtquantity2.TextChanged += new System.EventHandler(this.txtquantity2_TextChanged);
+            this.txtquantity2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtvendor_KeyPress);
             // 
             // txtvendor
             // 
             this.txtvendor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtvendor.Location = new System.Drawing.Point(165, 132);
-            this.txtvendor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtvendor.Margin = new System.Windows.Forms.Padding(4);
             this.txtvendor.Name = "txtvendor";
             this.txtvendor.Size = new System.Drawing.Size(432, 36);
             this.txtvendor.TabIndex = 8;
+            this.txtvendor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtvendor_KeyPress);
             // 
             // lblQuantity
             // 
@@ -203,7 +206,7 @@
             this.btnback.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnback.Location = new System.Drawing.Point(1297, 49);
-            this.btnback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnback.Margin = new System.Windows.Forms.Padding(4);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(236, 65);
             this.btnback.TabIndex = 12;
@@ -220,7 +223,7 @@
             this.btnAdd2.Font = new System.Drawing.Font("Bebas Neue", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd2.ForeColor = System.Drawing.Color.White;
             this.btnAdd2.Location = new System.Drawing.Point(1140, 460);
-            this.btnAdd2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd2.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd2.Name = "btnAdd2";
             this.btnAdd2.Size = new System.Drawing.Size(372, 162);
             this.btnAdd2.TabIndex = 10;
@@ -237,7 +240,7 @@
             this.dataItemCreation.BackgroundColor = System.Drawing.Color.White;
             this.dataItemCreation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataItemCreation.Location = new System.Drawing.Point(8, 7);
-            this.dataItemCreation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataItemCreation.Margin = new System.Windows.Forms.Padding(4);
             this.dataItemCreation.Name = "dataItemCreation";
             this.dataItemCreation.ReadOnly = true;
             this.dataItemCreation.RowHeadersVisible = false;
@@ -256,7 +259,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(16, 106);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1527, 678);
@@ -269,9 +272,9 @@
             this.tabPage1.Controls.Add(this.gboxitemdetails2);
             this.tabPage1.Controls.Add(this.btnAdd2);
             this.tabPage1.Location = new System.Drawing.Point(4, 40);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1519, 634);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Order Creation";
@@ -282,9 +285,9 @@
             this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.dataOrderList);
             this.tabPage2.Location = new System.Drawing.Point(4, 40);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1519, 634);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pending";
@@ -297,7 +300,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Bebas Neue", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnCancel.Location = new System.Drawing.Point(1205, 544);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(307, 80);
             this.btnCancel.TabIndex = 11;
@@ -310,7 +313,7 @@
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.tabPage3.Controls.Add(this.dgvcompleted);
             this.tabPage3.Location = new System.Drawing.Point(4, 40);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1519, 634);
             this.tabPage3.TabIndex = 2;
@@ -325,7 +328,7 @@
             this.dgvcompleted.BackgroundColor = System.Drawing.Color.White;
             this.dgvcompleted.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvcompleted.Location = new System.Drawing.Point(9, 5);
-            this.dgvcompleted.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvcompleted.Margin = new System.Windows.Forms.Padding(4);
             this.dgvcompleted.Name = "dgvcompleted";
             this.dgvcompleted.ReadOnly = true;
             this.dgvcompleted.RowHeadersVisible = false;
@@ -338,7 +341,7 @@
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.tabPage4.Controls.Add(this.dgvcancelled);
             this.tabPage4.Location = new System.Drawing.Point(4, 40);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1519, 634);
             this.tabPage4.TabIndex = 3;
@@ -354,7 +357,7 @@
             this.dgvcancelled.BackgroundColor = System.Drawing.Color.White;
             this.dgvcancelled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvcancelled.Location = new System.Drawing.Point(8, 5);
-            this.dgvcancelled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvcancelled.Margin = new System.Windows.Forms.Padding(4);
             this.dgvcancelled.Name = "dgvcancelled";
             this.dgvcancelled.ReadOnly = true;
             this.dgvcancelled.RowHeadersVisible = false;
@@ -368,7 +371,7 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1559, 42);
             this.panel1.TabIndex = 45;
@@ -377,7 +380,7 @@
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -407,7 +410,7 @@
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmOrderList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOrderList";

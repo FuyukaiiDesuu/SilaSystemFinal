@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace MainSystem
 {
@@ -250,6 +251,21 @@ namespace MainSystem
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtquantity2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtvendor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9\s\b,.-]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                MessageBox.Show("The Text Must Can Only Consist Of Alphabets and Numbers, and The Characters: '-,.'", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
         }
     }
 }

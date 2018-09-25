@@ -46,6 +46,14 @@ namespace MainSystem.Accounting
             dateC = d["dc"];
             ayd = d["fid"];
             cmbGradeLevel.Text = d["ftype"];
+            if(d["status"] == "1")
+            {
+                comboBox2.Text = "Active";
+            }
+            else
+            {
+                comboBox2.Text = "Inactive";
+            }
             if(d["fdesc"] == "Others")
             {
                 textBox1.Enabled = true;
@@ -69,6 +77,8 @@ namespace MainSystem.Accounting
             if (checker == false)
             {
                 textboxfiller(d);
+                label1.Visible = true;
+                comboBox2.Visible = true;
                 //cmbGradeLevel.Text = dtadd.Rows[0]["fee_type"].ToString();
                 //txtAmount.Text = dtadd.Rows[0]["current_amount"].ToString();
                 //txtFeeDescription.Text = dtadd.Rows[0]["fee_description"].ToString();
@@ -219,7 +229,7 @@ namespace MainSystem.Accounting
 
                                 command2.ExecuteNonQuery();
                             }
-                            MessageBox.Show("Successfully Added");
+                            MessageBox.Show("Successfully Added", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             reference.Show();
                             reference.loadFeeDetails();
                             reference.dataBalanceDetails.ClearSelection();
@@ -265,19 +275,28 @@ namespace MainSystem.Accounting
                                 command2.Parameters.AddWithValue("@dcrt", dateC);
                                 command2.Parameters.AddWithValue("@dmod", lblDate.Text);
                                 command2.Parameters.AddWithValue("@fkey", s_key);
-                                command2.Parameters.AddWithValue("@status", 1);
+                                var stat = "";
+                                if(comboBox2.Text == "Active")
+                                {
+                                    stat = "1";
+                                }
+                                else
+                                {
+                                    stat = "0";
+                                }
+                                command2.Parameters.AddWithValue("@status", stat);
                                 command2.Parameters.AddWithValue("@sy", lblsy.Text);
                                 command2.Parameters.AddWithValue("@ayd", ayd);
 
                                 command2.ExecuteNonQuery();
                             }
-                            MessageBox.Show("Successfully Updated");
+                            MessageBox.Show("Successfully Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             reference.Show();
                             reference.loadFeeDetails();
                             reference.dataBalanceDetails.ClearSelection();
                             reference.dataSearch.ClearSelection();
+                            reference.checkBox2.Checked = false;
                             this.Close();
-
                         }
 
                     }
@@ -326,6 +345,11 @@ namespace MainSystem.Accounting
         private void label11_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

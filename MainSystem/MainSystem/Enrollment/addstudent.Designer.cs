@@ -75,62 +75,75 @@
             // txtnn
             // 
             this.txtnn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnn.Location = new System.Drawing.Point(159, 348);
+            this.txtnn.Location = new System.Drawing.Point(212, 428);
+            this.txtnn.Margin = new System.Windows.Forms.Padding(4);
             this.txtnn.Name = "txtnn";
-            this.txtnn.Size = new System.Drawing.Size(188, 27);
+            this.txtnn.Size = new System.Drawing.Size(249, 32);
             this.txtnn.TabIndex = 8;
+            this.txtnn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfn_KeyPress_1);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(62, 349);
+            this.label10.Location = new System.Drawing.Point(83, 430);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 25);
+            this.label10.Size = new System.Drawing.Size(106, 32);
             this.label10.TabIndex = 39;
             this.label10.Text = "Nickname:";
             // 
             // txtbp
             // 
             this.txtbp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbp.Location = new System.Drawing.Point(159, 201);
+            this.txtbp.Location = new System.Drawing.Point(212, 247);
+            this.txtbp.Margin = new System.Windows.Forms.Padding(4);
             this.txtbp.Name = "txtbp";
-            this.txtbp.Size = new System.Drawing.Size(188, 27);
+            this.txtbp.Size = new System.Drawing.Size(249, 32);
             this.txtbp.TabIndex = 5;
+            this.txtbp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfn_KeyPress_1);
             // 
             // txtmn
             // 
             this.txtmn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmn.Location = new System.Drawing.Point(159, 135);
+            this.txtmn.Location = new System.Drawing.Point(212, 166);
+            this.txtmn.Margin = new System.Windows.Forms.Padding(4);
             this.txtmn.Name = "txtmn";
-            this.txtmn.Size = new System.Drawing.Size(188, 27);
+            this.txtmn.Size = new System.Drawing.Size(249, 32);
             this.txtmn.TabIndex = 3;
+            this.txtmn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfn_KeyPress_1);
             // 
             // txtln
             // 
             this.txtln.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtln.Location = new System.Drawing.Point(159, 102);
+            this.txtln.Location = new System.Drawing.Point(212, 126);
+            this.txtln.Margin = new System.Windows.Forms.Padding(4);
             this.txtln.Name = "txtln";
-            this.txtln.Size = new System.Drawing.Size(188, 27);
+            this.txtln.Size = new System.Drawing.Size(249, 32);
             this.txtln.TabIndex = 2;
+            this.txtln.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfn_KeyPress_1);
             // 
             // txtfn
             // 
             this.txtfn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfn.Location = new System.Drawing.Point(159, 69);
+            this.txtfn.Location = new System.Drawing.Point(212, 85);
+            this.txtfn.Margin = new System.Windows.Forms.Padding(4);
             this.txtfn.Name = "txtfn";
-            this.txtfn.Size = new System.Drawing.Size(188, 27);
+            this.txtfn.Size = new System.Drawing.Size(249, 32);
             this.txtfn.TabIndex = 1;
+            this.txtfn.TextChanged += new System.EventHandler(this.txtfn_TextChanged);
+            this.txtfn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfn_KeyPress_1);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(75, 269);
+            this.label7.Location = new System.Drawing.Point(100, 331);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 25);
+            this.label7.Size = new System.Drawing.Size(94, 32);
             this.label7.TabIndex = 31;
             this.label7.Text = "Religion:";
             // 
@@ -139,9 +152,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(106, 233);
+            this.label6.Location = new System.Drawing.Point(141, 287);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 25);
+            this.label6.Size = new System.Drawing.Size(52, 32);
             this.label6.TabIndex = 30;
             this.label6.Text = "Sex:";
             // 
@@ -150,9 +164,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(54, 201);
+            this.label5.Location = new System.Drawing.Point(72, 247);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 25);
+            this.label5.Size = new System.Drawing.Size(119, 32);
             this.label5.TabIndex = 29;
             this.label5.Text = "Birthplace:";
             // 
@@ -161,9 +176,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(62, 170);
+            this.label4.Location = new System.Drawing.Point(83, 209);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 25);
+            this.label4.Size = new System.Drawing.Size(110, 32);
             this.label4.TabIndex = 28;
             this.label4.Text = "Birthdate:";
             // 
@@ -172,9 +188,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(45, 137);
+            this.label3.Location = new System.Drawing.Point(60, 169);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 25);
+            this.label3.Size = new System.Drawing.Size(133, 32);
             this.label3.TabIndex = 27;
             this.label3.Text = "Middle Name:";
             // 
@@ -183,9 +200,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(62, 102);
+            this.label2.Location = new System.Drawing.Point(83, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 25);
+            this.label2.Size = new System.Drawing.Size(112, 32);
             this.label2.TabIndex = 26;
             this.label2.Text = "Last Name:";
             // 
@@ -194,9 +212,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(62, 71);
+            this.label1.Location = new System.Drawing.Point(83, 87);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.Size = new System.Drawing.Size(117, 32);
             this.label1.TabIndex = 25;
             this.label1.Text = "First Name:";
             // 
@@ -204,10 +223,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 27);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 33);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 222);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
@@ -219,10 +238,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bebas Neue", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.button1.Location = new System.Drawing.Point(5, 217);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(7, 267);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(284, 57);
+            this.button1.Size = new System.Drawing.Size(379, 70);
             this.button1.TabIndex = 42;
             this.button1.Text = "Browse Image";
             this.button1.UseVisualStyleBackColor = false;
@@ -235,10 +254,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Bebas Neue", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(405, 464);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Location = new System.Drawing.Point(540, 571);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 68);
+            this.btnSave.Size = new System.Drawing.Size(219, 84);
             this.btnSave.TabIndex = 43;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -247,9 +266,10 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Location = new System.Drawing.Point(159, 168);
+            this.dateTimePicker1.Location = new System.Drawing.Point(212, 207);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(249, 32);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // txtstno
@@ -257,10 +277,11 @@
             this.txtstno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.txtstno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtstno.ForeColor = System.Drawing.Color.White;
-            this.txtstno.Location = new System.Drawing.Point(159, 36);
+            this.txtstno.Location = new System.Drawing.Point(212, 44);
+            this.txtstno.Margin = new System.Windows.Forms.Padding(4);
             this.txtstno.Name = "txtstno";
             this.txtstno.ReadOnly = true;
-            this.txtstno.Size = new System.Drawing.Size(38, 27);
+            this.txtstno.Size = new System.Drawing.Size(49, 32);
             this.txtstno.TabIndex = 0;
             this.txtstno.TabStop = false;
             // 
@@ -269,9 +290,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(62, 38);
+            this.label8.Location = new System.Drawing.Point(83, 47);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 25);
+            this.label8.Size = new System.Drawing.Size(121, 32);
             this.label8.TabIndex = 47;
             this.label8.Text = "Student No:";
             // 
@@ -286,9 +308,10 @@
             "Grade-school",
             "Junior-Highschool",
             "Senior-Highschool"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 32);
+            this.comboBox1.Location = new System.Drawing.Point(164, 39);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 27);
+            this.comboBox1.Size = new System.Drawing.Size(205, 32);
             this.comboBox1.TabIndex = 48;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
@@ -298,9 +321,10 @@
             this.Department.AutoSize = true;
             this.Department.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Department.ForeColor = System.Drawing.Color.White;
-            this.Department.Location = new System.Drawing.Point(18, 34);
+            this.Department.Location = new System.Drawing.Point(24, 42);
+            this.Department.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Department.Name = "Department";
-            this.Department.Size = new System.Drawing.Size(99, 25);
+            this.Department.Size = new System.Drawing.Size(129, 32);
             this.Department.TabIndex = 49;
             this.Department.Text = "Department:";
             this.Department.Click += new System.EventHandler(this.Department_Click);
@@ -313,9 +337,10 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "PLEASE SELECT DEPARTMENT ABOVE FIRST"});
-            this.comboBox2.Location = new System.Drawing.Point(123, 70);
+            this.comboBox2.Location = new System.Drawing.Point(164, 86);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(155, 27);
+            this.comboBox2.Size = new System.Drawing.Size(205, 32);
             this.comboBox2.TabIndex = 50;
             // 
             // label9
@@ -323,9 +348,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(63, 72);
+            this.label9.Location = new System.Drawing.Point(84, 89);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 25);
+            this.label9.Size = new System.Drawing.Size(69, 32);
             this.label9.TabIndex = 51;
             this.label9.Text = "Level:";
             // 
@@ -336,10 +362,10 @@
             this.btncanc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncanc.Font = new System.Drawing.Font("Bebas Neue", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncanc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btncanc.Location = new System.Drawing.Point(573, 464);
-            this.btncanc.Margin = new System.Windows.Forms.Padding(2);
+            this.btncanc.Location = new System.Drawing.Point(764, 571);
+            this.btncanc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btncanc.Name = "btncanc";
-            this.btncanc.Size = new System.Drawing.Size(126, 68);
+            this.btncanc.Size = new System.Drawing.Size(168, 84);
             this.btncanc.TabIndex = 52;
             this.btncanc.Text = "BACK";
             this.btncanc.UseVisualStyleBackColor = false;
@@ -348,11 +374,13 @@
             // txtrel
             // 
             this.txtrel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtrel.Location = new System.Drawing.Point(159, 300);
+            this.txtrel.Location = new System.Drawing.Point(212, 369);
+            this.txtrel.Margin = new System.Windows.Forms.Padding(4);
             this.txtrel.Multiline = true;
             this.txtrel.Name = "txtrel";
-            this.txtrel.Size = new System.Drawing.Size(188, 42);
+            this.txtrel.Size = new System.Drawing.Size(249, 51);
             this.txtrel.TabIndex = 7;
+            this.txtrel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfn_KeyPress_1);
             // 
             // comboBox3
             // 
@@ -364,9 +392,10 @@
             "Male",
             "Female",
             "Others"});
-            this.comboBox3.Location = new System.Drawing.Point(159, 234);
+            this.comboBox3.Location = new System.Drawing.Point(212, 288);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(188, 27);
+            this.comboBox3.Size = new System.Drawing.Size(249, 32);
             this.comboBox3.TabIndex = 54;
             // 
             // label11
@@ -374,9 +403,10 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(29, 300);
+            this.label11.Location = new System.Drawing.Point(39, 369);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 25);
+            this.label11.Size = new System.Drawing.Size(148, 32);
             this.label11.TabIndex = 56;
             this.label11.Text = "Please specify:";
             // 
@@ -404,9 +434,11 @@
             this.groupBox1.Controls.Add(this.txtnn);
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 49);
+            this.groupBox1.Location = new System.Drawing.Point(16, 60);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 410);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(516, 505);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "STUDENT INFORMATION";
@@ -425,9 +457,10 @@
             "Seventh Day Adventist",
             "Islam",
             "Others"});
-            this.comboBox4.Location = new System.Drawing.Point(159, 267);
+            this.comboBox4.Location = new System.Drawing.Point(212, 329);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(188, 27);
+            this.comboBox4.Size = new System.Drawing.Size(249, 32);
             this.comboBox4.TabIndex = 55;
             this.comboBox4.SelectedValueChanged += new System.EventHandler(this.comboBox4_SelectedValueChanged);
             // 
@@ -439,9 +472,11 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox2.Location = new System.Drawing.Point(405, 334);
+            this.groupBox2.Location = new System.Drawing.Point(540, 411);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(294, 125);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(392, 154);
             this.groupBox2.TabIndex = 59;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LEVEL/DEPARTMENT";
@@ -452,9 +487,11 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox3.Location = new System.Drawing.Point(405, 49);
+            this.groupBox3.Location = new System.Drawing.Point(540, 60);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(294, 279);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(392, 343);
             this.groupBox3.TabIndex = 60;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "STUDENT PICTURE";
@@ -468,8 +505,9 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(716, 31);
+            this.panel1.Size = new System.Drawing.Size(955, 38);
             this.panel1.TabIndex = 77;
             // 
             // label12
@@ -478,9 +516,10 @@
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label12.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label12.Location = new System.Drawing.Point(555, 5);
+            this.label12.Location = new System.Drawing.Point(740, 6);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 23);
+            this.label12.Size = new System.Drawing.Size(105, 29);
             this.label12.TabIndex = 49;
             this.label12.Text = "CURRENT S.Y";
             // 
@@ -490,9 +529,10 @@
             this.lblsy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblsy.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblsy.Location = new System.Drawing.Point(634, 5);
+            this.lblsy.Location = new System.Drawing.Point(845, 6);
+            this.lblsy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblsy.Name = "lblsy";
-            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.Size = new System.Drawing.Size(38, 29);
             this.lblsy.TabIndex = 48;
             this.lblsy.Text = "S.Y ";
             // 
@@ -500,8 +540,9 @@
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 31);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -512,18 +553,19 @@
             this.lblSilaSchoolManagementSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSilaSchoolManagementSoftware.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(51, 9);
+            this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(68, 11);
+            this.lblSilaSchoolManagementSoftware.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(491, 19);
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(628, 21);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "REGISTRATION MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
             // addStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(716, 543);
+            this.ClientSize = new System.Drawing.Size(955, 668);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -531,7 +573,7 @@
             this.Controls.Add(this.btncanc);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "addStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addStudent";

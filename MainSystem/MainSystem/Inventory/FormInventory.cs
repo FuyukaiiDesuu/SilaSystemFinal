@@ -77,7 +77,7 @@ namespace MainSystem
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Close();
+            this.Dispose();
         }
 
         public frmOrderList frmol;
@@ -276,6 +276,11 @@ namespace MainSystem
                 readData();
                 dgvInventory.ClearSelection();
             }
+        }
+
+        private void FormInventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

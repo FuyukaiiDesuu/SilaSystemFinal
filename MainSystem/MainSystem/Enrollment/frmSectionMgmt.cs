@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace MainSystem
 {
@@ -214,6 +215,9 @@ namespace MainSystem
         private void button1_Click(object sender, EventArgs e)
         {
             reference.Show();
+            reference.loadData();
+            reference.dataGridView1.ClearSelection();
+            reference.btnUpdate.Enabled = false;
             this.Close();
         }
 
@@ -326,6 +330,21 @@ namespace MainSystem
                 list.Add(dataGridView2.Rows[e.RowIndex].Cells["gradelevel"].Value.ToString());
             }
                
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9\s\b,.-]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                MessageBox.Show("The Text Must Can Only Consist Of Alphabets and Numbers, and The Characters: '-,.'", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

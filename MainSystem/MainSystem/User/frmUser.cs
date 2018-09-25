@@ -151,7 +151,7 @@ namespace MainSystem.User
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Close();
+            this.Dispose();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -216,6 +216,11 @@ namespace MainSystem.User
         private void dataSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void frmUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

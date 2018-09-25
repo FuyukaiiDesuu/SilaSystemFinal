@@ -198,7 +198,32 @@ namespace MainSystem.Accounting
         {
             using (MySqlConnection conn = connect.connector())
             {
-                string query = "SELECT * FROM feevalues WHERE syear = '"+syeartempo+"';";
+                string query = "SELECT * FROM feevalues WHERE syear = '"+syeartempo+"' AND Status = 1;";
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, conn);
+                adapter.Fill(dt);
+                dataFeeValue.DataSource = dt;
+            }
+            dataFeeValue.Columns["current_amount"].DefaultCellStyle.Format = "N2";
+            dataFeeValue.Columns["fee_type"].HeaderText = "Fee Type";
+            dataFeeValue.Columns["fee_description"].HeaderText = "Fee Description";
+            dataFeeValue.Columns["current_amount"].HeaderText = "Current Amount";
+            //dataFeeValue.Columns["school_year_start"].HeaderText = "School Year Start";
+            // dataFeeValue.Columns["school_year_end"].HeaderText = "School Year End";
+
+            dataFeeValue.Columns["Status"].Visible = false;
+            dataFeeValue.Columns["fid"].Visible = false;
+            dataFeeValue.Columns["date_modified"].Visible = false;
+            dataFeeValue.Columns["date_created"].Visible = false;
+            dataFeeValue.Columns["f_key"].Visible = false;
+            //dataFeeValue.ReadOnly = true;
+            this.dataFeeValue.Refresh();
+        }
+        public void loadFeeDetails2()
+        {
+            using (MySqlConnection conn = connect.connector())
+            {
+                string query = "SELECT * FROM feevalues WHERE syear = '" + syeartempo + "' AND Status = 0;";
                 dt = new DataTable();
                 adapter = new MySqlDataAdapter(query, conn);
                 adapter.Fill(dt);
@@ -353,29 +378,22 @@ namespace MainSystem.Accounting
         public Accounting.frmAddFee addfee;
         private void btnAddFee_Click(object sender, EventArgs e)
         {
-            DataTable holder = dbquery.User(uname);
-            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-            addfee = new Accounting.frmAddFee(true);
-            addfee.syear = lblsy.Text;
-            addfee.uname = uname;
-            addfee.Show();
-            addfee.reference = this;
+                DataTable holder = dbquery.User(uname);
+                uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                addfee = new Accounting.frmAddFee(true);
+                addfee.syear = lblsy.Text;
+                addfee.uname = uname;
+                addfee.Show();
         }
-
         public Accounting.newfrmEditAccount editaccount;
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
-            /*
-            DataTable holder = dbquery.User(uname);
-            uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
-            editaccount = new Accounting.newfrmEditAccount();
-            editaccount.uname = uname;
-            editaccount.id = txtStudentID.Text.ToString();
-            editaccount.name = fullname.ToString();*/
-            editaccount = new Accounting.newfrmEditAccount(dic2);
-            editaccount.TEMPORARYSYEAR = lblsy.Text;
-            editaccount.Show();
-            editaccount.reference = this;
+                DataTable holder = dbquery.User(uname);
+                uname = holder.Rows[0]["last_name"].ToString() + ", " + holder.Rows[0]["first_name"].ToString();
+                editaccount = new Accounting.newfrmEditAccount(dic2);
+                editaccount.TEMPORARYSYEAR = lblsy.Text;
+                editaccount.Show();
+                editaccount.reference = this;
         }
         public IDictionary<string, string> dic;
         private void dataFeeValue_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -390,6 +408,7 @@ namespace MainSystem.Accounting
                 dic.Add("fdesc", dataFeeValue.Rows[e.RowIndex].Cells["fee_description"].Value.ToString());
                 dic.Add("mdesc", dataFeeValue.Rows[e.RowIndex].Cells["misc_desc"].Value.ToString());
                 dic.Add("sy", dataFeeValue.Rows[e.RowIndex].Cells["syear"].Value.ToString());
+                dic.Add("status", dataFeeValue.Rows[e.RowIndex].Cells["Status"].Value.ToString());
                 btnUpdateFee.Enabled = true;
                
             }
@@ -410,12 +429,27 @@ namespace MainSystem.Accounting
 
         private void btnUpdateFee_Click(object sender, EventArgs e)
         {
-            addfee = new Accounting.frmAddFee(false, dic);
-            addfee.uname = uname;
-            addfee.syear = lblsy.Text;
-            addfee.dtadd = dt;
-            addfee.Show();
-            addfee.reference = this;
+            if(checkBox2.Checked)
+            {
+                MessageBox.Show("You Are Updating An Archived Fee, Proceed?", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                addfee = new Accounting.frmAddFee(false, dic);
+                addfee.uname = uname;
+                addfee.syear = lblsy.Text;
+                addfee.dtadd = dt;
+                addfee.Show();
+                addfee.reference = this;
+
+            }
+            else
+            {
+                addfee = new Accounting.frmAddFee(false, dic);
+                addfee.uname = uname;
+                addfee.syear = lblsy.Text;
+                addfee.dtadd = dt;
+                addfee.Show();
+                addfee.reference = this;
+            }
+            
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -858,6 +892,46 @@ namespace MainSystem.Accounting
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox2.Checked)
+            {
+                loadFeeDetails2();
+                dataFeeValue.ClearSelection();
+                btnUpdateFee.Enabled = false;
+            }
+            else
+            {
+                loadFeeDetails();
+                dataFeeValue.ClearSelection();
+                btnUpdateFee.Enabled = false;
+            }
+        }
+
+        private void newfrmAccount_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnref_Click(object sender, EventArgs e)
+        {
+            loadStudentProfileTable();
+            dataSearch.ClearSelection();
+            checkBox1.Checked = false;
+        }
+
+        private void newfrmAccount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void newfrmAccount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.F1)
+            {
+                btnref.PerformClick();
+            }
         }
     }
 }

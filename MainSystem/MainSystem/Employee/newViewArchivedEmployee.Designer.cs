@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
@@ -59,6 +59,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpEmployeeDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSearch)).BeginInit();
@@ -72,7 +74,7 @@
             this.txtFullName.BackColor = System.Drawing.Color.White;
             this.txtFullName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtFullName.Location = new System.Drawing.Point(152, 39);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.ReadOnly = true;
             this.txtFullName.Size = new System.Drawing.Size(324, 32);
@@ -111,7 +113,7 @@
             this.txtMaritalStatus.BackColor = System.Drawing.Color.White;
             this.txtMaritalStatus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtMaritalStatus.Location = new System.Drawing.Point(207, 242);
-            this.txtMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaritalStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaritalStatus.Name = "txtMaritalStatus";
             this.txtMaritalStatus.ReadOnly = true;
             this.txtMaritalStatus.Size = new System.Drawing.Size(261, 32);
@@ -137,7 +139,7 @@
             this.txtBirthPlace.BackColor = System.Drawing.Color.White;
             this.txtBirthPlace.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtBirthPlace.Location = new System.Drawing.Point(207, 80);
-            this.txtBirthPlace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBirthPlace.Margin = new System.Windows.Forms.Padding(4);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.ReadOnly = true;
             this.txtBirthPlace.Size = new System.Drawing.Size(261, 32);
@@ -163,7 +165,7 @@
             this.txtReligion.BackColor = System.Drawing.Color.White;
             this.txtReligion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtReligion.Location = new System.Drawing.Point(207, 202);
-            this.txtReligion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReligion.Margin = new System.Windows.Forms.Padding(4);
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.ReadOnly = true;
             this.txtReligion.Size = new System.Drawing.Size(261, 32);
@@ -189,7 +191,7 @@
             this.txtContactNo.BackColor = System.Drawing.Color.White;
             this.txtContactNo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtContactNo.Location = new System.Drawing.Point(207, 121);
-            this.txtContactNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContactNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.ReadOnly = true;
             this.txtContactNo.Size = new System.Drawing.Size(261, 32);
@@ -215,7 +217,7 @@
             this.txtSex.BackColor = System.Drawing.Color.White;
             this.txtSex.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtSex.Location = new System.Drawing.Point(207, 161);
-            this.txtSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSex.Margin = new System.Windows.Forms.Padding(4);
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
             this.txtSex.Size = new System.Drawing.Size(261, 32);
@@ -243,12 +245,12 @@
             this.btnEnable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
             this.btnEnable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
             this.btnEnable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnable.Font = new System.Drawing.Font("Bebas Neue", 18F);
+            this.btnEnable.Font = new System.Drawing.Font("Bebas Neue", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnable.ForeColor = System.Drawing.Color.Black;
-            this.btnEnable.Location = new System.Drawing.Point(933, 671);
-            this.btnEnable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEnable.Location = new System.Drawing.Point(847, 773);
+            this.btnEnable.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnable.Name = "btnEnable";
-            this.btnEnable.Size = new System.Drawing.Size(113, 46);
+            this.btnEnable.Size = new System.Drawing.Size(198, 59);
             this.btnEnable.TabIndex = 26;
             this.btnEnable.Text = "Enable";
             this.btnEnable.UseVisualStyleBackColor = false;
@@ -277,7 +279,7 @@
             "Active",
             "Inactive"});
             this.cmbStatus.Location = new System.Drawing.Point(152, 121);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(324, 32);
             this.cmbStatus.TabIndex = 23;
@@ -294,10 +296,10 @@
             this.grpEmployeeDetails.Controls.Add(this.lblFullName);
             this.grpEmployeeDetails.Font = new System.Drawing.Font("Bebas Neue", 14.25F);
             this.grpEmployeeDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.grpEmployeeDetails.Location = new System.Drawing.Point(16, 338);
-            this.grpEmployeeDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpEmployeeDetails.Location = new System.Drawing.Point(16, 450);
+            this.grpEmployeeDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpEmployeeDetails.Name = "grpEmployeeDetails";
-            this.grpEmployeeDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpEmployeeDetails.Padding = new System.Windows.Forms.Padding(4);
             this.grpEmployeeDetails.Size = new System.Drawing.Size(511, 321);
             this.grpEmployeeDetails.TabIndex = 24;
             this.grpEmployeeDetails.TabStop = false;
@@ -309,7 +311,7 @@
             this.txtPosition.BackColor = System.Drawing.Color.White;
             this.txtPosition.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtPosition.Location = new System.Drawing.Point(152, 80);
-            this.txtPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(4);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.ReadOnly = true;
             this.txtPosition.Size = new System.Drawing.Size(324, 32);
@@ -371,10 +373,10 @@
             this.grpPersonalDetails.Controls.Add(this.lblBirthDate);
             this.grpPersonalDetails.Font = new System.Drawing.Font("Bebas Neue", 14.25F);
             this.grpPersonalDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.grpPersonalDetails.Location = new System.Drawing.Point(536, 338);
-            this.grpPersonalDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpPersonalDetails.Location = new System.Drawing.Point(536, 450);
+            this.grpPersonalDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpPersonalDetails.Name = "grpPersonalDetails";
-            this.grpPersonalDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpPersonalDetails.Padding = new System.Windows.Forms.Padding(4);
             this.grpPersonalDetails.Size = new System.Drawing.Size(511, 321);
             this.grpPersonalDetails.TabIndex = 25;
             this.grpPersonalDetails.TabStop = false;
@@ -386,7 +388,7 @@
             this.txtBirthDate.BackColor = System.Drawing.Color.White;
             this.txtBirthDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.txtBirthDate.Location = new System.Drawing.Point(207, 39);
-            this.txtBirthDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBirthDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.ReadOnly = true;
             this.txtBirthDate.Size = new System.Drawing.Size(261, 32);
@@ -399,12 +401,12 @@
             this.btnDashboard.BackColor = System.Drawing.Color.DarkRed;
             this.btnDashboard.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnDashboard.Location = new System.Drawing.Point(933, 46);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDashboard.Location = new System.Drawing.Point(848, 0);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(133, 46);
+            this.btnDashboard.Size = new System.Drawing.Size(218, 67);
             this.btnDashboard.TabIndex = 23;
             this.btnDashboard.Text = "BACK";
             this.btnDashboard.UseVisualStyleBackColor = false;
@@ -413,8 +415,8 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(16, 87);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Location = new System.Drawing.Point(740, 88);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(307, 32);
             this.txtSearch.TabIndex = 21;
@@ -430,48 +432,48 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bebas Neue", 13.2F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 13.2F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 13.8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataSearch.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 13.8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataSearch.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataSearch.Location = new System.Drawing.Point(16, 128);
-            this.dataSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataSearch.Margin = new System.Windows.Forms.Padding(4);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSearch.Size = new System.Drawing.Size(1031, 203);
+            this.dataSearch.Size = new System.Drawing.Size(1031, 315);
             this.dataSearch.TabIndex = 22;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1067, 42);
+            this.panel1.Size = new System.Drawing.Size(634, 42);
             this.panel1.TabIndex = 37;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -491,12 +493,39 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "EMPLOYEE MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label1.Location = new System.Drawing.Point(66, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(503, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "EMPLOYEE MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label2.Location = new System.Drawing.Point(646, 85);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 36);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "SEARCH:";
+            // 
             // newViewArchivedEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1067, 731);
+            this.ClientSize = new System.Drawing.Size(1067, 843);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.lblLoggedinas);
@@ -506,11 +535,12 @@
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dataSearch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1082, 768);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1082, 890);
             this.Name = "newViewArchivedEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Archived Employee";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.newViewArchivedEmployee_FormClosing);
             this.Load += new System.EventHandler(this.newViewArchivedEmployee_Load);
             this.grpEmployeeDetails.ResumeLayout(false);
             this.grpEmployeeDetails.PerformLayout();
@@ -555,5 +585,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblSilaSchoolManagementSoftware;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

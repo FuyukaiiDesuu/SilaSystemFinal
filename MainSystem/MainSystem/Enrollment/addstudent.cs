@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace MainSystem
 {
@@ -284,6 +285,7 @@ namespace MainSystem
                         MessageBox.Show("Account For Student Created Successfully!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         reference.loadData();
                         reference.dataGridView1.ClearSelection();
+                        reference.btnUpdate.Enabled = false;
                         reference.textboxClear();
                         this.Close();
                     }
@@ -305,6 +307,7 @@ namespace MainSystem
                 reference.loadData();
                 reference.textboxClear();
                 reference.dataGridView1.ClearSelection();
+                reference.btnUpdate.Enabled = false;
             }
             
         }
@@ -421,6 +424,49 @@ namespace MainSystem
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtfn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtln_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtmn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtbp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtrel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtnn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void txtfn_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtfn_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9\s\b,.-]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                MessageBox.Show("The Text Must Can Only Consist Of Alphabets and Numbers, and The Characters: '-,.'", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
         }
     }
 }

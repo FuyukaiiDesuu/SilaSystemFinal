@@ -35,12 +35,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.searchtppending = new System.Windows.Forms.DateTimePicker();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.dgvpending = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnRLDDGVOID = new System.Windows.Forms.Button();
-            this.btnSRCDGVOID = new System.Windows.Forms.Button();
             this.searchtpvoided = new System.Windows.Forms.DateTimePicker();
             this.dgvvoid = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -59,6 +55,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.txtfeesearch = new System.Windows.Forms.TextBox();
             this.btnAddFee = new System.Windows.Forms.Button();
             this.btnUpdateFee = new System.Windows.Forms.Button();
@@ -66,9 +63,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnAddDisb = new System.Windows.Forms.Button();
-            this.btnreldb = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnsdb = new System.Windows.Forms.Button();
             this.searchtpexpense = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.btnViewPaymentHistory = new System.Windows.Forms.Button();
@@ -78,8 +73,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblsy = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
+            this.btnref = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.btnRLDDGVOID = new System.Windows.Forms.Button();
+            this.btnSRCDGVOID = new System.Windows.Forms.Button();
+            this.btnreldb = new System.Windows.Forms.Button();
+            this.btnsdb = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,10 +115,10 @@
             this.tabControl.Controls.Add(this.tabPage4);
             this.tabControl.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(8, 86);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1534, 752);
+            this.tabControl.Size = new System.Drawing.Size(1519, 720);
             this.tabControl.TabIndex = 13;
             // 
             // tabStudentTransaction
@@ -127,10 +130,10 @@
             this.tabStudentTransaction.Controls.Add(this.grpBalanceDetails);
             this.tabStudentTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.tabStudentTransaction.Location = new System.Drawing.Point(4, 41);
-            this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
-            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabStudentTransaction.Size = new System.Drawing.Size(1526, 707);
+            this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(1511, 675);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Account Mgmt.";
             this.tabStudentTransaction.Click += new System.EventHandler(this.tabStudentTransaction_Click);
@@ -143,10 +146,10 @@
             this.btnAddTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTransaction.Font = new System.Drawing.Font("Bebas Neue", 42F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.ForeColor = System.Drawing.Color.White;
-            this.btnAddTransaction.Location = new System.Drawing.Point(1115, 472);
-            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddTransaction.Location = new System.Drawing.Point(1101, 465);
+            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTransaction.Name = "btnAddTransaction";
-            this.btnAddTransaction.Size = new System.Drawing.Size(382, 216);
+            this.btnAddTransaction.Size = new System.Drawing.Size(382, 199);
             this.btnAddTransaction.TabIndex = 2;
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = false;
@@ -159,10 +162,10 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox2.Location = new System.Drawing.Point(648, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(633, 0);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(851, 448);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
@@ -178,7 +181,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(8, 36);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(836, 340);
@@ -195,9 +198,9 @@
             this.tabPage2.Controls.Add(this.button11);
             this.tabPage2.Controls.Add(this.dgvpending);
             this.tabPage2.Location = new System.Drawing.Point(4, 37);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(828, 299);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "PENDING";
@@ -207,42 +210,10 @@
             this.searchtppending.CalendarFont = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchtppending.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchtppending.Location = new System.Drawing.Point(8, 11);
-            this.searchtppending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchtppending.Margin = new System.Windows.Forms.Padding(4);
             this.searchtppending.Name = "searchtppending";
             this.searchtppending.Size = new System.Drawing.Size(373, 32);
             this.searchtppending.TabIndex = 4;
-            // 
-            // button10
-            // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button10.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(421, 11);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(24, 32);
-            this.button10.TabIndex = 33;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
-            // 
-            // button11
-            // 
-            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button11.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(389, 11);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(25, 32);
-            this.button11.TabIndex = 32;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // dgvpending
             // 
@@ -256,7 +227,7 @@
             this.dgvpending.ColumnHeadersHeight = 48;
             this.dgvpending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvpending.Location = new System.Drawing.Point(8, 51);
-            this.dgvpending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvpending.Margin = new System.Windows.Forms.Padding(4);
             this.dgvpending.Name = "dgvpending";
             this.dgvpending.RowHeadersVisible = false;
             this.dgvpending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -273,50 +244,18 @@
             this.tabPage3.Controls.Add(this.searchtpvoided);
             this.tabPage3.Controls.Add(this.dgvvoid);
             this.tabPage3.Location = new System.Drawing.Point(4, 37);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(828, 299);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "VOIDED";
-            // 
-            // btnRLDDGVOID
-            // 
-            this.btnRLDDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.btnRLDDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRLDDGVOID.Enabled = false;
-            this.btnRLDDGVOID.FlatAppearance.BorderSize = 0;
-            this.btnRLDDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRLDDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRLDDGVOID.Location = new System.Drawing.Point(421, 12);
-            this.btnRLDDGVOID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRLDDGVOID.Name = "btnRLDDGVOID";
-            this.btnRLDDGVOID.Size = new System.Drawing.Size(24, 32);
-            this.btnRLDDGVOID.TabIndex = 33;
-            this.btnRLDDGVOID.UseVisualStyleBackColor = true;
-            this.btnRLDDGVOID.Click += new System.EventHandler(this.btnRLDDGVOID_Click);
-            // 
-            // btnSRCDGVOID
-            // 
-            this.btnSRCDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.btnSRCDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSRCDGVOID.Enabled = false;
-            this.btnSRCDGVOID.FlatAppearance.BorderSize = 0;
-            this.btnSRCDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSRCDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSRCDGVOID.Location = new System.Drawing.Point(389, 12);
-            this.btnSRCDGVOID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSRCDGVOID.Name = "btnSRCDGVOID";
-            this.btnSRCDGVOID.Size = new System.Drawing.Size(24, 32);
-            this.btnSRCDGVOID.TabIndex = 32;
-            this.btnSRCDGVOID.UseVisualStyleBackColor = true;
-            this.btnSRCDGVOID.Click += new System.EventHandler(this.btnSRCDGVOID_Click);
             // 
             // searchtpvoided
             // 
             this.searchtpvoided.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchtpvoided.Location = new System.Drawing.Point(8, 11);
-            this.searchtpvoided.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchtpvoided.Margin = new System.Windows.Forms.Padding(4);
             this.searchtpvoided.Name = "searchtpvoided";
             this.searchtpvoided.Size = new System.Drawing.Size(373, 32);
             this.searchtpvoided.TabIndex = 3;
@@ -332,7 +271,7 @@
             this.dgvvoid.ColumnHeadersHeight = 48;
             this.dgvvoid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvvoid.Location = new System.Drawing.Point(8, 51);
-            this.dgvvoid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvvoid.Margin = new System.Windows.Forms.Padding(4);
             this.dgvvoid.Name = "dgvvoid";
             this.dgvvoid.ReadOnly = true;
             this.dgvvoid.RowHeadersVisible = false;
@@ -353,7 +292,7 @@
             this.button1.Font = new System.Drawing.Font("Bebas Neue", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(9, 381);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(449, 58);
             this.button1.TabIndex = 13;
@@ -376,10 +315,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.groupBox1.Location = new System.Drawing.Point(8, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(619, 444);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(604, 444);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account List";
@@ -389,7 +328,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(404, 32);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(199, 30);
             this.checkBox1.TabIndex = 55;
@@ -408,9 +347,9 @@
             this.btnEditAccount.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.ForeColor = System.Drawing.Color.White;
             this.btnEditAccount.Location = new System.Drawing.Point(404, 322);
-            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(208, 112);
+            this.btnEditAccount.Size = new System.Drawing.Size(193, 112);
             this.btnEditAccount.TabIndex = 3;
             this.btnEditAccount.Text = "View Statement Of Accounts";
             this.btnEditAccount.UseVisualStyleBackColor = false;
@@ -448,7 +387,7 @@
             this.txtfn.BackColor = System.Drawing.Color.White;
             this.txtfn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfn.Location = new System.Drawing.Point(155, 331);
-            this.txtfn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtfn.Margin = new System.Windows.Forms.Padding(4);
             this.txtfn.Name = "txtfn";
             this.txtfn.ReadOnly = true;
             this.txtfn.Size = new System.Drawing.Size(233, 32);
@@ -460,7 +399,7 @@
             this.txtdp.BackColor = System.Drawing.Color.White;
             this.txtdp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdp.Location = new System.Drawing.Point(155, 378);
-            this.txtdp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdp.Margin = new System.Windows.Forms.Padding(4);
             this.txtdp.Name = "txtdp";
             this.txtdp.ReadOnly = true;
             this.txtdp.Size = new System.Drawing.Size(233, 32);
@@ -478,12 +417,12 @@
             this.dataSearch.ColumnHeadersHeight = 45;
             this.dataSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataSearch.Location = new System.Drawing.Point(8, 74);
-            this.dataSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataSearch.Margin = new System.Windows.Forms.Padding(4);
             this.dataSearch.Name = "dataSearch";
             this.dataSearch.ReadOnly = true;
             this.dataSearch.RowHeadersVisible = false;
             this.dataSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSearch.Size = new System.Drawing.Size(604, 240);
+            this.dataSearch.Size = new System.Drawing.Size(589, 240);
             this.dataSearch.TabIndex = 44;
             this.dataSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellClick);
             this.dataSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearch_CellContentClick_1);
@@ -493,7 +432,7 @@
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(8, 32);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(288, 32);
             this.txtSearch.TabIndex = 43;
@@ -510,10 +449,10 @@
             this.grpBalanceDetails.Font = new System.Drawing.Font("Bebas Neue", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBalanceDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.grpBalanceDetails.Location = new System.Drawing.Point(8, 451);
-            this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
-            this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpBalanceDetails.Size = new System.Drawing.Size(1092, 250);
+            this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4);
+            this.grpBalanceDetails.Size = new System.Drawing.Size(1077, 218);
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance And Payment";
@@ -533,19 +472,19 @@
             this.dataBalanceDetails.ColumnHeadersHeight = 45;
             this.dataBalanceDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataBalanceDetails.Location = new System.Drawing.Point(8, 68);
-            this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dataBalanceDetails.Name = "dataBalanceDetails";
             this.dataBalanceDetails.ReadOnly = true;
             this.dataBalanceDetails.RowHeadersVisible = false;
             this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBalanceDetails.Size = new System.Drawing.Size(1075, 170);
+            this.dataBalanceDetails.Size = new System.Drawing.Size(1060, 138);
             this.dataBalanceDetails.TabIndex = 0;
             this.dataBalanceDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellContentClick);
             // 
             // searchpaymenttxtbox
             // 
             this.searchpaymenttxtbox.Location = new System.Drawing.Point(10, 26);
-            this.searchpaymenttxtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchpaymenttxtbox.Margin = new System.Windows.Forms.Padding(4);
             this.searchpaymenttxtbox.Name = "searchpaymenttxtbox";
             this.searchpaymenttxtbox.Size = new System.Drawing.Size(288, 34);
             this.searchpaymenttxtbox.TabIndex = 55;
@@ -557,10 +496,10 @@
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Location = new System.Drawing.Point(4, 41);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1526, 707);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(1511, 675);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Fee Mgmt.";
             // 
@@ -570,7 +509,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.button3.Location = new System.Drawing.Point(2576, 800);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(195, 46);
             this.button3.TabIndex = 37;
@@ -582,6 +521,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.txtfeesearch);
             this.groupBox3.Controls.Add(this.btnAddFee);
             this.groupBox3.Controls.Add(this.btnUpdateFee);
@@ -589,20 +529,31 @@
             this.groupBox3.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.groupBox3.Location = new System.Drawing.Point(8, 8);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(1541, 691);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(1495, 659);
             this.groupBox3.TabIndex = 41;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Fee Management";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(18, 40);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(147, 33);
+            this.checkBox2.TabIndex = 45;
+            this.checkBox2.Text = "Archived Fees";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // txtfeesearch
             // 
             this.txtfeesearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtfeesearch.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfeesearch.Location = new System.Drawing.Point(8, 36);
-            this.txtfeesearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtfeesearch.Location = new System.Drawing.Point(1178, 36);
+            this.txtfeesearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtfeesearch.Name = "txtfeesearch";
             this.txtfeesearch.Size = new System.Drawing.Size(309, 35);
             this.txtfeesearch.TabIndex = 44;
@@ -616,8 +567,8 @@
             this.btnAddFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFee.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFee.ForeColor = System.Drawing.Color.White;
-            this.btnAddFee.Location = new System.Drawing.Point(1131, 616);
-            this.btnAddFee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddFee.Location = new System.Drawing.Point(1085, 586);
+            this.btnAddFee.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddFee.Name = "btnAddFee";
             this.btnAddFee.Size = new System.Drawing.Size(195, 65);
             this.btnAddFee.TabIndex = 5;
@@ -634,7 +585,7 @@
             this.btnUpdateFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateFee.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateFee.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateFee.Location = new System.Drawing.Point(1332, 615);
+            this.btnUpdateFee.Location = new System.Drawing.Point(1286, 584);
             this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateFee.Name = "btnUpdateFee";
             this.btnUpdateFee.Size = new System.Drawing.Size(201, 66);
@@ -657,11 +608,11 @@
             this.dataFeeValue.ColumnHeadersHeight = 40;
             this.dataFeeValue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataFeeValue.Location = new System.Drawing.Point(8, 79);
-            this.dataFeeValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataFeeValue.Margin = new System.Windows.Forms.Padding(4);
             this.dataFeeValue.Name = "dataFeeValue";
             this.dataFeeValue.RowHeadersVisible = false;
             this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(1525, 530);
+            this.dataFeeValue.Size = new System.Drawing.Size(1479, 498);
             this.dataFeeValue.TabIndex = 7;
             this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
             this.dataFeeValue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellContentClick);
@@ -673,7 +624,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 41);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1526, 707);
+            this.tabPage4.Size = new System.Drawing.Size(1511, 675);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Disbursement Mgmt.";
             // 
@@ -690,9 +641,9 @@
             this.groupBox4.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.groupBox4.Location = new System.Drawing.Point(11, 11);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(1541, 681);
             this.groupBox4.TabIndex = 43;
             this.groupBox4.TabStop = false;
@@ -707,29 +658,13 @@
             this.btnAddDisb.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDisb.ForeColor = System.Drawing.Color.White;
             this.btnAddDisb.Location = new System.Drawing.Point(1219, 602);
-            this.btnAddDisb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddDisb.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddDisb.Name = "btnAddDisb";
             this.btnAddDisb.Size = new System.Drawing.Size(314, 69);
             this.btnAddDisb.TabIndex = 36;
             this.btnAddDisb.Text = "Create Voucher";
             this.btnAddDisb.UseVisualStyleBackColor = false;
             this.btnAddDisb.Click += new System.EventHandler(this.btnAddDisb_Click);
-            // 
-            // btnreldb
-            // 
-            this.btnreldb.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
-            this.btnreldb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnreldb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnreldb.FlatAppearance.BorderSize = 0;
-            this.btnreldb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreldb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreldb.Location = new System.Drawing.Point(435, 35);
-            this.btnreldb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnreldb.Name = "btnreldb";
-            this.btnreldb.Size = new System.Drawing.Size(32, 31);
-            this.btnreldb.TabIndex = 40;
-            this.btnreldb.UseVisualStyleBackColor = true;
-            this.btnreldb.Click += new System.EventHandler(this.btnreldb_Click);
             // 
             // dataGridView1
             // 
@@ -745,35 +680,19 @@
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Location = new System.Drawing.Point(8, 75);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1525, 520);
             this.dataGridView1.TabIndex = 35;
             // 
-            // btnsdb
-            // 
-            this.btnsdb.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
-            this.btnsdb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnsdb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnsdb.FlatAppearance.BorderSize = 0;
-            this.btnsdb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsdb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsdb.Location = new System.Drawing.Point(394, 35);
-            this.btnsdb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnsdb.Name = "btnsdb";
-            this.btnsdb.Size = new System.Drawing.Size(32, 31);
-            this.btnsdb.TabIndex = 39;
-            this.btnsdb.UseVisualStyleBackColor = true;
-            this.btnsdb.Click += new System.EventHandler(this.btnsdb_Click);
-            // 
             // searchtpexpense
             // 
             this.searchtpexpense.CalendarFont = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchtpexpense.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchtpexpense.Location = new System.Drawing.Point(8, 35);
-            this.searchtpexpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchtpexpense.Margin = new System.Windows.Forms.Padding(4);
             this.searchtpexpense.Name = "searchtpexpense";
             this.searchtpexpense.Size = new System.Drawing.Size(379, 32);
             this.searchtpexpense.TabIndex = 38;
@@ -809,7 +728,7 @@
             this.btnViewPaymentHistory.Location = new System.Drawing.Point(1024, 40);
             this.btnViewPaymentHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewPaymentHistory.Name = "btnViewPaymentHistory";
-            this.btnViewPaymentHistory.Size = new System.Drawing.Size(328, 60);
+            this.btnViewPaymentHistory.Size = new System.Drawing.Size(328, 61);
             this.btnViewPaymentHistory.TabIndex = 5;
             this.btnViewPaymentHistory.Text = "View Payment History";
             this.btnViewPaymentHistory.UseVisualStyleBackColor = false;
@@ -824,7 +743,7 @@
             this.btnDashboard.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnDashboard.Location = new System.Drawing.Point(1358, 41);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(184, 58);
             this.btnDashboard.TabIndex = 7;
@@ -864,7 +783,7 @@
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1540, 39);
             this.panel1.TabIndex = 41;
@@ -898,17 +817,6 @@
             this.lblsy.TabIndex = 2;
             this.lblsy.Text = "S.Y ";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // lblSilaSchoolManagementSoftware
             // 
             this.lblSilaSchoolManagementSoftware.AutoSize = true;
@@ -922,6 +830,142 @@
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
+            // btnref
+            // 
+            this.btnref.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnref.BackgroundImage = global::MainSystem.Properties.Resources.refresh1;
+            this.btnref.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnref.FlatAppearance.BorderSize = 0;
+            this.btnref.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnref.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnref.Location = new System.Drawing.Point(622, 45);
+            this.btnref.Margin = new System.Windows.Forms.Padding(4);
+            this.btnref.Name = "btnref";
+            this.btnref.Size = new System.Drawing.Size(72, 54);
+            this.btnref.TabIndex = 34;
+            this.btnref.UseVisualStyleBackColor = true;
+            this.btnref.Click += new System.EventHandler(this.btnref_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 39);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button10
+            // 
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button10.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(421, 11);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(24, 32);
+            this.button10.TabIndex = 33;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
+            // button11
+            // 
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button11.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(389, 11);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(25, 32);
+            this.button11.TabIndex = 32;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // btnRLDDGVOID
+            // 
+            this.btnRLDDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.btnRLDDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRLDDGVOID.Enabled = false;
+            this.btnRLDDGVOID.FlatAppearance.BorderSize = 0;
+            this.btnRLDDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRLDDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRLDDGVOID.Location = new System.Drawing.Point(421, 12);
+            this.btnRLDDGVOID.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRLDDGVOID.Name = "btnRLDDGVOID";
+            this.btnRLDDGVOID.Size = new System.Drawing.Size(24, 32);
+            this.btnRLDDGVOID.TabIndex = 33;
+            this.btnRLDDGVOID.UseVisualStyleBackColor = true;
+            this.btnRLDDGVOID.Click += new System.EventHandler(this.btnRLDDGVOID_Click);
+            // 
+            // btnSRCDGVOID
+            // 
+            this.btnSRCDGVOID.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.btnSRCDGVOID.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSRCDGVOID.Enabled = false;
+            this.btnSRCDGVOID.FlatAppearance.BorderSize = 0;
+            this.btnSRCDGVOID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSRCDGVOID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSRCDGVOID.Location = new System.Drawing.Point(389, 12);
+            this.btnSRCDGVOID.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSRCDGVOID.Name = "btnSRCDGVOID";
+            this.btnSRCDGVOID.Size = new System.Drawing.Size(24, 32);
+            this.btnSRCDGVOID.TabIndex = 32;
+            this.btnSRCDGVOID.UseVisualStyleBackColor = true;
+            this.btnSRCDGVOID.Click += new System.EventHandler(this.btnSRCDGVOID_Click);
+            // 
+            // btnreldb
+            // 
+            this.btnreldb.BackgroundImage = global::MainSystem.Properties.Resources.refresh;
+            this.btnreldb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnreldb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnreldb.FlatAppearance.BorderSize = 0;
+            this.btnreldb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreldb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreldb.Location = new System.Drawing.Point(435, 35);
+            this.btnreldb.Margin = new System.Windows.Forms.Padding(4);
+            this.btnreldb.Name = "btnreldb";
+            this.btnreldb.Size = new System.Drawing.Size(32, 31);
+            this.btnreldb.TabIndex = 40;
+            this.btnreldb.UseVisualStyleBackColor = true;
+            this.btnreldb.Click += new System.EventHandler(this.btnreldb_Click);
+            // 
+            // btnsdb
+            // 
+            this.btnsdb.BackgroundImage = global::MainSystem.Properties.Resources.magnifying_glass1;
+            this.btnsdb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnsdb.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.btnsdb.FlatAppearance.BorderSize = 0;
+            this.btnsdb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsdb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsdb.Location = new System.Drawing.Point(394, 35);
+            this.btnsdb.Margin = new System.Windows.Forms.Padding(4);
+            this.btnsdb.Name = "btnsdb";
+            this.btnsdb.Size = new System.Drawing.Size(32, 31);
+            this.btnsdb.TabIndex = 39;
+            this.btnsdb.UseVisualStyleBackColor = true;
+            this.btnsdb.Click += new System.EventHandler(this.btnsdb_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label4.Location = new System.Drawing.Point(522, 59);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 23);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "REFRESH: ";
+            // 
             // newfrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -929,6 +973,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1540, 845);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnref);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnViewPaymentHistory);
@@ -936,11 +982,14 @@
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.lblLoggedinas);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "newfrmAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounting Management";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.newfrmAccount_FormClosing);
             this.Load += new System.EventHandler(this.newfrmAccount_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.newfrmAccount_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.newfrmAccount_KeyPress);
             this.tabControl.ResumeLayout(false);
             this.tabStudentTransaction.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -1024,5 +1073,8 @@
         private System.Windows.Forms.Button btnRLDDGVOID;
         private System.Windows.Forms.Button btnSRCDGVOID;
         private System.Windows.Forms.DateTimePicker searchtpvoided;
+        public System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button btnref;
+        private System.Windows.Forms.Label label4;
     }
 }

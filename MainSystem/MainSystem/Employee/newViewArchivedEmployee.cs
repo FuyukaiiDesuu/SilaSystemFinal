@@ -152,5 +152,10 @@ namespace MainSystem.Employee
         {
             archivedemployeeDisplay.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, txtSearch.Text);
         }
+
+        private void newViewArchivedEmployee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -97,7 +97,7 @@ namespace MainSystem
             {
                 reference.Show();
                 dbconnection.Close();
-                this.Close();
+                this.Dispose();
             }
         }
 
@@ -124,7 +124,7 @@ namespace MainSystem
                     studdet.Add("dept", "Grade-school");
                     break;
                 case "3":
-                    studdet.Add("dept", "Junior-Higschool");
+                    studdet.Add("dept", "Junior-Highschool");
                     break;
                 case "4":
                     studdet.Add("dept", "Senior-Highschool");
@@ -318,10 +318,18 @@ namespace MainSystem
         public editStudent esform;
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            esform = new editStudent(studid2, injector(), imgpath);
-            esform.syear = lblsy.Text;
-            esform.Show();
-            esform.reference = this;
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                esform = new editStudent(studid2, injector(), imgpath);
+                esform.syear = lblsy.Text;
+                esform.Show();
+                esform.reference = this;
+            }
+            else
+            {
+                MessageBox.Show("There Are No Students Currently Selected!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             //this.Hide();
         }
         public viewForm vf;
@@ -381,6 +389,11 @@ namespace MainSystem
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EnrollmentConsole_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

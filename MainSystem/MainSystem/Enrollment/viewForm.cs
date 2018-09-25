@@ -152,10 +152,13 @@ namespace MainSystem
         string ayd;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ayd = dataGridView1.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
-            txtstatus.Text = chkstatus(dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
-            buttonEnable(dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
-            dataGridView2.ClearSelection();
+            if(e.RowIndex >= 0)
+            {
+                ayd = dataGridView1.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
+                txtstatus.Text = chkstatus(dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
+                buttonEnable(dataGridView1.Rows[e.RowIndex].Cells["Status"].Value.ToString());
+                dataGridView2.ClearSelection();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -214,10 +217,13 @@ namespace MainSystem
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ayd = dataGridView2.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
-            txtstatus.Text = chkstatus(dataGridView2.Rows[e.RowIndex].Cells["Status"].Value.ToString());
-            buttonEnable(dataGridView2.Rows[e.RowIndex].Cells["Status"].Value.ToString());
-            dataGridView1.ClearSelection();
+            if(e.RowIndex >= 0)
+            {
+                ayd = dataGridView2.Rows[e.RowIndex].Cells["idstudentprofile"].Value.ToString();
+                txtstatus.Text = chkstatus(dataGridView2.Rows[e.RowIndex].Cells["Status"].Value.ToString());
+                buttonEnable(dataGridView2.Rows[e.RowIndex].Cells["Status"].Value.ToString());
+                dataGridView1.ClearSelection();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

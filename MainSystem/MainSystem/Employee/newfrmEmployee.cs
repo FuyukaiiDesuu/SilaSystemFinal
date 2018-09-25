@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace MainSystem.Employee
 {
@@ -102,7 +103,7 @@ namespace MainSystem.Employee
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Close();
+            this.Dispose();
         }
 
         public Employee.newfrmAddEmployee addemp;
@@ -117,24 +118,32 @@ namespace MainSystem.Employee
         public Employee.newfrmEditEmployee editemp;
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            editemp = new Employee.newfrmEditEmployee();
-            editemp.userID = userID;
-            editemp.id = empID;
-            editemp.firstname = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString(); 
-            editemp.lastname = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
-            editemp.middlename = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
-            editemp.birthdate = txtBirthDate.Text;
-            editemp.birthplace = txtBirthPlace.Text;
-            editemp.contactno = txtContactNo.Text;
-            editemp.sex = txtSex.Text;
-            editemp.religion = txtReligion.Text;
-            editemp.maritalstatus = txtMaritalStatus.Text;
-            editemp.status = txtStatus.Text;
-            editemp.position = txtPosition.Text;
+            if(dataSearch.SelectedRows.Count > 0)
+            {
+                editemp = new Employee.newfrmEditEmployee();
+                editemp.userID = userID;
+                editemp.id = empID;
+                editemp.firstname = dataSearch.SelectedRows[0].Cells["first_name"].Value.ToString();
+                editemp.lastname = dataSearch.SelectedRows[0].Cells["last_name"].Value.ToString();
+                editemp.middlename = dataSearch.SelectedRows[0].Cells["middle_name"].Value.ToString();
+                editemp.birthdate = txtBirthDate.Text;
+                editemp.birthplace = txtBirthPlace.Text;
+                editemp.contactno = txtContactNo.Text;
+                editemp.sex = txtSex.Text;
+                editemp.religion = txtReligion.Text;
+                editemp.maritalstatus = txtMaritalStatus.Text;
+                editemp.status = txtStatus.Text;
+                editemp.position = txtPosition.Text;
 
-            editemp.Show();
-            editemp.reference = this;
-            this.Hide();
+                editemp.Show();
+                editemp.reference = this;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("There Are No Employees Currently Selected!", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         public void clearText()
@@ -167,6 +176,21 @@ namespace MainSystem.Employee
             viewemp.Show();
             viewemp.reference = this;
             this.Hide();
+        }
+
+        private void newfrmEmployee_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9\s\b,.-]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                MessageBox.Show("The Text Must Can Only Consist Of Alphabets and Numbers, and The Characters: '-,.'", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
+            }
         }
     }
 }

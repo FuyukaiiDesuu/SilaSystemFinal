@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MainSystem
@@ -216,6 +217,7 @@ namespace MainSystem
                 this.Close();
                 reference.dataGridView1.ClearSelection();
                 reference.textboxClear();
+                reference.btnUpdate.Enabled = false;
                 reference.Show();
                 
             }
@@ -274,6 +276,7 @@ namespace MainSystem
                             MessageBox.Show("Records Succesfully Altered!");
                             reference.loadData();
                             reference.dataGridView1.ClearSelection();
+                            reference.btnUpdate.Enabled = false;
                             reference.textboxClear();
                             this.Close();
                         }
@@ -347,6 +350,16 @@ namespace MainSystem
                 pictureBox1.Image = new Bitmap(open.FileName);
                 imgpath = open.FileName;
                 // image file path  
+            }
+        }
+
+        private void txtfn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var regex = new Regex(@"[^a-zA-Z0-9\s\b,.-]");
+            if (regex.IsMatch(e.KeyChar.ToString()))
+            {
+                MessageBox.Show("The Text Must Can Only Consist Of Alphabets and Numbers, and The Characters: '-,.'", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Handled = true;
             }
         }
     }
