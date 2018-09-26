@@ -60,6 +60,7 @@
             this.lblLoggedinas = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblsy = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.adddetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnremovecart = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.grpNewPayment.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -109,7 +109,7 @@
             this.grpNewPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.grpNewPayment.Location = new System.Drawing.Point(10, 62);
             this.grpNewPayment.Name = "grpNewPayment";
-            this.grpNewPayment.Size = new System.Drawing.Size(740, 333);
+            this.grpNewPayment.Size = new System.Drawing.Size(740, 287);
             this.grpNewPayment.TabIndex = 9;
             this.grpNewPayment.TabStop = false;
             this.grpNewPayment.Text = "Transaction Details";
@@ -129,10 +129,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGreen;
-            this.label3.Location = new System.Drawing.Point(422, 180);
+            this.label3.Location = new System.Drawing.Point(422, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(231, 25);
             this.label3.TabIndex = 27;
@@ -140,8 +141,9 @@
             // 
             // txtSubTotal
             // 
+            this.txtSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSubTotal.Font = new System.Drawing.Font("Tahoma", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubTotal.Location = new System.Drawing.Point(395, 208);
+            this.txtSubTotal.Location = new System.Drawing.Point(395, 162);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.Size = new System.Drawing.Size(299, 46);
             this.txtSubTotal.TabIndex = 27;
@@ -151,7 +153,7 @@
             // 
             // btnADDTOCART
             // 
-            this.btnADDTOCART.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnADDTOCART.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnADDTOCART.BackColor = System.Drawing.Color.DarkGreen;
             this.btnADDTOCART.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
             this.btnADDTOCART.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -159,7 +161,7 @@
             this.btnADDTOCART.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnADDTOCART.Font = new System.Drawing.Font("Bebas Neue", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnADDTOCART.ForeColor = System.Drawing.Color.White;
-            this.btnADDTOCART.Location = new System.Drawing.Point(396, 266);
+            this.btnADDTOCART.Location = new System.Drawing.Point(396, 220);
             this.btnADDTOCART.Name = "btnADDTOCART";
             this.btnADDTOCART.Size = new System.Drawing.Size(298, 49);
             this.btnADDTOCART.TabIndex = 25;
@@ -174,7 +176,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(42, 244);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 26);
+            this.label1.Size = new System.Drawing.Size(106, 26);
             this.label1.TabIndex = 24;
             this.label1.Text = "School Year:";
             // 
@@ -193,10 +195,10 @@
             // txtAdditionalDetails
             // 
             this.txtAdditionalDetails.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdditionalDetails.Location = new System.Drawing.Point(373, 69);
+            this.txtAdditionalDetails.Location = new System.Drawing.Point(373, 59);
             this.txtAdditionalDetails.Multiline = true;
             this.txtAdditionalDetails.Name = "txtAdditionalDetails";
-            this.txtAdditionalDetails.Size = new System.Drawing.Size(344, 97);
+            this.txtAdditionalDetails.Size = new System.Drawing.Size(344, 62);
             this.txtAdditionalDetails.TabIndex = 8;
             this.txtAdditionalDetails.Text = "NONE";
             // 
@@ -205,9 +207,9 @@
             this.lblAddtionalDetails.AutoSize = true;
             this.lblAddtionalDetails.Font = new System.Drawing.Font("Bebas Neue", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddtionalDetails.ForeColor = System.Drawing.Color.White;
-            this.lblAddtionalDetails.Location = new System.Drawing.Point(370, 40);
+            this.lblAddtionalDetails.Location = new System.Drawing.Point(370, 30);
             this.lblAddtionalDetails.Name = "lblAddtionalDetails";
-            this.lblAddtionalDetails.Size = new System.Drawing.Size(148, 26);
+            this.lblAddtionalDetails.Size = new System.Drawing.Size(151, 26);
             this.lblAddtionalDetails.TabIndex = 15;
             this.lblAddtionalDetails.Text = "Additional Details:";
             // 
@@ -300,7 +302,7 @@
             this.lblChequeNo.ForeColor = System.Drawing.Color.White;
             this.lblChequeNo.Location = new System.Drawing.Point(56, 139);
             this.lblChequeNo.Name = "lblChequeNo";
-            this.lblChequeNo.Size = new System.Drawing.Size(88, 26);
+            this.lblChequeNo.Size = new System.Drawing.Size(89, 26);
             this.lblChequeNo.TabIndex = 3;
             this.lblChequeNo.Text = "Cheque No:";
             // 
@@ -322,7 +324,7 @@
             this.lblStudentName.ForeColor = System.Drawing.Color.White;
             this.lblStudentName.Location = new System.Drawing.Point(30, 72);
             this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(116, 26);
+            this.lblStudentName.Size = new System.Drawing.Size(117, 26);
             this.lblStudentName.TabIndex = 1;
             this.lblStudentName.Text = "Student Name:";
             // 
@@ -333,7 +335,7 @@
             this.lblTransactionNo.ForeColor = System.Drawing.Color.White;
             this.lblTransactionNo.Location = new System.Drawing.Point(19, 40);
             this.lblTransactionNo.Name = "lblTransactionNo";
-            this.lblTransactionNo.Size = new System.Drawing.Size(127, 26);
+            this.lblTransactionNo.Size = new System.Drawing.Size(128, 26);
             this.lblTransactionNo.TabIndex = 0;
             this.lblTransactionNo.Text = "Transaction No:";
             // 
@@ -344,7 +346,7 @@
             this.panel2.Controls.Add(this.txtAmount);
             this.panel2.Controls.Add(this.txttendered);
             this.panel2.Controls.Add(this.lblAmount);
-            this.panel2.Location = new System.Drawing.Point(10, 683);
+            this.panel2.Location = new System.Drawing.Point(10, 608);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(362, 162);
@@ -402,7 +404,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Bebas Neue", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnCancel.Location = new System.Drawing.Point(385, 774);
+            this.btnCancel.Location = new System.Drawing.Point(384, 704);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(365, 63);
             this.btnCancel.TabIndex = 10;
@@ -417,7 +419,7 @@
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Bebas Neue", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.Black;
-            this.btnPay.Location = new System.Drawing.Point(385, 683);
+            this.btnPay.Location = new System.Drawing.Point(382, 609);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(365, 87);
             this.btnPay.TabIndex = 9;
@@ -463,6 +465,18 @@
             this.panel1.Size = new System.Drawing.Size(764, 31);
             this.panel1.TabIndex = 42;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label4.Location = new System.Drawing.Point(554, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 23);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "CURRENT S.Y";
+            // 
             // lblsy
             // 
             this.lblsy.AutoSize = true;
@@ -471,7 +485,7 @@
             this.lblsy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.lblsy.Location = new System.Drawing.Point(633, 5);
             this.lblsy.Name = "lblsy";
-            this.lblsy.Size = new System.Drawing.Size(30, 23);
+            this.lblsy.Size = new System.Drawing.Size(29, 23);
             this.lblsy.TabIndex = 2;
             this.lblsy.Text = "S.Y ";
             // 
@@ -493,7 +507,7 @@
             this.lblSilaSchoolManagementSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.lblSilaSchoolManagementSoftware.Location = new System.Drawing.Point(48, 5);
             this.lblSilaSchoolManagementSoftware.Name = "lblSilaSchoolManagementSoftware";
-            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(409, 23);
+            this.lblSilaSchoolManagementSoftware.Size = new System.Drawing.Size(411, 23);
             this.lblSilaSchoolManagementSoftware.TabIndex = 0;
             this.lblSilaSchoolManagementSoftware.Text = "ACCOUNTING MANAGEMENT - S.I.L.A SCHOOL MANAGEMENT SOFTWARE";
             // 
@@ -518,12 +532,12 @@
             this.syear,
             this.pdate,
             this.adddetails});
-            this.dgvcart.Location = new System.Drawing.Point(6, 32);
+            this.dgvcart.Location = new System.Drawing.Point(6, 14);
             this.dgvcart.Name = "dgvcart";
             this.dgvcart.ReadOnly = true;
             this.dgvcart.RowHeadersVisible = false;
             this.dgvcart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcart.Size = new System.Drawing.Size(722, 190);
+            this.dgvcart.Size = new System.Drawing.Size(722, 173);
             this.dgvcart.TabIndex = 45;
             // 
             // tno
@@ -590,9 +604,9 @@
             this.groupBox1.Controls.Add(this.dgvcart);
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.groupBox1.Location = new System.Drawing.Point(10, 401);
+            this.groupBox1.Location = new System.Drawing.Point(10, 355);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(737, 276);
+            this.groupBox1.Size = new System.Drawing.Size(737, 241);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TRANSACTION/S TO CHECKOUT";
@@ -604,7 +618,7 @@
             this.btnremovecart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnremovecart.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnremovecart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnremovecart.Location = new System.Drawing.Point(6, 228);
+            this.btnremovecart.Location = new System.Drawing.Point(5, 191);
             this.btnremovecart.Name = "btnremovecart";
             this.btnremovecart.Size = new System.Drawing.Size(219, 42);
             this.btnremovecart.TabIndex = 47;
@@ -612,25 +626,13 @@
             this.btnremovecart.UseVisualStyleBackColor = false;
             this.btnremovecart.Click += new System.EventHandler(this.btnremovecart_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label4.Location = new System.Drawing.Point(554, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 23);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "CURRENT S.Y";
-            // 
             // newfrmAddTransaction
             // 
             this.AcceptButton = this.btnPay;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(764, 851);
+            this.ClientSize = new System.Drawing.Size(764, 780);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblLoggedinas);

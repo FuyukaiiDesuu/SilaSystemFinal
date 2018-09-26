@@ -24,13 +24,15 @@ namespace MainSystem
         {
             InitializeComponent();
             DataGridViewCheckBoxColumn cbclm = new DataGridViewCheckBoxColumn();
+            cbclm.ReadOnly = false;
             cbclm.HeaderText = "Select";
             dataGridView1.Columns.Add(cbclm);
             dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 14f);
             dataGridView2.DefaultCellStyle.Font = new Font("Tahoma", 14f);
             loadData();
             loadData2();
-            
+           
+
         }
         public void loadSearch()
         {
@@ -45,7 +47,6 @@ namespace MainSystem
                 DataSet data = new DataSet();
                 ad.Fill(data);
                 dataGridView2.DataSource = data.Tables[0];
-
                 dataGridView2.Columns["idstudentprofile"].Visible = true;
                 dataGridView2.Columns["FirstName"].Visible = true;
                 dataGridView2.Columns["LastName"].Visible = true;
@@ -62,7 +63,7 @@ namespace MainSystem
                 dataGridView2.Columns["school_year"].Visible = false;
                 dataGridView2.Columns["idstddet"].Visible = false;
                 dataGridView2.Columns["section"].Visible = true;
-
+                
                 dataGridView2.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView2.Columns["FirstName"].HeaderText = "First Name";
                 dataGridView2.Columns["LastName"].HeaderText = "Last Name";
@@ -103,7 +104,7 @@ namespace MainSystem
                 DataSet data = new DataSet();
                 ad.Fill(data);
                 dataGridView1.DataSource = data.Tables[0];
-
+                
                 dataGridView1.Columns["idstudentprofile"].Visible = true;
                 dataGridView1.Columns["FirstName"].Visible = true;
                 dataGridView1.Columns["LastName"].Visible = true;
@@ -122,6 +123,25 @@ namespace MainSystem
                 dataGridView1.Columns["section"].Visible = true;
                 dataGridView1.Columns["sectionid"].Visible = false ;
                 dataGridView1.Columns["image_path"].Visible = false ;
+
+                dataGridView1.Columns["idstudentprofile"].ReadOnly = true;
+                dataGridView1.Columns["FirstName"].ReadOnly = true;
+                dataGridView1.Columns["LastName"].ReadOnly = true;
+                dataGridView1.Columns["MiddleName"].ReadOnly = true;
+                dataGridView1.Columns["DateOfBirth"].ReadOnly = true;
+                dataGridView1.Columns["PlaceOfBirth"].ReadOnly = true;
+                dataGridView1.Columns["Sex"].ReadOnly = true;
+                dataGridView1.Columns["Religion"].ReadOnly = true;
+                dataGridView1.Columns["Nickname"].ReadOnly = true;
+                dataGridView1.Columns["idstuddet"].ReadOnly = true;
+                dataGridView1.Columns["Status"].ReadOnly = true;
+                dataGridView1.Columns["department"].ReadOnly = true;
+                dataGridView1.Columns["level"].ReadOnly = true;
+                dataGridView1.Columns["school_year"].ReadOnly = true;
+                dataGridView1.Columns["idstddet"].ReadOnly = true;
+                dataGridView1.Columns["section"].ReadOnly = true;
+                dataGridView1.Columns["sectionid"].ReadOnly = true;
+                dataGridView1.Columns["image_path"].ReadOnly = true;
 
                 dataGridView1.Columns["idstudentprofile"].HeaderText = "Student ID No.";
                 dataGridView1.Columns["level_dummyval"].HeaderText = "Level";
@@ -351,6 +371,11 @@ namespace MainSystem
          "OR level_dummyval LIKE '%{0}' " +
          "OR section LIKE '%{0}%'", textBox1.Text);
             dataGridView1.ClearSelection();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

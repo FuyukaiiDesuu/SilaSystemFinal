@@ -519,6 +519,7 @@ namespace MainSystem.Accounting
                             dicforsoaform.Add("level", txtlvl.Text);
                             soaform.reference = this;
                             soaform = new SOAccount(dicforsoaform);
+                            soaform.reference = this;
                             soaform.syear = lblsy.Text;
                             soaform.Show();
                         }

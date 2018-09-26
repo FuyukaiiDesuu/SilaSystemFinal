@@ -15,6 +15,7 @@ namespace MainSystem.Accounting
         public newfrmEditAccount reference { get; set; }
         public string syear { get; set; }
         public IDictionary<string, string> dic;
+        public newfrmEditAccount reference { get; set; }
         public SOAccount(IDictionary<string, string> d)
         {
             InitializeComponent();
