@@ -23,7 +23,7 @@ namespace MainSystem
         public FormLogin()
         {
             InitializeComponent();
-            dbconnect = new MySqlConnection("Server=localhost;Database=silasystemdb;Uid=root;Pwd=root;");
+            dbconnect = new MySqlConnection("Server=169.254.182.2;Database=silasystemdb;Uid=dominic;Pwd=root;");
             getsyear();
             dbconnect.Open();
         }

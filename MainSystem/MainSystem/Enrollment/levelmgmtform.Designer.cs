@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnupdate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -53,10 +53,9 @@
             this.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnupdate.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.Color.White;
-            this.btnupdate.Location = new System.Drawing.Point(1246, 785);
-            this.btnupdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnupdate.Location = new System.Drawing.Point(790, 544);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(296, 94);
+            this.btnupdate.Size = new System.Drawing.Size(222, 76);
             this.btnupdate.TabIndex = 11;
             this.btnupdate.Text = "UPDATE SELECTED";
             this.btnupdate.UseVisualStyleBackColor = false;
@@ -73,29 +72,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bebas Neue", 15.75F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bebas Neue", 15.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bebas Neue", 15.75F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 137);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bebas Neue", 15.75F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 111);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1526, 639);
+            this.dataGridView1.Size = new System.Drawing.Size(1000, 427);
             this.dataGridView1.TabIndex = 10;
             // 
             // comboBox1
@@ -110,10 +108,9 @@
             "Grade-school",
             "Junior-Highschool",
             "Senior-Highschool"});
-            this.comboBox1.Location = new System.Drawing.Point(275, 786);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(189, 544);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 37);
+            this.comboBox1.Size = new System.Drawing.Size(155, 31);
             this.comboBox1.TabIndex = 51;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
@@ -127,10 +124,9 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "PLEASE SELECT DEPARTMENT ABOVE FIRST"});
-            this.comboBox2.Location = new System.Drawing.Point(275, 836);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Location = new System.Drawing.Point(189, 587);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(205, 37);
+            this.comboBox2.Size = new System.Drawing.Size(155, 31);
             this.comboBox2.TabIndex = 52;
             // 
             // checkBox1
@@ -138,10 +134,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Bebas Neue", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.checkBox1.Location = new System.Drawing.Point(16, 84);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox1.Location = new System.Drawing.Point(12, 68);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(159, 45);
+            this.checkBox1.Size = new System.Drawing.Size(126, 36);
             this.checkBox1.TabIndex = 53;
             this.checkBox1.Text = "SELECT ALL";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -153,10 +148,9 @@
             this.Department.AutoSize = true;
             this.Department.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Department.ForeColor = System.Drawing.Color.White;
-            this.Department.Location = new System.Drawing.Point(39, 788);
-            this.Department.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Department.Location = new System.Drawing.Point(12, 546);
             this.Department.Name = "Department";
-            this.Department.Size = new System.Drawing.Size(211, 36);
+            this.Department.Size = new System.Drawing.Size(171, 29);
             this.Department.TabIndex = 54;
             this.Department.Text = "Select Department:";
             // 
@@ -166,10 +160,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(109, 841);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(12, 589);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 36);
+            this.label9.Size = new System.Drawing.Size(118, 29);
             this.label9.TabIndex = 55;
             this.label9.Text = "Select Level:";
             // 
@@ -181,10 +174,9 @@
             this.btnbackhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbackhome.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbackhome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.btnbackhome.Location = new System.Drawing.Point(1249, 11);
-            this.btnbackhome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnbackhome.Location = new System.Drawing.Point(790, 12);
             this.btnbackhome.Name = "btnbackhome";
-            this.btnbackhome.Size = new System.Drawing.Size(296, 70);
+            this.btnbackhome.Size = new System.Drawing.Size(222, 57);
             this.btnbackhome.TabIndex = 56;
             this.btnbackhome.Text = "GO BACK";
             this.btnbackhome.UseVisualStyleBackColor = false;
@@ -194,10 +186,9 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1114, 92);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(690, 75);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(428, 36);
+            this.textBox1.Size = new System.Drawing.Size(322, 30);
             this.textBox1.TabIndex = 57;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -215,10 +206,9 @@
             "2020 - 2021",
             "2021 - 2022",
             "2022 - 2023"});
-            this.comboBox3.Location = new System.Drawing.Point(624, 785);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox3.Location = new System.Drawing.Point(533, 544);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(247, 37);
+            this.comboBox3.Size = new System.Drawing.Size(186, 31);
             this.comboBox3.TabIndex = 60;
             // 
             // label1
@@ -227,10 +217,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(498, 787);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(432, 546);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 36);
+            this.label1.Size = new System.Drawing.Size(95, 29);
             this.label1.TabIndex = 61;
             this.label1.Text = "Select S.Y:";
             // 
@@ -240,19 +229,18 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label3.Location = new System.Drawing.Point(1014, 95);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(609, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 36);
+            this.label3.Size = new System.Drawing.Size(75, 29);
             this.label3.TabIndex = 64;
             this.label3.Text = "Search:";
             // 
             // levelmgmtform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1558, 892);
+            this.ClientSize = new System.Drawing.Size(1028, 627);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox3);
@@ -266,7 +254,6 @@
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "levelmgmtform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "levelmgmtform";
