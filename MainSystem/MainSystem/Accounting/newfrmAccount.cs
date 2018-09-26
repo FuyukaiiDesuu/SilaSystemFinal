@@ -389,6 +389,7 @@ namespace MainSystem.Accounting
                 addfee = new Accounting.frmAddFee(true);
                 addfee.syear = lblsy.Text;
                 addfee.uname = uname;
+                addfee.reference = this;
                 addfee.Show();
         }
         public Accounting.newfrmEditAccount editaccount;
@@ -886,7 +887,11 @@ namespace MainSystem.Accounting
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            feeSearch();
+            (dataFeeValue.DataSource as DataTable).DefaultView.RowFilter =
+          string.Format("FirstName LIKE '%{0}%' " +
+          "OR fee_type LIKE '%{0}' " +
+          "OR fee_description LIKE '%{0}%'", txtfeesearch.Text);
+            dataFeeValue.ClearSelection();
         }
         private void disbsearch()
         {

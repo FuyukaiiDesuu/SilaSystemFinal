@@ -94,7 +94,7 @@ namespace MainSystem.Employee
                 reference.loadEmployeeDetails();
                 reference.dataSearch.ClearSelection();
                 reference.clearText();
-                this.Close();
+                this.Dispose();
             }
             else
             {

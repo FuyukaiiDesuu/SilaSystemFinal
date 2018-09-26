@@ -230,11 +230,11 @@ namespace MainSystem.Accounting
                                 command2.ExecuteNonQuery();
                             }
                             MessageBox.Show("Successfully Added", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            reference.Show();
                             reference.loadFeeDetails();
                             reference.dataBalanceDetails.ClearSelection();
                             reference.dataSearch.ClearSelection();
-                            this.Close();
+                            reference.Show();
+                            this.Dispose();
 
                         }
                     }

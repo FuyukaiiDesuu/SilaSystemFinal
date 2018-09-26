@@ -96,7 +96,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDashboard.BackColor = System.Drawing.Color.DarkRed;
             this.btnDashboard.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -221,7 +221,8 @@
             // 
             // grpPersonalDetails
             // 
-            this.grpPersonalDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpPersonalDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpPersonalDetails.Controls.Add(this.txtMaritalStatus);
             this.grpPersonalDetails.Controls.Add(this.lblMaritalStatus);
             this.grpPersonalDetails.Controls.Add(this.txtBirthPlace);
@@ -408,7 +409,8 @@
             // 
             // grpEmployeeDetails
             // 
-            this.grpEmployeeDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpEmployeeDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpEmployeeDetails.Controls.Add(this.txtPosition);
             this.grpEmployeeDetails.Controls.Add(this.lblPosition);
             this.grpEmployeeDetails.Controls.Add(this.txtMiddleName);
@@ -456,7 +458,6 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtSearch.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtSearch.Location = new System.Drawing.Point(389, 81);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
@@ -474,12 +475,12 @@
             this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(162)))), ((int)(((byte)(23)))));
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(172)))), ((int)(((byte)(41)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Bebas Neue", 24F, System.Drawing.FontStyle.Italic);
+            this.btnAdd.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(306, 413);
+            this.btnAdd.Location = new System.Drawing.Point(252, 413);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(390, 62);
+            this.btnAdd.Size = new System.Drawing.Size(444, 62);
             this.btnAdd.TabIndex = 39;
             this.btnAdd.Text = "Add User To This Employee";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -491,7 +492,8 @@
             this.dataSearch.AllowUserToDeleteRows = false;
             this.dataSearch.AllowUserToResizeColumns = false;
             this.dataSearch.AllowUserToResizeRows = false;
-            this.dataSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataSearch.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -677,7 +679,7 @@
             this.label1.Location = new System.Drawing.Point(305, 81);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 32);
+            this.label1.Size = new System.Drawing.Size(85, 34);
             this.label1.TabIndex = 1;
             this.label1.Text = "Search:";
             // 
