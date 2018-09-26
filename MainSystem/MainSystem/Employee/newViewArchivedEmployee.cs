@@ -70,7 +70,7 @@ namespace MainSystem.Employee
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             reference.Show();
-            this.Close();
+            this.Dispose();
         }
 
         private void btnEnable_Click(object sender, EventArgs e)

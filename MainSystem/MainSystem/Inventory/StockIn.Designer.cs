@@ -40,11 +40,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -63,7 +63,7 @@
             this.btnin.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnin.ForeColor = System.Drawing.Color.White;
             this.btnin.Location = new System.Drawing.Point(1025, 371);
-            this.btnin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnin.Margin = new System.Windows.Forms.Padding(4);
             this.btnin.Name = "btnin";
             this.btnin.Size = new System.Drawing.Size(269, 96);
             this.btnin.TabIndex = 2;
@@ -103,7 +103,7 @@
             this.btnback2.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnback2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.btnback2.Location = new System.Drawing.Point(1112, 3);
-            this.btnback2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnback2.Margin = new System.Windows.Forms.Padding(4);
             this.btnback2.Name = "btnback2";
             this.btnback2.Size = new System.Drawing.Size(231, 72);
             this.btnback2.TabIndex = 8;
@@ -130,14 +130,13 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1287, 255);
             this.dataGridView2.TabIndex = 9;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // search1
             // 
             this.search1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.search1.Location = new System.Drawing.Point(993, 40);
-            this.search1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.search1.Margin = new System.Windows.Forms.Padding(4);
             this.search1.Name = "search1";
             this.search1.Size = new System.Drawing.Size(315, 32);
             this.search1.TabIndex = 11;
@@ -148,8 +147,8 @@
             // 
             this.txtEnter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtEnter.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnter.Location = new System.Drawing.Point(758, 388);
-            this.txtEnter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEnter.Location = new System.Drawing.Point(778, 390);
+            this.txtEnter.Margin = new System.Windows.Forms.Padding(4);
             this.txtEnter.Name = "txtEnter";
             this.txtEnter.Size = new System.Drawing.Size(192, 56);
             this.txtEnter.TabIndex = 12;
@@ -175,7 +174,7 @@
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(259, 415);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(192, 36);
@@ -188,7 +187,7 @@
             this.textBox2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.White;
             this.textBox2.Location = new System.Drawing.Point(259, 371);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(192, 36);
@@ -235,14 +234,27 @@
             this.groupBox1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.groupBox1.Location = new System.Drawing.Point(16, 70);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1327, 475);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List Of Orders";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label3.Location = new System.Drawing.Point(893, 39);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 36);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "search:";
             // 
             // groupBox2
             // 
@@ -250,9 +262,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
             this.groupBox2.Location = new System.Drawing.Point(16, 553);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1327, 316);
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
@@ -275,7 +287,7 @@
             // 
             this.pictureBox2.Image = global::MainSystem.Properties.Resources.starlogo2;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,23 +299,10 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.lblSilaSchoolManagementSoftware);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1104, 42);
             this.panel1.TabIndex = 45;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label3.Location = new System.Drawing.Point(893, 39);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 36);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "search:";
             // 
             // Stockin_out
             // 
@@ -316,7 +315,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Stockin_out";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock In";

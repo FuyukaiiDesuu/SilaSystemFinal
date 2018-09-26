@@ -17,9 +17,9 @@ namespace MainSystem
         private void Initialize()
         {
             
-            string Server = "169.254.182.2";
+            string Server = "localhost";
             string Database = "silasystemdb";
-            string Uid = "dominic";
+            string Uid = "root";
             string Password = "root";
             string Port = "3306";
             /*

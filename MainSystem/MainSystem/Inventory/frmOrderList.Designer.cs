@@ -349,6 +349,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.Enabled = false;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Bebas Neue", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

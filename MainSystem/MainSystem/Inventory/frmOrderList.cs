@@ -204,8 +204,9 @@ namespace MainSystem
         private string ordid;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataOrderList.Rows.Count > 0)
+            if (e.RowIndex >= 0)
             {
+                btnCancel.Enabled = true;
                 ordid = dataOrderList.Rows[e.RowIndex].Cells["id"].Value.ToString();
             }
         }
@@ -223,23 +224,33 @@ namespace MainSystem
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Confirm Order Cancellation!", "CONFIRM ACTION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (res == DialogResult.OK)
+            if(dataOrderList.SelectedRows.Count > 0 )
             {
-                var dbconnect = new dbConnector();
-                using (dbconnection = dbconnect.connector())
+                DialogResult res = MessageBox.Show("Confirm Order Cancellation!", "CONFIRM ACTION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (res == DialogResult.OK)
                 {
-                    using (var command = new MySqlCommand("UPDATE orderlist SET status = @stat WHERE id = @ayd;", dbconnection))
+                    var dbconnect = new dbConnector();
+                    using (dbconnection = dbconnect.connector())
                     {
-                        dbconnection.Open();
-                        command.Parameters.AddWithValue("@stat", 0);
-                        command.Parameters.AddWithValue("@ayd", ordid);
-                        command.ExecuteNonQuery();
+                        using (var command = new MySqlCommand("UPDATE orderlist SET status = @stat WHERE id = @ayd;", dbconnection))
+                        {
+                            dbconnection.Open();
+                            command.Parameters.AddWithValue("@stat", 0);
+                            command.Parameters.AddWithValue("@ayd", ordid);
+                            command.ExecuteNonQuery();
+                        }
                     }
+                    MessageBox.Show("Order Succssesfully Cancelled!");
+                    readData();
+                    readDataOrderList();
+                    readDataOrderListCanceled();
+                    readDataOrderListCompl();
+                    dataOrderList.ClearSelection();
                 }
-                MessageBox.Show("Order Succssesfully Cancelled!");
-                readData();
-                readDataOrderList();
+            }
+            else
+            {
+                MessageBox.Show("There is no item currently selected", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

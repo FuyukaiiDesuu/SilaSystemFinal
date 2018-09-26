@@ -109,12 +109,16 @@ namespace MainSystem
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            quantity_remaining = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
-            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["quantity"].Value.ToString();
-            itemid = dataGridView1.Rows[e.RowIndex].Cells["item_id"].Value.ToString();
-            orderlistID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
-            textBox1.Text = textboxsolver().ToString();
-            readDataDGV1();
+            if(e.RowIndex >= 0 )
+            {
+                quantity_remaining = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["quantity"].Value.ToString());
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["quantity"].Value.ToString();
+                itemid = dataGridView1.Rows[e.RowIndex].Cells["item_id"].Value.ToString();
+                orderlistID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                textBox1.Text = textboxsolver().ToString();
+                readDataDGV1();
+            }
+            
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

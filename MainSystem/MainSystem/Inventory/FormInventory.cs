@@ -190,6 +190,8 @@ namespace MainSystem
                             readData();
                             textBox2.Clear();
                             dgvInventory.ClearSelection();
+                            comboBox1.SelectedIndex = -1;
+                            button2.Enabled = false;
                             MessageBox.Show("SUCCESSFULLY STOCKED-OUT QUANTITY OF ITEMS!", "ATTENTION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
