@@ -22,6 +22,7 @@ namespace MainSystem.Enrollment
             DataGridViewCheckBoxColumn cbclm = new DataGridViewCheckBoxColumn();
             cbclm.HeaderText = "Select";
             dataGridView1.Columns.Add(cbclm);
+            dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 14f);
             loadData2();
         }
 

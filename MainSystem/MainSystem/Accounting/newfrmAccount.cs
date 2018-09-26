@@ -347,6 +347,11 @@ namespace MainSystem.Accounting
                     btnEditAccount.Enabled = true;
                     //btnViewPaymentHistory.Enabled = true;
                 }
+                else
+                {
+                    btnAddTransaction.Enabled = false;
+                    btnEditAccount.Enabled = true;
+                }
                
             }
             else
@@ -480,6 +485,7 @@ namespace MainSystem.Accounting
         private void dgvpending_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
+        
             button1.Enabled = true;
             dicForPend = new Dictionary<string, string>();
             dicForPend.Add("adid", dgvpending.Rows[e.RowIndex].Cells["adid"].Value.ToString());
@@ -516,10 +522,10 @@ namespace MainSystem.Accounting
             dicForPend = new Dictionary<string, string>();
             dicForPend.Add("cno", dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString());
             dicForPend.Add("tno", dgvvoid.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString());
-            dicForPend.Add("apaid", dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString());
+            dicForPend.Add("apaid", dgvvoid.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString());
             dicForPend.Add("status", dgvvoid.Rows[e.RowIndex].Cells["paymentStatus"].Value.ToString());
 
-            button1.Enabled = true;
+            button1.Enabled = false;
             //chqno.Text = dgvvoid.Rows[e.RowIndex].Cells["cheque_no"].Value.ToString();
             //tno.Text = dgvvoid.Rows[e.RowIndex].Cells["transaction_no"].Value.ToString();
             //amnt.Text = "₱ " + dgvvoid.Rows[e.RowIndex].Cells["amount_paid"].Value.ToString();
@@ -813,6 +819,7 @@ namespace MainSystem.Accounting
         private void btnenablerr(Boolean a)
         {
             btnAddTransaction.Enabled = a;
+            btnEditAccount.Enabled = a;
             button1.Enabled = a;
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -820,12 +827,18 @@ namespace MainSystem.Accounting
             if(checkBox1.Checked)
             {
                 loadStudentListDeactivated();
+                dataSearch.ClearSelection();
+                txtdp.Clear();
+                txtfn.Clear();
                 btnenablerr(false);
             }
             else
             {
                 loadStudentProfileTable();
-                btnenablerr(true);
+                dataSearch.ClearSelection();
+                txtdp.Clear();
+                txtfn.Clear();
+                btnenablerr(false);
             }
         }
 

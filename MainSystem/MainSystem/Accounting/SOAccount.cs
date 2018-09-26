@@ -12,6 +12,7 @@ namespace MainSystem.Accounting
 {
     public partial class SOAccount : Form
     {
+        public newfrmEditAccount reference { get; set; }
         public string syear { get; set; }
         public IDictionary<string, string> dic;
         public SOAccount(IDictionary<string, string> d)
@@ -44,6 +45,12 @@ namespace MainSystem.Accounting
 
             crystalReportViewer1.ReportSource = soa;
             crystalReportViewer1.Refresh();
+        }
+
+        private void SOAccount_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+            reference.defaulttext();
         }
     }
 }

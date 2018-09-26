@@ -45,6 +45,7 @@
             this.dgvvoid = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.dataSearch = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.grpBalanceDetails = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.dataBalanceDetails = new System.Windows.Forms.DataGridView();
             this.searchpaymenttxtbox = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -83,8 +85,6 @@
             this.lblSilaSchoolManagementSoftware = new System.Windows.Forms.Label();
             this.btnref = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabStudentTransaction.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -120,7 +120,7 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1519, 720);
+            this.tabControl.Size = new System.Drawing.Size(1519, 746);
             this.tabControl.TabIndex = 13;
             // 
             // tabStudentTransaction
@@ -135,7 +135,7 @@
             this.tabStudentTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.tabStudentTransaction.Name = "tabStudentTransaction";
             this.tabStudentTransaction.Padding = new System.Windows.Forms.Padding(4);
-            this.tabStudentTransaction.Size = new System.Drawing.Size(1511, 675);
+            this.tabStudentTransaction.Size = new System.Drawing.Size(1511, 701);
             this.tabStudentTransaction.TabIndex = 0;
             this.tabStudentTransaction.Text = "Account Mgmt.";
             this.tabStudentTransaction.Click += new System.EventHandler(this.tabStudentTransaction_Click);
@@ -148,7 +148,7 @@
             this.btnAddTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTransaction.Font = new System.Drawing.Font("Bebas Neue", 42F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.ForeColor = System.Drawing.Color.White;
-            this.btnAddTransaction.Location = new System.Drawing.Point(1101, 465);
+            this.btnAddTransaction.Location = new System.Drawing.Point(1101, 491);
             this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddTransaction.Name = "btnAddTransaction";
             this.btnAddTransaction.Size = new System.Drawing.Size(382, 199);
@@ -391,6 +391,19 @@
             this.groupBox1.Text = "Account List";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label5.Location = new System.Drawing.Point(9, 36);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 29);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "search:";
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -521,11 +534,24 @@
             this.grpBalanceDetails.Margin = new System.Windows.Forms.Padding(4);
             this.grpBalanceDetails.Name = "grpBalanceDetails";
             this.grpBalanceDetails.Padding = new System.Windows.Forms.Padding(4);
-            this.grpBalanceDetails.Size = new System.Drawing.Size(1077, 218);
+            this.grpBalanceDetails.Size = new System.Drawing.Size(1077, 244);
             this.grpBalanceDetails.TabIndex = 11;
             this.grpBalanceDetails.TabStop = false;
             this.grpBalanceDetails.Text = "Balance And Payment";
             this.grpBalanceDetails.Enter += new System.EventHandler(this.grpBalanceDetails_Enter);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
+            this.label6.Location = new System.Drawing.Point(701, 29);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 29);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "search:";
             // 
             // dataBalanceDetails
             // 
@@ -546,7 +572,7 @@
             this.dataBalanceDetails.ReadOnly = true;
             this.dataBalanceDetails.RowHeadersVisible = false;
             this.dataBalanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataBalanceDetails.Size = new System.Drawing.Size(1060, 138);
+            this.dataBalanceDetails.Size = new System.Drawing.Size(1060, 164);
             this.dataBalanceDetails.TabIndex = 0;
             this.dataBalanceDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBalanceDetails_CellContentClick);
             // 
@@ -569,7 +595,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1511, 675);
+            this.tabPage1.Size = new System.Drawing.Size(1511, 701);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Fee Mgmt.";
             // 
@@ -602,7 +628,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(1495, 659);
+            this.groupBox3.Size = new System.Drawing.Size(1495, 685);
             this.groupBox3.TabIndex = 41;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Fee Management";
@@ -638,7 +664,7 @@
             this.btnAddFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFee.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFee.ForeColor = System.Drawing.Color.White;
-            this.btnAddFee.Location = new System.Drawing.Point(1085, 586);
+            this.btnAddFee.Location = new System.Drawing.Point(1085, 612);
             this.btnAddFee.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddFee.Name = "btnAddFee";
             this.btnAddFee.Size = new System.Drawing.Size(195, 65);
@@ -656,7 +682,7 @@
             this.btnUpdateFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateFee.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateFee.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateFee.Location = new System.Drawing.Point(1286, 584);
+            this.btnUpdateFee.Location = new System.Drawing.Point(1286, 610);
             this.btnUpdateFee.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateFee.Name = "btnUpdateFee";
             this.btnUpdateFee.Size = new System.Drawing.Size(201, 66);
@@ -681,9 +707,10 @@
             this.dataFeeValue.Location = new System.Drawing.Point(8, 79);
             this.dataFeeValue.Margin = new System.Windows.Forms.Padding(4);
             this.dataFeeValue.Name = "dataFeeValue";
+            this.dataFeeValue.ReadOnly = true;
             this.dataFeeValue.RowHeadersVisible = false;
             this.dataFeeValue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataFeeValue.Size = new System.Drawing.Size(1479, 498);
+            this.dataFeeValue.Size = new System.Drawing.Size(1479, 524);
             this.dataFeeValue.TabIndex = 7;
             this.dataFeeValue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellClick);
             this.dataFeeValue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFeeValue_CellContentClick);
@@ -695,7 +722,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 41);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1511, 675);
+            this.tabPage4.Size = new System.Drawing.Size(1511, 701);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Disbursement Mgmt.";
             // 
@@ -715,7 +742,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(1541, 681);
+            this.groupBox4.Size = new System.Drawing.Size(1541, 707);
             this.groupBox4.TabIndex = 43;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Disbursement Management";
@@ -728,7 +755,7 @@
             this.btnAddDisb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDisb.Font = new System.Drawing.Font("Bebas Neue", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDisb.ForeColor = System.Drawing.Color.White;
-            this.btnAddDisb.Location = new System.Drawing.Point(1219, 602);
+            this.btnAddDisb.Location = new System.Drawing.Point(1182, 615);
             this.btnAddDisb.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddDisb.Name = "btnAddDisb";
             this.btnAddDisb.Size = new System.Drawing.Size(314, 69);
@@ -769,9 +796,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(8, 75);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1525, 520);
+            this.dataGridView1.Size = new System.Drawing.Size(1488, 534);
             this.dataGridView1.TabIndex = 35;
             // 
             // btnsdb
@@ -972,32 +1000,6 @@
             this.label4.Size = new System.Drawing.Size(101, 23);
             this.label4.TabIndex = 42;
             this.label4.Text = "REFRESH: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label5.Location = new System.Drawing.Point(9, 36);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 29);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "search:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Bebas Neue", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(207)))), ((int)(((byte)(86)))));
-            this.label6.Location = new System.Drawing.Point(701, 29);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 29);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "search:";
             // 
             // newfrmAccount
             // 

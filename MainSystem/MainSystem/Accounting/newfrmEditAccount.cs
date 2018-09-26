@@ -34,7 +34,7 @@ namespace MainSystem.Accounting
             defaulttext();
             //sygetter();
         }
-        private void defaulttext()
+        public void defaulttext()
         {
 
             txtStudentName.Text = dict["fullname"];
@@ -501,6 +501,7 @@ namespace MainSystem.Accounting
                                 dicforsoaform.Add("section", txtsec.Text);
                                 dicforsoaform.Add("level", txtlvl.Text);
                                 soaform = new SOAccount(dicforsoaform);
+                                soaform.reference = this;
                                 soaform.syear = lblsy.Text;
                                 soaform.Show();
                             }
@@ -516,6 +517,7 @@ namespace MainSystem.Accounting
                             dicforsoaform.Add("fullname", txtStudentName.Text);
                             dicforsoaform.Add("section", txtsec.Text);
                             dicforsoaform.Add("level", txtlvl.Text);
+                            soaform.reference = this;
                             soaform = new SOAccount(dicforsoaform);
                             soaform.syear = lblsy.Text;
                             soaform.Show();
